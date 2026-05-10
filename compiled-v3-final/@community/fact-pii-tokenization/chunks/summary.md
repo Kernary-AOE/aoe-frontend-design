@@ -1,0 +1,4 @@
+# PiiTokenization [fact] v1.0.0
+Personally identifiable information (PII) — SSN, full name, email, phone, payment card, government ID, biometric — must be replaced with non-reversible tokens at the system boundary; downstream systems operate exclusively on tokens. Real PII lives only in a hardened vault with strict access controls and an audit log.
+> PCI-DSS, HIPAA, and GDPR Article 32 ('appropriate technical measures, such as pseudonymisation') all converge on the same architectural primitive: tokenization. The original PII is stored once, in a vault with HSM-backed encryption and per-record audit. Every other system — analytics, logs, search index, ML training set, vendor integration — receives a token (e.g. `tok_card_8a3f...`) that maps back to the PII only via an authenticated detokenize call. A breach of the analytics warehouse leaks tokens, not PII.
+domain: data-engineering

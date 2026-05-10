@@ -1,0 +1,29 @@
+pattern BorderRadiusByPersona {
+  id: "@community/pattern-border-radius-by-persona"
+  version: "1.0.0"
+
+  label: "Border Radius Persona Mapping"
+  domain: frontend-design
+
+  problem: "Without a mapping from persona/product type to radius values, designers default to the middle (8–12px) or the Tailwind default (rounded-2xl = 16px), failing to communicate the product's actual personality signal through corner geometry."
+
+  solution: "Select border-radius based on the four personality tiers mapped to product archetypes. Each tier communicates a distinct signal that must match the product's true intent."
+
+  notes: [
+    "Radius personality tiers:",
+    "  0px      — Brutalist, confrontational, editorial.   Use cases: fashion brands, creative agencies, avant-garde tools.",
+    "  2–4px    — Precise, minimal, professional.          Use cases: developer tools, data dashboards, B2B SaaS.",
+    "  8–12px   — Friendly, approachable, balanced.        Use cases: consumer apps, productivity tools, most web UIs.",
+    "  16px+    — Playful, toy-like, casual.               Use cases: children's apps, gamified experiences, marketing landing pages.",
+    "Signal reading: a 0px card says 'we take structure seriously.' A 24px card says 'we're approachable and fun.' Neither is wrong — but they must match the product's actual personality.",
+    "Anti-pattern: serious B2B SaaS shipping rounded-2xl on everything because it was the Tailwind default.",
+    "A/B evidence from Prime builds: persona-driven radius (0px, 2–3px, 6–10px) produced distinct visual personality vs Raw builds (all 16–32px).",
+  ]
+
+  related: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/persona-magazine-editorial,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-focus-visible,
+  ]
+}

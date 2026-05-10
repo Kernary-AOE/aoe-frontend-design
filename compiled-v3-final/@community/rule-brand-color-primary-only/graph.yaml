@@ -1,0 +1,18 @@
+atom: "@community/rule-brand-color-primary-only"
+relations:
+  - type: related
+    target: "@community/rule-brand-accent-shapes"
+  - type: related
+    target: "@community/constraint-max-color-roles-7"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/anti-pattern-rainbow-explosion"
+  - type: related
+    target: "@community/counter-example-tailwind-blue-500"
+  - type: related
+    target: "@community/example-stripe-dashboard"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/rule-single-accent-color"

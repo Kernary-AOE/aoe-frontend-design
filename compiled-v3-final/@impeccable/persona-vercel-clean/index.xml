@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/persona-vercel-clean"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="569"
+  q="4.0">
+  <description>Dark-first developer-tool aesthetic: Geist Sans on near-black OKLCH neutrals, generous whitespace, monochrome surfaces lifted by subtle radial gradients, one neon accent (cyan/magenta/lime), and crisp 1px borders on glass-like cards.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="72"/>
+    <level name="core"    file="chunks/core.md"    tokens="569"/>
+    <level name="full"    file="chunks/full.md"    tokens="680"/>
+  </projection>
+</atom>

@@ -1,0 +1,21 @@
+id: "@community/pattern-gradient-mesh-engine"
+kind: pattern
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:f447c393b31b40a466d0f116624a0c68ab29e9c84629bac74d02e89ba37909e9"
+tokens:
+  summary: 16
+  core: 499
+  full: 983
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-intentional-gradient" }
+  - { type: related, target: "@community/rule-gradients-justified-only" }
+  - { type: related, target: "@community/rule-backgrounds-atmospheric" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

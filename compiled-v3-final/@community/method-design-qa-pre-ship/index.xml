@@ -1,0 +1,14 @@
+<atom
+  id="@community/method-design-qa-pre-ship"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="285"
+  q="4.0">
+  <description>A structured checklist for reviewing UX flows, design consistency, accessibility, and content quality before releasing any user-facing feature — covering the 10 categories most commonly skipped in AI-generated outputs.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="69"/>
+    <level name="core"    file="chunks/core.md"    tokens="285"/>
+    <level name="full"    file="chunks/full.md"    tokens="500"/>
+  </projection>
+</atom>

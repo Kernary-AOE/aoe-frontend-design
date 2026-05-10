@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-clear-form-on-failure"
+relations:
+  - type: related
+    target: "@community/rule-preserve-user-input-on-error"
+  - type: related
+    target: "@community/pattern-inline-validation"
+  - type: related
+    target: "@community/rule-form-validation-inline"

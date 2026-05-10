@@ -1,0 +1,21 @@
+id: "@community/rule-intl-api-locale-formatting"
+kind: rule
+version: "1.0.0"
+description: "Dates, times, numbers, currencies, and list conjunctions must be formatted using the JavaScript `Intl` API (Intl.DateTimeFormat, Intl.NumberFormat, Intl.ListFormat) rather than hard-coded locale-specific strings."
+domain: frontend-design
+content_hash: "sha256:b6bbd7f507c6bf6e5ed40a888d4df1a623c51b04149d9a86ebfd01b465c96869"
+tokens:
+  summary: 69
+  core: 135
+  full: 265
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-autocomplete-attributes" }
+  - { type: related, target: "@community/fact-border-radius-platform" }
+  - { type: related, target: "@community/rule-content-width-constrained" }
+created_at: "2026-05-07"

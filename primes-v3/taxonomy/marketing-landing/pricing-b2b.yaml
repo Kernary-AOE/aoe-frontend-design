@@ -1,0 +1,42 @@
+task_type: pricing-b2b
+parent: marketing-landing
+description: "B2B enterprise pricing page with feature comparison table, contact sales flow, and fintech-grade visual density."
+trigger_keywords:
+  - "enterprise pricing"
+  - "B2B pricing"
+  - "企业版定价"
+  - "企业版和团队版"
+  - "feature comparison"
+  - "contact sales"
+  - "seat-based"
+  - "volume pricing"
+  - "功能对比"
+  - "fintech pricing"
+default_register_pool:
+  - school: stripe-fintech
+    weight: 0.5
+  - school: linear
+    weight: 0.3
+  - school: vercel-clean
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-plan-comparison-table"
+  - "@community/template-shadcn-pricing-toggle"
+  - "@community/pattern-metric-card"
+  - "@community/fact-fintech-number-display"
+  - "@community/rule-single-primary-action-per-component"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-motion-loading"
+forbidden_atoms:
+  - "@impeccable/persona-warm-institutional"
+  - "@impeccable/persona-magazine-editorial"
+  - "@impeccable/persona-notion-warm"
+  - "@impeccable/persona-brutalist"
+quality_checks:
+  - "Feature comparison table must handle 15+ rows without feeling cramped"
+  - "Enterprise tier must include 'Contact Sales' CTA, not a direct price"
+  - "Monospace or tabular numerics must be used for all pricing figures"
+  - "Table must be horizontally scrollable on mobile"
+  - "Visual hierarchy must clearly distinguish included vs excluded features"
+  - "Color scheme must read as professional/trustworthy, not playful"

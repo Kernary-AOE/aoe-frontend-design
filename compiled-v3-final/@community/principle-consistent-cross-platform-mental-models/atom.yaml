@@ -1,0 +1,25 @@
+id: "@community/principle-consistent-cross-platform-mental-models"
+kind: principle
+version: "1.0.0"
+description: "Core concepts, terminology, and user mental models must remain consistent across all platforms of a product — when users switch from web to mobile to desktop, they should not have to learn a new vocabulary for the same features."
+domain: frontend-design
+content_hash: "sha256:11eb3875233dd198dde60f34cf615576b445a975bacca28a54cccc7d4529e960"
+tokens:
+  summary: 78
+  core: 115
+  full: 179
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-nielsen-consistency" }
+  - { type: related, target: "@community/rule-no-undocumented-platform-concept-rename" }
+  - { type: related, target: "@community/principle-nielsen-real-world-match" }
+  - { type: related, target: "@community/anti-pattern-ios-hamburger-menu" }
+  - { type: related, target: "@community/example-notion-sidebar" }
+  - { type: related, target: "@community/rule-no-divergent-platform-flows" }
+  - { type: related, target: "@community/rule-cross-platform-flow-step-consistency" }
+created_at: "2026-05-07"

@@ -1,0 +1,18 @@
+atom: "@impeccable/template-loading-spinner"
+relations:
+  - type: related
+    target: "@impeccable/template-skeleton-loader"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/example-stripe-payment-success"
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/pattern-skeleton-shimmer"
+  - type: related
+    target: "@community/pattern-skeleton-loader"
+  - type: related
+    target: "@community/fact-motion-hierarchy"
+  - type: related
+    target: "@community/check-focus-visible"

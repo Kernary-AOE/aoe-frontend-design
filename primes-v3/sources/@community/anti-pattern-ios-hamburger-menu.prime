@@ -1,0 +1,25 @@
+anti-pattern IosHamburgerMenu {
+  id: "@community/anti-pattern-ios-hamburger-menu"
+  version: "1.0.0"
+
+  label: "iOS Hamburger / Hidden Side-Drawer Navigation"
+  domain: frontend-design
+
+  description: "Using a hamburger (three-line) icon to reveal a hidden side-drawer navigation menu on iOS. This pattern violates iOS navigation conventions and severely reduces feature discoverability."
+
+  why-bad: "Hidden navigation conflicts with iOS user expectations of visible, persistent navigation (tab bars, navigation bars). Users unfamiliar with the drawer pattern never discover sections behind it. It also competes with the system back-edge swipe gesture. Apple HIG explicitly forbids this pattern for iOS apps — Rule 2.2."
+
+  instead-do: "Use a UITabBarController / SwiftUI TabView with 3–5 tab items for primary navigation. If there are more than 5 sections, the fifth tab becomes 'More' presenting a list sheet. For hierarchical content, use a navigation stack pushed from the root tab."
+
+  notes: [
+    "Why it's tempting: familiar from web and Android apps; appears to save screen real estate.",
+    "A side drawer also intercepts the left-edge swipe gesture reserved for system back navigation — see @community/constraint-ios-reserved-gestures.",
+    "Apple HIG source: Rule 2.2 — Never Use Hamburger Menus; Anti-Pattern #1.",
+  ]
+
+  related: [
+    @community/pattern-tab-bar-bottom,
+    @community/constraint-ios-reserved-gestures,
+    @community/rule-mobile-first,
+  ]
+}

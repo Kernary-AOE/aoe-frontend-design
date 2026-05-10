@@ -1,0 +1,4 @@
+# Rfc1918PrivateRanges [fact] v1.0.0
+RFC 1918 reserves three IPv4 ranges for private use: 10.0.0.0/8 (16,777,216 addresses), 172.16.0.0/12 (1,048,576 addresses), and 192.168.0.0/16 (65,536 addresses). These addresses are not routable on the public internet and are the canonical choice for VPC/internal networks.
+> RFC 1918 (Y. Rekhter et al., February 1996) allocates three IPv4 prefixes for use in 'private internets' — networks that do not need globally-unique addresses and whose traffic does not transit the public internet. (1) 10.0.0.0/8 = 10.0.0.0 – 10.255.255.255 (one /8 block); (2) 172.16.0.0/12 = 172.16.0.0 – 172.31.255.255 (sixteen /16 blocks); (3) 192.168.0.0/16 = 192.168.0.0 – 192.168.255.255 (256 /24 blocks). RFC 6598 separately reserves 100.64.0.0/10 for carrier-grade NAT (not RFC 1918, often confused). RFC 4193 reserves fc00::/7 (specifically fd00::/8 for locally-assigned) for IPv6 unique local addresses.
+domain: infrastructure

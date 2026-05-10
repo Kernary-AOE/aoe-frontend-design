@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-form-validation-inline"
+  kind="knowledge"
+  version="1.0.0"
+  domain="forms"
+  tokens="598"
+  q="4.0">
+  <description>Validates that forms perform inline, field-level validation: each validatable input has an aria-describedby error region, validation triggers on blur/input (not just submit), and the form does not use window.alert() for error display.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="72"/>
+    <level name="core"    file="chunks/core.md"    tokens="598"/>
+    <level name="full"    file="chunks/full.md"    tokens="694"/>
+  </projection>
+</atom>

@@ -1,0 +1,16 @@
+atom: "@community/pattern-hero-with-demo"
+relations:
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/category-typography-scale"
+  - type: related
+    target: "@community/rule-informative-image-alt"
+  - type: related
+    target: "@community/rule-functional-image-alt"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: compatible
+    target: "@community/pattern-pricing-tiers-toggle"
+  - type: compatible
+    target: "@community/pattern-top-nav-mega"

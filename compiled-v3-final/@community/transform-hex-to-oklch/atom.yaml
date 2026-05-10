@@ -1,0 +1,22 @@
+id: "@community/transform-hex-to-oklch"
+kind: transform
+version: "1.0.0"
+description: "Converts a hex color string ('#3B82F6' or '3B82F6' or '#fff') to oklch coordinates. Composes hex parsing → sRGB → linear sRGB → XYZ D65 → Oklab → polar oklch. The result is suitable for storing in a design token in oklch() form, enabling perceptually-even tonal palettes."
+domain: visual-design
+content_hash: "sha256:e5e42e4e8a4ec3399865b9112dd84a88c0e51761fcba2d9a919d57efeee8480c"
+tokens:
+  summary: 82
+  core: 550
+  full: 1006
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/term-oklch" }
+  - { type: related, target: "@community/transform-rgb-to-oklch" }
+  - { type: related, target: "@community/value-brand-hue" }
+  - { type: related, target: "@community/type-color-token-shape" }
+created_at: "2026-05-07"

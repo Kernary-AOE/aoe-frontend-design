@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-tailwindui-app-shell"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="566"
+  q="4.0">
+  <description>Tailwind UI&apos;s stacked + sidebar app shell uses a 240px left sidebar with vertical nav (icon + label rows), a 64px top bar with search + profile dropdown, and a main content area with max-width 7xl (1280px). Colors default to indigo accent (#4F46E5), gray-50 backgrounds (#F9FAFB), and gray-900 (#111827) text. Active nav state uses bg-indigo-50 + text-indigo-700.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="106"/>
+    <level name="core"    file="chunks/core.md"    tokens="566"/>
+    <level name="full"    file="chunks/full.md"    tokens="1026"/>
+  </projection>
+</atom>

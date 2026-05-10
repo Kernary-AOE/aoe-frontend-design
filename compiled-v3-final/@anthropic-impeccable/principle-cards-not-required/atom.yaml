@@ -1,0 +1,23 @@
+id: "@anthropic-impeccable/principle-cards-not-required"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:e96b414307ec7561b9ec4877f79dc7e27cf81e0a006a93d460e67c0de433a425"
+tokens:
+  summary: 70
+  core: 235
+  full: 426
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-cramped-ui" }
+  - { type: related, target: "@community/principle-white-space-as-design-element" }
+  - { type: related, target: "@community/principle-vertical-rhythm" }
+  - { type: related, target: "@community/rule-no-uniform-spacing-without-variation" }
+  - { type: related, target: "@community/pattern-card-component" }
+  - { type: related, target: "@community/fact-gestalt-proximity" }
+created_at: "2026-05-07"

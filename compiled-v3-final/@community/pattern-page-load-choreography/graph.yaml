@@ -1,0 +1,20 @@
+atom: "@community/pattern-page-load-choreography"
+relations:
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@community/pattern-stagger-reveal"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/pattern-scroll-reveal"
+  - type: related
+    target: "@impeccable/template-fade-stagger"
+  - type: related
+    target: "@community/fact-stagger-feel-organic"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/check-reduced-motion-required"
+  - type: related
+    target: "@community/check-focus-visible"

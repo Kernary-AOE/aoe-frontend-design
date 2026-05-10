@@ -1,0 +1,12 @@
+atom: "@community/anti-pattern-flag-as-language"
+relations:
+  - type: related
+    target: "@community/principle-no-string-concat"
+  - type: related
+    target: "@community/rule-intl-api-locale-formatting"
+  - type: related
+    target: "@community/rule-rtl-directional-icons-flip"
+  - type: related
+    target: "@community/fact-bidi-direction"
+  - type: enhances
+    target: "@community/rule-intl-api-locale-formatting"

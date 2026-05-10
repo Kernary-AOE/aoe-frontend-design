@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-user-control-freedom"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="158"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="75"/>
+    <level name="core"    file="chunks/core.md"    tokens="158"/>
+    <level name="full"    file="chunks/full.md"    tokens="299"/>
+  </projection>
+</atom>

@@ -1,0 +1,29 @@
+rule IosCustomFontDynamicType {
+  id: "@community/rule-ios-custom-font-dynamic-type"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  applies-to: "all non-system typefaces used in an iOS app"
+
+  statement: "Custom fonts must be scaled with Dynamic Type by registering them via UIFontMetrics.scaled(for:) in UIKit or Font.custom(_:relativeTo:) in SwiftUI, anchored to a semantic text style."
+
+  rationale: "Custom fonts that do not scale break accessibility for users who rely on larger text sizes. UIFontMetrics and Font.custom(_:relativeTo:) are the only correct hooks for propagating Dynamic Type scale to a non-system typeface."
+
+  examples: [
+    "SwiftUI: Font.custom('BrandSans', size: 17, relativeTo: .body) — scales with the body text style.",
+    "UIKit: UIFontMetrics(forTextStyle: .body).scaledFont(for: UIFont(name: 'BrandSans', size: 17)!).",
+    "Verify: set Dynamic Type to a large size in Settings → Accessibility; custom-font text must grow proportionally.",
+  ]
+
+  notes: [
+    "Never pass a fixed point size directly to UIFont(name:size:) without wrapping in UIFontMetrics.",
+    "Apple HIG source: Rule 3.3 — Custom Fonts Must Scale with Dynamic Type.",
+  ]
+
+  related: [
+    @community/rule-ios-dynamic-type-semantic,
+    @community/rule-ios-dynamic-type-reflow,
+    @community/constraint-ios-text-min-17pt,
+  ]
+}

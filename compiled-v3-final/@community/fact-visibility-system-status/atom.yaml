@@ -1,0 +1,19 @@
+id: "@community/fact-visibility-system-status"
+kind: fact
+version: "1.0.0"
+domain: ux-design
+content_hash: "sha256:58ba92bfa13cb8397a1a2efbf546e7b2bae50f6e105431452792aa0c14cabd9e"
+tokens:
+  summary: 59
+  core: 142
+  full: 283
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@nielsen/taxonomy-10-heuristics" }
+  - { type: related, target: "@community/fact-error-prevention" }
+created_at: "2026-05-07"

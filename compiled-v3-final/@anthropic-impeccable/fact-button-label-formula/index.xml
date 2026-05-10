@@ -1,0 +1,13 @@
+<atom
+  id="@anthropic-impeccable/fact-button-label-formula"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="382"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="70"/>
+    <level name="core"    file="chunks/core.md"    tokens="382"/>
+    <level name="full"    file="chunks/full.md"    tokens="696"/>
+  </projection>
+</atom>

@@ -1,0 +1,8 @@
+atom: "@community/principle-owasp-injection"
+relations:
+  - type: related
+    target: "@community/rule-sql-prepared-statements"
+  - type: related
+    target: "@community/principle-owasp-insecure-design"
+  - type: related
+    target: "@community/principle-owasp-security-misconfig"

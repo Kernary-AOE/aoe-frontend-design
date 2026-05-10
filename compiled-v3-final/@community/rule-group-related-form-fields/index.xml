@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-group-related-form-fields"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="239"
+  q="4.0">
+  <description>Related form fields must be visually and semantically grouped — using section headings, helper text, and proximity — so users can comprehend field relationships and navigate the form without cognitive overload.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="69"/>
+    <level name="core"    file="chunks/core.md"    tokens="239"/>
+    <level name="full"    file="chunks/full.md"    tokens="463"/>
+  </projection>
+</atom>

@@ -1,0 +1,23 @@
+id: "@community/example-gallery-testimonial-sections"
+kind: example
+version: "1.0.0"
+description: "16 curated testimonial section screenshots from Land-book Pro, tagged by pattern type and persona lean. Testimonial sections are the primary vehicle for social proof on a landing page. They answer the visitor's implicit question: 'Do people like me use this, and does it work?' The design challenge is making testimonials feel credible rather than manufactured, and relevant rather than generic."
+domain: frontend-design
+content_hash: "sha256:e9c33745e868108d7e4fca7da5abd7aacf55c45aec2420f180fedc283e227cd3"
+tokens:
+  summary: 116
+  core: 2527
+  full: 4938
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/example-gallery-full-landings" }
+  - { type: related, target: "@community/example-gallery-cta-sections" }
+  - { type: related, target: "@community/example-gallery-feature-sections" }
+  - { type: related, target: "@community/landing-page-section-patterns" }
+  - { type: related, target: "@community/card-component-pattern" }
+created_at: "2026-05-07"

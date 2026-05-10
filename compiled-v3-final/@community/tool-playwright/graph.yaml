@@ -1,0 +1,14 @@
+atom: "@community/tool-playwright"
+relations:
+  - type: related
+    target: "@community/tool-axe-core"
+  - type: related
+    target: "@community/tool-lighthouse"
+  - type: related
+    target: "@community/principle-test-pyramid"
+  - type: related
+    target: "@community/rule-flaky-quarantine"
+  - type: related
+    target: "@community/fact-test-pyramid-ratios"
+  - type: related
+    target: "@community/pattern-snapshot-restraint"

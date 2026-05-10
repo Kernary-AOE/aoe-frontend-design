@@ -1,0 +1,8 @@
+atom: "@community/constraint-mobile-touch-target-44px"
+relations:
+  - type: related
+    target: "@community/constraint-accessibility-aa-minimum"
+  - type: related
+    target: "@community/pattern-tab-bar-bottom"
+  - type: related
+    target: "@community/example-linear-cmdk"

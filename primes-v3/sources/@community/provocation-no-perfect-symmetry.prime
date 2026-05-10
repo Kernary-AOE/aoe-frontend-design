@@ -1,0 +1,34 @@
+provocation NoPerfectSymmetry {
+  id: "@community/provocation-no-perfect-symmetry"
+  version: "1.0.0"
+
+  label: "Why Is Everything Perfectly Centered?"
+  domain: frontend-design
+
+  trigger: "agent about to center-align all section content and use equal-column grids throughout"
+
+  question: "Why is every section perfectly centered and every grid perfectly symmetrical? Symmetry is the safest layout choice — models always default to it because asymmetric layouts require a reason. What specific visual goal does perfect symmetry serve here? Have you considered that intentional asymmetry (left-weighted text, unequal columns, offset imagery) creates hierarchy and visual interest that centered symmetry literally cannot?"
+
+  intent: "Challenge the AI-slop default of universal centered symmetry. Perfect symmetry is not neutral — it communicates nothing except an absence of layout decisions. Asymmetric layouts require intent and produce distinctiveness. The question is not 'should we use symmetry' but 'have we consciously decided on symmetry, and why?'"
+
+  resolution-paths: [
+    {
+      context: "Legal, medical, institutional content where trust and neutrality are primary"
+      answer: "Centered symmetry is appropriate — neutrality IS the message."
+    }
+    {
+      context: "Editorial, marketing, brand landing page"
+      answer: "Asymmetric grid with left-weighted headline text and offset imagery creates hierarchy and visual interest."
+    }
+    {
+      context: "Data dashboard"
+      answer: "Left-aligned information architecture with column widths proportional to content density."
+    }
+  ]
+
+  related: [
+    @impeccable/principle-distinctiveness,
+    @community/anti-pattern-ai-generated-ui,
+    @community/principle-commit-bold-aesthetic,
+  ]
+}

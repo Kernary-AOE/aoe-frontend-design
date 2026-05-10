@@ -1,0 +1,42 @@
+task_type: notification-center
+parent: interaction
+description: "Notification center or inbox panel showing grouped, filterable notifications with read/unread states."
+trigger_keywords:
+  - "notification center"
+  - "notifications"
+  - "notification inbox"
+  - "通知中心"
+  - "消息中心"
+  - "notification list"
+  - "activity feed"
+  - "inbox"
+  - "alerts center"
+default_register_pool:
+  - school: linear
+    weight: 0.45
+  - school: vercel-clean
+    weight: 0.3
+  - school: notion
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-toast-stack"
+  - "@community/pattern-interaction-states"
+  - "@community/pattern-empty-state"
+  - "@community/rule-loading-state-feedback"
+  - "@community/pattern-scroll-reveal"
+recommended_motion:
+  - "@community/pattern-stagger-reveal"
+  - "@impeccable/template-fade-stagger"
+  - "@community/pattern-motion-microinteraction"
+  - "@community/pattern-slide-up-reveal"
+forbidden_atoms:
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/template-animated-mesh-background"
+quality_checks:
+  - "Unread notifications must be visually distinct from read ones"
+  - "Mark all as read action must be easily accessible"
+  - "Notification types must be grouped or filterable"
+  - "Empty state must be friendly and suggest enabling notifications"
+  - "Notification timestamps must use relative time (2 minutes ago)"
+  - "Individual notifications must be dismissible"
+  - "Badge/count must update in real-time without full page reload"

@@ -1,0 +1,20 @@
+id: "@nielsen/source-nielsen-1994"
+kind: source
+version: "1.0.0"
+description: "The foundational text establishing Nielsen's 10 usability heuristics for interface design. Chapter 5 defines the heuristics used in expert review (heuristic evaluation). These 10 principles remain the most widely-cited and practically-applied UX evaluation framework in professional practice."
+domain: ux-design
+content_hash: "sha256:eca023525e7c84fff880293f40d7c83316dd8b5dff44992c61cdaccac62a1fc4"
+tokens:
+  summary: 85
+  core: 155
+  full: 225
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@nielsen/taxonomy-10-heuristics" }
+  - { type: related, target: "@community/method-heuristic-review" }
+created_at: "2026-05-07"

@@ -1,0 +1,30 @@
+pattern IosSkeletonLoading {
+  id: "@community/pattern-ios-skeleton-loading"
+  version: "1.0.0"
+
+  label: "iOS Skeleton Loading Views"
+  domain: frontend-design
+
+  description: "Show placeholder view structures matching the final content layout while async data is fetching, using .redacted(reason: .placeholder) in SwiftUI or custom grey-bar shapes — replacing them when real data arrives."
+
+  problem: "A blank screen or blocking ProgressView spinner during data fetch creates a jarring layout jump and gives users no sense of the content structure they are waiting for."
+
+  solution: "Render the same view structure as the final content but with placeholder data. In SwiftUI, apply .redacted(reason: .placeholder) to a view populated with dummy data. Optionally add a shimmer animation (repeating linear gradient) for visual polish. Replace with real content by removing the .redacted modifier when data loads."
+
+  notes: [
+    "Use-when: content requires a network or database fetch before display.",
+    "Use-when: loading duration is unpredictable or potentially over 500ms.",
+    "Skeleton views reduce perceived load time by setting correct layout expectations.",
+    "Apple HIG source: Rule 8.2 — Loading, Skeleton Views, No Blocking Spinners.",
+  ]
+
+  related: [
+    @community/anti-pattern-ios-fullscreen-spinner,
+    @community/rule-ios-immediate-action-acknowledgment,
+    @community/rule-ios-reduce-motion,
+    @community/constraint-mobile-touch-target-44px,
+    @community/check-touch-target-min,
+    @community/check-mobile-first,
+    @community/check-focus-visible,
+  ]
+}

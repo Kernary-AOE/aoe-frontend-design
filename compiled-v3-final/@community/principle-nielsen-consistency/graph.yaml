@@ -1,0 +1,18 @@
+atom: "@community/principle-nielsen-consistency"
+relations:
+  - type: related
+    target: "@community/principle-nielsen-recognition"
+  - type: related
+    target: "@community/principle-nielsen-real-world-match"
+  - type: related
+    target: "@community/fact-consistency-standards"
+  - type: related
+    target: "@community/fact-gestalt-similarity"
+  - type: related
+    target: "@community/example-linear-issues-table"
+  - type: related
+    target: "@community/example-radix-tabs"
+  - type: related
+    target: "@community/rule-no-terminology-drift"
+  - type: related
+    target: "@community/rule-consistent-product-terminology"

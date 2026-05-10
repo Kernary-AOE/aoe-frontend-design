@@ -1,0 +1,33 @@
+rule SuccessMessageNextStep {
+  id: "@community/rule-success-message-next-step"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: warning
+
+  statement: "Every success or confirmation message must state what action completed AND offer a clear next step or navigation option — never just 'Done' or 'Success'."
+
+  rationale: "Bare confirmations leave users uncertain about system state and what to do next, stalling their flow. Users who don't know what happened next either repeat the action, explore randomly, or abandon."
+
+  applies-when: "writing feedback copy for completed actions, saved states, or successful submissions"
+
+  verify-by: "Check that the message (1) names the completed action, and (2) offers a logical next step or navigation path."
+
+  examples: [
+    "Email verification: 'Email confirmed. You can now sign in →' — names the event + guides forward.",
+    "Payment: 'Payment of $49 received. Your receipt is on its way.' — confirms what + sets expectation.",
+    "Form save: 'Draft saved. Preview your listing →' — confirms + actionable next step.",
+    "Bad: 'Success!' — no context, no direction.",
+    "Bad: 'Done.' — vague; what is done? what should I do now?",
+  ]
+
+  related: [
+    @community/rule-success-confirmation-visual-change,
+    @community/rule-verb-based-cta-labels,
+    @community/principle-nielsen-visibility,
+    @community/anti-pattern-generic-error-text,
+    @community/example-stripe-payment-success,
+    @community/principle-tone-calibration,
+    @community/rule-actionable-error-messages,
+  ]
+}

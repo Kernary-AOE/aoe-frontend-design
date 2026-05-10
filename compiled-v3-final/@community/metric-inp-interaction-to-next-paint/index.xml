@@ -1,0 +1,14 @@
+<atom
+  id="@community/metric-inp-interaction-to-next-paint"
+  kind="knowledge"
+  version="1.0.0"
+  domain="performance"
+  tokens="761"
+  q="4.0">
+  <description>INP measures the latency from a discrete user input (click, tap, key press) to the next frame painted by the browser. Replaced FID (First Input Delay) as an official Core Web Vital in March 2024. Reports the 98th-percentile interaction across an entire page session — captures the worst-case responsiveness, not the average.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="99"/>
+    <level name="core"    file="chunks/core.md"    tokens="761"/>
+    <level name="full"    file="chunks/full.md"    tokens="1423"/>
+  </projection>
+</atom>

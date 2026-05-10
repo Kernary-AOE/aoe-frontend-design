@@ -1,0 +1,34 @@
+rule IaGroupByUserTasksNotOrg {
+  id: "@community/rule-ia-group-by-user-tasks-not-org"
+  version: "1.0.0"
+
+  label: "Group Navigation by User Tasks and Mental Models, Not Org Chart"
+  domain: frontend-design
+
+  statement: "Navigation groupings must reflect user mental models — organized around the tasks users do, the objects they operate on, or the domains they think about — not around internal team ownership boundaries, engineering module names, or org chart divisions."
+
+  rationale: "Org-chart navigation forces users to learn the company's internal structure before they can find what they need. Users do not know (or care) which team owns 'Billing' vs 'Subscriptions' vs 'Payments'. Task-based grouping allows users to navigate by asking 'what am I trying to do?' rather than 'who inside the company handles this?'"
+
+  applies-when: "defining top-level navigation labels, sidebar sections, or any primary information architecture hierarchy"
+
+  verify-by: "Show the navigation structure to 5 users. If > 2 of them ask 'which section has X?' for a common task, the grouping mirrors internal structure rather than user expectations. Run tree testing."
+
+  anti-pattern: "Navigation sections named by team: 'Platform', 'Core', 'Growth', 'Infrastructure' — each owned by a different engineering team"
+
+  remedy: "Rename and re-group to task/object framing: 'Projects', 'Team', 'Billing', 'Settings' — named by what users do or manage, regardless of internal ownership"
+
+  examples: [
+    "Bad: 'Platform Settings | User Management | Entitlements | Billing Core' → maps to 4 internal teams",
+    "Good: 'Account | Team & Roles | Plan & Billing | Security' → maps to user tasks",
+    "Bad: 'Frontend Services | Backend API | Data Pipeline' → engineering architecture",
+    "Good: 'Dashboard | Integrations | Analytics | Logs' → user workflow objects",
+  ]
+
+  severity: warning
+
+  related: [
+    @community/anti-pattern-deep-branching-nav,
+    @community/rule-navigation-flat-when-shallow,
+    @community/pattern-sidebar-collapsible,
+  ]
+}

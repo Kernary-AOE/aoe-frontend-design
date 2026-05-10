@@ -1,0 +1,41 @@
+fact LoadingSkeletonVsSpinner {
+  id: "@community/fact-loading-skeleton-vs-spinner"
+  version: "1.0.0"
+
+  description: "Skeleton loaders (content-shaped placeholders) outperform spinners on perceived performance because they preview the layout, set the user's expectation about what's loading, and avoid the 'time-passing' connotation of a spinning element."
+
+  statement: "Skeleton loaders produce shorter perceived wait times than spinners for content-shaped surfaces (lists, cards, articles) because they communicate what is loading, preserve final layout dimensions to avoid layout shift, and avoid the spinning-element connotation of unbounded waiting — though for indeterminate or short waits (< 1 s) a spinner remains appropriate."
+
+  confidence: strong
+  source: [
+    "Bill Chung, 'Everything you need to know about skeleton screens' (UX Collective, 2018)",
+    "Luke Wroblewski, 'Skeleton Screens' (lukew.com, 2013)",
+    "Facebook Engineering, original skeleton-screen rationale (2013)",
+    "NN/g, 'Progress Indicators Make a Slow System Less Insufferable' (Nielsen, 2001)",
+  ]
+
+  applies-to: [
+    "list / card / article load states",
+    "dashboard widget loading",
+    "decision: skeleton vs spinner vs blocking modal",
+    "preventing cumulative layout shift (CLS)",
+  ]
+
+  quantitative: {
+    skeleton-budget: "use skeleton for waits expected > 300 ms, especially > 1 s",
+    spinner-budget: "use spinner only for short / indeterminate waits or progress where shape is unknown",
+    layout-shift-savings: "skeletons that match final dimensions can keep CLS at 0",
+  }
+
+  counter-conditions: [
+    "Very short waits (< 300 ms) — neither skeleton nor spinner; render directly to avoid flicker.",
+    "Operations where the result shape is unknown (search returning unknown # of results) — spinner or progress bar fits better than skeleton.",
+    "Repeated identical operations may benefit from cached optimistic state instead of any loading indicator.",
+  ]
+
+  related: [
+    @community/fact-duration-perception-thresholds,
+    @community/fact-optimistic-update-tradeoff,
+    @community/pattern-skeleton-loader,
+  ]
+}

@@ -1,0 +1,6 @@
+atom: "@nielsen/source-nielsen-1994"
+relations:
+  - type: related
+    target: "@nielsen/taxonomy-10-heuristics"
+  - type: related
+    target: "@community/method-heuristic-review"

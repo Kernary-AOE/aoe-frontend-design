@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-miller-rule-7"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="363"
+  q="4.0">
+  <description>George Miller&apos;s &apos;7 ± 2&apos; (1956): short-term working memory holds approximately 5–9 &apos;chunks&apos; of information at once. Modern revisions (Cowan 2001) suggest the real working-memory limit is closer to 4 chunks.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="128"/>
+    <level name="core"    file="chunks/core.md"    tokens="363"/>
+    <level name="full"    file="chunks/full.md"    tokens="677"/>
+  </projection>
+</atom>

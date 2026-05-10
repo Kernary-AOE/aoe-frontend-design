@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-chart-never-alone"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="300"
+  q="4.0">
+  <description>Every chart requires paired context numbers. A line going up does not communicate a value, a range, or a delta — those are what users need for decisions. Extracted from StyleSeed DESIGN-LANGUAGE.md §69 (github.com/bitjaru/styleseed, MIT).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="207"/>
+    <level name="core"    file="chunks/core.md"    tokens="300"/>
+    <level name="full"    file="chunks/full.md"    tokens="1099"/>
+  </projection>
+</atom>

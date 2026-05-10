@@ -1,0 +1,70 @@
+rule TouchTargetMin {
+  id: "@community/rule-touch-target-min"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: accessibility
+
+  description: "All interactive targets (buttons, links, form controls, custom widgets) on touch surfaces MUST present a hit area of at least 44×44 CSS pixels, per Apple Human Interface Guidelines and WCAG 2.2 SC 2.5.8 (Target Size, Minimum: 24×24)."
+
+  claim: "Every interactive element's bounding hit-area MUST be ≥ 44×44 CSS pixels (preferred) or ≥ 24×24 CSS pixels (WCAG 2.2 AA minimum)."
+
+  severity: high
+
+  validates-with: [
+    @w3c/source-wcag-22,
+  ]
+
+  checks: [
+    @community/check-touch-target-min,
+  ]
+
+  severity-combination: |
+    interactive element < 24×24 CSS px (WCAG AA fail)             → BLOCK
+    interactive element 24×24 to 44×44 CSS px (HIG miss, WCAG ok) → WARN
+    interactive element ≥ 44×44 CSS px                            → PASS
+
+  failure-mode: "Users mis-tap adjacent controls; mobile error rates spike; users with motor impairment are excluded; older users abandon. WCAG 2.2 SC 2.5.8 fails Level AA conformance."
+
+  remediation: [
+    "Add `min-height: 44px; min-width: 44px;` to the button base style — visual size can stay smaller via inner padding.",
+    "For icon-only buttons, expand the hit-area with `padding: 12px` (yielding 24+padding ≥ 44).",
+    "For inline links inside dense text, ensure ≥ 24×24 by using `padding: 0.25em 0` and adequate line-height.",
+    "For custom widgets, wrap the visual icon in a `<button>` with `display: inline-flex; align-items: center; justify-content: center;` and a 44px box.",
+  ]
+
+  exceptions: [
+    {
+      case: "Inline text link",
+      allowed-when: "The control is a link inside a paragraph; WCAG 2.2 explicitly exempts inline links provided 24×24 is met.",
+    }
+    {
+      case: "Equivalent control adjacent",
+      allowed-when: "A small target has a same-action sibling control ≥ 44px (e.g. tiny X close + large 'Cancel' button).",
+    }
+    {
+      case: "User-agent default control",
+      allowed-when: "A native `<select>` arrow or scrollbar is sized by the platform.",
+    }
+  ]
+
+  notes: [
+    "iOS HIG specifies 44pt; Material Design specifies 48dp; WCAG 2.2 AA requires only 24×24 — choose the strictest your audience requires.",
+    "Pointer / mouse contexts are exempt from the 44px floor but still benefit; the rule is most critical on phones and tablets.",
+  ]
+
+  related: [
+    @community/rule-spacing-rhythm,
+    @community/rule-keyboard-accessible,
+    @w3c/source-wcag-22,
+    @community/anti-pattern-tiny-touch-targets,
+    @community/counter-example-icon-button-24px,
+    @community/example-calcom-scheduler,
+    @community/rule-mobile-first,
+  ]
+
+  see-also: [
+    @community/check-touch-target-min,
+  ]
+}

@@ -1,0 +1,14 @@
+atom: "@community/pattern-defense-in-depth"
+relations:
+  - type: related
+    target: "@community/principle-owasp-security-misconfiguration"
+  - type: related
+    target: "@community/principle-owasp-broken-access-control"
+  - type: related
+    target: "@community/principle-owasp-injection"
+  - type: related
+    target: "@community/pattern-csp-strict"
+  - type: related
+    target: "@community/pattern-input-validation-allowlist"
+  - type: related
+    target: "@community/pattern-rate-limit-token-bucket"

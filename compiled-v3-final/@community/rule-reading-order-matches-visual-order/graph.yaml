@@ -1,0 +1,8 @@
+atom: "@community/rule-reading-order-matches-visual-order"
+relations:
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/rule-ios-voiceover-order"
+  - type: related
+    target: "@community/rule-heading-hierarchy"

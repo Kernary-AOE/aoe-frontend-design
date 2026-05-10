@@ -1,0 +1,6 @@
+atom: "@community/check-color-oklch-required"
+relations:
+  - type: related
+    target: "@community/rule-color-oklch-required"
+  - type: related
+    target: "@community/transform-rgb-to-oklch"

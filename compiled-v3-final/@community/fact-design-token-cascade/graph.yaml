@@ -1,0 +1,10 @@
+atom: "@community/fact-design-token-cascade"
+relations:
+  - type: related
+    target: "@community/fact-color-token-semantic-naming"
+  - type: related
+    target: "@community/fact-atomic-design-method"
+  - type: related
+    target: "@community/type-design-token"
+  - type: related
+    target: "@community/constraint-max-color-roles-7"

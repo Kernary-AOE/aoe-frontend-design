@@ -1,0 +1,26 @@
+id: "@community/pattern-tx-dnd-kit-kanban-columns"
+kind: pattern
+version: "1.0.0"
+description: "dnd-kit (@dnd-kit/abstract) multi-list kanban board: both columns and items registered as useSortable with distinct type/accept tags, CollisionPriority.Low on columns so item drags never accidentally reorder columns, structuredClone snapshot for cancel-restore, and move() for cross-column transitions."
+domain: frontend-design
+content_hash: "sha256:1594edbf954340e920a9932eaa920fd417816954d1122edade092085355f0b27"
+tokens:
+  summary: 92
+  core: 665
+  full: 1304
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-tx-dnd-kit-drop-indicator" }
+  - { type: related, target: "@community/pattern-tx-dnd-kit-nested-tree" }
+  - { type: related, target: "@community/pattern-tx-blocknote-drag-handle" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-breaking-keyboard-flow" }
+sources:
+  - { url: "apps/stories/stories/react/Sortable/MultipleLists/MultipleListsApp.tsx" }
+created_at: "2026-05-07"

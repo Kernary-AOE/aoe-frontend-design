@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/template-modal-focus-trap"
+  kind="knowledge"
+  version="1.0.0"
+  domain="dialogs"
+  tokens="1440"
+  q="4.0">
+  <description>Modal dialog with proper focus trap, Esc to dismiss, backdrop click to dismiss, scroll lock, focus saved + restored to opener. Compatible without &lt;dialog&gt; element.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="54"/>
+    <level name="core"    file="chunks/core.md"    tokens="1440"/>
+    <level name="full"    file="chunks/full.md"    tokens="1440"/>
+  </projection>
+</atom>

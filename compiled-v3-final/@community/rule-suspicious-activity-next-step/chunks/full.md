@@ -1,0 +1,30 @@
+# SuspiciousActivityNextStep [rule] v1.0.0
+> Alerts for unusual sign-ins, unrecognized devices, or potential account compromise must name the specific event and provide a single primary CTA pointing to a guided remediation flow — never a generic 'suspicious activity detected' with no action.
+domain: frontend-design
+
+## Severity
+warning
+
+## Applies When
+displaying alerts for unusual sign-ins, unrecognized devices, or potential account compromise
+
+## Verify By
+Confirm the alert (1) names the specific event (device, location, or time), and (2) includes one primary CTA linking to a remediation flow (change password, review sessions, verify device).
+
+## Examples
+- Good: 'New sign-in from Chrome on Windows in Berlin. Not you? [Review & revoke access]'
+- Good: 'Your password was entered incorrectly 5 times. [Verify it's you]' with a verification link.
+- Bad: 'Suspicious activity detected. Please contact support.' — vague, no self-service path.
+- Bad: A generic warning banner with no event detail or action.
+
+## Rationale
+Generic security alerts create anxiety without resolution, increasing user harm and support load. Named events plus guided remediation actions reduce the time users spend vulnerable and lower support costs.
+
+## Severity
+warning
+
+## Applies When
+displaying alerts for unusual sign-ins, unrecognized devices, or potential account compromise
+
+## Verify By
+Confirm the alert (1) names the specific event (device, location, or time), and (2) includes one primary CTA linking to a remediation flow (change password, review sessions, verify device).

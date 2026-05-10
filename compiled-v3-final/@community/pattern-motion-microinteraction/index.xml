@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-motion-microinteraction"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="742"
+  q="4.0">
+  <description>Microinteraction animation system: hover lift (transform 200ms cubic-bezier(0.16,1,0.3,1)), button press scale(0.97) at 80ms instant, toggle switch 200ms spring, icon rotation 150ms — all under 250ms to stay below perceptual threshold.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="742"/>
+    <level name="full"    file="chunks/full.md"    tokens="1408"/>
+  </projection>
+</atom>

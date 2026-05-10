@@ -1,0 +1,26 @@
+id: "@community/rule-accessibility-first-class"
+kind: rule
+version: "1.0.0"
+description: "Accessibility must be treated as a core product requirement from the design phase onward — not a post-launch audit — because retrofitting WCAG AA compliance after launch costs 10–100× more than building it in, and inaccessible products exclude users and create legal liability."
+domain: frontend-design
+content_hash: "sha256:6b73475be9fdbe8373abca280de225dc70039676b0d51d3176f0f0f8b6a3feeb"
+tokens:
+  summary: 86
+  core: 366
+  full: 744
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-accessibility-after-thought" }
+  - { type: related, target: "@community/constraint-accessibility-aa-minimum" }
+  - { type: related, target: "@community/method-a11y-audit" }
+  - { type: related, target: "@community/counter-example-aria-bandaid" }
+  - { type: related, target: "@community/example-radix-dialog" }
+  - { type: related, target: "@community/example-catalyst-app" }
+  - { type: related, target: "@community/rule-wcag-aa-default-target" }
+  - { type: related, target: "@community/rule-focus-visible" }
+created_at: "2026-05-07"

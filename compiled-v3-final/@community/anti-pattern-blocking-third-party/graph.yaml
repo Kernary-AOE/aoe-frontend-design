@@ -1,0 +1,14 @@
+atom: "@community/anti-pattern-blocking-third-party"
+relations:
+  - type: related
+    target: "@community/metric-lcp-largest-contentful-paint"
+  - type: related
+    target: "@community/rule-cls-budget"
+  - type: related
+    target: "@community/principle-perceived-vs-actual"
+  - type: related
+    target: "@community/pattern-image-lcp-priority"
+  - type: related
+    target: "@community/fact-rail-targets"
+  - type: enhances
+    target: "@community/metric-lcp-largest-contentful-paint"

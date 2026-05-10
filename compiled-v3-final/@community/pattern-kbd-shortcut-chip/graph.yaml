@@ -1,0 +1,14 @@
+atom: "@community/pattern-kbd-shortcut-chip"
+relations:
+  - type: related
+    target: "@community/pattern-command-palette"
+  - type: related
+    target: "@community/example-linear-cmdk"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-invisible-focus"
+  - type: related
+    target: "@community/anti-pattern-outline-suppression"

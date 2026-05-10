@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-test-pyramid"
+  kind="knowledge"
+  version="1.0.0"
+  domain="testing"
+  tokens="566"
+  q="4.0">
+  <description>A healthy test suite has many fast unit tests, fewer integration tests, and few slow end-to-end tests. The pyramid shape (wide base of unit tests, narrow tip of E2E) inverts the common dysfunction (the &apos;ice cream cone&apos; or &apos;cupcake&apos;) and produces a suite that is fast, deterministic, and trustworthy.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="284"/>
+    <level name="core"    file="chunks/core.md"    tokens="566"/>
+    <level name="full"    file="chunks/full.md"    tokens="864"/>
+  </projection>
+</atom>

@@ -1,0 +1,25 @@
+id: "@community/principle-generative-creative-not-utility"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:ac8fcde1ff1bb491b3b9b5b3a15880cd2efbbd69983c2f68ca2735720ac77b9f"
+tokens:
+  summary: 81
+  core: 200
+  full: 312
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/principle-distinctiveness" }
+  - { type: related, target: "@community/principle-taste-as-engineering" }
+  - { type: related, target: "@community/principle-prove-not-prevent-ai-slop" }
+  - { type: related, target: "@community/anti-pattern-ai-generated-ui" }
+  - { type: related, target: "@community/anti-pattern-ai-slop-aesthetics" }
+  - { type: related, target: "@community/example-resend-dashboard" }
+  - { type: related, target: "@community/example-vercel-analytics" }
+  - { type: related, target: "@community/principle-commit-bold-aesthetic" }
+created_at: "2026-05-07"

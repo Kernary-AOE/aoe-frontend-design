@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-primary-content-first"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="72"
+  q="4.0">
+  <description>The primary task or content must appear first in DOM order and receive the highest visual prominence — supplementary content, sidebars, and ads must come after the main content both structurally and visually.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="72"/>
+    <level name="full"    file="chunks/full.md"    tokens="255"/>
+  </projection>
+</atom>

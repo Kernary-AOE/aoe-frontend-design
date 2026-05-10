@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-dashboard-header"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="615"
+  q="4.0">
+  <description>A compact 48px sticky topbar for admin dashboards. Contains: sidebar toggle (left), breadcrumbs or search bar (center/left), and a right-side cluster of notifications, theme toggle, and user avatar. Uses backdrop-blur for a frosted-glass effect on scroll.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="615"/>
+    <level name="full"    file="chunks/full.md"    tokens="1151"/>
+  </projection>
+</atom>

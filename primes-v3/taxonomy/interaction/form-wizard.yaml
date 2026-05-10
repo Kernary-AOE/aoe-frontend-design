@@ -1,0 +1,44 @@
+task_type: form-wizard
+parent: interaction
+description: "Multi-step form with animated step transitions, validation, and progress tracking."
+trigger_keywords:
+  - "form wizard"
+  - "multi-step form"
+  - "step form"
+  - "表单向导"
+  - "多步表单"
+  - "带进度表单"
+  - "survey"
+  - "questionnaire"
+  - "form flow"
+default_register_pool:
+  - school: linear
+    weight: 0.4
+  - school: warm-institutional
+    weight: 0.35
+  - school: notion-warm
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-multi-step-wizard"
+  - "@community/pattern-multi-step-flow-feedback"
+  - "@community/pattern-motion-forms"
+  - "@community/pattern-inline-validation"
+  - "@community/rule-form-label-associated"
+  - "@community/rule-form-validation-inline"
+  - "@community/rule-save-form-progress"
+recommended_motion:
+  - "@impeccable/template-spring-config"
+  - "@impeccable/template-easing-curves"
+  - "@community/pattern-page-transition"
+  - "@community/template-framer-motion-pattern"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@community/template-animated-mesh-background"
+quality_checks:
+  - "Step transitions must animate — slide or fade between steps"
+  - "Progress bar or step indicator must accurately reflect completion"
+  - "Back button must restore all previously entered values"
+  - "Validation must not fire until user has attempted to advance"
+  - "Error summary must appear at top of form on failed submission"
+  - "Keyboard-only flow must be fully functional without mouse"
+  - "Long forms must auto-save progress to prevent data loss"

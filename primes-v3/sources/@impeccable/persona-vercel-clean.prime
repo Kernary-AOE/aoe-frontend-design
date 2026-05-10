@@ -1,0 +1,102 @@
+persona VercelClean {
+  id: "@impeccable/persona-vercel-clean"
+  version: "1.0.0"
+
+  school: vercel-clean
+  domain: visual-design
+
+  description: "Dark-first developer-tool aesthetic: Geist Sans on near-black OKLCH neutrals, generous whitespace, monochrome surfaces lifted by subtle radial gradients, one neon accent (cyan/magenta/lime), and crisp 1px borders on glass-like cards."
+
+  implies: {
+    font: {
+      display: "geometric-sans with optical sizing — e.g. Geist Sans, Inter Display, ABC Diatype, Söhne, Aeonik Pro, GT Walsheim"
+      body: "same family as display — e.g. Geist Sans, Inter, Söhne, ABC Diatype Mono (for code accents)"
+      monospace: "Geist Mono, JetBrains Mono, Berkeley Mono"
+    }
+    color: {
+      temperature: "cool-neutral"
+      palette: "OKLCH neutral ramp (50-step) plus one neon accent — e.g. cyan oklch(85% 0.18 200), magenta oklch(75% 0.25 350), or lime oklch(90% 0.20 130)"
+      background: "dark-first oklch(14% 0.005 270) — near-black with slight cool tint; light mode oklch(98.6% 0.002 270)"
+    }
+    density: "balanced — vertical rhythm 1.6, comfortable padding (16/24/32), card-based composition with breathing room between cards"
+    layout: "centered 1280px max-width, 12-col grid, sticky nav, hero with radial gradient background, feature grids 2x2 or 3-up cards"
+    imagery: "abstract 3D renders (Spline-style), gradient-mesh backgrounds, monochrome product screenshots with subtle drop-shadow, no stock photography"
+    motion: "subtle — 200-300ms ease-out, fade-in-up on scroll, gradient hue rotation, no bouncy springs"
+  }
+
+  compatible: ["minimal", "modern", "developer-tool", "swiss-modernist", "dark-mode-native"]
+  conflicts: ["brutalist", "warm-institutional", "magazine-editorial", "tokyo-minimal"]
+
+  example-brands: [
+    "Vercel",
+    "Resend",
+    "Linear (product UI)",
+    "Cal.com",
+    "Supabase",
+    "Clerk",
+    "Railway",
+    "Liveblocks",
+  ]
+
+  notes: [
+    "The defining move is the radial gradient hero + 1px border card grid + neon accent on a single CTA. Drop any one of those three and it stops reading as 'Vercel-clean.'",
+    "Don't pair Geist with rounded-2xl pill buttons — Vercel-clean uses subtle 6-8px radius. Pill buttons are notion-warm territory.",
+    "Light-mode is a fallback, not a co-equal. If your dark mode looks like an inverted light mode, you've built a generic SaaS site instead.",
+    "OKLCH is essential — sRGB neutrals look muddy at the dark end. If a designer hands you #1a1a1a hex, translate it to oklch(14% 0.005 270) and your gradients suddenly work.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-oklch-palette,
+      @impeccable/template-oklch-dark-mode-cascade,
+      @community/pattern-button-press-feedback,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-warm-institutional,
+    ]
+    typography-required: {
+      display: "Geist Sans | Inter Display | Söhne"
+      radius: "6-8px (not pill)"
+      dark-mode-first: true
+    }
+    color-required: {
+      background: "oklch(14% 0.005 270)"
+      accent: "one neon (cyan | magenta | lime)"
+      system: "OKLCH 50-step neutral ramp"
+    }
+    motion-prescriptions: [
+      @community/pattern-button-press-feedback,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-swiss-modernist,
+    @impeccable/template-oklch-palette,
+    @community/example-vercel-sidebar,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-variable-font-axes,
+    @community/fact-monospace-purpose,
+    @community/rule-font-feature-settings,
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/pattern-color-dark-mode-pairing,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-color-dark-mode-cascade,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  specializes: [
+    @community/persona-vercel,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-warm-institutional,
+  ]
+}

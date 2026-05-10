@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-touch-target-min"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="479"
+  q="4.0">
+  <description>Validates that interactive elements (buttons, links, inputs, ARIA-interactive) meet WCAG 2.2 SC 2.5.8 minimum touch target size of 24×24 CSS pixels. Warns when below the 44×44 mobile recommendation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="479"/>
+    <level name="full"    file="chunks/full.md"    tokens="573"/>
+  </projection>
+</atom>

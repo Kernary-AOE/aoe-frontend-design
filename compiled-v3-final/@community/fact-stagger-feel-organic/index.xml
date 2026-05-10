@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-stagger-feel-organic"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="336"
+  q="4.0">
+  <description>多元素错位入场时，相邻元素之间的延迟 50-100ms 被人类感知为&apos;有节奏的连续&apos;。&lt;30ms 间隔被合并为同步事件（stagger 失效），&gt;150ms 间隔被拆解为&apos;多个独立动画&apos;（节奏断裂）。</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="84"/>
+    <level name="core"    file="chunks/core.md"    tokens="336"/>
+    <level name="full"    file="chunks/full.md"    tokens="687"/>
+  </projection>
+</atom>

@@ -1,0 +1,20 @@
+atom: "@community/principle-nielsen-error-prevention"
+relations:
+  - type: related
+    target: "@community/principle-nielsen-error-recovery"
+  - type: related
+    target: "@community/principle-nielsen-user-control"
+  - type: related
+    target: "@community/fact-error-prevention"
+  - type: related
+    target: "@community/fact-gestalt-figure-ground"
+  - type: related
+    target: "@community/anti-pattern-clear-form-on-failure"
+  - type: related
+    target: "@community/example-stripe-checkout"
+  - type: related
+    target: "@community/example-plaid-connect"
+  - type: related
+    target: "@community/rule-form-validation-inline"
+  - type: related
+    target: "@community/rule-destructive-action-differentiation"

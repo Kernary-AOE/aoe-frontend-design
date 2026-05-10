@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-nielsen-error-recovery"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="340"
+  q="4.0">
+  <description>Nielsen Heuristic 9: error messages should be expressed in plain language, precisely indicate the problem, and constructively suggest a solution.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="86"/>
+    <level name="core"    file="chunks/core.md"    tokens="340"/>
+    <level name="full"    file="chunks/full.md"    tokens="512"/>
+  </projection>
+</atom>

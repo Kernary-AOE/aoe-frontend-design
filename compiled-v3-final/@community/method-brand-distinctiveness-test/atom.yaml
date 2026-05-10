@@ -1,0 +1,21 @@
+id: "@community/method-brand-distinctiveness-test"
+kind: method
+version: "1.0.0"
+description: "A 5-question audit that tests whether a design communicates specific brand identity rather than generic AI-generated output — applied before any public launch or design review."
+domain: frontend-design
+content_hash: "sha256:59401f9d7d78fca0827723e7e8fee6d396e85849c6d2c399112277750a5bb04d"
+tokens:
+  summary: 61
+  core: 104
+  full: 148
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/principle-distinctiveness" }
+  - { type: related, target: "@community/constraint-distinctiveness-mandate" }
+  - { type: related, target: "@community/principle-commit-bold-aesthetic" }
+created_at: "2026-05-07"

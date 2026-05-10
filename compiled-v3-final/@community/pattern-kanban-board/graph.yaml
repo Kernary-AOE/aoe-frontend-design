@@ -1,0 +1,20 @@
+atom: "@community/pattern-kanban-board"
+relations:
+  - type: related
+    target: "@community/pattern-optimistic-update"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/check-heading-hierarchy"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/anti-pattern-color-only-meaning"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: compatible
+    target: "@community/pattern-data-table-dense"
+  - type: compatible
+    target: "@community/pattern-optimistic-update"

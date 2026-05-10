@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-semantic-structure-over-visual-positioning"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="378"
+  q="4.0">
+  <description>Use semantic HTML (headings, lists, landmarks) to convey structure — never rely solely on visual layout (indentation, font size, color, spacing) to communicate hierarchy or relationships.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="221"/>
+    <level name="core"    file="chunks/core.md"    tokens="378"/>
+    <level name="full"    file="chunks/full.md"    tokens="739"/>
+  </projection>
+</atom>

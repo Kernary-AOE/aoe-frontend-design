@@ -1,0 +1,20 @@
+id: "@community/rule-url-reflects-state"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:76d9fe04fd3e066b4e6d50accd9381c31cb4861f74694376a25d711b844b030b"
+tokens:
+  summary: 59
+  core: 247
+  full: 592
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-navigation-flat-when-shallow" }
+  - { type: related, target: "@community/principle-nielsen-visibility" }
+  - { type: related, target: "@community/rule-platform-native-navigation" }
+created_at: "2026-05-07"

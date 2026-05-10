@@ -1,0 +1,8 @@
+atom: "@community/fact-atomic-design-method"
+relations:
+  - type: related
+    target: "@community/fact-design-token-cascade"
+  - type: related
+    target: "@community/fact-color-token-semantic-naming"
+  - type: related
+    target: "@community/type-design-token"

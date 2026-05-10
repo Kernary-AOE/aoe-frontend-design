@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-section-spacing"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="891"
+  q="4.0">
+  <description>Section vertical padding must use py-20 sm:py-32 (or clamp(80px, 10vw, 128px)) with max-w-6xl mx-auto px-4 sm:px-6 container — never arbitrary margins between sections. Extracted from shadcn-landing-page, open-react-template, and next-saas-starter analysis.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="80"/>
+    <level name="core"    file="chunks/core.md"    tokens="891"/>
+    <level name="full"    file="chunks/full.md"    tokens="984"/>
+  </projection>
+</atom>

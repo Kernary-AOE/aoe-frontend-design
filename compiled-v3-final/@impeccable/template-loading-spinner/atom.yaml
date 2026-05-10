@@ -1,0 +1,26 @@
+id: "@impeccable/template-loading-spinner"
+kind: template
+version: "1.0.0"
+description: "SVG circle spinner with rotating arc — currentColor-aware, parameterized size, fully accessible (role=status + sr-only label). Single rotation animation, no JS, no GIF. Reduced-motion shows a static partial ring."
+domain: motion
+content_hash: "sha256:b64e903e068dd2c143817cc68977b936280fbda434318e30064a77bf2c0b701b"
+tokens:
+  summary: 66
+  core: 714
+  full: 714
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-skeleton-loader" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/example-stripe-payment-success" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/pattern-skeleton-shimmer" }
+  - { type: related, target: "@community/pattern-skeleton-loader" }
+  - { type: related, target: "@community/fact-motion-hierarchy" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

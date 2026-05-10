@@ -1,0 +1,44 @@
+# TailwindUiMarketing [example] v1.0.0
+Tailwind UI's marketing layouts use a centered-column structure (max-width 1280px) with a hero featuring 56px headline in indigo gradient text, alternating feature sections (image-left / text-right and reverse), pricing tiers, testimonial grid with rounded avatars, and a final CTA on a dark indigo #312E81 band.
+domain: visual-design
+
+## Label
+Tailwind UI — Marketing Landing Page
+
+## Url
+https://tailwindui.com/components/marketing
+
+## Observed
+2026-Q1
+
+## Brand
+tailwind
+
+## Pattern Applied
+@community/pattern-hero-with-demo
+
+## Aesthetic Notes
+- Container: max-width 1280px (max-w-7xl), 24px horizontal padding, centered.
+- Headline: text-5xl (48px) to text-6xl (60px), font-extrabold, letter-spacing -0.025em, optional gradient via bg-clip-text from #4F46E5 to #EC4899.
+- Body text: text-lg (18px) #4B5563 with leading-8 (32px line-height), max-w-2xl (672px).
+- Section padding: py-24 (96px vertical) on desktop, py-12 (48px) on mobile.
+- Feature blocks: 2-column grid with 64px gap; image side has a 24px-radius browser frame screenshot.
+- Final CTA band: bg-indigo-700 #4338CA, white text 32px headline, white-on-indigo button reverses to indigo-700-on-white.
+
+## What To Copy
+- max-width 1280px with 24px horizontal padding is the most-tested 'comfortable centered' container width.
+- Alternate feature blocks (image-left then image-right) to keep scroll rhythm visually varied.
+- Final CTA on a colored band with reversed button styling creates a strong endpoint without a popup.
+- Gradient text (text + bg-clip-text + transparent text) in headline is a single-element brand cue.
+
+## What To Skip
+- The default 'gradient blob' SVG decorations clutter on small screens; hide via md:block.
+- Don't use indigo-to-pink gradient unless that's actually your brand — it's become generic.
+
+## Screenshot Hint
+scout query: tailwind ui marketing landing page indigo gradient headline alternating features
+
+## Demonstrates
+- Alternating-direction feature sections sustain attention longer than uniform stacking.
+- Colored final-CTA band is a stronger conversion endpoint than a centered button on white.
+- 1280px container is the consensus 'desktop landing page' width across modern frameworks.

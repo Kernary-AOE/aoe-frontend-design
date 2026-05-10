@@ -1,0 +1,13 @@
+<atom
+  id="@community/step-load-artifact"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-review"
+  tokens="261"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="13"/>
+    <level name="core"    file="chunks/core.md"    tokens="261"/>
+    <level name="full"    file="chunks/full.md"    tokens="488"/>
+  </projection>
+</atom>

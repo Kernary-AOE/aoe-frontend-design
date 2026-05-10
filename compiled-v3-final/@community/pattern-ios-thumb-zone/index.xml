@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-ios-thumb-zone"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="211"
+  q="4.0">
+  <description>Place primary call-to-action controls in the lower half of the screen (thumb zone) where the thumb naturally rests in a one-handed grip, keeping destructive or infrequent actions in the upper, harder-to-reach zones.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="68"/>
+    <level name="core"    file="chunks/core.md"    tokens="211"/>
+    <level name="full"    file="chunks/full.md"    tokens="354"/>
+  </projection>
+</atom>

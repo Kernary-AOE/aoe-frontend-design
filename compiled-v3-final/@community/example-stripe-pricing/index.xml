@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-stripe-pricing"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="537"
+  q="4.0">
+  <description>Stripe&apos;s pricing page is a light-mode (#FFFFFF) layout showing each Stripe product (Payments, Billing, Connect) as a tall card with a colored gradient header (purple #635BFF for Payments, teal #00D4FF for Billing), product name, percentage rate (&apos;2.9% + 30¢&apos;), and a feature list. Cards are 320px wide, 480px+ tall, with a subtle 2px gradient border at top.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="103"/>
+    <level name="core"    file="chunks/core.md"    tokens="537"/>
+    <level name="full"    file="chunks/full.md"    tokens="970"/>
+  </projection>
+</atom>

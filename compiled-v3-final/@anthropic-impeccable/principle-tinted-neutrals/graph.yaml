@@ -1,0 +1,16 @@
+atom: "@anthropic-impeccable/principle-tinted-neutrals"
+relations:
+  - type: related
+    target: "@community/rule-color-oklch-required"
+  - type: related
+    target: "@community/term-oklch"
+  - type: related
+    target: "@community/constraint-no-pure-black-text"
+  - type: related
+    target: "@community/constraint-no-pure-white-bg"
+  - type: related
+    target: "@community/fact-oklch-perceptual-uniform"
+  - type: related
+    target: "@impeccable/template-oklch-palette"
+  - type: related
+    target: "@community/value-brand-hue"

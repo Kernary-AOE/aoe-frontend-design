@@ -1,0 +1,28 @@
+id: "@community/pattern-progressive-disclosure"
+kind: pattern
+version: "1.0.0"
+description: "A UX pattern that initially shows only the most important information or options, revealing additional detail on user demand. Reduces cognitive load for new users while remaining efficient for experts who trigger disclosure shortcuts."
+domain: frontend-design
+content_hash: "sha256:5cd27933621428f8c6411a8377a2b2cb54018893bc1f490905e316e739608f47"
+tokens:
+  summary: 75
+  core: 415
+  full: 764
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-recognition-over-recall" }
+  - { type: related, target: "@community/example-vercel-sidebar" }
+  - { type: related, target: "@community/pattern-command-palette" }
+  - { type: related, target: "@community/constraint-focus-trap-modal" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/rule-no-keyboard-trap" }
+  - { type: related, target: "@community/anti-pattern-invisible-focus" }
+  - { type: related, target: "@community/pattern-fade-in-on-load" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@impeccable/template-spring-config" }
+created_at: "2026-05-07"

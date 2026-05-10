@@ -1,0 +1,14 @@
+atom: "@community/principle-no-string-concat"
+relations:
+  - type: related
+    target: "@community/pattern-icu-message-format"
+  - type: related
+    target: "@community/anti-pattern-flag-as-language"
+  - type: related
+    target: "@community/rule-intl-api-locale-formatting"
+  - type: related
+    target: "@community/rule-cjk-line-break"
+  - type: related
+    target: "@community/fact-bidi-direction"
+  - type: requires
+    target: "@community/pattern-icu-message-format"

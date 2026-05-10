@@ -1,0 +1,10 @@
+atom: "@community/anti-pattern-hover-only-interaction"
+relations:
+  - type: related
+    target: "@community/counter-example-tooltip-hover-only"
+  - type: related
+    target: "@community/anti-pattern-click-to-open-only"
+  - type: related
+    target: "@community/pattern-tooltip-keyboard"
+  - type: related
+    target: "@community/rule-keyboard-accessible"

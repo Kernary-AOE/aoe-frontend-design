@@ -1,0 +1,22 @@
+id: "@community/anti-pattern-trusting-client-validation"
+kind: anti-pattern
+version: "1.0.0"
+description: "Relying on browser-side validation (HTML5 required/pattern attributes, JavaScript form checks) as the security boundary, with no equivalent validation on the server — trivially bypassed with curl, Postman, or DevTools."
+domain: security
+content_hash: "sha256:692925cc92f20dc121dd5fb5a473b2afb8e0bed68c54cd2c8d94ce1acd1f0de0"
+tokens:
+  summary: 71
+  core: 671
+  full: 1271
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-injection" }
+  - { type: related, target: "@community/principle-owasp-broken-access-control" }
+  - { type: related, target: "@community/pattern-input-validation-allowlist" }
+  - { type: related, target: "@community/anti-pattern-sql-string-concat" }
+created_at: "2026-05-07"

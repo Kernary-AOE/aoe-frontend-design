@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-no-divergent-platform-flows"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="202"
+  q="4.0">
+  <description>Entirely different task flows for the same user goal on different platforms are prohibited unless the platform constraints that necessitate the divergence are explicitly documented and justified.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="65"/>
+    <level name="core"    file="chunks/core.md"    tokens="202"/>
+    <level name="full"    file="chunks/full.md"    tokens="339"/>
+  </projection>
+</atom>

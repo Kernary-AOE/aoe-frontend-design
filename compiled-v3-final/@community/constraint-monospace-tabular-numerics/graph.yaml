@@ -1,0 +1,8 @@
+atom: "@community/constraint-monospace-tabular-numerics"
+relations:
+  - type: related
+    target: "@community/fact-monospace-purpose"
+  - type: related
+    target: "@community/rule-opentype-features-on"
+  - type: related
+    target: "@community/rule-font-feature-settings"

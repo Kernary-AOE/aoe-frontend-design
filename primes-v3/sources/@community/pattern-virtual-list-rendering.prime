@@ -1,0 +1,66 @@
+pattern VirtualListRendering {
+  id: "@community/pattern-virtual-list-rendering"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Virtualized list rendering technique: only mount DOM nodes for visible rows plus a small overscan buffer, using scrollTop, itemHeight, and containerHeight to compute the visible window. Recommended libraries: @tanstack/react-virtual (lightweight) or react-window for fixed-size lists."
+
+  problem: "Rendering a list of 1000+ items as DOM nodes creates O(n) memory usage, causes slow initial render, and produces janky scroll above ~200-500 items depending on node complexity."
+
+  solution: "Maintain a virtual DOM window: calculate visibleStart and visibleEnd from scrollTop/itemHeight, render only those items plus a buffer (8-10 rows), and pad the container with a spacer div at the correct total height so scroll position is correct."
+
+  code: """
+    // Manual virtualization calculation
+    function getVisibleRange(scrollTop, containerHeight, itemHeight, itemCount, overscan = 8) {
+      const visibleStart = Math.floor(scrollTop / itemHeight);
+      const visibleEnd   = Math.ceil((scrollTop + containerHeight) / itemHeight);
+      return {
+        start: Math.max(0, visibleStart - overscan),
+        end:   Math.min(itemCount - 1, visibleEnd + overscan),
+      };
+    }
+
+    // Container structure
+    <div class="viewport" style="height: 600px; overflow-y: auto" onscroll={handleScroll}>
+      {/* Spacer at full list height — maintains correct scrollbar size */}
+      <div style={{ height: totalHeight, position: 'relative' }}>
+        {visibleItems.map((item, i) => (
+          <div key={item.id}
+               style={{ position: 'absolute', top: (startIndex + i) * ITEM_HEIGHT, height: ITEM_HEIGHT }}>
+            {renderItem(item)}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    // @tanstack/react-virtual (recommended over manual implementation)
+    import { useVirtualizer } from '@tanstack/react-virtual';
+    const virtualizer = useVirtualizer({
+      count: items.length, getScrollElement: () => parentRef.current,
+      estimateSize: () => 48, overscan: 8,
+    });
+  """
+
+  use-when: [
+    "Rendering a list or table with more than ~200 items",
+    "Performance profiling shows slow list scroll or high DOM node count",
+    "Real-time data streams that continuously append rows (logs, feeds)",
+  ]
+
+  libraries: [
+    "@tanstack/react-virtual — zero-dependency, supports variable height, most flexible",
+    "react-window — fixed or variable height, widely used, lighter API",
+    "Custom implementation — appropriate only for fixed-height items with simple DOM",
+  ]
+
+  related: [
+    @community/pattern-log-viewer-virtualized,
+    @community/rule-keyboard-accessible,
+    @community/check-animation-duration,
+    @community/check-heading-hierarchy,
+    @community/rule-keyboard-tab-order,
+    @community/anti-pattern-color-only-meaning,
+    @community/check-focus-visible,
+  ]
+}

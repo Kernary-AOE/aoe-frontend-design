@@ -1,0 +1,25 @@
+id: "@community/pattern-trust-social-proof-numbers"
+kind: pattern
+version: "1.0.0"
+description: "Large, scannable numbers in a responsive grid make abstract claims concrete. Uses tabular-nums, display font at clamp(1.75rem, 4vw, 2.5rem), and muted labels. Placed mid-page after feature sections."
+domain: frontend-design
+content_hash: "sha256:130ae5acf012fd17c9b499bfd97afb6a3f7baeafc4f28a3f82f44b389c63c535"
+tokens:
+  summary: 67
+  core: 492
+  full: 917
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-trust-badge-row" }
+  - { type: related, target: "@community/pattern-trust-logo-strip" }
+  - { type: related, target: "@community/pattern-trust-testimonial-micro" }
+  - { type: related, target: "@community/pattern-trust-security-cert" }
+  - { type: related, target: "@community/rule-trust-signal-placement" }
+  - { type: related, target: "@community/rule-trust-signal-critical" }
+  - { type: related, target: "@community/anti-pattern-fake-trust-signals" }
+created_at: "2026-05-07"

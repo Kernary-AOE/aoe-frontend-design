@@ -1,0 +1,13 @@
+<atom
+  id="@community/principle-single-direction-aesthetic-bet"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="196"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="98"/>
+    <level name="core"    file="chunks/core.md"    tokens="196"/>
+    <level name="full"    file="chunks/full.md"    tokens="287"/>
+  </projection>
+</atom>

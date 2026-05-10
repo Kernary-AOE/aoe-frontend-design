@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-cramped-ui"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="196"
+  q="4.0">
+  <description>Overly tight spacing that impairs content scanning and makes tap targets touch or overlap, failing both readability and touch-device accessibility.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="52"/>
+    <level name="core"    file="chunks/core.md"    tokens="196"/>
+    <level name="full"    file="chunks/full.md"    tokens="340"/>
+  </projection>
+</atom>

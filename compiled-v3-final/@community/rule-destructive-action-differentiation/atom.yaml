@@ -1,0 +1,24 @@
+id: "@community/rule-destructive-action-differentiation"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:c361875828aedd33a58172834c0fd3fa93b20f77d26006b0a2c5f09d9ef15ad1"
+tokens:
+  summary: 113
+  core: 446
+  full: 850
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-button-hierarchy-web" }
+  - { type: related, target: "@community/pattern-modal-confirm" }
+  - { type: related, target: "@community/rule-refactoring-ui-hierarchy" }
+  - { type: related, target: "@community/example-radix-dialog" }
+  - { type: related, target: "@community/principle-nielsen-error-prevention" }
+  - { type: related, target: "@community/rule-single-primary-action-per-screen" }
+  - { type: related, target: "@community/principle-visual-hierarchy-action-distinction" }
+created_at: "2026-05-07"

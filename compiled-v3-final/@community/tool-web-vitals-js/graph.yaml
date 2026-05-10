@@ -1,0 +1,14 @@
+atom: "@community/tool-web-vitals-js"
+relations:
+  - type: related
+    target: "@community/tool-lighthouse"
+  - type: related
+    target: "@community/metric-lcp-largest-contentful-paint"
+  - type: related
+    target: "@community/metric-cls-cumulative-layout-shift"
+  - type: related
+    target: "@community/rule-cls-budget"
+  - type: related
+    target: "@community/principle-perceived-vs-actual"
+  - type: related
+    target: "@community/fact-rail-targets"

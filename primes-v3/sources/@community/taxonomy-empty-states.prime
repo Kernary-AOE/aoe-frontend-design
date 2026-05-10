@@ -1,0 +1,100 @@
+taxonomy EmptyStates {
+  id: "@community/taxonomy-empty-states"
+  version: "1.0.0"
+
+  label: "Empty State Categories by Cause"
+  domain: ux-design
+
+  description: "A taxonomy of empty states by their underlying cause. Each cause requires distinct UX: 'no data yet' invites action; 'cleared' celebrates progress; 'error' explains failure; 'filtered to nothing' offers escape. Treating all empty states identically (one generic illustration + 'Nothing here yet') misses the chance to guide the user."
+
+  members: [
+    "first-use",
+    "no-data-yet",
+    "cleared",
+    "filtered-empty",
+    "search-no-results",
+    "permission-denied",
+    "error-state",
+    "loading-empty",
+  ]
+
+  styles: {
+    "first-use": {
+      purpose: "User has never created anything in this section; introduce the feature.",
+      visual: "Larger illustration; explanatory headline; primary CTA to create first item.",
+      copy: "'Welcome to Projects' + 'Create your first project to get started' + [Create project]",
+      examples: "Linear's empty 'My Issues' on a new account; Notion's 'Welcome to your workspace'.",
+      rule: "Don't be cute — clarity over personality. Skip the mascot if it doesn't communicate.",
+    }
+    "no-data-yet": {
+      purpose: "User has used the feature but hasn't created an item of THIS specific type yet.",
+      visual: "Smaller illustration or icon; brief description; optional CTA.",
+      copy: "'No archived items' + 'Items you archive will appear here.' + [optional secondary CTA]",
+      examples: "Empty 'Drafts' folder; empty 'Liked songs' on Spotify.",
+    }
+    "cleared": {
+      purpose: "User just cleared a list (e.g. all notifications read) — celebrate completion.",
+      visual: "Subtle positive imagery; brief affirmation.",
+      copy: "'You're all caught up!' + maybe a secondary action.",
+      examples: "Inbox Zero; cleared todo list; 'You've reviewed all PRs'.",
+      rule: "Do NOT push another action immediately — let the user enjoy the moment.",
+    }
+    "filtered-empty": {
+      purpose: "Active filters or search query reduced result set to zero; data exists, just not matching.",
+      visual: "Lightweight; clear 'no matches' message; prominent 'Clear filters' / 'Clear search' button.",
+      copy: "'No projects match your filters' + [Clear all filters]",
+      examples: "Filtered Jira board with no matching issues; refined product search.",
+      rule: "MUST offer one-click escape from the filter — otherwise user is stuck.",
+    }
+    "search-no-results": {
+      purpose: "User-typed query returned nothing.",
+      visual: "Show the query echoed back; suggest variations.",
+      copy: "'No results for \"{query}\"' + 'Try different keywords or browse all items'",
+      examples: "Stripe Dashboard search; Notion search; Algolia-powered search.",
+      rule: "Echo the exact query so user can verify spelling. Suggest related terms when possible.",
+    }
+    "permission-denied": {
+      purpose: "User cannot see content because of access controls; data exists but is hidden.",
+      visual: "Lock icon; permission-specific message; CTA to request access OR contact admin.",
+      copy: "'You don't have access to this project' + [Request access]",
+      rule: "Do NOT pretend the resource doesn't exist (404) — leak risk vs UX clarity. Choose 403 (with explanation) for known users, 404 for unknown.",
+    }
+    "error-state": {
+      purpose: "Loading failed; data may exist but couldn't be fetched.",
+      visual: "Error icon; specific error message; Retry button; contact-support link.",
+      copy: "'Couldn't load projects' + 'Check your connection and try again' + [Retry]",
+      examples: "Network failure; server 500; rate-limited.",
+      rule: "Distinct from 'no-data-yet'. User should know if the system failed vs whether data is missing.",
+    }
+    "loading-empty": {
+      purpose: "Initial fetch in progress; show skeleton not 'no data' message.",
+      visual: "Skeleton placeholders matching content dimensions.",
+      timing: "Until fetch completes; then transition to actual state (no-data-yet OR populated)",
+      rule: "MUST not flash 'No items' before data loads. Maintain skeleton until response arrives.",
+    }
+  }
+
+  invariants: [
+    "Empty states MUST be distinguishable from loading states — never show 'No items' before fetch completes.",
+    "Filtered-empty and search-no-results MUST offer a one-click way to clear the filter or search.",
+    "Error-state MUST be visually distinct from no-data-yet — same icon and copy is a UX failure.",
+    "Permission-denied MUST clearly communicate why and offer a path forward (request access, contact admin).",
+    "First-use empty state SHOULD have a primary CTA; recurring empty states SHOULD NOT push CTAs aggressively.",
+  ]
+
+  notes: [
+    "Empty states are the most-skipped UX work; users see them more than designers think — investigate where they appear in your product.",
+    "Slack's 'Done' celebration on cleared inbox is the canonical 'cleared' state — sets a positive tone without being saccharine.",
+    "Don't ship a single 'EmptyState' component with one prop — different causes need different treatments.",
+    "Animations on empty states should be tasteful and one-shot (not looping). Respect prefers-reduced-motion.",
+    "Localization: empty state copy is often missed in translation pipeline — flag for explicit review (see @community/principle-no-string-concat).",
+  ]
+
+  related: [
+    @community/anti-pattern-missing-empty-state,
+    @community/taxonomy-loading-states,
+    @community/taxonomy-form-validation-states,
+    @community/anti-pattern-generic-error-text,
+    @community/rule-actionable-error-messages,
+  ]
+}

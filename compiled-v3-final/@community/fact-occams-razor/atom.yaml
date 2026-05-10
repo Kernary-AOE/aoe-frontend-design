@@ -1,0 +1,20 @@
+id: "@community/fact-occams-razor"
+kind: fact
+version: "1.0.0"
+description: "Occam's Razor (William of Ockham, ~1320): among competing solutions with equal explanatory power, prefer the one with the fewest assumptions — in UX, favour the simpler interface unless complexity adds clear user value."
+content_hash: "sha256:573fc9a43eaee478ac3e11e6bcb40de5c65b85a682ec1cc24bd689c9acfc9e45"
+tokens:
+  summary: 170
+  core: 424
+  full: 786
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-tesler-law" }
+  - { type: related, target: "@community/fact-hick-law" }
+  - { type: related, target: "@community/fact-miller-rule-7" }
+created_at: "2026-05-07"

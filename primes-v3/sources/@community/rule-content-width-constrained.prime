@@ -1,0 +1,63 @@
+rule ContentWidthConstrained {
+  id: "@community/rule-content-width-constrained"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: typography
+
+  description: "Long-form content containers (article, blog post, documentation, prose) MUST cap their width at approximately 65ch (≈ 720px at 16px/1ch). Full-bleed layouts force readers to track lines wider than the eye can follow, increasing fatigue and abandonment."
+
+  claim: "The primary text container in long-form content MUST set `max-width` to approximately 65ch (between 60ch and 75ch is acceptable)."
+
+  severity: medium
+
+  validates-with: [
+    @community/fact-optimal-line-length,
+  ]
+
+  checks: [
+    @community/check-content-width-constrained,
+  ]
+
+  severity-combination: |
+    long-form container has no max-width                     → BLOCK
+    long-form container max-width > 90ch                     → BLOCK
+    long-form container max-width 75–90ch                    → WARN
+    long-form container max-width 60–75ch                    → PASS
+
+  failure-mode: "Articles read like website copy at 1440px-wide; readers' eyes lose track of the next line; bounce rate on read-time-3min+ pages spikes. Search engines (Core Web Vitals beyond) increasingly weight readability metrics."
+
+  remediation: [
+    "Set the article wrapper: `article { max-width: 65ch; margin-inline: auto; }`.",
+    "Allow media (figures, code blocks, callouts) to extend wider via `figure { max-width: 90ch; margin-inline: -clamp(0px, 12vw, 200px); }`.",
+    "Combine with @community/rule-line-length-optimal at the paragraph level for defense-in-depth.",
+    "Use `ch` units, not `px` — `ch` adapts to font choice.",
+  ]
+
+  exceptions: [
+    {
+      case: "Reference / API documentation with code-heavy content",
+      allowed-when: "Code samples need ≥ 80ch; the doc may run 80–90ch and rely on code being the primary content.",
+    }
+    {
+      case: "Two-column layout",
+      allowed-when: "A `column-width: 30ch` two-column layout achieves comfortable measure at wider container widths.",
+    }
+  ]
+
+  notes: [
+    "Bringhurst recommends 66ch as the 'most comfortable' measure — 65ch is the practical CSS rounding.",
+    "This rule and @community/rule-line-length-optimal are complementary: the latter measures actual rendered width per paragraph; this one constrains the container.",
+  ]
+
+  related: [
+    @community/rule-line-length-optimal,
+    @community/rule-body-readability,
+    @community/fact-optimal-line-length,
+  ]
+
+  see-also: [
+    @community/check-content-width-constrained,
+  ]
+}

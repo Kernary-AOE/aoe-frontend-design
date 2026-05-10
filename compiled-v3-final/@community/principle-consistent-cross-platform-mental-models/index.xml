@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-consistent-cross-platform-mental-models"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="115"
+  q="4.0">
+  <description>Core concepts, terminology, and user mental models must remain consistent across all platforms of a product — when users switch from web to mobile to desktop, they should not have to learn a new vocabulary for the same features.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="115"/>
+    <level name="full"    file="chunks/full.md"    tokens="179"/>
+  </projection>
+</atom>

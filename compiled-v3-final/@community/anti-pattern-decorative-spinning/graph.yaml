@@ -1,0 +1,10 @@
+atom: "@community/anti-pattern-decorative-spinning"
+relations:
+  - type: related
+    target: "@community/constraint-animation-pref-respected"
+  - type: related
+    target: "@community/fact-animation-distraction-cost"
+  - type: related
+    target: "@community/pattern-motion-loading"
+  - type: related
+    target: "@impeccable/template-loading-spinner"

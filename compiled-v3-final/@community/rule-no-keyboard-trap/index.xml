@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-no-keyboard-trap"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="509"
+  q="4.0">
+  <description>Users must always be able to move keyboard focus out of any component using standard keys (Tab, Shift+Tab, or Escape); trapping focus in a non-modal context makes the interface completely unusable for keyboard-only and assistive technology users (WCAG SC 2.1.2 No Keyboard Trap, Level A).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="86"/>
+    <level name="core"    file="chunks/core.md"    tokens="509"/>
+    <level name="full"    file="chunks/full.md"    tokens="1013"/>
+  </projection>
+</atom>

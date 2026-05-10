@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-ios-navigation-stack"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="208"
+  q="4.0">
+  <description>Use NavigationStack with a NavigationPath binding and .navigationDestination(for:) modifiers for type-safe, programmatically-navigable push/pop hierarchies in iOS 16+.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="58"/>
+    <level name="core"    file="chunks/core.md"    tokens="208"/>
+    <level name="full"    file="chunks/full.md"    tokens="359"/>
+  </projection>
+</atom>

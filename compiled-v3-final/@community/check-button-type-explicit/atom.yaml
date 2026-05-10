@@ -1,0 +1,19 @@
+id: "@community/check-button-type-explicit"
+kind: check
+version: "1.0.0"
+description: "Validates that every <button> element declares an explicit type attribute (button | submit | reset). Buttons in forms default to 'submit' which causes accidental form submission — a common bug source."
+domain: forms
+content_hash: "sha256:68a9c4e853a45ada28fc26e18379d5b5a353bcf30d86b2347fe59a315eb4c97f"
+tokens:
+  summary: 63
+  core: 421
+  full: 496
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-button-type-explicit" }
+created_at: "2026-05-07"

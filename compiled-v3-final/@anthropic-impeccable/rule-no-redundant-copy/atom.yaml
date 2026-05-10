@@ -1,0 +1,22 @@
+id: "@anthropic-impeccable/rule-no-redundant-copy"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:b79fec85573e2e473b514e986a1530b1a8b1b94ef12ecbc7fbe72819899991a7"
+tokens:
+  summary: 81
+  core: 333
+  full: 716
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-plain-language" }
+  - { type: related, target: "@community/rule-verb-based-cta-labels" }
+  - { type: related, target: "@community/rule-active-voice-in-ui-copy" }
+  - { type: related, target: "@community/rule-screen-reader-friendly-copy" }
+  - { type: related, target: "@community/anti-pattern-ios-non-dismissable-modal" }
+created_at: "2026-05-07"

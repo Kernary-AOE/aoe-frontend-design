@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-native-html-interactive"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="312"
+  q="4.0">
+  <description>Prefer native HTML interactive elements — &lt;details&gt;, &lt;dialog&gt;, &lt;input popover&gt;, &lt;meter&gt;, &lt;progress&gt;, inert attribute — over custom JavaScript implementations for accordions, modals, tooltips, and progress indicators.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="312"/>
+    <level name="full"    file="chunks/full.md"    tokens="614"/>
+  </projection>
+</atom>

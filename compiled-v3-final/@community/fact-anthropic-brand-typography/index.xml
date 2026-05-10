@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-anthropic-brand-typography"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="320"
+  q="4.0">
+  <description>Anthropic&apos;s official brand typography uses Poppins (Arial fallback) for headings at 24pt and above, and Lora (Georgia fallback) for all body text — making it an intentional serif/sans-serif split that grounds brand communication in warmth and authority.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="160"/>
+    <level name="core"    file="chunks/core.md"    tokens="320"/>
+    <level name="full"    file="chunks/full.md"    tokens="521"/>
+  </projection>
+</atom>

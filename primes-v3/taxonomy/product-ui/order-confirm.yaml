@@ -1,0 +1,42 @@
+task_type: order-confirm
+parent: product-ui
+description: "Transactional order confirmation page showing order details, next steps, and post-purchase actions."
+trigger_keywords:
+  - "order confirmation"
+  - "order success"
+  - "order confirm"
+  - "下单成功"
+  - "订单确认"
+  - "payment success"
+  - "purchase complete"
+  - "receipt"
+  - "thank you page"
+default_register_pool:
+  - school: stripe-fintech
+    weight: 0.4
+  - school: warm-institutional
+    weight: 0.35
+  - school: linear
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-checkout-summary"
+  - "@community/rule-success-confirmation-visual-change"
+  - "@community/rule-success-message-next-step"
+  - "@community/fact-fintech-number-display"
+  - "@community/constraint-monospace-tabular-numerics"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-motion-microinteraction"
+  - "@community/example-stripe-payment-success"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@community/template-animated-mesh-background"
+  - "@community/pattern-dashboard-layout"
+quality_checks:
+  - "Success state must be visually unmistakable — green or checkmark required"
+  - "Order number must be prominent and easily copyable"
+  - "Order line items, totals, and taxes must be clearly itemized"
+  - "Email confirmation notice must be included"
+  - "Clear next steps must be provided (track order, continue shopping, etc.)"
+  - "Monetary values must use tabular numerals and proper locale formatting"
+  - "Page must be printable or shareable for record keeping"

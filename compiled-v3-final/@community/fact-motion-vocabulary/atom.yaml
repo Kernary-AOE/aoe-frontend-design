@@ -1,0 +1,22 @@
+id: "@community/fact-motion-vocabulary"
+kind: fact
+version: "1.0.0"
+description: "Motion vocabulary: transitions (state A → state B with CSS transition property) are continuous with a reversal; animations (CSS @keyframes / GSAP tween) are scripted sequences; spring physics has stiffness/damping/mass — precise terminology prevents category errors in implementation."
+domain: frontend-design
+content_hash: "sha256:b860391aa1acaba01149011714e78e3647b1c5f597b6b0098ad9a9a119cb8963"
+tokens:
+  summary: 216
+  core: 817
+  full: 1471
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-easing-mood-mapping" }
+  - { type: related, target: "@community/fact-easing-cubic-bezier" }
+  - { type: related, target: "@community/template-motion-system-tokens" }
+  - { type: related, target: "@impeccable/template-spring-config" }
+created_at: "2026-05-07"

@@ -1,0 +1,31 @@
+principle ErrorPreventionAndRecovery {
+  id: "@community/principle-error-prevention-and-recovery"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "Interfaces should prevent mistakes by design first (constraints, confirmation, input validation) and provide clear, actionable recovery paths when errors do occur anyway. Prevention is cheaper than correction, but recovery preserves user confidence when prevention fails."
+
+  rationale: "Errors disrupt flow and erode trust. Every error that reaches a user represents either a prevention failure (the design allowed an impossible input) or a recovery failure (the error message didn't help the user correct the situation). Both are design failures — not user failures."
+
+  implications: [
+    "Prevent errors: constrain inputs to valid values, disable actions that would produce errors, show inline validation before form submission.",
+    "Recover from errors: show specific error messages naming the problem and the fix (@community/rule-actionable-error-messages).",
+    "Never blame the user: 'Invalid input' is a prevention failure dressed as a user mistake.",
+    "Destructive actions require confirmation dialogs that name the specific destructive consequence.",
+  ]
+
+  source: ["Nielsen Norman Group — Heuristic #5 Error Prevention and #9 Help Users Recognize, Diagnose, and Recover"]
+
+  related: [
+    @community/rule-actionable-error-messages,
+    @community/principle-nielsen-error-prevention,
+    @community/principle-nielsen-error-recovery,
+    @community/anti-pattern-clear-form-on-failure,
+    @community/anti-pattern-generic-error-text,
+    @community/counter-example-button-no-loading,
+    @community/example-stripe-checkout,
+    @community/rule-preserve-user-input-on-error,
+    @community/rule-form-validation-inline,
+  ]
+}

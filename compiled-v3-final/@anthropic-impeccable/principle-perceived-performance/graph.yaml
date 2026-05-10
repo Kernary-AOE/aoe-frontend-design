@@ -1,0 +1,18 @@
+atom: "@anthropic-impeccable/principle-perceived-performance"
+relations:
+  - type: related
+    target: "@community/pattern-optimistic-update"
+  - type: related
+    target: "@community/pattern-skeleton-loader"
+  - type: related
+    target: "@community/rule-loading-state-feedback"
+  - type: related
+    target: "@community/fact-doherty-threshold"
+  - type: related
+    target: "@community/fact-hover-feedback-latency"
+  - type: related
+    target: "@community/fact-loading-skeleton-vs-spinner"
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@community/pattern-stagger-reveal"

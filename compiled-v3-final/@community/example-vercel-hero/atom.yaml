@@ -1,0 +1,21 @@
+id: "@community/example-vercel-hero"
+kind: example
+version: "1.0.0"
+description: "Vercel's homepage opens with a tightly-kerned headline ('Your complete platform for the web') in white Geist Sans on a #000 background, followed by a sub-headline in #A1A1A1, twin CTAs (primary white, secondary outlined), and a live deploy-preview embed beneath the fold. The visual signature is the gradient mesh ('Vercel beam') that sweeps cyan/magenta through ~10% alpha behind the headline."
+domain: visual-design
+content_hash: "sha256:82ef9e4d9f05daa1d48628e1ebe4b709d8988a2db2be4c3271394013059f26f8"
+tokens:
+  summary: 112
+  core: 571
+  full: 1029
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-hero-with-demo" }
+  - { type: related, target: "@community/example-resend-hero" }
+  - { type: related, target: "@community/category-typography-scale" }
+created_at: "2026-05-07"

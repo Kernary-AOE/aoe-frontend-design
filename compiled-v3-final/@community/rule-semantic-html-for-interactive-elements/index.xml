@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-semantic-html-for-interactive-elements"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="337"
+  q="4.0">
+  <description>Use the native HTML element that matches its purpose — &lt;button&gt; for actions, &lt;a href&gt; for navigation, &lt;input&gt; for data entry — never a div or span with an onClick and custom ARIA.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="238"/>
+    <level name="core"    file="chunks/core.md"    tokens="337"/>
+    <level name="full"    file="chunks/full.md"    tokens="624"/>
+  </projection>
+</atom>

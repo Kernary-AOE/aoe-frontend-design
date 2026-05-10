@@ -1,0 +1,114 @@
+# TooltipKeyboard [pattern] v1.0.0
+A small floating label revealed on hover OR keyboard focus that supplements an icon-only or terse control with explanatory text. Critical for discoverability of icon buttons in dense UIs.
+domain: frontend-design
+
+## Facts
+
+## Label
+Keyboard-Accessible Tooltip
+
+## Problem
+Icon-only buttons (filter, share, settings gear) are common in dense apps but unlabeled. Hover-only tooltips fail keyboard and touch users; on-click popovers are too heavy for short labels.
+
+## Solution
+A tooltip that opens on both hover (after 500ms delay) and focus, dismissible with Escape, positioned to avoid viewport edges, and connected to the trigger via `aria-describedby`.
+
+## Structure
+```
+    <button
+      type="button"
+      aria-label="Filter results"
+      aria-describedby="tt-filter"
+    >
+      <svg aria-hidden="true"><!-- funnel icon --></svg>
+    </button>
+    <div
+      id="tt-filter"
+      role="tooltip"
+      class="tooltip"
+      data-side="bottom"
+      hidden
+    >
+      Filter results
+      <kbd>F</kbd>
+    </div>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Open on hover after a 500ms delay; open instantly on focus.
+- Close on mouseleave OR blur OR Esc keypress.
+- Position with collision detection: prefer bottom, flip to top if not enough space, shift horizontally to stay in viewport.
+- Tooltip content is short (1 line, <50 chars). For longer help, use a popover with `role='dialog'` instead.
+- Disable tooltip on touch devices (rely on long-press platform tooltip or just the aria-label).
+- Show keyboard shortcut hint when relevant: 'Filter results [F]'.
+- Do NOT put interactive content (links, buttons) inside a tooltip — use a popover.
+
+## A11y
+- Tooltip element has `role='tooltip'`; the trigger references it via `aria-describedby`.
+- Trigger must have its own accessible name (`aria-label` or visible text) — tooltip is supplementary, not the only label.
+- Open on focus (not just hover) so keyboard users can read the tooltip.
+- Esc must dismiss the tooltip without moving focus (per WAI-ARIA tooltip pattern).
+- Tooltip should remain visible when the user moves the cursor onto it (so screen-magnifier users can read), unless it loses focus elsewhere.
+
+## Examples
+- @community/example-linear-toolbar-tooltips
+- @community/example-radix-tooltip
+- @community/example-figma-toolbar
+
+## Label
+Keyboard-Accessible Tooltip
+
+## Problem
+Icon-only buttons (filter, share, settings gear) are common in dense apps but unlabeled. Hover-only tooltips fail keyboard and touch users; on-click popovers are too heavy for short labels.
+
+## Solution
+A tooltip that opens on both hover (after 500ms delay) and focus, dismissible with Escape, positioned to avoid viewport edges, and connected to the trigger via `aria-describedby`.
+
+## Structure
+```
+    <button
+      type="button"
+      aria-label="Filter results"
+      aria-describedby="tt-filter"
+    >
+      <svg aria-hidden="true"><!-- funnel icon --></svg>
+    </button>
+    <div
+      id="tt-filter"
+      role="tooltip"
+      class="tooltip"
+      data-side="bottom"
+      hidden
+    >
+      Filter results
+      <kbd>F</kbd>
+    </div>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Open on hover after a 500ms delay; open instantly on focus.
+- Close on mouseleave OR blur OR Esc keypress.
+- Position with collision detection: prefer bottom, flip to top if not enough space, shift horizontally to stay in viewport.
+- Tooltip content is short (1 line, <50 chars). For longer help, use a popover with `role='dialog'` instead.
+- Disable tooltip on touch devices (rely on long-press platform tooltip or just the aria-label).
+- Show keyboard shortcut hint when relevant: 'Filter results [F]'.
+- Do NOT put interactive content (links, buttons) inside a tooltip — use a popover.
+
+## A11y
+- Tooltip element has `role='tooltip'`; the trigger references it via `aria-describedby`.
+- Trigger must have its own accessible name (`aria-label` or visible text) — tooltip is supplementary, not the only label.
+- Open on focus (not just hover) so keyboard users can read the tooltip.
+- Esc must dismiss the tooltip without moving focus (per WAI-ARIA tooltip pattern).
+- Tooltip should remain visible when the user moves the cursor onto it (so screen-magnifier users can read), unless it loses focus elsewhere.
+
+## Compatible
+- @community/pattern-progressive-disclosure
+- @community/pattern-command-palette

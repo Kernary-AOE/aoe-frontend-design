@@ -1,0 +1,23 @@
+id: "@anthropic-impeccable/rule-single-orchestrated-entrance"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:c9c0cfea72edc1353d4175ae32cafb1bcc075fb61a0295899aa357ee50fb9165"
+tokens:
+  summary: 75
+  core: 211
+  full: 503
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-page-load-choreography" }
+  - { type: related, target: "@community/pattern-stagger-reveal" }
+  - { type: related, target: "@community/pattern-scroll-reveal" }
+  - { type: related, target: "@community/rule-animation-duration" }
+  - { type: related, target: "@community/constraint-motion-page-load-budget" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+created_at: "2026-05-07"

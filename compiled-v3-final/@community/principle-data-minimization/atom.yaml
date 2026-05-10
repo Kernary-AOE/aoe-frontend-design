@@ -1,0 +1,24 @@
+id: "@community/principle-data-minimization"
+kind: principle
+version: "1.0.0"
+description: "Personal data must be 'adequate, relevant and limited to what is necessary in relation to the purposes for which it is processed' (GDPR Art. 5(1)(c)). Collect only fields the system actually needs for the stated purpose; delete data the moment its purpose is fulfilled."
+domain: legal-compliance
+content_hash: "sha256:f3ee921dd168dc5c4e98559f64c61a1fd3bc8b380f94b5fed61099f187a456f9"
+tokens:
+  summary: 206
+  core: 567
+  full: 873
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-pii-tokenization" }
+  - { type: related, target: "@community/pattern-right-to-be-forgotten" }
+  - { type: related, target: "@community/rule-cookie-consent-banner" }
+  - { type: related, target: "@community/anti-pattern-dark-pattern-consent" }
+  - { type: related, target: "@community/fact-coppa-13-yo-threshold" }
+  - { type: requires, target: "@community/pattern-right-to-be-forgotten" }
+created_at: "2026-05-07"

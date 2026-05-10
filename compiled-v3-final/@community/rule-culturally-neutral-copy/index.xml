@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-culturally-neutral-copy"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="213"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="213"/>
+    <level name="full"    file="chunks/full.md"    tokens="409"/>
+  </projection>
+</atom>

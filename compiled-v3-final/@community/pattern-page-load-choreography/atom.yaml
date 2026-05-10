@@ -1,0 +1,27 @@
+id: "@community/pattern-page-load-choreography"
+kind: pattern
+version: "1.0.0"
+description: "First-visit page load animation sequence: prevent FOUC with initial hidden state, stagger-reveal content blocks after paint, and skip the animation on return visits using sessionStorage."
+domain: frontend-design
+content_hash: "sha256:84fae5f2df6c93bec21ff90c1c845688f8e64efe1fc64091fed5af7bd20a11bf"
+tokens:
+  summary: 63
+  core: 308
+  full: 602
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-fade-in-on-load" }
+  - { type: related, target: "@community/pattern-stagger-reveal" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/pattern-scroll-reveal" }
+  - { type: related, target: "@impeccable/template-fade-stagger" }
+  - { type: related, target: "@community/fact-stagger-feel-organic" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

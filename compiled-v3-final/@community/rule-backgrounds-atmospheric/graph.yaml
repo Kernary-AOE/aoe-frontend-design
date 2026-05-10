@@ -1,0 +1,16 @@
+atom: "@community/rule-backgrounds-atmospheric"
+relations:
+  - type: related
+    target: "@community/pattern-gradient-mesh-engine"
+  - type: related
+    target: "@community/principle-intentional-gradient"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/anti-pattern-ai-slop-aesthetics"
+  - type: related
+    target: "@community/example-vercel-hero-gradient"
+  - type: related
+    target: "@community/example-resend-hero"
+  - type: related
+    target: "@community/rule-gradients-justified-only"

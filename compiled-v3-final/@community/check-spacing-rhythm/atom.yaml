@@ -1,0 +1,19 @@
+id: "@community/check-spacing-rhythm"
+kind: check
+version: "1.0.0"
+description: "Validates that margin/padding/gap values align to a 4px or 8px base grid (configurable). Off-grid values (e.g. 13px, 7px) break vertical rhythm and indicate ad-hoc spacing decisions."
+domain: layout
+content_hash: "sha256:6f6d6f4bd3504f5d2c8b1211f4a1e85751e6f0ec3e99875b11d45d1882baeb5e"
+tokens:
+  summary: 57
+  core: 454
+  full: 539
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-spacing-rhythm" }
+created_at: "2026-05-07"

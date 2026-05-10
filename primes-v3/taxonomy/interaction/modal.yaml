@@ -1,0 +1,44 @@
+task_type: modal
+parent: interaction
+description: "Modal dialog component with focus trap, accessible overlay, and smooth enter/exit animation."
+trigger_keywords:
+  - "modal"
+  - "dialog"
+  - "modal dialog"
+  - "弹窗"
+  - "对话框"
+  - "popup"
+  - "overlay dialog"
+  - "confirmation dialog"
+  - "modal component"
+default_register_pool:
+  - school: linear
+    weight: 0.4
+  - school: vercel-clean
+    weight: 0.35
+  - school: notion
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-modal-confirm"
+  - "@community/pattern-modal-non-blocking"
+  - "@community/template-modal-focus-trap"
+  - "@community/constraint-focus-trap-modal"
+  - "@community/rule-dialog-affordance-required"
+  - "@community/pattern-motion-modal"
+recommended_motion:
+  - "@impeccable/template-spring-config"
+  - "@impeccable/template-easing-curves"
+  - "@community/pattern-motion-microinteraction"
+  - "@community/template-framer-motion-pattern"
+forbidden_atoms:
+  - "@community/anti-pattern-ios-non-dismissable-modal"
+  - "@community/anti-pattern-ios-stacked-modals"
+quality_checks:
+  - "Focus must be trapped inside modal when open"
+  - "Escape key must close modal"
+  - "Click outside (backdrop) must close non-blocking modals"
+  - "Modal must return focus to trigger element on close"
+  - "Backdrop must be present with appropriate opacity"
+  - "Enter animation must not exceed 200ms"
+  - "Heading inside modal must be labeled with aria-labelledby"
+  - "Scrollable content must not lock body scroll on mobile"

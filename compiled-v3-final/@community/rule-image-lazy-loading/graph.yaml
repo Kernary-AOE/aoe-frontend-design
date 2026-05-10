@@ -1,0 +1,8 @@
+atom: "@community/rule-image-lazy-loading"
+relations:
+  - type: related
+    target: "@community/rule-image-optimization"
+  - type: related
+    target: "@community/rule-image-explicit-dimensions"
+  - type: related
+    target: "@community/fact-doherty-threshold"

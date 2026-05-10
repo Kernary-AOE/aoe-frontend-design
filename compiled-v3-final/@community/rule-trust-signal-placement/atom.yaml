@@ -1,0 +1,24 @@
+id: "@community/rule-trust-signal-placement"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:6ea7c889927f031d83ebe9c86170c3ba00aa52ea11b90f400d0e0ac7e4a532be"
+tokens:
+  summary: 59
+  core: 87
+  full: 260
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-trust-badge-row" }
+  - { type: related, target: "@community/pattern-trust-logo-strip" }
+  - { type: related, target: "@community/pattern-trust-social-proof-numbers" }
+  - { type: related, target: "@community/pattern-trust-testimonial-micro" }
+  - { type: related, target: "@community/pattern-trust-security-cert" }
+  - { type: related, target: "@community/rule-trust-signal-critical" }
+  - { type: related, target: "@community/anti-pattern-fake-trust-signals" }
+created_at: "2026-05-07"

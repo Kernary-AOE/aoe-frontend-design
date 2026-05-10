@@ -1,0 +1,10 @@
+atom: "@community/type-html-artifact"
+relations:
+  - type: related
+    target: "@community/rule-color-contrast"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/method-a11y-audit"
+  - type: related
+    target: "@community/step-load-artifact"

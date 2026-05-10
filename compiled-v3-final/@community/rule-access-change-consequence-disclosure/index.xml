@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-access-change-consequence-disclosure"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="159"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="159"/>
+    <level name="full"    file="chunks/full.md"    tokens="303"/>
+  </projection>
+</atom>

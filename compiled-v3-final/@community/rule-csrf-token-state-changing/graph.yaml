@@ -1,0 +1,8 @@
+atom: "@community/rule-csrf-token-state-changing"
+relations:
+  - type: related
+    target: "@community/principle-owasp-broken-access-control"
+  - type: related
+    target: "@community/principle-owasp-auth-failures"
+  - type: related
+    target: "@community/rule-tls-everywhere"

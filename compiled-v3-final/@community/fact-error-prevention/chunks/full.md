@@ -1,0 +1,40 @@
+# ErrorPrevention [fact] v1.0.0
+> Nielsen Heuristic 5 — Error Prevention: Even better than good error messages is a careful design which prevents a problem from occurring in the first place. Either eliminate error-prone conditions or check for them and present users with a confirmation option before they commit to the action.
+domain: ux-design
+
+## Confidence
+proven
+
+## Evidence
+@nielsen/source-nielsen-1994
+
+## Heuristic Number
+5
+
+## Violations
+- Destructive action (delete, archive) placed adjacent to common non-destructive actions without visual separation.
+- Submit button active even when required fields are empty — error only revealed after submit.
+- No warning before navigating away from an unsaved form.
+
+## Examples
+- Disabling the submit button until required form fields pass inline validation.
+- 'Are you sure?' confirmation dialog before deleting data that cannot be recovered.
+- Date picker widget that prevents selecting past dates for future-only bookings.
+- Autocorrect and spellcheck that catch typos before form submission.
+
+## Confidence
+proven
+
+## Evidence
+@nielsen/source-nielsen-1994
+
+## Heuristic Number
+5
+
+## Violations
+- Destructive action (delete, archive) placed adjacent to common non-destructive actions without visual separation.
+- Submit button active even when required fields are empty — error only revealed after submit.
+- No warning before navigating away from an unsaved form.
+
+## Supplies To
+- @community/principle-error-prevention-and-recovery

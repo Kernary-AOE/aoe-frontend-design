@@ -1,0 +1,14 @@
+atom: "@community/example-gallery-full-landings"
+relations:
+  - type: related
+    target: "@community/example-gallery-hero-sections"
+  - type: related
+    target: "@community/example-gallery-pricing-sections"
+  - type: related
+    target: "@community/example-gallery-cta-sections"
+  - type: related
+    target: "@community/example-gallery-feature-sections"
+  - type: related
+    target: "@community/example-gallery-testimonial-sections"
+  - type: related
+    target: "@community/landing-page-section-patterns"

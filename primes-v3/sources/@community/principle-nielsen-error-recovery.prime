@@ -1,0 +1,50 @@
+principle NielsenErrorRecovery {
+  id: "@community/principle-nielsen-error-recovery"
+  version: "1.0.0"
+
+  description: "Nielsen Heuristic 9: error messages should be expressed in plain language, precisely indicate the problem, and constructively suggest a solution."
+
+  statement: "Error messages should be expressed in plain language (no codes), precisely indicate the problem, and constructively suggest a solution."
+
+  domain: ux-design
+
+  attributed-to: "Jakob Nielsen, 1994"
+
+  source: [
+    "Jakob Nielsen, 'Heuristic Evaluation', in Nielsen & Mack (eds.), Usability Inspection Methods (1994)",
+    "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  ]
+
+  applies-to: [
+    "form validation messages: field-level errors with specific correction guidance",
+    "network/API errors: translating failures into user-actionable next steps",
+    "empty states after failed searches: explaining why results are empty + what to try",
+    "authentication errors: distinguishing 'wrong password' from 'account not found'",
+    "payment failures: explaining decline reason in terms of user action required",
+    "404 / dead-link pages: offering navigation alternatives rather than just the error code",
+  ]
+
+  examples: [
+    "Stripe's payment decline messages distinguish between 'Insufficient funds — try a different card' and 'Card blocked by issuer — contact your bank', giving users a clear recovery path.",
+    "GitHub's 404 page suggests checking the URL, searching repositories, and links to recent activity — it doesn't just display a number.",
+    "Slack's 'You're not in any channels yet' empty state pairs the error condition with a 'Browse channels' CTA — the message and the recovery action are co-located.",
+  ]
+
+  counter-examples: [
+    "A form that returns a generic 'Something went wrong. Please try again.' with no indication of which field failed or why.",
+    "A login page that returns 'Invalid credentials' for both wrong password and non-existent account — security rationale is valid, but no recovery path is offered for forgotten email.",
+    "An API error dialog showing 'HTTP 500 Internal Server Error' with a Close button and nothing else — no retry, no support link, no explanation.",
+  ]
+
+  related: [
+    @community/principle-nielsen-error-prevention,
+    @community/principle-nielsen-visibility,
+    @community/fact-error-recovery-types,
+    @community/fact-gestalt-proximity,
+    @community/anti-pattern-generic-error-text,
+    @community/counter-example-empty-list-blank,
+    @community/example-stripe-checkout,
+    @community/rule-actionable-error-messages,
+    @community/rule-empty-state-recovery,
+  ]
+}

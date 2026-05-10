@@ -1,0 +1,8 @@
+atom: "@community/principle-owasp-vulnerable-components"
+relations:
+  - type: related
+    target: "@community/principle-owasp-security-misconfig"
+  - type: related
+    target: "@community/rule-secrets-never-in-source"
+  - type: related
+    target: "@community/principle-owasp-data-integrity-failures"

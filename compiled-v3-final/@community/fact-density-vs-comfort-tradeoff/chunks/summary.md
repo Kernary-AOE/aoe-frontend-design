@@ -1,0 +1,3 @@
+# DensityVsComfortTradeoff [fact] v1.0.0
+Information density and reading comfort are inversely related: tighter line-height, smaller type, and reduced whitespace fit more on screen but slow reading speed, increase fixation duration, and raise comprehension errors.
+> Higher information density (smaller type, tighter line-height, reduced whitespace) is appropriate for expert / pragmatist personas who scan and act, while lower density (larger type, generous line-height, more whitespace) is appropriate for editorial / reading personas who need sustained comprehension — the same UI cannot optimise both.

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-aria-label-in-name"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="400"
+  q="4.0">
+  <description>When an interactive element has visible text, its accessible name computed by aria-label or aria-labelledby must include that visible text as a substring, so voice-control users can activate it by speaking what they see (WCAG SC 2.5.3 Label in Name, Level A).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="400"/>
+    <level name="full"    file="chunks/full.md"    tokens="807"/>
+  </projection>
+</atom>

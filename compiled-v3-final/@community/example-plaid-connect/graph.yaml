@@ -1,0 +1,8 @@
+atom: "@community/example-plaid-connect"
+relations:
+  - type: related
+    target: "@community/pattern-multi-step-wizard"
+  - type: related
+    target: "@community/example-stripe-checkout"
+  - type: related
+    target: "@community/fact-error-prevention"

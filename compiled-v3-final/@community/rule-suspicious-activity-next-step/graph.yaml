@@ -1,0 +1,8 @@
+atom: "@community/rule-suspicious-activity-next-step"
+relations:
+  - type: related
+    target: "@community/rule-success-message-next-step"
+  - type: related
+    target: "@community/rule-single-primary-action-per-screen"
+  - type: related
+    target: "@community/principle-nielsen-error-recovery"

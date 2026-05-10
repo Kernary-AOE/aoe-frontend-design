@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-error-recovery-types"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="368"
+  q="4.0">
+  <description>User-visible errors fall into three placement / severity tiers: inline (field-level, contextual), toast / notification (transient, action-level), and global / blocking (page-level, recovery required).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="171"/>
+    <level name="core"    file="chunks/core.md"    tokens="368"/>
+    <level name="full"    file="chunks/full.md"    tokens="637"/>
+  </projection>
+</atom>

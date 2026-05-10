@@ -1,0 +1,25 @@
+id: "@community/pattern-dashboard-animations"
+kind: pattern
+version: "1.0.0"
+description: "Three precise CSS animation patterns used in admin dashboards: sidebar collapse transition, accordion/collapsible content expand, and button press micro-interaction. All should respect prefers-reduced-motion."
+domain: frontend-design
+content_hash: "sha256:b0b872e00271e2fc22d3a25fe2a0ad663c0e9e74720308376675c0032b634042"
+tokens:
+  summary: 68
+  core: 510
+  full: 953
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-dashboard-sidebar" }
+  - { type: related, target: "@community/pattern-dashboard-layout" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

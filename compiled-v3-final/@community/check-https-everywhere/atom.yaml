@@ -1,0 +1,21 @@
+id: "@community/check-https-everywhere"
+kind: check
+version: "1.0.0"
+description: "Every HTTP response must include an HSTS header with max-age ≥ 31536000 (1 year), includeSubDomains, and preload. No http:// links must appear in HTML output."
+domain: security
+content_hash: "sha256:8724fdeab1f23dea10d065c3370a3dab8daf00b67e4dcc578358b93eb1d83934"
+tokens:
+  summary: 52
+  core: 429
+  full: 805
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-tls-everywhere" }
+  - { type: related, target: "@community/principle-owasp-cryptographic-failures" }
+  - { type: related, target: "@community/pattern-defense-in-depth" }
+created_at: "2026-05-07"

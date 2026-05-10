@@ -1,0 +1,10 @@
+atom: "@community/constraint-focus-indicator-min-size"
+relations:
+  - type: related
+    target: "@community/value-focus-outline-width"
+  - type: related
+    target: "@community/template-focus-ring"
+  - type: related
+    target: "@community/anti-pattern-invisible-focus"
+  - type: related
+    target: "@community/anti-pattern-outline-suppression"

@@ -1,0 +1,20 @@
+id: "@community/fact-miller-rule-7"
+kind: fact
+version: "1.0.0"
+description: "George Miller's '7 ± 2' (1956): short-term working memory holds approximately 5–9 'chunks' of information at once. Modern revisions (Cowan 2001) suggest the real working-memory limit is closer to 4 chunks."
+content_hash: "sha256:7bffeae951a2973cb3d9425443400797cb048cb7cde5e8f9cbd38a9549893fd0"
+tokens:
+  summary: 128
+  core: 363
+  full: 677
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-hick-law" }
+  - { type: related, target: "@community/fact-card-sort-method" }
+  - { type: related, target: "@community/pattern-progressive-disclosure" }
+created_at: "2026-05-07"

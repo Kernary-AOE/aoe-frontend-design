@@ -1,0 +1,21 @@
+id: "@community/principle-owasp-insecure-design"
+kind: principle
+version: "1.0.0"
+description: "OWASP Top 10 A04:2021 — new category focused on risks from design and architectural flaws. Unlike implementation bugs, insecure design cannot be fixed by a perfect implementation — the threat model was wrong from the start."
+domain: security
+content_hash: "sha256:3635129b7520ec63156e8ceb4e8f9b4f156c97ed6bfd5636feb8a64d9283bd46"
+tokens:
+  summary: 146
+  core: 425
+  full: 665
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-broken-access-control" }
+  - { type: related, target: "@community/principle-owasp-security-misconfig" }
+  - { type: related, target: "@community/principle-owasp-auth-failures" }
+created_at: "2026-05-07"

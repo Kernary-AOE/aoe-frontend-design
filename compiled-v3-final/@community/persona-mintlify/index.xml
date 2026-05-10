@@ -1,0 +1,14 @@
+<atom
+  id="@community/persona-mintlify"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="625"
+  q="4.0">
+  <description>Documentation-as-product design: Inter on pure white #ffffff with atmospheric green-to-white gradient hero, brand green #18E299 reserved exclusively for interactive states, full-pill 9999px buttons and inputs, and whisper-thin 5%-opacity borders throughout.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="77"/>
+    <level name="core"    file="chunks/core.md"    tokens="625"/>
+    <level name="full"    file="chunks/full.md"    tokens="706"/>
+  </projection>
+</atom>

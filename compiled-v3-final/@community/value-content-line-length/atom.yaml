@@ -1,0 +1,22 @@
+id: "@community/value-content-line-length"
+kind: value
+version: "1.0.0"
+domain: visual-design
+content_hash: "sha256:350702b9acac62fa9b3a43d670cdec2358ede32b88f36e2f9b09c52907352fa0"
+tokens:
+  summary: 15
+  core: 292
+  full: 713
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/term-leading" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/category-typography-scale" }
+  - { type: related, target: "@community/value-focus-outline-width" }
+  - { type: related, target: "@community/rule-cjk-line-break" }
+created_at: "2026-05-07"

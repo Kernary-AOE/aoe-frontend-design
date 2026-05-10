@@ -1,0 +1,21 @@
+id: "@community/rule-cross-field-validation"
+kind: rule
+version: "1.0.0"
+description: "Validation rules that span multiple form fields (e.g. password-confirm match, date-range overlap, conditional required fields) must run on form submission rather than per-field blur, and surface a grouped error summary at the top of the form."
+domain: frontend-design
+content_hash: "sha256:fcf889798d85d61d1ff435c985fe13cb60a4f6e552e192adb7e81f7cd02c12c4"
+tokens:
+  summary: 76
+  core: 201
+  full: 410
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-inline-validation" }
+  - { type: related, target: "@community/rule-form-validation-inline" }
+  - { type: related, target: "@community/pattern-multi-step-wizard" }
+created_at: "2026-05-07"

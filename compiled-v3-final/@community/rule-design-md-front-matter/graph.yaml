@@ -1,0 +1,8 @@
+atom: "@community/rule-design-md-front-matter"
+relations:
+  - type: related
+    target: "@community/method-design-md-extraction"
+  - type: related
+    target: "@community/method-gallery-research"
+  - type: related
+    target: "@community/principle-design-philosophy-before-canvas"

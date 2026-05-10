@@ -1,0 +1,18 @@
+atom: "@community/rule-refactoring-ui-hierarchy"
+relations:
+  - type: related
+    target: "@community/category-typography-scale"
+  - type: related
+    target: "@community/check-line-length-optimal"
+  - type: related
+    target: "@community/fact-fitts-law"
+  - type: related
+    target: "@community/example-linear-issues-table"
+  - type: related
+    target: "@community/example-shadcn-dashboard"
+  - type: related
+    target: "@community/principle-visual-hierarchy-action-distinction"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/rule-spacing-rhythm"

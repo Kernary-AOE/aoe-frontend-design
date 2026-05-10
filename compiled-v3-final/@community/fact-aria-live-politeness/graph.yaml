@@ -1,0 +1,8 @@
+atom: "@community/fact-aria-live-politeness"
+relations:
+  - type: related
+    target: "@community/rule-aria-label-required"
+  - type: related
+    target: "@community/anti-pattern-accessibility-after-thought"
+  - type: related
+    target: "@community/fact-visibility-system-status"

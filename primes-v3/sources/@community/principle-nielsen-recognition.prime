@@ -1,0 +1,49 @@
+principle NielsenRecognition {
+  id: "@community/principle-nielsen-recognition"
+  version: "1.0.0"
+
+  description: "Nielsen Heuristic 6: minimize memory load by making objects, actions, and options visible; users should not have to recall information from one part of the interface to another."
+
+  statement: "Minimize the user's memory load by making objects, actions, and options visible. The user should not have to remember information from one part of the dialogue to another. Instructions for use of the system should be visible or easily retrievable whenever appropriate."
+
+  domain: ux-design
+
+  attributed-to: "Jakob Nielsen, 1994"
+
+  source: [
+    "Jakob Nielsen, 'Heuristic Evaluation', in Nielsen & Mack (eds.), Usability Inspection Methods (1994)",
+    "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  ]
+
+  applies-to: [
+    "command palettes: showing all available actions with keyboard shortcuts",
+    "autocomplete: surfacing valid options as users type",
+    "persistent labels: form field labels that stay visible after a value is entered",
+    "breadcrumbs: showing current location so users don't have to remember navigation path",
+    "recent/suggested items: surfacing previously used items rather than requiring recall",
+    "tooltips: making icon meanings retrievable on hover without requiring memorization",
+  ]
+
+  examples: [
+    "Linear's Cmd+K command palette lists every action with its shortcut — users recognize commands rather than recall keyboard sequences.",
+    "Figma's layer panel keeps all layers visible and named — users see the document structure rather than remembering it.",
+    "VS Code's IntelliSense shows parameter names, types, and documentation inline while typing — users recognise valid options rather than recalling an API from memory.",
+  ]
+
+  counter-examples: [
+    "An icon-only toolbar with no tooltips — users must memorise which icon does what, penalising anyone who uses it infrequently.",
+    "A multi-step form where Step 3 asks users to confirm values they entered in Step 1, without displaying those values on screen.",
+    "A search results page that clears the query field after submission — users must re-enter or remember what they searched for.",
+  ]
+
+  related: [
+    @community/principle-nielsen-flexibility,
+    @community/principle-nielsen-consistency,
+    @community/fact-recognition-over-recall,
+    @community/fact-gestalt-proximity,
+    @community/example-linear-cmdk,
+    @community/example-radix-dropdown,
+    @community/anti-pattern-icon-only-expansion-triggers,
+    @community/rule-popover-vs-tooltip,
+  ]
+}

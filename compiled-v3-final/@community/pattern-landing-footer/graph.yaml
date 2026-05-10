@@ -1,0 +1,16 @@
+atom: "@community/pattern-landing-footer"
+relations:
+  - type: related
+    target: "@community/pattern-landing-page-sections"
+  - type: related
+    target: "@community/rule-informative-image-alt"
+  - type: related
+    target: "@community/rule-functional-image-alt"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-accessibility-after-thought"
+  - type: related
+    target: "@impeccable/persona-vercel-clean"
+  - type: related
+    target: "@impeccable/persona-stripe"

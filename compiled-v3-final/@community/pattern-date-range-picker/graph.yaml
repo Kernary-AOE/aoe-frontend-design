@@ -1,0 +1,18 @@
+atom: "@community/pattern-date-range-picker"
+relations:
+  - type: related
+    target: "@community/pattern-calendar-grid"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/check-form-label-associated"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/rule-aria-native-first"
+  - type: compatible
+    target: "@community/pattern-calendar-grid"
+  - type: compatible
+    target: "@community/pattern-inline-validation"

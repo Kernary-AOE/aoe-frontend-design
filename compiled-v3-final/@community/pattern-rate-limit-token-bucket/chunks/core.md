@@ -1,0 +1,67 @@
+# RateLimitTokenBucket [pattern] v1.0.0
+A token-bucket algorithm that allows short bursts while enforcing a sustained request rate — the standard rate-limiting primitive for APIs and login endpoints.
+domain: security
+
+## Label
+Token-Bucket Rate Limiting
+
+## Problem
+Without rate limiting, brute-force attacks (credential stuffing, password spraying), scraping, and DoS amplification attacks are trivially cheap. A 10 million password list can be tested at full network speed if no throttle exists.
+
+## Solution
+Each actor (IP, user ID, API key) gets a bucket with a capacity and a refill rate. Each request consumes one token. When the bucket is empty, requests are rejected with HTTP 429. The bucket refills at a fixed rate independent of consumption — allowing bursts up to capacity, preventing sustained abuse.
+
+## Structure
+```
+    # Conceptual model
+    bucket = {
+      capacity:  100,        # max burst
+      tokens:    100,        # current tokens (starts full)
+      refillRate: 10,        # tokens added per second
+      lastRefill: Date.now()
+    }
+
+    function consume(bucket):
+      now = Date.now()
+      elapsed = (now - bucket.lastRefill) / 1000   # seconds
+      bucket.tokens = min(bucket.capacity, bucket.tokens + elapsed * bucket.refillRate)
+      bucket.lastRefill = now
+
+      if bucket.tokens >= 1:
+        bucket.tokens -= 1
+        return ALLOW
+      else:
+        return DENY  # HTTP 429
+
+    # Redis implementation (atomic via Lua script — no race conditions)
+    local tokens    = tonumber(redis.call('GET', KEYS[1]) or ARGV[1])
+    local now       = tonumber(ARGV[2])
+    local last      = tonumber(redis.call('GET', KEYS[2]) or now)
+    local rate      = tonumber(ARGV[3])
+    local capacity  = tonumber(ARGV[4])
+    local elapsed   = (now - last) / 1000
+    tokens = math.min(capacity, tokens + elapsed * rate)
+    if tokens >= 1 then
+      tokens = tokens - 1
+      redis.call('SET', KEYS[1], tokens, 'EX', 3600)
+      redis.call('SET', KEYS[2], now,    'EX', 3600)
+      return 1   -- allowed
+    else
+      return 0   -- denied → respond 429
+    end
+
+    # Express middleware wrapper
+    app.use('/api/login', rateLimiter({
+      keyFn:    (req) => req.ip,
+      capacity: 5,      # 5 burst attempts
+      rate:     0.1,    # 1 attempt per 10 seconds sustained
+      onDeny:   (res) => res.status(429).json({ error: 'Too many requests' }),
+    }));
+
+    # Response headers (RFC 6585 / draft-ietf-httpapi-ratelimit-headers)
+    RateLimit-Limit:     100
+    RateLimit-Remaining: 42
+    RateLimit-Reset:     1715123456   # Unix epoch when bucket refills to full
+    Retry-After:         30           # seconds until at least 1 token available
+  
+```

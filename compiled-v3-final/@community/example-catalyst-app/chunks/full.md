@@ -1,0 +1,83 @@
+# CatalystApp [example] v1.0.0
+Catalyst is Tailwind's premium app UI kit. Unlike basic Tailwind UI, Catalyst uses a refined zinc-neutral palette with rounded-xl (12px) cards, soft shadows, and a distinctive 'glass' navbar with backdrop-blur. Sidebar uses bg-zinc-50 (light) / bg-zinc-900 (dark) with carefully tuned active states using zinc-950/zinc-50 inverse pairs.
+domain: visual-design
+
+## Label
+Catalyst — Premium Tailwind Application Template
+
+## Url
+https://catalyst.tailwindui.com
+
+## Observed
+2026-Q1
+
+## Brand
+catalyst
+
+## Pattern Applied
+@community/pattern-sidebar-collapsible
+
+## Aesthetic Notes
+- Sidebar bg: zinc-50 #FAFAFA (light) / zinc-900 #18181B (dark); 280px wide.
+- Active nav: bg zinc-950 #09090B (light) / bg-white #FFFFFF (dark) — full inversion, not tint.
+- Cards: rounded-xl (12px), bg-white / bg-zinc-900, ring-1 ring-zinc-950/5 (light) or ring-white/10 (dark) instead of border.
+- Top navbar: backdrop-blur-md + bg-white/80 + ring-1 ring-zinc-950/5 — 'glass' effect with subtle ring.
+- Headings: Inter font-semibold, with text-zinc-950 (light) and text-white (dark).
+- Body: text-sm/6 (14px / 24px line-height), text-zinc-700 (light) and text-zinc-300 (dark).
+
+## What To Copy
+- Use ring-1 instead of border-1 for cards — ring sits outside the border-box and never affects layout.
+- Inverse-pair active states (dark item on light bg, light item on dark bg) feel more decisive than tint variants.
+- 12px (rounded-xl) is Catalyst's signature radius — sits between Stripe (6px) and Notion (4px).
+- Glass navbar via backdrop-blur-md + 80% white needs a subtle ring — without it, content disappears against blurred cards.
+
+## What To Skip
+- Catalyst defaults to Inter — if your brand has a custom font, swap it but keep the size/weight scales.
+
+## Screenshot Hint
+scout query: catalyst tailwind premium app zinc neutral rounded xl cards glass navbar
+
+## Demonstrates
+- ring-1 outperforms border-1 for cards — preserves layout, easier to layer.
+- Inverse-pair active states feel more 'designed' than tint-based active states.
+- Glass effects (backdrop-blur) need a subtle ring to stay visible against varied content.
+
+## Label
+Catalyst — Premium Tailwind Application Template
+
+## Url
+https://catalyst.tailwindui.com
+
+## Observed
+2026-Q1
+
+## Brand
+catalyst
+
+## Pattern Applied
+@community/pattern-sidebar-collapsible
+
+## Aesthetic Notes
+- Sidebar bg: zinc-50 #FAFAFA (light) / zinc-900 #18181B (dark); 280px wide.
+- Active nav: bg zinc-950 #09090B (light) / bg-white #FFFFFF (dark) — full inversion, not tint.
+- Cards: rounded-xl (12px), bg-white / bg-zinc-900, ring-1 ring-zinc-950/5 (light) or ring-white/10 (dark) instead of border.
+- Top navbar: backdrop-blur-md + bg-white/80 + ring-1 ring-zinc-950/5 — 'glass' effect with subtle ring.
+- Headings: Inter font-semibold, with text-zinc-950 (light) and text-white (dark).
+- Body: text-sm/6 (14px / 24px line-height), text-zinc-700 (light) and text-zinc-300 (dark).
+
+## What To Copy
+- Use ring-1 instead of border-1 for cards — ring sits outside the border-box and never affects layout.
+- Inverse-pair active states (dark item on light bg, light item on dark bg) feel more decisive than tint variants.
+- 12px (rounded-xl) is Catalyst's signature radius — sits between Stripe (6px) and Notion (4px).
+- Glass navbar via backdrop-blur-md + 80% white needs a subtle ring — without it, content disappears against blurred cards.
+
+## What To Skip
+- Catalyst defaults to Inter — if your brand has a custom font, swap it but keep the size/weight scales.
+
+## Screenshot Hint
+scout query: catalyst tailwind premium app zinc neutral rounded xl cards glass navbar
+
+## Demonstrates
+- ring-1 outperforms border-1 for cards — preserves layout, easier to layer.
+- Inverse-pair active states feel more 'designed' than tint-based active states.
+- Glass effects (backdrop-blur) need a subtle ring to stay visible against varied content.

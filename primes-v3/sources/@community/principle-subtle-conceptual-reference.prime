@@ -1,0 +1,40 @@
+principle SubtleConceptualReference {
+  id: "@community/principle-subtle-conceptual-reference"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "The subject of canvas art, poster design, or visual illustration should be woven as a quiet conceptual thread into form, color, and composition — not illustrated literally."
+
+  attributed-to: "Anthropic Canvas Design Skill"
+
+  rationale: "Literal depiction is obvious and forgettable. A refined, niche conceptual reference rewards viewers who recognize it while remaining compelling to those who don't — like a jazz musician quoting another song. Only those who know will catch it, but everyone appreciates the music."
+
+  applies-to: [
+    "canvas-design",
+    "poster-design",
+    "hero visual composition",
+    "product illustration",
+  ]
+
+  examples: [
+    "A fintech app hero: instead of illustrating coins and growth charts, evoke the concept through ascending topology lines and cool-to-warm gradient shifts — the meaning is felt, not named.",
+    "A writing tool poster: evoke 'stream of consciousness' through continuous flowing curves at different weights — not a pencil or a notebook.",
+    "An analytics tool: use data-density grids as the compositional rhythm without showing a literal bar chart.",
+  ]
+
+  counter-examples: [
+    "Security app with a literal padlock illustration — safe but forgettable.",
+    "Growth tool hero with literal rocket ship — cliché, zero conceptual depth.",
+  ]
+
+  related: [
+    @community/principle-ui-differentiation-memorability,
+    @community/principle-unexpected-spatial-composition,
+    @community/rule-canvas-visual-text-ratio,
+    @community/anti-pattern-ai-slop-aesthetics,
+    @community/example-vercel-hero-gradient,
+    @community/example-resend-hero,
+    @community/principle-design-philosophy-before-canvas,
+  ]
+}

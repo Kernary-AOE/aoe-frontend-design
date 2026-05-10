@@ -1,0 +1,22 @@
+id: "@community/rule-image-optimization"
+kind: rule
+version: "1.0.0"
+description: "Every raster image in an HTML artifact MUST: (a) declare `loading='lazy'` for below-the-fold images, (b) be served in a next-gen format (WebP or AVIF) with a fallback, and (c) provide a `srcset` / `<picture>` for responsive resolution selection. Missing any of these wastes bandwidth, blocks Largest Contentful Paint (LCP), and harms Core Web Vitals."
+domain: performance
+content_hash: "sha256:b19a07e64ac52b8d7991e2a56564c98a71e1086c609ecc207209b3e2eb493302"
+tokens:
+  summary: 101
+  core: 518
+  full: 950
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/fact-consistency-standards" }
+  - { type: see-also, target: "@community/check-image-optimization" }
+  - { type: validates-with, target: "@community/fact-consistency-standards" }
+created_at: "2026-05-07"

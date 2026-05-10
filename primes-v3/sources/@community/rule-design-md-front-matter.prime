@@ -1,0 +1,29 @@
+rule DesignMdFrontMatter {
+  id: "@community/rule-design-md-front-matter"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: warning
+
+  statement: "Every design.md file must begin with YAML front matter declaring at minimum: project name, persona archetype, and 3-5 aesthetic keywords. A design.md without front matter cannot be reliably indexed, queried, or referenced by an AI agent."
+
+  rationale: "Design documents without machine-readable front matter are browsable by humans but invisible to automated systems. The front matter is the hook that allows MCP tools (@prime-wiki/prime_query) to retrieve the right design context at generation time."
+
+  required-fields: [
+    "name: (project or component name)",
+    "persona: (one of: brutalist | editorial | tokyo-minimal | warm-institutional | dense-pragmatist | swiss-modernist | custom)",
+    "keywords: [list of 3-5 aesthetic descriptors]",
+  ]
+
+  optional-fields: [
+    "version: (semver)",
+    "status: (draft | validated | archived)",
+    "created-at: (ISO date)",
+  ]
+
+  related: [
+    @community/method-design-md-extraction,
+    @community/method-gallery-research,
+    @community/principle-design-philosophy-before-canvas,
+  ]
+}

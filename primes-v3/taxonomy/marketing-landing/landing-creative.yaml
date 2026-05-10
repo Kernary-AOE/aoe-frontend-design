@@ -1,0 +1,44 @@
+task_type: landing-creative
+parent: marketing-landing
+description: "Creative agency or portfolio landing page with bold aesthetics, distinctive typography, and expressive motion."
+trigger_keywords:
+  - "creative agency"
+  - "portfolio"
+  - "design studio"
+  - "作品集"
+  - "创意工作室"
+  - "expressive"
+  - "bold design"
+  - "art direction"
+  - "showcase work"
+  - "agency site"
+default_register_pool:
+  - school: magazine-editorial
+    weight: 0.4
+  - school: swiss-modernist
+    weight: 0.35
+  - school: framer
+    weight: 0.25
+required_atoms:
+  - "@community/principle-commit-bold-aesthetic"
+  - "@community/principle-unexpected-spatial-composition"
+  - "@community/principle-typography-hierarchy"
+  - "@community/pattern-gradient-mesh-engine"
+  - "@community/template-animated-mesh-background"
+recommended_motion:
+  - "@community/template-gsap-scroll-trigger"
+  - "@community/pattern-page-transition"
+  - "@community/template-framer-motion-pattern"
+  - "@community/template-view-transitions-api"
+  - "@community/pattern-scroll-reveal"
+forbidden_atoms:
+  - "@impeccable/persona-dense-pragmatist"
+  - "@community/pattern-dashboard-layout"
+  - "@community/anti-pattern-generic-saas-blue"
+quality_checks:
+  - "Typography must be visually distinctive — not Inter/Roboto defaults"
+  - "Color palette must not be generic blue/purple SaaS"
+  - "At least one section must have unexpected spatial or compositional choice"
+  - "Motion must feel intentional and crafted, not CSS transition defaults"
+  - "Work/portfolio showcase must be the visual centerpiece"
+  - "Page must load with intentional choreography, not all-at-once"

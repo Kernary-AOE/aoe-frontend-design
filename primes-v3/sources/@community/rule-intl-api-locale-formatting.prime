@@ -1,0 +1,43 @@
+rule IntlApiLocaleFormatting {
+  id: "@community/rule-intl-api-locale-formatting"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  description: "Dates, times, numbers, currencies, and list conjunctions must be formatted using the JavaScript `Intl` API (Intl.DateTimeFormat, Intl.NumberFormat, Intl.ListFormat) rather than hard-coded locale-specific strings."
+
+  claim: "Any frontend code that formats dates, numbers, currencies, or lists for display MUST use the appropriate `Intl.*` constructor with an explicit locale — hard-coding separators, date order, or currency symbols produces incorrect output for non-default locales."
+
+  severity: warning
+
+  rationale: "Hard-coded formats like '1,234.56' or 'Jan 5, 2026' are incorrect in many locales: German uses '1.234,56', many countries write dates as day-first. The Intl API handles these differences automatically and is available in all modern browsers."
+
+  examples: {
+    correct: [
+      "new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(1234.56) // '1.234,56 €'",
+      "new Intl.DateTimeFormat('ja-JP', { dateStyle: 'full' }).format(new Date()) // '2026年5月1日金曜日'",
+      "new Intl.RelativeTimeFormat('en', { numeric: 'auto' }).format(-1, 'day') // 'yesterday'",
+      "new Intl.ListFormat('en', { style: 'long', type: 'conjunction' }).format(['A','B','C']) // 'A, B, and C'",
+    ]
+    incorrect: [
+      "date.toLocaleDateString() // uses runtime locale, not product locale",
+      "`$${price.toFixed(2)}` // wrong for non-USD currencies",
+      "date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear() // US-only",
+    ]
+  }
+
+  exceptions: [
+    {
+      case: "ISO 8601 machine-readable dates in attributes"
+      allowed-when: "datetime attributes always use ISO 8601 (YYYY-MM-DD); only the visible text needs Intl formatting."
+    }
+  ]
+
+  related: [
+    @community/rule-autocomplete-attributes,
+    @community/fact-border-radius-platform,
+    @community/rule-content-width-constrained,
+  ]
+}

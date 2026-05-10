@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-gantt-timeline"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="827"
+  q="4.0">
+  <description>A two-pane view with a left task list and a right horizontal timeline of bars representing task duration, dependencies, and progress. Used for project planning where dependencies and overlap matter.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="64"/>
+    <level name="core"    file="chunks/core.md"    tokens="827"/>
+    <level name="full"    file="chunks/full.md"    tokens="1621"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-aria-current-page"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="386"
+  q="4.0">
+  <description>The active navigation link must carry aria-current=&apos;page&apos; so screen readers announce &apos;current page&apos; and give keyboard users orientation within the site structure (WCAG SC 2.4.8, ARIA 1.2 aria-current attribute).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="386"/>
+    <level name="full"    file="chunks/full.md"    tokens="791"/>
+  </projection>
+</atom>

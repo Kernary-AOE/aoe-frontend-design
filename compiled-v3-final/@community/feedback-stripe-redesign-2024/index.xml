@@ -1,0 +1,14 @@
+<atom
+  id="@community/feedback-stripe-redesign-2024"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="750"
+  q="4.0">
+  <description>Post-hoc analysis of Stripe&apos;s late-2023/2024 dashboard and marketing-site refresh. Stripe has long been an industry benchmark for fintech UI; this redesign tightened density, introduced a softer brand palette, modernized typography, and rebuilt the navigation taxonomy. Lessons distilled from publicly-shipped surfaces (dashboard.stripe.com, stripe.com, docs.stripe.com).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="109"/>
+    <level name="core"    file="chunks/core.md"    tokens="750"/>
+    <level name="full"    file="chunks/full.md"    tokens="750"/>
+  </projection>
+</atom>

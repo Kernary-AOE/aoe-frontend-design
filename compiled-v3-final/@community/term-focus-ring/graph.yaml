@@ -1,0 +1,8 @@
+atom: "@community/term-focus-ring"
+relations:
+  - type: related
+    target: "@w3c/fact-wcag-focus-contrast"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/value-focus-outline-width"

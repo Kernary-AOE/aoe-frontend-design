@@ -1,0 +1,8 @@
+atom: "@community/rule-no-casual-nav-sections"
+relations:
+  - type: related
+    target: "@community/principle-navigation-scope-taxonomy"
+  - type: related
+    target: "@community/rule-navigation-flat-when-shallow"
+  - type: related
+    target: "@community/fact-miller-rule-7"

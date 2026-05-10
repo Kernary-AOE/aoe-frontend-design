@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-number-unit-ratio"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="316"
+  q="4.0">
+  <description>Metric displays use a strict 2:1 size ratio between number and unit — 48px/24px for hero, 36px/18px for KPI cards, 24px/12px for donut centers — so the eye lands on the digit first and the unit whispers.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="249"/>
+    <level name="core"    file="chunks/core.md"    tokens="316"/>
+    <level name="full"    file="chunks/full.md"    tokens="504"/>
+  </projection>
+</atom>

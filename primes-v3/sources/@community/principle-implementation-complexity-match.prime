@@ -1,0 +1,27 @@
+principle ImplementationComplexityMatch {
+  id: "@community/principle-implementation-complexity-match"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "Implementation complexity must match the aesthetic vision: maximalist designs require elaborate layered code; minimalist designs require restraint and precision — both are hard in different ways."
+
+  rationale: "The mistake is applying minimalist shortcuts (plain divs, no animation) to maximalist designs, or adding decorative noise (gradients, shadows, micro-animations) to a design whose power comes from severe reduction. Elegance means executing the chosen vision faithfully, not defaulting to the same technical complexity regardless of aesthetic direction."
+
+  examples: [
+    "Maximalist (Framer, editorial): mesh gradients, layered blur, stagger animations, variable font axes — each layer is intentional complexity",
+    "Minimalist (Swiss, Vercel): razor-thin borders, pure white, tight type — complexity is in precision spacing, optical alignment, and restraint of decoration",
+    "Wrong: implementing a brutalist design with Material UI rounded cards (convention betrays vision)",
+    "Wrong: implementing a warm editorial design with no hover states or micro-interactions (underbuilt)",
+  ]
+
+  related: [
+    @community/principle-commit-bold-aesthetic,
+    @community/principle-single-direction-aesthetic-bet,
+    @community/principle-taste-as-engineering,
+    @community/example-framer-page-transition,
+    @community/example-vercel-hero-gradient,
+    @community/anti-pattern-decorative-spinning,
+    @community/rule-animation-duration,
+  ]
+}

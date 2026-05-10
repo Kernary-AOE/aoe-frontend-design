@@ -1,0 +1,46 @@
+task_type: changelog
+parent: content
+description: "Release notes or changelog page presenting product updates in reverse-chronological order."
+trigger_keywords:
+  - "changelog"
+  - "release notes"
+  - "what's new"
+  - "更新日志"
+  - "版本历史"
+  - "releases"
+  - "version history"
+  - "updates"
+  - "新功能"
+default_register_pool:
+  - school: linear
+    weight: 0.4
+  - school: vercel-clean
+    weight: 0.35
+  - school: notion-warm
+    weight: 0.25
+required_atoms:
+  - "@community/rule-heading-hierarchy-logical"
+  - "@community/rule-body-readability"
+  - "@community/pattern-table-of-contents-sticky"
+  - "@community/principle-typography-hierarchy"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-scroll-reveal"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@community/pattern-dashboard-grid"
+  - "@community/pattern-gradient-mesh-engine"
+max_atoms_per_axis:
+  register: 1
+  pattern: 2
+  motion: 1
+  typography: 2
+  color: 1
+  rules: 1
+quality_checks:
+  - "Entries must be in reverse-chronological order (newest first)"
+  - "Each entry must have a version number or date prominently displayed"
+  - "Change types (new, improved, fixed) must be visually distinguished"
+  - "Long entries must use progressive disclosure or expandable sections"
+  - "Version/date anchors must support deep linking"
+  - "Design must be scannable — users skim, not read, changelogs"

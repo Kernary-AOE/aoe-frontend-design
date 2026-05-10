@@ -1,0 +1,27 @@
+id: "@community/rule-color-contrast"
+kind: rule
+version: "1.0.0"
+description: "Enforces WCAG 2.2 color contrast requirements across all text and UI component elements in an HTML artifact. Covers SC 1.4.3 (text), SC 1.4.11 (non-text/UI), and SC 2.4.11 (focus ring)."
+domain: accessibility
+content_hash: "sha256:24680ae6034c67922c6358f527ca936ab9760f15d71f82ee5fefd175b6f8fe48"
+tokens:
+  summary: 60
+  core: 278
+  full: 468
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@w3c/fact-wcag-contrast-aa" }
+  - { type: related, target: "@community/metric-contrast-ratio" }
+  - { type: related, target: "@community/collection-accessible-frontend" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@community/counter-example-low-contrast-focus" }
+  - { type: related, target: "@community/counter-example-status-color-only" }
+  - { type: related, target: "@community/example-accessible-chart" }
+  - { type: related, target: "@community/rule-focus-visible" }
+created_at: "2026-05-07"

@@ -1,0 +1,22 @@
+id: "@community/value-motion-duration-fast"
+kind: value
+version: "1.0.0"
+domain: visual-design
+content_hash: "sha256:5e1a2cab70488c5a32efcf56b4e568e2be92ba99ac0f5d37094c1232137d1bac"
+tokens:
+  summary: 15
+  core: 358
+  full: 818
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/value-focus-outline-width" }
+  - { type: related, target: "@community/value-touch-target-min" }
+  - { type: related, target: "@community/type-design-token" }
+  - { type: related, target: "@community/rule-cls-budget" }
+  - { type: related, target: "@community/anti-pattern-decorative-spinning" }
+created_at: "2026-05-07"

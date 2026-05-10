@@ -1,0 +1,8 @@
+atom: "@community/fact-semantic-html-element-taxonomy"
+relations:
+  - type: related
+    target: "@community/rule-semantic-html-for-interactive-elements"
+  - type: related
+    target: "@community/rule-heading-hierarchy"
+  - type: related
+    target: "@community/rule-aria-native-first"

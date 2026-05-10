@@ -1,0 +1,20 @@
+id: "@community/constraint-ios-onboarding-max-3"
+kind: constraint
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:1c90c25f76db3582f9e65404922c31883fb60d0c6792550b2bbde84b112a85b9"
+tokens:
+  summary: 57
+  core: 95
+  full: 177
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-permission-in-context" }
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/constraint-ios-touch-target-44pt" }
+created_at: "2026-05-07"

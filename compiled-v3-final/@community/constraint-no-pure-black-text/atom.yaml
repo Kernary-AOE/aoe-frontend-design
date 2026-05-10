@@ -1,0 +1,21 @@
+id: "@community/constraint-no-pure-black-text"
+kind: constraint
+version: "1.0.0"
+description: "Body and paragraph text must never use pure black (#000000 / oklch(0% 0 0)). Pure black on near-white induces excessive contrast and visual fatigue; use a soft near-black such as oklch(18% 0.04 var(--hue))."
+domain: visual-design
+content_hash: "sha256:431d270c825ef9ae01f92c5d564670bda7eb4705967a29dccfba816abc50f2ed"
+tokens:
+  summary: 67
+  core: 307
+  full: 392
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-no-pure-white-bg" }
+  - { type: related, target: "@community/check-color-oklch-required" }
+  - { type: related, target: "@community/term-oklch" }
+created_at: "2026-05-07"

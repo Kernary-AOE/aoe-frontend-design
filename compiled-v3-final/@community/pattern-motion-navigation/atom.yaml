@@ -1,0 +1,25 @@
+id: "@community/pattern-motion-navigation"
+kind: pattern
+version: "1.0.0"
+description: "Navigation animation patterns: tab indicator sliding via Motion.dev layoutId with spring stiffness:400/damping:30, hamburger menu expanding at 250ms cubic-bezier(0.16,1,0.3,1), and GSAP indicator fallback for non-React contexts."
+domain: frontend-design
+content_hash: "sha256:c259576a98474f196fd2c6b7bc83390527df7210f9557221d0fd04bb00dd46bc"
+tokens:
+  summary: 72
+  core: 827
+  full: 1582
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-page-transition" }
+  - { type: related, target: "@community/pattern-motion-modal" }
+  - { type: related, target: "@community/fact-hover-feedback-latency" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

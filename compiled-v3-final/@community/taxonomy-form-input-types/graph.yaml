@@ -1,0 +1,12 @@
+atom: "@community/taxonomy-form-input-types"
+relations:
+  - type: related
+    target: "@community/taxonomy-cta-styles"
+  - type: related
+    target: "@community/category-form-input-states"
+  - type: related
+    target: "@community/check-form-label-associated"
+  - type: related
+    target: "@community/check-button-type-explicit"
+  - type: related
+    target: "@community/rule-correct-input-type"

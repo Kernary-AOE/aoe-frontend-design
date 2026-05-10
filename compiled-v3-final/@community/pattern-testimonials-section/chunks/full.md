@@ -1,0 +1,257 @@
+# TestimonialsSection [pattern] v1.0.0
+Three testimonial section layouts — masonry grid with useMasonry() hook (open-react-template), CSS columns: 3 masonry (shadcn), and Swiper carousel with pauseOnMouseEnter: true autoplay (next-saas-starter) — with exact card classes and avatar anatomy.
+domain: frontend-design
+
+## Label
+Testimonials Section — Layout Variants
+
+## Problem
+AI defaults to a uniform 3-column grid of identical testimonial cards with same-length quotes, creating a mechanical, low-trust appearance. Real testimonial sections use layout variation to create gallery-like credibility.
+
+## Solution
+Choose layout based on testimonial count and length variance. Masonry for 8+ varied-length testimonials. CSS columns masonry for 6 uniform B2B testimonials. Carousel for 3–5 featured story-driven quotes.
+
+## Structure
+```
+    <!-- Variant 1: Masonry Grid — useMasonry() hook (open-react-template) -->
+    <!-- Cards: rounded-2xl bg-gradient from-gray-900/50, backdrop-blur-xs, p-6 -->
+    <!-- Category filter buttons above grid -->
+    <section class="py-20 sm:py-32">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Category filter -->
+        <div class="flex gap-3 flex-wrap mb-8">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Use Case A</button>
+          <button class="filter-btn">Use Case B</button>
+        </div>
+        <!-- useMasonry() hook renders Pinterest-style variable-height layout -->
+        <div ref={masonryRef} class="masonry-grid">
+          {items.map(item => (
+            <!-- card: rounded-2xl bg-gradient from-gray-900/50 backdrop-blur-xs p-6 -->
+            <div class="rounded-2xl bg-gradient-to-b from-gray-900/50 to-gray-900/30 backdrop-blur-xs p-6">
+              <!-- Quote text -->
+              <p class="text-sm leading-relaxed">{item.quote}</p>
+              <!-- Avatar row: mt-4 flex items-center gap-3 -->
+              <div class="mt-4 flex items-center gap-3">
+                <!-- Avatar: 36px rounded-full -->
+                <img src={item.avatar} class="w-9 h-9 rounded-full object-cover" alt="" />
+                <div class="flex flex-col">
+                  <!-- name: text-sm font-semibold -->
+                  <span class="text-sm font-semibold">{item.name}</span>
+                  <!-- title: text-xs text-muted -->
+                  <span class="text-xs text-muted">{item.title}</span>
+                </div>
+                <!-- Optional: company logo h-5 opacity-60 -->
+                <img src={item.companyLogo} class="h-5 opacity-60 ml-auto" alt={item.company} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Variant 2: CSS Columns Masonry (shadcn) -->
+    <!-- Card: max-width md (28rem), rounded-xl border bg-card p-6 -->
+    <section class="py-20 sm:py-32">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="testimonials-grid">
+          <div class="testimonial-card rounded-xl border bg-card p-6">
+            <p class="text-sm leading-relaxed">"Quote text here"</p>
+            <!-- Avatar row: flex flex-row items-center gap-4 -->
+            <div class="flex flex-row items-center gap-4 mt-4">
+              <img src="..." class="w-10 h-10 rounded-full" alt="" />
+              <div>
+                <p class="text-sm font-semibold">Name</p>
+                <p class="text-xs text-muted-foreground">Title, Company</p>
+              </div>
+            </div>
+          </div>
+          <!-- repeat -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Variant 3: Swiper Carousel (next-saas-starter) -->
+    <section class="py-20 sm:py-32">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <Swiper
+          slidesPerView={1}
+          autoplay={{ delay: 8000, pauseOnMouseEnter: true }}
+          navigation={{ prevEl: '.prev-btn', nextEl: '.next-btn' }}
+        >
+          <SwiperSlide>
+            <!-- Quote: font-size: 2.2rem, font-weight: 700, font-style: italic, max-width: 60% -->
+            <blockquote style="font-size: 2.2rem; font-weight: 700; font-style: italic; max-width: 60%;">
+              "Featured testimonial quote."
+            </blockquote>
+            <!-- Author: img 48px rounded-full + flex flex-col name + title + company -->
+            <div class="flex items-center gap-4 mt-8">
+              <img src="..." class="w-12 h-12 rounded-full" alt="" />
+              <div class="flex flex-col">
+                <span class="font-semibold">Author Name</span>
+                <span class="text-sm text-muted-foreground">Title</span>
+                <span class="text-sm text-muted-foreground">Company</span>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <!-- Navigation arrows: custom styled, positioned outside slide area -->
+        <button class="prev-btn" aria-label="Previous testimonial">←</button>
+        <button class="next-btn" aria-label="Next testimonial">→</button>
+      </div>
+    </section>
+  
+```
+
+## Css
+```
+    /* CSS Masonry — shadcn variant */
+    .testimonials-grid {
+      columns: 2;
+      column-gap: 2rem;
+    }
+    @media (min-width: 1024px) {
+      .testimonials-grid { columns: 3; }
+    }
+    .testimonial-card {
+      break-inside: avoid;
+      margin-bottom: 2rem;
+    }
+  
+```
+
+## Behavior
+- Masonry (useMasonry hook) → many testimonials (8+), varied lengths, gallery-style credibility wall.
+- 3-column CSS masonry → uniform testimonials (6), B2B / corporate, no JS dependency.
+- Carousel → featured testimonials (3–5), story-driven, quote as hero moment with 2.2rem font-size.
+- Avatar is always 36–48px rounded-full with alt='' (decorative) when name is displayed in text.
+- Carousel autoplay delay: 8000ms with pauseOnMouseEnter: true — never autoplay without pause-on-hover.
+- Category filter (masonry variant) improves scannability for 8+ testimonials — group by industry or use case.
+
+## Sources
+
+## Label
+Testimonials Section — Layout Variants
+
+## Problem
+AI defaults to a uniform 3-column grid of identical testimonial cards with same-length quotes, creating a mechanical, low-trust appearance. Real testimonial sections use layout variation to create gallery-like credibility.
+
+## Solution
+Choose layout based on testimonial count and length variance. Masonry for 8+ varied-length testimonials. CSS columns masonry for 6 uniform B2B testimonials. Carousel for 3–5 featured story-driven quotes.
+
+## Structure
+```
+    <!-- Variant 1: Masonry Grid — useMasonry() hook (open-react-template) -->
+    <!-- Cards: rounded-2xl bg-gradient from-gray-900/50, backdrop-blur-xs, p-6 -->
+    <!-- Category filter buttons above grid -->
+    <section class="py-20 sm:py-32">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Category filter -->
+        <div class="flex gap-3 flex-wrap mb-8">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Use Case A</button>
+          <button class="filter-btn">Use Case B</button>
+        </div>
+        <!-- useMasonry() hook renders Pinterest-style variable-height layout -->
+        <div ref={masonryRef} class="masonry-grid">
+          {items.map(item => (
+            <!-- card: rounded-2xl bg-gradient from-gray-900/50 backdrop-blur-xs p-6 -->
+            <div class="rounded-2xl bg-gradient-to-b from-gray-900/50 to-gray-900/30 backdrop-blur-xs p-6">
+              <!-- Quote text -->
+              <p class="text-sm leading-relaxed">{item.quote}</p>
+              <!-- Avatar row: mt-4 flex items-center gap-3 -->
+              <div class="mt-4 flex items-center gap-3">
+                <!-- Avatar: 36px rounded-full -->
+                <img src={item.avatar} class="w-9 h-9 rounded-full object-cover" alt="" />
+                <div class="flex flex-col">
+                  <!-- name: text-sm font-semibold -->
+                  <span class="text-sm font-semibold">{item.name}</span>
+                  <!-- title: text-xs text-muted -->
+                  <span class="text-xs text-muted">{item.title}</span>
+                </div>
+                <!-- Optional: company logo h-5 opacity-60 -->
+                <img src={item.companyLogo} class="h-5 opacity-60 ml-auto" alt={item.company} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Variant 2: CSS Columns Masonry (shadcn) -->
+    <!-- Card: max-width md (28rem), rounded-xl border bg-card p-6 -->
+    <section class="py-20 sm:py-32">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="testimonials-grid">
+          <div class="testimonial-card rounded-xl border bg-card p-6">
+            <p class="text-sm leading-relaxed">"Quote text here"</p>
+            <!-- Avatar row: flex flex-row items-center gap-4 -->
+            <div class="flex flex-row items-center gap-4 mt-4">
+              <img src="..." class="w-10 h-10 rounded-full" alt="" />
+              <div>
+                <p class="text-sm font-semibold">Name</p>
+                <p class="text-xs text-muted-foreground">Title, Company</p>
+              </div>
+            </div>
+          </div>
+          <!-- repeat -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Variant 3: Swiper Carousel (next-saas-starter) -->
+    <section class="py-20 sm:py-32">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <Swiper
+          slidesPerView={1}
+          autoplay={{ delay: 8000, pauseOnMouseEnter: true }}
+          navigation={{ prevEl: '.prev-btn', nextEl: '.next-btn' }}
+        >
+          <SwiperSlide>
+            <!-- Quote: font-size: 2.2rem, font-weight: 700, font-style: italic, max-width: 60% -->
+            <blockquote style="font-size: 2.2rem; font-weight: 700; font-style: italic; max-width: 60%;">
+              "Featured testimonial quote."
+            </blockquote>
+            <!-- Author: img 48px rounded-full + flex flex-col name + title + company -->
+            <div class="flex items-center gap-4 mt-8">
+              <img src="..." class="w-12 h-12 rounded-full" alt="" />
+              <div class="flex flex-col">
+                <span class="font-semibold">Author Name</span>
+                <span class="text-sm text-muted-foreground">Title</span>
+                <span class="text-sm text-muted-foreground">Company</span>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <!-- Navigation arrows: custom styled, positioned outside slide area -->
+        <button class="prev-btn" aria-label="Previous testimonial">←</button>
+        <button class="next-btn" aria-label="Next testimonial">→</button>
+      </div>
+    </section>
+  
+```
+
+## Css
+```
+    /* CSS Masonry — shadcn variant */
+    .testimonials-grid {
+      columns: 2;
+      column-gap: 2rem;
+    }
+    @media (min-width: 1024px) {
+      .testimonials-grid { columns: 3; }
+    }
+    .testimonial-card {
+      break-inside: avoid;
+      margin-bottom: 2rem;
+    }
+  
+```
+
+## Behavior
+- Masonry (useMasonry hook) → many testimonials (8+), varied lengths, gallery-style credibility wall.
+- 3-column CSS masonry → uniform testimonials (6), B2B / corporate, no JS dependency.
+- Carousel → featured testimonials (3–5), story-driven, quote as hero moment with 2.2rem font-size.
+- Avatar is always 36–48px rounded-full with alt='' (decorative) when name is displayed in text.
+- Carousel autoplay delay: 8000ms with pauseOnMouseEnter: true — never autoplay without pause-on-hover.
+- Category filter (masonry variant) improves scannability for 8+ testimonials — group by industry or use case.

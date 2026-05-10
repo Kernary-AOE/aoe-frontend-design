@@ -1,0 +1,4 @@
+atom: "@community/pattern-replicate-signature-marketing"
+relations:
+  - type: related
+    target: "@community/persona-replicate"

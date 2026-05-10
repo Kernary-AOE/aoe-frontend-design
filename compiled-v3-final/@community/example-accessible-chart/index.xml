@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-accessible-chart"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1054"
+  q="4.0">
+  <description>A production-ready accessible area chart using Recharts and React. Demonstrates: figure/figcaption ARIA wrapping, sr-only description paragraph, aria-hidden chart SVG, prefers-reduced-motion gate on animations, a hidden sr-only data table for exact values, and themed tooltip styling via CSS custom properties.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="93"/>
+    <level name="core"    file="chunks/core.md"    tokens="1054"/>
+    <level name="full"    file="chunks/full.md"    tokens="2015"/>
+  </projection>
+</atom>

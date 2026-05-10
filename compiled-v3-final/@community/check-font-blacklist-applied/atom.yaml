@@ -1,0 +1,19 @@
+id: "@community/check-font-blacklist-applied"
+kind: check
+version: "1.0.0"
+description: "Detects blacklisted default font-families (Arial, Helvetica, Times New Roman, Comic Sans, Papyrus, Courier New) used as PRIMARY font, and detects sites that load no custom fonts at all (signaling lack of typographic care)."
+domain: typography
+content_hash: "sha256:70a9853f9be4b61f78fe54bd336b47d052efcb9acf84fd12b7853826b533b9d1"
+tokens:
+  summary: 70
+  core: 513
+  full: 611
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-font-blacklist-applied" }
+created_at: "2026-05-07"

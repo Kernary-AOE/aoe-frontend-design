@@ -1,0 +1,19 @@
+id: "@community/check-image-optimization"
+kind: check
+version: "1.0.0"
+description: "Validates image optimization: modern formats (webp/avif), responsive srcset, lazy-loading for below-fold, intrinsic width/height for CLS prevention, and decoded-byte-size proportional to displayed dimensions."
+domain: performance
+content_hash: "sha256:a8228a9b2b1f59659877fd4a77bb7d6506bb363c9407efd8482ec5f039592ead"
+tokens:
+  summary: 66
+  core: 755
+  full: 829
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-image-optimization" }
+created_at: "2026-05-07"

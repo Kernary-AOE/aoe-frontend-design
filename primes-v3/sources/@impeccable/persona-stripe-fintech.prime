@@ -1,0 +1,104 @@
+persona StripeFintech {
+  id: "@impeccable/persona-stripe-fintech"
+  version: "1.0.0"
+
+  school: stripe-fintech
+  domain: visual-design
+
+  description: "Fintech trustworthiness made aspirational: brand-color OKLCH systems with a single hue variable, animated gradient hero backgrounds, dense API-doc tables, rounded 12px cards with crisp 1px hairline borders, dark-mode toggle as first-class. Reads as 'we move money and we have taste.'"
+
+  implies: {
+    font: {
+      display: "geometric or grotesque sans with strong numerals — e.g. Sohne, Camphor, ABC Diatype, Inter, Larsseit, GT Walsheim, Untitled Sans"
+      body: "same family as display with tabular-nums always on — e.g. Sohne, Inter, Camphor, system-ui"
+      monospace: "essential for code samples and financial values — e.g. Sohne Mono, JetBrains Mono, IBM Plex Mono, Geist Mono"
+    }
+    color: {
+      temperature: "cool"
+      palette: "OKLCH brand-hue system: --brand-hue: 235 generates 50-step ramp, plus semantic green (#00d924) and red (#df1b41), gradient hero of brand-hue + adjacent hue (e.g. 235 to 280)"
+      background: "light-mode oklch(99% 0.005 240) near-white with cool tint, dark-mode oklch(13% 0.02 240) deep navy-black; gradient heroes use conic-gradient or radial multi-stop"
+    }
+    density: "balanced — vertical rhythm 1.55, dense data tables (40-44px row height with tabular-nums), card padding 24px, section padding 96-128px"
+    layout: "1280px max-width, sticky nav with backdrop-blur, hero with animated gradient mesh, 3-up feature cards with 12px radius and 1px hairline border, API-style code blocks side-by-side with prose"
+    imagery: "abstract gradient meshes, isometric 3D illustrations of cards/checkout flows, real product screenshots in browser-chrome frames, no stock photography"
+    motion: "smooth — 300-400ms ease-out for transitions, animated gradient hue shifts on hero, count-up animations for stats, hover states with 2px lift + border-color shift, no spring physics"
+  }
+
+  compatible: ["modern", "trustworthy", "developer-friendly", "vercel-clean", "data-rich"]
+  conflicts: ["brutalist", "warm-institutional", "tokyo-minimal", "magazine-editorial"]
+
+  example-brands: [
+    "Stripe",
+    "Plaid",
+    "Mercury",
+    "Ramp",
+    "Brex",
+    "Wise",
+    "Modern Treasury",
+    "Increase",
+  ]
+
+  notes: [
+    "The defining move is the single --brand-hue CSS variable feeding an OKLCH 50-step ramp. If you hard-code hex colors per shade, you've abandoned the entire system that makes this persona scale.",
+    "Don't pair fintech-gradient heroes with serif body — the persona requires single-family sans discipline. Mixing in serif quotes turns it into a media company.",
+    "Tabular-nums must be on globally for financial figures. A dollar-amount with proportional figures destroys credibility instantly in this persona.",
+    "Gradient meshes should be brand-hue + adjacent hue (within 60deg), never complementary. Stripe purple-to-blue works; purple-to-yellow does not.",
+    "Dark mode is co-equal — not a fallback. If your dark mode is just inverted with #ffffff text on #000000 you've missed the OKLCH systems thinking.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/template-shadcn-pricing-toggle,
+      @community/fact-fintech-number-display,
+      @impeccable/template-oklch-palette,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-warm-institutional,
+    ]
+    typography-required: {
+      display: "Söhne | Inter | Camphor (single-family sans)"
+      tabular-nums: true
+      no-serif-body: true
+    }
+    color-required: {
+      system: "OKLCH --brand-hue variable (50-step ramp)"
+      background-light: "oklch(99% 0.005 240)"
+      background-dark: "oklch(13% 0.02 240)"
+    }
+    motion-prescriptions: [
+      @community/pattern-gradient-mesh-engine,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/persona-dense-pragmatist,
+    @impeccable/template-oklch-palette,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-fintech-number-display,
+    @community/fact-variable-font-axes,
+    @community/rule-font-feature-settings,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-contrast-aa,
+    @community/constraint-oklch-only-color,
+    @community/principle-intentional-gradient,
+    @community/rule-gradients-justified-only,
+    @community/pattern-gradient-mesh-engine,
+    @community/pattern-color-scale-decision,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  specializes: [
+    @community/persona-stripe,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-warm-institutional,
+  ]
+}

@@ -1,0 +1,4 @@
+# ProgressFeedbackLongOperations [rule] v1.0.0
+Every operation that takes a noticeable amount of time must show an in-place loading indicator; multi-step operations must additionally display a count or percentage so users know how far they are.
+> Any operation that takes ≥300ms from user action to completion must display a visible loading indicator adjacent to the affected UI element. For operations with countable steps (file upload, batch export, multi-file processing): show a progress description such as 'Uploading 2 of 5 files' or a numeric percentage. The indicator must appear before the first perceived delay — optimistically on the triggering action, not after a round-trip. On completion, replace the indicator with a success confirmation (checkmark, inline message, or toast) so users confirm the operation finished.
+domain: frontend-design

@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-trust-signal-critical"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="99"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="54"/>
+    <level name="core"    file="chunks/core.md"    tokens="99"/>
+    <level name="full"    file="chunks/full.md"    tokens="300"/>
+  </projection>
+</atom>

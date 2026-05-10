@@ -1,0 +1,25 @@
+id: "@community/pattern-tx-liveblocks-floating-comment"
+kind: pattern
+version: "1.0.0"
+description: "Liveblocks FloatingThread component (Apache-2.0): comment thread anchored to any trigger via Radix Popover with updatePositionStrategy='always' to survive scroll, onInteractOutside guard to prevent emoji picker / nested portals from dismissing the thread, and onEscapeKeyDown that closes the thread without propagating to parent modal layers."
+domain: frontend-design
+content_hash: "sha256:88f4fc280c29a2186a6395aae9462a3181e960397e51dfe0d847e6043164c12e"
+tokens:
+  summary: 104
+  core: 482
+  full: 926
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-tx-liveblocks-avatar-stack" }
+  - { type: related, target: "@community/template-liveblocks-selection-presence" }
+  - { type: related, target: "@community/pattern-tx-blocknote-block-editor-core" }
+  - { type: related, target: "@community/fact-aria-live-politeness" }
+  - { type: related, target: "@community/check-focus-visible" }
+sources:
+  - { url: "packages/liveblocks-react-ui/src/components/FloatingThread.tsx" }
+created_at: "2026-05-07"

@@ -1,0 +1,16 @@
+atom: "@impeccable/template-skeleton-loader"
+relations:
+  - type: related
+    target: "@impeccable/template-oklch-palette"
+  - type: related
+    target: "@impeccable/template-empty-state"
+  - type: related
+    target: "@community/pattern-skeleton-shimmer"
+  - type: related
+    target: "@community/pattern-skeleton-loader"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-accessibility-after-thought"

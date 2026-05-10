@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-mobile-first"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="410"
+  q="4.0">
+  <description>CSS responsive breakpoints MUST be authored mobile-first: base styles target the smallest viewport, and `@media (min-width: ...)` queries layer on enhancements for larger viewports. Desktop-first authoring (`@media (max-width: ...)`) requires the cascade to override styles repeatedly and tends to bloat mobile payloads.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="95"/>
+    <level name="core"    file="chunks/core.md"    tokens="410"/>
+    <level name="full"    file="chunks/full.md"    tokens="740"/>
+  </projection>
+</atom>

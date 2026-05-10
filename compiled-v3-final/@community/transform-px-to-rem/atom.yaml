@@ -1,0 +1,22 @@
+id: "@community/transform-px-to-rem"
+kind: transform
+version: "1.0.0"
+description: "Converts a CSS pixel value to its rem equivalent relative to the root element font-size (default 16px). rem-based sizing is an accessibility requirement: when users override their browser's default font size, rem values scale proportionally while px values do not."
+domain: visual-design
+content_hash: "sha256:116d5496cfaa1e0b36d6f8777fd44a88e11c4f58972d69236719bef1835e2448"
+tokens:
+  summary: 79
+  core: 221
+  full: 352
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/type-spacing-scale" }
+  - { type: related, target: "@community/transform-scale-clamp" }
+  - { type: related, target: "@community/anti-pattern-hardcoded-pixel-values" }
+  - { type: related, target: "@community/term-rasterization" }
+created_at: "2026-05-07"

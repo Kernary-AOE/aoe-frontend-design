@@ -1,0 +1,34 @@
+category TypographyScale {
+  id: "@community/category-typography-scale"
+  version: "1.0.0"
+
+  label: "Typography / Scale"
+  parent: "@community/category-typography"
+
+  domain: visual-design
+
+  description: "The typographic scale sub-category covers all decisions about relative and absolute type sizes across the interface: base size selection, scale ratio, display headings, body text, captions, and code."
+
+  members: [
+    "display"   // Oversized hero text, often 48–96px
+    "heading-1" // Page-level heading, typically 2–3× body
+    "heading-2" // Section heading
+    "heading-3" // Sub-section heading
+    "body"      // Primary reading text, 16–18px optimal
+    "small"     // Secondary labels, captions, 12–14px
+    "code"      // Monospace, typically 0.875× body
+  ]
+
+  notes: [
+    "A modular scale ratio (e.g. 1.250 Major Third, 1.333 Perfect Fourth) generates harmonious steps.",
+    "Base body size should be ≥ 16px for readability on mobile; 18px preferred for long-form reading.",
+    "Display text rarely needs the same optical weight as body — lighter or heavier weights at large size are common.",
+    "Fluid typography with clamp() is preferred over fixed breakpoints for scale.",
+  ]
+
+  related: [
+    @community/fact-optimal-line-length,
+    @community/value-focus-outline-width,
+    @impeccable/constraint-font-blacklist,
+  ]
+}

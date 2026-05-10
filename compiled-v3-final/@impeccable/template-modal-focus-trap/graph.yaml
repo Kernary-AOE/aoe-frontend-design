@@ -1,0 +1,24 @@
+atom: "@impeccable/template-modal-focus-trap"
+relations:
+  - type: related
+    target: "@impeccable/template-toast-stack"
+  - type: related
+    target: "@impeccable/template-cmd-palette-shell"
+  - type: related
+    target: "@community/template-focus-ring"
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@impeccable/template-spring-config"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/pattern-page-transition"
+  - type: related
+    target: "@community/constraint-focus-trap-modal"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/rule-no-keyboard-trap"
+  - type: related
+    target: "@community/anti-pattern-invisible-focus"

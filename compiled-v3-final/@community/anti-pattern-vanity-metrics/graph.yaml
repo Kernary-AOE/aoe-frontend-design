@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-vanity-metrics"
+relations:
+  - type: related
+    target: "@community/rule-user-value-metrics"
+  - type: related
+    target: "@community/rule-small-focused-experiment"
+  - type: related
+    target: "@community/anti-pattern-cherry-picking-evidence"

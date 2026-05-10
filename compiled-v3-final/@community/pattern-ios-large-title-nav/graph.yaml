@@ -1,0 +1,16 @@
+atom: "@community/pattern-ios-large-title-nav"
+relations:
+  - type: related
+    target: "@community/rule-mobile-first"
+  - type: related
+    target: "@community/pattern-tab-bar-bottom"
+  - type: related
+    target: "@community/rule-ios-dynamic-type-semantic"
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"
+  - type: related
+    target: "@community/check-touch-target-min"
+  - type: related
+    target: "@community/check-mobile-first"
+  - type: related
+    target: "@community/check-focus-visible"

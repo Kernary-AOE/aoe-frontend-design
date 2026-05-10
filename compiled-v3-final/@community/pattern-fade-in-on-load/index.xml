@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-fade-in-on-load"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="497"
+  q="4.0">
+  <description>页面或区块加载完成时让元素从 opacity 0 渐入到 1，可选叠加微小的 translateY 位移。最基础的进场动效，几乎所有 marketing 页 / dashboard 卡片都用。让内容&apos;显现&apos;而不是&apos;闪现&apos;。</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="42"/>
+    <level name="core"    file="chunks/core.md"    tokens="497"/>
+    <level name="full"    file="chunks/full.md"    tokens="952"/>
+  </projection>
+</atom>

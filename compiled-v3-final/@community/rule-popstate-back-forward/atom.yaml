@@ -1,0 +1,21 @@
+id: "@community/rule-popstate-back-forward"
+kind: rule
+version: "1.0.0"
+description: "Single-page applications must listen to the popstate event and restore the correct view state when the user navigates back or forward with browser controls."
+domain: frontend-design
+content_hash: "sha256:4adbc5a8ccead446e4957dc0ad9b1f22f3c30e521ca191ce01031c16525c6dcc"
+tokens:
+  summary: 54
+  core: 172
+  full: 352
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-save-form-progress" }
+  - { type: related, target: "@community/rule-no-state-reset-without-confirm" }
+  - { type: related, target: "@community/fact-user-control-freedom" }
+created_at: "2026-05-07"

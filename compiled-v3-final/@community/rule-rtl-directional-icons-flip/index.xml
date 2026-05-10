@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-rtl-directional-icons-flip"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="324"
+  q="4.0">
+  <description>In RTL layouts, icons that imply directionality (arrows, chevrons, forward/back cues) must be horizontally mirrored via transform: scaleX(-1); icons with no directional meaning (star, heart, warning triangle) must not be flipped.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="222"/>
+    <level name="core"    file="chunks/core.md"    tokens="324"/>
+    <level name="full"    file="chunks/full.md"    tokens="611"/>
+  </projection>
+</atom>

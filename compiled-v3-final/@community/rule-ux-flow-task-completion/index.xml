@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-ux-flow-task-completion"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="278"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="82"/>
+    <level name="core"    file="chunks/core.md"    tokens="278"/>
+    <level name="full"    file="chunks/full.md"    tokens="531"/>
+  </projection>
+</atom>

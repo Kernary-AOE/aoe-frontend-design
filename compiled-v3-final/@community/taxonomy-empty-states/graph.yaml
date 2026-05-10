@@ -1,0 +1,12 @@
+atom: "@community/taxonomy-empty-states"
+relations:
+  - type: related
+    target: "@community/anti-pattern-missing-empty-state"
+  - type: related
+    target: "@community/taxonomy-loading-states"
+  - type: related
+    target: "@community/taxonomy-form-validation-states"
+  - type: related
+    target: "@community/anti-pattern-generic-error-text"
+  - type: related
+    target: "@community/rule-actionable-error-messages"

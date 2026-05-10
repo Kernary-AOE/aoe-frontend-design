@@ -1,0 +1,8 @@
+atom: "@community/rule-required-field-indication"
+relations:
+  - type: related
+    target: "@community/rule-form-label-associated"
+  - type: related
+    target: "@community/rule-form-validation-inline"
+  - type: related
+    target: "@community/check-form-label-associated"

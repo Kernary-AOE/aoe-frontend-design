@@ -1,0 +1,8 @@
+atom: "@community/constraint-no-pure-black-text"
+relations:
+  - type: related
+    target: "@community/constraint-no-pure-white-bg"
+  - type: related
+    target: "@community/check-color-oklch-required"
+  - type: related
+    target: "@community/term-oklch"

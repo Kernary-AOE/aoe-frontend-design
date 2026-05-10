@@ -1,0 +1,12 @@
+atom: "@anthropic-impeccable/principle-font-pairing-contrast"
+relations:
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/rule-font-blacklist-applied"
+  - type: related
+    target: "@impeccable/constraint-font-blacklist"
+  - type: related
+    target: "@community/fact-type-scale-modular"
+  - type: related
+    target: "@community/rule-font-weight-not-style"

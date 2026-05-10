@@ -1,0 +1,26 @@
+id: "@community/pattern-features-grid"
+kind: pattern
+version: "1.0.0"
+description: "Three features section layout variants — card grid (md:grid-cols-2 lg:grid-cols-3 gap-8), horizontal divider rows (editorial anti-card), and alternating flex-row/flex-row-reverse image layout — extracted from shadcn-landing-page and open-react-template."
+domain: frontend-design
+content_hash: "sha256:57e2ff7e283c14037b38d061557abc19d9227d8bd5849b00d7cbe400452629f8"
+tokens:
+  summary: 78
+  core: 1213
+  full: 2352
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-landing-page-sections" }
+  - { type: related, target: "@community/pattern-hero-3-layouts" }
+  - { type: related, target: "@community/pattern-card-component" }
+  - { type: related, target: "@community/constraint-card-grid-gap" }
+  - { type: related, target: "@community/anti-pattern-ai-generated-ui" }
+  - { type: related, target: "@impeccable/persona-vercel-clean" }
+  - { type: related, target: "@impeccable/persona-stripe" }
+  - { type: related, target: "@impeccable/persona-framer" }
+created_at: "2026-05-07"

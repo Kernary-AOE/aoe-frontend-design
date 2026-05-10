@@ -1,0 +1,21 @@
+id: "@community/example-resend-dashboard"
+kind: example
+version: "1.0.0"
+description: "Resend's email logs page shows a single dense table on a #0A0A0A background: timestamp (#71717A monospace), 'To' address (#FAFAFA), subject (truncated), status pill (delivered green / opened blue / bounced red), and a small click-count badge. Row height is 40px. Click expands a side panel with the rendered email preview."
+domain: visual-design
+content_hash: "sha256:fd4c89d8905844944c35b2a394474b55dc02fb6e23cf4c686f67a829961edf56"
+tokens:
+  summary: 95
+  core: 508
+  full: 922
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-data-table-dense" }
+  - { type: related, target: "@community/example-linear-issues-table" }
+  - { type: related, target: "@community/pattern-drawer-side" }
+created_at: "2026-05-07"

@@ -1,0 +1,21 @@
+id: "@community/check-dependency-audit"
+kind: check
+version: "1.0.0"
+description: "All project dependencies must pass a vulnerability audit with zero high/critical severity findings. Checks must run in CI on every PR and on a scheduled daily basis against the production manifest."
+domain: security
+content_hash: "sha256:81b3ad80eab54d2c60d59187dc6e05ea7568bcaef29408aa37e3b0652aab4e7e"
+tokens:
+  summary: 62
+  core: 502
+  full: 942
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-vulnerable-outdated-components" }
+  - { type: related, target: "@community/check-secrets-not-in-git" }
+  - { type: related, target: "@community/rule-dependency-pinning" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/voice-poetic-literary"
+  kind="knowledge"
+  version="1.0.0"
+  domain="editorial-magazine"
+  tokens="630"
+  q="4.0">
+  <description>The voice used in literary magazine essays, Are.na profiles, Readwise highlights, and brand manifestos that aspire to last. Long-breath sentences, sensory specificity, restrained metaphor, deliberate rhythm. Sounds like The New Yorker, The Paris Review, an Are.na channel description by someone serious.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="91"/>
+    <level name="core"    file="chunks/core.md"    tokens="630"/>
+    <level name="full"    file="chunks/full.md"    tokens="677"/>
+  </projection>
+</atom>

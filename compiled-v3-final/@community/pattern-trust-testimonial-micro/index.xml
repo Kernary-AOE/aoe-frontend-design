@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-trust-testimonial-micro"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="493"
+  q="4.0">
+  <description>A single inline testimonial — one sentence, one 36px avatar, one attribution — with a 3px primary-color left border accent. Placed contextually beside pricing to answer &apos;has someone like me succeeded?&apos;</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="493"/>
+    <level name="full"    file="chunks/full.md"    tokens="918"/>
+  </projection>
+</atom>

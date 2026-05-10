@@ -1,0 +1,22 @@
+id: "@community/anti-pattern-decorative-spinning"
+kind: anti-pattern
+version: "1.0.0"
+description: "Applying infinite CSS rotate animation to logos, icons, decorative shapes, or background elements purely for visual interest — spinning adds no information, loops forever triggering motion sickness risk, and violates prefers-reduced-motion."
+domain: frontend-design
+content_hash: "sha256:2c1f85d75f0f1e1dc039049833e213242a3b31f095d2f70676c3267ad647c20e"
+tokens:
+  summary: 77
+  core: 474
+  full: 872
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@community/fact-animation-distraction-cost" }
+  - { type: related, target: "@community/pattern-motion-loading" }
+  - { type: related, target: "@impeccable/template-loading-spinner" }
+created_at: "2026-05-07"

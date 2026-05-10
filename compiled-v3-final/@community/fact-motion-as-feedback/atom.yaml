@@ -1,0 +1,21 @@
+id: "@community/fact-motion-as-feedback"
+kind: fact
+version: "1.0.0"
+description: "Effective UI motion communicates state changes and causality (something happened, something moved here from there) rather than serving as decoration. Motion divorced from state is overhead — perceived cost without functional return."
+content_hash: "sha256:4cb5a2f2fa1dcc72cc3eeef3d19c9659995116c5f63fb3641d8d090320e76553"
+tokens:
+  summary: 150
+  core: 321
+  full: 565
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-easing-cubic-bezier" }
+  - { type: related, target: "@community/fact-duration-perception-thresholds" }
+  - { type: related, target: "@community/fact-animation-distraction-cost" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+created_at: "2026-05-07"

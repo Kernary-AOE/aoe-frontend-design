@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-whisper-shadows"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="383"
+  q="4.0">
+  <description>Card shadow opacity must stay between 4% and 12% across the elevation scale — shadows visible at arm&apos;s length are too strong; strong shadows (≥15% opacity) are prohibited in light-mode card surfaces.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="297"/>
+    <level name="core"    file="chunks/core.md"    tokens="383"/>
+    <level name="full"    file="chunks/full.md"    tokens="617"/>
+  </projection>
+</atom>

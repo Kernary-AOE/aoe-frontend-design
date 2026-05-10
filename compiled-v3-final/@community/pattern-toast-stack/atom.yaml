@@ -1,0 +1,30 @@
+id: "@community/pattern-toast-stack"
+kind: pattern
+version: "1.0.0"
+description: "Transient, non-blocking notifications anchored to a screen corner (typically bottom-right) that auto-dismiss after 4-6 seconds. Stacks newest on top with up to 3 visible; older toasts collapse or rotate out."
+domain: frontend-design
+content_hash: "sha256:7f5f1fce18ab40397789a04253d5ba8f6e143a282611eda4fc696e32b1275958"
+tokens:
+  summary: 66
+  core: 876
+  full: 1734
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-optimistic-update" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@impeccable/template-spring-config" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/pattern-stagger-reveal" }
+  - { type: related, target: "@community/pattern-fade-in-on-load" }
+  - { type: related, target: "@community/fact-stagger-feel-organic" }
+  - { type: related, target: "@community/fact-aria-live-politeness" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-accessibility-after-thought" }
+  - { type: compatible, target: "@community/pattern-optimistic-update" }
+  - { type: compatible, target: "@community/pattern-empty-state" }
+created_at: "2026-05-07"

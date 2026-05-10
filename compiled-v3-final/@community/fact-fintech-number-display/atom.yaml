@@ -1,0 +1,22 @@
+id: "@community/fact-fintech-number-display"
+kind: fact
+version: "1.0.0"
+description: "Financial number display requires distinct typographic treatment at every scale: hero balances at 3–4rem with weight 700 and tabular lining numerals (`font-variant-numeric: tabular-nums lining-nums`), section totals at 2rem, card metrics at 1.5rem, and table rows at 0.875rem — each tier differentiating the most important metric from supporting data."
+domain: frontend-design
+content_hash: "sha256:20bbc3bd807948aa4c5b052f2b0a10ab11b6b1ccb4516731f411b7e67a58f41e"
+tokens:
+  summary: 205
+  core: 506
+  full: 866
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-monospace-tabular-numerics" }
+  - { type: related, target: "@community/rule-opentype-features-on" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: supplies-to, target: "@community/pattern-fintech-number-display" }
+created_at: "2026-05-07"

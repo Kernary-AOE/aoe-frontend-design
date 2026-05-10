@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tx-cmdk-fuzzy-search"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="595"
+  q="4.0">
+  <description>cmdk (pacocoursey/cmdk) fuzzy search scoring constants from command-score.ts: six weights that encode specific UX priorities for match ranking — SCORE_CONTINUE_MATCH=1.0, SCORE_SPACE_WORD_JUMP=0.9, SCORE_NON_SPACE_WORD_JUMP=0.8, SCORE_CHARACTER_JUMP=0.17, SCORE_TRANSPOSITION=0.1, with multiplicative penalties for skipped chars, case mismatches, and distance-from-start.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="108"/>
+    <level name="core"    file="chunks/core.md"    tokens="595"/>
+    <level name="full"    file="chunks/full.md"    tokens="1124"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-hover-lift"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="565"
+  q="4.0">
+  <description>Card / button 悬浮时上抬 1-2px + 阴影加深，传达可点击的物理直觉。Linear / Vercel / Stripe 风格的标志性微交互，让静态界面在指针靠近时变得&apos;活的&apos;。</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="38"/>
+    <level name="core"    file="chunks/core.md"    tokens="565"/>
+    <level name="full"    file="chunks/full.md"    tokens="1092"/>
+  </projection>
+</atom>

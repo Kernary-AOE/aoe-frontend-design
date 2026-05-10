@@ -1,0 +1,4 @@
+atom: "@community/constraint-no-jquery-deps"
+relations:
+  - type: related
+    target: "@community/scope-frontend-review"

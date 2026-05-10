@@ -1,0 +1,25 @@
+id: "@community/principle-clear-user-mental-model"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:c93db46d4e4f43c768da30d81870e440fb16161bc5c1828c090057d62861ec64"
+tokens:
+  summary: 83
+  core: 171
+  full: 238
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-current-location-indicator" }
+  - { type: related, target: "@community/principle-nielsen-visibility" }
+  - { type: related, target: "@community/principle-error-prevention-and-recovery" }
+  - { type: related, target: "@community/counter-example-empty-list-blank" }
+  - { type: related, target: "@community/anti-pattern-burying-frequent-actions" }
+  - { type: related, target: "@community/example-notion-sidebar" }
+  - { type: related, target: "@community/example-linear-cmdk" }
+  - { type: related, target: "@community/rule-destructive-action-differentiation" }
+created_at: "2026-05-07"

@@ -1,0 +1,21 @@
+id: "@community/constraint-typography-weight-blacklist"
+kind: constraint
+version: "1.0.0"
+description: "font-weight 100, 200, and 300 are BANNED for body text (≤ 20px) and primary UI labels; font-weight 900 is BANNED for body text. Permitted body/label weights are 400 (regular), 500 (medium), and 600 (semibold). Weight 700 (bold) is permitted for headings only. Weight 800–900 is permitted for display/hero text only."
+domain: frontend-design
+content_hash: "sha256:064ed4decea0291fa9e7aba55125ac7d84754973974a903510ab46e1393fa2aa"
+tokens:
+  summary: 97
+  core: 495
+  full: 588
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-thin-weight-body" }
+  - { type: related, target: "@community/rule-body-readability" }
+  - { type: related, target: "@community/check-body-readability" }
+created_at: "2026-05-07"

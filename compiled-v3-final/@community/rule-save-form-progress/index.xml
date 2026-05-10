@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-save-form-progress"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="311"
+  q="4.0">
+  <description>Long or high-stakes forms (multi-step wizards, job applications, checkout with many fields) should auto-save draft progress to localStorage or a backend draft endpoint so users can resume after accidental navigation, session expiry, or browser crash.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="77"/>
+    <level name="core"    file="chunks/core.md"    tokens="311"/>
+    <level name="full"    file="chunks/full.md"    tokens="544"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-cookie-consent-banner"
+  kind="knowledge"
+  version="1.0.0"
+  domain="legal-compliance"
+  tokens="720"
+  q="4.0">
+  <description>In the EU/EEA/UK, non-essential cookies and similar tracking technologies (pixels, fingerprinting, localStorage analytics) require freely-given, specific, informed, and unambiguous prior consent before the cookie is set. Pre-checked boxes, implied consent, and &apos;continue browsing = consent&apos; are illegal under the ePrivacy Directive and GDPR.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="263"/>
+    <level name="core"    file="chunks/core.md"    tokens="720"/>
+    <level name="full"    file="chunks/full.md"    tokens="1517"/>
+  </projection>
+</atom>

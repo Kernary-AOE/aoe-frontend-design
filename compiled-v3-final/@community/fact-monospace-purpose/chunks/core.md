@@ -1,0 +1,21 @@
+# MonospacePurpose [fact] v1.0.0
+Monospace typefaces are designed for fixed-advance-width contexts (code, terminals, tabular numerics) where character alignment carries information. Using them as body type for prose is anti-pattern: they slow reading and signal a code aesthetic where none is intended.
+> Monospace typefaces (JetBrains Mono, Berkeley Mono, IBM Plex Mono, Söhne Mono) are designed for code, log output, terminals, IDs / hashes, and tabular numerics where column alignment is semantically meaningful — using them for prose body text reduces reading speed by ~10–15% and signals a code aesthetic that misframes the content.
+
+## Confidence
+strong
+
+## Applies To
+- code blocks (<code>, <pre>) — yes, monospace
+- tabular-figures contexts (financial tables, dashboards with aligned columns) — `font-variant-numeric: tabular-nums` instead, or monospace
+- ID / hash / SKU display — monospace appropriate (alignment + character-by-character readability)
+- body prose — never monospace except for stylistic / brand decision
+
+## Quantitative
+- **Reading Speed Penalty**: ~10–15% slower for sustained prose vs proportional fonts
+- **Digit Misrecognition Baseline**: monospace 0/O and 1/l/I disambiguation depends on the specific face — JetBrains Mono and Berkeley Mono explicitly differentiate
+
+## Counter Conditions
+- Tabular numerics in proportional fonts can use OpenType `tnum` feature instead of switching to monospace.
+- Stylistic / brand monospace for entire UIs (Berkeley Graphics' own site, Linear's data tables) is a deliberate exception — the team accepts the prose-reading cost for aesthetic identity.
+- Console / terminal contexts genuinely require monospace — alignment is the medium.

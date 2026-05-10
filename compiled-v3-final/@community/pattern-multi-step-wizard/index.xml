@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-multi-step-wizard"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="774"
+  q="4.0">
+  <description>A linear sequence of form steps presented one at a time with a top progress indicator (e.g., &apos;2 of 5 - Account&apos;). Each step validates before advance; users can go back without losing input.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="62"/>
+    <level name="core"    file="chunks/core.md"    tokens="774"/>
+    <level name="full"    file="chunks/full.md"    tokens="1533"/>
+  </projection>
+</atom>

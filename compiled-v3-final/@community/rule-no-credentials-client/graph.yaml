@@ -1,0 +1,8 @@
+atom: "@community/rule-no-credentials-client"
+relations:
+  - type: related
+    target: "@community/fact-error-prevention"
+  - type: see-also
+    target: "@community/check-no-credentials-client"
+  - type: validates-with
+    target: "@community/fact-error-prevention"

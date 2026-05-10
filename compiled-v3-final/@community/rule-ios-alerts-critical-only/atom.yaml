@@ -1,0 +1,20 @@
+id: "@community/rule-ios-alerts-critical-only"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:2f11d4ac1b47a2b009a1b9af0f9642ac4fea820ee416dba98c0e6650990ab784"
+tokens:
+  summary: 53
+  core: 81
+  full: 240
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-ios-fullscreen-spinner" }
+  - { type: related, target: "@community/anti-pattern-ios-non-dismissable-modal" }
+  - { type: related, target: "@community/rule-ios-immediate-action-acknowledgment" }
+created_at: "2026-05-07"

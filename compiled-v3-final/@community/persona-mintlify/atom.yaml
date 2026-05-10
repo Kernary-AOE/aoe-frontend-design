@@ -1,0 +1,43 @@
+id: "@community/persona-mintlify"
+kind: persona
+version: "1.0.0"
+description: "Documentation-as-product design: Inter on pure white #ffffff with atmospheric green-to-white gradient hero, brand green #18E299 reserved exclusively for interactive states, full-pill 9999px buttons and inputs, and whisper-thin 5%-opacity borders throughout."
+domain: visual-design
+content_hash: "sha256:8e274462923f06bf03dc86882038c0213dc90b7eef906d7ad103d64f91752e49"
+tokens:
+  summary: 77
+  core: 625
+  full: 706
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-swiss-modernist" }
+  - { type: related, target: "@impeccable/template-oklch-palette" }
+  - { type: related, target: "@impeccable/template-card-hover-lift" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/rule-typography-letter-spacing" }
+  - { type: related, target: "@community/fact-monospace-purpose" }
+  - { type: related, target: "@community/check-body-readability" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-color-oklch-required" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/rule-brand-color-primary-only" }
+  - { type: related, target: "@community/principle-intentional-gradient" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: compatible, target: "@impeccable/persona-swiss-modernist" }
+  - { type: compatible, target: "@impeccable/persona-vercel-clean" }
+  - { type: compatible, target: "@impeccable/persona-editorial" }
+  - { type: compatible, target: "@impeccable/persona-notion-warm" }
+  - { type: conflicts, target: "@impeccable/persona-brutalist" }
+  - { type: conflicts, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: conflicts, target: "@impeccable/persona-magazine-editorial" }
+  - { type: contradicts, target: "@impeccable/persona-brutalist" }
+  - { type: contradicts, target: "@impeccable/persona-dense-pragmatist" }
+created_at: "2026-05-07"

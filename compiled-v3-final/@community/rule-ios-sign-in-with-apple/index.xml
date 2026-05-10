@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-ios-sign-in-with-apple"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="89"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="57"/>
+    <level name="core"    file="chunks/core.md"    tokens="89"/>
+    <level name="full"    file="chunks/full.md"    tokens="266"/>
+  </projection>
+</atom>

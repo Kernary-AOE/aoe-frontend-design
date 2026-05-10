@@ -1,0 +1,40 @@
+rule HeadingHierarchyLogical {
+  id: "@community/rule-heading-hierarchy-logical"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "Heading levels must progress sequentially (h1 → h2 → h3) mirroring visual hierarchy. Skipped heading levels (e.g. h1 → h3) are forbidden."
+
+  rationale: "Screen reader users navigate by headings; skipped or reversed levels break the document outline. Assistive technologies build a virtual navigation tree from heading elements — skipped levels create gaps that make sections unreachable by heading navigation shortcuts. The DOM heading order must match the visual reading order."
+
+  applies-to: [
+    "composing page or component structure with headings",
+    "HTML artifact output",
+    "accessibility audits",
+    "any content with multiple heading levels",
+  ]
+
+  examples: [
+    "h1 (page title) → h2 (section) → h3 (subsection) — correct sequential hierarchy",
+    "h1 per page, multiple h2 sections, h3 sub-items within h2 — valid outline",
+  ]
+
+  notes: [
+    "Verify by: audit heading order in DOM; skipped levels (e.g. h1 → h3) should not appear.",
+    "Severity: warning — skipped headings impair screen reader navigation without breaking visual layout.",
+    "Only one h1 per page is the accessibility convention.",
+    "Using heading elements (h2, h3) for font size/style purposes without semantic meaning is also forbidden — use classes instead.",
+    "Visual heading order and DOM heading order must match — reordering with CSS flexbox/grid order does not fix an incorrect DOM sequence.",
+  ]
+
+  related: [
+    @community/category-typography-scale,
+    @community/check-line-length-optimal,
+    @community/fact-fitts-law,
+    @community/anti-pattern-thin-weight-body,
+    @community/example-notion-blocks,
+    @community/rule-heading-hierarchy,
+    @community/principle-typography-hierarchy,
+  ]
+}

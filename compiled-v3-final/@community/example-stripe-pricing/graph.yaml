@@ -1,0 +1,8 @@
+atom: "@community/example-stripe-pricing"
+relations:
+  - type: related
+    target: "@community/pattern-pricing-tiers-toggle"
+  - type: related
+    target: "@community/example-vercel-pricing"
+  - type: related
+    target: "@community/value-brand-hue"

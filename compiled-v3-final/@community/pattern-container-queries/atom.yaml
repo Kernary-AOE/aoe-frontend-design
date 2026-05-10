@@ -1,0 +1,22 @@
+id: "@community/pattern-container-queries"
+kind: pattern
+version: "1.0.0"
+description: "Size components based on their container width using container-type: inline-size and @container name (min-width: Npx) rules, enabling components to adapt layout independently of the viewport — essential when the same component appears in a sidebar (narrow) and a main panel (wide)."
+domain: frontend-design
+content_hash: "sha256:4aac094cadede96f33fd97ff771dbeb6a0d502b00ce513a8aa3ef6f989310225"
+tokens:
+  summary: 86
+  core: 617
+  full: 1149
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/category-layout-grid" }
+  - { type: related, target: "@community/rule-collapse-multi-column-mobile" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

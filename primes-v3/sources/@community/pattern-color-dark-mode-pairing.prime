@@ -1,0 +1,27 @@
+pattern ColorDarkModePairing {
+  id: "@community/pattern-color-dark-mode-pairing"
+  version: "1.0.0"
+
+  label: "Dark Mode Color Correspondence"
+  domain: frontend-design
+
+  problem: "Developers implement dark mode by CSS inversion filters or by simply flipping lightness values, producing muddy colors, over-saturated midtones, and backgrounds that are pure black rather than near-black. This breaks color fidelity and the chroma envelope rule."
+
+  solution: "Treat dark mode as a full re-palette, not a filter. Map every light-mode token to a deliberate dark-mode counterpart using these rules: background steps move from L=0.97–0.99 to L=0.10–0.15; solid steps (9–10) may stay similar or increase slightly; chroma decreases at low lightness to respect the chroma envelope."
+
+  notes: [
+    "Steps 1–2 (background): L goes from 0.97–0.99 in light mode → 0.10–0.15 in dark mode. Never use pure black (L=0).",
+    "Steps 9–10 (solid colors — buttons, badges): L often stays similar or increases slightly in dark mode for contrast.",
+    "Chroma envelope rule: in dark mode, chroma MUST decrease at low lightness values. High-chroma dark colors appear neon and harsh.",
+    "Every light-mode token must have a dark-mode mapping — no token is allowed to remain undefined for dark mode.",
+    "Key principle: dark mode is a re-palette, not a filter.",
+    "Implementation: use @media (prefers-color-scheme: dark) with overriding CSS custom property values, or Radix Colors which provides automatic dark variants.",
+  ]
+
+  related: [
+    @impeccable/template-oklch-palette,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-oklch-required,
+    @community/check-focus-visible,
+  ]
+}

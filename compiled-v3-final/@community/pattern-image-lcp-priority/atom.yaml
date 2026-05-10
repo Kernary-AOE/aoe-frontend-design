@@ -1,0 +1,24 @@
+id: "@community/pattern-image-lcp-priority"
+kind: pattern
+version: "1.0.0"
+description: "Hint the browser that the LCP image is the most important resource on the page. Combines `<link rel='preload' as='image'>` with `fetchpriority='high'`, modern format negotiation, and explicit dimensions to drive sub-2.5s LCP on mobile."
+domain: performance
+content_hash: "sha256:4797a92eb590ac2f6542fdda8068efe5a9028bb223fb7b10ddf1866ca97e3a51"
+tokens:
+  summary: 73
+  core: 948
+  full: 1932
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/metric-lcp-largest-contentful-paint" }
+  - { type: related, target: "@community/rule-cls-budget" }
+  - { type: related, target: "@community/principle-perceived-vs-actual" }
+  - { type: related, target: "@community/anti-pattern-blocking-third-party" }
+  - { type: related, target: "@community/fact-rail-targets" }
+  - { type: derived-from, target: "@community/metric-lcp-largest-contentful-paint" }
+created_at: "2026-05-07"

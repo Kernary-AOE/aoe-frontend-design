@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tx-blocknote-drag-handle"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="546"
+  q="4.0">
+  <description>BlockNote hover-gutter drag handle pattern: a six-dot MdDragIndicator button that is simultaneously a drag source (draggable={true}) and a dropdown menu trigger, with sideMenu.freezeMenu() / unfreezeMenu() preventing the &apos;menu flies away&apos; bug when cursor leaves the handle toward the dropdown.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="90"/>
+    <level name="core"    file="chunks/core.md"    tokens="546"/>
+    <level name="full"    file="chunks/full.md"    tokens="1072"/>
+  </projection>
+</atom>

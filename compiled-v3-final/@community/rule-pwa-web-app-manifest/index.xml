@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-pwa-web-app-manifest"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="298"
+  q="4.0">
+  <description>Every Progressive Web App must link a manifest.json in &lt;head&gt; with all required fields (name, icons, start_url, display) — omitting any field silently blocks the browser install prompt.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="234"/>
+    <level name="core"    file="chunks/core.md"    tokens="298"/>
+    <level name="full"    file="chunks/full.md"    tokens="589"/>
+  </projection>
+</atom>

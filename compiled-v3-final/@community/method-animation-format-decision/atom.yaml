@@ -1,0 +1,21 @@
+id: "@community/method-animation-format-decision"
+kind: method
+version: "1.0.0"
+description: "A decision tree for choosing between Pure SVG+GSAP, Rive, and Lottie based on interactivity requirements, designer toolchain, bundle budget, and file-size constraints."
+domain: frontend-design
+content_hash: "sha256:ff5ca903dfc982685980605486892071e92f3dcc8bba489e1327134a461d24a7"
+tokens:
+  summary: 59
+  core: 328
+  full: 598
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/rule-gsap-now-free" }
+created_at: "2026-05-07"

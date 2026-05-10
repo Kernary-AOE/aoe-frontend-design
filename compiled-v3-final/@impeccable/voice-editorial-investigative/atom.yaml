@@ -1,0 +1,24 @@
+id: "@impeccable/voice-editorial-investigative"
+kind: voice
+version: "1.0.0"
+description: "The voice used in investigative reporting and longform features. Sourced, specific, predominantly past tense, attribution-heavy, allergic to adjectives that smuggle in opinion. Sounds like NYT, The Atlantic, ProPublica, Bellingcat."
+domain: longform-journalism
+content_hash: "sha256:e6a86780d0d5b96407fc64c7a3f79eb3cabab43d3280f1273562739edb4bdcc1"
+tokens:
+  summary: 75
+  core: 703
+  full: 750
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/voice-poetic-literary" }
+  - { type: related, target: "@impeccable/voice-legal-formal" }
+  - { type: compatible, target: "@impeccable/persona-magazine-editorial" }
+  - { type: conflicts, target: "@impeccable/voice-marketing-bold" }
+  - { type: conflicts, target: "@impeccable/voice-casual-warm" }
+  - { type: conflicts, target: "@impeccable/voice-brand-corporate" }
+created_at: "2026-05-07"

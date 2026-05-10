@@ -1,0 +1,24 @@
+id: "@community/rule-ios-tab-bar-always-visible"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:19a2cdee443faa6833fcd0802817acdfb243dc760c879306094b6c73ecf545aa"
+tokens:
+  summary: 60
+  core: 89
+  full: 256
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-ios-tab-bar-top-level" }
+  - { type: related, target: "@community/rule-ios-preserve-navigation-state" }
+  - { type: related, target: "@community/rule-ios-sf-symbols-tab-bar" }
+  - { type: related, target: "@community/anti-pattern-ios-hamburger-menu" }
+  - { type: related, target: "@community/anti-pattern-ios-stacked-modals" }
+  - { type: related, target: "@community/rule-ios-safe-area-insets" }
+  - { type: related, target: "@community/principle-navigation-scope-taxonomy" }
+created_at: "2026-05-07"

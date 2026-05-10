@@ -1,0 +1,31 @@
+id: "@community/collection-rest-api-discipline"
+kind: collection
+version: "1.0.0"
+description: "Atoms required to design, ship, and evolve a REST API that survives migration, scales beyond 10K rows per collection, and stays compatible with API gateways, SDK generators, and CDN caches. Combines resource modeling, pagination, error envelope, idempotency, and HTTP method semantics."
+content_hash: "sha256:97228bf932f44ace1985af353664a07b5f48c8f2ca973f8445dbaf31b07e8a61"
+tokens:
+  summary: 84
+  core: 1029
+  full: 1029
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-resource-not-action" }
+  - { type: related, target: "@community/pattern-cursor-pagination" }
+  - { type: related, target: "@community/type-error-shape" }
+  - { type: related, target: "@community/principle-idempotent-writes" }
+  - { type: related, target: "@community/anti-pattern-rpc-as-rest" }
+  - { type: includes, target: "@community/fact-http-method-semantics" }
+  - { type: includes, target: "@community/rule-resource-not-action" }
+  - { type: includes, target: "@community/principle-pagination-first" }
+  - { type: includes, target: "@community/pattern-cursor-pagination" }
+  - { type: includes, target: "@community/type-pagination-cursor" }
+  - { type: includes, target: "@community/type-error-shape" }
+  - { type: includes, target: "@community/principle-idempotent-writes" }
+  - { type: includes, target: "@community/rule-event-schema-versioning" }
+  - { type: includes, target: "@community/anti-pattern-rpc-as-rest" }
+created_at: "2026-05-07"

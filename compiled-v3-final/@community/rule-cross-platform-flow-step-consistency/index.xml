@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-cross-platform-flow-step-consistency"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="156"
+  q="4.0">
+  <description>Multi-step flows (onboarding, checkout, account setup) must present the same steps in the same logical order across all platforms, even if visual grouping or layout differs per platform.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="65"/>
+    <level name="core"    file="chunks/core.md"    tokens="156"/>
+    <level name="full"    file="chunks/full.md"    tokens="303"/>
+  </projection>
+</atom>

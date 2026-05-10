@@ -1,0 +1,27 @@
+# ModelCardRequired [rule] v1.0.0
+Every model deployed to production must publish a Model Card (per Mitchell et al., FAccT 2019) that documents intended use, evaluation data, performance across demographic slices, ethical considerations, and known limitations. No production deployment without a signed-off card.
+> A Model Card is a 1-3 page structured document, version-controlled alongside the model artifact, containing nine sections: (1) Model Details — name, version, date, owner, license, citation; (2) Intended Use — primary use, primary users, out-of-scope uses; (3) Factors — relevant demographic, environmental, instrumentation factors; (4) Metrics — performance measures, decision thresholds, variation approaches; (5) Evaluation Data — datasets, motivation, preprocessing; (6) Training Data — same; (7) Quantitative Analyses — disaggregated results across factors; (8) Ethical Considerations; (9) Caveats and Recommendations. Deployment gates require a card linked from the model registry.
+domain: machine-learning
+
+## Applies To
+- Any ML model serving customer-facing predictions
+- Models making decisions affecting access to credit, housing, employment, healthcare (high-risk under EU AI Act)
+- Foundation models / LLMs (Hugging Face requires card on every model upload)
+- Internal-only models that influence business decisions (pricing, fraud, ranking)
+- Even retraining the same architecture on new data — every retraining produces a new card
+
+## Implementation Checklist
+- Model Card stored as `MODEL_CARD.md` next to the model artifact in the registry (MLflow, Weights & Biases, SageMaker Model Registry)
+- All 9 sections present; missing sections explicitly justify why ('N/A — no demographic factors apply' is acceptable; blank is not)
+- Performance metrics disaggregated by relevant factors (gender, age, geography, device type — whatever the model interacts with)
+- Out-of-scope uses listed explicitly — protect against misuse by other teams
+- Card reviewed by a non-author (peer engineer + product/legal where applicable) before deployment
+- Card version-pinned to the model version; rollback rolls back the card
+- Retraining produces a new card automatically (Hugging Face `model-card` CLI; Google's TF Model Card Toolkit)
+
+## Severity
+block
+
+## Counter Examples
+- Internal recommendation model deployed with no documentation. Six months later a privacy review asks: 'what features does this use, who is it deployed to, what's the false-positive rate by user segment?' — nobody can answer; model rolled back.
+- Vendor-supplied face-recognition model used in a customer-facing app with no demographic-disaggregated metrics — fails downstream when accuracy disparity becomes a press story.

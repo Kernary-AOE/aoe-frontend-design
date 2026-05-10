@@ -1,0 +1,22 @@
+id: "@impeccable/template-oklch-dark-mode-cascade"
+kind: template
+version: "1.0.0"
+description: "Single-variable OKLCH cascade: change one --hue and the entire palette + dark mode follow. Auto-flips via prefers-color-scheme and supports manual data-theme override."
+domain: theming
+content_hash: "sha256:65186f7e5b390c6a358822bef68c60b54ec45bd2d23b9ab4d28a79d50696d5bf"
+tokens:
+  summary: 56
+  core: 1141
+  full: 1141
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-oklch-palette" }
+  - { type: related, target: "@impeccable/template-dark-mode-toggle" }
+  - { type: related, target: "@community/term-oklch" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

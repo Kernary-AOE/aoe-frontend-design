@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-content-security-policy"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="462"
+  q="4.0">
+  <description>CSP header must be present on HTML responses, must not contain &apos;unsafe-inline&apos; or &apos;unsafe-eval&apos; in script-src, and must not use wildcard (*) as the sole source in script-src or default-src.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="62"/>
+    <level name="core"    file="chunks/core.md"    tokens="462"/>
+    <level name="full"    file="chunks/full.md"    tokens="863"/>
+  </projection>
+</atom>

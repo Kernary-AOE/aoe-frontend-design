@@ -1,0 +1,22 @@
+id: "@community/constraint-focus-trap-modal"
+kind: constraint
+version: "1.0.0"
+description: "Every modal dialog must implement a focus trap: keyboard focus must be sent into the modal on open, cycle within the modal on Tab / Shift+Tab, and return to the triggering element on close."
+domain: accessibility
+content_hash: "sha256:4ede69fb963786e052978fae5a3f57e2e6dc7c9a521ca950fece3c6db74bba7e"
+tokens:
+  summary: 62
+  core: 395
+  full: 511
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-modal-confirm" }
+  - { type: related, target: "@community/pattern-command-palette-modal" }
+  - { type: related, target: "@community/example-radix-dialog" }
+  - { type: related, target: "@community/constraint-scroll-locked-modal-only" }
+created_at: "2026-05-07"

@@ -1,0 +1,19 @@
+id: "@community/fact-optimal-line-length"
+kind: fact
+version: "1.0.0"
+domain: typography
+content_hash: "sha256:aee8e6e8ece47e34c667d5cf126c041e0cfb7144f4bfa5d4affccb4507115378"
+tokens:
+  summary: 69
+  core: 86
+  full: 103
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/category-typography-scale" }
+  - { type: related, target: "@community/value-focus-outline-width" }
+created_at: "2026-05-07"

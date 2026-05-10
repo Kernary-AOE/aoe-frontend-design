@@ -1,0 +1,14 @@
+<atom
+  id="@community/method-brand-distinctiveness-test"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="104"
+  q="4.0">
+  <description>A 5-question audit that tests whether a design communicates specific brand identity rather than generic AI-generated output — applied before any public launch or design review.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="61"/>
+    <level name="core"    file="chunks/core.md"    tokens="104"/>
+    <level name="full"    file="chunks/full.md"    tokens="148"/>
+  </projection>
+</atom>

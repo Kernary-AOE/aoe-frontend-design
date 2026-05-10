@@ -1,0 +1,23 @@
+id: "@community/tradeoff-cache-strategy"
+kind: tradeoff
+version: "1.0.0"
+description: "The four canonical cache strategies trade off freshness, write latency, consistency, and operational complexity. Picking the right one depends on read/write ratio, staleness tolerance, and the cost of cache misses."
+domain: backend-engineering
+content_hash: "sha256:133ece211b6a265aeb13e37e7105ed6c1fefd6141343175fa1de7ae4691deabb"
+tokens:
+  summary: 69
+  core: 838
+  full: 974
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-idempotent-writes" }
+  - { type: related, target: "@community/anti-pattern-batch-only-pipelines" }
+  - { type: related, target: "@community/principle-perceived-vs-actual" }
+  - { type: related, target: "@community/fact-http-method-semantics" }
+  - { type: related, target: "@community/tradeoff-monolith-vs-microservices" }
+created_at: "2026-05-07"

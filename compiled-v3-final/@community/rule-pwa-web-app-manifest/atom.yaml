@@ -1,0 +1,21 @@
+id: "@community/rule-pwa-web-app-manifest"
+kind: rule
+version: "1.0.0"
+description: "Every Progressive Web App must link a manifest.json in <head> with all required fields (name, icons, start_url, display) — omitting any field silently blocks the browser install prompt."
+domain: frontend-design
+content_hash: "sha256:3412e6e56a94ed9ff898e6b9c62d1d34b195db9ef7c6c57726d61d119e13b3cd"
+tokens:
+  summary: 234
+  core: 298
+  full: 589
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-pwa-installability-criteria" }
+  - { type: related, target: "@community/fact-pwa-display-mode-taxonomy" }
+  - { type: related, target: "@community/pattern-pwa-service-worker-offline" }
+created_at: "2026-05-07"

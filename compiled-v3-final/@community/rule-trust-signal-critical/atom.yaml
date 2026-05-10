@@ -1,0 +1,21 @@
+id: "@community/rule-trust-signal-critical"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:463f461868263b703513f9dfb89563306ada14b0d65e4df54337545fbefc31e0"
+tokens:
+  summary: 54
+  core: 99
+  full: 300
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-trust-badge-row" }
+  - { type: related, target: "@community/pattern-trust-social-proof-numbers" }
+  - { type: related, target: "@community/rule-trust-signal-placement" }
+  - { type: related, target: "@community/anti-pattern-fake-trust-signals" }
+created_at: "2026-05-07"

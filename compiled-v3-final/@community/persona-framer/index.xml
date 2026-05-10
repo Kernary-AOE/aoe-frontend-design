@@ -1,0 +1,14 @@
+<atom
+  id="@community/persona-framer"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="695"
+  q="4.0">
+  <description>Dark-first cinematic tool aesthetic: GT Walsheim at 500 weight only with extreme -5.5px tracking at 110px making headlines feel spring-loaded, void-black #000000 canvas with electric Framer Blue #0099ff as sole accent, and Inter Variable with 6+ OpenType features (cv01, cv05, cv09, cv11, ss03, ss07) giving body text a subtly custom character.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="98"/>
+    <level name="core"    file="chunks/core.md"    tokens="695"/>
+    <level name="full"    file="chunks/full.md"    tokens="784"/>
+  </projection>
+</atom>

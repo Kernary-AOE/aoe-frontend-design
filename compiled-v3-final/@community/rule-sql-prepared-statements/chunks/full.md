@@ -1,0 +1,39 @@
+# SqlPreparedStatements [rule] v1.0.0
+> User-supplied values must NEVER be interpolated or concatenated into SQL query strings. All SQL queries with external input must use parameterized queries (prepared statements) with typed parameter binding. ORM `raw()` / `execute()` escape hatches with string formatting are prohibited. This rule applies to every SQL dialect and every database driver.
+domain: security
+
+## Applies To
+- SELECT / INSERT / UPDATE / DELETE with WHERE clauses containing user input
+- ORDER BY column selection (use allowlist, not parameterization — ORDER BY cannot be parameterized in most drivers)
+- LIKE pattern clauses (parameterize the pattern including % wildcards)
+- IN clauses with variable-length user-supplied lists
+- ORM raw() / annotate() / extra() methods that accept format strings
+- Stored procedures called with user-supplied arguments
+
+## Counter Examples
+- PHP classic: `$q = "SELECT * FROM users WHERE id='" . $_GET['id'] . "'"; mysqli_query($conn, $q)` — `?id=1' OR '1'='1` dumps all users.
+- Python f-string: `cursor.execute(f"SELECT * FROM accounts WHERE email='{email}'")` — `email = "' OR 1=1 --"` bypasses all WHERE filtering.
+- SQLAlchemy raw escape: `db.session.execute(text(f'DELETE FROM sessions WHERE token = "{token}"'))` — token containing `"; DROP TABLE sessions; --` causes data loss.
+
+## Examples
+- PostgreSQL (asyncpg): `await conn.fetch('SELECT * FROM users WHERE id = $1', user_id)` — asyncpg uses typed binary protocol; user_id is always a parameter.
+- MySQL (mysql2 Node.js): `conn.execute('SELECT * FROM orders WHERE customer_id = ?', [customerId])` — `execute()` uses prepared statements; `query()` does not.
+- Java JDBC: `PreparedStatement ps = conn.prepareStatement('SELECT * FROM products WHERE name LIKE ?'); ps.setString(1, '%' + searchTerm + '%')` — wildcard added before binding.
+- SQLAlchemy (Python): `session.execute(select(User).where(User.name == name))` — ORM binds all params; avoid `text('SELECT * WHERE name=' + name)`.
+- ORDER BY allowlist pattern: `allowed = {'name', 'created_at', 'price'}; col = col if col in allowed else 'created_at'` — validate, then interpolate from a controlled set.
+
+## Rationale
+String-concatenated SQL treats user input as query syntax. A single unescaped `'` or `--` can alter query logic, extract arbitrary data, modify records, or execute stacked statements. Prepared statements send the query structure and parameters separately — the database driver ensures parameters are always treated as data, never as SQL syntax, regardless of content.
+
+## Applies To
+- SELECT / INSERT / UPDATE / DELETE with WHERE clauses containing user input
+- ORDER BY column selection (use allowlist, not parameterization — ORDER BY cannot be parameterized in most drivers)
+- LIKE pattern clauses (parameterize the pattern including % wildcards)
+- IN clauses with variable-length user-supplied lists
+- ORM raw() / annotate() / extra() methods that accept format strings
+- Stored procedures called with user-supplied arguments
+
+## Counter Examples
+- PHP classic: `$q = "SELECT * FROM users WHERE id='" . $_GET['id'] . "'"; mysqli_query($conn, $q)` — `?id=1' OR '1'='1` dumps all users.
+- Python f-string: `cursor.execute(f"SELECT * FROM accounts WHERE email='{email}'")` — `email = "' OR 1=1 --"` bypasses all WHERE filtering.
+- SQLAlchemy raw escape: `db.session.execute(text(f'DELETE FROM sessions WHERE token = "{token}"'))` — token containing `"; DROP TABLE sessions; --` causes data loss.

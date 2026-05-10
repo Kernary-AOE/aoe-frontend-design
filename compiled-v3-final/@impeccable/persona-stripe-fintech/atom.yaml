@@ -1,0 +1,48 @@
+id: "@impeccable/persona-stripe-fintech"
+kind: persona
+version: "1.0.0"
+description: "Fintech trustworthiness made aspirational: brand-color OKLCH systems with a single hue variable, animated gradient hero backgrounds, dense API-doc tables, rounded 12px cards with crisp 1px hairline borders, dark-mode toggle as first-class. Reads as 'we move money and we have taste.'"
+domain: visual-design
+content_hash: "sha256:e6291e436bb94ce284cefe488087ba8a559a92288bcf54d5030bc9806abcfa08"
+tokens:
+  summary: 85
+  core: 669
+  full: 780
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-vercel-clean" }
+  - { type: related, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: related, target: "@impeccable/template-oklch-palette" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/fact-fintech-number-display" }
+  - { type: related, target: "@community/fact-variable-font-axes" }
+  - { type: related, target: "@community/rule-font-feature-settings" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-color-oklch-required" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/constraint-oklch-only-color" }
+  - { type: related, target: "@community/principle-intentional-gradient" }
+  - { type: related, target: "@community/rule-gradients-justified-only" }
+  - { type: related, target: "@community/pattern-gradient-mesh-engine" }
+  - { type: related, target: "@community/pattern-color-scale-decision" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: compatible, target: "modern" }
+  - { type: compatible, target: "trustworthy" }
+  - { type: compatible, target: "developer-friendly" }
+  - { type: compatible, target: "@impeccable/persona-vercel-clean" }
+  - { type: compatible, target: "data-rich" }
+  - { type: conflicts, target: "@impeccable/persona-brutalist" }
+  - { type: conflicts, target: "@impeccable/persona-warm-institutional" }
+  - { type: conflicts, target: "@impeccable/persona-tokyo-minimal" }
+  - { type: conflicts, target: "@impeccable/persona-magazine-editorial" }
+  - { type: specializes, target: "@community/persona-stripe" }
+  - { type: contradicts, target: "@impeccable/persona-brutalist" }
+  - { type: contradicts, target: "@impeccable/persona-warm-institutional" }
+created_at: "2026-05-07"

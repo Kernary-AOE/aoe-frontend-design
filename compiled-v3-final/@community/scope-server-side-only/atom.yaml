@@ -1,0 +1,21 @@
+id: "@community/scope-server-side-only"
+kind: scope
+version: "1.0.0"
+description: "Defines the applicability scope for atoms whose guidance applies only to server-side rendering, server components, API routes, edge functions, or backend code paths. Browser-only atoms (DOM access, window globals, mouse events) are out of scope."
+domain: frontend-engineering
+content_hash: "sha256:f9a1347cf91010051d4bc4ad567e1416ee2e8bc696137676e5c92ace5abaa5db"
+tokens:
+  summary: 77
+  core: 468
+  full: 468
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/tradeoff-server-vs-client-rendering" }
+  - { type: related, target: "@community/principle-owasp-broken-access-control" }
+  - { type: related, target: "@community/principle-owasp-cryptographic-failures" }
+created_at: "2026-05-07"

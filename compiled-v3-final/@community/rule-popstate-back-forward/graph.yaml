@@ -1,0 +1,8 @@
+atom: "@community/rule-popstate-back-forward"
+relations:
+  - type: related
+    target: "@community/rule-save-form-progress"
+  - type: related
+    target: "@community/rule-no-state-reset-without-confirm"
+  - type: related
+    target: "@community/fact-user-control-freedom"

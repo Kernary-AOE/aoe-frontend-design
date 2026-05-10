@@ -1,0 +1,14 @@
+atom: "@community/pattern-tx-cmdk-fuzzy-search"
+relations:
+  - type: related
+    target: "@community/pattern-tx-blocknote-block-editor-core"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/rule-single-primary-action-per-screen"
+  - type: related
+    target: "@community/constraint-focus-trap-modal"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"

@@ -1,0 +1,6 @@
+atom: "@community/check-form-label-associated"
+relations:
+  - type: related
+    target: "@community/rule-form-label-associated"
+  - type: related
+    target: "@community/rule-aria-label-required"

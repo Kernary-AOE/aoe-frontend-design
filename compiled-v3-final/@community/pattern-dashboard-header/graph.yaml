@@ -1,0 +1,18 @@
+atom: "@community/pattern-dashboard-header"
+relations:
+  - type: related
+    target: "@community/pattern-dashboard-layout"
+  - type: related
+    target: "@community/pattern-dashboard-sidebar"
+  - type: related
+    target: "@community/example-stripe-dashboard"
+  - type: related
+    target: "@community/rule-aria-current-page"
+  - type: related
+    target: "@community/rule-aria-label-in-name"
+  - type: related
+    target: "@community/check-skip-link"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/check-focus-visible"

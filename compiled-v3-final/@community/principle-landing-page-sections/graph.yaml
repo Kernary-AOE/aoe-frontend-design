@@ -1,0 +1,28 @@
+atom: "@community/principle-landing-page-sections"
+relations:
+  - type: related
+    target: "@community/pattern-landing-page-sections"
+  - type: related
+    target: "@community/pattern-hero-3-layouts"
+  - type: related
+    target: "@community/pattern-features-grid"
+  - type: related
+    target: "@community/pattern-pricing-section"
+  - type: related
+    target: "@community/pattern-testimonials-section"
+  - type: related
+    target: "@community/pattern-landing-navigation"
+  - type: related
+    target: "@community/pattern-landing-footer"
+  - type: related
+    target: "@community/constraint-section-spacing"
+  - type: related
+    target: "@community/anti-pattern-ai-slop-aesthetics"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@impeccable/persona-vercel-clean"
+  - type: related
+    target: "@impeccable/persona-stripe"
+  - type: related
+    target: "@impeccable/persona-framer"

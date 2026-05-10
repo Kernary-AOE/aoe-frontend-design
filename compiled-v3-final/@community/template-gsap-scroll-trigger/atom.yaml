@@ -1,0 +1,25 @@
+id: "@community/template-gsap-scroll-trigger"
+kind: template
+version: "1.0.0"
+description: "GSAP ScrollTrigger pattern for scroll-linked section reveals, pinned scrub timelines, and snap — with gsap.matchMedia() prefers-reduced-motion guard and useGSAP hook for React/Next.js."
+domain: frontend-design
+content_hash: "sha256:2f1ff335b12b9b075025bcb96b6198cd1f81fffe9af4f0971f23c9a7bba7cbca"
+tokens:
+  summary: 62
+  core: 975
+  full: 975
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-gsap-now-free" }
+  - { type: related, target: "@community/template-css-scroll-driven-animations" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@community/fact-motion-hierarchy" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

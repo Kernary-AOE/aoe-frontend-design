@@ -1,0 +1,24 @@
+id: "@community/scope-mobile-native"
+kind: scope
+version: "1.0.0"
+description: "Defines applicability for atoms whose guidance applies only to native mobile apps — iOS (Swift, SwiftUI, UIKit) and Android (Kotlin, Jetpack Compose, View system). Web-only atoms (DOM, mouse, hover, viewport meta) are out of scope; cross-cutting atoms (a11y, i18n, performance) apply with platform-specific tooling."
+domain: frontend-engineering
+content_hash: "sha256:eda80c046a50d26a915620eb55b2822b3070a1a36df91086dcdbf15841a08df2"
+tokens:
+  summary: 94
+  core: 575
+  full: 575
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/value-touch-target-min" }
+  - { type: related, target: "@community/rule-ios-custom-font-dynamic-type" }
+  - { type: related, target: "@community/anti-pattern-ios-fullscreen-spinner" }
+  - { type: related, target: "@community/anti-pattern-ios-hamburger-menu" }
+  - { type: related, target: "@community/anti-pattern-ios-ignore-safe-area" }
+  - { type: related, target: "@community/anti-pattern-ios-non-dismissable-modal" }
+created_at: "2026-05-07"

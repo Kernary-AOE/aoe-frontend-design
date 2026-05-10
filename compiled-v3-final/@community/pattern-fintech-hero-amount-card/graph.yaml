@@ -1,0 +1,4 @@
+atom: "@community/pattern-fintech-hero-amount-card"
+relations:
+  - type: related
+    target: "@community/pattern-trust-social-proof-numbers"

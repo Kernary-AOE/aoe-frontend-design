@@ -1,0 +1,9 @@
+{
+  "name": "@prime-lang/intent",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "build": "bun build src/index.ts --outdir dist --target node" },
+  "dependencies": { "@prime-lang/types": "workspace:*", "@prime-lang/compiler": "workspace:*" },
+  "license": "Apache-2.0"
+}

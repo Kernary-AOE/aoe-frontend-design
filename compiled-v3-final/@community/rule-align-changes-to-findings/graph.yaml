@@ -1,0 +1,8 @@
+atom: "@community/rule-align-changes-to-findings"
+relations:
+  - type: related
+    target: "@community/rule-design-decisions-cite-research"
+  - type: related
+    target: "@community/anti-pattern-cherry-picking-evidence"
+  - type: related
+    target: "@community/principle-refactor-when-evidence-shows-it"

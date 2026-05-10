@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-no-pure-white-bg"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="313"
+  q="4.0">
+  <description>Backgrounds for long-form prose must not be pure white (#ffffff). Use a warm or cool off-white such as #f9f7f4 or oklch(98% 0.008 var(--hue)) to reduce halation and reading fatigue.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="60"/>
+    <level name="core"    file="chunks/core.md"    tokens="313"/>
+    <level name="full"    file="chunks/full.md"    tokens="417"/>
+  </projection>
+</atom>

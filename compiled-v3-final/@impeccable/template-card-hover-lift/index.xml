@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/template-card-hover-lift"
+  kind="knowledge"
+  version="1.0.0"
+  domain="motion"
+  tokens="657"
+  q="4.0">
+  <description>Card / button hover lift with shadow deepening — the Linear / Vercel micro-interaction signature. Includes active-press snap-back, focus-visible parity for keyboard, and full reduced-motion fallback. ~30 lines, production-ready.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="70"/>
+    <level name="core"    file="chunks/core.md"    tokens="657"/>
+    <level name="full"    file="chunks/full.md"    tokens="657"/>
+  </projection>
+</atom>

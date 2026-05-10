@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-color-contrast-aaa"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="252"
+  q="4.0">
+  <description>Evaluates contrast against WCAG 2.2 SC 1.4.6 Level AAA: 7:1 for normal text, 4.5:1 for large text (≥18pt or ≥14pt bold). Stricter than AA — recommended for prose-heavy products and a11y-first brands.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="64"/>
+    <level name="core"    file="chunks/core.md"    tokens="252"/>
+    <level name="full"    file="chunks/full.md"    tokens="348"/>
+  </projection>
+</atom>

@@ -1,0 +1,10 @@
+atom: "@community/tradeoff-density-vs-comfort"
+relations:
+  - type: related
+    target: "@impeccable/persona-dense-pragmatist"
+  - type: related
+    target: "@impeccable/persona-editorial"
+  - type: related
+    target: "@community/metric-target-size"
+  - type: related
+    target: "@community/example-linear-kbd-shortcuts"

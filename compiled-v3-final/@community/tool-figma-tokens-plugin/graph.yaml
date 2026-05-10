@@ -1,0 +1,12 @@
+atom: "@community/tool-figma-tokens-plugin"
+relations:
+  - type: related
+    target: "@community/type-color-token-shape"
+  - type: related
+    target: "@community/type-spacing-scale"
+  - type: related
+    target: "@community/type-design-token"
+  - type: related
+    target: "@community/persona-figma"
+  - type: related
+    target: "@community/transform-hex-to-oklch"

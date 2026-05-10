@@ -1,0 +1,8 @@
+atom: "@community/fact-density-vs-comfort-tradeoff"
+relations:
+  - type: related
+    target: "@community/tradeoff-density-vs-comfort"
+  - type: related
+    target: "@community/fact-line-height-readability"
+  - type: related
+    target: "@community/fact-light-vs-dark-default"

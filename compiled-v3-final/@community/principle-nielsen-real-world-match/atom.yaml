@@ -1,0 +1,26 @@
+id: "@community/principle-nielsen-real-world-match"
+kind: principle
+version: "1.0.0"
+description: "Nielsen Heuristic 2: the system should speak the users' language, using words, phrases, and concepts familiar to the user rather than system-oriented terms."
+domain: ux-design
+content_hash: "sha256:be23300cc412c8e993e5470728063cffa42190e643af78b46f38688bb0581e96"
+tokens:
+  summary: 110
+  core: 314
+  full: 476
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-nielsen-consistency" }
+  - { type: related, target: "@community/principle-nielsen-error-recovery" }
+  - { type: related, target: "@community/fact-match-real-world" }
+  - { type: related, target: "@community/fact-gestalt-similarity" }
+  - { type: related, target: "@community/anti-pattern-generic-error-text" }
+  - { type: related, target: "@community/example-plaid-connect" }
+  - { type: related, target: "@community/rule-plain-language" }
+  - { type: related, target: "@community/rule-active-voice-in-ui-copy" }
+created_at: "2026-05-07"

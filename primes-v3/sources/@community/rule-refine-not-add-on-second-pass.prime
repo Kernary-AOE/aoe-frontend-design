@@ -1,0 +1,38 @@
+rule RefineNotAddOnSecondPass {
+  id: "@community/rule-refine-not-add-on-second-pass"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "During a refinement or polish pass, improve cohesion and precision of existing elements — never introduce new shapes, components, or graphics."
+
+  statement: "On any iterative refinement pass: (1) tighten alignment, spacing, and visual rhythm of existing elements; (2) improve color consistency and weight hierarchy within existing components; (3) fix optical misalignments; (4) do NOT add new graphic elements, shapes, illustrations, or components. If a composition needs more elements, that is a scope addition — a separate pass, not a refinement."
+
+  rationale: "Adding more elements to an unpolished composition adds complexity without resolution. An unfinished composition with 10 elements is harder to polish than one with 6 well-placed elements. Refinement means 'more of the same thing, better' — not 'more things.' This constraint prevents the common failure mode where a 'polish pass' becomes a scope creep spiral. Every addition during refinement displaces focus from what is already there and needs fixing."
+
+  applies-to: [
+    "Canvas artwork iteration passes",
+    "UI component visual polish reviews",
+    "Design system component refinement cycles",
+    "Any second-or-later iteration on an existing composition",
+  ]
+
+  examples: [
+    "Refinement: tighten card padding from 20px to 16px; adjust header weight from 600 to 700; correct color to match token. All existing.",
+    "Refinement: fix optical centering of an icon inside a button. No new elements added.",
+  ]
+
+  counter-example: "A 'polish pass' that adds a decorative gradient overlay, two new icon components, and a background illustration to a design that already had alignment issues — more visual noise, same underlying problems."
+
+  notes: [
+    "Source: github.com/anthropics/skills, skills/canvas-design/SKILL.md (MIT).",
+    "The rule applies equally to code-based UI (React component polish) and visual canvas tools.",
+    "If on reviewing the composition you believe a new element is genuinely necessary, pause the refinement pass and create a new design intent ticket — do not merge scope.",
+  ]
+
+  related: [
+    @community/principle-commit-bold-aesthetic,
+    @impeccable/principle-distinctiveness,
+    @community/method-design-qa-pre-ship,
+  ]
+}

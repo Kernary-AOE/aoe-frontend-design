@@ -1,0 +1,12 @@
+atom: "@community/example-stripe-payment-success"
+relations:
+  - type: related
+    target: "@impeccable/template-loading-spinner"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@impeccable/template-spring-config"
+  - type: related
+    target: "@community/example-stripe-checkout"
+  - type: related
+    target: "@community/fact-motion-as-feedback"

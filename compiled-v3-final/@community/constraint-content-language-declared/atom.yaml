@@ -1,0 +1,21 @@
+id: "@community/constraint-content-language-declared"
+kind: constraint
+version: "1.0.0"
+description: "Every shipped HTML document must declare the primary content language via `<html lang='...'>`. Content blocks in a different language must be marked with `lang='...'` on the containing element."
+domain: accessibility
+content_hash: "sha256:eb29bd013070960fbadf9d03377dc3f6f323db5de493eb93245c73f7b81a5b0d"
+tokens:
+  summary: 66
+  core: 354
+  full: 455
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-accessibility-aa-minimum" }
+  - { type: related, target: "@w3c/source-wcag-22" }
+  - { type: related, target: "@community/tool-axe-core" }
+created_at: "2026-05-07"

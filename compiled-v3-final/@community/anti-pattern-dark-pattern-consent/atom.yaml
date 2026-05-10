@@ -1,0 +1,24 @@
+id: "@community/anti-pattern-dark-pattern-consent"
+kind: anti-pattern
+version: "1.0.0"
+description: "UI patterns that nudge, manipulate, or coerce users into agreeing to data processing they would not freely choose — pre-checked boxes, asymmetric button prominence, multi-step opt-out journeys, dark-side defaults. Illegal under GDPR Art. 4(11) (consent must be 'freely given') and explicitly enumerated in the EU Digital Services Act and EDPB Guidelines 03/2022."
+domain: legal-compliance
+content_hash: "sha256:47c6476311dfe586d1808ecd8348333e1c80e5794c2e8f735b78ee0167f692b6"
+tokens:
+  summary: 108
+  core: 757
+  full: 1421
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-data-minimization" }
+  - { type: related, target: "@community/rule-cookie-consent-banner" }
+  - { type: related, target: "@community/pattern-right-to-be-forgotten" }
+  - { type: related, target: "@community/fact-coppa-13-yo-threshold" }
+  - { type: related, target: "@community/anti-pattern-fake-trust-signals" }
+  - { type: derived-from, target: "@community/rule-cookie-consent-banner" }
+created_at: "2026-05-07"

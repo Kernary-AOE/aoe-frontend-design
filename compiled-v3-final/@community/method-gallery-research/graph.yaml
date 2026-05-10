@@ -1,0 +1,8 @@
+atom: "@community/method-gallery-research"
+relations:
+  - type: related
+    target: "@impeccable/principle-distinctiveness"
+  - type: related
+    target: "@community/anti-pattern-ai-generated-ui"
+  - type: related
+    target: "@community/method-anti-ai-slop-checklist"

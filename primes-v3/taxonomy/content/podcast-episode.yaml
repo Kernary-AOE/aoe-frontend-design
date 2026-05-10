@@ -1,0 +1,47 @@
+task_type: podcast-episode
+parent: content
+description: "Podcast episode detail page with audio player, show notes, guest info, and episode navigation."
+trigger_keywords:
+  - "podcast episode"
+  - "podcast page"
+  - "播客"
+  - "播客详情页"
+  - "episode page"
+  - "show notes"
+  - "audio player"
+  - "podcast detail"
+default_register_pool:
+  - school: magazine-editorial
+    weight: 0.4
+  - school: spotify
+    weight: 0.35
+  - school: warm-institutional
+    weight: 0.25
+required_atoms:
+  - "@community/rule-body-readability"
+  - "@community/rule-line-length-optimal"
+  - "@community/pattern-blog-article-layout"
+  - "@community/rule-touch-target-min"
+  - "@community/constraint-mobile-touch-target-44px"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-motion-microinteraction"
+forbidden_atoms:
+  - "@impeccable/persona-dense-pragmatist"
+  - "@community/pattern-dashboard-grid"
+  - "@community/pattern-data-table-dense"
+max_atoms_per_axis:
+  register: 1
+  pattern: 2
+  motion: 1
+  typography: 2
+  color: 1
+  rules: 1
+quality_checks:
+  - "Audio player controls must meet 44px touch target minimum"
+  - "Play/pause must be the most prominent interactive element"
+  - "Episode duration and current time must be clearly readable"
+  - "Show notes must be well-formatted with readable typography"
+  - "Guest/host info must include photo and brief bio"
+  - "Previous/Next episode navigation must be accessible"
+  - "Player must remain accessible when scrolling show notes"

@@ -1,0 +1,21 @@
+id: "@community/method-design-qa-pre-ship"
+kind: method
+version: "1.0.0"
+description: "A structured checklist for reviewing UX flows, design consistency, accessibility, and content quality before releasing any user-facing feature — covering the 10 categories most commonly skipped in AI-generated outputs."
+domain: frontend-design
+content_hash: "sha256:cc339ff468c5f69180c932c0f59e97ec335a47c915b48e8adfc909aff2e49683"
+tokens:
+  summary: 69
+  core: 285
+  full: 500
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-design-qa-definition-of-done" }
+  - { type: related, target: "@community/constraint-accessibility-aa-minimum" }
+  - { type: related, target: "@community/rule-actionable-error-messages" }
+created_at: "2026-05-07"

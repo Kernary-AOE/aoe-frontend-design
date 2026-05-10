@@ -1,0 +1,66 @@
+collection AccessibleFrontend {
+  id: "@community/collection-accessible-frontend"
+  version: "1.0.0"
+
+  name: "Accessible Frontend Review"
+  description: "A comprehensive skill for reviewing any frontend artifact for accessibility compliance (WCAG 2.2 AA) and design quality (Nielsen heuristics). Covers automated and manual accessibility checks, keyboard navigation, color contrast, focus management, and design system quality."
+
+  domain: [accessibility, frontend-design, ux-design]
+  target: claude-code
+
+  includes: [
+    // Accessibility rules
+    @community/rule-color-contrast,
+    @community/rule-keyboard-accessible,
+
+    // Audit method
+    @community/method-a11y-audit,
+    @community/method-heuristic-review,
+
+    // Reference taxonomy
+    @nielsen/taxonomy-10-heuristics,
+
+    // Core checks
+    @community/check-contrast-aa,
+    @community/check-focus-visible,
+
+    // Anti-patterns to detect
+    @community/anti-pattern-outline-suppression,
+    @impeccable/anti-pattern-ai-slop-palette,
+
+    // Design quality constraints
+    @impeccable/constraint-font-blacklist,
+    @community/constraint-reduced-motion,
+
+    // Tools
+    @community/tool-axe-core,
+    @community/tool-lighthouse,
+
+    // Knowledge facts
+    @w3c/fact-wcag-contrast-aa,
+    @w3c/fact-wcag-focus-contrast,
+  ]
+
+  orchestration: @community/method-a11y-audit
+
+  entry-point: """
+    When activated:
+    1. Ask for the artifact (URL, file path, or paste HTML).
+    2. Run @community/method-a11y-audit with wcag-level="AA".
+    3. Run @community/method-heuristic-review with depth="quick".
+    4. Merge reports: show a11y violations first (by severity), then heuristic scores.
+    5. Offer "deep" mode for any heuristic scoring < 3.
+    6. Provide specific remediation code for each critical/serious violation.
+  """
+
+  notes: [
+    "This collection is the primary skill for frontend quality review in the impeccable workflow.",
+    "Requires at least one artifact to review — cannot run without input.",
+  ]
+
+  related: [
+    @community/rule-color-contrast,
+    @community/method-a11y-audit,
+    @nielsen/taxonomy-10-heuristics,
+  ]
+}

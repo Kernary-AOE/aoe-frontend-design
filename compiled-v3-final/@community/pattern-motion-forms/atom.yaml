@@ -1,0 +1,23 @@
+id: "@community/pattern-motion-forms"
+kind: pattern
+version: "1.0.0"
+description: "Form animation patterns — validation shake on error, input focus glow, and success feedback on submit — that communicate state changes functionally rather than decoratively, using Motion.dev or CSS transitions."
+domain: frontend-design
+content_hash: "sha256:1bf4b8261f9cdd97f1a36c48e06b9011671a279cbb76b89927d39097a25645e1"
+tokens:
+  summary: 67
+  core: 704
+  full: 1341
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/pattern-inline-validation" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

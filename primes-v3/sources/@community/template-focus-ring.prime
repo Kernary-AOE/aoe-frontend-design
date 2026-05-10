@@ -1,0 +1,71 @@
+template FocusRingBase {
+  id: "@community/template-focus-ring"
+  version: "1.0.0"
+
+  parameters: {
+    COLOR: { type: css-color, default: "currentColor", description: "Focus ring color; must achieve 3:1 contrast against adjacent bg" }
+    WIDTH: { type: css-length, default: "2px", description: "Ring width; minimum 2px per WCAG 2.2 SC 2.4.11" }
+    OFFSET: { type: css-length, default: "2px", description: "Gap between component and ring" }
+    RADIUS: { type: css-length, default: "inherit", description: "Border radius of the ring; 'inherit' matches the component" }
+  }
+
+  language: css
+  domain: accessibility
+
+  description: "A baseline focus ring CSS template that satisfies WCAG 2.2 SC 2.4.11. Use as the foundation for per-component focus customization."
+
+  body: """
+    /* Focus ring — satisfies WCAG 2.2 SC 2.4.11 */
+    /* Apply to your component's :focus-visible selector */
+
+    :focus-visible {
+      outline: {WIDTH} solid {COLOR};
+      outline-offset: {OFFSET};
+      border-radius: {RADIUS};
+
+      /* Remove default browser style to avoid double ring */
+      /* Do NOT add outline: none to :focus — only to :focus:not(:focus-visible) */
+    }
+
+    /* Optional: high-contrast mode enhancement */
+    @media (forced-colors: active) {
+      :focus-visible {
+        outline: {WIDTH} solid ButtonText;
+        outline-offset: {OFFSET};
+      }
+    }
+  """
+
+  example: {
+    selector: "button.primary"
+    output: """
+      button.primary:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+        border-radius: inherit;
+      }
+      @media (forced-colors: active) {
+        button.primary:focus-visible {
+          outline: 2px solid ButtonText;
+          outline-offset: 2px;
+        }
+      }
+    """
+  }
+
+  notes: [
+    "When COLOR=currentColor, the ring inherits the element's text color. Ensure that color achieves 3:1 against the page background.",
+    "For dark backgrounds with light text: currentColor produces a light ring that typically passes. Test with @community/metric-contrast-ratio.",
+    "Do NOT use box-shadow alone as the focus indicator — box-shadow is invisible in Windows High Contrast mode.",
+  ]
+
+  related: [
+    @community/value-focus-outline-width,
+    @community/term-focus-ring,
+    @w3c/fact-wcag-focus-contrast,
+    @community/check-focus-visible,
+    @community/check-focus-visible-styled,
+    @community/anti-pattern-outline-suppression,
+    @community/anti-pattern-invisible-focus,
+  ]
+}

@@ -1,0 +1,30 @@
+rule IosDynamicTypeReflow {
+  id: "@community/rule-ios-dynamic-type-reflow"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  applies-to: "any iOS layout containing text alongside icons, images, or other elements in a row"
+
+  statement: "Layouts must reflow gracefully at Dynamic Type accessibility sizes (up to ~200% scale) so that essential text is never clipped or truncated."
+
+  rationale: "Millions of users rely on accessibility text sizes. Horizontal row layouts that clip text at large sizes make content unreadable and effectively exclude these users from the feature."
+
+  examples: [
+    "An icon-label row should stack vertically (.accessibilityLarge+) when the label would otherwise truncate.",
+    "Use .fixedSize(horizontal: false, vertical: true) in SwiftUI to let text expand vertically.",
+    "Verify: set Dynamic Type to Accessibility Extra Large in Settings; confirm no text is truncated.",
+  ]
+
+  notes: [
+    "In SwiftUI, avoid .lineLimit(1) on any essential label; if you must, add .truncationMode(.tail) and ensure the key information is at the start.",
+    "Use @ScaledMetric for any fixed dimension that must grow with text size (icon container, row height).",
+    "Apple HIG source: Rule 3.2 — Support Dynamic Type Including Accessibility Sizes.",
+  ]
+
+  related: [
+    @community/rule-ios-dynamic-type-semantic,
+    @community/rule-ios-custom-font-dynamic-type,
+    @community/constraint-ios-text-min-17pt,
+  ]
+}

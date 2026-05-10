@@ -1,0 +1,21 @@
+id: "@community/pattern-border-radius-decision"
+kind: pattern
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:4341803a28a21bd18c2f2640e479eaed95cc76843e0e8099a7b3084021fb384d"
+tokens:
+  summary: 16
+  core: 165
+  full: 314
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-vercel-clean" }
+  - { type: related, target: "@impeccable/persona-magazine-editorial" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

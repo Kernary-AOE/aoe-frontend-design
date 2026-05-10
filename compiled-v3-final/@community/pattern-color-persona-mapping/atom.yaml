@@ -1,0 +1,21 @@
+id: "@community/pattern-color-persona-mapping"
+kind: pattern
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:011cdf16735d9f219503bafc1452aaafe20c295bdae5d3d3ed9c8e06d7dc4826"
+tokens:
+  summary: 16
+  core: 140
+  full: 264
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-vercel-clean" }
+  - { type: related, target: "@impeccable/persona-magazine-editorial" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

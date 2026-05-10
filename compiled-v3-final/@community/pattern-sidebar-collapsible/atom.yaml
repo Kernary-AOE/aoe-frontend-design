@@ -1,0 +1,27 @@
+id: "@community/pattern-sidebar-collapsible"
+kind: pattern
+version: "1.0.0"
+description: "A persistent left-rail navigation panel that can collapse from a labeled-icon state (~240px) to an icon-only state (~56px), preserving navigation while reclaiming canvas space. Common in productivity apps where the main canvas is the focus."
+domain: frontend-design
+content_hash: "sha256:4c96648022fe23560ada900b4df01d0b2a29aa37235ec9ea9d6010b4086daf09"
+tokens:
+  summary: 76
+  core: 741
+  full: 1458
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-progressive-disclosure" }
+  - { type: related, target: "@community/example-vercel-sidebar" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/rule-aria-current-page" }
+  - { type: related, target: "@community/rule-aria-label-in-name" }
+  - { type: related, target: "@community/check-skip-link" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: compatible, target: "@community/pattern-progressive-disclosure" }
+  - { type: compatible, target: "@community/pattern-command-palette" }
+created_at: "2026-05-07"

@@ -1,0 +1,23 @@
+id: "@community/feedback-stripe-redesign-2024"
+kind: feedback
+version: "1.0.0"
+description: "Post-hoc analysis of Stripe's late-2023/2024 dashboard and marketing-site refresh. Stripe has long been an industry benchmark for fintech UI; this redesign tightened density, introduced a softer brand palette, modernized typography, and rebuilt the navigation taxonomy. Lessons distilled from publicly-shipped surfaces (dashboard.stripe.com, stripe.com, docs.stripe.com)."
+domain: frontend-design
+content_hash: "sha256:dcc6f87b61f3011aa039c0456514ad2ebbfed51984666cbb7a1775a31ce026e9"
+tokens:
+  summary: 109
+  core: 750
+  full: 750
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/example-stripe-pricing" }
+  - { type: related, target: "@community/example-stripe-checkout" }
+  - { type: related, target: "@community/fact-fintech-number-display" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+created_at: "2026-05-07"

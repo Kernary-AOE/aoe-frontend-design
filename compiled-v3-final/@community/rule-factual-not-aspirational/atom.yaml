@@ -1,0 +1,20 @@
+id: "@community/rule-factual-not-aspirational"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:8f2fdacc181390b9bf6fe91b279e90790fca9f5f95cdc9ce793bcac4300cb9aa"
+tokens:
+  summary: 96
+  core: 223
+  full: 401
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-active-voice-in-ui-copy" }
+  - { type: related, target: "@community/principle-clear-user-mental-model" }
+  - { type: related, target: "@community/rule-culturally-neutral-copy" }
+created_at: "2026-05-07"

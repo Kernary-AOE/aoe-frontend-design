@@ -1,0 +1,14 @@
+atom: "@anthropic-impeccable/anti-pattern-modal-as-default"
+relations:
+  - type: related
+    target: "@community/pattern-modal-non-blocking"
+  - type: related
+    target: "@community/pattern-modal-confirm"
+  - type: related
+    target: "@community/constraint-focus-trap-modal"
+  - type: related
+    target: "@community/anti-pattern-ios-non-dismissable-modal"
+  - type: related
+    target: "@community/pattern-drawer-side"
+  - type: related
+    target: "@community/rule-destructive-action-differentiation"

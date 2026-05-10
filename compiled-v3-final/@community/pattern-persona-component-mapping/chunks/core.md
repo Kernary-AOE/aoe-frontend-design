@@ -1,0 +1,161 @@
+# PersonaComponentMapping [pattern] v1.0.0
+A cross-persona lookup table showing how the same HTML component renders under 6 distinct aesthetic personas — Brutalist, Editorial, Tokyo Minimal, Warm Institutional, Dense Pragmatist, Swiss Modernist — enabling rapid full-project recalibration when switching personas.
+domain: frontend-design
+
+## Label
+Persona → Component Style Mapping
+
+## Usage
+When switching personas on an existing project: update radius tokens, spacing tokens, and font stacks first. Colors and motion follow. The component HTML does not change.
+
+## Button Primary
+- **Brutalist**:
+  - **Radius**: 0px
+  - **Padding**: 8px 16px
+  - **Bg**: var(--accent) hot red-orange
+  - **Border**: 2px solid fg
+  - **Font**: Syne 800 uppercase 13px
+  - **Hover**: invert 150ms linear
+- **Editorial**:
+  - **Radius**: 6px
+  - **Padding**: 12px 28px
+  - **Bg**: var(--accent) muted blue
+  - **Border**: 1px solid accent
+  - **Font**: Outfit 500 14px
+  - **Hover**: bg darken 300ms
+- **Tokyo Minimal**:
+  - **Radius**: 2px
+  - **Padding**: 10px 24px
+  - **Bg**: transparent
+  - **Border**: 1px solid fg
+  - **Font**: Noto Sans JP 400 13px
+  - **Hover**: border thickens 300ms
+- **Warm Institutional**:
+  - **Radius**: 10px
+  - **Padding**: 12px 24px
+  - **Bg**: var(--accent) amber
+  - **Border**: none
+  - **Font**: Source Sans 3 500 14px
+  - **Hover**: bg deepen 300ms
+- **Dense Pragmatist**:
+  - **Radius**: 4px
+  - **Padding**: 6px 14px
+  - **Bg**: var(--accent) amber
+  - **Border**: 1px solid accent
+  - **Font**: IBM Plex Sans 500 12px
+  - **Hover**: bg lighten 100ms
+- **Swiss Modernist**:
+  - **Radius**: 0px
+  - **Padding**: 10px 20px
+  - **Bg**: var(--accent) Swiss red
+  - **Border**: 1px solid accent
+  - **Font**: Instrument Sans 600 13px
+  - **Hover**: bg accent 200ms
+
+## Card
+- **Brutalist**:
+  - **Radius**: 0px
+  - **Border**: 2px solid fg
+  - **Padding**: 12px
+  - **Bg**: var(--surface)
+  - **Shadow**: none
+  - **Hover**: 2px border → accent
+- **Editorial**:
+  - **Radius**: 6-10px
+  - **Border**: 1px soft
+  - **Padding**: 32-48px
+  - **Bg**: near-white
+  - **Shadow**: none
+  - **Hover**: none
+- **Tokyo Minimal**:
+  - **Radius**: 2px
+  - **Border**: 1px whisper
+  - **Padding**: 40-48px
+  - **Bg**: near-white
+  - **Shadow**: none
+  - **Hover**: opacity 0.9
+- **Warm Institutional**:
+  - **Radius**: 10-12px
+  - **Border**: 1px warm
+  - **Padding**: 24-32px
+  - **Bg**: warm cream
+  - **Shadow**: 0 1px 3px warm 8%
+  - **Hover**: shadow deepens
+- **Dense Pragmatist**:
+  - **Radius**: 4px
+  - **Border**: 1px subtle
+  - **Padding**: 12-16px
+  - **Bg**: deep charcoal panel
+  - **Shadow**: none
+  - **Hover**: row highlight amber
+- **Swiss Modernist**:
+  - **Radius**: 0px
+  - **Border**: 1px structural
+  - **Padding**: 24px
+  - **Bg**: cool paper
+  - **Shadow**: none
+  - **Hover**: border → accent
+
+## Metric Card
+- **Brutalist**:
+  - **Value Font**: Syne 800 48px
+  - **Label**: Outfit 400 10px uppercase
+  - **Trend**: Space Mono 400 12px
+- **Editorial**:
+  - **Value Font**: Cormorant 600 52px
+  - **Label**: Outfit 400 12px
+  - **Trend**: Outfit 400 13px
+- **Tokyo Minimal**:
+  - **Value Font**: Newsreader 300 44px
+  - **Label**: Noto Sans JP 300 11px
+  - **Trend**: Noto Sans JP 300 12px
+- **Warm Institutional**:
+  - **Value Font**: Merriweather 700 40px
+  - **Label**: Source Sans 3 400 12px
+  - **Trend**: Source Sans 3 400 13px
+- **Dense Pragmatist**:
+  - **Value Font**: Barlow Condensed 700 48px
+  - **Label**: IBM Plex Sans 400 11px
+  - **Trend**: IBM Plex Mono 400 12px
+- **Swiss Modernist**:
+  - **Value Font**: Instrument Sans 700 44px
+  - **Label**: Figtree 500 11px uppercase
+  - **Trend**: Figtree 400 12px
+
+## Nav Top Bar
+- **Brutalist**:
+  - **Height**: 48px
+  - **Bg**: near-black
+  - **Logo**: Syne 800
+  - **Nav**: Outfit 600 uppercase
+  - **Active**: 2px bottom accent
+- **Editorial**:
+  - **Height**: 64px
+  - **Bg**: paper white
+  - **Logo**: Cormorant 600
+  - **Nav**: Outfit 400 14px
+  - **Active**: underline 2px
+- **Tokyo Minimal**:
+  - **Height**: 56px
+  - **Bg**: near-white
+  - **Logo**: Newsreader 300
+  - **Nav**: Noto Sans JP 300 13px
+  - **Active**: 1px bottom accent
+- **Warm Institutional**:
+  - **Height**: 60px
+  - **Bg**: cream
+  - **Logo**: Merriweather 700
+  - **Nav**: Source Sans 3 400
+  - **Active**: accent text color
+- **Dense Pragmatist**:
+  - **Height**: 40px
+  - **Bg**: deep charcoal
+  - **Logo**: Barlow Condensed 600
+  - **Nav**: IBM Plex Sans 400 12px
+  - **Active**: accent text
+- **Swiss Modernist**:
+  - **Height**: 48px
+  - **Bg**: cool paper
+  - **Logo**: Instrument Sans 700
+  - **Nav**: Figtree 500 13px
+  - **Active**: accent left bar

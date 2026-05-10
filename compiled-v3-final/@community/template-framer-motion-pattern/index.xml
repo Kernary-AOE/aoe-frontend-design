@@ -1,0 +1,14 @@
+<atom
+  id="@community/template-framer-motion-pattern"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1056"
+  q="4.0">
+  <description>Motion.dev (formerly Framer Motion) core patterns: AnimatePresence exit animation, layout layoutId shared-element, whileHover/whileTap micro-interactions, and useReducedMotion hook — React-declarative animation for component enter/exit and layout shifts.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="80"/>
+    <level name="core"    file="chunks/core.md"    tokens="1056"/>
+    <level name="full"    file="chunks/full.md"    tokens="1056"/>
+  </projection>
+</atom>

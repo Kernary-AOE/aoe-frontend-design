@@ -1,0 +1,22 @@
+id: "@community/pattern-svg-noise-grain-texture"
+kind: pattern
+version: "1.0.0"
+description: "SVG feTurbulence filter encoded as a data-URI pseudo-element overlay that adds film grain to flat digital UI — making surfaces feel physical and editorial without image assets. Uses position:fixed for scroll performance."
+domain: frontend-design
+content_hash: "sha256:eb1b1fe36287dbe5d7786fc19ec6821481b444c5820444811c27a4825e69a75b"
+tokens:
+  summary: 71
+  core: 834
+  full: 1597
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/template-animated-mesh-background" }
+  - { type: related, target: "@community/rule-visual-design-safe-rules" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

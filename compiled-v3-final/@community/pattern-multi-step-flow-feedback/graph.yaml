@@ -1,0 +1,20 @@
+atom: "@community/pattern-multi-step-flow-feedback"
+relations:
+  - type: related
+    target: "@community/pattern-multi-step-wizard"
+  - type: related
+    target: "@community/rule-save-form-progress"
+  - type: related
+    target: "@community/rule-no-state-reset-without-confirm"
+  - type: related
+    target: "@community/check-form-label-associated"
+  - type: related
+    target: "@community/check-error-message-associated"
+  - type: related
+    target: "@community/check-form-validation-inline"
+  - type: related
+    target: "@community/rule-aria-native-first"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/check-focus-visible"

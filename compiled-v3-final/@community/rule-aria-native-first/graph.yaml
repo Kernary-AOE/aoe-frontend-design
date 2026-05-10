@@ -1,0 +1,16 @@
+atom: "@community/rule-aria-native-first"
+relations:
+  - type: related
+    target: "@community/counter-example-aria-bandaid"
+  - type: related
+    target: "@community/counter-example-div-button-no-tabindex"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/counter-example-div-onclick-dropdown"
+  - type: related
+    target: "@community/anti-pattern-breaking-keyboard-flow"
+  - type: related
+    target: "@community/example-radix-dropdown"
+  - type: related
+    target: "@community/rule-semantic-html-for-interactive-elements"

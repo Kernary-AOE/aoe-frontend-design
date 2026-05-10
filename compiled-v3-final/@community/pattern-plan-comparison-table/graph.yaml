@@ -1,0 +1,18 @@
+atom: "@community/pattern-plan-comparison-table"
+relations:
+  - type: related
+    target: "@community/pattern-pricing-tiers-toggle"
+  - type: related
+    target: "@community/pattern-data-table-dense"
+  - type: related
+    target: "@community/check-heading-hierarchy"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/anti-pattern-color-only-meaning"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: compatible
+    target: "@community/pattern-pricing-tiers-toggle"
+  - type: compatible
+    target: "@community/pattern-data-table-dense"

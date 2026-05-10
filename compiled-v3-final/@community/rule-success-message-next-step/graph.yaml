@@ -1,0 +1,16 @@
+atom: "@community/rule-success-message-next-step"
+relations:
+  - type: related
+    target: "@community/rule-success-confirmation-visual-change"
+  - type: related
+    target: "@community/rule-verb-based-cta-labels"
+  - type: related
+    target: "@community/principle-nielsen-visibility"
+  - type: related
+    target: "@community/anti-pattern-generic-error-text"
+  - type: related
+    target: "@community/example-stripe-payment-success"
+  - type: related
+    target: "@community/principle-tone-calibration"
+  - type: related
+    target: "@community/rule-actionable-error-messages"

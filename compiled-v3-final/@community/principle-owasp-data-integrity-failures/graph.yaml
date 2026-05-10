@@ -1,0 +1,8 @@
+atom: "@community/principle-owasp-data-integrity-failures"
+relations:
+  - type: related
+    target: "@community/principle-owasp-cryptographic-failures"
+  - type: related
+    target: "@community/principle-owasp-vulnerable-components"
+  - type: related
+    target: "@community/rule-secrets-never-in-source"

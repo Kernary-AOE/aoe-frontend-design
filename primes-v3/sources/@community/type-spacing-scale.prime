@@ -1,0 +1,99 @@
+type SpacingScale {
+  id: "@community/type-spacing-scale"
+  version: "1.0.0"
+
+  domain: design-system
+
+  description: "Schema for a spacing scale — the canonical set of distance values used for padding, margin, gap, and inset across the design system. Spacing scales should be a small, named set of tokens grounded in a base unit (typically 4px or 8px) to enforce vertical rhythm and prevent magic-number proliferation."
+
+  fields: {
+    base-unit: {
+      type: "4px" | "8px"
+      description: "The smallest atomic step. 8px is industry standard (8pt grid); 4px allows finer half-steps."
+      required: true
+    }
+    steps: {
+      type: object
+      description: "Named scale steps keyed by token name, valued in CSS length"
+      shape: "Record<string, css-length>"
+      required: true
+    }
+    units: {
+      type: "px" | "rem" | "both"
+      description: "Output unit. rem is preferred for accessibility (scales with user font-size). px for pixel-perfect."
+      required: true
+      default: "rem"
+    }
+    semantic-aliases: {
+      type: object
+      description: "Role-named aliases pointing at scale steps (e.g. 'gutter' → 'space-4')"
+      shape: "Record<string, string>"
+      required: false
+    }
+  }
+
+  canonical-scale: {
+    "space-0": "0px"
+    "space-px": "1px"
+    "space-0.5": "2px"
+    "space-1": "4px"
+    "space-2": "8px"
+    "space-3": "12px"
+    "space-4": "16px"
+    "space-5": "20px"
+    "space-6": "24px"
+    "space-8": "32px"
+    "space-10": "40px"
+    "space-12": "48px"
+    "space-16": "64px"
+    "space-20": "80px"
+    "space-24": "96px"
+    "space-32": "128px"
+  }
+
+  invariants: [
+    "all steps MUST be multiples of base-unit OR canonical exceptions (1px, 2px) for borders/hairlines",
+    "scale MUST be monotonically increasing",
+    "gaps between steps should follow either linear (every 4px or 8px) or modular (1.25× / 1.5×) progression — not arbitrary",
+    "no more than 16 steps; if you need more, the scale is too granular and undermines consistency",
+    "rem output: divide px by 16 (root font-size) — `space-4` = `16px` = `1rem`",
+  ]
+
+  example: {
+    base-unit: "4px",
+    units: "rem",
+    steps: {
+      "space-0": "0",
+      "space-1": "0.25rem",
+      "space-2": "0.5rem",
+      "space-3": "0.75rem",
+      "space-4": "1rem",
+      "space-6": "1.5rem",
+      "space-8": "2rem",
+      "space-12": "3rem",
+      "space-16": "4rem"
+    },
+    semantic-aliases: {
+      "gutter-sm": "space-2",
+      "gutter-md": "space-4",
+      "gutter-lg": "space-6",
+      "section-padding-y": "space-12"
+    }
+  }
+
+  notes: [
+    "The 8pt grid (Bootstrap, Material, Apple HIG) is the most common base. Tailwind's 4px base allows finer control while still snapping to 8px boundaries at most steps.",
+    "Half-steps (2px, 6px) are sometimes needed for fine-tuning icon alignment — include them as `space-0.5`, `space-1.5` rather than abandoning the scale.",
+    "Negative space tokens (`-space-2`) for negative margins should mirror the positive scale.",
+    "Container queries and CSS `clamp()` enable fluid spacing — see @community/transform-scale-clamp — but tokens still anchor the min/max ends.",
+    "Verify in CI: no inline `padding: 13px` or `margin: 17px` — see @community/anti-pattern-magic-numbers.",
+  ]
+
+  related: [
+    @community/fact-8pt-grid-system,
+    @community/transform-px-to-rem,
+    @community/transform-scale-clamp,
+    @community/anti-pattern-magic-numbers,
+    @community/type-design-token,
+  ]
+}

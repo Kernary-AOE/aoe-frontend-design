@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-preserve-user-input-on-error"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="253"
+  q="4.0">
+  <description>When a form fails validation or a submission error occurs, all user-entered data must be retained in the fields so users can correct only the erroneous inputs without re-entering everything.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="64"/>
+    <level name="core"    file="chunks/core.md"    tokens="253"/>
+    <level name="full"    file="chunks/full.md"    tokens="509"/>
+  </projection>
+</atom>

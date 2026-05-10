@@ -1,0 +1,25 @@
+id: "@community/template-web-animations-api"
+kind: template
+version: "1.0.0"
+description: "Web Animations API (element.animate()) pattern for imperative JS-driven animations with full playback control — .cancel(), .pause(), await .finished — at cubic-bezier(0.16,1,0.3,1) with prefers-reduced-motion snap-to-end path."
+domain: frontend-design
+content_hash: "sha256:237744baf2396446486427e60d93aad5a5f0a1ed6fb7b824cfaaeea54592413f"
+tokens:
+  summary: 72
+  core: 1125
+  full: 1125
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-spring-config" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@community/rule-animation-duration" }
+  - { type: related, target: "@community/fact-transitions-vs-animations" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

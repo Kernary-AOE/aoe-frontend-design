@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-vercel-dashboard"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="527"
+  q="4.0">
+  <description>The Vercel project dashboard renders deployments as a vertical list with each row showing: status dot (green #0CCE6B / yellow #F5A623 / red #EE0000), commit message in 14px white, branch name as a #A1A1A1 chip, author avatar (24px circle), and a relative timestamp. Hover reveals an inline &apos;View Build Logs&apos; link in #0070F3 blue.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="97"/>
+    <level name="core"    file="chunks/core.md"    tokens="527"/>
+    <level name="full"    file="chunks/full.md"    tokens="958"/>
+  </projection>
+</atom>

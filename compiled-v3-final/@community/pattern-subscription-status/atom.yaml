@@ -1,0 +1,26 @@
+id: "@community/pattern-subscription-status"
+kind: pattern
+version: "1.0.0"
+description: "A settings-page card summarizing the user's current plan, billing cycle, next charge date, payment method on file, and seat usage, with primary actions (Upgrade, Manage seats, Update payment) and a secondary Cancel link."
+domain: frontend-design
+content_hash: "sha256:2e07cb1638c218c5ee1e7370474ffb52c226ae4b0059c08e8003a9cc458ba85f"
+tokens:
+  summary: 71
+  core: 820
+  full: 1633
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-modal-confirm" }
+  - { type: related, target: "@community/pattern-pricing-tiers-toggle" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: compatible, target: "@community/pattern-pricing-tiers-toggle" }
+  - { type: compatible, target: "@community/pattern-modal-confirm" }
+  - { type: compatible, target: "@community/pattern-toast-stack" }
+created_at: "2026-05-07"

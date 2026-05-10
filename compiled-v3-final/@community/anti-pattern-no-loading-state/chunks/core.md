@@ -1,0 +1,30 @@
+# NoLoadingState [anti-pattern] v1.0.0
+Triggering an async fetch, mutation, or navigation without any visible feedback — no spinner, skeleton, optimistic update, or disabled button. The UI freezes from the user's perspective: they don't know if their click registered, if the network is slow, or if the action failed silently.
+domain: ux-design
+
+## Label
+Async Operation With No Loading Feedback
+
+## Trap
+On the developer's localhost the request returns in 8ms and the loading state would flash imperceptibly — so it feels unnecessary. In production over 4G, the same request takes 1200ms and the user has clicked the button three more times before anything appears. The cost is invisible at dev time.
+
+## Counter Examples
+- @community/counter-example-button-no-loading
+
+## Detection Heuristics
+- Async handler doesn't set an `isLoading` / `isPending` state before awaiting
+- Submit button has no `disabled={isLoading}` and no spinner indicator
+- Data-fetching component renders nothing during fetch (no skeleton, no 'Loading...' fallback)
+- Network panel shows 500ms+ requests with no DOM change between click and response
+- User can click submit twice rapidly and trigger duplicate requests
+
+## Remediation
+- Every async handler must set a loading flag before awaiting and clear it in `finally`.
+- Submit buttons must `disabled={isLoading}` AND show a spinner or change label ('Saving…').
+- List/table fetches use skeleton loaders during initial load — see @community/pattern-skeleton-loader.
+- For navigation: use Next.js `loading.tsx` or React Router pending state.
+- Use @community/pattern-optimistic-update when the success path is overwhelmingly common (likes, toggles).
+- Satisfies Nielsen heuristic 1 — visibility of system status.
+
+## Severity
+high

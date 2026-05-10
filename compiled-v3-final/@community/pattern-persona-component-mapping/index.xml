@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-persona-component-mapping"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1157"
+  q="4.0">
+  <description>A cross-persona lookup table showing how the same HTML component renders under 6 distinct aesthetic personas — Brutalist, Editorial, Tokyo Minimal, Warm Institutional, Dense Pragmatist, Swiss Modernist — enabling rapid full-project recalibration when switching personas.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="1157"/>
+    <level name="full"    file="chunks/full.md"    tokens="2230"/>
+  </projection>
+</atom>

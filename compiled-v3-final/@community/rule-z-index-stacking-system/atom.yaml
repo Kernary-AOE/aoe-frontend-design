@@ -1,0 +1,20 @@
+id: "@community/rule-z-index-stacking-system"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:338822885b89487330135bef0c2ded05a5644bf89e2fa31863ff50d2557d44cf"
+tokens:
+  summary: 86
+  core: 483
+  full: 961
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-scroll-locked-modal-only" }
+  - { type: related, target: "@community/pattern-sticky-header-on-scroll" }
+  - { type: related, target: "@community/pattern-modal-non-blocking" }
+created_at: "2026-05-07"

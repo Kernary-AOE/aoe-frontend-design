@@ -1,0 +1,27 @@
+id: "@community/principle-nielsen-error-recovery"
+kind: principle
+version: "1.0.0"
+description: "Nielsen Heuristic 9: error messages should be expressed in plain language, precisely indicate the problem, and constructively suggest a solution."
+domain: ux-design
+content_hash: "sha256:500d15803f9fc8d7e333841f161c6f15620bdab5a9a19e009484296c22d3692e"
+tokens:
+  summary: 86
+  core: 340
+  full: 512
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-nielsen-error-prevention" }
+  - { type: related, target: "@community/principle-nielsen-visibility" }
+  - { type: related, target: "@community/fact-error-recovery-types" }
+  - { type: related, target: "@community/fact-gestalt-proximity" }
+  - { type: related, target: "@community/anti-pattern-generic-error-text" }
+  - { type: related, target: "@community/counter-example-empty-list-blank" }
+  - { type: related, target: "@community/example-stripe-checkout" }
+  - { type: related, target: "@community/rule-actionable-error-messages" }
+  - { type: related, target: "@community/rule-empty-state-recovery" }
+created_at: "2026-05-07"

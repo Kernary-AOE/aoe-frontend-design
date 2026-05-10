@@ -1,0 +1,12 @@
+atom: "@community/rule-slo-required-for-prod"
+relations:
+  - type: related
+    target: "@community/principle-three-pillars-observability"
+  - type: related
+    target: "@community/pattern-error-budget-policy"
+  - type: related
+    target: "@community/anti-pattern-alert-on-everything"
+  - type: related
+    target: "@community/fact-percentile-vs-mean"
+  - type: derived-from
+    target: "@community/principle-three-pillars-observability"

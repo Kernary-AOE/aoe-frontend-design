@@ -1,0 +1,43 @@
+# ResendHero [example] v1.0.0
+Resend's homepage opens with a 64px headline ('Email for developers') in white on near-black #0A0A0A, paired with a live code sample on the right showing a Node.js snippet of `resend.emails.send(...)`. The code panel has a Mac-window chrome (3 dots), syntax highlighting in muted Tailwind-style hues, and a subtle 'Copy' button on hover.
+domain: visual-design
+
+## Label
+Resend — Homepage Hero with Code Sample
+
+## Url
+https://resend.com
+
+## Observed
+2026-Q1
+
+## Brand
+resend
+
+## Pattern Applied
+@community/pattern-hero-with-demo
+
+## Aesthetic Notes
+- Background: #0A0A0A (slightly warmer than #000), with a faint radial-gradient ellipse from top-center in #FFFFFF at 4% alpha.
+- Headline: Inter 64px/56px, font-weight 600, letter-spacing -0.03em, white #FFFFFF.
+- Sub-headline: 18px/28px #A1A1AA (Tailwind zinc-400) max-width 480px.
+- Code panel: #18181B background, 1px #27272A border, 12px border-radius, monospace 14px font-feature-settings: 'liga' 1.
+- Syntax colors: keywords #C084FC (purple-400), strings #BEF264 (lime-300), comments #71717A (zinc-500).
+- Window chrome: 3 dots — #FF5F57 (close), #FEBC2E (min), #28C840 (max), 12px each, 8px gap.
+
+## What To Copy
+- Pair a marketing headline with a real code sample for dev-tool products — talk-and-show beats talk-only.
+- Use Tailwind's zinc palette (#18181B / #27272A / #71717A) instead of pure-gray — slightly cooler, feels modern.
+- Mac-style window chrome on code blocks is a meta-cue: 'this is real code, not a screenshot'.
+- Letter-spacing -0.03em on display text is the modern dev-tool signature (Vercel, Linear, Resend all use it).
+
+## What To Skip
+- The 'Copy' button uses a custom toast for confirmation — most users miss it; flash the button background instead.
+
+## Screenshot Hint
+scout query: resend hero dark code sample mac window dev tool email
+
+## Demonstrates
+- Dev tool heroes should show actual API code, not abstract illustrations.
+- Tailwind zinc palette is the de-facto 'modern dev tool' neutral.
+- Microcopy + microinteractions (window chrome, copy button) signal craft on dev-facing pages.

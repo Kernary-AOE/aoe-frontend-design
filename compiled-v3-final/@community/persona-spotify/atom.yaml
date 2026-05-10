@@ -1,0 +1,43 @@
+id: "@community/persona-spotify"
+kind: persona
+version: "1.0.0"
+description: "Content-first darkness: near-black cocoon #121212 where album art is the sole color source, SpotifyMixUI at bold-or-regular binary weight contrast, Spotify Green #1ed760 reserved for play controls only, and pill-plus-circle geometry encoding interaction type."
+domain: visual-design
+content_hash: "sha256:40879acc33a1fdd6410f08a7899576a7bc18d0d7a11cc24d8f6eca2b7193c0ba"
+tokens:
+  summary: 77
+  core: 647
+  full: 735
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: related, target: "@impeccable/template-oklch-dark-mode-cascade" }
+  - { type: related, target: "@impeccable/template-card-hover-lift" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/constraint-typography-weight-blacklist" }
+  - { type: related, target: "@community/rule-font-self-host" }
+  - { type: related, target: "@community/rule-web-safe-fallback-stack" }
+  - { type: related, target: "@community/pattern-color-dark-mode-pairing" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-color-dark-mode-cascade" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/constraint-no-pure-black-text" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: compatible, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: compatible, target: "@impeccable/persona-tokyo-minimal" }
+  - { type: compatible, target: "@impeccable/persona-vercel-clean" }
+  - { type: conflicts, target: "@impeccable/persona-magazine-editorial" }
+  - { type: conflicts, target: "@impeccable/persona-warm-institutional" }
+  - { type: conflicts, target: "@impeccable/persona-brutalist" }
+  - { type: conflicts, target: "@impeccable/persona-editorial" }
+  - { type: contradicts, target: "@impeccable/persona-magazine-editorial" }
+  - { type: contradicts, target: "@impeccable/persona-warm-institutional" }
+created_at: "2026-05-07"

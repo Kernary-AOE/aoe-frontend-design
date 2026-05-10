@@ -1,0 +1,23 @@
+id: "@community/rule-cookie-consent-banner"
+kind: rule
+version: "1.0.0"
+description: "In the EU/EEA/UK, non-essential cookies and similar tracking technologies (pixels, fingerprinting, localStorage analytics) require freely-given, specific, informed, and unambiguous prior consent before the cookie is set. Pre-checked boxes, implied consent, and 'continue browsing = consent' are illegal under the ePrivacy Directive and GDPR."
+domain: legal-compliance
+content_hash: "sha256:4ead21b0612d5df942d513a7ebb6ceba306b7502feee0f63b8607ba55a7561c8"
+tokens:
+  summary: 263
+  core: 720
+  full: 1517
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-data-minimization" }
+  - { type: related, target: "@community/pattern-right-to-be-forgotten" }
+  - { type: related, target: "@community/anti-pattern-dark-pattern-consent" }
+  - { type: related, target: "@community/fact-coppa-13-yo-threshold" }
+  - { type: requires, target: "@community/anti-pattern-dark-pattern-consent" }
+created_at: "2026-05-07"

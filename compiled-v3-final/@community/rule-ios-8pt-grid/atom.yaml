@@ -1,0 +1,20 @@
+id: "@community/rule-ios-8pt-grid"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:f08901701462c13bed2fc3d4aa32cbdf4749baac719b099fd99050fde006b08c"
+tokens:
+  summary: 41
+  core: 64
+  full: 183
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-ios-touch-target-44pt" }
+  - { type: related, target: "@community/rule-ios-safe-area-insets" }
+  - { type: related, target: "@community/pattern-ios-thumb-zone" }
+created_at: "2026-05-07"

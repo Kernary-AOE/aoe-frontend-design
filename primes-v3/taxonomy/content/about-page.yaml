@@ -1,0 +1,48 @@
+task_type: about-page
+parent: content
+description: "About or team page presenting company mission, values, and the people behind the product."
+trigger_keywords:
+  - "about page"
+  - "about us"
+  - "team page"
+  - "关于我们"
+  - "团队页"
+  - "company story"
+  - "mission"
+  - "values"
+  - "founders"
+  - "our story"
+default_register_pool:
+  - school: warm-institutional
+    weight: 0.45
+  - school: magazine-editorial
+    weight: 0.35
+  - school: notion-warm
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-trust-signal-components"
+  - "@community/principle-typography-hierarchy"
+  - "@community/rule-body-readability"
+  - "@community/pattern-landing-page-sections"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-scroll-reveal"
+  - "@community/pattern-stagger-reveal"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@impeccable/persona-dense-pragmatist"
+  - "@community/pattern-dashboard-layout"
+max_atoms_per_axis:
+  register: 1
+  pattern: 2
+  motion: 1
+  typography: 2
+  color: 1
+  rules: 1
+quality_checks:
+  - "Mission or values statement must appear prominently above the fold"
+  - "Team member cards must include photo, name, and role at minimum"
+  - "Tone must be human and personal, not corporate boilerplate"
+  - "Company milestones or founding story must be present"
+  - "Page must feel warm and trustworthy, not cold or technical"
+  - "CTAs (if any) must be soft — 'Learn more' or 'Join us', not hard sell"

@@ -1,0 +1,28 @@
+id: "@nielsen/taxonomy-10-heuristics"
+kind: taxonomy
+version: "1.0.0"
+description: "Jakob Nielsen's ten general principles for interaction design, derived from factor analysis of 249 usability problems. Used as the evaluation framework in heuristic review sessions. Each member fact represents one heuristic."
+domain: ux-design
+content_hash: "sha256:be20f06df5698f682c4b3f68171ee1acdacd9ea3e92ce2880bb7c1c6acc1d132"
+tokens:
+  summary: 71
+  core: 252
+  full: 594
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@nielsen/source-nielsen-1994" }
+  - { type: related, target: "@community/method-heuristic-review" }
+  - { type: related, target: "@community/step-apply-heuristics" }
+  - { type: relationships, target: "@community/fact-visibility-system-status" }
+  - { type: relationships, target: "@community/fact-match-real-world" }
+  - { type: relationships, target: "@community/fact-user-control-freedom" }
+  - { type: relationships, target: "@community/fact-consistency-standards" }
+  - { type: relationships, target: "@community/fact-error-prevention" }
+  - { type: relationships, target: "@community/fact-recognition-over-recall" }
+  - { type: relationships, target: "@community/fact-flexibility-efficiency" }
+created_at: "2026-05-07"

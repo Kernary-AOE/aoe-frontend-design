@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-card-grid-gap"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="263"
+  q="4.0">
+  <description>Card grids must use gap: 16px (gap-4) minimum for dense dashboards and gap: 24px (gap-6) for content layouts — never gap: 8px or less, so cards read as discrete units rather than a merged surface.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="64"/>
+    <level name="core"    file="chunks/core.md"    tokens="263"/>
+    <level name="full"    file="chunks/full.md"    tokens="324"/>
+  </projection>
+</atom>

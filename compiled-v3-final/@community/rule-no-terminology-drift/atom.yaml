@@ -1,0 +1,21 @@
+id: "@community/rule-no-terminology-drift"
+kind: rule
+version: "1.0.0"
+description: "A concept must be named identically throughout a single user flow — switching between synonyms or related terms mid-flow (e.g., 'Workspace' → 'Project' → 'Team') is forbidden."
+domain: frontend-design
+content_hash: "sha256:c53d17eb9e2cc9c3066ad39489d028bb6c5078da2767970ac4c94c52022c8fcd"
+tokens:
+  summary: 59
+  core: 64
+  full: 202
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-consistent-product-terminology" }
+  - { type: related, target: "@community/rule-no-undocumented-platform-concept-rename" }
+  - { type: related, target: "@community/principle-nielsen-consistency" }
+created_at: "2026-05-07"

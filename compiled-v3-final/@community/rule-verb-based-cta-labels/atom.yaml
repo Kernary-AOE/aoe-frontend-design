@@ -1,0 +1,20 @@
+id: "@community/rule-verb-based-cta-labels"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:d738ab3e3610eaced842069e4813eaac28b7f3077927ce93507cf239cfad1f95"
+tokens:
+  summary: 58
+  core: 130
+  full: 363
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-success-message-next-step" }
+  - { type: related, target: "@community/rule-single-primary-action-per-screen" }
+  - { type: related, target: "@community/principle-tone-calibration" }
+created_at: "2026-05-07"

@@ -1,0 +1,25 @@
+# ContrastIntent [provocation] v1.0.0
+domain: visual-design
+
+## Label
+What Does Low Contrast Communicate?
+
+## Trigger
+agent selects a muted or low-contrast text color for secondary information
+
+## Question
+This text color achieves {actual_ratio}:1 contrast. Before accepting it, ask: is the low contrast a conscious hierarchy signal ('this content is secondary and less important') or is it unexamined aesthetic habit? If the content is secondary, is there a better way to signal hierarchy — different weight, size, position — that doesn't also harm legibility for users with low vision?
+
+## Intent
+Distinguish deliberate typographic hierarchy from accidental accessibility failure. Low contrast can be a valid tool when used consciously for de-emphasizing truly secondary content — but it must still meet the 4.5:1 AA threshold for small text. The question surfaces whether the designer has made a conscious choice.
+
+## Resolution Paths
+-
+  - **Context**: Placeholder text, helper text, captions
+  - **Answer**: Still must meet 4.5:1. Use lighter weight or smaller size instead of lower contrast if de-emphasis is desired.
+-
+  - **Context**: Decorative / aria-hidden text
+  - **Answer**: Exempt from contrast requirements — but confirm the element is genuinely decorative with no informational role.
+-
+  - **Context**: Active/inactive state contrast
+  - **Answer**: Inactive state may use 3:1 (UI component rule) but this should be explicit design intent, not default color inheritance.

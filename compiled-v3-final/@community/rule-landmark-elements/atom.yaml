@@ -1,0 +1,25 @@
+id: "@community/rule-landmark-elements"
+kind: rule
+version: "1.0.0"
+description: "Major page regions MUST be wrapped in HTML landmark elements — <header>, <nav>, <main>, <aside>, <footer>, <section aria-labelledby>, <form aria-label> — so screen reader users can jump directly to any region."
+domain: frontend-design
+content_hash: "sha256:a8546a9f4af8052a8f1f27d6c7ecec7f0136095f31c5231da2e0f53004f71b43"
+tokens:
+  summary: 67
+  core: 257
+  full: 447
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-navigation-scope-taxonomy" }
+  - { type: related, target: "@community/rule-aria-label-required" }
+  - { type: related, target: "@community/rule-heading-hierarchy" }
+  - { type: related, target: "@community/example-catalyst-app" }
+  - { type: related, target: "@community/example-tailwindui-app-shell" }
+  - { type: related, target: "@community/rule-skip-link" }
+  - { type: related, target: "@community/rule-accessibility-first-class" }
+created_at: "2026-05-07"

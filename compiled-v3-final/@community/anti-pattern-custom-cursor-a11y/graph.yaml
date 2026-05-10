@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-custom-cursor-a11y"
+relations:
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/anti-pattern-hover-only-interaction"
+  - type: related
+    target: "@community/check-reduced-motion-required"

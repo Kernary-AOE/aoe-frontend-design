@@ -1,0 +1,47 @@
+task_type: api-explorer
+parent: dev-tool
+description: "API testing and exploration tool (Postman-style) with request builder, response viewer, and authentication config."
+trigger_keywords:
+  - "API explorer"
+  - "API tester"
+  - "API testing"
+  - "API 测试"
+  - "REST client"
+  - "request builder"
+  - "API docs interactive"
+  - "swagger UI"
+  - "HTTP client"
+  - "endpoint testing"
+default_register_pool:
+  - school: dense-pragmatist
+    weight: 0.45
+  - school: linear
+    weight: 0.35
+  - school: vercel-clean
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-dashboard-layout"
+  - "@community/fact-monospace-purpose"
+  - "@community/pattern-interaction-states"
+  - "@community/constraint-monospace-tabular-numerics"
+  - "@community/pattern-data-table-dense"
+  - "@community/rule-no-credentials-client"
+  - "@community/rule-keyboard-accessible"
+recommended_motion:
+  - "@community/pattern-motion-loading"
+  - "@community/pattern-skeleton-shimmer"
+  - "@community/pattern-motion-microinteraction"
+forbidden_atoms:
+  - "@impeccable/persona-warm-institutional"
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/template-animated-mesh-background"
+  - "@community/pattern-gradient-mesh-engine"
+quality_checks:
+  - "Request method (GET/POST/etc.) must be prominently selectable"
+  - "URL input must be the most prominent element in the request builder"
+  - "Headers and body must be in separate, clearly labeled tabs"
+  - "Response must show status code, time, and size prominently"
+  - "Response body must use monospace font with syntax highlighting"
+  - "Authentication fields must follow security copy rules — no plaintext secrets displayed"
+  - "Request history or collections must be easily accessible"
+  - "Copy as cURL must be available for any request"

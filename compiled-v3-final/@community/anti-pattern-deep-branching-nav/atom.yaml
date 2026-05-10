@@ -1,0 +1,21 @@
+id: "@community/anti-pattern-deep-branching-nav"
+kind: anti-pattern
+version: "1.0.0"
+description: "Building 3+ level nested folder navigation when flat tags, filters, or faceted search would better support findability — forcing users to memorize exact paths to items that conceptually belong in multiple categories."
+domain: frontend-design
+content_hash: "sha256:6b17a6aaa2edb48e1800322a530ec5afd52303ca8ef4b121fd3d7f1d157f8908"
+tokens:
+  summary: 71
+  core: 443
+  full: 816
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-breadcrumb-trail" }
+  - { type: related, target: "@community/rule-ia-group-by-user-tasks-not-org" }
+  - { type: related, target: "@community/rule-navigation-flat-when-shallow" }
+created_at: "2026-05-07"

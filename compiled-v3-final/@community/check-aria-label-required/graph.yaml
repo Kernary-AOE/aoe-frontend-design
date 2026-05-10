@@ -1,0 +1,4 @@
+atom: "@community/check-aria-label-required"
+relations:
+  - type: related
+    target: "@community/rule-aria-label-required"

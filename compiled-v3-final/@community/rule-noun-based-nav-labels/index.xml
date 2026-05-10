@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-noun-based-nav-labels"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="108"
+  q="4.0">
+  <description>Navigation labels must be noun-based, consistent, present-tense, and free of jargon, marketing language, or cleverness — users navigate to destinations, not actions.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="56"/>
+    <level name="core"    file="chunks/core.md"    tokens="108"/>
+    <level name="full"    file="chunks/full.md"    tokens="298"/>
+  </projection>
+</atom>

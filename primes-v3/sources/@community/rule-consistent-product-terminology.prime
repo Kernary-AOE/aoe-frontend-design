@@ -1,0 +1,23 @@
+rule ConsistentProductTerminology {
+  id: "@community/rule-consistent-product-terminology"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: warning
+
+  statement: "The same concept or product entity must use the same word or phrase everywhere in the product. Using different words for the same thing in different screens (e.g. 'workspace' in one place and 'project' in another for the same entity) is prohibited."
+
+  applies-when: "Writing any UI copy, navigation labels, headings, or empty states."
+
+  verify-by: "Maintain a shared terminology glossary. Audit copy for synonym drift — search the codebase for alternate terms for each core entity."
+
+  anti-pattern: "Copy is often written piecemeal by different contributors without a shared glossary, causing 'workspace' / 'project' / 'space' to refer to the same concept in different parts of the UI. Users must then resolve whether two terms are the same thing, increasing cognitive load."
+
+  use-instead: "Define each core entity name once in a terminology glossary and enforce it across all copy."
+
+  related: [
+    @community/rule-active-voice-in-ui-copy,
+    @community/rule-culturally-neutral-copy,
+    @community/principle-clear-user-mental-model,
+  ]
+}

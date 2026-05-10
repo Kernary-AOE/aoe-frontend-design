@@ -1,0 +1,94 @@
+persona DensePragmatist {
+  id: "@impeccable/persona-dense-pragmatist"
+  version: "1.0.0"
+
+  school: dense-pragmatist
+  domain: visual-design
+
+  description: "An aesthetic persona derived from professional-grade data tools: Bloomberg Terminal, trading dashboards, IDE UIs, analytics platforms. Optimized for information density, expert-user efficiency, and zero decorative overhead. Every pixel carries information."
+
+  implies: {
+    font: {
+      display: "geometric-sans or neo-grotesque — e.g. Inter (permitted here), IBM Plex Sans, Geist, Aktiv Grotesk"
+      monospace: "essential — e.g. JetBrains Mono, IBM Plex Mono, Berkeley Mono for data values"
+      body: "tabular-figures enabled — `font-variant-numeric: tabular-nums`"
+    }
+    color: {
+      temperature: "cool-neutral"
+      background: "#0a0a0a–#161b22 (near-black or GitHub dark)"
+      accent: "functional color — red=error, green=success, amber=warning, blue=info; avoid decorative accent"
+    }
+    density: "maximum — 24-28px row height (Bloomberg-tight), 12-13px base font, line-height 1.30-1.35 (NOT 1.45+), 2-4px row padding"
+    layout: "grid-based, fixed columns, minimal whitespace, data-table dominant"
+    motion: "zero — no decorative transitions; state changes are instant or < 80ms"
+    numbers: "tabular-nums throughout; align decimal points"
+  }
+
+  compatible: ["monochrome", "functional", "information-dense", "expert-tool"]
+  conflicts: ["editorial", "warm", "decorative-animation", "generous-whitespace"]
+
+  example-brands: [
+    "Bloomberg Terminal",
+    "Grafana dashboard",
+    "Linear (issue list view)",
+    "VS Code with compact mode",
+    "Datadog metrics explorer",
+  ]
+
+  notes: [
+    "Unlike @impeccable/persona-editorial, Inter is appropriate here — it was designed for screen legibility at small sizes in UI contexts.",
+    "Dense UI requires exceptional attention to focus management and keyboard navigation — mouse precision at 32px row height is demanding.",
+    "Color in dense persona is purely semantic — decorative color use breaks the scanning pattern.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/pattern-data-table-dense,
+      @community/fact-monospace-purpose,
+      @impeccable/template-oklch-dark-mode-cascade,
+    ]
+    must-avoid: [
+      @impeccable/template-fade-stagger,
+      @impeccable/template-spring-config,
+    ]
+    typography-required: {
+      display: "Inter | IBM Plex Sans | Geist"
+      tabular-nums: true
+      base-size: "12-13px"
+      line-height: "1.30-1.35"
+      row-height-max: "28px"
+    }
+    color-required: {
+      background: "#0a0a0a-#161b22"
+      accent: "semantic only: red=error, green=success, amber=warning, blue=info"
+      no-decorative-accent: true
+    }
+    motion-prescriptions: [
+      @community/check-contrast-aa,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-editorial,
+    @community/category-layout-grid,
+    @community/fact-recognition-over-recall,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-monospace-purpose,
+    @community/category-typography-scale,
+    @community/check-body-readability,
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/pattern-color-dark-mode-pairing,
+    @community/principle-color-system-foundation,
+    @community/check-color-dark-mode-cascade,
+    @community/check-contrast-aa,
+    @community/check-color-blacklist-brand,
+    @community/anti-pattern-generic-saas-blue,
+    @community/anti-pattern-rainbow-explosion,
+  ]
+
+  contradicts: [
+    @impeccable/template-fade-stagger,
+    @impeccable/template-spring-config,
+  ]
+}

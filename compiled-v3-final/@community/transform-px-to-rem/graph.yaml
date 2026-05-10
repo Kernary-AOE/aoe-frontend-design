@@ -1,0 +1,10 @@
+atom: "@community/transform-px-to-rem"
+relations:
+  - type: related
+    target: "@community/type-spacing-scale"
+  - type: related
+    target: "@community/transform-scale-clamp"
+  - type: related
+    target: "@community/anti-pattern-hardcoded-pixel-values"
+  - type: related
+    target: "@community/term-rasterization"

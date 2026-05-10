@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-gestalt-proximity"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="266"
+  q="4.0">
+  <description>Gestalt Principle of Proximity (Wertheimer, 1923): elements close together are perceived as a single group; spatial distance encodes semantic relationship.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="111"/>
+    <level name="core"    file="chunks/core.md"    tokens="266"/>
+    <level name="full"    file="chunks/full.md"    tokens="469"/>
+  </projection>
+</atom>

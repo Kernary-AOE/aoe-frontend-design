@@ -1,0 +1,21 @@
+id: "@community/rule-pill-toggle-no-dropdowns-in-cards"
+kind: rule
+version: "1.0.0"
+description: "Inside a data card, the only allowed selection UI is a pill toggle with 2–3 options in the card header — select dropdowns, radio groups, and checkboxes inside cards are prohibited."
+domain: frontend-design
+content_hash: "sha256:eef903fcf0c80d5b6290163e17a7523969fa963e85eb3f20e6646b9a6d86bd9d"
+tokens:
+  summary: 249
+  core: 371
+  full: 713
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-chart-never-alone" }
+  - { type: related, target: "@community/pattern-chart-grid" }
+  - { type: related, target: "@community/pattern-metric-card" }
+created_at: "2026-05-07"

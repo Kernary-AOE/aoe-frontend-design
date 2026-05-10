@@ -1,0 +1,10 @@
+atom: "@community/pattern-persona-component-mapping"
+relations:
+  - type: related
+    target: "@impeccable/persona-brutalist"
+  - type: related
+    target: "@impeccable/persona-editorial"
+  - type: related
+    target: "@impeccable/persona-dense-pragmatist"
+  - type: related
+    target: "@community/check-focus-visible"

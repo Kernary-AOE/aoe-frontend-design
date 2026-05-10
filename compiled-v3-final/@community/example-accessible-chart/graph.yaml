@@ -1,0 +1,8 @@
+atom: "@community/example-accessible-chart"
+relations:
+  - type: related
+    target: "@community/template-svg-chart-aria"
+  - type: related
+    target: "@community/pattern-chart-grid"
+  - type: related
+    target: "@community/example-stripe-dashboard"

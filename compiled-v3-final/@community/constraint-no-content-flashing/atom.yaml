@@ -1,0 +1,21 @@
+id: "@community/constraint-no-content-flashing"
+kind: constraint
+version: "1.0.0"
+description: "Content must not flash more than 3 times per second — the WCAG 2.1 Success Criterion 2.3.1 (Level A) threshold above which photosensitive seizures can be triggered."
+domain: frontend-design
+content_hash: "sha256:4169d1ed3ad5d4853118f9fc8919374937ba4f19ff75fc418b54a28148d999ac"
+tokens:
+  summary: 57
+  core: 148
+  full: 148
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+created_at: "2026-05-07"

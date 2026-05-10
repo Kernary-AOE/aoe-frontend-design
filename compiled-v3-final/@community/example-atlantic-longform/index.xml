@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-atlantic-longform"
+  kind="knowledge"
+  version="1.0.0"
+  domain="typography"
+  tokens="525"
+  q="4.0">
+  <description>The Atlantic&apos;s longform article opens with a full-bleed cover image (16:9, ~80vh tall) overlaid with a 64px serif headline (their custom &apos;Atlantic Serif&apos;), 24px deck below in italic, and byline. The body uses a 680px max-width centered column, 19px/32px serif body, with first paragraph styled with a 5em drop-cap. Pull-quotes are 28px italic, indented 80px, with thin 1px rules above/below.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="112"/>
+    <level name="core"    file="chunks/core.md"    tokens="525"/>
+    <level name="full"    file="chunks/full.md"    tokens="937"/>
+  </projection>
+</atom>

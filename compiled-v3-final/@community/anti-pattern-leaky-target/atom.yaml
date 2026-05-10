@@ -1,0 +1,23 @@
+id: "@community/anti-pattern-leaky-target"
+kind: anti-pattern
+version: "1.0.0"
+description: "A feature that is computed using information that would not have been available at inference time — typically because the feature pipeline reads the latest value of some column instead of the value as-of the prediction timestamp. Models with leaky features look spectacular in offline evaluation and fail completely in production."
+domain: machine-learning
+content_hash: "sha256:bdd643ec9c39b147dd302e7a0c84603e84134db2e1675e4b4dfa1a853466b7d9"
+tokens:
+  summary: 98
+  core: 876
+  full: 1679
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-train-serve-skew" }
+  - { type: related, target: "@community/pattern-feature-store" }
+  - { type: related, target: "@community/fact-evaluation-set-frozen" }
+  - { type: related, target: "@community/rule-model-card-required" }
+  - { type: requires, target: "@community/pattern-feature-store" }
+created_at: "2026-05-07"

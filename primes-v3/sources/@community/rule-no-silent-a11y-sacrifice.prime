@@ -1,0 +1,27 @@
+rule NoSilentA11ySacrifice {
+  id: "@community/rule-no-silent-a11y-sacrifice"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Accessibility and clarity must not be silently dropped when they conflict with speed or visual aesthetics — any deliberate accessibility trade-off must be explicitly documented with a plan."
+
+  claim: "Removing an accessible label, disabling focus visibility, or simplifying a semantic structure for aesthetic or performance reasons requires a documented decision with mitigation or a tracked issue."
+
+  severity: high
+
+  rationale: "Silent sacrifices accumulate invisibly. A product that ships with undocumented a11y trade-offs has no baseline to measure against, making regressions undetectable and compliance audits impossible."
+
+  required-documentation: [
+    "What accessibility feature is being sacrificed",
+    "Why the trade-off is being made (specific constraint)",
+    "What mitigation exists if any",
+    "A tracked issue number with target date if no mitigation",
+  ]
+
+  related: [
+    @community/rule-no-shipping-a11y-violations,
+    @community/rule-explicit-trade-off-disclosure,
+    @community/constraint-accessibility-aa-minimum,
+  ]
+}

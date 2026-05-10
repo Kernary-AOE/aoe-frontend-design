@@ -1,0 +1,22 @@
+id: "@community/method-a11y-audit"
+kind: method
+version: "1.0.0"
+description: "A comprehensive accessibility audit combining automated tool analysis (axe-core + Lighthouse) with structured manual checks for keyboard navigation, focus management, and screen reader compatibility."
+domain: accessibility
+content_hash: "sha256:a526e02345ca9efb020691897f2d758efe641ded2b5376c18a559395f34c4eb3"
+tokens:
+  summary: 63
+  core: 391
+  full: 720
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/tool-axe-core" }
+  - { type: related, target: "@community/tool-lighthouse" }
+  - { type: related, target: "@community/rule-color-contrast" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+created_at: "2026-05-07"

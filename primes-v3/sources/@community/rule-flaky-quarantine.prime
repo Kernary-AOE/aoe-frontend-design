@@ -1,0 +1,55 @@
+rule FlakyQuarantine {
+  id: "@community/rule-flaky-quarantine"
+  version: "1.0.0"
+
+  domain: testing
+
+  description: "A test that fails non-deterministically (passes on retry without code change) MUST be quarantined within 24 hours: removed from the gating CI suite, tagged @flaky, and assigned an owner with a deadline. Flakes left in the gating suite destroy trust in CI; ignoring them trains engineers to retry mindlessly."
+
+  tags: [testing, ci, flaky, quarantine, reliability]
+
+  statement: "Any test failure that does not reproduce when re-run with no code change is flaky. Within 24 hours of detection: (1) tag the test `@flaky` or move it to a non-gating suite (allowed-to-fail bucket); (2) file a ticket assigned to the test's owner team with a 7-day fix-or-delete deadline; (3) annotate the test source with the ticket id and a comment explaining the suspected cause; (4) record flake metadata in a tracking system (test name, first-seen, suspected cause, last-seen). Tests left flaky beyond 14 days are deleted, not 'fixed eventually'. The gating CI suite must have flake rate < 0.5% (≤ 1 in 200 runs failing spuriously); above 1% the team must stop merging until investigated."
+
+  rationale: "Flaky tests cost more than they catch. A 5% flake rate on a 100-test suite means every PR has a ~99% chance of seeing at least one false-positive failure. Engineers respond by reflexively retrying CI — which masks real failures and trains the org to ignore signal. Microsoft Research (Luo et al., 'An Empirical Analysis of Flaky Tests', FSE 2014) found 8.5% of test failures in large codebases are flaky; Google's analysis (Memon et al., 2017) found ~16% of their build suites contained at least one flaky test on any given day. The fix is process: find them fast, quarantine them fast, fix or delete with a deadline. 'We'll fix it later' is the mode failure that produces 30%-flake suites."
+
+  applies-to: [
+    "All gating CI suites (PR merge, deploy)",
+    "Pre-commit hooks (rare flakes still corrode trust)",
+    "End-to-end test suites (Cypress, Playwright, Selenium) — primary source of flakes due to async + UI",
+    "Integration tests with real databases / network",
+    "Mobile test farms (Firebase Test Lab, Sauce Labs) — device-level flakes",
+  ]
+
+  implementation-checklist: [
+    "CI runner records every test result with run-id; flake-detection job reruns failed tests once and labels passes-on-retry as flake",
+    "Test framework supports `@flaky` / `@retry(3)` / `test.skip.if(IS_FLAKY)` annotations",
+    "Quarantine bucket exists in CI config and runs in a non-gating workflow",
+    "Flake dashboard tracks flake rate per suite and per test over rolling 14 days",
+    "Team SLO: fix-or-delete within 7 days; auto-delete bot removes tests in quarantine > 14 days",
+    "PR template includes checkbox: 'Did you write a deterministic test? (No sleeps, no order-dependent state, no real network without mocks)'",
+  ]
+
+  severity: warn
+
+  examples: [
+    "Spotify CI: any test that passes-on-retry triggers a flake event in Honeycomb; auto-creates a Jira ticket assigned to the file's CODEOWNER. Flake rate kept under 0.3%.",
+    "Google Test: built-in retry mechanism + dashboarded flake rate per package; flake threshold > 1% blocks promotion to main.",
+    "GitHub Actions + nx: `nx affected --target=test --retries=2 --reporter=flake-report.json` produces flake metrics per CI run.",
+  ]
+
+  counter-examples: [
+    "PR fails CI; engineer clicks 'Re-run failed jobs'; second run passes; PR merges. No tracking, no investigation. Six months later 40% of CI runs require retries; nobody trusts CI.",
+    "Test marked @flaky for 18 months — owner unknown, original ticket archived, comments removed. Test still runs (not gating) but consumes 30s of CI time per build. Should be deleted.",
+    "Gating suite has 10% flake rate; team retries up to 5 times per CI job. A real bug slips through because intermittent failures are assumed flaky.",
+  ]
+
+  enhances: @community/principle-test-pyramid
+
+  related: [
+    @community/principle-test-pyramid,
+    @community/pattern-snapshot-restraint,
+    @community/anti-pattern-test-the-mock,
+    @community/fact-test-pyramid-ratios,
+    @community/anti-pattern-vanity-metrics,
+  ]
+}

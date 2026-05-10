@@ -1,0 +1,95 @@
+# ModalNonBlocking [pattern] v1.0.0
+A non-blocking overlay panel — implemented as a slide-in sheet (position: fixed; inset-inline-end: 0) or anchored popover — that does NOT trap focus and allows interaction with the page behind it, using role=complementary or role=dialog aria-modal=false depending on content type.
+domain: frontend-design
+
+## Label
+Non-Blocking Modal (Popover / Sheet)
+
+## Problem
+Standard blocking modals (role=dialog aria-modal=true) lock focus and prevent page interaction. Not all secondary UI requires this level of interruption — detail panels, quick-reference sheets, and comment threads should overlay the page without blocking the primary workflow.
+
+## Solution
+Use a slide-in panel or popover with role=dialog aria-modal=false (or role=complementary for non-interactive reference panels). Focus moves into the panel but Tab is NOT trapped — users can Tab back to the page. A visible close button (×) and Esc always dismiss.
+
+## Structure
+```
+    <!-- Slide-in detail sheet -->
+    <div
+      id="detail-sheet"
+      class="sheet"
+      role="dialog"
+      aria-modal="false"
+      aria-label="Item details"
+      aria-labelledby="sheet-title"
+      hidden
+    >
+      <div class="sheet__header">
+        <h2 id="sheet-title" class="sheet__title">Item Details</h2>
+        <button type="button" class="sheet__close" aria-label="Close details panel">
+          <svg aria-hidden="true"><!-- X icon --></svg>
+        </button>
+      </div>
+      <div class="sheet__body">
+        <!-- Detail content — not a focus trap -->
+      </div>
+    </div>
+
+    <!-- Backdrop (optional, non-blocking: click passes through if transparent) -->
+    <div class="sheet__backdrop" aria-hidden="true" data-sheet-backdrop hidden></div>
+  
+```
+
+## Css
+```
+    .sheet {
+      position: fixed;
+      inset-block: 0;
+      inset-inline-end: 0;
+      width: min(480px, 100vw);
+      background: white;
+      box-shadow: -8px 0 32px oklch(20% 0.02 250 / 0.12);
+      display: flex;
+      flex-direction: column;
+      z-index: 200;
+      transform: translateX(100%);
+      transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .sheet[data-open="true"] {
+      transform: translateX(0);
+    }
+    .sheet__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-block-end: 1px solid hsl(var(--border));
+    }
+    .sheet__body { padding: 24px; overflow-y: auto; flex: 1; }
+    .sheet__close {
+      background: transparent; border: none; cursor: pointer;
+      padding: 8px; border-radius: 6px; display: flex;
+    }
+    .sheet__close:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+    .sheet__backdrop {
+      position: fixed; inset: 0;
+      background: oklch(20% 0.02 250 / 0.2);
+      z-index: 199;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sheet { transition: none; }
+    }
+  
+```
+
+## Behavior
+- Does NOT trap focus — Tab exits the panel back to the page. Use @impeccable/template-modal-focus-trap for blocking operations.
+- Esc dismisses the sheet and returns focus to the element that opened it.
+- The close (×) button always visible and keyboard-reachable.
+- Sheet opens with a slide-in animation from the edge; respects prefers-reduced-motion.
+- Non-blocking backdrop: semi-transparent but still registers clicks to close the sheet.
+
+## A11y
+- role=dialog aria-modal=false signals to screen readers: a dialog is open but the page is still accessible.
+- aria-labelledby points to the sheet's h2 title; announced when panel opens and focus enters.
+- Focus should move into the panel on open (to the title or first interactive element) — but NOT trapped.
+- When closed, focus returns to the opener element.

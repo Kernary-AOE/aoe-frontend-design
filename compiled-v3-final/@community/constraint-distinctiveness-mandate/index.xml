@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-distinctiveness-mandate"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="232"
+  q="4.0">
+  <description>Every designed artifact must pass the AI-slop test before ship: show the interface to someone who knows design tools and say &apos;AI made this.&apos; If they believe you immediately — the design has failed the distinctiveness mandate.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="74"/>
+    <level name="core"    file="chunks/core.md"    tokens="232"/>
+    <level name="full"    file="chunks/full.md"    tokens="299"/>
+  </projection>
+</atom>

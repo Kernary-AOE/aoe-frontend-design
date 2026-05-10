@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-sticky-header-on-scroll"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1031"
+  q="4.0">
+  <description>A page or section header using position: sticky; top: 0 that adds a shadow or border-bottom on scroll (via IntersectionObserver sentinel), optionally hides on scroll-down and reveals on scroll-up to maximize content viewport height.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="74"/>
+    <level name="core"    file="chunks/core.md"    tokens="1031"/>
+    <level name="full"    file="chunks/full.md"    tokens="1987"/>
+  </projection>
+</atom>

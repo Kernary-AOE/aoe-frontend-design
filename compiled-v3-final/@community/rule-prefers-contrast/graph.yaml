@@ -1,0 +1,8 @@
+atom: "@community/rule-prefers-contrast"
+relations:
+  - type: related
+    target: "@community/rule-color-contrast"
+  - type: related
+    target: "@community/constraint-accessibility-aa-minimum"
+  - type: related
+    target: "@community/check-contrast-aa"

@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-spacing-token-progression"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="326"
+  q="4.0">
+  <description>Spacing scales follow a geometric (or near-geometric) progression — typically doubling every 1–2 steps — rather than a linear progression, because perceived spacing differences scale logarithmically with size.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="139"/>
+    <level name="core"    file="chunks/core.md"    tokens="326"/>
+    <level name="full"    file="chunks/full.md"    tokens="564"/>
+  </projection>
+</atom>

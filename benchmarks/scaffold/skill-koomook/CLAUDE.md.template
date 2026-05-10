@@ -1,0 +1,11 @@
+# Task
+
+{{BRIEF}}
+
+## Output
+
+Write a single HTML file to `./index.html` in this directory. Inline CSS only. Real content, not placeholders.
+
+## Available resources
+
+You have the `distinctive-frontend` skill installed at `.claude/skills/distinctive-frontend/`. Load it and apply it.

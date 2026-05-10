@@ -1,0 +1,10 @@
+atom: "@community/principle-idempotent-writes"
+relations:
+  - type: related
+    target: "@community/principle-owasp-data-integrity-failures"
+  - type: related
+    target: "@community/rule-event-schema-versioning"
+  - type: related
+    target: "@community/pattern-cdc-change-data-capture"
+  - type: requires
+    target: "@community/anti-pattern-batch-only-pipelines"

@@ -1,0 +1,12 @@
+atom: "@community/transform-locale-fallback-chain"
+relations:
+  - type: related
+    target: "@community/type-locale-tag"
+  - type: related
+    target: "@community/rule-intl-api-locale-formatting"
+  - type: related
+    target: "@community/principle-no-string-concat"
+  - type: related
+    target: "@community/pattern-icu-message-format"
+  - type: related
+    target: "@community/transform-px-to-rem"

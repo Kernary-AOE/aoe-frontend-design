@@ -1,0 +1,14 @@
+<atom
+  id="@community/counter-example-icon-button-24px"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="597"
+  q="4.0">
+  <description>A modal close (×) button styled as a bare icon with no padding. The clickable area is 16×16 CSS pixels — well below the WCAG 2.2 AA 24×24 minimum and a third of the Apple/Material 44×44 recommendation. On a phone, the user taps three times before hitting it.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="81"/>
+    <level name="core"    file="chunks/core.md"    tokens="597"/>
+    <level name="full"    file="chunks/full.md"    tokens="1113"/>
+  </projection>
+</atom>

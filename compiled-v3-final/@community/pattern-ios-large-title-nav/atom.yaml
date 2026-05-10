@@ -1,0 +1,25 @@
+id: "@community/pattern-ios-large-title-nav"
+kind: pattern
+version: "1.0.0"
+description: "Top-level views use large navigation bar titles that collapse smoothly to inline (standard) size as the user scrolls down. This matches the standard iOS navigation visual language users expect across system and third-party apps."
+domain: frontend-design
+content_hash: "sha256:58e00bf3dc9286f1e7cf38050c56416972fa652cdc4cd6610929d93fd6ace01e"
+tokens:
+  summary: 72
+  core: 192
+  full: 312
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/pattern-tab-bar-bottom" }
+  - { type: related, target: "@community/rule-ios-dynamic-type-semantic" }
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/check-touch-target-min" }
+  - { type: related, target: "@community/check-mobile-first" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-modal-non-blocking"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="937"
+  q="4.0">
+  <description>A non-blocking overlay panel — implemented as a slide-in sheet (position: fixed; inset-inline-end: 0) or anchored popover — that does NOT trap focus and allows interaction with the page behind it, using role=complementary or role=dialog aria-modal=false depending on content type.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="937"/>
+    <level name="full"    file="chunks/full.md"    tokens="1789"/>
+  </projection>
+</atom>

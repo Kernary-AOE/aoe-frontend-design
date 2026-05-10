@@ -1,0 +1,20 @@
+atom: "@community/principle-error-prevention-and-recovery"
+relations:
+  - type: related
+    target: "@community/rule-actionable-error-messages"
+  - type: related
+    target: "@community/principle-nielsen-error-prevention"
+  - type: related
+    target: "@community/principle-nielsen-error-recovery"
+  - type: related
+    target: "@community/anti-pattern-clear-form-on-failure"
+  - type: related
+    target: "@community/anti-pattern-generic-error-text"
+  - type: related
+    target: "@community/counter-example-button-no-loading"
+  - type: related
+    target: "@community/example-stripe-checkout"
+  - type: related
+    target: "@community/rule-preserve-user-input-on-error"
+  - type: related
+    target: "@community/rule-form-validation-inline"

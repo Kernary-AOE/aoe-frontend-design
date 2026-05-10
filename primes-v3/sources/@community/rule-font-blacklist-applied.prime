@@ -1,0 +1,62 @@
+rule FontBlacklistApplied {
+  id: "@community/rule-font-blacklist-applied"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: visual-design
+
+  description: "The primary display and body typefaces in author CSS MUST NOT be drawn from @impeccable/constraint-font-blacklist (Inter, Roboto, Arial, Helvetica Neue, Space Grotesk, DM Sans, Nunito, Poppins, Open Sans, Lato). These fonts are the statistical mode of LLM-generated and shadcn/Tailwind-default output and produce a visually undifferentiated 'commodity' result."
+
+  claim: "No element's resolved primary `font-family` MUST be a member of @impeccable/constraint-font-blacklist (with documented exceptions)."
+
+  severity: high
+
+  validates-with: [
+    @impeccable/constraint-font-blacklist,
+    @impeccable/principle-distinctiveness,
+  ]
+
+  checks: [
+    @community/check-font-blacklist-applied,
+  ]
+
+  severity-combination: |
+    primary display or body font is blacklisted, no exception cited → BLOCK
+    fallback-only blacklisted font (e.g. system stack)             → PASS
+    blacklisted font used for dense data (with exception)          → WARN
+
+  failure-mode: "Output looks identical to thousands of other shadcn-scaffolded apps; brand identity is invisible; reviewer's first impression is 'AI generated this'."
+
+  remediation: [
+    "Pick from @impeccable/constraint-font-blacklist.approved-alternatives (Geist, Söhne, Canela, Freight, Tiempos, GT Super, Roc Grotesk, Berkeley Mono).",
+    "If budget forbids licensed fonts, use Geist (free) or a free serif like Spectral / Source Serif 4 — anything outside the top-10 Google Fonts.",
+    "Keep blacklisted fonts only as system-stack fallbacks, e.g. `font-family: 'Söhne', 'Helvetica Neue', sans-serif`.",
+  ]
+
+  exceptions: [
+    {
+      case: "Dense data table UI",
+      allowed-when: "Inter is used in a @impeccable/persona-dense-pragmatist context where tabular figures and screen optimization dominate; document the choice.",
+    }
+    {
+      case: "Inherited brand decision",
+      allowed-when: "The brand book mandates a blacklisted font; record the decision in `BRAND.md` and annotate the CSS with a comment.",
+    }
+  ]
+
+  notes: [
+    "This rule is the runtime enforcement of @impeccable/constraint-font-blacklist; the constraint defines the list, the rule enforces it.",
+  ]
+
+  related: [
+    @impeccable/constraint-font-blacklist,
+    @impeccable/principle-distinctiveness,
+    @impeccable/anti-pattern-ai-slop-palette,
+    @community/rule-color-blacklist-brand,
+  ]
+
+  see-also: [
+    @community/check-font-blacklist-applied,
+  ]
+}

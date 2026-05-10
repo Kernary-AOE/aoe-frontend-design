@@ -1,0 +1,13 @@
+<atom
+  id="@community/template-color-layer-primitive"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="389"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="16"/>
+    <level name="core"    file="chunks/core.md"    tokens="389"/>
+    <level name="full"    file="chunks/full.md"    tokens="389"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-plan-comparison-table"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="838"
+  q="4.0">
+  <description>A wide feature-by-feature comparison matrix with rows for capabilities and columns per plan, using checkmarks, X marks, or specific values per cell. Used below the tier cards on pricing pages for users who need detail.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="838"/>
+    <level name="full"    file="chunks/full.md"    tokens="1662"/>
+  </projection>
+</atom>

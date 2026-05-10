@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-skip-link"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="415"
+  q="4.0">
+  <description>Documents with repeated header / navigation chrome MUST provide a &apos;skip to main content&apos; link as the first focusable element. WCAG 2.2 SC 2.4.1 (Bypass Blocks) requires a mechanism for keyboard users to skip past blocks of content that repeat across pages.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="415"/>
+    <level name="full"    file="chunks/full.md"    tokens="764"/>
+  </projection>
+</atom>

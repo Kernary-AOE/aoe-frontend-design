@@ -1,0 +1,28 @@
+id: "@community/rule-color-contrast-aaa"
+kind: rule
+version: "1.0.0"
+description: "Mission-critical body text — long-form articles, legal disclosures, healthcare information, financial figures — MUST meet WCAG 2.2 SC 1.4.6 Level AAA contrast: ≥ 7:1 for normal text and ≥ 4.5:1 for large text. AAA is the appropriate floor for content that users will read for minutes, not seconds."
+domain: accessibility
+content_hash: "sha256:c7a471341a290aac478fe89dce3af9ca3066932f2246bd670276a749673c2015"
+tokens:
+  summary: 88
+  core: 414
+  full: 756
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-color-contrast" }
+  - { type: related, target: "@w3c/fact-wcag-contrast-aa" }
+  - { type: related, target: "@community/metric-contrast-ratio" }
+  - { type: related, target: "@community/example-atlantic-longform" }
+  - { type: related, target: "@community/example-readwise-reader" }
+  - { type: related, target: "@community/rule-body-readability" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: see-also, target: "@community/check-color-contrast-aaa" }
+  - { type: validates-with, target: "@w3c/source-wcag-22" }
+  - { type: validates-with, target: "@w3c/fact-wcag-contrast-aa" }
+created_at: "2026-05-07"

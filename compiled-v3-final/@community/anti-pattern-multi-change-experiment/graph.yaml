@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-multi-change-experiment"
+relations:
+  - type: related
+    target: "@community/anti-pattern-ignoring-negative-experiments"
+  - type: related
+    target: "@community/principle-evidence-not-aesthetics"
+  - type: related
+    target: "@community/rule-align-changes-to-findings"

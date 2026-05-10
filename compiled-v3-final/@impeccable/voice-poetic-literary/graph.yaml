@@ -1,0 +1,14 @@
+atom: "@impeccable/voice-poetic-literary"
+relations:
+  - type: related
+    target: "@impeccable/voice-editorial-investigative"
+  - type: related
+    target: "@impeccable/voice-brand-corporate"
+  - type: compatible
+    target: "@impeccable/persona-magazine-editorial"
+  - type: conflicts
+    target: "@impeccable/voice-dev-technical"
+  - type: conflicts
+    target: "@impeccable/voice-marketing-bold"
+  - type: conflicts
+    target: "@impeccable/voice-legal-formal"

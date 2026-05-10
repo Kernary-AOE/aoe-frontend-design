@@ -1,0 +1,3 @@
+# ContrastAmplification [fact] v1.0.0
+Light-on-dark text (negative polarity) needs ~10% higher contrast and slightly heavier weight than dark-on-light to feel equally legible, because halation around bright glyphs on dark backgrounds reduces effective edge sharpness.
+> Text rendered light-on-dark (negative polarity) requires roughly 10% higher luminance contrast and one weight step heavier than the same text dark-on-light to achieve perceptual parity, because of halation: bright glyphs on dark backgrounds bleed photons into adjacent dark pixels, softening edges and reducing effective contrast.

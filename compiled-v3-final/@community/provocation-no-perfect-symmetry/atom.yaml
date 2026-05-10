@@ -1,0 +1,20 @@
+id: "@community/provocation-no-perfect-symmetry"
+kind: provocation
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:e42a7d9bbc1798d2ca8dbd4b332403900cf9311eeedd3040f25cea479a1e95f6"
+tokens:
+  summary: 16
+  core: 377
+  full: 377
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/principle-distinctiveness" }
+  - { type: related, target: "@community/anti-pattern-ai-generated-ui" }
+  - { type: related, target: "@community/principle-commit-bold-aesthetic" }
+created_at: "2026-05-07"

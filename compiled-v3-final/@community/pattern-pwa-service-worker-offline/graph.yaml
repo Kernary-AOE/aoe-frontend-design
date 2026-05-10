@@ -1,0 +1,10 @@
+atom: "@community/pattern-pwa-service-worker-offline"
+relations:
+  - type: related
+    target: "@community/fact-pwa-installability-criteria"
+  - type: related
+    target: "@community/rule-pwa-web-app-manifest"
+  - type: related
+    target: "@community/fact-pwa-display-mode-taxonomy"
+  - type: related
+    target: "@community/check-focus-visible"

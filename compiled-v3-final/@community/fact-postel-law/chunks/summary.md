@@ -1,0 +1,3 @@
+# PostelLaw [fact] v1.0.0
+Postel's Law / Robustness Principle (Jon Postel, 1980): be conservative in what you send, be liberal in what you accept — applied to UX: tolerate varied user input formats while producing clean, consistent output.
+> Jon Postel formulated this principle for TCP/IP implementations: a well-behaved system should accept a wide variety of valid and near-valid inputs without breaking, while always emitting strictly well-formed output. Applied to user interfaces, this means forms should accept common input variants (phone number formats, date spellings, case variations) and normalise them silently, rather than forcing users to conform to a rigid format — lowering entry friction without sacrificing data integrity downstream.

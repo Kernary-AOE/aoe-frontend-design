@@ -1,0 +1,20 @@
+atom: "@community/rule-animation-duration"
+relations:
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/fact-visibility-system-status"
+  - type: related
+    target: "@community/anti-pattern-decorative-spinning"
+  - type: related
+    target: "@community/anti-pattern-no-bounce-everything"
+  - type: related
+    target: "@community/example-linear-card-hover"
+  - type: related
+    target: "@community/example-framer-page-transition"
+  - type: related
+    target: "@community/rule-hover-focus-animation-parity"
+  - type: see-also
+    target: "@community/check-animation-duration"
+  - type: validates-with
+    target: "@community/fact-visibility-system-status"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-button-hierarchy-web"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="929"
+  q="4.0">
+  <description>A 5-variant (primary, secondary, outline, ghost, destructive) × 3-size (h-8/h-9/h-10) button system with loading states, icon-only variants sized to 44×44 CSS px on mobile, and CVA class-variance-authority composition pattern.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="72"/>
+    <level name="core"    file="chunks/core.md"    tokens="929"/>
+    <level name="full"    file="chunks/full.md"    tokens="1786"/>
+  </projection>
+</atom>

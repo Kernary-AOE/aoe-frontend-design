@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-interruption-handling"
+relations:
+  - type: related
+    target: "@community/rule-ios-preserve-navigation-state"
+  - type: related
+    target: "@community/pattern-ios-navigation-stack"
+  - type: related
+    target: "@community/rule-ios-immediate-action-acknowledgment"

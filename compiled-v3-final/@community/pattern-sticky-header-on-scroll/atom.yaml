@@ -1,0 +1,24 @@
+id: "@community/pattern-sticky-header-on-scroll"
+kind: pattern
+version: "1.0.0"
+description: "A page or section header using position: sticky; top: 0 that adds a shadow or border-bottom on scroll (via IntersectionObserver sentinel), optionally hides on scroll-down and reveals on scroll-up to maximize content viewport height."
+domain: frontend-design
+content_hash: "sha256:17f5d195f05f74aa23faf3a5fa60453999eb5dbeda2cac3ecd8cf861f56bd44d"
+tokens:
+  summary: 74
+  core: 1031
+  full: 1987
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-landing-page-sections" }
+  - { type: related, target: "@community/pattern-breadcrumb-trail" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/check-skip-link" }
+  - { type: related, target: "@community/rule-aria-current-page" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

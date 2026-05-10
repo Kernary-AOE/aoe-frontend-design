@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-batch-only-pipelines"
+  kind="knowledge"
+  version="1.0.0"
+  domain="data-engineering"
+  tokens="665"
+  q="4.0">
+  <description>Designing every data pipeline as a nightly (or hourly) batch job — typically Airflow + dbt + warehouse — when downstream use-cases require sub-minute freshness. The freshness ceiling becomes the batch interval, and there is no architectural seam to lower it.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="82"/>
+    <level name="core"    file="chunks/core.md"    tokens="665"/>
+    <level name="full"    file="chunks/full.md"    tokens="1263"/>
+  </projection>
+</atom>

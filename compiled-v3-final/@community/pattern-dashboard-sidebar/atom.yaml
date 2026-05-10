@@ -1,0 +1,26 @@
+id: "@community/pattern-dashboard-sidebar"
+kind: pattern
+version: "1.0.0"
+description: "A collapsible left navigation sidebar for admin dashboards. Three modes: expanded (256px), icon-only (48px), and mobile drawer (288px). Contains brand logo, optional command/search, grouped nav items with icons, collapsible sub-groups, and a user footer."
+domain: frontend-design
+content_hash: "sha256:36b3780c078b27f94e6979559d8f3befb0b6904f43e2f09fd90a4323c66a399a"
+tokens:
+  summary: 79
+  core: 973
+  full: 1867
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-dashboard-layout" }
+  - { type: related, target: "@community/pattern-dashboard-header" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/rule-aria-current-page" }
+  - { type: related, target: "@community/rule-aria-label-in-name" }
+  - { type: related, target: "@community/check-skip-link" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

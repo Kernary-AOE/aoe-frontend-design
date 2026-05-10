@@ -1,0 +1,20 @@
+id: "@community/rule-collapse-multi-column-mobile"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:c9a7dd2117447ba1d6549e88e06e65287b523228a2d0c5bda90028129d3d1c60"
+tokens:
+  summary: 86
+  core: 309
+  full: 591
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/fact-8pt-grid-system" }
+created_at: "2026-05-07"

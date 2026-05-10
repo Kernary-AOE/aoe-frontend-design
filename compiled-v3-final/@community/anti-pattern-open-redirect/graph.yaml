@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-open-redirect"
+relations:
+  - type: related
+    target: "@community/principle-owasp-injection"
+  - type: related
+    target: "@community/pattern-input-validation-allowlist"
+  - type: related
+    target: "@community/principle-owasp-broken-access-control"

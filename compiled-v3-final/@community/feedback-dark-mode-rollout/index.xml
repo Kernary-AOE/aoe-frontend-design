@@ -1,0 +1,14 @@
+<atom
+  id="@community/feedback-dark-mode-rollout"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="863"
+  q="4.0">
+  <description>Lessons from shipping dark-mode support across multiple production design systems. Dark mode is not a color inversion — it is a separate, parallel theme that requires re-validating contrast, shadow strategy, brand color saturation, and image asset variants. Most failed dark-mode rollouts treat it as a CSS filter rather than a first-class design system surface.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="105"/>
+    <level name="core"    file="chunks/core.md"    tokens="863"/>
+    <level name="full"    file="chunks/full.md"    tokens="863"/>
+  </projection>
+</atom>

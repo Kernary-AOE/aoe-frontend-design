@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-rate-limit-token-bucket"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="671"
+  q="4.0">
+  <description>A token-bucket algorithm that allows short bursts while enforcing a sustained request rate — the standard rate-limiting primitive for APIs and login endpoints.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="54"/>
+    <level name="core"    file="chunks/core.md"    tokens="671"/>
+    <level name="full"    file="chunks/full.md"    tokens="1287"/>
+  </projection>
+</atom>

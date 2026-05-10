@@ -1,0 +1,23 @@
+id: "@community/term-inp"
+kind: term
+version: "1.0.0"
+domain: performance
+content_hash: "sha256:3d92cc26e7800df105cbb1cdedd3d079af0e158ec4ff867e36a88f2439a8fee5"
+tokens:
+  summary: 95
+  core: 199
+  full: 302
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-rail-targets" }
+  - { type: related, target: "@community/metric-lcp-largest-contentful-paint" }
+  - { type: related, target: "@community/metric-cls-cumulative-layout-shift" }
+  - { type: related, target: "@community/principle-perceived-vs-actual" }
+  - { type: related, target: "@community/tool-web-vitals-js" }
+  - { type: related, target: "@community/collection-performance-budget" }
+created_at: "2026-05-07"

@@ -1,0 +1,27 @@
+principle ProveNotPreventAiSlop {
+  id: "@community/principle-prove-not-prevent-ai-slop"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "The goal of anti-slop guidelines is to prove distinctive quality — not merely to prevent the worst defaults. A design that avoids all slop signals but makes no positive aesthetic statement has still failed. The bar is not 'does not look AI-generated' but 'looks unmistakably intentional.'"
+
+  rationale: "Framing anti-slop work as prevention leads to checklist compliance without genuine quality: the designer avoids Inter and purple but produces a different kind of generic. Framing it as proof-of-quality shifts the question from 'did we avoid the bad list?' to 'does this design make a clear, confident statement about who this brand is?' The second question is harder and more valuable."
+
+  implications: [
+    "Anti-slop checklists are necessary but not sufficient — pass them and then ask the brand distinctiveness question.",
+    "A design with one genuinely bold, memorable decision is better than a design that merely avoids all 10 slop signals.",
+    "The test is not the absence of slop signals but the presence of something worth remembering.",
+  ]
+
+  related: [
+    @impeccable/principle-distinctiveness,
+    @community/method-brand-distinctiveness-test,
+    @community/constraint-distinctiveness-mandate,
+    @community/anti-pattern-ai-slop-aesthetics,
+    @community/anti-pattern-generic-saas-blue,
+    @community/example-resend-dashboard,
+    @community/example-mercury-banking-dashboard,
+    @community/principle-commit-bold-aesthetic,
+  ]
+}

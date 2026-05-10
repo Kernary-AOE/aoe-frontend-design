@@ -1,0 +1,14 @@
+atom: "@community/template-animated-mesh-background"
+relations:
+  - type: related
+    target: "@community/constraint-animation-pref-respected"
+  - type: related
+    target: "@community/rule-animation-duration"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/check-reduced-motion-required"
+  - type: related
+    target: "@community/check-focus-visible"

@@ -1,0 +1,14 @@
+atom: "@anthropic-impeccable/template-accordion-grid-rows"
+relations:
+  - type: related
+    target: "@anthropic-impeccable/rule-animate-transform-opacity-only"
+  - type: related
+    target: "@community/rule-animation-duration"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/pattern-expandable-disclosure"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/rule-reduced-motion-required"

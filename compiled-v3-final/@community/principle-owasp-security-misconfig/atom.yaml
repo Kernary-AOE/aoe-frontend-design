@@ -1,0 +1,21 @@
+id: "@community/principle-owasp-security-misconfig"
+kind: principle
+version: "1.0.0"
+description: "OWASP Top 10 A05:2021 — security misconfiguration is the most commonly observed issue; 90% of applications were tested for misconfiguration with an average incidence rate of 4.5%."
+domain: security
+content_hash: "sha256:7c4dbc5e1fdc08e21deef5d37877047ea5eefd6413b17259bcf5db729bc79773"
+tokens:
+  summary: 142
+  core: 400
+  full: 645
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-insecure-design" }
+  - { type: related, target: "@community/rule-secrets-never-in-source" }
+  - { type: related, target: "@community/rule-tls-everywhere" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-generic-saas-blue"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="478"
+  q="4.0">
+  <description>Using the default framework primary blue — Tailwind `blue-500` (#3b82f6), Bootstrap primary (#0d6efd), Material `primary` (#1976d2), or Stripe-clone `#635bff` — as the product&apos;s main brand color. Indistinguishable from thousands of other SaaS products. Communicates &apos;we picked the default&apos; rather than a brand decision.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="96"/>
+    <level name="core"    file="chunks/core.md"    tokens="478"/>
+    <level name="full"    file="chunks/full.md"    tokens="895"/>
+  </projection>
+</atom>

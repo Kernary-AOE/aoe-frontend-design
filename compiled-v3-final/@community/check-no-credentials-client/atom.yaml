@@ -1,0 +1,19 @@
+id: "@community/check-no-credentials-client"
+kind: check
+version: "1.0.0"
+description: "Scans client-bundled JS and HTML for hardcoded API keys, secrets, JWTs, and credentials (OpenAI, Anthropic, AWS, GitHub, Stripe, Google), and detects sensitive env vars exposed via NEXT_PUBLIC_/VITE_/REACT_APP_ prefixes."
+domain: security
+content_hash: "sha256:12c29a80edede1736ede745c6d362548413059cdb318f06bc5ebe65a2596e957"
+tokens:
+  summary: 69
+  core: 623
+  full: 718
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-no-credentials-client" }
+created_at: "2026-05-07"

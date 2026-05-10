@@ -1,0 +1,21 @@
+id: "@community/rule-prioritize-critical-errors-first"
+kind: rule
+version: "1.0.0"
+description: "When multiple validation errors exist simultaneously, surface the most critical error first rather than dumping a full list — guide users one issue at a time to reduce abandonment."
+domain: frontend-design
+content_hash: "sha256:0e2c817914c8af3228e1452b31ab704027c91fd40b40b371da3b403213385505"
+tokens:
+  summary: 164
+  core: 243
+  full: 560
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-form-validation-inline" }
+  - { type: related, target: "@community/rule-actionable-error-messages" }
+  - { type: related, target: "@community/principle-nielsen-error-prevention" }
+created_at: "2026-05-07"

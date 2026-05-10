@@ -1,0 +1,8 @@
+atom: "@community/rule-refine-not-add-on-second-pass"
+relations:
+  - type: related
+    target: "@community/principle-commit-bold-aesthetic"
+  - type: related
+    target: "@community/principle-distinctiveness"
+  - type: related
+    target: "@community/method-design-qa-pre-ship"

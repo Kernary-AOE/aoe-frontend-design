@@ -1,0 +1,62 @@
+pattern PersonaComponentMapping {
+  id: "@community/pattern-persona-component-mapping"
+  version: "1.0.0"
+
+  label: "Persona → Component Style Mapping"
+  domain: frontend-design
+
+  description: "A cross-persona lookup table showing how the same HTML component renders under 6 distinct aesthetic personas — Brutalist, Editorial, Tokyo Minimal, Warm Institutional, Dense Pragmatist, Swiss Modernist — enabling rapid full-project recalibration when switching personas."
+
+  usage: "When switching personas on an existing project: update radius tokens, spacing tokens, and font stacks first. Colors and motion follow. The component HTML does not change."
+
+  button-primary: {
+    brutalist:          { radius: "0px",   padding: "8px 16px",   bg: "var(--accent) hot red-orange", border: "2px solid fg",       font: "Syne 800 uppercase 13px",        hover: "invert 150ms linear" }
+    editorial:          { radius: "6px",   padding: "12px 28px",  bg: "var(--accent) muted blue",     border: "1px solid accent",   font: "Outfit 500 14px",                hover: "bg darken 300ms" }
+    tokyo-minimal:      { radius: "2px",   padding: "10px 24px",  bg: "transparent",                  border: "1px solid fg",       font: "Noto Sans JP 400 13px",          hover: "border thickens 300ms" }
+    warm-institutional: { radius: "10px",  padding: "12px 24px",  bg: "var(--accent) amber",          border: "none",               font: "Source Sans 3 500 14px",         hover: "bg deepen 300ms" }
+    dense-pragmatist:   { radius: "4px",   padding: "6px 14px",   bg: "var(--accent) amber",          border: "1px solid accent",   font: "IBM Plex Sans 500 12px",         hover: "bg lighten 100ms" }
+    swiss-modernist:    { radius: "0px",   padding: "10px 20px",  bg: "var(--accent) Swiss red",      border: "1px solid accent",   font: "Instrument Sans 600 13px",       hover: "bg accent 200ms" }
+  }
+
+  card: {
+    brutalist:          { radius: "0px",   border: "2px solid fg",  padding: "12px",    bg: "var(--surface)",    shadow: "none",               hover: "2px border → accent" }
+    editorial:          { radius: "6-10px", border: "1px soft",     padding: "32-48px", bg: "near-white",        shadow: "none",               hover: "none" }
+    tokyo-minimal:      { radius: "2px",   border: "1px whisper",   padding: "40-48px", bg: "near-white",        shadow: "none",               hover: "opacity 0.9" }
+    warm-institutional: { radius: "10-12px", border: "1px warm",    padding: "24-32px", bg: "warm cream",        shadow: "0 1px 3px warm 8%",  hover: "shadow deepens" }
+    dense-pragmatist:   { radius: "4px",   border: "1px subtle",    padding: "12-16px", bg: "deep charcoal panel", shadow: "none",             hover: "row highlight amber" }
+    swiss-modernist:    { radius: "0px",   border: "1px structural", padding: "24px",   bg: "cool paper",        shadow: "none",               hover: "border → accent" }
+  }
+
+  metric-card: {
+    brutalist:          { value-font: "Syne 800 48px",             label: "Outfit 400 10px uppercase",  trend: "Space Mono 400 12px" }
+    editorial:          { value-font: "Cormorant 600 52px",        label: "Outfit 400 12px",            trend: "Outfit 400 13px" }
+    tokyo-minimal:      { value-font: "Newsreader 300 44px",       label: "Noto Sans JP 300 11px",      trend: "Noto Sans JP 300 12px" }
+    warm-institutional: { value-font: "Merriweather 700 40px",     label: "Source Sans 3 400 12px",     trend: "Source Sans 3 400 13px" }
+    dense-pragmatist:   { value-font: "Barlow Condensed 700 48px", label: "IBM Plex Sans 400 11px",     trend: "IBM Plex Mono 400 12px" }
+    swiss-modernist:    { value-font: "Instrument Sans 700 44px",  label: "Figtree 500 11px uppercase", trend: "Figtree 400 12px" }
+  }
+
+  nav-top-bar: {
+    brutalist:          { height: "48px", bg: "near-black",   logo: "Syne 800",          nav: "Outfit 600 uppercase", active: "2px bottom accent" }
+    editorial:          { height: "64px", bg: "paper white",  logo: "Cormorant 600",     nav: "Outfit 400 14px",      active: "underline 2px" }
+    tokyo-minimal:      { height: "56px", bg: "near-white",   logo: "Newsreader 300",    nav: "Noto Sans JP 300 13px", active: "1px bottom accent" }
+    warm-institutional: { height: "60px", bg: "cream",        logo: "Merriweather 700",  nav: "Source Sans 3 400",    active: "accent text color" }
+    dense-pragmatist:   { height: "40px", bg: "deep charcoal", logo: "Barlow Condensed 600", nav: "IBM Plex Sans 400 12px", active: "accent text" }
+    swiss-modernist:    { height: "48px", bg: "cool paper",   logo: "Instrument Sans 700", nav: "Figtree 500 13px",   active: "accent left bar" }
+  }
+
+  notes: [
+    "Brutalist: 0px radius everywhere, maximum contrast, minimum padding — the most opinionated column.",
+    "Dense Pragmatist: smallest numbers — shortest rows, tightest padding, smallest fonts — density is the value.",
+    "Tokyo Minimal: most generous padding and lightest weights — emptiness is the value.",
+    "Warm Institutional: most forgiving — largest radius, most shadow, warmest colors.",
+    "Editorial and Swiss Modernist share grid discipline but diverge on warmth.",
+  ]
+
+  related: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-editorial,
+    @impeccable/persona-dense-pragmatist,
+    @community/check-focus-visible,
+  ]
+}

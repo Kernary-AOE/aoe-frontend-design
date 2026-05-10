@@ -1,0 +1,26 @@
+id: "@community/pattern-top-nav-mega"
+kind: pattern
+version: "1.0.0"
+description: "A top horizontal nav whose items expand into a multi-column flyout panel grouping product, solution, resource, and developer links with icons and short descriptions. Used by marketing sites with broad surface area."
+domain: frontend-design
+content_hash: "sha256:b4990b2aef1b66b830207e3fd354a990e445a0d7cc8d20813c15a58b2e3d4750"
+tokens:
+  summary: 67
+  core: 778
+  full: 1522
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-progressive-disclosure" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/rule-aria-current-page" }
+  - { type: related, target: "@community/rule-aria-label-in-name" }
+  - { type: related, target: "@community/check-skip-link" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: compatible, target: "@community/pattern-progressive-disclosure" }
+created_at: "2026-05-07"

@@ -1,0 +1,4 @@
+# TransitionsVsAnimations [fact] v1.0.0
+CSS transitions (property-triggered, auto-reversible) and CSS animations (@keyframes, scripted sequence) serve different purposes — transitions for state-toggled UI feedback, animations for entrances/exits/loading — mixing them incorrectly creates brittle, non-reversing motion.
+> CSS transitions and CSS animations are not interchangeable. A CSS transition fires when a CSS property value changes and automatically reverses when the trigger is removed — making it correct for hover, focus, and toggle states. A CSS animation (@keyframes) runs a scripted sequence independently of current property value, does not auto-reverse, and is correct for entrance/exit and looping motion. The most common mistake: using @keyframes animation for hover states (no auto-reverse) or CSS transition for entrance animations (requires a trigger to exist before mounting).
+domain: frontend-design

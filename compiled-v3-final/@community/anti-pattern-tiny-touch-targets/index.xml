@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-tiny-touch-targets"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="492"
+  q="4.0">
+  <description>Buttons, icon links, and tap targets sized below the WCAG 2.2 AA minimum of 24×24 CSS pixels — typically 16×16 or 20×20 icon-only buttons. On mobile devices, users tap the wrong target, hit two adjacent items at once, or fail to register the tap entirely. The thumb-tip averages ~8mm; targets below 24px require precision the device cannot provide.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="103"/>
+    <level name="core"    file="chunks/core.md"    tokens="492"/>
+    <level name="full"    file="chunks/full.md"    tokens="881"/>
+  </projection>
+</atom>

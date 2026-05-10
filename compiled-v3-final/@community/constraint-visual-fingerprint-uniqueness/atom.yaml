@@ -1,0 +1,21 @@
+id: "@community/constraint-visual-fingerprint-uniqueness"
+kind: constraint
+version: "1.0.0"
+description: "A designed product must have a unique visual fingerprint — a set of at least 3 specific, non-default design choices that make it immediately recognizable as distinct from both AI-generated output and competitor products in its category."
+domain: frontend-design
+content_hash: "sha256:f8e0e9b5a9d2950e975966af92df5bdeb0910d306ff1c1120f2093abe0aa3a41"
+tokens:
+  summary: 78
+  core: 237
+  full: 237
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/principle-distinctiveness" }
+  - { type: related, target: "@community/constraint-distinctiveness-mandate" }
+  - { type: related, target: "@community/method-brand-distinctiveness-test" }
+created_at: "2026-05-07"

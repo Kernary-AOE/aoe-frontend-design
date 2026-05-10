@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-overloaded-screen"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="428"
+  q="4.0">
+  <description>Cramming many unrelated actions, decisions, or form sections onto a single screen within a user flow — presenting everything at once instead of guiding users through focused, single-purpose steps.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="66"/>
+    <level name="core"    file="chunks/core.md"    tokens="428"/>
+    <level name="full"    file="chunks/full.md"    tokens="791"/>
+  </projection>
+</atom>

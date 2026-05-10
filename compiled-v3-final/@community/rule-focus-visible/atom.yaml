@@ -1,0 +1,29 @@
+id: "@community/rule-focus-visible"
+kind: rule
+version: "1.0.0"
+description: "Every keyboard-focusable interactive element MUST present a visible focus indicator that meets WCAG 2.2 SC 2.4.7 (Focus Visible) and SC 2.4.11 (Focus Not Obscured). Authors MUST style `:focus-visible` and MUST NOT remove the indicator with `outline: none` unless a replacement is provided in the same rule block."
+domain: accessibility
+content_hash: "sha256:e1e326a4137d1228a1b78a80b94d8518fce9f7dab6a32992c9d3dcab22e925fa"
+tokens:
+  summary: 91
+  core: 452
+  full: 818
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/rule-color-contrast" }
+  - { type: related, target: "@w3c/fact-wcag-focus-contrast" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-invisible-focus" }
+  - { type: related, target: "@community/anti-pattern-outline-suppression" }
+  - { type: related, target: "@community/counter-example-outline-none" }
+  - { type: related, target: "@community/counter-example-low-contrast-focus" }
+  - { type: related, target: "@community/rule-no-hidden-focus-outline" }
+  - { type: validates-with, target: "@w3c/fact-wcag-focus-contrast" }
+  - { type: validates-with, target: "@w3c/source-wcag-22" }
+created_at: "2026-05-07"

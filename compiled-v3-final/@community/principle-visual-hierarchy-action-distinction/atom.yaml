@@ -1,0 +1,25 @@
+id: "@community/principle-visual-hierarchy-action-distinction"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:6b2dc04a5b30aef060cc41a5723a8c91862956ff3feb16478d76cec8fe9871f1"
+tokens:
+  summary: 93
+  core: 196
+  full: 384
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-button-hierarchy-web" }
+  - { type: related, target: "@community/rule-destructive-action-differentiation" }
+  - { type: related, target: "@community/rule-refactoring-ui-hierarchy" }
+  - { type: related, target: "@community/anti-pattern-overloaded-screen" }
+  - { type: related, target: "@community/example-stripe-checkout" }
+  - { type: related, target: "@community/example-radix-dialog" }
+  - { type: related, target: "@community/rule-single-primary-action-per-screen" }
+  - { type: related, target: "@community/rule-ghost-button" }
+created_at: "2026-05-07"

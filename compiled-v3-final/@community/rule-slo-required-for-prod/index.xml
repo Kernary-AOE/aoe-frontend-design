@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-slo-required-for-prod"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ops-observability"
+  tokens="642"
+  q="4.0">
+  <description>Every user-facing service in production must publish at least one Service Level Objective (SLO) — a numeric target (99.9% / 99.95% / 99.99%) for a specific Service Level Indicator (SLI) measured over a rolling window (typically 28 or 30 days). No SLO = no production launch.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="231"/>
+    <level name="core"    file="chunks/core.md"    tokens="642"/>
+    <level name="full"    file="chunks/full.md"    tokens="1339"/>
+  </projection>
+</atom>

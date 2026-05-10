@@ -1,0 +1,18 @@
+atom: "@community/rule-color-hue-selection"
+relations:
+  - type: related
+    target: "@impeccable/template-oklch-palette"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/check-color-oklch-required"
+  - type: related
+    target: "@community/counter-example-tailwind-blue-500"
+  - type: related
+    target: "@community/anti-pattern-rainbow-explosion"
+  - type: related
+    target: "@community/example-stripe-dashboard"
+  - type: related
+    target: "@community/example-mercury-banking-dashboard"
+  - type: related
+    target: "@community/principle-color-system-foundation"

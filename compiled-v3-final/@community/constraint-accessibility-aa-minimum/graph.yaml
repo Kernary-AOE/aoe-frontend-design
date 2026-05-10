@@ -1,0 +1,14 @@
+atom: "@community/constraint-accessibility-aa-minimum"
+relations:
+  - type: related
+    target: "@w3c/fact-wcag-contrast-aa"
+  - type: related
+    target: "@w3c/source-wcag-22"
+  - type: related
+    target: "@community/rule-color-contrast"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/tool-axe-core"
+  - type: related
+    target: "@community/tool-lighthouse"

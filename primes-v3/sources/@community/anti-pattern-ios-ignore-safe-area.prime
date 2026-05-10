@@ -1,0 +1,24 @@
+anti-pattern IosIgnoreSafeArea {
+  id: "@community/anti-pattern-ios-ignore-safe-area"
+  version: "1.0.0"
+
+  label: "iOS Applying ignoresSafeArea() to Content Views"
+  domain: frontend-design
+
+  description: "Using .ignoresSafeArea() on text labels, buttons, or any interactive element causes content to be clipped under the Dynamic Island, status bar notch, or home indicator on modern iPhones."
+
+  why-bad: "System chrome physically obscures content placed outside safe areas, making it unreachable or invisible. This is especially severe on iPhone 14/15/16 Pro models with the Dynamic Island, which sits higher than a standard notch. Apple HIG Rule 1.2 requires all interactive and readable content to stay within safe area boundaries."
+
+  instead-do: "Apply .ignoresSafeArea() only to background fills, full-bleed decorative images, or edge-extending visuals. Never apply it to text, buttons, or any interactive element. In SwiftUI, use .ignoresSafeArea(.container, edges: .bottom) specifically on a background Color/Image, not on a VStack or Group containing content."
+
+  notes: [
+    "Verify on a physical iPhone 15 Pro or in the Dynamic Island simulator; clipped content may not be obvious in older simulators.",
+    "Apple HIG source: Rule 1.2 — Respect Safe Areas; Anti-Pattern #10.",
+  ]
+
+  related: [
+    @community/rule-ios-safe-area-insets,
+    @community/rule-ios-flexible-layout,
+    @community/constraint-ios-touch-target-44pt,
+  ]
+}

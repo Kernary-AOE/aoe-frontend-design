@@ -1,0 +1,45 @@
+task_type: dashboard
+parent: product-ui
+description: "Product analytics dashboard with KPI metrics, charts, and data visualization in a sidebar layout."
+trigger_keywords:
+  - "dashboard"
+  - "analytics"
+  - "overview"
+  - "KPI"
+  - "metrics"
+  - "数据概览"
+  - "仪表盘"
+  - "analytics overview"
+  - "product analytics"
+  - "图表"
+default_register_pool:
+  - school: linear
+    weight: 0.4
+  - school: vercel-clean
+    weight: 0.35
+  - school: stripe-fintech
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-dashboard-layout"
+  - "@community/pattern-dashboard-grid"
+  - "@community/pattern-dashboard-header"
+  - "@community/pattern-dashboard-sidebar"
+  - "@community/pattern-metric-card"
+  - "@community/pattern-chart-grid"
+  - "@community/rule-chart-never-alone"
+recommended_motion:
+  - "@community/pattern-dashboard-animations"
+  - "@community/pattern-skeleton-loader"
+  - "@community/pattern-motion-loading"
+forbidden_atoms:
+  - "@impeccable/persona-magazine-editorial"
+  - "@impeccable/persona-warm-institutional"
+  - "@community/template-animated-mesh-background"
+quality_checks:
+  - "KPI cards must show primary value + secondary trend/comparison"
+  - "Charts must have accessible labels and not rely on color alone"
+  - "Sidebar navigation must show active section with clear indicator"
+  - "Loading states must use skeleton shimmer, not spinning loaders"
+  - "Empty states must be instructive — show what data looks like when populated"
+  - "Dashboard must work at 1280px minimum without horizontal scroll"
+  - "Date range picker or filter controls must be prominent and accessible"

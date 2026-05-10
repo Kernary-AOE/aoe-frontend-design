@@ -1,0 +1,25 @@
+id: "@anthropic-impeccable/principle-perceived-performance"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:91c08f8e07f1dd8d01164431e5c92bc7cd6a8c7e321dbdeed110fe1fe4d42916"
+tokens:
+  summary: 71
+  core: 363
+  full: 542
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-optimistic-update" }
+  - { type: related, target: "@community/pattern-skeleton-loader" }
+  - { type: related, target: "@community/rule-loading-state-feedback" }
+  - { type: related, target: "@community/fact-doherty-threshold" }
+  - { type: related, target: "@community/fact-hover-feedback-latency" }
+  - { type: related, target: "@community/fact-loading-skeleton-vs-spinner" }
+  - { type: related, target: "@community/pattern-fade-in-on-load" }
+  - { type: related, target: "@community/pattern-stagger-reveal" }
+created_at: "2026-05-07"

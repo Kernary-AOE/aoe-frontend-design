@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-linear-cmdk"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="491"
+  q="4.0">
+  <description>Linear&apos;s Cmd+K palette opens as a centered modal at ~640px wide on a translucent dark overlay (#000 at 40% alpha + 8px backdrop-blur). The input is borderless 18px, and results are grouped under sticky section headers (&apos;Issues&apos;, &apos;Projects&apos;, &apos;Navigation&apos;) with each item showing an icon, label, and right-aligned shortcut hint in #6E7178 monospace.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="100"/>
+    <level name="core"    file="chunks/core.md"    tokens="491"/>
+    <level name="full"    file="chunks/full.md"    tokens="881"/>
+  </projection>
+</atom>

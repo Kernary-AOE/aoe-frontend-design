@@ -1,0 +1,8 @@
+atom: "@community/fact-gestalt-closure"
+relations:
+  - type: related
+    target: "@community/fact-gestalt-proximity"
+  - type: related
+    target: "@community/fact-gestalt-continuity"
+  - type: related
+    target: "@community/fact-gestalt-figure-ground"

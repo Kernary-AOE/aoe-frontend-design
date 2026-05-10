@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-button-type-explicit"
+  kind="knowledge"
+  version="1.0.0"
+  domain="forms"
+  tokens="421"
+  q="4.0">
+  <description>Validates that every &lt;button&gt; element declares an explicit type attribute (button | submit | reset). Buttons in forms default to &apos;submit&apos; which causes accidental form submission — a common bug source.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="421"/>
+    <level name="full"    file="chunks/full.md"    tokens="496"/>
+  </projection>
+</atom>

@@ -1,0 +1,21 @@
+id: "@community/constraint-monospace-tabular-numerics"
+kind: constraint
+version: "1.0.0"
+description: "Numeric data in tables, dashboards, financial UIs, and metric cards MUST use tabular-numeral rendering (`font-variant-numeric: tabular-nums`) — NOT a monospace typeface — unless the typeface is itself monospace for other semantic reasons (code, terminals). Monospace fonts are not required; `tnum` OpenType feature on a proportional font achieves column alignment without sacrificing aesthetics."
+domain: frontend-design
+content_hash: "sha256:09a5a6344cfa12127293f8da0afbb1f7eb31ddb2ff4bae5d4639710a3a1448cf"
+tokens:
+  summary: 117
+  core: 382
+  full: 512
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-monospace-purpose" }
+  - { type: related, target: "@community/rule-opentype-features-on" }
+  - { type: related, target: "@community/rule-font-feature-settings" }
+created_at: "2026-05-07"

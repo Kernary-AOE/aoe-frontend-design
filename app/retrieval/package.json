@@ -1,0 +1,15 @@
+{
+  "name": "@prime-lang/retrieval",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "build": "bun build src/index.ts --outdir dist --target node" },
+  "dependencies": {
+    "@prime-lang/types": "workspace:*",
+    "@prime-lang/intent": "workspace:*",
+    "@prime-lang/parser": "workspace:*",
+    "@prime-lang/composition": "workspace:*",
+    "yaml": "^2.8.3"
+  },
+  "license": "Apache-2.0"
+}

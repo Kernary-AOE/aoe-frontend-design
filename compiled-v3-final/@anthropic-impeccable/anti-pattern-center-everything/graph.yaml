@@ -1,0 +1,12 @@
+atom: "@anthropic-impeccable/anti-pattern-center-everything"
+relations:
+  - type: related
+    target: "@community/principle-unexpected-spatial-composition"
+  - type: related
+    target: "@community/principle-white-space-as-design-element"
+  - type: related
+    target: "@community/rule-no-uniform-spacing-without-variation"
+  - type: related
+    target: "@community/anti-pattern-ai-slop-aesthetics"
+  - type: related
+    target: "@community/rule-primary-content-first"

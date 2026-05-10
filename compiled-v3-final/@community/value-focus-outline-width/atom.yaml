@@ -1,0 +1,20 @@
+id: "@community/value-focus-outline-width"
+kind: value
+version: "1.0.0"
+domain: accessibility
+content_hash: "sha256:bda889a07f3a41e09ce2aa8f221f21af2eff0341708cff0fd268e6cf6399719b"
+tokens:
+  summary: 15
+  core: 72
+  full: 207
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@w3c/fact-wcag-focus-contrast" }
+  - { type: related, target: "@community/term-focus-ring" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-dynamic-type-semantic"
+relations:
+  - type: related
+    target: "@community/constraint-ios-text-min-17pt"
+  - type: related
+    target: "@community/check-ios-bold-text-support"
+  - type: related
+    target: "@community/rule-mobile-first"

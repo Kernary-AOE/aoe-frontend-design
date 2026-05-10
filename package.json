@@ -1,0 +1,19 @@
+{
+  "name": "prime-corpus-frontend-design",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "workspaces": ["app/*"],
+  "scripts": {
+    "build": "bun run --filter '*' build",
+    "test": "bun run --filter '*' test",
+    "compile": "node --experimental-transform-types ../prime-system/scripts/build-atom-dirs.ts --src primes-v3/sources --out compiled-v3-final"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "notes": {
+    "system-repo-dependency": "This corpus repo depends on the prime-system repo for its DSL parser, compiler, runtime, CLI, and registry. Clone prime-system as a sibling directory: `git clone <prime-system-url> ../prime-system`. The `compile` script above assumes this layout. Override with PRIME_SYSTEM_ROOT env var if your layout differs.",
+    "peer-packages": "The app/* packages declare workspace:* deps on @prime-lang/types, @prime-lang/compiler, @prime-lang/parser, and @prime-lang/runtime — all of which live in prime-system. A future v0.2 will publish those packages to npm so the sibling-repo requirement can be dropped."
+  }
+}

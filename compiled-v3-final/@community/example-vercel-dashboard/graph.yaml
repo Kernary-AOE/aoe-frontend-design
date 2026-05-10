@@ -1,0 +1,8 @@
+atom: "@community/example-vercel-dashboard"
+relations:
+  - type: related
+    target: "@community/pattern-data-table-dense"
+  - type: related
+    target: "@community/example-linear-issues-table"
+  - type: related
+    target: "@community/fact-recognition-over-recall"

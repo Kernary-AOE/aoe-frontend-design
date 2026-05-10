@@ -1,0 +1,14 @@
+<atom
+  id="@anthropic-impeccable/anti-pattern-center-everything"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="348"
+  q="4.0">
+  <description>Default-centering all text, cards, and sections as a safe layout strategy. Results in symmetrical layouts that feel templated, safe, and lacking in designed intentionality.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="60"/>
+    <level name="core"    file="chunks/core.md"    tokens="348"/>
+    <level name="full"    file="chunks/full.md"    tokens="639"/>
+  </projection>
+</atom>

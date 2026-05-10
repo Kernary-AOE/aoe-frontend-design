@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-no-silent-a11y-sacrifice"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="123"
+  q="4.0">
+  <description>Accessibility and clarity must not be silently dropped when they conflict with speed or visual aesthetics — any deliberate accessibility trade-off must be explicitly documented with a plan.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="123"/>
+    <level name="full"    file="chunks/full.md"    tokens="236"/>
+  </projection>
+</atom>

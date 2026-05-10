@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-dashboard-sidebar"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="973"
+  q="4.0">
+  <description>A collapsible left navigation sidebar for admin dashboards. Three modes: expanded (256px), icon-only (48px), and mobile drawer (288px). Contains brand logo, optional command/search, grouped nav items with icons, collapsible sub-groups, and a user footer.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="973"/>
+    <level name="full"    file="chunks/full.md"    tokens="1867"/>
+  </projection>
+</atom>

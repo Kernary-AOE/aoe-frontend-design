@@ -1,0 +1,10 @@
+atom: "@community/counter-example-low-contrast-focus"
+relations:
+  - type: related
+    target: "@community/anti-pattern-outline-suppression"
+  - type: related
+    target: "@community/template-focus-ring"
+  - type: related
+    target: "@community/value-focus-outline-width"
+  - type: related
+    target: "@w3c/fact-wcag-focus-contrast"

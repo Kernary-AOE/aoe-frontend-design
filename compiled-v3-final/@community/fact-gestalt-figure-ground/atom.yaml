@@ -1,0 +1,20 @@
+id: "@community/fact-gestalt-figure-ground"
+kind: fact
+version: "1.0.0"
+description: "Gestalt Principle of Figure-Ground (Rubin, 1915 / Köhler, 1929): the visual system separates a scene into a focal foreground object (figure) and a receding background (ground); this separation is a prerequisite for object recognition."
+content_hash: "sha256:e7f202ba0d686a0185dc12029a94b8afd674ad6a1c6afefeaa2e27cb798d971c"
+tokens:
+  summary: 165
+  core: 523
+  full: 917
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-gestalt-similarity" }
+  - { type: related, target: "@community/fact-gestalt-closure" }
+  - { type: related, target: "@community/anti-pattern-outline-suppression" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-landing-footer"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1666"
+  q="4.0">
+  <description>4–6 column responsive footer grid using grid-template-columns: 2fr repeat(4, 1fr) on xl — brand col gets double width — with link group styling, social icons row (flex gap-4 mt-4, aria-label required), newsletter form, and bottom bar (border-t, flex-col sm:flex-row copyright + legal links).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="87"/>
+    <level name="core"    file="chunks/core.md"    tokens="1666"/>
+    <level name="full"    file="chunks/full.md"    tokens="3247"/>
+  </projection>
+</atom>

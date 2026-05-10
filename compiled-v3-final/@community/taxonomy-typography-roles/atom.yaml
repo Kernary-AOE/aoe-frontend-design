@@ -1,0 +1,24 @@
+id: "@community/taxonomy-typography-roles"
+kind: taxonomy
+version: "1.0.0"
+description: "A classification of typographic roles in digital product interfaces. Each role carries distinct size, weight, and spacing requirements. This taxonomy is used to evaluate typographic system completeness and hierarchy clarity."
+domain: visual-design
+content_hash: "sha256:4fbf026378a9e000e66097abd44b06899af9e2bcf52e2df7ef69553df330b4c7"
+tokens:
+  summary: 71
+  core: 454
+  full: 911
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/category-typography-scale" }
+  - { type: related, target: "@impeccable/constraint-font-blacklist" }
+  - { type: related, target: "@community/fact-optimal-line-length" }
+  - { type: relationships, target: "@community/fact-visibility-system-status" }
+  - { type: relationships, target: "@community/fact-recognition-over-recall" }
+  - { type: relationships, target: "@community/value-focus-outline-width" }
+created_at: "2026-05-07"

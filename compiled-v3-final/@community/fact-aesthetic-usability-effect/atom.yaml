@@ -1,0 +1,20 @@
+id: "@community/fact-aesthetic-usability-effect"
+kind: fact
+version: "1.0.0"
+description: "Aesthetic-Usability Effect (Kurosu & Kashimura, 1995): users perceive aesthetically pleasing designs as more usable, even when objective usability is equal."
+content_hash: "sha256:1cdd1ec7f016da1520e5c0712dad3f5f8c798b14fc248276ef1c5b2d90a8149e"
+tokens:
+  summary: 147
+  core: 467
+  full: 891
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-jakob-law" }
+  - { type: related, target: "@community/fact-contrast-amplification" }
+  - { type: related, target: "@community/fact-animation-distraction-cost" }
+created_at: "2026-05-07"

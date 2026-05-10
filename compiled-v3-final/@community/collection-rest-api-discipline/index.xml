@@ -1,0 +1,13 @@
+<atom
+  id="@community/collection-rest-api-discipline"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="1029"
+  q="4.0">
+  <description>Atoms required to design, ship, and evolve a REST API that survives migration, scales beyond 10K rows per collection, and stays compatible with API gateways, SDK generators, and CDN caches. Combines resource modeling, pagination, error envelope, idempotency, and HTTP method semantics.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="84"/>
+    <level name="core"    file="chunks/core.md"    tokens="1029"/>
+    <level name="full"    file="chunks/full.md"    tokens="1029"/>
+  </projection>
+</atom>

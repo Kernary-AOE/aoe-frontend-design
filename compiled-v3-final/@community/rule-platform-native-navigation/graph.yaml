@@ -1,0 +1,8 @@
+atom: "@community/rule-platform-native-navigation"
+relations:
+  - type: related
+    target: "@community/anti-pattern-ios-hamburger-menu"
+  - type: related
+    target: "@community/rule-platform-interaction-conventions"
+  - type: related
+    target: "@community/principle-consistent-cross-platform-mental-models"

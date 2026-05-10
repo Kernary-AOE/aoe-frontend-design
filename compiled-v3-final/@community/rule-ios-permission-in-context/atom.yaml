@@ -1,0 +1,20 @@
+id: "@community/rule-ios-permission-in-context"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:2703c4e6a036bc8c9ca728c5682f60d1e10290c66ba2669044d60cf1b48d219f"
+tokens:
+  summary: 33
+  core: 61
+  full: 243
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/constraint-ios-onboarding-max-3" }
+  - { type: related, target: "@community/pattern-ios-haptic-feedback" }
+created_at: "2026-05-07"

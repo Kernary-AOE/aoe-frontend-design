@@ -1,0 +1,14 @@
+atom: "@anthropic-impeccable/pattern-content-driven-breakpoints"
+relations:
+  - type: related
+    target: "@community/rule-content-based-breakpoints"
+  - type: related
+    target: "@community/rule-mobile-first"
+  - type: related
+    target: "@community/pattern-container-queries"
+  - type: related
+    target: "@community/constraint-three-viewport-breakpoints"
+  - type: related
+    target: "@community/rule-no-pointer-only-components"
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"

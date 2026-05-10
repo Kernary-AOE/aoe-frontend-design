@@ -1,0 +1,14 @@
+atom: "@community/pattern-dashboard-grid"
+relations:
+  - type: related
+    target: "@community/pattern-skeleton-loader"
+  - type: related
+    target: "@community/category-layout-grid"
+  - type: related
+    target: "@community/anti-pattern-color-only-meaning"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: compatible
+    target: "@community/pattern-skeleton-loader"
+  - type: compatible
+    target: "@community/pattern-empty-state"

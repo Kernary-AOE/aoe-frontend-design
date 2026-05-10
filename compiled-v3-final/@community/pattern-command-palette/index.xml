@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-command-palette"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="491"
+  q="4.0">
+  <description>A full-screen or centered modal overlay triggered by a keyboard shortcut (typically Cmd/Ctrl+K) that provides a searchable, keyboard-navigable list of all application commands. Serves as a universal shortcut for power users and a discovery mechanism for new users.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="81"/>
+    <level name="core"    file="chunks/core.md"    tokens="491"/>
+    <level name="full"    file="chunks/full.md"    tokens="912"/>
+  </projection>
+</atom>

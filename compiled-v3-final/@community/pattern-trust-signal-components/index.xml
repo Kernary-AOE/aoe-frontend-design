@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-trust-signal-components"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="828"
+  q="4.0">
+  <description>Five trust signal component types for landing pages — badge rows, logo strips, social proof numbers, testimonial micro-quotes, and security certification badges — each placed at the specific conversion objection it resolves.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="73"/>
+    <level name="core"    file="chunks/core.md"    tokens="828"/>
+    <level name="full"    file="chunks/full.md"    tokens="1583"/>
+  </projection>
+</atom>

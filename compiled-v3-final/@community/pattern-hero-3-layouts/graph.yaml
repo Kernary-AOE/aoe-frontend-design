@@ -1,0 +1,18 @@
+atom: "@community/pattern-hero-3-layouts"
+relations:
+  - type: related
+    target: "@community/pattern-landing-page-sections"
+  - type: related
+    target: "@community/pattern-features-grid"
+  - type: related
+    target: "@community/anti-pattern-ai-slop-aesthetics"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@impeccable/persona-vercel-clean"
+  - type: related
+    target: "@impeccable/persona-stripe"
+  - type: related
+    target: "@impeccable/persona-framer"
+  - type: related
+    target: "@community/check-focus-visible"

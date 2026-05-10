@@ -1,0 +1,14 @@
+atom: "@community/pattern-chart-responsive-container"
+relations:
+  - type: related
+    target: "@community/pattern-chart-grid"
+  - type: related
+    target: "@community/example-accessible-chart"
+  - type: related
+    target: "@community/example-stripe-dashboard"
+  - type: related
+    target: "@community/rule-data-viz-accessible"
+  - type: related
+    target: "@community/anti-pattern-color-only-meaning"
+  - type: related
+    target: "@community/check-focus-visible"

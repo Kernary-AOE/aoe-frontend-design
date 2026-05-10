@@ -1,0 +1,18 @@
+atom: "@community/rule-gradients-justified-only"
+relations:
+  - type: related
+    target: "@community/principle-intentional-gradient"
+  - type: related
+    target: "@community/pattern-gradient-mesh-engine"
+  - type: related
+    target: "@community/template-color-layer-application"
+  - type: related
+    target: "@community/anti-pattern-rainbow-explosion"
+  - type: related
+    target: "@community/counter-example-tailwind-blue-500"
+  - type: related
+    target: "@community/example-vercel-hero-gradient"
+  - type: related
+    target: "@community/example-resend-hero"
+  - type: related
+    target: "@community/rule-backgrounds-atmospheric"

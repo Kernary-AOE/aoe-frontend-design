@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-ios-8pt-grid"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="64"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="41"/>
+    <level name="core"    file="chunks/core.md"    tokens="64"/>
+    <level name="full"    file="chunks/full.md"    tokens="183"/>
+  </projection>
+</atom>

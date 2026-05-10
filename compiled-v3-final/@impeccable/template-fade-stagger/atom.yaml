@@ -1,0 +1,25 @@
+id: "@impeccable/template-fade-stagger"
+kind: template
+version: "1.0.0"
+description: "Children of a list / grid fade-up in sequence using nth-child animation-delay — pure CSS, no JS. Triggered by adding .is-revealed to the parent (combine with scroll-reveal observer for on-scroll cascades)."
+domain: motion
+content_hash: "sha256:8c8383a5cfff59debe7542b3056fd78e4209631813b1eac91c723909daeac625"
+tokens:
+  summary: 63
+  core: 760
+  full: 760
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-scroll-reveal-vanilla" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/example-framer-page-transition" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

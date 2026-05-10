@@ -1,0 +1,14 @@
+atom: "@impeccable/template-easing-curves"
+relations:
+  - type: related
+    target: "@community/fact-easing-cubic-bezier"
+  - type: related
+    target: "@community/rule-animation-duration"
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@impeccable/template-card-hover-lift"
+  - type: related
+    target: "@impeccable/template-fade-stagger"
+  - type: related
+    target: "@community/check-focus-visible"

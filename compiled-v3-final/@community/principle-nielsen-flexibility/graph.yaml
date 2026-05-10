@@ -1,0 +1,20 @@
+atom: "@community/principle-nielsen-flexibility"
+relations:
+  - type: related
+    target: "@community/principle-nielsen-recognition"
+  - type: related
+    target: "@community/principle-nielsen-aesthetic"
+  - type: related
+    target: "@community/fact-flexibility-efficiency"
+  - type: related
+    target: "@community/fact-hick-law"
+  - type: related
+    target: "@community/example-linear-cmdk"
+  - type: related
+    target: "@community/example-linear-kbd-shortcuts"
+  - type: related
+    target: "@community/example-notion-cmdk"
+  - type: related
+    target: "@community/anti-pattern-burying-frequent-actions"
+  - type: related
+    target: "@community/rule-keyboard-accessible"

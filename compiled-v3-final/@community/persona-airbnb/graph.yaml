@@ -1,0 +1,54 @@
+atom: "@community/persona-airbnb"
+relations:
+  - type: related
+    target: "@impeccable/persona-warm-institutional"
+  - type: related
+    target: "@impeccable/template-card-hover-lift"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/check-line-length-optimal"
+  - type: related
+    target: "@community/rule-opentype-features-on"
+  - type: related
+    target: "@community/fact-variable-font-axes"
+  - type: related
+    target: "@community/rule-font-self-host"
+  - type: related
+    target: "@community/rule-font-loading-fout-foit"
+  - type: related
+    target: "@community/constraint-typography-weight-blacklist"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/check-contrast-aa"
+  - type: related
+    target: "@community/rule-single-accent-color"
+  - type: related
+    target: "@community/rule-brand-color-primary-only"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/check-color-blacklist-brand"
+  - type: related
+    target: "@community/anti-pattern-rainbow-explosion"
+  - type: compatible
+    target: "magazine-editorial"
+  - type: compatible
+    target: "warm-institutional"
+  - type: compatible
+    target: "notion-warm"
+  - type: compatible
+    target: "editorial"
+  - type: conflicts
+    target: "vercel-clean"
+  - type: conflicts
+    target: "dense-pragmatist"
+  - type: conflicts
+    target: "brutalist"
+  - type: contradicts
+    target: "@impeccable/persona-dense-pragmatist"
+  - type: contradicts
+    target: "@community/anti-pattern-thin-weight-body"

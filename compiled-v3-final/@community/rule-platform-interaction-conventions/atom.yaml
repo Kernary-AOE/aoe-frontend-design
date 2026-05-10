@@ -1,0 +1,21 @@
+id: "@community/rule-platform-interaction-conventions"
+kind: rule
+version: "1.0.0"
+description: "Each platform's native interaction conventions — gestures on iOS/Android, keyboard shortcuts on desktop, pointer interactions on web — must be supported rather than overridden by custom implementations."
+domain: frontend-design
+content_hash: "sha256:7069becb18fdef06cbe9b89ce1b27149b9c56aa7132d11e84a37b31dbc3cf4c7"
+tokens:
+  summary: 69
+  core: 351
+  full: 634
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/constraint-ios-reserved-gestures" }
+  - { type: related, target: "@community/anti-pattern-breaking-keyboard-flow" }
+created_at: "2026-05-07"

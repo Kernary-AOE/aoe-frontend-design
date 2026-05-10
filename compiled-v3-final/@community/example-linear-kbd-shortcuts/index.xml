@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-linear-kbd-shortcuts"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="323"
+  q="4.0">
+  <description>Linear&apos;s issue tracker exposes nearly every action through a command palette (Cmd/Ctrl+K) and single-key shortcuts (e.g. &apos;C&apos; to create issue, &apos;P&apos; to set priority). The shortcut system is discoverable via a persistent tooltip on every interactive element showing the key binding. The result is an interface where power users operate almost entirely without mouse interaction.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="109"/>
+    <level name="core"    file="chunks/core.md"    tokens="323"/>
+    <level name="full"    file="chunks/full.md"    tokens="536"/>
+  </projection>
+</atom>

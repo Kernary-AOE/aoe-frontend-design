@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-flag-as-language"
+  kind="knowledge"
+  version="1.0.0"
+  domain="i18n"
+  tokens="794"
+  q="4.0">
+  <description>Using a national flag icon to represent a language in a language switcher. Flags signify nation-states, not languages — the mapping from flag to language is many-to-many, often contested, and can offend or confuse users whose language is not tied to a single country.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="80"/>
+    <level name="core"    file="chunks/core.md"    tokens="794"/>
+    <level name="full"    file="chunks/full.md"    tokens="1538"/>
+  </projection>
+</atom>

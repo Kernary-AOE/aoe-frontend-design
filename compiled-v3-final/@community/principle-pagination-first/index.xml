@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-pagination-first"
+  kind="knowledge"
+  version="1.0.0"
+  domain="api-design"
+  tokens="471"
+  q="4.0">
+  <description>Every list endpoint must paginate from day one. Adding pagination to an unbounded endpoint after launch is a breaking change that requires every client to update; defaulting to a hard cap (e.g. 50 items) future-proofs the API at zero cost on day one.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="220"/>
+    <level name="core"    file="chunks/core.md"    tokens="471"/>
+    <level name="full"    file="chunks/full.md"    tokens="744"/>
+  </projection>
+</atom>

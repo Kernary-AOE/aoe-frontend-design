@@ -1,0 +1,16 @@
+atom: "@community/rule-no-mixed-visual-languages"
+relations:
+  - type: related
+    target: "@community/principle-shared-visual-language"
+  - type: related
+    target: "@community/rule-consistent-design-token-scale"
+  - type: related
+    target: "@community/rule-no-new-visual-primitives"
+  - type: related
+    target: "@community/anti-pattern-ai-generated-ui"
+  - type: related
+    target: "@community/example-shadcn-settings"
+  - type: related
+    target: "@community/example-tailwindui-app-shell"
+  - type: related
+    target: "@community/principle-single-direction-aesthetic-bet"

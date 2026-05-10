@@ -1,0 +1,8 @@
+atom: "@community/rule-semantic-structure-over-visual-positioning"
+relations:
+  - type: related
+    target: "@community/fact-semantic-html-element-taxonomy"
+  - type: related
+    target: "@community/rule-semantic-html-for-interactive-elements"
+  - type: related
+    target: "@community/rule-heading-hierarchy"

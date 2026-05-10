@@ -1,0 +1,6 @@
+atom: "@community/check-reduced-motion-required"
+relations:
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/constraint-reduced-motion"

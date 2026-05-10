@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-log-viewer-virtualized"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="854"
+  q="4.0">
+  <description>A monospace, line-numbered scrollable viewer that virtualizes (only renders visible rows) for log streams of 100k+ lines. Supports follow-tail, level filtering, regex search, and click-to-pin a line.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="66"/>
+    <level name="core"    file="chunks/core.md"    tokens="854"/>
+    <level name="full"    file="chunks/full.md"    tokens="1677"/>
+  </projection>
+</atom>

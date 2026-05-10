@@ -1,0 +1,20 @@
+id: "@community/fact-postel-law"
+kind: fact
+version: "1.0.0"
+description: "Postel's Law / Robustness Principle (Jon Postel, 1980): be conservative in what you send, be liberal in what you accept — applied to UX: tolerate varied user input formats while producing clean, consistent output."
+content_hash: "sha256:b708508bdb78e77737f7ca5587f8d3721a3844d4ae516d331e3a874443dbd72a"
+tokens:
+  summary: 188
+  core: 439
+  full: 780
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-error-prevention" }
+  - { type: related, target: "@community/fact-error-recovery-types" }
+  - { type: related, target: "@community/fact-jakob-law" }
+created_at: "2026-05-07"

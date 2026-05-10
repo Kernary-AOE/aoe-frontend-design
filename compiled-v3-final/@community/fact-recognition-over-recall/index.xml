@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-recognition-over-recall"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="189"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="189"/>
+    <level name="full"    file="chunks/full.md"    tokens="403"/>
+  </projection>
+</atom>

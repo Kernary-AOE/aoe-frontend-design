@@ -1,0 +1,14 @@
+<atom
+  id="@community/type-color-token-shape"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-system"
+  tokens="695"
+  q="4.0">
+  <description>Schema for a color token in a design system. A color token is more than its raw value — it carries semantic meaning, mode variants (light/dark), accessibility metadata (computed contrast), and provenance (primitive vs semantic vs component-scoped). This shape is compatible with the W3C Design Tokens Community Group format draft.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="96"/>
+    <level name="core"    file="chunks/core.md"    tokens="695"/>
+    <level name="full"    file="chunks/full.md"    tokens="1294"/>
+  </projection>
+</atom>

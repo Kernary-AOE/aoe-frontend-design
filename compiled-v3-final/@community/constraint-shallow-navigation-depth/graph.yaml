@@ -1,0 +1,8 @@
+atom: "@community/constraint-shallow-navigation-depth"
+relations:
+  - type: related
+    target: "@community/rule-navigation-flat-when-shallow"
+  - type: related
+    target: "@community/anti-pattern-deep-branching-nav"
+  - type: related
+    target: "@community/rule-single-primary-action-per-screen"

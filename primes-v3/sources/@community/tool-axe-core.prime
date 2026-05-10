@@ -1,0 +1,51 @@
+tool AxeCore {
+  id: "@community/tool-axe-core"
+  version: "1.0.0"
+
+  signature: (html: string | DOMDocument, options?: AxeOptions) -> AxeResults
+  external: true
+  package: "axe-core@^4.9"
+
+  domain: accessibility
+
+  description: "Deque's axe-core accessibility testing engine. Runs a comprehensive set of automated accessibility rules against an HTML document or DOM and returns violations, passes, incomplete (needs manual check), and inapplicable rules. Industry standard for automated a11y testing."
+
+  output-type: {
+    violations: RuleResult[]    // definite violations
+    passes: RuleResult[]        // confirmed passing rules
+    incomplete: RuleResult[]    // requires manual review
+    inapplicable: RuleResult[]  // rules not applicable to this page
+  }
+
+  usage: """
+    // Node.js with jsdom
+    import axe from 'axe-core';
+    import { JSDOM } from 'jsdom';
+
+    const dom = new JSDOM(htmlString);
+    const results = await axe.run(dom.window.document, {
+      runOnly: { type: 'tag', values: ['wcag2aa', 'wcag22aa', 'best-practice'] }
+    });
+
+    const violations = results.violations.map(v => ({
+      id: v.id,
+      impact: v.impact,   // 'critical' | 'serious' | 'moderate' | 'minor'
+      description: v.description,
+      nodes: v.nodes.map(n => n.target),
+    }));
+  """
+
+  notes: [
+    "axe-core covers ~57% of WCAG issues automatically; the remaining ~43% require manual or assisted review.",
+    "Set `runOnly: ['wcag22aa']` to test against WCAG 2.2 AA rules specifically.",
+    "For Playwright/Cypress integration: use @axe-core/playwright or cypress-axe wrappers.",
+    "Impact levels: critical > serious > moderate > minor; treat 'critical' and 'serious' as blockers.",
+  ]
+
+  related: [
+    @w3c/fact-wcag-contrast-aa,
+    @community/check-contrast-aa,
+    @community/rule-color-contrast,
+    @community/method-a11y-audit,
+  ]
+}

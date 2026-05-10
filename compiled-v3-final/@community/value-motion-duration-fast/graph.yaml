@@ -1,0 +1,12 @@
+atom: "@community/value-motion-duration-fast"
+relations:
+  - type: related
+    target: "@community/value-focus-outline-width"
+  - type: related
+    target: "@community/value-touch-target-min"
+  - type: related
+    target: "@community/type-design-token"
+  - type: related
+    target: "@community/rule-cls-budget"
+  - type: related
+    target: "@community/anti-pattern-decorative-spinning"

@@ -1,0 +1,18 @@
+atom: "@community/principle-shared-visual-language"
+relations:
+  - type: related
+    target: "@community/principle-consistent-cross-platform-mental-models"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/rule-color-oklch-required"
+  - type: related
+    target: "@community/anti-pattern-rainbow-explosion"
+  - type: related
+    target: "@community/example-shadcn-settings"
+  - type: related
+    target: "@community/example-tailwindui-app-shell"
+  - type: related
+    target: "@community/rule-no-mixed-visual-languages"
+  - type: related
+    target: "@community/rule-consistent-design-token-scale"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-popstate-back-forward"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="172"
+  q="4.0">
+  <description>Single-page applications must listen to the popstate event and restore the correct view state when the user navigates back or forward with browser controls.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="54"/>
+    <level name="core"    file="chunks/core.md"    tokens="172"/>
+    <level name="full"    file="chunks/full.md"    tokens="352"/>
+  </projection>
+</atom>

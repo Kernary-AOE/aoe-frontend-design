@@ -1,0 +1,12 @@
+atom: "@community/provocation-accessibility-by-default"
+relations:
+  - type: related
+    target: "@community/principle-prove-not-prevent-ai-slop"
+  - type: related
+    target: "@community/anti-pattern-accessibility-after-thought"
+  - type: related
+    target: "@community/rule-no-shipping-a11y-violations"
+  - type: related
+    target: "@community/rule-accessibility-first-class"
+  - type: related
+    target: "@community/tool-axe-core"

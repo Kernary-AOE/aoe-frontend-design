@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-animation-duration"
+  kind="knowledge"
+  version="1.0.0"
+  domain="motion"
+  tokens="547"
+  q="4.0">
+  <description>Validates animation/transition durations fall within tasteful UI ranges (100–200ms micro, 200–400ms state, 300–600ms entrance) and flags durations &gt; 3s as potential vestibular hazards. Also flags linear easing on interactive elements.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="547"/>
+    <level name="full"    file="chunks/full.md"    tokens="635"/>
+  </projection>
+</atom>

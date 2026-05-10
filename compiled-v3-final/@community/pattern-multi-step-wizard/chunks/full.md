@@ -1,0 +1,161 @@
+# MultiStepWizard [pattern] v1.0.0
+A linear sequence of form steps presented one at a time with a top progress indicator (e.g., '2 of 5 - Account'). Each step validates before advance; users can go back without losing input.
+domain: frontend-design
+
+## Facts
+
+## Label
+Multi-Step Wizard
+
+## Problem
+Long onboarding or setup forms (10-30 fields) overwhelm users on a single page and have high abandonment. They need pacing, perceived progress, and the ability to recover from mistakes.
+
+## Solution
+Split fields into 3-7 logical steps. Show progress as a top stepper (numbered + labeled). Forward button advances only after current-step validation; Back button returns without re-submitting.
+
+## Structure
+```
+    <section aria-labelledby="wiz-title">
+      <header>
+        <h1 id="wiz-title">Set up your workspace</h1>
+        <ol class="stepper" aria-label="Progress">
+          <li aria-current="step">
+            <span class="num">1</span>
+            <span>Account</span>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <span>Team</span>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <span>Billing</span>
+          </li>
+          <li>
+            <span class="num">4</span>
+            <span>Done</span>
+          </li>
+        </ol>
+      </header>
+
+      <form aria-labelledby="step-title" novalidate>
+        <h2 id="step-title">Step 1 of 4: Account</h2>
+        <div role="alert" aria-live="assertive" class="errs" hidden></div>
+
+        <label>
+          Full name
+          <input name="name" required autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" required autocomplete="email" />
+        </label>
+
+        <footer class="wiz-actions">
+          <button type="button" disabled>Back</button>
+          <button type="submit">Continue</button>
+        </footer>
+      </form>
+    </section>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Validate the current step on Continue; if invalid, prevent advance and surface inline + summary errors.
+- Back never validates — let users return freely. Persist filled values when going back/forward.
+- Update step heading 'Step N of M' so screen readers and users know exact position.
+- URL reflects current step (e.g., /signup?step=2) so refresh/share preserves position.
+- On final step, primary button label changes to a verb noun like 'Create workspace'.
+- Provide a 'Save and exit' option for long wizards (>5 steps) to resume later.
+
+## A11y
+- Stepper uses `<ol>` with `aria-label='Progress'`; current step has `aria-current='step'`.
+- Each step heading must update on advance so screen readers announce the new context — and focus moves to the step heading or first input.
+- Validation errors live in a `role='alert'` region announced on Continue failure; also link inline to inputs via `aria-describedby`.
+- Disabled Back on first step uses real `disabled` attribute, not just gray styling.
+- Forward submission must work via Enter key inside the form, not require mouse click.
+
+## Examples
+- @community/example-stripe-onboarding-wizard
+- @community/example-vercel-project-setup
+
+## Label
+Multi-Step Wizard
+
+## Problem
+Long onboarding or setup forms (10-30 fields) overwhelm users on a single page and have high abandonment. They need pacing, perceived progress, and the ability to recover from mistakes.
+
+## Solution
+Split fields into 3-7 logical steps. Show progress as a top stepper (numbered + labeled). Forward button advances only after current-step validation; Back button returns without re-submitting.
+
+## Structure
+```
+    <section aria-labelledby="wiz-title">
+      <header>
+        <h1 id="wiz-title">Set up your workspace</h1>
+        <ol class="stepper" aria-label="Progress">
+          <li aria-current="step">
+            <span class="num">1</span>
+            <span>Account</span>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <span>Team</span>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <span>Billing</span>
+          </li>
+          <li>
+            <span class="num">4</span>
+            <span>Done</span>
+          </li>
+        </ol>
+      </header>
+
+      <form aria-labelledby="step-title" novalidate>
+        <h2 id="step-title">Step 1 of 4: Account</h2>
+        <div role="alert" aria-live="assertive" class="errs" hidden></div>
+
+        <label>
+          Full name
+          <input name="name" required autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" required autocomplete="email" />
+        </label>
+
+        <footer class="wiz-actions">
+          <button type="button" disabled>Back</button>
+          <button type="submit">Continue</button>
+        </footer>
+      </form>
+    </section>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Validate the current step on Continue; if invalid, prevent advance and surface inline + summary errors.
+- Back never validates — let users return freely. Persist filled values when going back/forward.
+- Update step heading 'Step N of M' so screen readers and users know exact position.
+- URL reflects current step (e.g., /signup?step=2) so refresh/share preserves position.
+- On final step, primary button label changes to a verb noun like 'Create workspace'.
+- Provide a 'Save and exit' option for long wizards (>5 steps) to resume later.
+
+## A11y
+- Stepper uses `<ol>` with `aria-label='Progress'`; current step has `aria-current='step'`.
+- Each step heading must update on advance so screen readers announce the new context — and focus moves to the step heading or first input.
+- Validation errors live in a `role='alert'` region announced on Continue failure; also link inline to inputs via `aria-describedby`.
+- Disabled Back on first step uses real `disabled` attribute, not just gray styling.
+- Forward submission must work via Enter key inside the form, not require mouse click.
+
+## Compatible
+- @community/pattern-inline-validation
+- @community/pattern-progressive-disclosure

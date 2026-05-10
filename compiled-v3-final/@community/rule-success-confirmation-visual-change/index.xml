@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-success-confirmation-visual-change"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="151"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="75"/>
+    <level name="core"    file="chunks/core.md"    tokens="151"/>
+    <level name="full"    file="chunks/full.md"    tokens="403"/>
+  </projection>
+</atom>

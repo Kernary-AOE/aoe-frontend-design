@@ -1,0 +1,153 @@
+# HoverLift [pattern] v1.0.0
+Card / button 悬浮时上抬 1-2px + 阴影加深，传达可点击的物理直觉。Linear / Vercel / Stripe 风格的标志性微交互，让静态界面在指针靠近时变得'活的'。
+domain: frontend-design
+
+## Label
+Hover Lift
+
+## Problem
+纯色面板和按钮在静态时缺少'可点'的暗示。用户必须依赖光标变化（cursor: pointer）才知道元素响应交互，但 cursor 是被动反馈——用户已经把鼠标移过去才看到。
+
+## Solution
+在 :hover 时让元素 transform: translateY(-2px) 并加深阴影。150ms ease-out 的过渡让上抬感觉是元素'迎接'指针，而不是'弹跳'。:active 时回到 0 形成按压闭环。
+
+## Structure
+```
+    <button class="card-lift">
+      <h3>Card title</h3>
+      <p>Card description</p>
+    </button>
+  
+```
+
+## Styles
+```
+    .card-lift {
+      transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+      box-shadow: 0 1px 2px oklch(20% 0.04 240 / 0.08);
+      will-change: transform;
+    }
+    .card-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px oklch(20% 0.04 240 / 0.12);
+    }
+    .card-lift:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px oklch(20% 0.04 240 / 0.12);
+      outline: 2px solid oklch(60% 0.18 250);
+      outline-offset: 2px;
+    }
+    .card-lift:active {
+      transform: translateY(0);
+      transition-duration: 80ms;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .card-lift { transition: none; }
+      .card-lift:hover,
+      .card-lift:focus-visible {
+        transform: none;
+        box-shadow: 0 1px 4px oklch(20% 0.04 240 / 0.16);
+      }
+    }
+  
+```
+
+## Timing
+- **Duration**: 150ms hover, 80ms active
+- **Easing**: ease-out (decelerate into rest)
+- **Delay**: 0ms
+
+## Interaction
+- 鼠标 hover：上抬 -2px + 阴影加深，传达 affordance
+- 鼠标 leave：恢复到静止位置（自动通过 transition）
+- click → :active：回到 translateY(0)，按压反馈，过渡缩短到 80ms 增加'实'感
+- :focus-visible（键盘 Tab）：与 hover 同视觉效果 + outline，绝不能只 hover 不 focus
+- 触屏：tap 时立刻显示 :active 状态（移动设备无 hover 概念）
+
+## A11y
+- prefers-reduced-motion: reduce 时 transition 必须设为 none，hover 不再产生位移
+- 禁用动效后仍需提供视觉反馈：用更深的 box-shadow 替代 transform
+- focus-visible 视觉必须与 hover 一致——键盘用户和指针用户感知 affordance 的强度相同
+- 可点的 .card-lift 必须是 <button> 或 <a>，不要给 <div> 加点击事件
+
+## Behavior
+- translateY 量级：1-3px（>3px 显得过度，<1px 不可感知）
+- box-shadow 同步加深，营造'靠近光源'的物理直觉
+- duration 100-200ms 是 hover 反馈的甜区——更短显得跳跃，更长显得拖泥带水
+- easing 用 ease-out 或 cubic-bezier(0.16, 1, 0.3, 1)；不要用 ease-in-out（rest 时会拖尾）
+- 用 will-change: transform 预告合成层，避免 hover 瞬间的回流
+
+## Label
+Hover Lift
+
+## Problem
+纯色面板和按钮在静态时缺少'可点'的暗示。用户必须依赖光标变化（cursor: pointer）才知道元素响应交互，但 cursor 是被动反馈——用户已经把鼠标移过去才看到。
+
+## Solution
+在 :hover 时让元素 transform: translateY(-2px) 并加深阴影。150ms ease-out 的过渡让上抬感觉是元素'迎接'指针，而不是'弹跳'。:active 时回到 0 形成按压闭环。
+
+## Structure
+```
+    <button class="card-lift">
+      <h3>Card title</h3>
+      <p>Card description</p>
+    </button>
+  
+```
+
+## Styles
+```
+    .card-lift {
+      transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+      box-shadow: 0 1px 2px oklch(20% 0.04 240 / 0.08);
+      will-change: transform;
+    }
+    .card-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px oklch(20% 0.04 240 / 0.12);
+    }
+    .card-lift:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px oklch(20% 0.04 240 / 0.12);
+      outline: 2px solid oklch(60% 0.18 250);
+      outline-offset: 2px;
+    }
+    .card-lift:active {
+      transform: translateY(0);
+      transition-duration: 80ms;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .card-lift { transition: none; }
+      .card-lift:hover,
+      .card-lift:focus-visible {
+        transform: none;
+        box-shadow: 0 1px 4px oklch(20% 0.04 240 / 0.16);
+      }
+    }
+  
+```
+
+## Timing
+- **Duration**: 150ms hover, 80ms active
+- **Easing**: ease-out (decelerate into rest)
+- **Delay**: 0ms
+
+## Interaction
+- 鼠标 hover：上抬 -2px + 阴影加深，传达 affordance
+- 鼠标 leave：恢复到静止位置（自动通过 transition）
+- click → :active：回到 translateY(0)，按压反馈，过渡缩短到 80ms 增加'实'感
+- :focus-visible（键盘 Tab）：与 hover 同视觉效果 + outline，绝不能只 hover 不 focus
+- 触屏：tap 时立刻显示 :active 状态（移动设备无 hover 概念）
+
+## A11y
+- prefers-reduced-motion: reduce 时 transition 必须设为 none，hover 不再产生位移
+- 禁用动效后仍需提供视觉反馈：用更深的 box-shadow 替代 transform
+- focus-visible 视觉必须与 hover 一致——键盘用户和指针用户感知 affordance 的强度相同
+- 可点的 .card-lift 必须是 <button> 或 <a>，不要给 <div> 加点击事件
+
+## Behavior
+- translateY 量级：1-3px（>3px 显得过度，<1px 不可感知）
+- box-shadow 同步加深，营造'靠近光源'的物理直觉
+- duration 100-200ms 是 hover 反馈的甜区——更短显得跳跃，更长显得拖泥带水
+- easing 用 ease-out 或 cubic-bezier(0.16, 1, 0.3, 1)；不要用 ease-in-out（rest 时会拖尾）
+- 用 will-change: transform 预告合成层，避免 hover 瞬间的回流

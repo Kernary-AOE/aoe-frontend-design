@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tx-blocknote-block-editor-core"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="649"
+  q="4.0">
+  <description>Notion-style block editor composition using BlockNote v0.x (MPL-2.0): a single BlockNoteDefaultUI renders up to eight opt-in floating UIs (FormattingToolbarController, SuggestionMenuController for &apos;/&apos;, GridSuggestionMenuController for &apos;:&apos;, SideMenuController, FilePanelController, TableHandlesController, FloatingComposerController, FloatingThreadController) gated by feature detection via editor.getExtension().</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="121"/>
+    <level name="core"    file="chunks/core.md"    tokens="649"/>
+    <level name="full"    file="chunks/full.md"    tokens="1234"/>
+  </projection>
+</atom>

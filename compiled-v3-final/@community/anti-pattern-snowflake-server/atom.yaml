@@ -1,0 +1,23 @@
+id: "@community/anti-pattern-snowflake-server"
+kind: anti-pattern
+version: "1.0.0"
+description: "A production server that has been hand-tweaked over its lifetime — packages installed manually, config files edited via SSH, cron jobs added by request, library versions pinned to fix a specific bug — to the point where no one can reproduce it. The server is unique, fragile, and impossible to replace."
+domain: infrastructure
+content_hash: "sha256:f0f91c862da62162c52a9101195fe486f6fa0bf9c8a9b1d3388156d27f526376"
+tokens:
+  summary: 92
+  core: 829
+  full: 1583
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-immutable-infrastructure" }
+  - { type: related, target: "@community/rule-iac-required" }
+  - { type: related, target: "@community/pattern-blue-green-deploy" }
+  - { type: related, target: "@community/fact-rfc-1918-private-ranges" }
+  - { type: derived-from, target: "@community/principle-immutable-infrastructure" }
+created_at: "2026-05-07"

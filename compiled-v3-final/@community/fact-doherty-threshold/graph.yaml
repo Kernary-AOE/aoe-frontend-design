@@ -1,0 +1,8 @@
+atom: "@community/fact-doherty-threshold"
+relations:
+  - type: related
+    target: "@community/fact-hover-feedback-latency"
+  - type: related
+    target: "@community/fact-visibility-system-status"
+  - type: related
+    target: "@community/fact-optimistic-update-tradeoff"

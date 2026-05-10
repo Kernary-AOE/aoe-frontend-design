@@ -1,0 +1,28 @@
+id: "@community/pattern-file-upload-dropzone"
+kind: pattern
+version: "1.0.0"
+description: "A bordered drop region that accepts files via drag-drop, click-to-browse, or paste. Shows per-file progress, validates type/size before upload, and surfaces errors inline."
+domain: frontend-design
+content_hash: "sha256:e8c85f0c266649585373238430a63131fb88fead3d21687cb5e6e180e0dea18d"
+tokens:
+  summary: 59
+  core: 795
+  full: 1582
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-inline-validation" }
+  - { type: related, target: "@community/fact-error-prevention" }
+  - { type: related, target: "@community/check-form-label-associated" }
+  - { type: related, target: "@community/check-error-message-associated" }
+  - { type: related, target: "@community/check-form-validation-inline" }
+  - { type: related, target: "@community/rule-aria-native-first" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: compatible, target: "@community/pattern-inline-validation" }
+  - { type: compatible, target: "@community/pattern-toast-stack" }
+created_at: "2026-05-07"

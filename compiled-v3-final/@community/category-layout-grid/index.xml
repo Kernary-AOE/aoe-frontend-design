@@ -1,0 +1,14 @@
+<atom
+  id="@community/category-layout-grid"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="91"
+  q="4.0">
+  <description>Grid-based layout patterns for UI composition. This category covers CSS Grid usage patterns, column systems, gutter strategies, and responsive breakpoint behavior.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="54"/>
+    <level name="core"    file="chunks/core.md"    tokens="91"/>
+    <level name="full"    file="chunks/full.md"    tokens="128"/>
+  </projection>
+</atom>

@@ -1,0 +1,23 @@
+id: "@community/rule-empty-state-recovery"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:4badb369e3474cb8c2e7f646ba9bd57bd199a273efcc89881e706a21cbf3c5c2"
+tokens:
+  summary: 82
+  core: 243
+  full: 404
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-empty-state" }
+  - { type: related, target: "@community/anti-pattern-missing-empty-state" }
+  - { type: related, target: "@community/principle-error-prevention-and-recovery" }
+  - { type: related, target: "@community/counter-example-empty-list-blank" }
+  - { type: related, target: "@community/example-linear-kanban" }
+  - { type: related, target: "@community/rule-success-message-next-step" }
+created_at: "2026-05-07"

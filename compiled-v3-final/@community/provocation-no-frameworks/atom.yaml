@@ -1,0 +1,21 @@
+id: "@community/provocation-no-frameworks"
+kind: provocation
+version: "1.0.0"
+domain: frontend-engineering
+content_hash: "sha256:5b6f1abc4cb3f3e973a94de9641d675226a6631732543bf652ec498230c80889"
+tokens:
+  summary: 16
+  core: 654
+  full: 654
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/tradeoff-server-vs-client-rendering" }
+  - { type: related, target: "@community/scope-public-facing-marketing" }
+  - { type: related, target: "@community/metric-lcp-largest-contentful-paint" }
+  - { type: related, target: "@community/principle-implementation-complexity-match" }
+created_at: "2026-05-07"

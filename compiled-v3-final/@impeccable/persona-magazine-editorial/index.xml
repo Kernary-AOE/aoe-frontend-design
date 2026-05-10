@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/persona-magazine-editorial"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="698"
+  q="4.0">
+  <description>The web translation of Wired, NYT Magazine, and Pitchfork: oversized display serifs at 96-160px, drop caps, asymmetric multi-column flow, full-bleed photo essays, small-caps section heads, byline-dateline-photo-credit typography, dramatic scale contrast between display and body.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="698"/>
+    <level name="full"    file="chunks/full.md"    tokens="788"/>
+  </projection>
+</atom>

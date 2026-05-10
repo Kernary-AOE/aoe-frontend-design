@@ -1,0 +1,21 @@
+id: "@community/example-linear-kanban"
+kind: example
+version: "1.0.0"
+description: "Linear's board view shows columns (Backlog / Todo / In Progress / Done) with subtle column headers and stacked cards. Each card is ~280px wide with 12px padding, showing issue ID, title, assignee avatar (16px), and labels as colored dots. Drag-and-drop uses a faint scale(1.02) lift and a placeholder rectangle at the drop target."
+domain: visual-design
+content_hash: "sha256:9f1128d923f0925fcb21bbde417b782b4e805d55077722b831cfb2f27d5fe680"
+tokens:
+  summary: 96
+  core: 505
+  full: 913
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-kanban-board" }
+  - { type: related, target: "@community/example-linear-issues-table" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+created_at: "2026-05-07"

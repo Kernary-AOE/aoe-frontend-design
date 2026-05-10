@@ -1,0 +1,8 @@
+atom: "@community/constraint-scroll-locked-modal-only"
+relations:
+  - type: related
+    target: "@community/pattern-modal-confirm"
+  - type: related
+    target: "@community/example-radix-dialog"
+  - type: related
+    target: "@community/constraint-focus-trap-modal"

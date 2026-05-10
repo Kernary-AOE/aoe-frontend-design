@@ -1,0 +1,42 @@
+fact FittsLaw {
+  id: "@community/fact-fitts-law"
+  version: "1.0.0"
+
+  description: "Fitts's Law (1954): movement time to a target is a logarithmic function of the ratio of distance to target size, approximately MT = a + b · log2(D/W + 1)."
+
+  statement: "The time to acquire a target with a pointer is approximately MT = a + b · log2(D/W + 1), where D is the distance to the target and W is the target's width along the movement axis — bigger targets at shorter distances are faster, and the log scaling means small targets penalise heavily while small distance gains return little."
+
+  confidence: proven
+  source: [
+    "Paul M. Fitts, 'The information capacity of the human motor system in controlling the amplitude of movement', Journal of Experimental Psychology (1954)",
+    "MacKenzie, I. S., 'Fitts' law as a research and design tool in human-computer interaction', HCI (1992)",
+    "Bruce Tognazzini, 'A Quiz Designed to Give You Fitts' (askTog, 1999)",
+  ]
+
+  applies-to: [
+    "button size + spacing on touch UIs",
+    "edge / corner targeting (infinite effective size — see Mac menu bar)",
+    "icon-button hit areas",
+    "drag-and-drop zone sizing",
+    "menu item spacing",
+  ]
+
+  quantitative: {
+    formula: "MT = a + b · log2(D/W + 1)",
+    practical-implication: "halving distance saves less time than doubling target size",
+    edge-targets: "screen-edge targets behave as if W = ∞ (cursor stops at the edge)",
+    minimum-mobile-target: "44 × 44 CSS px (Apple HIG) / 48 × 48 dp (Material)",
+  }
+
+  counter-conditions: [
+    "Touch input (no cursor-overshoot correction) follows Fitts's Law with different constants from mouse input.",
+    "Multi-touch / gesture targets behave differently — Fitts's Law assumes a single point of acquisition.",
+    "Fitts's Law concerns acquisition time, not perception or decision time — Hick's Law covers the latter.",
+  ]
+
+  related: [
+    @community/fact-hick-law,
+    @community/constraint-mobile-touch-target-44px,
+    @community/pattern-tab-bar-bottom,
+  ]
+}

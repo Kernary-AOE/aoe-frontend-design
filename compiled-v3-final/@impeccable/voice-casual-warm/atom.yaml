@@ -1,0 +1,24 @@
+id: "@impeccable/voice-casual-warm"
+kind: voice
+version: "1.0.0"
+description: "The voice used by friendly consumer brands. Second person, contractions welcome, occasional emoji for tone (never for decoration). Sounds like Mailchimp, Duolingo, Discord, Notion's onboarding."
+domain: consumer-brand
+content_hash: "sha256:ed47cf4710261f1e4d4a5ae09b3f84b72ef0b5494cc4f533c0d840db8d6f1f4d"
+tokens:
+  summary: 61
+  core: 504
+  full: 552
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/voice-customer-support" }
+  - { type: related, target: "@impeccable/voice-marketing-bold" }
+  - { type: compatible, target: "@impeccable/persona-notion-warm" }
+  - { type: conflicts, target: "@impeccable/voice-legal-formal" }
+  - { type: conflicts, target: "@impeccable/voice-brand-corporate" }
+  - { type: conflicts, target: "@impeccable/voice-editorial-investigative" }
+created_at: "2026-05-07"

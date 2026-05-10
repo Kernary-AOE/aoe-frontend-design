@@ -1,0 +1,24 @@
+id: "@community/pattern-native-html-interactive"
+kind: pattern
+version: "1.0.0"
+description: "Prefer native HTML interactive elements — <details>, <dialog>, <input popover>, <meter>, <progress>, inert attribute — over custom JavaScript implementations for accordions, modals, tooltips, and progress indicators."
+domain: frontend-design
+content_hash: "sha256:6c1a5e04a14c9e027f2dae286dbc64568a189601dcc10951ff3cf0c73ca6b76e"
+tokens:
+  summary: 71
+  core: 312
+  full: 614
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-aria-native-first" }
+  - { type: related, target: "@community/anti-pattern-breaking-keyboard-flow" }
+  - { type: related, target: "@community/constraint-focus-trap-modal" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-invisible-focus" }
+  - { type: related, target: "@community/anti-pattern-outline-suppression" }
+created_at: "2026-05-07"

@@ -1,0 +1,20 @@
+id: "@community/rule-ios-att-compliance"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:7c451a8d4e31b02062a0c6459976064eb581c68b8a3b1bb62388358adac3b376"
+tokens:
+  summary: 65
+  core: 94
+  full: 266
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-permission-in-context" }
+  - { type: related, target: "@community/rule-ios-no-forced-account" }
+  - { type: related, target: "@community/rule-ios-sign-in-with-apple" }
+created_at: "2026-05-07"

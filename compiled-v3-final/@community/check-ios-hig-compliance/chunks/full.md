@@ -1,0 +1,65 @@
+# IosHigCompliance [check] v1.0.0
+Verifies that an iPhone app meets the 20 most critical Apple Human Interface Guidelines covering layout, navigation, typography, accessibility, color, gestures, modality, permissions, and system integration.
+domain: frontend-design
+
+## Check Name
+iOS HIG Compliance Audit
+
+## Success Criterion
+All 20 checklist items pass on a physical device or in Xcode Simulator.
+
+## How To Verify
+- All touch targets are at least 44×44pt.
+- No content is clipped under status bar, Dynamic Island, or home indicator.
+- Primary actions are in the lower half of the screen (thumb zone).
+- Layout adapts from iPhone SE (375pt) to Pro Max (430pt) without hardcoded widths.
+- Tab bar used for 3–5 top-level sections; no hamburger menus.
+- Primary views use large navigation bar titles.
+- Swipe-from-left-edge back navigation works on all push views.
+- Tab and scroll state is preserved when switching tabs.
+- All text uses semantic Dynamic Type styles or custom fonts scaled with UIFontMetrics.
+- Layouts reflow at Accessibility Extra Large text size without truncation.
+- Semantic system colors used; custom colors have dark mode variants.
+- No information conveyed by color alone.
+- VoiceOver reads all elements with meaningful accessibilityLabels.
+- Reduce Motion disables decorative animations.
+- All custom gestures have visible button alternatives.
+- Alerts used only for critical decisions; all modals have a dismiss path.
+- Permissions requested in context, not at app launch.
+- Sign in with Apple offered alongside any third-party auth provider.
+- ATT prompt shown before any cross-app tracking; denial does not degrade experience.
+- Bold Text accessibility setting is respected by all custom-rendered text.
+
+## Fix Suggestion
+Work through each failing item by applying the corresponding @community atom. Prioritize block-severity items (VoiceOver, touch targets, safe area, Reduce Motion) before warning-severity items.
+
+## Check Name
+iOS HIG Compliance Audit
+
+## Success Criterion
+All 20 checklist items pass on a physical device or in Xcode Simulator.
+
+## How To Verify
+- All touch targets are at least 44×44pt.
+- No content is clipped under status bar, Dynamic Island, or home indicator.
+- Primary actions are in the lower half of the screen (thumb zone).
+- Layout adapts from iPhone SE (375pt) to Pro Max (430pt) without hardcoded widths.
+- Tab bar used for 3–5 top-level sections; no hamburger menus.
+- Primary views use large navigation bar titles.
+- Swipe-from-left-edge back navigation works on all push views.
+- Tab and scroll state is preserved when switching tabs.
+- All text uses semantic Dynamic Type styles or custom fonts scaled with UIFontMetrics.
+- Layouts reflow at Accessibility Extra Large text size without truncation.
+- Semantic system colors used; custom colors have dark mode variants.
+- No information conveyed by color alone.
+- VoiceOver reads all elements with meaningful accessibilityLabels.
+- Reduce Motion disables decorative animations.
+- All custom gestures have visible button alternatives.
+- Alerts used only for critical decisions; all modals have a dismiss path.
+- Permissions requested in context, not at app launch.
+- Sign in with Apple offered alongside any third-party auth provider.
+- ATT prompt shown before any cross-app tracking; denial does not degrade experience.
+- Bold Text accessibility setting is respected by all custom-rendered text.
+
+## Fix Suggestion
+Work through each failing item by applying the corresponding @community atom. Prioritize block-severity items (VoiceOver, touch targets, safe area, Reduce Motion) before warning-severity items.

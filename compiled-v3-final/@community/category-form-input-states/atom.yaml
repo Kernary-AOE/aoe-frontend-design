@@ -1,0 +1,23 @@
+id: "@community/category-form-input-states"
+kind: category
+version: "1.0.0"
+description: "The visual states an input control passes through during user interaction. A complete form-input system specifies the visual treatment for each state and the transitions between them. Incomplete state coverage (e.g. missing focus state, no disabled affordance) is a recurring source of confusion and accessibility regressions."
+domain: visual-design
+content_hash: "sha256:3cc06c8fa07f5221ce70e6e15bd1b1bcf9460337cc2e2a148b3a8dbee6db986f"
+tokens:
+  summary: 96
+  core: 718
+  full: 1340
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/category-button-hierarchy" }
+  - { type: related, target: "@community/taxonomy-form-input-types" }
+  - { type: related, target: "@community/term-focus-ring" }
+  - { type: related, target: "@community/value-focus-outline-width" }
+  - { type: related, target: "@community/step-validate-required-fields" }
+created_at: "2026-05-07"

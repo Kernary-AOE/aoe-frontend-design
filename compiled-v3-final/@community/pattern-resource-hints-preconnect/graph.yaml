@@ -1,0 +1,10 @@
+atom: "@community/pattern-resource-hints-preconnect"
+relations:
+  - type: related
+    target: "@community/rule-font-loading-fout-foit"
+  - type: related
+    target: "@community/rule-image-optimization"
+  - type: related
+    target: "@community/rule-font-self-host"
+  - type: related
+    target: "@community/check-focus-visible"

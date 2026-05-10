@@ -1,0 +1,8 @@
+atom: "@community/fact-zeigarnik-effect"
+relations:
+  - type: related
+    target: "@community/fact-goal-gradient-effect"
+  - type: related
+    target: "@community/fact-peak-end-rule"
+  - type: related
+    target: "@community/fact-visibility-system-status"

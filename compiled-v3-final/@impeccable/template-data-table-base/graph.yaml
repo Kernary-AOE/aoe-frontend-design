@@ -1,0 +1,14 @@
+atom: "@impeccable/template-data-table-base"
+relations:
+  - type: related
+    target: "@community/template-focus-ring"
+  - type: related
+    target: "@impeccable/template-skeleton-loader"
+  - type: related
+    target: "@community/check-heading-hierarchy"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/anti-pattern-color-only-meaning"
+  - type: related
+    target: "@community/check-focus-visible"

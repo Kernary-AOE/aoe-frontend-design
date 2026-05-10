@@ -1,0 +1,38 @@
+task_type: pricing-consumer
+parent: marketing-landing
+description: "Consumer-facing 3-tier pricing page with monthly/annual toggle and clear upgrade path."
+trigger_keywords:
+  - "pricing"
+  - "三档定价"
+  - "定价页"
+  - "monthly annual toggle"
+  - "月付年付"
+  - "free pro enterprise"
+  - "subscription tiers"
+  - "plan comparison"
+  - "upgrade"
+default_register_pool:
+  - school: warm-institutional
+    weight: 0.35
+  - school: notion-warm
+    weight: 0.35
+  - school: magazine-editorial
+    weight: 0.3
+required_atoms:
+  - "@community/pattern-pricing-tiers-toggle"
+  - "@community/pattern-plan-comparison-table"
+  - "@community/template-shadcn-pricing-toggle"
+  - "@community/rule-single-primary-action-per-component"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/template-framer-motion-pattern"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@community/pattern-dashboard-grid"
+quality_checks:
+  - "Toggle between monthly and annual must animate smoothly"
+  - "Recommended/popular tier must be visually differentiated"
+  - "Price must be the most prominent element in each tier card"
+  - "Feature list must use checkmarks or clear yes/no indicators"
+  - "CTA button per tier must have distinct hierarchy (primary vs ghost)"
+  - "Annual savings percentage must be surfaced when annual is selected"

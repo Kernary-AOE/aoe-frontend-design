@@ -1,0 +1,26 @@
+id: "@community/principle-color-system-foundation"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:1e5a5b6089e25fcb555b90b0c7c813a34df58d9616fd14887ddb4cd8f2953a11"
+tokens:
+  summary: 96
+  core: 212
+  full: 405
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-oklch-palette" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-color-oklch-required" }
+  - { type: related, target: "@community/anti-pattern-rainbow-explosion" }
+  - { type: related, target: "@community/counter-example-tailwind-blue-500" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/example-mercury-banking-dashboard" }
+  - { type: related, target: "@community/rule-color-hue-selection" }
+  - { type: related, target: "@community/rule-color-oklch-required" }
+created_at: "2026-05-07"

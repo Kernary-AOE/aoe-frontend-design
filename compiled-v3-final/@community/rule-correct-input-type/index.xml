@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-correct-input-type"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="269"
+  q="4.0">
+  <description>Form inputs must use the HTML `type` attribute that matches the expected data (e.g. `type=&apos;email&apos;` for email addresses, `type=&apos;tel&apos;` for phone numbers) to trigger the correct on-screen keyboard on mobile and enable native browser validation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="75"/>
+    <level name="core"    file="chunks/core.md"    tokens="269"/>
+    <level name="full"    file="chunks/full.md"    tokens="463"/>
+  </projection>
+</atom>

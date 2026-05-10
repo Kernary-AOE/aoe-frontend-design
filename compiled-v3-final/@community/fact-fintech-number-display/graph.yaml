@@ -1,0 +1,10 @@
+atom: "@community/fact-fintech-number-display"
+relations:
+  - type: related
+    target: "@community/constraint-monospace-tabular-numerics"
+  - type: related
+    target: "@community/rule-opentype-features-on"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: supplies-to
+    target: "@community/pattern-fintech-number-display"

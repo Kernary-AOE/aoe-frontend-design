@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-modal-confirm"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="692"
+  q="4.0">
+  <description>A small centered dialog that interrupts the user to confirm a destructive or consequential action (delete, archive, sign out). Two-button: a Cancel default and a destructive primary button labeled with the verb being performed.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="692"/>
+    <level name="full"    file="chunks/full.md"    tokens="1357"/>
+  </projection>
+</atom>

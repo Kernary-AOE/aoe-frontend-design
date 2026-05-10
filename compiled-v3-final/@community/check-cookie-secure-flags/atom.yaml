@@ -1,0 +1,23 @@
+id: "@community/check-cookie-secure-flags"
+kind: check
+version: "1.0.0"
+description: "Session and auth cookies must carry Secure, HttpOnly, and SameSite=Strict (or Lax for OAuth flows). Missing any flag opens specific attack vectors: Secure omission allows plain-HTTP cookie theft, HttpOnly omission allows XSS cookie exfiltration, SameSite omission allows CSRF."
+domain: security
+content_hash: "sha256:a7d550e7e29bdd3d64e1ad43b293590de20f596f866895324c7ab55d9e6f537a"
+tokens:
+  summary: 82
+  core: 537
+  full: 991
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-broken-authentication" }
+  - { type: related, target: "@community/principle-owasp-broken-access-control" }
+  - { type: related, target: "@community/check-https-everywhere" }
+  - { type: related, target: "@community/pattern-jwt-signed-not-encrypted" }
+  - { type: related, target: "@community/rule-session-management" }
+created_at: "2026-05-07"

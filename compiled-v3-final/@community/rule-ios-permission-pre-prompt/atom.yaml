@@ -1,0 +1,20 @@
+id: "@community/rule-ios-permission-pre-prompt"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:73b4220e0e47f4322b7178ccf50549a5ad3e4d3422acd8cbf14e5d7b7d183161"
+tokens:
+  summary: 55
+  core: 89
+  full: 293
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-permission-in-context" }
+  - { type: related, target: "@community/rule-ios-att-compliance" }
+  - { type: related, target: "@community/rule-ios-no-forced-account" }
+created_at: "2026-05-07"

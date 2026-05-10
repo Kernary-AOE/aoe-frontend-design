@@ -1,0 +1,16 @@
+atom: "@community/rule-no-pointer-only-components"
+relations:
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/anti-pattern-hover-only-interaction"
+  - type: related
+    target: "@community/anti-pattern-breaking-keyboard-flow"
+  - type: related
+    target: "@community/counter-example-div-onclick-dropdown"
+  - type: related
+    target: "@community/counter-example-tooltip-hover-only"
+  - type: related
+    target: "@community/example-radix-dialog"
+  - type: related
+    target: "@community/rule-semantic-html-for-interactive-elements"

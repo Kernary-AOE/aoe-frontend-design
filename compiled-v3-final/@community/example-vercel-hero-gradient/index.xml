@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-vercel-hero-gradient"
+  kind="knowledge"
+  version="1.0.0"
+  domain="motion"
+  tokens="712"
+  q="4.0">
+  <description>Vercel&apos;s homepage hero uses a mesh gradient (the &apos;Vercel beam&apos;) that drifts very slowly behind the headline — cyan #00DFD8 and magenta #FF0080 radial-gradient blobs at ~10% alpha, animating their position over a 16-20 second cycle. The motion is so slow it&apos;s subliminal: visible only as the page fills with motion-blur in your peripheral vision while you read the static white headline.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="110"/>
+    <level name="core"    file="chunks/core.md"    tokens="712"/>
+    <level name="full"    file="chunks/full.md"    tokens="1314"/>
+  </projection>
+</atom>

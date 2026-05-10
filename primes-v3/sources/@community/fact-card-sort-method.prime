@@ -1,0 +1,39 @@
+fact CardSortMethod {
+  id: "@community/fact-card-sort-method"
+  version: "1.0.0"
+
+  description: "Card sorting is the standard IA validation method: participants group labelled cards (representing content / features) into categories that make sense to them, revealing the user's mental model rather than the team's internal taxonomy."
+
+  statement: "Card sorting is a participatory IA research method in which 15–30 participants group labelled content cards into categories — open card sorts (participants name the categories) reveal mental models for greenfield IA, while closed card sorts (categories pre-supplied) validate or refine an existing taxonomy."
+
+  confidence: strong
+  source: [
+    "Donna Spencer, 'Card Sorting: Designing Usable Categories' (Rosenfeld Media, 2009)",
+    "Nielsen Norman Group, 'Card Sorting: Uncover Users' Mental Models for Better Information Architecture' (NN/g, 2022)",
+    "Optimal Workshop, 'Treejack' / 'OptimalSort' tooling docs",
+  ]
+
+  applies-to: [
+    "navigation IA design (sidebar, top nav, mega menu)",
+    "settings / preferences taxonomy",
+    "content categorisation in CMS / docs",
+    "feature naming and grouping",
+  ]
+
+  quantitative: {
+    sample-size-rule-of-thumb: "15 participants for ~95% concept-coverage stability (Spencer / Tullis & Wood)",
+    open-vs-closed: "open for discovery (greenfield); closed for validation (existing IA)",
+    typical-card-count: "30–60 cards per session",
+  }
+
+  counter-conditions: [
+    "Card sorts reveal categorisation, not navigation flow — pair with tree testing or first-click testing.",
+    "Domain-expert participants will produce different mental models from novices — sample to your real audience.",
+    "Card sort findings degrade quickly when the underlying content set changes — re-run after major content additions.",
+  ]
+
+  related: [
+    @community/fact-jakob-law,
+    @community/fact-miller-rule-7,
+  ]
+}

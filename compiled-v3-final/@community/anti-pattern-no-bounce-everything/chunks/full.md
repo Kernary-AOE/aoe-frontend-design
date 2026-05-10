@@ -1,0 +1,77 @@
+# NoBounceEverything [anti-pattern] v1.0.0
+Applying spring overshoot or bounce easing (cubic-bezier Y > 1, e.g. cubic-bezier(0.34,1.56,0.64,1)) to all interactive elements — including modals, dropdowns, and form inputs — makes UI feel toy-like and adds 100-200ms of perceived latency.
+domain: frontend-design
+
+## What
+Using spring/bounce easing indiscriminately on every transition: modals bounce in, dropdowns spring, buttons wobble on click, error messages bounce into view.
+
+## Why Bad
+- Bounce adds perceived latency — the element overshoots then settles, extending total animation time by 30-50% vs linear settle.
+- Frequent UI elements (dropdowns, tooltips, tab indicators) that bounce on every interaction become tiring after the 10th use.
+- Bounce conveys 'playful/informal' mood — inappropriate for enterprise, medical, legal, financial contexts.
+- Spring physics on elements with transform-origin issues (dialogs centered with translate(-50%,-50%)) can cause layout jitter.
+
+## Fix
+Reserve spring/bounce easing for: (1) tab indicators and toggles — physical, position-tracking elements; (2) toast/snackbar entrances — one-time, celebratory; (3) brand-expressive marketing hero animations. Default to ease-out (cubic-bezier(0.16,1,0.3,1)) for everything else.
+
+## Correct
+```
+    /* Correct: ease-out for modal entrance */
+    .modal-panel {
+      animation: panel-in 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* Correct: spring ONLY for tab indicator (position-tracking) */
+    .tab-indicator {
+      transition: left 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                  width 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  
+```
+
+## Wrong
+```
+    /* Wrong: bounce on every element creates toy-app feel */
+    .modal-panel    { animation: bounce-in 400ms cubic-bezier(0.34, 1.8, 0.64, 1) both; }
+    .dropdown-menu  { animation: bounce-in 300ms cubic-bezier(0.34, 1.8, 0.64, 1) both; }
+    .error-message  { animation: bounce-in 350ms cubic-bezier(0.34, 1.8, 0.64, 1) both; }
+    .button:active  { animation: bounce-press 200ms cubic-bezier(0.34, 1.8, 0.64, 1); }
+  
+```
+
+## What
+Using spring/bounce easing indiscriminately on every transition: modals bounce in, dropdowns spring, buttons wobble on click, error messages bounce into view.
+
+## Why Bad
+- Bounce adds perceived latency — the element overshoots then settles, extending total animation time by 30-50% vs linear settle.
+- Frequent UI elements (dropdowns, tooltips, tab indicators) that bounce on every interaction become tiring after the 10th use.
+- Bounce conveys 'playful/informal' mood — inappropriate for enterprise, medical, legal, financial contexts.
+- Spring physics on elements with transform-origin issues (dialogs centered with translate(-50%,-50%)) can cause layout jitter.
+
+## Fix
+Reserve spring/bounce easing for: (1) tab indicators and toggles — physical, position-tracking elements; (2) toast/snackbar entrances — one-time, celebratory; (3) brand-expressive marketing hero animations. Default to ease-out (cubic-bezier(0.16,1,0.3,1)) for everything else.
+
+## Correct
+```
+    /* Correct: ease-out for modal entrance */
+    .modal-panel {
+      animation: panel-in 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* Correct: spring ONLY for tab indicator (position-tracking) */
+    .tab-indicator {
+      transition: left 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                  width 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  
+```
+
+## Wrong
+```
+    /* Wrong: bounce on every element creates toy-app feel */
+    .modal-panel    { animation: bounce-in 400ms cubic-bezier(0.34, 1.8, 0.64, 1) both; }
+    .dropdown-menu  { animation: bounce-in 300ms cubic-bezier(0.34, 1.8, 0.64, 1) both; }
+    .error-message  { animation: bounce-in 350ms cubic-bezier(0.34, 1.8, 0.64, 1) both; }
+    .button:active  { animation: bounce-press 200ms cubic-bezier(0.34, 1.8, 0.64, 1); }
+  
+```

@@ -1,0 +1,16 @@
+atom: "@community/pattern-ios-navigation-stack"
+relations:
+  - type: related
+    target: "@community/pattern-ios-large-title-nav"
+  - type: related
+    target: "@community/rule-ios-preserve-navigation-state"
+  - type: related
+    target: "@community/rule-ios-no-override-swipe-back"
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"
+  - type: related
+    target: "@community/check-touch-target-min"
+  - type: related
+    target: "@community/check-mobile-first"
+  - type: related
+    target: "@community/check-focus-visible"

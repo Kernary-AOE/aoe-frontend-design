@@ -1,0 +1,31 @@
+rule IosInterruptionHandling {
+  id: "@community/rule-ios-interruption-handling"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  applies-to: "any iOS app with in-progress work that can be interrupted by system events (calls, Siri, notifications, backgrounding)"
+
+  statement: "Observe scenePhase changes and save state on background, pause on inactive, and resume cleanly on active — ensuring no user progress is lost across system interruptions."
+
+  rationale: "iOS apps are regularly interrupted by phone calls, Siri invocations, and notifications. Losing user progress or active state on interrupt is unexpected and erodes trust. ScenePhase provides the correct lifecycle hooks for saving and restoring state."
+
+  examples: [
+    "scenePhase .background: persist any unsaved form input or recording state to UserDefaults or disk.",
+    "scenePhase .inactive: pause media playback, timers, or active animations.",
+    "scenePhase .active: resume timers; restore UI to the last known state.",
+    "Verify: receive a phone call during active use; app should pause cleanly and restore state when foregrounded.",
+  ]
+
+  notes: [
+    "In SwiftUI: @Environment(\\.scenePhase) and .onChange(of: scenePhase) { }.",
+    "In UIKit: UIScene delegate methods sceneWillResignActive / sceneDidBecomeActive.",
+    "Apple HIG source: Rule 10.6 — Handle Interruptions Gracefully.",
+  ]
+
+  related: [
+    @community/rule-ios-preserve-navigation-state,
+    @community/pattern-ios-navigation-stack,
+    @community/rule-ios-immediate-action-acknowledgment,
+  ]
+}

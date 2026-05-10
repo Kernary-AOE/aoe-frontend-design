@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/template-tabs-keyboard"
+  kind="knowledge"
+  version="1.0.0"
+  domain="navigation"
+  tokens="1329"
+  q="4.0">
+  <description>WAI-ARIA Authoring Practices tabs: roving tabindex, ArrowLeft/Right (or Up/Down) traversal, Home/End to jump, optional auto-activation on focus, fully accessible.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="54"/>
+    <level name="core"    file="chunks/core.md"    tokens="1329"/>
+    <level name="full"    file="chunks/full.md"    tokens="1329"/>
+  </projection>
+</atom>

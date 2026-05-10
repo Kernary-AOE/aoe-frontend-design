@@ -1,0 +1,22 @@
+id: "@community/anti-pattern-accessibility-after-thought"
+kind: anti-pattern
+version: "1.0.0"
+description: "Treating accessibility as a final-step audit pass: design and build the UI based purely on visual mockups, then add `aria-label`, `role`, and `tabindex` afterwards to silence the audit warnings. The result is technically compliant ARIA on a structurally inaccessible page — wrong heading order, decorative buttons, color-only affordances — papered over with ARIA labels that contradict the actual experience."
+domain: accessibility
+content_hash: "sha256:05a8ddb548632e4951462711360e204897522cab3d538f53aef616fe704d7dc5"
+tokens:
+  summary: 120
+  core: 632
+  full: 1144
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/counter-example-aria-bandaid" }
+  - { type: related, target: "@community/method-a11y-audit" }
+  - { type: related, target: "@community/collection-accessible-frontend" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+created_at: "2026-05-07"

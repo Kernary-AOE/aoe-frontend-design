@@ -1,0 +1,8 @@
+atom: "@community/fact-contrast-amplification"
+relations:
+  - type: related
+    target: "@community/fact-light-vs-dark-default"
+  - type: related
+    target: "@community/fact-line-height-readability"
+  - type: related
+    target: "@community/check-color-dark-mode-cascade"

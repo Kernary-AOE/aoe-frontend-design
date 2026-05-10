@@ -1,0 +1,30 @@
+rule ImageExplicitDimensions {
+  id: "@community/rule-image-explicit-dimensions"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Every <img> element MUST carry explicit width and height attributes matching the image's intrinsic dimensions to prevent Cumulative Layout Shift (CLS) during page load."
+
+  claim: "All <img> tags must set width and height attributes; omitting them allows the browser to reserve zero space until the image loads, causing layout reflow and a CLS score penalty."
+
+  severity: high
+
+  rationale: "The browser calculates the aspect ratio from width/height before the image loads, reserving the correct space in the layout. Without these attributes, content below the image jumps once the image arrives — a Core Web Vitals violation."
+
+  examples: [
+    "Correct: <img src=\"hero.webp\" width=\"1200\" height=\"630\" alt=\"Hero\" loading=\"eager\">",
+    "Wrong: <img src=\"hero.webp\" alt=\"Hero\"> — no dimensions, CLS guaranteed",
+    "Next.js: Use <Image> component which enforces width/height by default",
+  ]
+
+  exceptions: [
+    "CSS-controlled fluid images where width:100% is applied AND the container has a fixed aspect ratio via aspect-ratio property — dimensions still preferred for browser hint",
+  ]
+
+  related: [
+    @community/rule-image-optimization,
+    @community/check-image-optimization,
+    @community/fact-doherty-threshold,
+  ]
+}

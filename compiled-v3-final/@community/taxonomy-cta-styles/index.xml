@@ -1,0 +1,14 @@
+<atom
+  id="@community/taxonomy-cta-styles"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="952"
+  q="4.0">
+  <description>A taxonomy of button styles by hierarchy and intent. Distinct visual treatments are how a UI signals which action is primary, secondary, optional, or destructive. Conflating these styles (e.g. two primary buttons in one view) is the most common cause of weak action hierarchy.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="82"/>
+    <level name="core"    file="chunks/core.md"    tokens="952"/>
+    <level name="full"    file="chunks/full.md"    tokens="1821"/>
+  </projection>
+</atom>

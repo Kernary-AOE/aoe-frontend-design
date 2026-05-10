@@ -1,0 +1,35 @@
+rule NoHiddenFocusOutline {
+  id: "@community/rule-no-hidden-focus-outline"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Focus outlines must not be removed unless an equivalent visible focus indicator with at least 3:1 contrast ratio replaces them — outline:none without a replacement is forbidden."
+
+  claim: "outline:none or outline:0 on :focus is only permitted when the ruleset ALSO defines a custom :focus-visible indicator with equivalent visibility."
+
+  severity: critical
+
+  rationale: "Keyboard users and switch device users rely entirely on visible focus indicators to know where they are on the page. WCAG 2.1 SC 2.4.7 requires a visible focus indicator; WCAG 2.2 SC 2.4.11 requires minimum focus appearance (3:1 contrast, 2px outline)."
+
+  forbidden: [
+    "* { outline: none } — global suppression",
+    ".btn:focus { outline: 0 } — without a replacement",
+    "a:focus { outline: none } — removes browser default without alternative",
+  ]
+
+  correct: [
+    ".btn:focus-visible { outline: 2px solid oklch(65% 0.2 260); outline-offset: 2px; }",
+    "Using :focus-visible instead of :focus so mouse clicks don't show the ring unnecessarily",
+  ]
+
+  related: [
+    @community/anti-pattern-outline-suppression,
+    @community/anti-pattern-invisible-focus,
+    @community/rule-focus-visible,
+    @community/counter-example-outline-none,
+    @community/counter-example-low-contrast-focus,
+    @community/example-radix-tabs,
+    @community/rule-keyboard-accessible,
+  ]
+}

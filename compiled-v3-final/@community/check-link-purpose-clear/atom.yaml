@@ -1,0 +1,20 @@
+id: "@community/check-link-purpose-clear"
+kind: check
+version: "1.0.0"
+description: "Validates link text is descriptive enough to convey purpose without surrounding context (WCAG 2.4.4 / 2.4.9). Flags generic phrases ('click here', 'read more'), raw URLs as text, and same-text links pointing to different destinations."
+domain: accessibility
+content_hash: "sha256:b16a5ebd75313e7a52fe919c44956f0b3519eb99b3ae127d0177159b567a5532"
+tokens:
+  summary: 73
+  core: 560
+  full: 633
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-link-purpose-clear" }
+  - { type: related, target: "@community/rule-aria-label-required" }
+created_at: "2026-05-07"

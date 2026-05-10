@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-train-serve-skew"
+  kind="knowledge"
+  version="1.0.0"
+  domain="machine-learning"
+  tokens="561"
+  q="4.0">
+  <description>Features used at inference time must be computed by exactly the same code, against exactly the same data sources, as features used at training time. Any divergence — different code path, different SQL, different rounding, different null handling — produces train-serve skew, the #1 cause of silent ML production failures.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="249"/>
+    <level name="core"    file="chunks/core.md"    tokens="561"/>
+    <level name="full"    file="chunks/full.md"    tokens="890"/>
+  </projection>
+</atom>

@@ -1,0 +1,12 @@
+atom: "@community/feedback-i18n-launch-v1"
+relations:
+  - type: related
+    target: "@community/collection-i18n-ready-component"
+  - type: related
+    target: "@community/principle-no-string-concat"
+  - type: related
+    target: "@community/pattern-icu-message-format"
+  - type: related
+    target: "@community/fact-bidi-direction"
+  - type: related
+    target: "@community/anti-pattern-flag-as-language"

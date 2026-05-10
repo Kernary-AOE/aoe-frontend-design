@@ -1,0 +1,16 @@
+atom: "@community/principle-taste-as-engineering"
+relations:
+  - type: related
+    target: "@impeccable/principle-distinctiveness"
+  - type: related
+    target: "@community/principle-commit-bold-aesthetic"
+  - type: related
+    target: "@community/principle-prove-not-prevent-ai-slop"
+  - type: related
+    target: "@community/anti-pattern-ai-generated-ui"
+  - type: related
+    target: "@community/example-linear-issues-table"
+  - type: related
+    target: "@community/example-resend-dashboard"
+  - type: related
+    target: "@community/principle-generative-creative-not-utility"

@@ -1,0 +1,12 @@
+atom: "@community/check-focus-visible"
+relations:
+  - type: related
+    target: "@w3c/fact-wcag-focus-contrast"
+  - type: related
+    target: "@community/term-focus-ring"
+  - type: related
+    target: "@community/counter-example-outline-none"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: see-also
+    target: "@community/rule-focus-visible"

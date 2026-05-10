@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-informative-image-alt"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="146"
+  q="4.0">
+  <description>Images that convey meaning or information must have descriptive `alt` text explaining their content or function; decorative images must use `alt=&apos;&apos;` to hide them from assistive technology.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="62"/>
+    <level name="core"    file="chunks/core.md"    tokens="146"/>
+    <level name="full"    file="chunks/full.md"    tokens="229"/>
+  </projection>
+</atom>

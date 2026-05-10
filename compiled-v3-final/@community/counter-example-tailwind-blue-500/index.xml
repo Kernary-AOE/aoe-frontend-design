@@ -1,0 +1,14 @@
+<atom
+  id="@community/counter-example-tailwind-blue-500"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="530"
+  q="4.0">
+  <description>A button and link styling that uses Tailwind&apos;s default `blue-500` (#3b82f6) and `blue-600` (#2563eb) as the entire brand expression. Identical to thousands of v0 / shadcn / starter-kit landing pages.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="66"/>
+    <level name="core"    file="chunks/core.md"    tokens="530"/>
+    <level name="full"    file="chunks/full.md"    tokens="993"/>
+  </projection>
+</atom>

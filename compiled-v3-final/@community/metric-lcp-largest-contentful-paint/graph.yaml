@@ -1,0 +1,10 @@
+atom: "@community/metric-lcp-largest-contentful-paint"
+relations:
+  - type: related
+    target: "@community/metric-cls-cumulative-layout-shift"
+  - type: related
+    target: "@community/scope-public-facing-marketing"
+  - type: related
+    target: "@community/tradeoff-server-vs-client-rendering"
+  - type: related
+    target: "@community/check-image-optimization"

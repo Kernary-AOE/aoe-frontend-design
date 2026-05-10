@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-resource-not-action"
+  kind="knowledge"
+  version="1.0.0"
+  domain="api-design"
+  tokens="501"
+  q="4.0">
+  <description>REST URLs MUST identify resources, not actions. Use nouns for paths and HTTP verbs for operations. URLs containing verbs (`/createUser`, `/getOrders`, `/deleteCart`) violate REST and produce inconsistent, ambiguous APIs.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="224"/>
+    <level name="core"    file="chunks/core.md"    tokens="501"/>
+    <level name="full"    file="chunks/full.md"    tokens="1112"/>
+  </projection>
+</atom>

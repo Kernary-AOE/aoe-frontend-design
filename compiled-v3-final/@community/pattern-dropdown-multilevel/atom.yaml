@@ -1,0 +1,24 @@
+id: "@community/pattern-dropdown-multilevel"
+kind: pattern
+version: "1.0.0"
+description: "A two-level dropdown menu where top-level items with children reveal a fly-out submenu panel positioned inline-end, using aria-haspopup=menu + aria-expanded on the parent item, and ArrowRight/ArrowLeft keyboard navigation between levels per WAI-ARIA Disclosure Navigation pattern."
+domain: frontend-design
+content_hash: "sha256:22e81a6277bd477365a8890583a3094a5f15aa5124be2b7a076c35abbfdaf804"
+tokens:
+  summary: 86
+  core: 1044
+  full: 2002
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-dropdown-menu" }
+  - { type: related, target: "@community/rule-custom-component-aria-role" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-breaking-keyboard-flow" }
+created_at: "2026-05-07"

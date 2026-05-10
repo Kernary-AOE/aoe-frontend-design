@@ -1,0 +1,21 @@
+id: "@community/check-contrast-aa"
+kind: check
+version: "1.0.0"
+description: "Evaluates whether the contrast ratio between foreground text color and background color meets WCAG 2.2 SC 1.4.3 Level AA. Large text (≥ 18pt regular or ≥ 14pt bold) requires 3:1; normal text requires 4.5:1."
+domain: accessibility
+content_hash: "sha256:4a72fe89670894785ca37063f9eaf7422e97043ce7c3931166c5192f94e1e227"
+tokens:
+  summary: 64
+  core: 227
+  full: 341
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@w3c/fact-wcag-contrast-aa" }
+  - { type: related, target: "@community/metric-contrast-ratio" }
+  - { type: related, target: "@community/rule-color-contrast" }
+created_at: "2026-05-07"

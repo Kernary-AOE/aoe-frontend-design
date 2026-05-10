@@ -1,0 +1,14 @@
+atom: "@anthropic-impeccable/anti-pattern-gray-on-colored-bg"
+relations:
+  - type: related
+    target: "@anthropic-impeccable/principle-tinted-neutrals"
+  - type: related
+    target: "@community/constraint-no-pure-black-text"
+  - type: related
+    target: "@community/rule-color-contrast"
+  - type: related
+    target: "@community/check-color-contrast-aaa"
+  - type: related
+    target: "@community/fact-oklch-perceptual-uniform"
+  - type: related
+    target: "@impeccable/template-oklch-palette"

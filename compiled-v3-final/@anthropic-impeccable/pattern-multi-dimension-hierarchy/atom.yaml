@@ -1,0 +1,26 @@
+id: "@anthropic-impeccable/pattern-multi-dimension-hierarchy"
+kind: pattern
+version: "1.0.0"
+description: "Strong visual hierarchy requires combining at least two of the five hierarchy dimensions simultaneously on primary elements: size, weight, color contrast, position, and surrounding whitespace. Single-dimension hierarchy (size alone, or color alone) is weak and fails the squint test."
+domain: frontend-design
+content_hash: "sha256:71c8b7eefcacdf1ec8c3c885d06901e7d4fb195338e9223f037b3b832c14e138"
+tokens:
+  summary: 88
+  core: 472
+  full: 859
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/principle-vertical-rhythm" }
+  - { type: related, target: "@community/rule-refactoring-ui-hierarchy" }
+  - { type: related, target: "@community/rule-no-uniform-spacing-without-variation" }
+  - { type: related, target: "@community/fact-gestalt-proximity" }
+  - { type: related, target: "@community/fact-contrast-amplification" }
+  - { type: related, target: "@community/anti-pattern-thin-weight-body" }
+  - { type: related, target: "@anthropic-impeccable/principle-cards-not-required" }
+created_at: "2026-05-07"

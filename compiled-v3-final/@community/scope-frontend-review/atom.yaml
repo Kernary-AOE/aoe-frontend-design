@@ -1,0 +1,21 @@
+id: "@community/scope-frontend-review"
+kind: scope
+version: "1.0.0"
+description: "Defines the preconditions and environmental requirements for running frontend design review and accessibility audit methods. Agents must verify these conditions before executing @community/method-a11y-audit or @community/method-heuristic-review."
+domain: frontend-engineering
+content_hash: "sha256:da98b91f2a89ac07134ac1b4d7cfe89199f1db2a5fbc6856ef503bcc4ef5e317"
+tokens:
+  summary: 77
+  core: 389
+  full: 389
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/method-a11y-audit" }
+  - { type: related, target: "@community/method-heuristic-review" }
+  - { type: related, target: "@community/collection-accessible-frontend" }
+created_at: "2026-05-07"

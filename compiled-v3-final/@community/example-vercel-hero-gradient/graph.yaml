@@ -1,0 +1,10 @@
+atom: "@community/example-vercel-hero-gradient"
+relations:
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/example-vercel-hero"
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"

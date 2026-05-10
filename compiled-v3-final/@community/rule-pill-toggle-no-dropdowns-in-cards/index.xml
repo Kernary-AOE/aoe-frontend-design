@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-pill-toggle-no-dropdowns-in-cards"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="371"
+  q="4.0">
+  <description>Inside a data card, the only allowed selection UI is a pill toggle with 2–3 options in the card header — select dropdowns, radio groups, and checkboxes inside cards are prohibited.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="249"/>
+    <level name="core"    file="chunks/core.md"    tokens="371"/>
+    <level name="full"    file="chunks/full.md"    tokens="713"/>
+  </projection>
+</atom>

@@ -1,0 +1,89 @@
+persona Editorial {
+  id: "@impeccable/persona-editorial"
+  version: "1.0.0"
+
+  school: editorial
+  domain: visual-design
+
+  description: "An aesthetic persona derived from high-quality editorial publishing: newspapers, literary magazines, annual reports. Characterized by deliberate whitespace, serif display type, restrained color use, and strong typographic hierarchy."
+
+  implies: {
+    font: {
+      display: "serif — e.g. Freight Display, Canela, Playfair Display, GT Super"
+      body: "humanist-sans or transitional-serif — e.g. Söhne, Source Serif, Freight Text"
+    }
+    color: {
+      temperature: "neutral-warm"
+      palette: "limited — 2 dominant, 1 accent, generous neutrals"
+      background: "off-white (#f9f7f4) or warm white, not pure #ffffff"
+    }
+    density: "generous — vertical rhythm 1.6–1.8, large margins, breathing room"
+    layout: "asymmetric grid with wide margins, text columns 55–65ch"
+    imagery: "high-quality photography or editorial illustration, not stock icons"
+    motion: "minimal — reveal on scroll, no decorative looping animations"
+  }
+
+  compatible: ["warm", "refined", "minimal", "sophisticated"]
+  conflicts: ["dense-pragmatist", "brutalist", "neon-dark", "ai-slop-default"]
+
+  example-brands: [
+    "The New Yorker digital",
+    "Are.na",
+    "Readwise Reader",
+    "Stripe Press",
+  ]
+
+  notes: [
+    "The editorial persona is the counter-persona to @impeccable/anti-pattern-ai-slop-palette.",
+    "Serif display + humanist sans body is the defining typographic move; avoid mixing two serifs or two sans-serifs.",
+    "Off-white backgrounds add warmth and reduce eye strain for long-form reading compared to #ffffff.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/principle-vertical-rhythm,
+      @community/fact-line-height-readability,
+      @community/principle-typography-hierarchy,
+    ]
+    must-avoid: [
+      @impeccable/persona-dense-pragmatist,
+      @impeccable/persona-brutalist,
+    ]
+    typography-required: {
+      display: "serif (Freight Display | Canela | Playfair Display | GT Super)"
+      body: "humanist-sans or transitional-serif"
+      line-height: "1.6-1.8"
+    }
+    color-required: {
+      background: "#f9f7f4 (off-white, not pure #ffffff)"
+      palette: "2 dominant + 1 accent + generous neutrals"
+    }
+    motion-prescriptions: [
+      @community/principle-vertical-rhythm,
+    ]
+  }
+
+  related: [
+    @impeccable/anti-pattern-ai-slop-palette,
+    @impeccable/constraint-font-blacklist,
+    @community/taxonomy-typography-roles,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/principle-vertical-rhythm,
+    @community/rule-line-length-optimal,
+    @community/fact-line-height-readability,
+    @community/check-body-readability,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/constraint-no-pure-white-bg,
+    @community/rule-backgrounds-atmospheric,
+    @community/check-color-blacklist-brand,
+    @community/anti-pattern-generic-saas-blue,
+  ]
+
+  contradicts: [
+    @impeccable/persona-dense-pragmatist,
+    @impeccable/persona-brutalist,
+  ]
+}

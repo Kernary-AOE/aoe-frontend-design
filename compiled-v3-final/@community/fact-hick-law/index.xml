@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-hick-law"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="312"
+  q="4.0">
+  <description>Hick&apos;s Law (1952): the time required to make a decision grows logarithmically with the number of equally probable choices, approximately T = b · log2(n+1).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="100"/>
+    <level name="core"    file="chunks/core.md"    tokens="312"/>
+    <level name="full"    file="chunks/full.md"    tokens="603"/>
+  </projection>
+</atom>

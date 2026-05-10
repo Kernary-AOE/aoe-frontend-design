@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-linear-issues-table"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="539"
+  q="4.0">
+  <description>Linear&apos;s primary issue list is a single-line-per-row table on a near-black canvas (#08090A). Each row shows: priority icon (4 bars), issue ID (e.g., LIN-1234) in #6E7178 monospace, title in white, status pill, assignee avatar, and due date. Row height is ~32px — extreme density that lets ~25 issues fit in a viewport.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="95"/>
+    <level name="core"    file="chunks/core.md"    tokens="539"/>
+    <level name="full"    file="chunks/full.md"    tokens="983"/>
+  </projection>
+</atom>

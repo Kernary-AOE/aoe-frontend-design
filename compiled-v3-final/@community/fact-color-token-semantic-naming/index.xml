@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-color-token-semantic-naming"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="269"
+  q="4.0">
+  <description>Semantic color tokens (--primary, --accent, --text-muted) are more durable than primitive-named tokens (--blue-500) because they survive brand changes, dark-mode mirroring, and theme variation without rename.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="131"/>
+    <level name="core"    file="chunks/core.md"    tokens="269"/>
+    <level name="full"    file="chunks/full.md"    tokens="458"/>
+  </projection>
+</atom>

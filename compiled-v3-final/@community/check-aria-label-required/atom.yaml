@@ -1,0 +1,19 @@
+id: "@community/check-aria-label-required"
+kind: check
+version: "1.0.0"
+description: "Validates that interactive elements have an accessible name (computed via ARIA spec: aria-labelledby → aria-label → associated label → text → title). Focuses on icon-only buttons/links, unlabeled inputs, and images without alt."
+domain: accessibility
+content_hash: "sha256:1de74c1f0efee59a5f6b9c081ed32b37d7718d33e4e43dcfc5fad35a8df74c38"
+tokens:
+  summary: 71
+  core: 583
+  full: 673
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-aria-label-required" }
+created_at: "2026-05-07"

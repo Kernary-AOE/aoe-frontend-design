@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-ai-slop-aesthetics"
+relations:
+  - type: related
+    target: "@impeccable/anti-pattern-ai-slop-palette"
+  - type: related
+    target: "@community/anti-pattern-ai-generated-ui"
+  - type: related
+    target: "@impeccable/principle-distinctiveness"

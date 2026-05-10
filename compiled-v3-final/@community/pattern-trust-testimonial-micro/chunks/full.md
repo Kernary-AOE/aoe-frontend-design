@@ -1,0 +1,125 @@
+# TrustTestimonialMicro [pattern] v1.0.0
+A single inline testimonial — one sentence, one 36px avatar, one attribution — with a 3px primary-color left border accent. Placed contextually beside pricing to answer 'has someone like me succeeded?'
+domain: frontend-design
+
+## Label
+Testimonial Micro-Quote
+
+## Problem
+Full testimonial carousels require interaction and are often skipped. Visitors beside the pricing block need a single peer validation to overcome the final conversion hesitation.
+
+## Solution
+A <figure> + <figcaption> component: 36px circular avatar, italic quote at 0.875rem, attribution block at 0.75rem muted. Left border of 3px solid primary-color distinguishes it from generic card surfaces.
+
+## Structure
+```
+    .testimonial-micro {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1.25rem;
+      background: hsl(var(--surface));
+      border: 1px solid hsl(var(--border));
+      border-left: 3px solid hsl(var(--primary));
+      border-radius: 0 0.5rem 0.5rem 0;
+      max-width: 36rem;
+    }
+
+    .testimonial-micro .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .testimonial-micro .quote {
+      font-size: 0.875rem;
+      color: hsl(var(--foreground));
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .testimonial-micro .attribution {
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+      font-style: normal;
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    <!-- HTML -->
+    <figure class="testimonial-micro">
+      <img
+        class="avatar"
+        src="/avatars/sarah-k.jpg"
+        alt="Sarah K., Head of Finance at Meridian"
+      />
+      <figcaption>
+        <p class="quote">"Setup took under 10 minutes and we were earning the same day."</p>
+        <span class="attribution">Sarah K. — Head of Finance, Meridian</span>
+      </figcaption>
+    </figure>
+  
+```
+
+## Label
+Testimonial Micro-Quote
+
+## Problem
+Full testimonial carousels require interaction and are often skipped. Visitors beside the pricing block need a single peer validation to overcome the final conversion hesitation.
+
+## Solution
+A <figure> + <figcaption> component: 36px circular avatar, italic quote at 0.875rem, attribution block at 0.75rem muted. Left border of 3px solid primary-color distinguishes it from generic card surfaces.
+
+## Structure
+```
+    .testimonial-micro {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1.25rem;
+      background: hsl(var(--surface));
+      border: 1px solid hsl(var(--border));
+      border-left: 3px solid hsl(var(--primary));
+      border-radius: 0 0.5rem 0.5rem 0;
+      max-width: 36rem;
+    }
+
+    .testimonial-micro .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .testimonial-micro .quote {
+      font-size: 0.875rem;
+      color: hsl(var(--foreground));
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .testimonial-micro .attribution {
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+      font-style: normal;
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    <!-- HTML -->
+    <figure class="testimonial-micro">
+      <img
+        class="avatar"
+        src="/avatars/sarah-k.jpg"
+        alt="Sarah K., Head of Finance at Meridian"
+      />
+      <figcaption>
+        <p class="quote">"Setup took under 10 minutes and we were earning the same day."</p>
+        <span class="attribution">Sarah K. — Head of Finance, Meridian</span>
+      </figcaption>
+    </figure>
+  
+```

@@ -1,0 +1,23 @@
+id: "@community/rule-slo-required-for-prod"
+kind: rule
+version: "1.0.0"
+description: "Every user-facing service in production must publish at least one Service Level Objective (SLO) — a numeric target (99.9% / 99.95% / 99.99%) for a specific Service Level Indicator (SLI) measured over a rolling window (typically 28 or 30 days). No SLO = no production launch."
+domain: ops-observability
+content_hash: "sha256:52de60897d9ff429f7b266d5a2d0b6268fb49b82f42adee60844c0f847870902"
+tokens:
+  summary: 231
+  core: 642
+  full: 1339
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-three-pillars-observability" }
+  - { type: related, target: "@community/pattern-error-budget-policy" }
+  - { type: related, target: "@community/anti-pattern-alert-on-everything" }
+  - { type: related, target: "@community/fact-percentile-vs-mean" }
+  - { type: derived-from, target: "@community/principle-three-pillars-observability" }
+created_at: "2026-05-07"

@@ -1,0 +1,21 @@
+id: "@community/constraint-max-color-roles-7"
+kind: constraint
+version: "1.0.0"
+description: "A single product-level design system should expose at most 7 semantic color roles: bg, surface, border, text, text-muted, primary, accent. Additional roles (success/warning/danger/info) belong to a separate `status` namespace and don't count toward the 7."
+domain: visual-design
+content_hash: "sha256:3019c1dc827c1907cf5109766be946d270fc5684c58f6b0649ab1ef00d17700b"
+tokens:
+  summary: 79
+  core: 408
+  full: 518
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/type-design-token" }
+  - { type: related, target: "@community/taxonomy-typography-roles" }
+  - { type: related, target: "@community/constraint-brand-hue-required" }
+created_at: "2026-05-07"

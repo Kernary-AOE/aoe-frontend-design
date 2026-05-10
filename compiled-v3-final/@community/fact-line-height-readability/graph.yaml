@@ -1,0 +1,8 @@
+atom: "@community/fact-line-height-readability"
+relations:
+  - type: related
+    target: "@community/fact-optimal-line-length"
+  - type: related
+    target: "@community/fact-density-vs-comfort-tradeoff"
+  - type: related
+    target: "@community/fact-type-scale-modular"

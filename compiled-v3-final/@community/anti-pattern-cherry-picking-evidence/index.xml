@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-cherry-picking-evidence"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="194"
+  q="4.0">
+  <description>Selecting only the research data points that support a predetermined design direction while ignoring contradictory signals — creating false confidence in a chosen solution while real problems go unaddressed.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="70"/>
+    <level name="core"    file="chunks/core.md"    tokens="194"/>
+    <level name="full"    file="chunks/full.md"    tokens="319"/>
+  </projection>
+</atom>

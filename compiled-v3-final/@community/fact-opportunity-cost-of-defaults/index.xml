@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-opportunity-cost-of-defaults"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="220"
+  q="4.0">
+  <description>Every design default accepted without questioning has a hidden opportunity cost: the distinctive visual identity that a deliberate choice would have created. Accepting Tailwind&apos;s violet-500, Inter, and rounded-2xl simultaneously forfeits three independent opportunities to differentiate.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="187"/>
+    <level name="core"    file="chunks/core.md"    tokens="220"/>
+    <level name="full"    file="chunks/full.md"    tokens="286"/>
+  </projection>
+</atom>

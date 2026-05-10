@@ -1,0 +1,46 @@
+task_type: command-palette
+parent: interaction
+description: "Command palette (Cmd+K) with fuzzy search, keyboard navigation, and contextual action groups."
+trigger_keywords:
+  - "command palette"
+  - "cmd+k"
+  - "command k"
+  - "命令面板"
+  - "快捷命令"
+  - "cmdk"
+  - "spotlight"
+  - "quick search"
+  - "global search"
+  - "command bar"
+default_register_pool:
+  - school: linear
+    weight: 0.45
+  - school: raycast
+    weight: 0.35
+  - school: notion
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-command-palette"
+  - "@community/pattern-command-palette-modal"
+  - "@community/template-cmd-palette-shell"
+  - "@community/pattern-tx-cmdk-fuzzy-search"
+  - "@community/template-modal-focus-trap"
+  - "@community/constraint-focus-trap-modal"
+  - "@community/pattern-kbd-shortcut-chip"
+recommended_motion:
+  - "@impeccable/template-spring-config"
+  - "@impeccable/template-easing-curves"
+  - "@community/pattern-motion-microinteraction"
+  - "@community/template-framer-motion-pattern"
+forbidden_atoms:
+  - "@impeccable/persona-warm-institutional"
+  - "@community/template-animated-mesh-background"
+quality_checks:
+  - "Cmd+K (or Ctrl+K) must open palette globally, Escape must close"
+  - "Fuzzy search must match substrings and show highlighted matches"
+  - "Arrow keys must navigate results; Enter must execute selected command"
+  - "Results must be grouped by category with visual section labels"
+  - "Empty state must suggest frequently used or recent commands"
+  - "Keyboard shortcut chips must be shown next to relevant commands"
+  - "Palette must open in under 50ms — no loading state for empty query"
+  - "Focus must return to previous element on close"

@@ -1,0 +1,21 @@
+id: "@community/rule-permissions-human-readable"
+kind: rule
+version: "1.0.0"
+description: "Permission and role labels in UI must describe what the user can do in plain language, not surface technical flag names, database identifiers, or internal role codes."
+domain: frontend-design
+content_hash: "sha256:629670d714858b9a0fbc45fb7cd8a90755d6022ec26646464b8d99e2f7d357d3"
+tokens:
+  summary: 58
+  core: 63
+  full: 168
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-plain-language-over-jargon" }
+  - { type: related, target: "@community/rule-active-voice-in-ui-copy" }
+  - { type: related, target: "@community/fact-recognition-over-recall" }
+created_at: "2026-05-07"

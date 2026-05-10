@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-landing-navigation"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1633"
+  q="4.0">
+  <description>Two landing nav structural variants — floating rounded bar (open-react-template: top: 1rem, border-radius: 1rem, backdrop-filter: blur(12px), h-14) and classic sticky full-width bar (shadcn: top: 0, backdrop-filter: blur(8px), h-16) — plus mobile Sheet drawer hamburger pattern.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="1633"/>
+    <level name="full"    file="chunks/full.md"    tokens="3184"/>
+  </projection>
+</atom>

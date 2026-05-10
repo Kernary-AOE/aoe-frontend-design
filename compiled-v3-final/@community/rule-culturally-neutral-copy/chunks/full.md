@@ -1,0 +1,34 @@
+# CulturallyNeutralCopy [rule] v1.0.0
+> UI copy must avoid idioms, culturally specific metaphors, or humor that may not translate across cultures or languages. Plain, direct descriptions that convey meaning without cultural context are required for any product with international users.
+domain: frontend-design
+
+## Severity
+warning
+
+## Applies When
+Writing any UI copy that will be seen by users whose primary language may not be English or who come from non-English-speaking cultural backgrounds.
+
+## Anti Pattern
+- 'Knock it out of the park' — sports metaphor opaque to many international users
+- 'Piece of cake' — culturally specific success idiom
+- Puns that depend on English phonetics
+
+## Use Instead
+Describe actions and outcomes in plain, literal terms: 'Complete your setup', 'Great — your profile is ready', 'This action cannot be undone'.
+
+## Rationale
+Idioms and metaphors often do not translate literally and can confuse or exclude non-native speakers. They also create translation debt — a localized idiom requires finding a culturally equivalent phrase, not a direct translation.
+
+## Severity
+warning
+
+## Applies When
+Writing any UI copy that will be seen by users whose primary language may not be English or who come from non-English-speaking cultural backgrounds.
+
+## Anti Pattern
+- 'Knock it out of the park' — sports metaphor opaque to many international users
+- 'Piece of cake' — culturally specific success idiom
+- Puns that depend on English phonetics
+
+## Use Instead
+Describe actions and outcomes in plain, literal terms: 'Complete your setup', 'Great — your profile is ready', 'This action cannot be undone'.

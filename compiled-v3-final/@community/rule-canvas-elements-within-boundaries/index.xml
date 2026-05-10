@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-canvas-elements-within-boundaries"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="150"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="89"/>
+    <level name="core"    file="chunks/core.md"    tokens="150"/>
+    <level name="full"    file="chunks/full.md"    tokens="269"/>
+  </projection>
+</atom>

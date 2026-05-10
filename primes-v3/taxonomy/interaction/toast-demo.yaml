@@ -1,0 +1,68 @@
+task_type: toast-demo
+parent: interaction
+description: "Toast notification component demo showing multiple states (success, error, warning, info) with spring-physics motion and stagger."
+trigger_keywords:
+  - "toast"
+  - "toast component"
+  - "notification toast"
+  - "toast demo"
+  - "toast 组件"
+  - "toast 通知"
+  - "几种状态"
+  - "notification states"
+  - "snackbar"
+  - "alert notification"
+default_register_pool:
+  - school: linear
+    weight: 0.4
+  - school: vercel-clean
+    weight: 0.35
+  - school: framer
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-toast-stack"
+  - "@community/pattern-interaction-states"
+  - "@community/rule-animation-duration"
+  - "@community/constraint-reduced-motion"
+  - "@community/fact-duration-perception-thresholds"
+  # MANDATORY motion atoms — agent must Read full.md of each
+  - "@impeccable/template-spring-config"
+  - "@impeccable/template-easing-curves"
+  - "@community/pattern-stagger-reveal"
+  - "@community/template-fade-stagger"
+  - "@community/fact-stagger-feel-organic"
+recommended_motion:
+  - "@impeccable/template-spring-config"
+  - "@impeccable/template-easing-curves"
+  - "@community/pattern-stagger-reveal"
+  - "@community/template-fade-stagger"
+  - "@community/pattern-motion-microinteraction"
+  - "@community/fact-animation-curve-overshoot"
+  - "@community/fact-easing-cubic-bezier"
+forbidden_atoms:
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/anti-pattern-decorative-spinning"
+  - "@community/anti-pattern-no-bounce-everything"
+max_atoms_per_axis:
+  register: 1
+  pattern: 2
+  motion: 5
+  typography: 1
+  color: 1
+  rules: 2
+quality_checks:
+  - "MUST contain at least 4 named @keyframes (toast-in / drain-progress / spinner / slide-out)"
+  - "MUST use a custom cubic-bezier curve (not just default 'ease' / 'ease-out')"
+  - "MUST stagger toast entry by 60-100ms via :nth-child or animation-delay variables"
+  - "MUST include @media (prefers-reduced-motion: reduce) fallback"
+  - "MUST cover at least 5 toast variants: success / error / warning / info / loading"
+  - "Auto-dismiss timer must be visible (progress bar or timer ring)"
+  - "Toast must enter with spring physics — cubic-bezier or spring config required"
+  - "Multiple toasts must stack with stagger delay (50-100ms between items)"
+  - "Easing curves must be explicitly defined, not CSS 'ease' default"
+  - "Toast dismiss animation must mirror entry (not abrupt opacity 0)"
+  - "Success/Error/Warning/Info states must be visually distinct"
+  - "Auto-dismiss timer must pause on hover"
+  - "Reduced-motion users must get instant appear/disappear without spring"
+  - "Maximum 3-4 toasts visible simultaneously to avoid stack overflow"
+  - "Each toast must be individually dismissible"

@@ -1,0 +1,22 @@
+id: "@community/fact-contrast-ratio-aa-vs-aaa"
+kind: fact
+version: "1.0.0"
+description: "WCAG 2.2 specifies two contrast tiers: AA (4.5:1 normal text, 3:1 large) is the legal compliance floor; AAA (7:1 normal, 4.5:1 large) is the recommended target for sustained reading and reflects the publishing-industry contrast standard."
+content_hash: "sha256:17fd63dfb0688acf7bd15cbdb719d4214fdb3a6ea28b6400f109d3f5ea2e4e00"
+tokens:
+  summary: 164
+  core: 384
+  full: 661
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@w3c/fact-wcag-contrast-aa" }
+  - { type: related, target: "@w3c/source-wcag-22" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/constraint-accessibility-aa-minimum" }
+  - { type: related, target: "@community/fact-oklch-perceptual-uniform" }
+created_at: "2026-05-07"

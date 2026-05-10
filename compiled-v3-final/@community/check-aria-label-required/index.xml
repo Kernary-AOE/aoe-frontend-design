@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-aria-label-required"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="583"
+  q="4.0">
+  <description>Validates that interactive elements have an accessible name (computed via ARIA spec: aria-labelledby → aria-label → associated label → text → title). Focuses on icon-only buttons/links, unlabeled inputs, and images without alt.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="583"/>
+    <level name="full"    file="chunks/full.md"    tokens="673"/>
+  </projection>
+</atom>

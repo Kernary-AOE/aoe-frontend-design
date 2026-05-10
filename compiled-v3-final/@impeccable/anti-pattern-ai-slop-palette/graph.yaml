@@ -1,0 +1,10 @@
+atom: "@impeccable/anti-pattern-ai-slop-palette"
+relations:
+  - type: related
+    target: "@impeccable/counter-example-inter-purple-dark"
+  - type: related
+    target: "@impeccable/constraint-font-blacklist"
+  - type: related
+    target: "@community/term-oklch"
+  - type: related
+    target: "@community/value-brand-hue"

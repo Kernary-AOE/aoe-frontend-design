@@ -1,0 +1,14 @@
+<atom
+  id="@community/method-rule-authoring-checklist"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="101"
+  q="4.0">
+  <description>Nine-point verification checklist for any new or updated design rule file — ensures every rule has a single purpose, clear activation condition, concrete examples, and anti-patterns before it is merged.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="101"/>
+    <level name="full"    file="chunks/full.md"    tokens="135"/>
+  </projection>
+</atom>

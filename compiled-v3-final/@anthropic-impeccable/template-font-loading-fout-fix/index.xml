@@ -1,0 +1,14 @@
+<atom
+  id="@anthropic-impeccable/template-font-loading-fout-fix"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="331"
+  q="4.0">
+  <description>A CSS @font-face pattern that uses `font-display: swap` with a metric-adjusted fallback font to minimize layout shift when the custom font loads. The fallback uses size-adjust, ascent-override, and descent-override to match the custom font&apos;s visual footprint.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="81"/>
+    <level name="core"    file="chunks/core.md"    tokens="331"/>
+    <level name="full"    file="chunks/full.md"    tokens="440"/>
+  </projection>
+</atom>

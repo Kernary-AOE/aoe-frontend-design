@@ -1,0 +1,36 @@
+rule NavigationFlatWhenShallow {
+  id: "@community/rule-navigation-flat-when-shallow"
+  version: "1.0.0"
+
+  label: "Use Flat Navigation When the Structure is Shallow"
+  domain: frontend-design
+
+  statement: "When a product or section has ≤ 7 primary destinations, use flat top-level navigation (all items visible at once in a horizontal nav bar, tab bar, or sidebar list) rather than grouping them behind nested menus or accordions. Nesting structure that does not exist adds navigation overhead without benefit."
+
+  rationale: "Every level of nesting adds a click and a cognitive load unit. Hick's Law: decision time grows logarithmically with the number of choices. For shallow structures (≤ 7 items), flat navigation is faster and more discoverable than hierarchical nesting. Users can see all options simultaneously, applying recognition over recall."
+
+  applies-when: "designing primary navigation for any section with ≤ 7 top-level destinations"
+
+  verify-by: "Count primary nav items. If ≤ 7, they should all be visible at the top level — no group headers or accordion wrappers needed."
+
+  threshold: "7 items — use flat navigation; > 7 items — consider grouping with clear section headers"
+
+  examples: [
+    "SaaS app with 5 sections (Dashboard, Projects, Team, Billing, Settings) → flat sidebar list, no accordions",
+    "6-tab admin panel → horizontal tab bar, all tabs visible simultaneously",
+    "3-item mobile nav → bottom tab bar with 3 icon+label tabs",
+    "Bad: 5 items wrapped in 2 accordion groups 'Main' and 'Admin' — unnecessary nesting",
+  ]
+
+  severity: warning
+
+  related: [
+    @community/pattern-tab-bar-bottom,
+    @community/pattern-sidebar-collapsible,
+    @community/anti-pattern-deep-branching-nav,
+    @community/anti-pattern-ios-hamburger-menu,
+    @community/example-notion-sidebar,
+    @community/example-vercel-sidebar,
+    @community/principle-navigation-scope-taxonomy,
+  ]
+}

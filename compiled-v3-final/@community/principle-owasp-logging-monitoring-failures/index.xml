@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-owasp-logging-monitoring-failures"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="421"
+  q="4.0">
+  <description>OWASP Top 10 A09:2021 — insufficient logging and monitoring means breaches go undetected. The average time to detect a breach was 207 days in 2023 (IBM Cost of a Data Breach Report). Without actionable logs, incident response is impossible.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="169"/>
+    <level name="core"    file="chunks/core.md"    tokens="421"/>
+    <level name="full"    file="chunks/full.md"    tokens="706"/>
+  </projection>
+</atom>

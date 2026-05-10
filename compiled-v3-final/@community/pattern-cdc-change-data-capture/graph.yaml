@@ -1,0 +1,12 @@
+atom: "@community/pattern-cdc-change-data-capture"
+relations:
+  - type: related
+    target: "@community/principle-idempotent-writes"
+  - type: related
+    target: "@community/rule-event-schema-versioning"
+  - type: related
+    target: "@community/anti-pattern-batch-only-pipelines"
+  - type: compatible
+    target: "@community/rule-event-schema-versioning"
+  - type: derived-from
+    target: "@community/principle-idempotent-writes"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-icu-message-format"
+  kind="knowledge"
+  version="1.0.0"
+  domain="i18n"
+  tokens="754"
+  q="4.0">
+  <description>ICU MessageFormat is the industry-standard syntax for parameterized translatable strings. It encodes plural rules, gender selection, ordinal numbers, dates, numbers, and nested choices in a single template that translators own end-to-end.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="72"/>
+    <level name="core"    file="chunks/core.md"    tokens="754"/>
+    <level name="full"    file="chunks/full.md"    tokens="1548"/>
+  </projection>
+</atom>

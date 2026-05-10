@@ -1,0 +1,25 @@
+id: "@community/rule-whisper-shadows"
+kind: rule
+version: "1.0.0"
+description: "Card shadow opacity must stay between 4% and 12% across the elevation scale — shadows visible at arm's length are too strong; strong shadows (≥15% opacity) are prohibited in light-mode card surfaces."
+domain: frontend-design
+content_hash: "sha256:06196c0c4ebe6efec635fd9b1f94380eaa549308991bd77909aa612de52a41a5"
+tokens:
+  summary: 297
+  core: 383
+  full: 617
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-no-pure-black-text" }
+  - { type: related, target: "@community/rule-chart-never-alone" }
+  - { type: related, target: "@community/pattern-card-component" }
+  - { type: related, target: "@community/example-vercel-dashboard" }
+  - { type: related, target: "@community/example-shadcn-dashboard" }
+  - { type: related, target: "@community/rule-no-heavy-shadows-per-component" }
+  - { type: related, target: "@community/principle-white-space-as-design-element" }
+created_at: "2026-05-07"

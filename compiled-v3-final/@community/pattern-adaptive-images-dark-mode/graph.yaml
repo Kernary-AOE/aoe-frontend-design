@@ -1,0 +1,16 @@
+atom: "@community/pattern-adaptive-images-dark-mode"
+relations:
+  - type: related
+    target: "@community/pattern-color-dark-mode-pairing"
+  - type: related
+    target: "@community/rule-color-dark-mode-cascade"
+  - type: related
+    target: "@impeccable/template-oklch-dark-mode-cascade"
+  - type: related
+    target: "@community/rule-functional-image-alt"
+  - type: related
+    target: "@community/rule-informative-image-alt"
+  - type: related
+    target: "@community/check-image-optimization"
+  - type: related
+    target: "@community/check-focus-visible"

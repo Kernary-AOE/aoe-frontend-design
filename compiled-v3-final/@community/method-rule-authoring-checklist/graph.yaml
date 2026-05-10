@@ -1,0 +1,8 @@
+atom: "@community/method-rule-authoring-checklist"
+relations:
+  - type: related
+    target: "@community/method-design-qa-pre-ship"
+  - type: related
+    target: "@community/method-a11y-audit"
+  - type: related
+    target: "@community/rule-design-md-front-matter"

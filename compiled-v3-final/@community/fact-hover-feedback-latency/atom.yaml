@@ -1,0 +1,24 @@
+id: "@community/fact-hover-feedback-latency"
+kind: fact
+version: "1.0.0"
+description: "指针 hover / focus / tap 后视觉反馈必须在 100ms 内开始。超过 200ms 用户的认知开始怀疑'我点中了吗 / 服务器卡了吗'。100-200ms 是'勉强可接受'的灰色地带——产品级品质要求 < 100ms。"
+content_hash: "sha256:95db750455f483c209a0888bad395c0f86e6215ca245e9e28d32036f72b36a24"
+tokens:
+  summary: 106
+  core: 413
+  full: 834
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-duration-perception-thresholds" }
+  - { type: related, target: "@community/fact-easing-cubic-bezier" }
+  - { type: related, target: "@community/fact-easing-mood-mapping" }
+  - { type: related, target: "@community/fact-motion-as-feedback" }
+  - { type: related, target: "@community/pattern-hover-lift" }
+  - { type: related, target: "@community/pattern-button-press-feedback" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+created_at: "2026-05-07"

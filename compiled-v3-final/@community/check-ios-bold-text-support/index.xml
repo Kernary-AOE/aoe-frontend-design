@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-ios-bold-text-support"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="325"
+  q="4.0">
+  <description>Verifies that custom-rendered text in an iOS app responds to the Bold Text accessibility setting. Standard SwiftUI text styles pass automatically; custom UIFont or manual font weight assignments must explicitly observe legibilityWeight.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="74"/>
+    <level name="core"    file="chunks/core.md"    tokens="325"/>
+    <level name="full"    file="chunks/full.md"    tokens="575"/>
+  </projection>
+</atom>

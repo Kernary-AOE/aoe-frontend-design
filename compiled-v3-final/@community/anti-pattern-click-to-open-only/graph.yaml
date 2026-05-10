@@ -1,0 +1,12 @@
+atom: "@community/anti-pattern-click-to-open-only"
+relations:
+  - type: related
+    target: "@community/counter-example-div-onclick-dropdown"
+  - type: related
+    target: "@community/anti-pattern-hover-only-interaction"
+  - type: related
+    target: "@community/anti-pattern-breaking-keyboard-flow"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/example-radix-dropdown"

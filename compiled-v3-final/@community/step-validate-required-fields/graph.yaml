@@ -1,0 +1,14 @@
+atom: "@community/step-validate-required-fields"
+relations:
+  - type: related
+    target: "@community/step-debounce-search-input"
+  - type: related
+    target: "@community/check-form-validation-inline"
+  - type: related
+    target: "@community/check-form-label-associated"
+  - type: related
+    target: "@community/rule-preserve-user-input-on-error"
+  - type: related
+    target: "@community/rule-actionable-error-messages"
+  - type: related
+    target: "@community/category-form-input-states"

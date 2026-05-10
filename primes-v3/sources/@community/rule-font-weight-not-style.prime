@@ -1,0 +1,40 @@
+rule FontWeightNotStyle {
+  id: "@community/rule-font-weight-not-style"
+  version: "1.0.0"
+
+  applies-to: "@community/type-html-artifact"
+
+  domain: frontend-design
+
+  description: "Font weight variation MUST be expressed via `font-weight` values (400, 510, 700) using a typeface that ships those weights — never via `font-style: oblique` or browser-synthesized faux-bold (`font-weight: bold` on a single-weight font)."
+
+  claim: "CSS MUST NOT rely on browser-synthesized bold or faux-italic. Every `font-weight` value used in CSS must correspond to an explicitly loaded `@font-face` block or a variable-font weight range."
+
+  severity: high
+
+  rationale: "Browser-synthesized bold works by algorithmically slanting and widening glyph outlines — it produces visibly distorted letterforms with uneven stroke weights and poor optical balance. Type designers spend years perfecting weight transitions; the browser's synthetic substitution destroys that work. Similarly, CSS `font-style: italic` on a sans-serif font that ships no italic causes the browser to slant upright glyphs into a fake oblique — missing the humanist curves of a true italic cut. The rule requires loading the actual weight file."
+
+  remediation: [
+    "Load only the weights you actually use in @font-face (woff2 subset by weight).",
+    "For variable fonts: declare `font-weight: 100 900;` in the @font-face range and let the single file handle all weights.",
+    "Avoid `font-weight: bold` as a shorthand — use numeric values (700) so you know exactly what weight is requested.",
+    "Check browser DevTools font panel for 'synthesized bold' warnings — these are hard failures.",
+  ]
+
+  exceptions: [
+    {
+      case: "System font stacks",
+      allowed-when: "System-ui / -apple-system — the OS provides all weights natively; synthesis does not occur.",
+    }
+  ]
+
+  related: [
+    @community/rule-font-feature-settings,
+    @community/rule-font-loading-fout-foit,
+    @community/fact-optical-sizing,
+    @community/anti-pattern-thin-weight-body,
+    @community/example-atlantic-longform,
+    @community/rule-body-readability,
+    @community/principle-typography-hierarchy,
+  ]
+}

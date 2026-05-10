@@ -1,0 +1,14 @@
+<atom
+  id="@community/feedback-a11y-audit-v1"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="419"
+  q="4.0">
+  <description>Accumulated execution feedback for @community/method-a11y-audit version 1.x. Summarizes observed success rates, common failure modes, and confidence adjustments derived from real audit runs.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="419"/>
+    <level name="full"    file="chunks/full.md"    tokens="419"/>
+  </projection>
+</atom>

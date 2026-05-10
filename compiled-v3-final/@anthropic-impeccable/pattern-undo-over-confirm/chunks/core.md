@@ -1,0 +1,47 @@
+# UndoOverConfirm [pattern] v1.0.0
+For reversible destructive actions (delete, archive, remove), apply the action immediately and show an undo toast with a countdown window. Users click through confirmation dialogs mindlessly; undo provides real safety by making the action instantly reversible while preserving interaction flow.
+domain: frontend-design
+
+## Label
+Undo Toast Over Confirmation Dialog for Destructive Actions
+
+## Problem
+Confirmation dialogs ('Are you sure you want to delete this?') are designed to prevent accidental destructive actions. In practice, users have seen thousands of these dialogs and click through them automatically — the confirmation fails at its safety goal while adding friction to the intentional case. Undo is the correct alternative for reversible operations.
+
+## Solution
+Remove the item from the UI immediately on user action (optimistic removal). Display a toast with the action label and an Undo button, with a 5-7 second countdown. If the user clicks Undo, restore the item. If the toast times out or is dismissed, commit the deletion. For truly irreversible operations (account deletion, billing changes), retain a confirmation step.
+
+## Structure
+```
+    <!-- Immediate removal + undo toast pattern -->
+    <script>
+    async function deleteItem(id) {
+      // 1. Optimistic removal
+      removeFromDOM(id);
+
+      // 2. Show undo toast
+      const undone = await showUndoToast('Project deleted', { timeout: 6000 });
+
+      if (undone) {
+        // 3a. User clicked Undo — restore
+        restoreToDOM(id);
+      } else {
+        // 3b. Toast expired — commit deletion
+        await api.delete(`/items/${id}`);
+      }
+    }
+    </script>
+
+    <!-- Toast with countdown -->
+    <div role="status" aria-live="polite" class="toast">
+      <p>Project deleted</p>
+      <button type="button" class="toast__undo">Undo</button>
+      <div class="toast__timer" style="animation-duration: 6s"></div>
+    </div>
+  
+```
+
+## When To Use Confirm Instead
+- Truly irreversible operations: account deletion, data export, billing changes
+- Batch destructive operations affecting many items where the scope needs explicit acknowledgment
+- Actions with cascading consequences the user may not be aware of

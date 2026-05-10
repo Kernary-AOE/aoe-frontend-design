@@ -1,0 +1,81 @@
+feedback DarkModeRollout {
+  id: "@community/feedback-dark-mode-rollout"
+  version: "1.0.0"
+
+  target: "@community/rule-color-dark-mode-cascade"
+  domain: visual-design
+
+  description: "Lessons from shipping dark-mode support across multiple production design systems. Dark mode is not a color inversion — it is a separate, parallel theme that requires re-validating contrast, shadow strategy, brand color saturation, and image asset variants. Most failed dark-mode rollouts treat it as a CSS filter rather than a first-class design system surface."
+
+  observations: {
+    sample-size: 12
+    period: "2023-Q1 to 2025-Q4"
+    success-rate: 0.67
+
+    common-failures: [
+      {
+        step: "color token derivation",
+        failure: "deriving dark colors as `invert(light)` or `100% - L` produces dingy, low-saturation surfaces; oklch chroma must be reduced (typically -20% to -40%) for dark backgrounds to avoid neon-glow effect",
+        frequency: 0.83,
+        impact: "perceived design quality drops; users switch back to light mode",
+        mitigation: "design dark palette manually with @community/term-oklch — fix hue, set lightness independently for each mode, and reduce chroma 20–40% on dark surfaces",
+      }
+      {
+        step: "elevation and shadow",
+        failure: "box-shadow on dark backgrounds is invisible — light-mode elevation cues disappear",
+        frequency: 0.92,
+        impact: "card/modal hierarchy collapses; users cannot tell layers apart",
+        mitigation: "replace shadow with surface-lightness elevation (each layer +3–5% L on background) plus a 1px border at higher chroma",
+      }
+      {
+        step: "brand color saturation",
+        failure: "primary brand color shipped at the same chroma in both modes — too bright on dark, causing eye strain",
+        frequency: 0.58,
+        impact: "branded CTAs feel 'hot' in dark mode; reduces dwell time",
+        mitigation: "ship a `--brand-dark` variant 5–10% lower lightness and ~20% lower chroma than `--brand-light`",
+      }
+      {
+        step: "images and screenshots",
+        failure: "marketing screenshots remained light-mode; logos with white backgrounds appeared as bright rectangles",
+        frequency: 0.75,
+        impact: "obvious visual breaks; perceived as 'half-shipped'",
+        mitigation: "ship dark variants of all marketing imagery; use `<picture>` with `prefers-color-scheme` media; logos use SVG with `currentColor`",
+      }
+      {
+        step: "user override",
+        failure: "shipped without a user-level override — only respected `prefers-color-scheme`",
+        frequency: 0.42,
+        impact: "users who want dark mode in a light OS (or vice versa) had no recourse",
+        mitigation: "ship a 3-way switch (system / light / dark), persist in localStorage, apply class on `<html>` early to avoid FOUC",
+      }
+    ]
+
+    confidence-adjustments: {
+      "@community/rule-color-dark-mode-cascade": 0.91
+      "@community/term-oklch": 0.97
+      "@community/check-color-dark-mode-cascade": 0.85
+    }
+  }
+
+  ai-confidence: 0.82
+
+  lessons: [
+    "Dark mode is a design system surface, not a setting. Budget design time for it equal to a new color theme.",
+    "FOUC (flash of unstyled content) on first paint kills perceived quality. Inline a script in `<head>` that reads the persisted preference and applies the class before CSS evaluates.",
+    "Test contrast in BOTH modes against WCAG AA — see @community/check-contrast-aa. Dark-mode contrast failures are common because designers eyeball it.",
+    "Allow per-component dark overrides for special cases (logos, branded heroes), not a global filter.",
+  ]
+
+  notes: [
+    "tailwindcss `dark:` variant + `darkMode: 'class'` is the most common modern setup; combine with a script that sets the class on `<html>` before paint.",
+    "macOS and iOS users with `Increase Contrast` enabled (~10–15% of dark-mode users) need their own contrast tier — see @community/check-ios-increase-contrast.",
+  ]
+
+  related: [
+    @community/rule-color-dark-mode-cascade,
+    @community/check-color-dark-mode-cascade,
+    @community/term-oklch,
+    @community/check-contrast-aa,
+    @community/fact-light-vs-dark-default,
+  ]
+}

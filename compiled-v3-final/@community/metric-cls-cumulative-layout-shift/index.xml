@@ -1,0 +1,14 @@
+<atom
+  id="@community/metric-cls-cumulative-layout-shift"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="693"
+  q="4.0">
+  <description>CLS is one of Google&apos;s three Core Web Vitals (alongside LCP and INP). It measures the visual stability of a page by summing the impact-fraction × distance-fraction of every unexpected layout shift during the page&apos;s lifetime. A &apos;shift&apos; is any visible element that moves position between two rendered frames without the user initiating it. High CLS makes pages feel unstable and causes mis-clicks (e.g. user taps an ad that just appeared where a button was).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="134"/>
+    <level name="core"    file="chunks/core.md"    tokens="693"/>
+    <level name="full"    file="chunks/full.md"    tokens="1253"/>
+  </projection>
+</atom>

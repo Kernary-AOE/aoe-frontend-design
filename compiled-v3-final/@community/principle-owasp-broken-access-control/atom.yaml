@@ -1,0 +1,21 @@
+id: "@community/principle-owasp-broken-access-control"
+kind: principle
+version: "1.0.0"
+description: "OWASP Top 10 A01:2021 — most widespread web application vulnerability category. Failures restricting authenticated users to only their own resources and actions."
+domain: security
+content_hash: "sha256:a932d5ba4ceb0789b6013566711b1aec5cfceb1a103b21a098db62ff8103eec6"
+tokens:
+  summary: 117
+  core: 346
+  full: 575
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-auth-failures" }
+  - { type: related, target: "@community/principle-owasp-insecure-design" }
+  - { type: related, target: "@community/rule-csrf-token-state-changing" }
+created_at: "2026-05-07"

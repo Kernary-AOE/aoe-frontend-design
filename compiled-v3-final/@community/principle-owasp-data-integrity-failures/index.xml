@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-owasp-data-integrity-failures"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="398"
+  q="4.0">
+  <description>OWASP Top 10 A08:2021 (merged Insecure Deserialization + Software and Data Integrity Failures) — code and infrastructure that does not protect against integrity violations in software updates, critical data, and CI/CD pipelines.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="145"/>
+    <level name="core"    file="chunks/core.md"    tokens="398"/>
+    <level name="full"    file="chunks/full.md"    tokens="660"/>
+  </projection>
+</atom>

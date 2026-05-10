@@ -1,0 +1,21 @@
+id: "@impeccable/constraint-font-blacklist"
+kind: constraint
+version: "1.0.0"
+description: "A list of typefaces that are banned from use as the primary display or body typeface in impeccable-quality frontend design because they are statistically over-represented in AI-generated interfaces and commodity templates, producing undistinguished output."
+domain: visual-design
+content_hash: "sha256:f8341c4d381ba6f5b5b172569703ba120af64141086d07aeeeb6ac3ec080c4c4"
+tokens:
+  summary: 79
+  core: 346
+  full: 424
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/anti-pattern-ai-slop-palette" }
+  - { type: related, target: "@impeccable/persona-editorial" }
+  - { type: related, target: "@community/taxonomy-typography-roles" }
+created_at: "2026-05-07"

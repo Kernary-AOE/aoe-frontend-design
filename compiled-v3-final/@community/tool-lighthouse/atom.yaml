@@ -1,0 +1,20 @@
+id: "@community/tool-lighthouse"
+kind: tool
+version: "1.0.0"
+description: "Google Lighthouse is an automated auditing tool for web pages that measures performance, accessibility, best practices, SEO, and PWA metrics. The accessibility category runs axe-core plus additional checks and returns a 0–100 score with per-audit details."
+content_hash: "sha256:6bbdd3b6bd31d75373e05f680b0728df9d2823cc8a936d32573aa01d266b4cd9"
+tokens:
+  summary: 71
+  core: 342
+  full: 595
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/tool-axe-core" }
+  - { type: related, target: "@community/method-a11y-audit" }
+  - { type: related, target: "@community/metric-contrast-ratio" }
+created_at: "2026-05-07"

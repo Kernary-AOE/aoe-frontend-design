@@ -1,0 +1,24 @@
+id: "@community/fact-easing-mood-mapping"
+kind: fact
+version: "1.0.0"
+description: "不同 easing 曲线传达不同的情绪/品牌气质：linear=机械程序感、ease-out=自信收尾、cubic-bezier(0.16,1,0.3,1)=柔顺优雅、cubic-bezier(0.34,1.56,0.64,1)=调皮回弹、spring=弹性活泼、ease-in-out=对称从容。选择 easing 等于在选择'品牌的运动性格'。"
+content_hash: "sha256:ce7ec93f16d72b85ed1216a69ae5cbfb8b7873c70cd239c1a9521b183ff4a263"
+tokens:
+  summary: 160
+  core: 487
+  full: 927
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-easing-cubic-bezier" }
+  - { type: related, target: "@community/fact-duration-perception-thresholds" }
+  - { type: related, target: "@community/fact-motion-as-feedback" }
+  - { type: related, target: "@community/fact-motion-hierarchy" }
+  - { type: related, target: "@community/pattern-hover-lift" }
+  - { type: related, target: "@community/pattern-button-press-feedback" }
+  - { type: related, target: "@community/pattern-slide-up-reveal" }
+created_at: "2026-05-07"

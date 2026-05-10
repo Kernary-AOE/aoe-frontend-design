@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-thin-weight-body"
+relations:
+  - type: related
+    target: "@community/rule-font-weight-not-style"
+  - type: related
+    target: "@community/rule-body-readability"
+  - type: related
+    target: "@community/check-body-readability"

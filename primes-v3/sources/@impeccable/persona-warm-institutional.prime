@@ -1,0 +1,93 @@
+persona WarmInstitutional {
+  id: "@impeccable/persona-warm-institutional"
+  version: "1.0.0"
+
+  school: warm-institutional
+  domain: visual-design
+
+  description: "The visual language of public libraries, university presses, and museum websites: serif body text on cream paper, sans display, terracotta and forest accents, generous block padding, footer columns thick with credits and copyright. Authoritative without being corporate."
+
+  implies: {
+    font: {
+      display: "humanist-sans with civic gravitas — e.g. Inter, Söhne, Larsseit, Untitled Sans, ABC Diatype, GT America"
+      body: "transitional or old-style serif optimized for long reading — e.g. Source Serif 4, Tiempos Text, Charter, Lyon Text, Mercury Text, Adobe Caslon Pro"
+    }
+    color: {
+      temperature: "warm"
+      palette: "cream paper + terracotta + forest + ink — #f6f1e7 background, #c2440a terracotta, #2d4a32 forest, #1a1612 ink-brown (NOT pure black)"
+      background: "#f6f1e7 (cream/manila paper) or #f9f4ea (lighter cream) — pure #ffffff feels antiseptic in this persona"
+    }
+    density: "generous 1.7 — line-height 1.65 on serif body at 18-20px, paragraph spacing 1em, section padding 80-120px"
+    layout: "centered 720-840px reading column with wider feature blocks, footnotes as side-notes on desktop, multi-column footer (4-6 cols) with full institutional credits"
+    imagery: "archival photography, hand-drawn illustration, halftone treatments, library stamp aesthetics, no glossy product renders"
+    motion: "minimal — instant or 200ms linear, page-turn metaphors acceptable, no scroll-jacking, no hover-zoom on cards"
+  }
+
+  compatible: ["editorial", "warm", "refined", "civic", "long-form-reading"]
+  conflicts: ["brutalist", "vercel-clean", "stripe-fintech", "dense-pragmatist"]
+
+  example-brands: [
+    "The New York Times",
+    "The New York Review of Books",
+    "Smithsonian Magazine",
+    "MIT Media Lab",
+    "Stanford Encyclopedia of Philosophy",
+    "Library of Congress digital",
+    "Cooper Hewitt Smithsonian",
+    "Yale University Press",
+  ]
+
+  notes: [
+    "The defining move is serif body on cream + multi-column footer with copyright/funding credits. Drop the credits-thick footer and you've built a generic blog.",
+    "Don't pair cream backgrounds with neon accents or saturated blue links — institutional warmth dies the moment a Tailwind blue-500 enters the palette. Use terracotta (#c2440a) or forest (#2d4a32) for links.",
+    "Ink-brown (#1a1612) for body text instead of pure #000000 — pure black on cream is harsh; the slight brown tint reads as printed matter.",
+    "Footnotes, bylines, datelines, photo credits set in small caps or italic at 0.85em are the secret sauce. Without them this persona collapses into 'just another serif blog.'",
+  ]
+
+  composition: {
+    must-include: [
+      @community/principle-vertical-rhythm,
+      @community/check-body-readability,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @community/anti-pattern-thin-weight-body,
+    ]
+    typography-required: {
+      display: "humanist-sans (Inter | Söhne | Larsseit)"
+      body: "transitional or old-style serif (Source Serif 4 | Tiempos Text | Charter)"
+      text-color: "#1a1612 ink-brown (NOT pure #000000)"
+    }
+    color-required: {
+      background: "#f6f1e7 (cream paper)"
+      accent: "#c2440a terracotta or #2d4a32 forest"
+    }
+    motion-prescriptions: [
+      @community/principle-vertical-rhythm,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-editorial,
+    @impeccable/persona-magazine-editorial,
+    @community/fact-optimal-line-length,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/principle-vertical-rhythm,
+    @community/rule-line-length-optimal,
+    @community/fact-line-height-readability,
+    @community/check-body-readability,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/constraint-no-pure-white-bg,
+    @community/rule-backgrounds-atmospheric,
+    @community/check-color-blacklist-brand,
+    @community/anti-pattern-generic-saas-blue,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @community/anti-pattern-thin-weight-body,
+  ]
+}

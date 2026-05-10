@@ -1,0 +1,16 @@
+atom: "@community/rule-whisper-shadows"
+relations:
+  - type: related
+    target: "@community/constraint-no-pure-black-text"
+  - type: related
+    target: "@community/rule-chart-never-alone"
+  - type: related
+    target: "@community/pattern-card-component"
+  - type: related
+    target: "@community/example-vercel-dashboard"
+  - type: related
+    target: "@community/example-shadcn-dashboard"
+  - type: related
+    target: "@community/rule-no-heavy-shadows-per-component"
+  - type: related
+    target: "@community/principle-white-space-as-design-element"

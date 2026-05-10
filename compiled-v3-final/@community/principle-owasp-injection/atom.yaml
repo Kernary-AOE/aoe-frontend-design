@@ -1,0 +1,21 @@
+id: "@community/principle-owasp-injection"
+kind: principle
+version: "1.0.0"
+description: "OWASP Top 10 A03:2021 — injection vulnerabilities (SQL, NoSQL, OS command, LDAP, SSTI) occur when untrusted data is sent to an interpreter as part of a command or query."
+domain: security
+content_hash: "sha256:407915ed5534acc019d2e772beef733f5901fc6554fc0ae01f3844bdab3391b6"
+tokens:
+  summary: 127
+  core: 317
+  full: 542
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-sql-prepared-statements" }
+  - { type: related, target: "@community/principle-owasp-insecure-design" }
+  - { type: related, target: "@community/principle-owasp-security-misconfig" }
+created_at: "2026-05-07"

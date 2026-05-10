@@ -1,0 +1,12 @@
+atom: "@community/pattern-tx-liveblocks-avatar-stack"
+relations:
+  - type: related
+    target: "@community/pattern-tx-liveblocks-live-cursor"
+  - type: related
+    target: "@community/pattern-tx-liveblocks-sync-badge"
+  - type: related
+    target: "@community/template-liveblocks-selection-presence"
+  - type: related
+    target: "@community/fact-aria-live-politeness"
+  - type: related
+    target: "@community/check-focus-visible"

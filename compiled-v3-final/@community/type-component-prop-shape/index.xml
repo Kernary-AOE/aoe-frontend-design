@@ -1,0 +1,14 @@
+<atom
+  id="@community/type-component-prop-shape"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-system"
+  tokens="897"
+  q="4.0">
+  <description>Schema for a design-system component&apos;s prop API. Captures variant + size + state dimensions, polymorphic &apos;as&apos; support, accessibility props, and slot composition. Acts as a template that every primitive component (Button, Input, Card, Badge) instantiates.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="897"/>
+    <level name="full"    file="chunks/full.md"    tokens="1715"/>
+  </projection>
+</atom>

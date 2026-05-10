@@ -1,0 +1,62 @@
+template FontLoadingFoutFix {
+  id: "@anthropic-impeccable/template-font-loading-fout-fix"
+  version: "1.0.0"
+
+  label: "Web Font Loading with FOUT Mitigation via Metric Override"
+  domain: frontend-design
+
+  description: "A CSS @font-face pattern that uses `font-display: swap` with a metric-adjusted fallback font to minimize layout shift when the custom font loads. The fallback uses size-adjust, ascent-override, and descent-override to match the custom font's visual footprint."
+
+  rationale: "Font loading without metric overrides causes Cumulative Layout Shift (CLS) when the fallback font's metrics differ from the custom font — text reflows as the font swaps. By adjusting the fallback font's metrics to match the custom font, text occupies identical space before and after the swap, eliminating visual instability. Tools like Fontaine (unjs) calculate these overrides automatically from font files."
+
+  code: """
+    /* 1. Self-hosted custom font with swap */
+    @font-face {
+      font-family: 'DisplayFont';
+      src: url('/fonts/display.woff2') format('woff2');
+      font-weight: 400 700;
+      font-display: swap;
+      font-style: normal;
+    }
+
+    /* 2. Metric-adjusted fallback to eliminate layout shift */
+    @font-face {
+      font-family: 'DisplayFont-Fallback';
+      src: local('Georgia');          /* closest available system font */
+      size-adjust: 108%;              /* scale to match x-height */
+      ascent-override: 88%;           /* match ascender height */
+      descent-override: 22%;          /* match descender depth */
+      line-gap-override: 0%;          /* match line gap */
+    }
+
+    /* 3. Use the custom font with fallback stack */
+    :root {
+      --font-display: 'DisplayFont', 'DisplayFont-Fallback', Georgia, serif;
+    }
+
+    body {
+      font-family: var(--font-display);
+    }
+  """
+
+  notes: [
+    "Use the Fontaine tool (https://github.com/unjs/fontaine) to auto-calculate override values from your font files.",
+    "size-adjust percentage is typically 100-115% for most latin fonts; calculate from x-height ratio between custom and fallback.",
+    "For Google Fonts, Next.js font optimization (@next/font) applies these overrides automatically.",
+    "Test with WebPageTest's Font Waterfall view to verify no CLS contribution from font loading.",
+  ]
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — typography.md reference > Web Font Loading section",
+    "Anthropic Impeccable SKILL.md — Typography > (implicit: font loading strategy required for distinctive fonts)",
+  ]
+
+  related: [
+    @community/rule-font-loading-fout-foit,
+    @community/rule-font-self-host,
+    @community/rule-font-blacklist-applied,
+    @impeccable/constraint-font-blacklist,
+    @community/fact-variable-font-axes,
+    @community/rule-image-optimization,
+  ]
+}

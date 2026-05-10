@@ -1,0 +1,14 @@
+<atom
+  id="@community/method-research-finding-structure"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="103"
+  q="4.0">
+  <description>Frame every UX research finding as three linked statements: the observed behavior, the underlying need driving it, and the design opportunity it reveals.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="55"/>
+    <level name="core"    file="chunks/core.md"    tokens="103"/>
+    <level name="full"    file="chunks/full.md"    tokens="282"/>
+  </projection>
+</atom>

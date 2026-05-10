@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-scroll-locked-modal-only"
+  kind="knowledge"
+  version="1.0.0"
+  domain="interaction"
+  tokens="417"
+  q="4.0">
+  <description>Body scroll lock (overflow:hidden / scroll-position pinning) is permitted only while a fully-blocking overlay (modal dialog, full-screen drawer, lightbox) is visible. It must be released the moment the overlay closes.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="417"/>
+    <level name="full"    file="chunks/full.md"    tokens="502"/>
+  </projection>
+</atom>

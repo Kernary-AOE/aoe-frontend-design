@@ -1,0 +1,8 @@
+atom: "@community/example-radix-tabs"
+relations:
+  - type: related
+    target: "@community/pattern-tabs-keyboard"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/rule-keyboard-accessible"

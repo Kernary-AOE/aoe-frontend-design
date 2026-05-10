@@ -1,0 +1,98 @@
+template MotionSystemTokens {
+  id: "@community/template-motion-system-tokens"
+  version: "1.0.0"
+  domain: frontend-design
+
+  description: "Complete motion system token set as CSS custom properties: 5 duration tiers (80ms–600ms), 6 easing curves (cubic-bezier values for each intent), and 3 semantic spring configs — all collapsed to 0ms under prefers-reduced-motion."
+
+  language: "css"
+
+  body: """
+    <style>
+      :root {
+        /* ── Duration scale ────────────────────────────────────────────────
+           Naming: intent, not speed. Instant=press, Fast=icon, Base=default,
+           Slow=panel, Slower=page-level.                                   */
+        --duration-instant:  80ms;   /* Press feedback, active states */
+        --duration-fast:    150ms;   /* Icon rotate, focus ring, tooltip */
+        --duration-base:    250ms;   /* Dropdown, accordion, hover lift */
+        --duration-slow:    400ms;   /* Modal, drawer, sheet */
+        --duration-slower:  600ms;   /* Page-level view transitions */
+
+        /* ── Easing curves — pick by intent ───────────────────────────────
+           ease-out:    Entrances — content arriving, starting fast, settling
+           ease-in:     Exits — content departing, building speed to leave
+           ease-in-out: Balanced motion — reordering, repositioning
+           ease-spring: Playful overshoot — toasts, indicators, toggles
+           ease-decel:  Decelerate into position — sheets sliding up
+           ease-accel:  Accelerate out — dismissal, collapse              */
+        --ease-out:     cubic-bezier(0.16, 1,    0.3,  1);
+        --ease-in:      cubic-bezier(0.4,  0,    1,    1);
+        --ease-in-out:  cubic-bezier(0.4,  0,    0.2,  1);
+        --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+        --ease-decel:   cubic-bezier(0,    0,    0.2,  1);
+        --ease-accel:   cubic-bezier(0.4,  0,    1,    1);
+
+        /* ── Spring presets (for GSAP / Motion.dev / Web Animations API) ──
+           Expressed as data attributes or CSS custom properties for reference */
+        --spring-snappy-stiffness:  400;
+        --spring-snappy-damping:     30;   /* Tab indicator, toggle thumb */
+        --spring-gentle-stiffness:  180;
+        --spring-gentle-damping:     18;   /* Default — Framer Motion default */
+        --spring-bouncy-stiffness:  300;
+        --spring-bouncy-damping:     15;   /* Toast entrance, tooltip */
+      }
+
+      /* ── Reduced motion: collapse ALL duration tokens to 0ms ─────────────
+         Consumer code uses tokens unchanged — no scattered if-checks needed */
+      @media (prefers-reduced-motion: reduce) {
+        :root {
+          --duration-instant:  0ms;
+          --duration-fast:     0ms;
+          --duration-base:     0ms;
+          --duration-slow:     0ms;
+          --duration-slower:   0ms;
+        }
+      }
+    </style>
+
+    <!-- Usage:
+      .button {
+        transition: transform var(--duration-instant) var(--ease-out),
+                    background var(--duration-base) var(--ease-out);
+      }
+      .button:active { transform: scale(0.97); }
+
+      .modal {
+        transition: opacity var(--duration-slow) var(--ease-decel),
+                    transform var(--duration-slow) var(--ease-decel);
+      }
+
+      .tab-indicator {
+        transition: left var(--duration-base) var(--ease-spring),
+                    width var(--duration-base) var(--ease-spring);
+      }
+    -->
+  """
+
+  usage-notes: [
+    "Always use BOTH a duration var AND an easing var — raw cubic-bezier inline is a smell.",
+    "ease-spring has a cubic-bezier Y value > 1 (overshoot) — valid in CSS since Chrome 108.",
+    "Spring CSS numeric values (stiffness/damping) are reference only — pass to GSAP/Motion.dev JS.",
+    "7 easing curves is the ceiling — more variation creates incoherence, not richness.",
+    "Reduced motion zeroes duration tokens not easing tokens — transitions still fire 'instantly' so layout stays correct.",
+  ]
+
+  accessibility: [
+    "Zeroing duration tokens under reduced-motion means all transition CSS still runs — just instantly.",
+    "Never use display:none to hide animating elements — use opacity/visibility instead.",
+  ]
+
+  related: [
+    @impeccable/template-easing-curves,
+    @impeccable/template-spring-config,
+    @community/rule-animation-duration,
+    @community/fact-easing-mood-mapping,
+    @community/check-focus-visible,
+  ]
+}

@@ -1,0 +1,24 @@
+id: "@anthropic-impeccable/template-accordion-grid-rows"
+kind: template
+version: "1.0.0"
+description: "CSS-only accordion expand/collapse using grid-template-rows: 0fr → 1fr transition instead of height: 0 → auto. No JavaScript measurement required, no layout-forcing animation, GPU-composited friendly."
+domain: frontend-design
+content_hash: "sha256:c58841fe95ad077d3424b54daeefd1bfcd0c054505f2f6b8f565896b36492aa7"
+tokens:
+  summary: 66
+  core: 532
+  full: 668
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@anthropic-impeccable/rule-animate-transform-opacity-only" }
+  - { type: related, target: "@community/rule-animation-duration" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/pattern-expandable-disclosure" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+created_at: "2026-05-07"

@@ -1,0 +1,21 @@
+id: "@community/rule-font-self-host"
+kind: rule
+version: "1.0.0"
+description: "Production web fonts MUST be self-hosted as WOFF2 files under the project's origin, not loaded from Google Fonts CDN or third-party font services, to eliminate third-party DNS latency (50–200 ms per domain), comply with GDPR (no IP leak to Google), and ensure availability when external CDNs are blocked."
+domain: frontend-design
+content_hash: "sha256:7e8cb435c5226ce37da25921a25dccd2028969fd6ace58d8ed836783c656b605"
+tokens:
+  summary: 90
+  core: 346
+  full: 740
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-font-loading-fout-foit" }
+  - { type: related, target: "@community/rule-font-blacklist-applied" }
+  - { type: related, target: "@community/category-typography-scale" }
+created_at: "2026-05-07"

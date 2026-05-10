@@ -1,0 +1,8 @@
+atom: "@community/fact-required-interaction-states"
+relations:
+  - type: related
+    target: "@community/anti-pattern-outline-suppression"
+  - type: related
+    target: "@community/anti-pattern-no-loading-state"
+  - type: related
+    target: "@community/rule-focus-visible"

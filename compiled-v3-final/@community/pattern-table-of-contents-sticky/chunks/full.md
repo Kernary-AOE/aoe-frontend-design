@@ -1,0 +1,124 @@
+# TableOfContentsSticky [pattern] v1.0.0
+A right-rail (or left-rail) navigation listing the article's H2/H3 headings, sticking to the viewport during scroll. Highlights the currently visible section using IntersectionObserver and supports smooth scroll-to-anchor on click.
+domain: frontend-design
+
+## Facts
+
+## Label
+Sticky Table of Contents
+
+## Problem
+Long articles (>2000 words) need wayfinding within the page. A static TOC at the top is forgotten after the first scroll. Users want to know 'where am I in this piece' and jump to other sections without page reload.
+
+## Solution
+A sticky-positioned column listing H2 (and optionally H3) headings as anchor links. The link matching the currently in-view heading gets an active style, updated by an IntersectionObserver.
+
+## Structure
+```
+    <aside class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <nav>
+        <ol>
+          <li>
+            <a href="#intro" aria-current="location">Introduction</a>
+          </li>
+          <li>
+            <a href="#problem">The problem with previews</a>
+            <ol>
+              <li><a href="#cold-starts">Cold starts</a></li>
+              <li><a href="#cache-misses">Cache misses</a></li>
+            </ol>
+          </li>
+          <li>
+            <a href="#solution">Our solution</a>
+          </li>
+          <li>
+            <a href="#results">Results</a>
+          </li>
+        </ol>
+      </nav>
+    </aside>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Use `position: sticky; top: 96px` so the TOC stays in view as the page scrolls past it.
+- Active section detection: IntersectionObserver on each heading; the link for the topmost visible heading gets `aria-current='location'`.
+- Click anchor smooth-scrolls to the heading and updates the URL hash; honor `prefers-reduced-motion` by jumping instantly.
+- On viewports under 1024px, hide the rail and either omit the TOC or render it as a collapsible top section labeled 'On this page'.
+- Indent H3s under their H2 parent; never go deeper than H3 to avoid a TOC that out-scales the article.
+- Read-progress bar variant: thin accent line on the active link grows from 0 to 100% as the user reads that section.
+
+## A11y
+- Wrap the rail in `<aside>` (or just `<nav>`) with an accessible name like 'On this page' (`aria-labelledby`).
+- The currently-active link uses `aria-current='location'` (per ARIA spec for in-page positions).
+- Each link must point to a heading id that actually exists in the article — verify on build.
+- Smooth-scroll behavior must move keyboard focus to the heading (use `:target` styling and `scroll-margin-top` for sticky-header offset).
+- Provide a visible focus outline on TOC links — never `outline: none` without a replacement.
+
+## Examples
+- @community/example-mdn-toc
+- @community/example-stripe-docs-toc
+- @community/example-vercel-docs-toc
+
+## Label
+Sticky Table of Contents
+
+## Problem
+Long articles (>2000 words) need wayfinding within the page. A static TOC at the top is forgotten after the first scroll. Users want to know 'where am I in this piece' and jump to other sections without page reload.
+
+## Solution
+A sticky-positioned column listing H2 (and optionally H3) headings as anchor links. The link matching the currently in-view heading gets an active style, updated by an IntersectionObserver.
+
+## Structure
+```
+    <aside class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <nav>
+        <ol>
+          <li>
+            <a href="#intro" aria-current="location">Introduction</a>
+          </li>
+          <li>
+            <a href="#problem">The problem with previews</a>
+            <ol>
+              <li><a href="#cold-starts">Cold starts</a></li>
+              <li><a href="#cache-misses">Cache misses</a></li>
+            </ol>
+          </li>
+          <li>
+            <a href="#solution">Our solution</a>
+          </li>
+          <li>
+            <a href="#results">Results</a>
+          </li>
+        </ol>
+      </nav>
+    </aside>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Use `position: sticky; top: 96px` so the TOC stays in view as the page scrolls past it.
+- Active section detection: IntersectionObserver on each heading; the link for the topmost visible heading gets `aria-current='location'`.
+- Click anchor smooth-scrolls to the heading and updates the URL hash; honor `prefers-reduced-motion` by jumping instantly.
+- On viewports under 1024px, hide the rail and either omit the TOC or render it as a collapsible top section labeled 'On this page'.
+- Indent H3s under their H2 parent; never go deeper than H3 to avoid a TOC that out-scales the article.
+- Read-progress bar variant: thin accent line on the active link grows from 0 to 100% as the user reads that section.
+
+## A11y
+- Wrap the rail in `<aside>` (or just `<nav>`) with an accessible name like 'On this page' (`aria-labelledby`).
+- The currently-active link uses `aria-current='location'` (per ARIA spec for in-page positions).
+- Each link must point to a heading id that actually exists in the article — verify on build.
+- Smooth-scroll behavior must move keyboard focus to the heading (use `:target` styling and `scroll-margin-top` for sticky-header offset).
+- Provide a visible focus outline on TOC links — never `outline: none` without a replacement.
+
+## Compatible
+- @community/pattern-blog-article-layout
+- @community/pattern-breadcrumb-trail

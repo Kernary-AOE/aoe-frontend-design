@@ -1,0 +1,13 @@
+<atom
+  id="@community/pattern-border-radius-decision"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="165"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="16"/>
+    <level name="core"    file="chunks/core.md"    tokens="165"/>
+    <level name="full"    file="chunks/full.md"    tokens="314"/>
+  </projection>
+</atom>

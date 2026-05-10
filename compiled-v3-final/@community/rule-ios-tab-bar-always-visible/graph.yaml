@@ -1,0 +1,16 @@
+atom: "@community/rule-ios-tab-bar-always-visible"
+relations:
+  - type: related
+    target: "@community/pattern-ios-tab-bar-top-level"
+  - type: related
+    target: "@community/rule-ios-preserve-navigation-state"
+  - type: related
+    target: "@community/rule-ios-sf-symbols-tab-bar"
+  - type: related
+    target: "@community/anti-pattern-ios-hamburger-menu"
+  - type: related
+    target: "@community/anti-pattern-ios-stacked-modals"
+  - type: related
+    target: "@community/rule-ios-safe-area-insets"
+  - type: related
+    target: "@community/principle-navigation-scope-taxonomy"

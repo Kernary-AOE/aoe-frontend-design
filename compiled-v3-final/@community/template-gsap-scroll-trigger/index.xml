@@ -1,0 +1,14 @@
+<atom
+  id="@community/template-gsap-scroll-trigger"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="975"
+  q="4.0">
+  <description>GSAP ScrollTrigger pattern for scroll-linked section reveals, pinned scrub timelines, and snap — with gsap.matchMedia() prefers-reduced-motion guard and useGSAP hook for React/Next.js.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="62"/>
+    <level name="core"    file="chunks/core.md"    tokens="975"/>
+    <level name="full"    file="chunks/full.md"    tokens="975"/>
+  </projection>
+</atom>

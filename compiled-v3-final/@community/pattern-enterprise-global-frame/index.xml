@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-enterprise-global-frame"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="411"
+  q="4.0">
+  <description>A stable global navigation frame (top bar or side rail) that persists structurally across all products and modules in a multi-product enterprise application. It must not disappear, reposition, or change its core structure on context switches.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="77"/>
+    <level name="core"    file="chunks/core.md"    tokens="411"/>
+    <level name="full"    file="chunks/full.md"    tokens="745"/>
+  </projection>
+</atom>

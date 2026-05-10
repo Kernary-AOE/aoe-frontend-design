@@ -1,0 +1,12 @@
+atom: "@community/pattern-motion-forms"
+relations:
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/pattern-inline-validation"
+  - type: related
+    target: "@community/check-reduced-motion-required"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/check-focus-visible"

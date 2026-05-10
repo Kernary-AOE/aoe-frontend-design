@@ -1,0 +1,23 @@
+# ImageLazyLoading [rule] v1.0.0
+Images that are not visible in the initial viewport MUST use loading='lazy' to defer their network fetch; above-the-fold images MUST use loading='eager' (the default) and should use fetchpriority='high' for the LCP image.
+domain: frontend-design
+
+## Severity
+medium
+
+## Threshold
+Apply loading='lazy' to any image whose top edge is ≥ 1 viewport height below the initial fold.
+
+## Examples
+- Hero (LCP): <img src="hero.webp" width="1200" height="630" loading="eager" fetchpriority="high" alt="...">
+- Below fold: <img src="feature.webp" width="800" height="450" loading="lazy" alt="...">
+- Wrong: loading='lazy' on the first visible image above the fold
+
+## Rationale
+Lazy loading reduces initial page weight by deferring off-screen image fetches until the user scrolls near them. The LCP image must be eager-loaded with fetchpriority='high' or it will delay the performance metric.
+
+## Severity
+medium
+
+## Threshold
+Apply loading='lazy' to any image whose top edge is ≥ 1 viewport height below the initial fold.

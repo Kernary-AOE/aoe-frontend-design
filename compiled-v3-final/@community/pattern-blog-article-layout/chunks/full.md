@@ -1,0 +1,204 @@
+# BlogArticleLayout [pattern] v1.0.0
+A long-form reading layout with constrained measure (60-80ch), confident typographic hierarchy, optional drop cap on the lede, sticky table of contents on desktop, and metadata block (author, date, read time, tags).
+domain: frontend-design
+
+## Facts
+
+## Label
+Blog Article Layout
+
+## Problem
+Blog templates default to either too-narrow (45ch) or full-width text, making long reads tiring. Without a TOC, navigating a 3000-word essay forces aimless scrolling. Without typographic care, readers bounce.
+
+## Solution
+Center an article column at 65ch, surround with optional left author rail and right TOC rail on desktop. Lede paragraph gets larger size or drop cap. Metadata sits below H1. Code blocks span slightly wider for breathing room.
+
+## Structure
+```
+    <article class="post">
+      <header>
+        <p class="kicker">Engineering</p>
+        <h1>How we ship 100x more reliably with edge previews</h1>
+        <div class="byline">
+          <img src="/avatar.jpg" alt="" />
+          <div>
+            <p>By <a href="/u/kevin">Kevin Hou</a></p>
+            <p>
+              <time datetime="2026-04-27">Apr 27, 2026</time> -
+              <span>9 min read</span>
+            </p>
+          </div>
+          <ul class="tags" role="list" aria-label="Tags">
+            <li><a href="/t/edge">edge</a></li>
+            <li><a href="/t/reliability">reliability</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="post-grid">
+        <aside class="post-toc" aria-labelledby="toc-h">
+          <h2 id="toc-h" class="sr-only">Table of contents</h2>
+          <nav>
+            <ol>
+              <li><a href="#why">Why previews matter</a></li>
+              <li><a href="#how">How edge previews work</a></li>
+              <li><a href="#results">Results</a></li>
+            </ol>
+          </nav>
+        </aside>
+
+        <div class="post-body">
+          <p class="lede">
+            <span class="drop-cap">F</span>or two years our deploy pipeline took 12 minutes
+            and rolled back maybe twice a quarter. Here is how we changed that.
+          </p>
+
+          <h2 id="why">Why previews matter</h2>
+          <p>...</p>
+
+          <figure>
+            <img src="/diagram.svg" alt="Diagram showing edge preview flow" />
+            <figcaption>Edge preview routing, simplified.</figcaption>
+          </figure>
+
+          <h2 id="how">How edge previews work</h2>
+          <p>...</p>
+
+          <pre><code>const handler = async (req) =&gt; { /* ... */ }</code></pre>
+        </div>
+      </div>
+
+      <footer>
+        <section aria-labelledby="related-h">
+          <h2 id="related-h">Related posts</h2>
+          <ul role="list">
+            <li><a href="/p/preview-2024">Last year in previews</a></li>
+          </ul>
+        </section>
+      </footer>
+    </article>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Constrain article column to 60-75 characters per line (CSS `max-width: 65ch`).
+- Lede paragraph is 1-2 sentences in larger size (1.25x body) or with drop-cap initial letter.
+- Code blocks and figures break out 10-15% wider than the prose column for legibility.
+- On desktop (>1024px), show sticky TOC in right rail; on tablet/mobile, hide TOC or collapse to a top accordion.
+- Headings render with anchor links (hover reveals a # icon) for sharable section URLs.
+- Read time computed from word count (~200 wpm); shown next to publish date.
+- Footer includes related posts linked to the article's tags.
+
+## A11y
+- Wrap content in `<article>` with a real `<h1>`; section headings descend (`h2` -> `h3`) without skipping levels.
+- Decorative author avatar uses `alt=''`; meaningful author photos in author boxes use the author's name.
+- Figure with image must have `<figcaption>` and meaningful `alt` describing the diagram, not just 'Diagram'.
+- Drop cap implemented with `::first-letter` or wrapped span — must remain readable to screen readers (do not use background-image text replacement).
+- TOC heading uses an actual `<h2>` (visually hidden if needed) so the navigation has a name in landmark menus.
+
+## Examples
+- @community/example-stripe-press-article
+- @community/example-vercel-blog
+- @community/example-paul-graham-essay
+
+## Label
+Blog Article Layout
+
+## Problem
+Blog templates default to either too-narrow (45ch) or full-width text, making long reads tiring. Without a TOC, navigating a 3000-word essay forces aimless scrolling. Without typographic care, readers bounce.
+
+## Solution
+Center an article column at 65ch, surround with optional left author rail and right TOC rail on desktop. Lede paragraph gets larger size or drop cap. Metadata sits below H1. Code blocks span slightly wider for breathing room.
+
+## Structure
+```
+    <article class="post">
+      <header>
+        <p class="kicker">Engineering</p>
+        <h1>How we ship 100x more reliably with edge previews</h1>
+        <div class="byline">
+          <img src="/avatar.jpg" alt="" />
+          <div>
+            <p>By <a href="/u/kevin">Kevin Hou</a></p>
+            <p>
+              <time datetime="2026-04-27">Apr 27, 2026</time> -
+              <span>9 min read</span>
+            </p>
+          </div>
+          <ul class="tags" role="list" aria-label="Tags">
+            <li><a href="/t/edge">edge</a></li>
+            <li><a href="/t/reliability">reliability</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="post-grid">
+        <aside class="post-toc" aria-labelledby="toc-h">
+          <h2 id="toc-h" class="sr-only">Table of contents</h2>
+          <nav>
+            <ol>
+              <li><a href="#why">Why previews matter</a></li>
+              <li><a href="#how">How edge previews work</a></li>
+              <li><a href="#results">Results</a></li>
+            </ol>
+          </nav>
+        </aside>
+
+        <div class="post-body">
+          <p class="lede">
+            <span class="drop-cap">F</span>or two years our deploy pipeline took 12 minutes
+            and rolled back maybe twice a quarter. Here is how we changed that.
+          </p>
+
+          <h2 id="why">Why previews matter</h2>
+          <p>...</p>
+
+          <figure>
+            <img src="/diagram.svg" alt="Diagram showing edge preview flow" />
+            <figcaption>Edge preview routing, simplified.</figcaption>
+          </figure>
+
+          <h2 id="how">How edge previews work</h2>
+          <p>...</p>
+
+          <pre><code>const handler = async (req) =&gt; { /* ... */ }</code></pre>
+        </div>
+      </div>
+
+      <footer>
+        <section aria-labelledby="related-h">
+          <h2 id="related-h">Related posts</h2>
+          <ul role="list">
+            <li><a href="/p/preview-2024">Last year in previews</a></li>
+          </ul>
+        </section>
+      </footer>
+    </article>
+  
+```
+
+## Uses
+- @community/method-heuristic-review
+
+## Behavior
+- Constrain article column to 60-75 characters per line (CSS `max-width: 65ch`).
+- Lede paragraph is 1-2 sentences in larger size (1.25x body) or with drop-cap initial letter.
+- Code blocks and figures break out 10-15% wider than the prose column for legibility.
+- On desktop (>1024px), show sticky TOC in right rail; on tablet/mobile, hide TOC or collapse to a top accordion.
+- Headings render with anchor links (hover reveals a # icon) for sharable section URLs.
+- Read time computed from word count (~200 wpm); shown next to publish date.
+- Footer includes related posts linked to the article's tags.
+
+## A11y
+- Wrap content in `<article>` with a real `<h1>`; section headings descend (`h2` -> `h3`) without skipping levels.
+- Decorative author avatar uses `alt=''`; meaningful author photos in author boxes use the author's name.
+- Figure with image must have `<figcaption>` and meaningful `alt` describing the diagram, not just 'Diagram'.
+- Drop cap implemented with `::first-letter` or wrapped span — must remain readable to screen readers (do not use background-image text replacement).
+- TOC heading uses an actual `<h2>` (visually hidden if needed) so the navigation has a name in landmark menus.
+
+## Compatible
+- @community/pattern-table-of-contents-sticky
+- @community/pattern-breadcrumb-trail

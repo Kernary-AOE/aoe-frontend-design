@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-plain-language"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="126"
+  q="4.0">
+  <description>Product copy must use everyday language rather than technical or domain-specific jargon — if a 10-year-old would need to look it up, rephrase it.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="50"/>
+    <level name="core"    file="chunks/core.md"    tokens="126"/>
+    <level name="full"    file="chunks/full.md"    tokens="299"/>
+  </projection>
+</atom>

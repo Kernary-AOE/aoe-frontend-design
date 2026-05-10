@@ -1,0 +1,22 @@
+atom: "@community/rule-spacing-rhythm"
+relations:
+  - type: related
+    target: "@community/fact-consistency-standards"
+  - type: related
+    target: "@community/rule-grid-baseline-aligned"
+  - type: related
+    target: "@community/rule-touch-target-min"
+  - type: related
+    target: "@community/anti-pattern-cramped-ui"
+  - type: related
+    target: "@community/counter-example-magic-number-padding"
+  - type: related
+    target: "@community/counter-example-hardcoded-pixel-padding"
+  - type: related
+    target: "@community/example-shadcn-settings"
+  - type: related
+    target: "@community/principle-vertical-rhythm"
+  - type: see-also
+    target: "@community/check-spacing-rhythm"
+  - type: validates-with
+    target: "@community/fact-consistency-standards"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-no-new-visual-primitives"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="182"
+  q="4.0">
+  <description>New colors, fonts, or icon families not grounded in the existing token system must not be introduced without explicit token extension — raw visual primitive values outside the token layer are forbidden.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="66"/>
+    <level name="core"    file="chunks/core.md"    tokens="182"/>
+    <level name="full"    file="chunks/full.md"    tokens="347"/>
+  </projection>
+</atom>

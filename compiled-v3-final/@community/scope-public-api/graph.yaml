@@ -1,0 +1,12 @@
+atom: "@community/scope-public-api"
+relations:
+  - type: related
+    target: "@community/collection-rest-api-discipline"
+  - type: related
+    target: "@community/rule-resource-not-action"
+  - type: related
+    target: "@community/principle-pagination-first"
+  - type: related
+    target: "@community/anti-pattern-rpc-as-rest"
+  - type: related
+    target: "@community/fact-http-method-semantics"

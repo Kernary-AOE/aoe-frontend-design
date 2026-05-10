@@ -1,0 +1,26 @@
+id: "@community/pattern-tx-dnd-kit-nested-tree"
+kind: pattern
+version: "1.0.0"
+description: "dnd-kit nested tree drag with depth projection: flattens recursive tree to FlattenedItem[] (depth, parentId, id), projects drag depth from pointer transform.x divided by indentation (default 50px), clamps projected depth with getProjection() to prevent illegal nesting, removes descendants during drag and re-attaches via buildTree() on dragEnd."
+domain: frontend-design
+content_hash: "sha256:f5c86331e0a0b76e05e600ac7788552ad3bc7273940a28a4b39b0a547f549e50"
+tokens:
+  summary: 102
+  core: 869
+  full: 1692
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-tx-dnd-kit-kanban-columns" }
+  - { type: related, target: "@community/pattern-tx-dnd-kit-drop-indicator" }
+  - { type: related, target: "@community/pattern-tx-blocknote-nested-indent" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-breaking-keyboard-flow" }
+sources:
+  - { url: "apps/stories/stories/react/Sortable/Tree/Tree.tsx" }
+created_at: "2026-05-07"

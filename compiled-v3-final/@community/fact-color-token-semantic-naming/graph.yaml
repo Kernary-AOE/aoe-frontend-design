@@ -1,0 +1,8 @@
+atom: "@community/fact-color-token-semantic-naming"
+relations:
+  - type: related
+    target: "@community/fact-design-token-cascade"
+  - type: related
+    target: "@community/constraint-max-color-roles-7"
+  - type: related
+    target: "@community/constraint-brand-hue-required"

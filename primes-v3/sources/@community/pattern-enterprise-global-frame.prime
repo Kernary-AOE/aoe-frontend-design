@@ -1,0 +1,44 @@
+pattern EnterpriseGlobalFrame {
+  id: "@community/pattern-enterprise-global-frame"
+  version: "1.0.0"
+
+  label: "Enterprise Persistent Global Frame"
+  domain: frontend-design
+
+  description: "A stable global navigation frame (top bar or side rail) that persists structurally across all products and modules in a multi-product enterprise application. It must not disappear, reposition, or change its core structure on context switches."
+
+  problem: "In multi-product enterprise apps, product-level navigation replacing the global frame on every switch forces users to re-orient on each context change — breaking spatial memory and adding cognitive load at the worst moment (mid-task context switch)."
+
+  solution: "Establish a global frame (top navigation bar or left side rail) whose position, dimensions, and core elements (logo, account, global search, product switcher) remain constant across all products. Product-specific navigation lives in a secondary layer inside the frame."
+
+  structure: """
+    <!-- Top bar stays identical across Product A, Product B, Product C -->
+    <header class="global-frame" role="banner">
+      <a href="/" class="global-logo" aria-label="Home"><!-- Logo --></a>
+      <nav class="product-switcher" aria-label="Product switcher">
+        <!-- product list here -->
+      </nav>
+      <div class="global-search"><!-- shared search --></div>
+      <div class="global-account"><!-- avatar + settings --></div>
+    </header>
+
+    <!-- Product-specific secondary nav changes; global-frame does not -->
+    <aside class="product-nav" aria-label="Product navigation">
+      <!-- per-product links -->
+    </aside>
+
+    <main class="product-content">
+      <!-- product content -->
+    </main>
+  """
+
+  notes: [
+    "Verify by: navigate between products and confirm the global frame does not disappear, reposition, or change its core structure.",
+    "Source: Spencer Goldade enterprise-ia-patterns.mdc (GPL-3.0) — Cross-Product and Cross-Module Nav.",
+    "Global frame includes: logo, product switcher, global search, account/avatar. These four elements are always present.",
+    "Product-specific items (breadcrumbs, secondary nav, context toolbar) live inside the content area — never inside the global frame.",
+  ]
+
+  related: [
+  ]
+}

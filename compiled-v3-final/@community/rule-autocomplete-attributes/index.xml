@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-autocomplete-attributes"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="242"
+  q="4.0">
+  <description>Form inputs collecting personal data (name, email, phone, address, credit card) MUST carry a valid HTML `autocomplete` attribute token so browsers and password managers can autofill correctly and meet WCAG 1.3.5.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="69"/>
+    <level name="core"    file="chunks/core.md"    tokens="242"/>
+    <level name="full"    file="chunks/full.md"    tokens="473"/>
+  </projection>
+</atom>

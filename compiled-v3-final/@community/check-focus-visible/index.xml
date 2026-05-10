@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-focus-visible"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="236"
+  q="4.0">
+  <description>Checks that a keyboard-focusable element renders a visible, WCAG-compliant focus indicator when it receives keyboard focus. Verifies: (1) outline is not suppressed, (2) outline is at least 2px wide, (3) outline color achieves 3:1 contrast against adjacent background.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="80"/>
+    <level name="core"    file="chunks/core.md"    tokens="236"/>
+    <level name="full"    file="chunks/full.md"    tokens="342"/>
+  </projection>
+</atom>

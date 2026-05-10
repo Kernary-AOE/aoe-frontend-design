@@ -1,0 +1,54 @@
+atom: "@impeccable/persona-tokyo-minimal"
+relations:
+  - type: related
+    target: "@impeccable/persona-editorial"
+  - type: related
+    target: "@impeccable/principle-distinctiveness"
+  - type: related
+    target: "@community/fact-optimal-line-length"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/check-line-length-optimal"
+  - type: related
+    target: "@community/principle-vertical-rhythm"
+  - type: related
+    target: "@community/fact-line-height-readability"
+  - type: related
+    target: "@community/rule-line-length-optimal"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/check-contrast-aa"
+  - type: related
+    target: "@community/constraint-no-pure-white-bg"
+  - type: related
+    target: "@community/rule-backgrounds-atmospheric"
+  - type: related
+    target: "@community/check-color-blacklist-brand"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/constraint-max-color-roles-7"
+  - type: compatible
+    target: "minimal"
+  - type: compatible
+    target: "warm"
+  - type: compatible
+    target: "refined"
+  - type: compatible
+    target: "editorial"
+  - type: compatible
+    target: "quiet-luxury"
+  - type: conflicts
+    target: "brutalist"
+  - type: conflicts
+    target: "vercel-clean"
+  - type: conflicts
+    target: "stripe-fintech"
+  - type: conflicts
+    target: "dense-pragmatist"
+  - type: contradicts
+    target: "@impeccable/persona-brutalist"
+  - type: contradicts
+    target: "@impeccable/persona-dense-pragmatist"

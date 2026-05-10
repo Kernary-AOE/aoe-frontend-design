@@ -1,0 +1,13 @@
+<atom
+  id="@community/step-debounce-async-validation"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="620"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="17"/>
+    <level name="core"    file="chunks/core.md"    tokens="620"/>
+    <level name="full"    file="chunks/full.md"    tokens="1193"/>
+  </projection>
+</atom>

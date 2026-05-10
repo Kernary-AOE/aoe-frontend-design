@@ -1,0 +1,53 @@
+# Task
+
+{{BRIEF}}
+
+## Output
+
+Write a single HTML file to `./index.html` in this directory. Inline CSS only. Real content, not placeholders.
+
+## Available resources — Prime Wiki MCP
+
+You have a knowledge wiki via the `prime-wiki` MCP server. **Treat it like Wikipedia: browse the index, then fetch the pages you actually need.**
+
+### Workflow
+
+1. **Browse**: call `mcp__prime-wiki__prime_compile({ task: "<your brief>" })` once.
+   It returns a filtered slice of the wiki index — atom IDs + kinds + 1-line descriptions
+   matching your task. **It does NOT pre-pick which atoms or projection level for you.**
+
+2. **Decide**: scan the returned `index`. For each atom you find relevant, choose a level:
+   - `summary.md` (~30 tok) — quick check if relevant
+   - `core.md` (~150 tok) — main content (claim, body, steps)
+   - `full.md` (~380 tok) — every field including kind-specific (`implies`, `palette`, `prohibitions`, `body`, `examples`)
+
+   **Design-shaping atoms (persona / template / voice / example) usually need `full.md`** —
+   their value lives in structured fields the summary doesn't include.
+
+3. **Read**: use the `Read` tool on the path returned by `prime_compile` — it will be
+   `<CORPUS_ROOT>/compiled-v3-final/<atom-id>/chunks/<level>.md` where `CORPUS_ROOT`
+   is the absolute path to your cloned `prime-corpus-frontend-design` directory.
+   The atom-id is in the index entry, e.g. `@impeccable/persona-magazine-editorial`.
+
+4. **Iterate**: if the index didn't contain what you need, use:
+   - `mcp__prime-wiki__prime_query({ scope: "atoms", query: "<keyword>" })` — keyword search
+   - `mcp__prime-wiki__prime_query({ scope: "related", id: "<atom-id>" })` — graph traversal
+   - `mcp__prime-wiki__prime_query({ scope: "scout", query: "<topic>" })` — image references
+
+5. **Build**: synthesize what you read into the HTML. Don't load everything — load what you need
+   for your current step.
+
+6. **Validate**: after writing index.html, call `mcp__prime-wiki__prime_validate({ html_path: "/path/to/index.html", brief: "<original brief>" })`. If `pass: false`, fix the specific issues from `feedback` and re-validate. Repeat until pass=true OR you've tried 2 retries.
+
+   Critical issues that always fail:
+   - L1: missing alt / missing viewport / missing semantic tags
+   - L2: aesthetic doesn't match intended register (alignment_score < 0.7)
+   - L3: typography_required font missing / color_required hex missing
+
+   On 2nd failure: prefer to fix L1/L3 issues (deterministic) over L2 (LLM-judged, more subjective).
+
+### Anti-patterns
+
+- ❌ Reading every atom in the returned index "just in case" — you'll waste 10× tokens
+- ❌ Using only `summary.md` for persona/template atoms — you'll get a 3-line stub, not the design
+- ❌ Asking for more atoms before reading any — start with what you have

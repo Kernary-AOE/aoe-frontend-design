@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-sf-symbols-tab-bar"
+relations:
+  - type: related
+    target: "@community/pattern-ios-tab-bar-top-level"
+  - type: related
+    target: "@community/rule-ios-tab-bar-always-visible"
+  - type: related
+    target: "@community/fact-ios-sf-symbols-rendering-modes"

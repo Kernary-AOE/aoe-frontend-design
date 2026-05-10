@@ -1,0 +1,75 @@
+check SkipLink {
+  id: "@community/check-skip-link"
+  version: "1.0.0"
+
+  signature: (html: string, context?: object) -> CheckResult
+  predicate: |
+    // 1. First focusable element inside <body> must be a skip link
+    //    (<a href="#main"> or <a href="#content">).
+    // 2. Target id must exist (#main, #content, or context.skipTarget).
+    // 3. Skip link is visually hidden by default but visible on :focus.
+    body = document.body
+    firstFocusable = body.querySelector('a[href], button, [tabindex]:not([tabindex="-1"])')
+    if !firstFocusable:
+      yield { fail: 'no-focusable-elements' }
+      return
+
+    if firstFocusable.tagName !== 'A':
+      yield { fail: 'first-focusable-not-link', actual: firstFocusable.tagName, selector: cssPath(firstFocusable) }
+      return
+
+    href = firstFocusable.getAttribute('href') || ''
+    if !/^#/.test(href):
+      yield { fail: 'first-link-not-internal', href }
+      return
+
+    targetId = href.slice(1)
+    target = document.getElementById(targetId)
+    if !target:
+      yield { fail: 'skip-target-missing', href, expected: '#main or #content' }
+
+    // Validate text content suggests "skip"
+    text = firstFocusable.textContent.trim().toLowerCase()
+    if !/skip|jump|main content/.test(text):
+      yield { selector: cssPath(firstFocusable), fail: 'text-not-skip-pattern', text, suggested: 'Skip to main content' }
+
+    // Validate visibility behavior: hidden by default, visible on focus
+    cs = getComputedStyle(firstFocusable)
+    csFocus = getComputedStyle(firstFocusable, ':focus')
+    if cs.position === 'absolute' || cs.transform.includes('translate') || cs.clip || cs.clipPath:
+      // Visually hidden — good
+      if !cs.position && csFocus.position === cs.position:
+        yield { selector: cssPath(firstFocusable), fail: 'no-focus-reveal', remedy: 'Reveal on :focus (e.g. top: 0)' }
+
+  domain: accessibility
+
+  description: "Validates that a skip-to-main-content link is present as the first focusable element in <body>, points to an existing target (#main, #content), uses skip-pattern text, and reveals on focus."
+
+  validates: @community/rule-skip-link
+
+  severity: high
+
+  failure-message-template: "Skip link check failed: {fail}. Details: {details}. Add `<a href=\"#main\" class=\"sr-only focus:not-sr-only\">Skip to main content</a>` as first child of <body>."
+
+  evaluation-method: "automated + manual"
+
+  tools: [
+    "axe-core",
+    "playwright",
+    "lighthouse",
+  ]
+
+  false-positive-rate: medium
+
+  notes: [
+    "axe-core rule: skip-link, bypass.",
+    "Some sites use multiple skip links (skip nav, skip to footer) — the FIRST must be 'skip to main'.",
+    "If site is single-page with no nav, skip link may not be required (WCAG 2.4.1 has bypass alternatives).",
+    "Manual check needed to verify the visual reveal-on-focus animation looks intentional.",
+  ]
+
+  related: [
+    @community/rule-skip-link,
+    @w3c/source-wcag-22,
+  ]
+}

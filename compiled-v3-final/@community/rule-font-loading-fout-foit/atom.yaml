@@ -1,0 +1,21 @@
+id: "@community/rule-font-loading-fout-foit"
+kind: rule
+version: "1.0.0"
+description: "Every `@font-face` declaration for a custom web font MUST include `font-display: swap` to prevent FOIT (Flash of Invisible Text — up to 3 s of blank text) and control FOUT (Flash of Unstyled Text) by showing the fallback font immediately."
+domain: frontend-design
+content_hash: "sha256:0039f5b58767f7f8ae3540116e0839921bef6900fb993a0624ddad0b039ef249"
+tokens:
+  summary: 75
+  core: 249
+  full: 554
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-font-blacklist-applied" }
+  - { type: related, target: "@community/category-typography-scale" }
+  - { type: related, target: "@community/fact-type-scale-modular" }
+created_at: "2026-05-07"

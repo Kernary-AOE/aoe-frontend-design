@@ -1,0 +1,13 @@
+<atom
+  id="@community/constraint-ios-onboarding-max-3"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="95"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="57"/>
+    <level name="core"    file="chunks/core.md"    tokens="95"/>
+    <level name="full"    file="chunks/full.md"    tokens="177"/>
+  </projection>
+</atom>

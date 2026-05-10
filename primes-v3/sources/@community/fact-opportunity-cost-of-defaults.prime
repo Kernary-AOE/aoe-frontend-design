@@ -1,0 +1,27 @@
+fact OpportunityCostOfDefaults {
+  id: "@community/fact-opportunity-cost-of-defaults"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Every design default accepted without questioning has a hidden opportunity cost: the distinctive visual identity that a deliberate choice would have created. Accepting Tailwind's violet-500, Inter, and rounded-2xl simultaneously forfeits three independent opportunities to differentiate."
+
+  statement: "Each of the five AI-slop signal categories (color, typography, radius, shadow, layout) is an independent differentiation opportunity. Accepting the default in any one category reduces the design's distinctiveness by roughly 20%. Accepting all five defaults produces output indistinguishable from 70%+ of AI-generated work — which is the statistical outcome of five compounded non-decisions."
+
+  source: [
+    "Prime Wiki A/B v4 test data — Raw group output analysis",
+    "Impeccable SKILL.md — Design Thinking section",
+  ]
+
+  applies-to: [
+    "any AI-assisted frontend generation workflow",
+    "design system initialization",
+    "component library setup from scaffold",
+  ]
+
+  related: [
+    @impeccable/principle-distinctiveness,
+    @community/anti-pattern-ai-generated-ui,
+    @community/constraint-distinctiveness-mandate,
+  ]
+}

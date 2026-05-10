@@ -1,0 +1,22 @@
+id: "@community/anti-pattern-hover-only-interaction"
+kind: anti-pattern
+version: "1.0.0"
+description: "Building tooltips, hover cards, mega-menus, or row-action buttons that only appear on `:hover` or `mouseenter`, with no equivalent for keyboard focus or touch tap. On mobile devices (no hover), the content is unreachable. For keyboard users, the trigger never activates because focus doesn't fire `:hover`."
+domain: accessibility
+content_hash: "sha256:fbefa07129764c98c4d4e6b36d43631748507649338345ce2eed66a8b030b340"
+tokens:
+  summary: 94
+  core: 483
+  full: 872
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/counter-example-tooltip-hover-only" }
+  - { type: related, target: "@community/anti-pattern-click-to-open-only" }
+  - { type: related, target: "@community/pattern-tooltip-keyboard" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+created_at: "2026-05-07"

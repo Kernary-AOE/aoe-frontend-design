@@ -1,0 +1,68 @@
+name: accessibility
+version: "1.0.0"
+description: Domain plugin for web accessibility knowledge. Covers WCAG 2.2 success criteria, ARIA patterns, keyboard navigation, screen reader compatibility, focus management, color contrast, and inclusive design.
+
+tags:
+  - a11y
+  - accessibility
+  - aria
+  - wcag
+  - screen-reader
+  - keyboard
+  - focus
+  - contrast
+  - alt-text
+  - landmarks
+  - skip-link
+  - live-region
+
+axes:
+  - name: wcag-principle
+    description: Which WCAG principle the atom addresses (POUR).
+    matches:
+      - perceivable
+      - operable
+      - understandable
+      - robust
+      - perceivability
+      - operability
+
+  - name: assistive-technology
+    description: The assistive technology or user group the atom targets.
+    matches:
+      - screen-reader
+      - keyboard
+      - switch-access
+      - voice-control
+      - magnification
+      - braille
+
+  - name: wcag-level
+    description: The WCAG conformance level the atom targets.
+    matches:
+      - wcag-a
+      - wcag-aa
+      - wcag-aaa
+      - level-a
+      - level-aa
+      - level-aaa
+
+contract:
+  must_include:
+    type: atom-id-array
+    description: Atoms that must appear in the retrieved set.
+  must_avoid:
+    type: atom-id-array
+    description: Atoms that must be excluded from the retrieved set.
+  conformance_level:
+    type: enum
+    values:
+      - A
+      - AA
+      - AAA
+    description: Minimum WCAG conformance level to target.
+
+validators:
+  - name: fact-has-source
+    description: Every accessibility fact atom must cite a WCAG success criterion or authoritative source.
+    checker: builtin:every-fact-has-source

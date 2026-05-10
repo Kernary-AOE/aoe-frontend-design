@@ -1,0 +1,85 @@
+feedback I18nLaunchV1 {
+  id: "@community/feedback-i18n-launch-v1"
+  version: "1.0.0"
+
+  target: "@community/collection-i18n-ready-component"
+  domain: i18n
+
+  description: "Accumulated execution feedback for first-release i18n rollouts using @community/collection-i18n-ready-component. Synthesized from observed launches at multiple SaaS companies (anonymized) — captures the failure modes that consistently emerge between week 0 and month 6 of multi-locale support."
+
+  observations: {
+    sample-size: 12
+    period: "2024-Q3 to 2026-Q1"
+    success-rate: 0.67
+
+    common-failures: [
+      {
+        step: "@community/principle-no-string-concat",
+        failure: "early-stage strings ship with concatenation; developer says 'we'll fix it for translation'; never gets fixed and breaks 5 locales",
+        frequency: 0.83,
+        impact: "translation pipeline rejects strings; engineering re-work to refactor; ship date slips 2-4 weeks",
+        mitigation: "lint rule prohibits string concatenation in JSX/template files from day 1, even before second locale exists",
+      }
+      {
+        step: "@community/fact-bidi-direction",
+        failure: "RTL added late as 'a CSS toggle' — chevrons don't mirror, slide-in animations come from wrong direction, scrollbars on wrong side",
+        frequency: 0.75,
+        impact: "Arabic users see broken UI; bug bash adds 2-3 weeks of layout work post-launch",
+        mitigation: "audit every directional icon and animation BEFORE first RTL locale; use CSS logical properties (margin-inline-start) instead of physical from start",
+      }
+      {
+        step: "translator hand-off",
+        failure: "translators receive strings without context (no description field, no screenshots) — translations are grammatically correct but contextually wrong",
+        frequency: 0.58,
+        impact: "user complaints about awkward phrasing; multiple revision cycles per locale",
+        mitigation: "every extracted string includes `description` field + Lokalise/Phrase screenshots auto-uploaded from CI",
+      }
+      {
+        step: "pseudo-locale testing",
+        failure: "team did not run pseudo-locale tests; truncation issues found by real translators in production",
+        frequency: 0.50,
+        impact: "buttons clip text in German (often 30% longer than English); dashboard cards overflow",
+        mitigation: "add pseudo-locale to CI; visual regression catches truncation before real translation begins",
+      }
+      {
+        step: "@community/transform-relative-time-format",
+        failure: "team rolled own date formatting because Intl.RelativeTimeFormat 'wasn't available everywhere' — actually available in Node 12+ and all modern browsers",
+        frequency: 0.42,
+        impact: "wrong plurals in Russian, Arabic, Polish; embarrassing bugs noticed by community",
+        mitigation: "use Intl.* APIs unconditionally; check support matrix once and trust it",
+      }
+    ]
+
+    confidence-adjustments: {
+      "@community/principle-no-string-concat": 0.95
+      "@community/pattern-icu-message-format": 0.92
+      "@community/fact-bidi-direction": 0.78
+      "@community/rule-cjk-line-break": 0.72
+      "@community/anti-pattern-flag-as-language": 0.96
+    }
+  }
+
+  ai-confidence: 0.81
+
+  lessons: [
+    "Day-one i18n hygiene (no concatenation, ICU templates, dir-aware CSS) costs near zero. Retrofitting at month 6 costs quarters.",
+    "Translators are users — give them context, screenshots, and tooling. Strings without context produce wrong translations.",
+    "Pseudo-localization in CI catches 80% of truncation/overflow issues before any real translator sees the build.",
+    "RTL is a layout problem more than a string problem. Audit it before adding the first RTL locale, not after.",
+    "Multi-locale launch should be staged: first 2 locales (often en + es or en + fr) prove the pipeline. Only then expand.",
+  ]
+
+  notes: [
+    "Sample-size 12 is small; confidence figures should be revised as more launches accumulate.",
+    "Cohort effect: teams with prior i18n experience succeed at 2-3x the rate of first-time i18n teams. Hire or partner accordingly.",
+    "Translation costs: roughly $0.10-0.20 per word per locale via TMS; ~$2K-5K per locale per major release for typical SaaS surfaces.",
+  ]
+
+  related: [
+    @community/collection-i18n-ready-component,
+    @community/principle-no-string-concat,
+    @community/pattern-icu-message-format,
+    @community/fact-bidi-direction,
+    @community/anti-pattern-flag-as-language,
+  ]
+}

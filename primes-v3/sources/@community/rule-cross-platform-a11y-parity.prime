@@ -1,0 +1,42 @@
+rule CrossPlatformA11yParity {
+  id: "@community/rule-cross-platform-a11y-parity"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Each platform must implement the accessibility conventions native to that platform — touch targets ≥ 44×44pt on iOS/Android and full keyboard navigation on desktop — because ignoring platform-specific assistive-technology conventions excludes users with disabilities."
+
+  rationale: "iOS VoiceOver, Android TalkBack, macOS VoiceOver, and Windows Narrator each have distinct interaction models. A component that passes desktop keyboard audit may silently fail on a mobile screen reader because it relies on hover events with no touch equivalents. Conversely, a mobile-only touch pattern may have no keyboard path on desktop."
+
+  platform-requirements: {
+    mobile: [
+      "Touch targets ≥ 44×44 CSS pixels (iOS HIG) / 48×48dp (Android)",
+      "All interactive elements reachable via swipe-focus (VoiceOver, TalkBack)",
+      "No hover-only interactions — pointer: fine is not guaranteed",
+      "Support Dynamic Type / system font scaling (iOS) or sp units (Android)",
+    ]
+    desktop: [
+      "All interactive elements reachable via Tab key in logical order",
+      "Visible focus indicator on every focusable element",
+      "Keyboard shortcuts follow platform conventions (Esc closes modal, Enter activates)",
+      "No pointer-only interactions without keyboard equivalents",
+    ]
+    shared: [
+      "Color contrast ≥ 4.5:1 for text (WCAG SC 1.4.3 AA)",
+      "prefers-reduced-motion respected",
+      "Screen reader labels on all interactive elements",
+    ]
+  }
+
+  severity: block
+
+  verification: |
+    Mobile: enable VoiceOver (iOS) or TalkBack (Android); navigate via swipe; confirm all controls are reachable and labeled.
+    Desktop: navigate entire page with keyboard only (no mouse); confirm every control is reachable and focus is visible.
+
+  related: [
+    @community/constraint-accessibility-aa-minimum,
+    @community/rule-keyboard-accessible,
+    @community/constraint-mobile-touch-target-44px,
+  ]
+}

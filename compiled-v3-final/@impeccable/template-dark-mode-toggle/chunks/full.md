@@ -1,0 +1,106 @@
+# DarkModeToggle [template] v1.0.0
+One-shot dark mode toggle: CSS variables driven by data-theme attribute, prefers-color-scheme fallback, and localStorage persistence. No flash of wrong theme on reload.
+domain: theming
+
+## Language
+html-css-js
+
+## Body
+```
+    <!-- 1. Inline this in <head> BEFORE first paint to avoid flash -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('{STORAGE_KEY}');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
+    <!-- 2. Theme tokens (light = default, dark = override) -->
+    <style>
+      :root {
+        --bg: oklch(98% 0.01 250);
+        --fg: oklch(20% 0.02 250);
+        --surface: oklch(96% 0.015 250);
+        --border: oklch(88% 0.02 250);
+        --accent: oklch(60% 0.15 250);
+      }
+      :root[data-theme="dark"] {
+        --bg: oklch(15% 0.02 250);
+        --fg: oklch(95% 0.01 250);
+        --surface: oklch(22% 0.025 250);
+        --border: oklch(32% 0.03 250);
+        --accent: oklch(72% 0.15 250);
+      }
+      body { background: var(--bg); color: var(--fg); transition: background 200ms, color 200ms; }
+      @media (prefers-reduced-motion: reduce) {
+        body { transition: none; }
+      }
+
+      .theme-toggle {
+        background: var(--surface);
+        color: var(--fg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font: inherit;
+      }
+      .theme-toggle:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .theme-toggle .icon-dark { display: none; }
+      :root[data-theme="dark"] .theme-toggle .icon-light { display: none; }
+      :root[data-theme="dark"] .theme-toggle .icon-dark  { display: inline; }
+    </style>
+
+    <!-- 3. The button -->
+    <button type="button"
+            class="theme-toggle"
+            aria-label="{TOGGLE_LABEL}"
+            aria-pressed="false"
+            data-theme-toggle>
+      <span class="icon-light" aria-hidden="true">{ICON_LIGHT}</span>
+      <span class="icon-dark"  aria-hidden="true">{ICON_DARK}</span>
+    </button>
+
+    <!-- 4. Toggle behavior -->
+    <script>
+      (function() {
+        var btn = document.querySelector('[data-theme-toggle]');
+        if (!btn) return;
+        var root = document.documentElement;
+        function sync() {
+          btn.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
+        }
+        sync();
+        btn.addEventListener('click', function() {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          localStorage.setItem('{STORAGE_KEY}', next);
+          sync();
+        });
+      })();
+    </script>
+  
+```
+
+## Usage Notes
+- Inline the first <script> in <head> before stylesheets to prevent flash of wrong theme.
+- Always pair with aria-label and aria-pressed on the button.
+- Listen to system change with matchMedia('(prefers-color-scheme: dark)').addEventListener if you want live OS sync.
+- Wrap transitions in prefers-reduced-motion media query.
+
+## Tested In
+- Chrome 120+
+- Firefox 121
+- Safari 17
+- Edge 120
+
+## Accessibility
+- Button has aria-label and aria-pressed reflecting state.
+- Focus ring uses :focus-visible with 2px outline + offset.
+- Color tokens in oklch — verify 4.5:1 against fg/bg in both modes.
+- Respects prefers-reduced-motion for transition.

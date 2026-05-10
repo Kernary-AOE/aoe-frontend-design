@@ -1,0 +1,20 @@
+id: "@community/step-apply-heuristics"
+kind: step
+version: "1.0.0"
+domain: design-review
+content_hash: "sha256:e339785b48aaddbfe5679c99fb0152f9bf8eb37466c265efc3ce66abb7633b29"
+tokens:
+  summary: 14
+  core: 305
+  full: 574
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/step-load-artifact" }
+  - { type: related, target: "@nielsen/taxonomy-10-heuristics" }
+  - { type: related, target: "@community/method-heuristic-review" }
+created_at: "2026-05-07"

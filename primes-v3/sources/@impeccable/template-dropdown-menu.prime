@@ -1,0 +1,173 @@
+template DropdownMenu {
+  id: "@impeccable/template-dropdown-menu"
+  version: "1.0.0"
+
+  parameters: {
+    TRIGGER_LABEL: { type: string, default: "Options", description: "Visible button text" }
+    ACCENT_COLOR: { type: "css-color", default: "oklch(60% 0.15 250)", description: "Focus + hover color" }
+    MIN_WIDTH: { type: "css-length", default: "180px", description: "Minimum menu width" }
+  }
+
+  language: "html-css-js"
+  domain: navigation
+
+  description: "Accessible dropdown menu with full keyboard navigation: ArrowDown opens + moves focus, ArrowUp/Down to traverse, Home/End edges, Esc closes, Enter activates."
+
+  body: """
+    <style>
+      .dropdown { position: relative; display: inline-block; }
+      .dropdown__trigger {
+        background: white;
+        border: 1px solid oklch(85% 0.02 250);
+        border-radius: 8px;
+        padding: 8px 14px;
+        cursor: pointer;
+        font: inherit;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .dropdown__trigger:focus-visible {
+        outline: 2px solid {ACCENT_COLOR};
+        outline-offset: 2px;
+      }
+      .dropdown__trigger::after {
+        content: "▾";
+        font-size: 0.7em;
+        opacity: 0.7;
+      }
+      .dropdown__menu {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        min-width: {MIN_WIDTH};
+        background: white;
+        border: 1px solid oklch(85% 0.02 250);
+        border-radius: 8px;
+        box-shadow: 0 8px 24px oklch(20% 0.02 250 / 0.12);
+        list-style: none;
+        margin: 0;
+        padding: 4px;
+        display: none;
+        z-index: 100;
+      }
+      .dropdown[data-open="true"] .dropdown__menu { display: block; }
+      .dropdown__item {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font: inherit;
+        color: inherit;
+      }
+      .dropdown__item:hover,
+      .dropdown__item:focus-visible {
+        background: oklch(95% 0.02 250);
+        outline: none;
+      }
+      .dropdown__item:focus-visible {
+        box-shadow: inset 0 0 0 2px {ACCENT_COLOR};
+      }
+    </style>
+
+    <div class="dropdown" data-dropdown data-open="false">
+      <button class="dropdown__trigger"
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              data-trigger>
+        {TRIGGER_LABEL}
+      </button>
+      <ul class="dropdown__menu" role="menu" data-menu>
+        <li role="none"><button class="dropdown__item" role="menuitem" type="button">Edit</button></li>
+        <li role="none"><button class="dropdown__item" role="menuitem" type="button">Duplicate</button></li>
+        <li role="none"><button class="dropdown__item" role="menuitem" type="button">Archive</button></li>
+        <li role="none"><button class="dropdown__item" role="menuitem" type="button">Delete</button></li>
+      </ul>
+    </div>
+
+    <script>
+      (function() {
+        document.querySelectorAll('[data-dropdown]').forEach(function(root) {
+          var trigger = root.querySelector('[data-trigger]');
+          var items = function() { return Array.from(root.querySelectorAll('[role="menuitem"]')); };
+
+          function open(focusFirst) {
+            root.setAttribute('data-open', 'true');
+            trigger.setAttribute('aria-expanded', 'true');
+            if (focusFirst) {
+              var first = items()[0];
+              first && first.focus();
+            }
+          }
+          function close(refocusTrigger) {
+            root.setAttribute('data-open', 'false');
+            trigger.setAttribute('aria-expanded', 'false');
+            if (refocusTrigger) trigger.focus();
+          }
+          function move(delta) {
+            var list = items();
+            var idx = list.indexOf(document.activeElement);
+            var next = (idx + delta + list.length) % list.length;
+            list[next].focus();
+          }
+
+          trigger.addEventListener('click', function() {
+            root.getAttribute('data-open') === 'true' ? close(false) : open(true);
+          });
+          trigger.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              open(true);
+            }
+          });
+          root.addEventListener('keydown', function(e) {
+            if (root.getAttribute('data-open') !== 'true') return;
+            if (e.key === 'Escape')   { e.preventDefault(); close(true); }
+            if (e.key === 'ArrowDown'){ e.preventDefault(); move(1); }
+            if (e.key === 'ArrowUp')  { e.preventDefault(); move(-1); }
+            if (e.key === 'Home')     { e.preventDefault(); items()[0].focus(); }
+            if (e.key === 'End')      { e.preventDefault(); items()[items().length-1].focus(); }
+            if (e.key === 'Tab')      { close(false); }
+          });
+          document.addEventListener('click', function(e) {
+            if (!root.contains(e.target) && root.getAttribute('data-open') === 'true') close(false);
+          });
+        });
+      })();
+    </script>
+  """
+
+  usage-notes: [
+    "Use role=menu/menuitem only when items are commands. For navigation links, drop the menu role and use a plain <ul>.",
+    "Trigger must reflect open state via aria-expanded for screen readers.",
+    "Menu items must be reachable by keyboard alone — Tab while open closes the menu so focus continues into page.",
+    "Esc returns focus to the trigger — never let focus get stuck.",
+    "If menu items are async, keep the menu open until data loads; don't auto-close.",
+  ]
+
+  tested-in: [
+    "Chrome 120+",
+    "Firefox 121",
+    "Safari 17",
+  ]
+
+  accessibility: [
+    "aria-haspopup=menu and aria-expanded sync with open state.",
+    "ArrowUp/Down + Home/End full keyboard nav.",
+    "Esc closes and returns focus to trigger.",
+    "Click outside closes; Tab closes to keep flow linear.",
+  ]
+
+  related: [
+    @impeccable/template-cmd-palette-shell,
+    @community/template-focus-ring,
+    @community/rule-keyboard-tab-order,
+    @community/check-focus-visible,
+    @community/anti-pattern-breaking-keyboard-flow,
+  ]
+}

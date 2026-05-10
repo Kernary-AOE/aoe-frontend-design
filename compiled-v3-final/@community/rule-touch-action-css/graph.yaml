@@ -1,0 +1,8 @@
+atom: "@community/rule-touch-action-css"
+relations:
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"
+  - type: related
+    target: "@community/rule-platform-interaction-conventions"
+  - type: related
+    target: "@community/anti-pattern-hover-only-interaction"

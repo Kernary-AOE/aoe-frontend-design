@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-resend-hero"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="526"
+  q="4.0">
+  <description>Resend&apos;s homepage opens with a 64px headline (&apos;Email for developers&apos;) in white on near-black #0A0A0A, paired with a live code sample on the right showing a Node.js snippet of `resend.emails.send(...)`. The code panel has a Mac-window chrome (3 dots), syntax highlighting in muted Tailwind-style hues, and a subtle &apos;Copy&apos; button on hover.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="98"/>
+    <level name="core"    file="chunks/core.md"    tokens="526"/>
+    <level name="full"    file="chunks/full.md"    tokens="954"/>
+  </projection>
+</atom>

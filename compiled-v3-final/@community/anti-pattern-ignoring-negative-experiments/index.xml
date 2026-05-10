@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-ignoring-negative-experiments"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="306"
+  q="4.0">
+  <description>Treating a negative or inconclusive A/B test result as a failure to hide rather than a learning to document, causing the same losing hypothesis to be retested repeatedly.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="62"/>
+    <level name="core"    file="chunks/core.md"    tokens="306"/>
+    <level name="full"    file="chunks/full.md"    tokens="551"/>
+  </projection>
+</atom>

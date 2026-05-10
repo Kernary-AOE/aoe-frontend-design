@@ -1,0 +1,41 @@
+rule FontSelfHost {
+  id: "@community/rule-font-self-host"
+  version: "1.0.0"
+
+  applies-to: "@community/type-html-artifact"
+
+  domain: frontend-design
+
+  description: "Production web fonts MUST be self-hosted as WOFF2 files under the project's origin, not loaded from Google Fonts CDN or third-party font services, to eliminate third-party DNS latency (50–200 ms per domain), comply with GDPR (no IP leak to Google), and ensure availability when external CDNs are blocked."
+
+  claim: "Author HTML/CSS MUST NOT reference `fonts.googleapis.com`, `fonts.bunny.net`, or any third-party font CDN in production builds. All fonts must be served from the same origin or a controlled self-hosted CDN."
+
+  severity: high
+
+  rationale: "Google Fonts and similar CDNs add a mandatory extra DNS lookup + TLS handshake (50–200 ms on first visit, not cached across origins in modern browsers after privacy partitioning). German DPA and Austrian DPA rulings (2021–2022) found Google Fonts transmission of user IP addresses violates GDPR Article 44 without user consent. Many corporate and government firewalls block external font CDNs, causing broken typography. Self-hosting with WOFF2 + `font-display: swap` delivers identical visual quality with zero third-party dependency."
+
+  remediation: [
+    "Download WOFF2 files from Google Fonts (use google-webfonts-helper.herokuapp.com or fontsource npm packages).",
+    "Use `npm install @fontsource/geist` (Fontsource) for maintained self-hosted packages with tree-shaking.",
+    "Place files under `/public/fonts/` and reference with relative URL in @font-face.",
+    "Add `Cache-Control: public, max-age=31536000, immutable` for font files — they are versioned by filename.",
+    "For variable fonts: a single WOFF2 file replaces multiple weight files; ensure the font supports the required axes.",
+  ]
+
+  exceptions: [
+    {
+      case: "Rapid prototype or internal tool",
+      allowed-when: "GDPR does not apply (internal EU exemption), performance is not critical, and the prototype will not ship to production.",
+    }
+    {
+      case: "Licensed fonts requiring CDN delivery",
+      allowed-when: "The font license explicitly requires delivery via the vendor's CDN (e.g., some Adobe Fonts plans); document the exception in BRAND.md.",
+    }
+  ]
+
+  related: [
+    @community/rule-font-loading-fout-foit,
+    @community/rule-font-blacklist-applied,
+    @community/category-typography-scale,
+  ]
+}

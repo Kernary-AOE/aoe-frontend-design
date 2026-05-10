@@ -1,0 +1,8 @@
+atom: "@community/fact-spacing-token-progression"
+relations:
+  - type: related
+    target: "@community/fact-8pt-grid-system"
+  - type: related
+    target: "@community/fact-type-scale-modular"
+  - type: related
+    target: "@community/transform-scale-clamp"

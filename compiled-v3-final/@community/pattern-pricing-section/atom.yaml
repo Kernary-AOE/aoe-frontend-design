@@ -1,0 +1,24 @@
+id: "@community/pattern-pricing-section"
+kind: pattern
+version: "1.0.0"
+description: "Standard 3-column pricing layout with a featured card using transform: scale(1.05) + border-top: 3px solid var(--accent) + shadow-xl, monthly/annual toggle with React key remount animation, and exact CSS for card differentiation — extracted from shadcn-landing-page and next-saas-starter."
+domain: frontend-design
+content_hash: "sha256:6f977ad180f2c77b41a4ed094969ecda72b119796856ce0d5319831f2cb1d994"
+tokens:
+  summary: 87
+  core: 1373
+  full: 2662
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-landing-page-sections" }
+  - { type: related, target: "@community/pattern-card-component" }
+  - { type: related, target: "@community/anti-pattern-ai-generated-ui" }
+  - { type: related, target: "@impeccable/persona-stripe" }
+  - { type: related, target: "@impeccable/persona-vercel-clean" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

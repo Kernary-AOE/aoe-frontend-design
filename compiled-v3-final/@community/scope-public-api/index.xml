@@ -1,0 +1,14 @@
+<atom
+  id="@community/scope-public-api"
+  kind="knowledge"
+  version="1.0.0"
+  domain="api-design"
+  tokens="580"
+  q="4.0">
+  <description>Defines applicability for atoms whose guidance applies only to public API surfaces — endpoints exposed beyond the controlling team. Internal APIs (single-team monorepo) may relax some constraints; public APIs MUST satisfy them all due to long-term contract obligations.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="580"/>
+    <level name="full"    file="chunks/full.md"    tokens="580"/>
+  </projection>
+</atom>

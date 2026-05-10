@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-skip-link"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="559"
+  q="4.0">
+  <description>Validates that a skip-to-main-content link is present as the first focusable element in &lt;body&gt;, points to an existing target (#main, #content), uses skip-pattern text, and reveals on focus.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="60"/>
+    <level name="core"    file="chunks/core.md"    tokens="559"/>
+    <level name="full"    file="chunks/full.md"    tokens="650"/>
+  </projection>
+</atom>

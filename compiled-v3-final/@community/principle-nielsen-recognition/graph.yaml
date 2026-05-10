@@ -1,0 +1,18 @@
+atom: "@community/principle-nielsen-recognition"
+relations:
+  - type: related
+    target: "@community/principle-nielsen-flexibility"
+  - type: related
+    target: "@community/principle-nielsen-consistency"
+  - type: related
+    target: "@community/fact-recognition-over-recall"
+  - type: related
+    target: "@community/fact-gestalt-proximity"
+  - type: related
+    target: "@community/example-linear-cmdk"
+  - type: related
+    target: "@community/example-radix-dropdown"
+  - type: related
+    target: "@community/anti-pattern-icon-only-expansion-triggers"
+  - type: related
+    target: "@community/rule-popover-vs-tooltip"

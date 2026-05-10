@@ -1,0 +1,21 @@
+id: "@community/rule-reading-order-matches-visual-order"
+kind: rule
+version: "1.0.0"
+description: "DOM source order must match the visual reading order — CSS flex/grid reordering or absolute positioning must never create a mismatch between what sighted users see and what keyboard/screen reader users navigate."
+domain: frontend-design
+content_hash: "sha256:c86ef0d7c6ed416a8b0929dd54a1da3eb8966a9df0341c48dadf1299af977275"
+tokens:
+  summary: 167
+  core: 334
+  full: 700
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/rule-ios-voiceover-order" }
+  - { type: related, target: "@community/rule-heading-hierarchy" }
+created_at: "2026-05-07"

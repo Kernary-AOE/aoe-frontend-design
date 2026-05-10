@@ -1,0 +1,25 @@
+id: "@community/pattern-ios-thumb-zone"
+kind: pattern
+version: "1.0.0"
+description: "Place primary call-to-action controls in the lower half of the screen (thumb zone) where the thumb naturally rests in a one-handed grip, keeping destructive or infrequent actions in the upper, harder-to-reach zones."
+domain: frontend-design
+content_hash: "sha256:e18ac877dd91dba6bf6a84e0ea70618f4c4608ca9f5e8f9f9e90b74199712ded"
+tokens:
+  summary: 68
+  core: 211
+  full: 354
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-ios-touch-target-44pt" }
+  - { type: related, target: "@community/rule-ios-safe-area-insets" }
+  - { type: related, target: "@community/pattern-ios-tab-bar-top-level" }
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/check-touch-target-min" }
+  - { type: related, target: "@community/check-mobile-first" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

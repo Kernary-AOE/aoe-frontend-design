@@ -1,0 +1,67 @@
+anti-pattern TrustingClientValidation {
+  id: "@community/anti-pattern-trusting-client-validation"
+  version: "1.0.0"
+
+  label: "Validating Only on the Client (Browser), Not the Server"
+  domain: security
+
+  description: "Relying on browser-side validation (HTML5 required/pattern attributes, JavaScript form checks) as the security boundary, with no equivalent validation on the server — trivially bypassed with curl, Postman, or DevTools."
+
+  why-bad: "Client-side validation is a UX feature, not a security control. Any user can: (1) open DevTools and delete the required attribute, (2) send a raw HTTP request with curl bypassing the browser entirely, (3) modify the request in a proxy (Burp Suite). The server must treat every incoming request as potentially crafted by a malicious actor who has never loaded your HTML. Client validation provides zero security assurance."
+
+  instead-do: "Validate and sanitize ALL inputs on the server, every time, on every endpoint — even for inputs that 'could only come from your own UI'. Client-side validation is additive for UX only: fast feedback, reduced roundtrips. The server is the authoritative validation boundary."
+
+  notes: [
+    "Authorization checks are the same: never trust client-sent role claims (e.g., isAdmin: true in POST body) — derive privileges from the authenticated session server-side",
+    "Price/total validation: never trust client-sent price or total — recalculate server-side from product IDs and quantities",
+    "File type: never trust the MIME type the client declares in multipart — check actual file bytes (magic bytes / libmagic) server-side",
+    "Schema validation libraries (Zod, Joi, Yup, Pydantic) should run on both client (for UX) AND server (for security), sharing the same schema definition",
+    "GraphQL: client-side query builders do not prevent clients from sending arbitrary valid-syntax GraphQL — add depth limiting, cost analysis, and field-level authorization server-side",
+    "The fix is not complex: run the same validation logic on the server you run on the client — co-locate the schema and import it in both places",
+  ]
+
+  trap: "Believing that your SPA is 'internal-only' or that attackers 'can't find the API'. Security through obscurity is not security — API endpoints are discoverable from browser network traffic in seconds."
+
+  structure: """
+    # WRONG — validation only in React component (browser)
+    function SubmitForm() {
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!email.includes('@')) { setError('Invalid email'); return; }
+        // Sends to /api/register — server does NO validation
+        fetch('/api/register', { method: 'POST', body: JSON.stringify({ email, age }) });
+      };
+    }
+    // curl -X POST https://app.com/api/register -d '{"email":"not-an-email","age":-999}'
+    // ^ bypasses browser entirely — server accepts garbage
+
+    # CORRECT — shared schema, validated on both sides
+    // shared/schemas.ts (used by both client and server)
+    export const RegisterSchema = z.object({
+      email: z.string().email().max(254),
+      age:   z.number().int().min(13).max(120),
+    });
+
+    // Server (Express/Next.js API route)
+    app.post('/api/register', async (req, res) => {
+      const result = RegisterSchema.safeParse(req.body);
+      if (!result.success) {
+        return res.status(400).json({ errors: result.error.flatten() });
+      }
+      const { email, age } = result.data;   // safe, validated values
+      // ... proceed
+    });
+
+    // Client (React)
+    const result = RegisterSchema.safeParse(formData);
+    if (!result.success) { showErrors(result.error.flatten()); return; }
+    // Client validation = UX only; server will re-validate anyway
+  """
+
+  related: [
+    @community/principle-owasp-injection,
+    @community/principle-owasp-broken-access-control,
+    @community/pattern-input-validation-allowlist,
+    @community/anti-pattern-sql-string-concat,
+  ]
+}

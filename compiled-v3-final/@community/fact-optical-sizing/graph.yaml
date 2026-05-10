@@ -1,0 +1,8 @@
+atom: "@community/fact-optical-sizing"
+relations:
+  - type: related
+    target: "@community/fact-type-scale-modular"
+  - type: related
+    target: "@community/fact-line-height-readability"
+  - type: related
+    target: "@community/category-typography-scale"

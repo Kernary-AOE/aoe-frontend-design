@@ -1,0 +1,23 @@
+id: "@community/rule-link-purpose-clear"
+kind: rule
+version: "1.0.0"
+description: "Link text MUST be intelligible out of context — a screen-reader user listing all links on a page MUST be able to determine each link's destination from the text alone. Generic text ('click here', 'read more', 'here', 'this') is forbidden."
+domain: accessibility
+content_hash: "sha256:7c49a297e157cb46e87e43b8664a92786329484f5e1d2e256fe263e78e6adbef"
+tokens:
+  summary: 74
+  core: 428
+  full: 792
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-aria-label-required" }
+  - { type: related, target: "@community/rule-heading-hierarchy" }
+  - { type: related, target: "@w3c/source-wcag-22" }
+  - { type: see-also, target: "@community/check-link-purpose-clear" }
+  - { type: validates-with, target: "@w3c/source-wcag-22" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-color-dark-mode-cascade"
+  kind="knowledge"
+  version="1.0.0"
+  domain="aesthetic"
+  tokens="499"
+  q="4.0">
+  <description>Validates that dark-mode color theming is implemented as a single token-layer cascade (light tokens at :root, dark overrides at :root.dark) rather than scattered dark: utilities or component-level color forks.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="499"/>
+    <level name="full"    file="chunks/full.md"    tokens="591"/>
+  </projection>
+</atom>

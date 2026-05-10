@@ -1,0 +1,12 @@
+atom: "@impeccable/template-oklch-palette"
+relations:
+  - type: related
+    target: "@community/term-oklch"
+  - type: related
+    target: "@community/value-brand-hue"
+  - type: related
+    target: "@community/transform-rgb-to-oklch"
+  - type: related
+    target: "@w3c/fact-wcag-contrast-aa"
+  - type: related
+    target: "@community/check-focus-visible"

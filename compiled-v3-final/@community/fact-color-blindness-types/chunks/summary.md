@@ -1,0 +1,3 @@
+# ColorBlindnessTypes [fact] v1.0.0
+Approximately 8% of men and 0.5% of women have a form of color vision deficiency — most commonly red-green (deuteranopia / protanopia). The implication for design is that color must never be the sole channel encoding meaning.
+> Roughly 8% of men of Northern European descent and 0.5% of women have a color vision deficiency — broken into protanopia / protanomaly (red-perception, ~1% men), deuteranopia / deuteranomaly (green-perception, ~6% men, the most common), tritanopia / tritanomaly (blue-yellow, < 0.01% — extremely rare), and the rare achromatopsia (full color absence) — meaning red-green encoding is the largest accessibility risk and color must always be paired with a non-color channel (icon, label, pattern, position).

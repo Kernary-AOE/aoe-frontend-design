@@ -1,0 +1,24 @@
+id: "@anthropic-impeccable/principle-tinted-neutrals"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:44006f86cea77907c1e66a1a1108310a110827708352127c814e7bf12408f686"
+tokens:
+  summary: 63
+  core: 157
+  full: 289
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-color-oklch-required" }
+  - { type: related, target: "@community/term-oklch" }
+  - { type: related, target: "@community/constraint-no-pure-black-text" }
+  - { type: related, target: "@community/constraint-no-pure-white-bg" }
+  - { type: related, target: "@community/fact-oklch-perceptual-uniform" }
+  - { type: related, target: "@impeccable/template-oklch-palette" }
+  - { type: related, target: "@community/value-brand-hue" }
+created_at: "2026-05-07"

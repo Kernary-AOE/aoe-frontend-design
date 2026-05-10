@@ -1,0 +1,100 @@
+persona NotionWarm {
+  id: "@impeccable/persona-notion-warm"
+  version: "1.0.0"
+
+  school: notion-warm
+  domain: visual-design
+
+  description: "Friendly productivity-tool aesthetic: off-white #fbfaf9 paper background, soft warm-grey borders, Inter or SF Pro Display, callout cards with emoji, generous block spacing, hover states that feel tactile. Reads as 'a notebook your friend designed' rather than 'enterprise software.'"
+
+  implies: {
+    font: {
+      display: "humanist or geometric sans optimized for screen — e.g. Inter, SF Pro Display, Söhne, ABC Diatype, Geist, Untitled Sans"
+      body: "same family as display, regular weight at 16px — e.g. Inter, SF Pro Text, Söhne, system-ui"
+      accent: "occasional handwritten pairing for headers — e.g. Caveat, Reenie Beanie, Shadows Into Light Two"
+    }
+    color: {
+      temperature: "warm"
+      palette: "warm off-white paper + soft warm greys + warm primary accent — #fbfaf9 background, #ebebe9 borders, #787774 muted text, #2383e2 (Notion blue) or #d44c47 (warm red) accent"
+      background: "#fbfaf9 (Notion-paper warm white) — slightly cream, never pure #ffffff, never grey-cool"
+    }
+    density: "balanced 1.6 — line-height 1.55, block-level padding (12px 16px), generous space between content blocks (24-32px), hover states with 2-4px lift"
+    layout: "single-column 720-820px main content, optional left rail for navigation, callout cards with 1px border + 8px radius, toggle blocks, inline emoji as iconography"
+    imagery: "abstract illustrations with rounded blob shapes, emoji as primary iconography (not Lucide icons), soft-shadow product screenshots, hand-drawn arrows"
+    motion: "playful but restrained — 200ms ease-out hover lifts, drag-and-drop feedback, toggle expand/collapse with height animation, no parallax"
+  }
+
+  compatible: ["warm", "friendly", "approachable", "productivity-tool", "block-based"]
+  conflicts: ["brutalist", "swiss-modernist", "dense-pragmatist", "magazine-editorial"]
+
+  example-brands: [
+    "Notion",
+    "Linear (the soft marketing side, not the dense product UI)",
+    "Roam Research",
+    "Craft Docs",
+    "Tana",
+    "Reflect.app",
+    "Capacities",
+    "AnyType",
+  ]
+
+  notes: [
+    "The defining triad: #fbfaf9 paper + emoji-as-icon + callout-card-with-1px-border. If you swap any one of those for a Lucide icon, pure white, or shadow-heavy card, you've built a generic SaaS.",
+    "Don't pair Notion-warm with dark mode as the default — the persona's warmth lives in the cream paper. A dark-first 'Notion-warm' is a contradiction; offer dark mode as a toggle, not a hero.",
+    "Border radius lives at 4-8px — not 2px (too crisp, swiss territory) and not 16px+ (too pill, fintech territory). The 6px radius is the secret middle.",
+    "Hover lifts must be 2-4px max with no shadow expansion. Anything more dramatic feels like a marketing site, not a tool.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/pattern-card-component,
+      @community/principle-typography-hierarchy,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-dense-pragmatist,
+    ]
+    typography-required: {
+      display: "Inter | SF Pro Display | Söhne"
+      weight: "regular at 16px body"
+      radius: "4-8px (6px preferred)"
+    }
+    color-required: {
+      background: "#fbfaf9 (never pure #ffffff)"
+      border: "#ebebe9"
+      accent: "#2383e2 or #d44c47"
+    }
+    motion-prescriptions: [
+      @community/pattern-hover-lift,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/template-oklch-palette,
+    @community/example-linear-kbd-shortcuts,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-line-height-readability,
+    @community/rule-line-length-optimal,
+    @community/check-body-readability,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/constraint-no-pure-white-bg,
+    @community/rule-backgrounds-atmospheric,
+    @community/check-color-blacklist-brand,
+    @community/anti-pattern-generic-saas-blue,
+  ]
+
+  specializes: [
+    @community/persona-notion,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-dense-pragmatist,
+  ]
+}

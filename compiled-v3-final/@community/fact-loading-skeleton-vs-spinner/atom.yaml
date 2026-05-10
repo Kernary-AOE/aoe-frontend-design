@@ -1,0 +1,20 @@
+id: "@community/fact-loading-skeleton-vs-spinner"
+kind: fact
+version: "1.0.0"
+description: "Skeleton loaders (content-shaped placeholders) outperform spinners on perceived performance because they preview the layout, set the user's expectation about what's loading, and avoid the 'time-passing' connotation of a spinning element."
+content_hash: "sha256:c9cf0ee6db7394ad653928c5745160fa720b281d243b822ee300f34628d51f92"
+tokens:
+  summary: 161
+  core: 373
+  full: 665
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-duration-perception-thresholds" }
+  - { type: related, target: "@community/fact-optimistic-update-tradeoff" }
+  - { type: related, target: "@community/pattern-skeleton-loader" }
+created_at: "2026-05-07"

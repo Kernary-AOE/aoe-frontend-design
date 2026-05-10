@@ -1,0 +1,24 @@
+id: "@community/pattern-dashboard-grid"
+kind: pattern
+version: "1.0.0"
+description: "A responsive grid of self-contained metric cards (KPIs, sparklines, lists, charts) covering a workspace. Each card is independently sized and reorderable; the grid reflows by viewport using auto-fit columns."
+domain: frontend-design
+content_hash: "sha256:314cbdad8416a738dca638ba8ad87d22f14733d2bfe7e17a79af1a839f5e3f36"
+tokens:
+  summary: 66
+  core: 757
+  full: 1501
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-skeleton-loader" }
+  - { type: related, target: "@community/category-layout-grid" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: compatible, target: "@community/pattern-skeleton-loader" }
+  - { type: compatible, target: "@community/pattern-empty-state" }
+created_at: "2026-05-07"

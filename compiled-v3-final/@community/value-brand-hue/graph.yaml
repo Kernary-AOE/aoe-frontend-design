@@ -1,0 +1,10 @@
+atom: "@community/value-brand-hue"
+relations:
+  - type: related
+    target: "@community/term-oklch"
+  - type: related
+    target: "@impeccable/template-oklch-palette"
+  - type: related
+    target: "@community/transform-rgb-to-oklch"
+  - type: supplies-to
+    target: "@community/constraint-brand-hue-required"

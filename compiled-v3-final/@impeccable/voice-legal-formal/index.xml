@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/voice-legal-formal"
+  kind="knowledge"
+  version="1.0.0"
+  domain="legal-compliance"
+  tokens="697"
+  q="4.0">
+  <description>The voice used in Terms of Service, Privacy Policies, DPAs, and SOC2 reports. Precise, defined-term-heavy, emotion-free. Passive voice is permitted when the actor is irrelevant. Sounds like a Big Law-reviewed SaaS legal page.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="70"/>
+    <level name="core"    file="chunks/core.md"    tokens="697"/>
+    <level name="full"    file="chunks/full.md"    tokens="742"/>
+  </projection>
+</atom>

@@ -1,0 +1,26 @@
+id: "@community/pattern-card-component"
+kind: pattern
+version: "1.0.0"
+description: "A bounded surface using border + border-radius: var(--radius) with 3 internal zones (header p-6, content p-6 pt-0, footer px-6 py-4), nested corner radius formula (inner = outer − padding), and interactive lift via transform: translateY(-2px) + box-shadow step-up on hover."
+domain: frontend-design
+content_hash: "sha256:b0ca19b40a111c66066500efdaa7dbd8afa42a7a07aa0067a9d94956f0c5758c"
+tokens:
+  summary: 83
+  core: 933
+  full: 1783
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/template-nested-corner-radius" }
+  - { type: related, target: "@community/check-spacing-rhythm" }
+  - { type: related, target: "@community/pattern-dashboard-grid" }
+  - { type: related, target: "@community/pattern-hover-lift" }
+  - { type: related, target: "@impeccable/template-card-hover-lift" }
+  - { type: related, target: "@community/fact-hover-feedback-latency" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

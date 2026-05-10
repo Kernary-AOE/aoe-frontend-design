@@ -1,0 +1,16 @@
+atom: "@community/pattern-ios-location-button"
+relations:
+  - type: related
+    target: "@community/rule-ios-permission-in-context"
+  - type: related
+    target: "@community/rule-ios-att-compliance"
+  - type: related
+    target: "@community/rule-ios-permission-pre-prompt"
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"
+  - type: related
+    target: "@community/check-touch-target-min"
+  - type: related
+    target: "@community/check-mobile-first"
+  - type: related
+    target: "@community/check-focus-visible"

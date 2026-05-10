@@ -1,0 +1,71 @@
+total: 30
+categories:
+  marketing-landing: 8
+  content: 5
+  product-ui: 8
+  interaction: 5
+  dev-tool: 4
+
+files:
+  # marketing-landing (8)
+  - marketing-landing/waitlist.yaml
+  - marketing-landing/pricing-consumer.yaml
+  - marketing-landing/pricing-b2b.yaml
+  - marketing-landing/landing-saas.yaml
+  - marketing-landing/landing-creative.yaml
+  - marketing-landing/404.yaml
+  - marketing-landing/coming-soon.yaml
+  - marketing-landing/comparison.yaml
+
+  # content (5)
+  - content/blog-article.yaml
+  - content/doc-page.yaml
+  - content/podcast-episode.yaml
+  - content/about-page.yaml
+  - content/changelog.yaml
+
+  # product-ui (8)
+  - product-ui/dashboard.yaml
+  - product-ui/data-table.yaml
+  - product-ui/settings.yaml
+  - product-ui/kanban-mobile.yaml
+  - product-ui/signup-wizard.yaml
+  - product-ui/order-confirm.yaml
+  - product-ui/log-viewer.yaml
+  - product-ui/file-explorer.yaml
+
+  # interaction (5)
+  - interaction/toast-demo.yaml
+  - interaction/modal.yaml
+  - interaction/form-wizard.yaml
+  - interaction/notification-center.yaml
+  - interaction/command-palette.yaml
+
+  # dev-tool (4)
+  - dev-tool/llm-playground.yaml
+  - dev-tool/prompt-editor.yaml
+  - dev-tool/analytics-realtime.yaml
+  - dev-tool/api-explorer.yaml
+
+bench_v2_coverage:
+  # Maps each bench-v2 task to its taxonomy entry
+  01-waitlist: marketing-landing/waitlist.yaml
+  02-404: marketing-landing/404.yaml
+  03-podcast-episode: content/podcast-episode.yaml
+  04-toast-demo: interaction/toast-demo.yaml
+  05-pricing: marketing-landing/pricing-consumer.yaml
+  06-analytics: product-ui/dashboard.yaml
+  07-signup-wizard: product-ui/signup-wizard.yaml
+  08-ai-chat-mobile: product-ui/kanban-mobile.yaml   # closest: mobile product-ui
+  09-blog-article: content/blog-article.yaml
+  10-settings: product-ui/settings.yaml
+  11-order-confirm: product-ui/order-confirm.yaml
+  12-log-viewer: product-ui/log-viewer.yaml
+  13-kanban-mobile: product-ui/kanban-mobile.yaml
+  14-prompt-editor: dev-tool/prompt-editor.yaml
+  15-data-table: product-ui/data-table.yaml
+  16-podcast-app: content/podcast-episode.yaml       # closest: podcast content
+  17-b2b-pricing: marketing-landing/pricing-b2b.yaml
+  18-notion-collab: product-ui/settings.yaml         # closest: product-ui with collab UI
+  19-mobile-checkout: product-ui/order-confirm.yaml  # closest: transactional flow
+  20-llm-playground: dev-tool/llm-playground.yaml

@@ -1,0 +1,8 @@
+atom: "@community/counter-example-icon-button-24px"
+relations:
+  - type: related
+    target: "@community/metric-target-size"
+  - type: related
+    target: "@community/pattern-modal-confirm"
+  - type: related
+    target: "@community/rule-keyboard-accessible"

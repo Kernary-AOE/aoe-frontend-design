@@ -1,0 +1,13 @@
+<atom
+  id="@community/value-touch-target-min"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="274"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="14"/>
+    <level name="core"    file="chunks/core.md"    tokens="274"/>
+    <level name="full"    file="chunks/full.md"    tokens="677"/>
+  </projection>
+</atom>

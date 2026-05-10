@@ -1,0 +1,24 @@
+id: "@community/pattern-ios-haptic-feedback"
+kind: pattern
+version: "1.0.0"
+description: "Pair visual state changes with haptic feedback for significant user actions using UIFeedbackGenerator. Haptic confirmation closes the feedback loop — the user feels the device acknowledge their action, not just sees it."
+domain: frontend-design
+content_hash: "sha256:47250bf37c5885fbf474bf8b06273a20593c2f8ed5fadb3a89452533a2f01c5c"
+tokens:
+  summary: 70
+  core: 212
+  full: 353
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/pattern-tab-bar-bottom" }
+  - { type: related, target: "@community/check-touch-target-min" }
+  - { type: related, target: "@community/check-mobile-first" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

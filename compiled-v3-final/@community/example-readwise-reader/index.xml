@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-readwise-reader"
+  kind="knowledge"
+  version="1.0.0"
+  domain="typography"
+  tokens="553"
+  q="4.0">
+  <description>Readwise Reader strips articles to a focused reading view with configurable typography (Newsreader, Charter, Inter), themes (sepia #F4ECD8, dark #1C1917, light #FFFFFF), and 600-720px column widths. Highlight tool appears as a floating selection menu (yellow, blue, pink, orange) with a &apos;Note&apos; button. Progress bar at top tracks scroll percentage.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="100"/>
+    <level name="core"    file="chunks/core.md"    tokens="553"/>
+    <level name="full"    file="chunks/full.md"    tokens="1006"/>
+  </projection>
+</atom>

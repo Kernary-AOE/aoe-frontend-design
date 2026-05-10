@@ -1,0 +1,22 @@
+id: "@community/scope-public-facing-marketing"
+kind: scope
+version: "1.0.0"
+description: "Defines the applicability scope for atoms aimed at public landing pages, marketing sites, blog/docs, and pre-auth surfaces. These atoms emphasize brand expressiveness, SEO, conversion, and first-paint performance — and are NOT appropriate for authenticated app surfaces (dashboards, settings, data tables)."
+domain: frontend-design
+content_hash: "sha256:01aef0a355430b28a0d82849729913694b58223cfadad3fc584fba013c21156d"
+tokens:
+  summary: 93
+  core: 548
+  full: 548
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/tradeoff-server-vs-client-rendering" }
+  - { type: related, target: "@community/metric-lcp-largest-contentful-paint" }
+  - { type: related, target: "@community/metric-cls-cumulative-layout-shift" }
+  - { type: related, target: "@community/anti-pattern-ai-slop-aesthetics" }
+created_at: "2026-05-07"

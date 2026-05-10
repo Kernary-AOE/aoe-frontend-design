@@ -1,0 +1,79 @@
+method AntiAiSlopChecklist {
+  id: "@community/method-anti-ai-slop-checklist"
+  version: "1.0.0"
+
+  label: "Anti-AI-Slop Comprehensive Checklist"
+  domain: frontend-design
+
+  description: "A structured pre-ship audit of the five AI fingerprint categories — color, typography, layout, visual effects, motion — that distinguishes intentionally designed output from statistical-average AI output."
+
+  trigger: "Before shipping any AI-generated or AI-assisted frontend. The test: show the interface to someone and say 'AI made this.' If they believe you immediately — redesign it."
+
+  steps: [
+    {
+      category: "Color Fingerprints"
+      checks: [
+        "No purple-to-blue gradient (#7C3AED → #3B82F6) as brand color",
+        "No cyan-on-dark 'tech aesthetic' — tint neutrals toward brand hue at chroma 0.01",
+        "No neon accents on dark backgrounds — desaturate in dark mode, lower chroma not higher",
+        "No pure #000 or #fff — use near-black with hue tint (oklch 12–15% L, chroma 0.01)",
+        "No Tailwind default blue/indigo/purple (#3b82f6, #6366f1, #8b5cf6) — use custom OKLCH palette",
+        "No gradient text on metrics or headings — solid color with high contrast only",
+        "No identical ~270° hue across projects — specify hue parameter per project",
+      ]
+    }
+    {
+      category: "Typography Fingerprints"
+      checks: [
+        "No Inter, Roboto, or Arial as body font",
+        "No DM Sans, Plus Jakarta Sans, or Space Grotesk — equally generic alternatives",
+        "Display + body pairing with contrasting axes (serif + sans, geometric + humanist)",
+        "Modular scale: 1.25 (major third), 1.333 (perfect fourth), or 1.5 (perfect fifth)",
+        "Headings: line-height 1.0–1.15; body: 1.5–1.65",
+      ]
+    }
+    {
+      category: "Layout Fingerprints"
+      checks: [
+        "Not everything wrapped in cards — spacing and alignment create grouping naturally",
+        "No cards nested inside cards",
+        "No identical card grid (icon + heading + text × 6) — vary sizes and layouts",
+        "Not everything centered — left-aligned asymmetric layouts feel more designed",
+        "No same spacing everywhere — create rhythm with tight groupings + generous separations",
+        "No rounded-2xl (16px+) on everything — radius is a design decision",
+      ]
+    }
+    {
+      category: "Visual Effects Fingerprints"
+      checks: [
+        "No glassmorphism everywhere — use glass ONLY for navigation overlays or ONE focal element",
+        "No thick colored border on one side of a card — full border or no border",
+        "No decorative sparklines conveying nothing",
+        "No large icons with rounded corners above every heading",
+      ]
+    }
+    {
+      category: "Motion Fingerprints"
+      checks: [
+        "No bounce/elastic easing — use exponential deceleration: cubic-bezier(0.16, 1, 0.3, 1)",
+        "Not every element has a micro-animation — one well-orchestrated entrance > scattered micro-interactions",
+        "No default ease timing — ease-out for entrances, ease-in for exits, ease-in-out for toggles",
+      ]
+    }
+  ]
+
+  pass-condition: "0 failed checks = distinctive. 1-3 = targeted fixes. 4-6 = generic AI output. 7+ = restart from persona selection."
+
+  sources: [
+    "Impeccable SKILL.md — AI Slop Test and DON'T lists",
+    "anthonyhobday.com/sideprojects/saferules — 28 Visual Design Rules",
+    "Refactoring UI by Steve Schoger and Adam Wathan",
+    "Prime Wiki A/B v4 test data — 9 builds empirical analysis",
+  ]
+
+  related: [
+    @community/anti-pattern-ai-generated-ui,
+    @impeccable/anti-pattern-ai-slop-palette,
+    @impeccable/constraint-font-blacklist,
+  ]
+}

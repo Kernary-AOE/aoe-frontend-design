@@ -1,0 +1,12 @@
+atom: "@community/rule-model-card-required"
+relations:
+  - type: related
+    target: "@community/principle-train-serve-skew"
+  - type: related
+    target: "@community/pattern-feature-store"
+  - type: related
+    target: "@community/fact-evaluation-set-frozen"
+  - type: related
+    target: "@community/anti-pattern-leaky-target"
+  - type: derived-from
+    target: "@community/principle-train-serve-skew"

@@ -1,0 +1,54 @@
+atom: "@community/persona-toss"
+relations:
+  - type: related
+    target: "@community/rule-number-unit-ratio"
+  - type: related
+    target: "@community/rule-whisper-shadows"
+  - type: related
+    target: "@community/rule-single-accent-color"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/check-line-length-optimal"
+  - type: related
+    target: "@community/fact-fintech-number-display"
+  - type: related
+    target: "@community/constraint-typography-weight-blacklist"
+  - type: related
+    target: "@community/fact-line-height-readability"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/check-contrast-aa"
+  - type: related
+    target: "@community/rule-brand-color-primary-only"
+  - type: related
+    target: "@community/constraint-no-pure-white-bg"
+  - type: related
+    target: "@community/rule-backgrounds-atmospheric"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/check-color-blacklist-brand"
+  - type: related
+    target: "@community/constraint-no-pure-black-text"
+  - type: compatible
+    target: "fintech-data-forward"
+  - type: compatible
+    target: "mobile-dashboard"
+  - type: compatible
+    target: "korean-super-app"
+  - type: compatible
+    target: "dense-pragmatist"
+  - type: conflicts
+    target: "editorial-magazine"
+  - type: conflicts
+    target: "playful-consumer"
+  - type: conflicts
+    target: "color-saturated-brand"
+  - type: conflicts
+    target: "warm-institutional"
+  - type: contradicts
+    target: "@impeccable/persona-magazine-editorial"
+  - type: contradicts
+    target: "@community/anti-pattern-rainbow-explosion"

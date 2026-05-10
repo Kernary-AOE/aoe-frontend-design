@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tooltip-keyboard"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="558"
+  q="4.0">
+  <description>A small floating label revealed on hover OR keyboard focus that supplements an icon-only or terse control with explanatory text. Critical for discoverability of icon buttons in dense UIs.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="62"/>
+    <level name="core"    file="chunks/core.md"    tokens="558"/>
+    <level name="full"    file="chunks/full.md"    tokens="1108"/>
+  </projection>
+</atom>

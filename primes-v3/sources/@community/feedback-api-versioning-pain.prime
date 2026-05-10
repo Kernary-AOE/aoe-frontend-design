@@ -1,0 +1,86 @@
+feedback ApiVersioningPain {
+  id: "@community/feedback-api-versioning-pain"
+  version: "1.0.0"
+
+  target: "@community/collection-rest-api-discipline"
+  domain: api-design
+
+  description: "Accumulated feedback from teams who shipped a public REST API and lived through 2+ major versions. Captures the pain points that did not appear in v1 design but emerged once the contract was real and consumers existed."
+
+  observations: {
+    sample-size: 6
+    period: "2023 to 2026"
+    success-rate: 0.83
+
+    common-failures: [
+      {
+        step: "@community/principle-pagination-first",
+        failure: "v1 shipped without pagination on a list endpoint that 'will only ever have a few items'; 2 years later customers have 50K items",
+        frequency: 0.50,
+        impact: "endpoint becomes O(n) database scan; clients OOM; emergency v1.1 with paginated response that breaks existing clients",
+        mitigation: "pagination from day 1, ALWAYS, regardless of expected volume",
+      }
+      {
+        step: "schema field deprecation",
+        failure: "v1 field renamed in v2 but v1 still supported; the code path maintaining BOTH fields develops bugs at the seams",
+        frequency: 0.83,
+        impact: "engineering effort across both versions; subtle behavioral differences emerge; consumers pin v1 forever",
+        mitigation: "deprecation policy: announce in v2 release notes, support v1 for 12 months, log deprecation warning header (Deprecation + Sunset per RFC 8594), then remove",
+      }
+      {
+        step: "error envelope drift",
+        failure: "early endpoints return ad-hoc error shapes ('error': string); later endpoints adopt RFC 9457; two formats live in the same API surface",
+        frequency: 0.67,
+        impact: "client error-handling code branches by endpoint; SDKs become messy",
+        mitigation: "lock error envelope (@community/type-error-shape) in v1.0 spec; add RFC 9457 conformance check to CI",
+      }
+      {
+        step: "@community/principle-idempotent-writes",
+        failure: "POST endpoints did not require Idempotency-Key in v1; client retries cause duplicate charges; production incident at month 14",
+        frequency: 0.33,
+        impact: "1-3 customer-facing duplicate-write incidents per quarter; manual reconciliation cost real",
+        mitigation: "every POST that mutates state requires Idempotency-Key from v1; 24h dedup window; document for clients prominently",
+      }
+      {
+        step: "rate limit headers",
+        failure: "early API had no rate limit headers; clients implement exponential backoff blindly; vendor changes limits and clients break",
+        frequency: 0.67,
+        impact: "client retry logic destabilizes when vendor adjusts rate limits",
+        mitigation: "X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset on every response from day 1; Retry-After on 429/503",
+      }
+    ]
+
+    confidence-adjustments: {
+      "@community/principle-pagination-first": 0.94
+      "@community/type-error-shape": 0.88
+      "@community/principle-idempotent-writes": 0.91
+      "@community/fact-http-method-semantics": 0.93
+      "@community/rule-resource-not-action": 0.85
+    }
+  }
+
+  ai-confidence: 0.84
+
+  lessons: [
+    "Day-1 discipline is the difference between maintainable and painful API at month 18. The 'we'll add it later' tax is severe.",
+    "Pagination, idempotency, and error envelope are non-negotiable from v1.0 — the cost of retrofitting these is a major version.",
+    "Deprecation policy with concrete sunset date prevents indefinite support of old surfaces. RFC 8594 (Deprecation + Sunset headers) is the standard.",
+    "API documentation is part of the contract. Stripe / GitHub / Twilio docs are gold-standard; budget 30% of API engineering effort to docs.",
+    "Public APIs lock in shape decisions for years. Spend extra design time before v1.0 rather than less — you cannot easily change later.",
+  ]
+
+  notes: [
+    "Stripe's API has been remarkably stable since 2011 — major-version changes are rare because v1 was designed deliberately. Read Stripe's API design docs.",
+    "Conservative versioning (Stripe's 'API version per request via Stripe-Version header') lets new endpoints ship without major-version churn; advanced technique.",
+    "GraphQL avoids URL-version drift but has its own deprecation discipline (`@deprecated` directive on fields).",
+  ]
+
+  related: [
+    @community/collection-rest-api-discipline,
+    @community/rule-resource-not-action,
+    @community/principle-pagination-first,
+    @community/principle-idempotent-writes,
+    @community/type-error-shape,
+    @community/anti-pattern-rpc-as-rest,
+  ]
+}

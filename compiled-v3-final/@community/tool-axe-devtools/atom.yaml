@@ -1,0 +1,23 @@
+id: "@community/tool-axe-devtools"
+kind: tool
+version: "1.0.0"
+description: "Deque's axe DevTools is the browser-based companion to axe-core, providing an interactive UI for running accessibility scans during manual QA and design review. Available as Chrome, Firefox, and Edge extensions, plus paid extensions for guided checks (axe DevTools Pro). Industry standard for the manual half of an a11y workflow."
+domain: accessibility
+content_hash: "sha256:6396d96f0295246bbd760b59f9c41819e932fd6a31dfdd39089a45281f703ed4"
+tokens:
+  summary: 95
+  core: 555
+  full: 996
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/tool-axe-core" }
+  - { type: related, target: "@community/tool-lighthouse" }
+  - { type: related, target: "@community/method-a11y-audit" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-three-viewport-breakpoints"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="317"
+  q="4.0">
+  <description>Responsive layouts must define distinct behavior for at least three viewport ranges — narrow (&lt; 640px mobile), medium (640px–1023px tablet/small desktop), and wide (≥ 1024px desktop) — ensuring the mainstream device spectrum is fully covered.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="317"/>
+    <level name="full"    file="chunks/full.md"    tokens="384"/>
+  </projection>
+</atom>

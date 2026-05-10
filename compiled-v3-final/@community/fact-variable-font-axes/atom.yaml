@@ -1,0 +1,21 @@
+id: "@community/fact-variable-font-axes"
+kind: fact
+version: "1.0.0"
+description: "Variable fonts encode multiple design axes — Weight (wght), Width (wdth), Optical Size (opsz), Slant (slnt), Italic (ital), and custom axes — into a single WOFF2 file, enabling continuous interpolation between extremes without loading multiple static font files."
+domain: frontend-design
+content_hash: "sha256:f512df20d47c432d77ff2ad8395e58f37f0f9e1cb0313c6210d5513c85b3af0e"
+tokens:
+  summary: 194
+  core: 483
+  full: 832
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-optical-sizing" }
+  - { type: related, target: "@community/rule-font-loading-fout-foit" }
+  - { type: related, target: "@community/rule-font-self-host" }
+created_at: "2026-05-07"

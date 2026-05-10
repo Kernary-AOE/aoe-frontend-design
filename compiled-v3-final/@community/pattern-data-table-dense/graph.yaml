@@ -1,0 +1,18 @@
+atom: "@community/pattern-data-table-dense"
+relations:
+  - type: related
+    target: "@community/tradeoff-density-vs-comfort"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/check-heading-hierarchy"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/anti-pattern-color-only-meaning"
+  - type: compatible
+    target: "@community/pattern-kanban-board"
+  - type: compatible
+    target: "@community/pattern-progressive-disclosure"

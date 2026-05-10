@@ -1,0 +1,22 @@
+id: "@anthropic-impeccable/principle-font-pairing-contrast"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:69a2476b02f97ee0ec322cd81e41b07328d264bdab97fd6ef1b12013d33306ec"
+tokens:
+  summary: 89
+  core: 242
+  full: 396
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/rule-font-blacklist-applied" }
+  - { type: related, target: "@impeccable/constraint-font-blacklist" }
+  - { type: related, target: "@community/fact-type-scale-modular" }
+  - { type: related, target: "@community/rule-font-weight-not-style" }
+created_at: "2026-05-07"

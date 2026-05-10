@@ -1,0 +1,8 @@
+atom: "@community/example-stripe-dashboard"
+relations:
+  - type: related
+    target: "@community/pattern-dashboard-grid"
+  - type: related
+    target: "@community/example-vercel-analytics"
+  - type: related
+    target: "@community/example-mercury-banking-dashboard"

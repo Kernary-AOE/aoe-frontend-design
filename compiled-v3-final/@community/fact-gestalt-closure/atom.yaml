@@ -1,0 +1,20 @@
+id: "@community/fact-gestalt-closure"
+kind: fact
+version: "1.0.0"
+description: "Gestalt Principle of Closure (Wertheimer, 1923): the mind automatically completes incomplete shapes, perceiving a whole object even when parts of the boundary are missing."
+content_hash: "sha256:10a22d93a51b7a180e9e26c0ccf10da817a75095b593b4076aaf342085f9265c"
+tokens:
+  summary: 123
+  core: 409
+  full: 744
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-gestalt-proximity" }
+  - { type: related, target: "@community/fact-gestalt-continuity" }
+  - { type: related, target: "@community/fact-gestalt-figure-ground" }
+created_at: "2026-05-07"

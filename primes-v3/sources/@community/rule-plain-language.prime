@@ -1,0 +1,30 @@
+rule PlainLanguage {
+  id: "@community/rule-plain-language"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Product copy must use everyday language rather than technical or domain-specific jargon — if a 10-year-old would need to look it up, rephrase it."
+
+  claim: "UI copy must be understandable on first read by a non-technical user; jargon is permitted only in interfaces where domain expertise is a stated prerequisite."
+
+  severity: medium
+
+  examples: [
+    "Violation: 'Authenticate your OIDC provider' → Correct: 'Connect your login service'",
+    "Violation: 'Invalidate cache' (settings button) → Correct: 'Clear saved data'",
+    "Violation: 'Webhook endpoint configured' (success state) → Correct: 'Notifications set up'",
+    "Violation: 'Your API rate limit has been exceeded' → Correct: 'You've made too many requests — please wait a moment'",
+  ]
+
+  exceptions: [
+    "Developer tools and APIs where the audience is technical and the technical term is the correct one (e.g., 'webhook', 'API key', 'OAuth' in a developer console)",
+    "Domain-specific B2B tools where the jargon is the user's native vocabulary (medical, legal, financial)",
+  ]
+
+  related: [
+    @community/rule-active-voice-in-ui-copy,
+    @community/rule-culturally-neutral-copy,
+    @community/rule-permissions-human-readable,
+  ]
+}

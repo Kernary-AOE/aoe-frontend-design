@@ -1,0 +1,46 @@
+id: "@impeccable/persona-magazine-editorial"
+kind: persona
+version: "1.0.0"
+description: "The web translation of Wired, NYT Magazine, and Pitchfork: oversized display serifs at 96-160px, drop caps, asymmetric multi-column flow, full-bleed photo essays, small-caps section heads, byline-dateline-photo-credit typography, dramatic scale contrast between display and body."
+domain: visual-design
+content_hash: "sha256:220583c4310264651291c45a447806d6996d6f3b6f7106fbe2cd858d2bfdf50a"
+tokens:
+  summary: 85
+  core: 698
+  full: 788
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-editorial" }
+  - { type: related, target: "@impeccable/persona-warm-institutional" }
+  - { type: related, target: "@community/fact-optimal-line-length" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/principle-vertical-rhythm" }
+  - { type: related, target: "@community/rule-line-length-optimal" }
+  - { type: related, target: "@community/fact-type-scale-modular" }
+  - { type: related, target: "@community/check-heading-hierarchy" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/constraint-no-pure-white-bg" }
+  - { type: related, target: "@community/rule-backgrounds-atmospheric" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: compatible, target: "@impeccable/persona-editorial" }
+  - { type: compatible, target: "@impeccable/persona-warm-institutional" }
+  - { type: compatible, target: "literary" }
+  - { type: compatible, target: "long-form" }
+  - { type: compatible, target: "refined" }
+  - { type: conflicts, target: "@impeccable/persona-brutalist" }
+  - { type: conflicts, target: "@impeccable/persona-swiss-modernist" }
+  - { type: conflicts, target: "@impeccable/persona-vercel-clean" }
+  - { type: conflicts, target: "@impeccable/persona-stripe-fintech" }
+  - { type: conflicts, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: contradicts, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: contradicts, target: "@impeccable/persona-brutalist" }
+created_at: "2026-05-07"

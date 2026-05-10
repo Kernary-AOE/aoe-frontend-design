@@ -1,0 +1,13 @@
+<atom
+  id="@w3c/fact-wcag-contrast-aa"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="67"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="53"/>
+    <level name="core"    file="chunks/core.md"    tokens="67"/>
+    <level name="full"    file="chunks/full.md"    tokens="81"/>
+  </projection>
+</atom>

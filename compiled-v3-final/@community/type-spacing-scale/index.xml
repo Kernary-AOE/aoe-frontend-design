@@ -1,0 +1,14 @@
+<atom
+  id="@community/type-spacing-scale"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-system"
+  tokens="585"
+  q="4.0">
+  <description>Schema for a spacing scale — the canonical set of distance values used for padding, margin, gap, and inset across the design system. Spacing scales should be a small, named set of tokens grounded in a base unit (typically 4px or 8px) to enforce vertical rhythm and prevent magic-number proliferation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="88"/>
+    <level name="core"    file="chunks/core.md"    tokens="585"/>
+    <level name="full"    file="chunks/full.md"    tokens="1082"/>
+  </projection>
+</atom>

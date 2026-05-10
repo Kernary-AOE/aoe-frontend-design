@@ -1,0 +1,36 @@
+method RuleAuthoringChecklist {
+  id: "@community/method-rule-authoring-checklist"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Nine-point verification checklist for any new or updated design rule file — ensures every rule has a single purpose, clear activation condition, concrete examples, and anti-patterns before it is merged."
+
+  steps: [
+    { step: 1, label: "Single purpose", check: "The rule has exactly one clear, specific purpose — not a bundle of unrelated guidelines." },
+    { step: 2, label: "Activation condition obvious", check: "It is immediately clear when the rule applies (which file type, which design context, which lifecycle phase)." },
+    { step: 3, label: "References existing artifacts", check: "The rule references existing design docs, tokens, or related atoms where relevant — not standalone." },
+    { step: 4, label: "Required frontmatter present", check: "id, version, domain, description are filled. For rule/constraint: statement field present." },
+    { step: 5, label: "At least one concrete example", check: "The rule includes at least one code or design example demonstrating the correct behavior." },
+    { step: 6, label: "At least one anti-pattern", check: "The rule includes at least one counter-example showing what to avoid." },
+    { step: 7, label: "No project-specific hardcoding", check: "The rule avoids hardcoding project names, internal URLs, or team-specific conventions unless labeled [PROJECT-SPECIFIC]." },
+    { step: 8, label: "Portable to other teams", check: "Another team could adopt this rule with minimal or no modification." },
+    { step: 9, label: "Related atoms linked", check: "2–3 related atoms are listed in the related field for discovery context." },
+  ]
+
+  pass-condition: "all"
+
+  applies-to: "Any new or updated .prime atom file, Cursor .mdc rule file, or design system guideline document."
+
+  notes: [
+    "Source: github.com/spencergoldade/cursor-designer, .cursor/rules/binders/design-quality-testing.mdc (GPL-3.0).",
+    "Run this checklist before merging any new atom into the corpus — treat failed items as blocking.",
+    "For complex rules split across multiple atoms, verify each individual atom passes independently.",
+  ]
+
+  related: [
+    @community/method-design-qa-pre-ship,
+    @community/method-a11y-audit,
+    @community/rule-design-md-front-matter,
+  ]
+}

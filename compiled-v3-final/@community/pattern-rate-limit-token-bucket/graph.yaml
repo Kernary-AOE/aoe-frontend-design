@@ -1,0 +1,8 @@
+atom: "@community/pattern-rate-limit-token-bucket"
+relations:
+  - type: related
+    target: "@community/principle-owasp-broken-authentication"
+  - type: related
+    target: "@community/check-https-everywhere"
+  - type: related
+    target: "@community/rule-brute-force-protection"

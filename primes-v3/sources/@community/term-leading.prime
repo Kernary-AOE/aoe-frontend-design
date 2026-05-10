@@ -1,0 +1,27 @@
+term Leading {
+  id: "@community/term-leading"
+  version: "1.0.0"
+
+  meaning: "The vertical distance between successive baselines of text — historically the height of the lead strips inserted between lines of metal type. In CSS, leading is controlled by the `line-height` property and is the single most important typographic variable for reading comfort and visual rhythm."
+
+  domain: visual-design
+
+  aliases: ["line-height", "linespacing", "interlinear spacing"]
+
+  notes: [
+    "Pronounced 'LED-ing' (like the metal), not 'LEED-ing'. The term comes from the lead spacers used in metal typesetting from Gutenberg through the 20th century.",
+    "CSS `line-height` accepts unitless numbers (e.g. `1.5`) which multiply against the element's `font-size`. Unitless is preferred — it inherits proportionally; pixel/em values inherit literally and break nested type.",
+    "Modern recommendations: body text 1.5–1.7; headings 1.1–1.3; UI labels 1.2–1.4. Long-form reading (articles, essays) benefits from the upper end (1.6–1.8).",
+    "WCAG 1.4.12 (Text Spacing) requires that `line-height: 1.5` be honorable without breaking layout — implies UI must accommodate user-overridden leading.",
+    "Tight leading (< 1.2) feels dense and pressured; loose leading (> 2.0) feels disconnected and disrupts vertical rhythm. The sweet spot depends on x-height, line length, and language.",
+    "CJK languages typically need MORE leading than Latin (1.6–1.8 minimum) due to taller character bodies and the absence of inter-word spacing.",
+    "CSS `leading-trim` (Type Lev 4) and the `text-edge` property enable 'trimmed' leading that hugs cap-height/x-height — useful for tight UI labels but not yet baseline-supported.",
+  ]
+
+  related: [
+    @community/category-typography-scale,
+    @community/taxonomy-typography-roles,
+    @community/principle-vertical-rhythm,
+    @community/check-line-length-optimal,
+  ]
+}

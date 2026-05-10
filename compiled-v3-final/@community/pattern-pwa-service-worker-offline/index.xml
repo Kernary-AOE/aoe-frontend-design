@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-pwa-service-worker-offline"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="434"
+  q="4.0">
+  <description>Register a service worker from the main thread; inside the worker, cache critical assets on the install event and intercept fetch requests to serve cached responses when the network is unavailable.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="66"/>
+    <level name="core"    file="chunks/core.md"    tokens="434"/>
+    <level name="full"    file="chunks/full.md"    tokens="802"/>
+  </projection>
+</atom>

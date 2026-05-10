@@ -1,0 +1,50 @@
+atom: "@community/persona-superhuman"
+relations:
+  - type: related
+    target: "@impeccable/persona-editorial"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@impeccable/template-card-hover-lift"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/check-line-length-optimal"
+  - type: related
+    target: "@community/fact-variable-font-axes"
+  - type: related
+    target: "@community/constraint-typography-weight-blacklist"
+  - type: related
+    target: "@community/fact-line-height-readability"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/check-contrast-aa"
+  - type: related
+    target: "@community/rule-single-accent-color"
+  - type: related
+    target: "@community/rule-brand-color-primary-only"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/check-color-blacklist-brand"
+  - type: related
+    target: "@community/constraint-max-color-roles-7"
+  - type: compatible
+    target: "editorial"
+  - type: compatible
+    target: "warm-institutional"
+  - type: compatible
+    target: "notion-warm"
+  - type: compatible
+    target: "stripe-fintech"
+  - type: conflicts
+    target: "brutalist"
+  - type: conflicts
+    target: "dense-pragmatist"
+  - type: conflicts
+    target: "vercel-clean"
+  - type: contradicts
+    target: "@impeccable/persona-brutalist"
+  - type: contradicts
+    target: "@impeccable/persona-dense-pragmatist"

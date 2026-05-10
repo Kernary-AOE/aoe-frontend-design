@@ -1,0 +1,24 @@
+id: "@community/taxonomy-loading-states"
+kind: taxonomy
+version: "1.0.0"
+description: "A taxonomy of loading states by perceived duration. Different durations require different visual treatments: instant operations need no indicator at all; sub-second waits show progress in-context; multi-second waits need skeleton or progress-bar; long operations need progress with percentage and cancel."
+domain: ux-design
+content_hash: "sha256:c8b251422ae743614937dd1d1940e04b5000032e34b0fe9ea7209fbab109ade8"
+tokens:
+  summary: 89
+  core: 1150
+  full: 2210
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-perceived-vs-actual" }
+  - { type: related, target: "@community/anti-pattern-no-loading-state" }
+  - { type: related, target: "@community/anti-pattern-ios-fullscreen-spinner" }
+  - { type: related, target: "@community/anti-pattern-decorative-spinning" }
+  - { type: related, target: "@community/rule-cls-budget" }
+  - { type: related, target: "@community/value-motion-duration-fast" }
+created_at: "2026-05-07"

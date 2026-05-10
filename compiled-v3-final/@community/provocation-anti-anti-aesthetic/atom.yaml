@@ -1,0 +1,20 @@
+id: "@community/provocation-anti-anti-aesthetic"
+kind: provocation
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:b6bbdf44654ba037b8a809a828dfd1ece5927bfdeb9bf03fabc1865e52eb036b"
+tokens:
+  summary: 16
+  core: 331
+  full: 331
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/principle-distinctiveness" }
+  - { type: related, target: "@community/principle-commit-bold-aesthetic" }
+  - { type: related, target: "@community/constraint-distinctiveness-mandate" }
+created_at: "2026-05-07"

@@ -1,0 +1,3 @@
+# EasingMoodMapping [fact] v1.0.0
+不同 easing 曲线传达不同的情绪/品牌气质：linear=机械程序感、ease-out=自信收尾、cubic-bezier(0.16,1,0.3,1)=柔顺优雅、cubic-bezier(0.34,1.56,0.64,1)=调皮回弹、spring=弹性活泼、ease-in-out=对称从容。选择 easing 等于在选择'品牌的运动性格'。
+> UI motion 的 easing 选择不只是性能或物理学问题——每条曲线传达一种情绪：linear 用于无终点循环（spinner / shimmer），其他场景用 linear 等于宣告'这是程序的，不是产品的'；ease-out 系列（包括 cubic-bezier(0.16,1,0.3,1) ease-out-quint）传达'自信抵达'，是 productivity tool 的默认语言（Linear / Notion）；cubic-bezier(0.34,1.56,0.64,1) 这类带 overshoot 的曲线传达'调皮 / 玩具感'，适合 consumer / 社交产品（Discord / Duolingo）；spring physics 表达'有重量、有弹性'的物质感（iOS / Apple Music）；ease-in-out 对称曲线适合非关键的循环或被动过渡（背景渐变、状态指示），但用于焦点元素会显得'拖泥带水'。

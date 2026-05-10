@@ -1,0 +1,8 @@
+atom: "@community/rule-intl-api-locale-formatting"
+relations:
+  - type: related
+    target: "@community/rule-autocomplete-attributes"
+  - type: related
+    target: "@community/fact-border-radius-platform"
+  - type: related
+    target: "@community/rule-content-width-constrained"

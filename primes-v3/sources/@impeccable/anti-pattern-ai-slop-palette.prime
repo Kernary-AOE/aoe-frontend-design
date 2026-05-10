@@ -1,0 +1,42 @@
+anti-pattern AiSlopPalette {
+  id: "@impeccable/anti-pattern-ai-slop-palette"
+  version: "1.0.0"
+
+  label: "The AI-Slop Default Palette"
+  domain: visual-design
+
+  description: "The statistically predictable default visual language produced by AI code generation tools when given no specific brand constraints: Inter typeface + saturated purple (#7c3aed–#8b5cf6) + near-black background + rounded corners everywhere + glowing shadow effects. Recognizable at a glance as machine-generated, communicates no brand identity, and satisfies only the lowest bar of 'looks professional'."
+
+  trap: "AI assistants optimize toward training-data averages. The average shadcn/ui + Tailwind CSS project uses exactly these defaults. An agent that generates a frontend without explicit brand constraints will produce this combination with high probability."
+
+  counter-examples: [
+    @impeccable/counter-example-inter-purple-dark,
+    @community/counter-example-outline-none,
+  ]
+
+  detection: @community/check-ai-slop-palette
+
+  detection-heuristics: [
+    "Font family is Inter or Roboto (no distinctive display font)",
+    "Primary color is in hsl(260–280°, 70–100%, 50–60%) range (Tailwind purple-600 to violet-500)",
+    "Background is #0f0f0f, #111827, #1a1a1a, or #0d0d0d",
+    "Button border-radius is 6–8px on all corners with no size differentiation",
+    "Box shadows use rgba(0,0,0,0.1)–rgba(0,0,0,0.25) with 20–40px blur (glass morphism default)",
+  ]
+
+  remediation: [
+    "Specify typeface constraints explicitly: use @impeccable/constraint-font-blacklist to prevent Inter.",
+    "Generate brand palette from oklch with non-default hue: avoid 240°–300°; try 22° (warm orange), 140° (natural green), 330° (rose).",
+    "Use @impeccable/template-oklch-palette to derive a tonal system from a custom hue.",
+    "Introduce typographic hierarchy: use a contrasting display face (serif or geometric sans) alongside body text.",
+  ]
+
+  severity: critical
+
+  related: [
+    @impeccable/counter-example-inter-purple-dark,
+    @impeccable/constraint-font-blacklist,
+    @community/term-oklch,
+    @community/value-brand-hue,
+  ]
+}

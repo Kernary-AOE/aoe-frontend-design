@@ -1,0 +1,26 @@
+atom: "@community/rule-form-validation-inline"
+relations:
+  - type: related
+    target: "@community/rule-error-message-associated"
+  - type: related
+    target: "@community/rule-form-label-associated"
+  - type: related
+    target: "@community/fact-error-prevention"
+  - type: related
+    target: "@impeccable/template-form-validation"
+  - type: related
+    target: "@community/anti-pattern-clear-form-on-failure"
+  - type: related
+    target: "@community/example-stripe-checkout"
+  - type: related
+    target: "@community/example-calcom-scheduler"
+  - type: related
+    target: "@community/principle-error-prevention-and-recovery"
+  - type: related
+    target: "@community/rule-preserve-user-input-on-error"
+  - type: see-also
+    target: "@community/check-form-validation-inline"
+  - type: validates-with
+    target: "@community/fact-error-prevention"
+  - type: validates-with
+    target: "@nielsen/taxonomy-10-heuristics"

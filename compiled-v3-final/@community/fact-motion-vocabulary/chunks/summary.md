@@ -1,0 +1,4 @@
+# MotionVocabulary [fact] v1.0.0
+Motion vocabulary: transitions (state A → state B with CSS transition property) are continuous with a reversal; animations (CSS @keyframes / GSAP tween) are scripted sequences; spring physics has stiffness/damping/mass — precise terminology prevents category errors in implementation.
+> UI motion divides into three distinct categories with different implementation paths: (1) Transitions — CSS transition property, fire on property change, reverse on removal, best for hover/focus/toggle; (2) Animations — CSS @keyframes or GSAP, scripted start-to-end, do not auto-reverse, best for entrance/exit/loading; (3) Spring physics — no fixed duration, governed by stiffness (restoring force), damping (friction), and mass (inertia) — best for physical interactions, draggable elements, and indicator tracking.
+domain: frontend-design

@@ -1,0 +1,8 @@
+atom: "@community/constraint-content-language-declared"
+relations:
+  - type: related
+    target: "@community/constraint-accessibility-aa-minimum"
+  - type: related
+    target: "@w3c/source-wcag-22"
+  - type: related
+    target: "@community/tool-axe-core"

@@ -1,0 +1,93 @@
+# TooltipHoverOnly [counter-example] v1.0.0
+An info-icon tooltip that explains a form field. On desktop hover it works; on mobile devices nothing happens; with keyboard focus the tooltip never appears. The information inside is required for users to complete the form correctly.
+domain: accessibility
+
+## Label
+Help Tooltip Revealed Only On `:hover`
+
+## Bad Code
+```
+<label>
+Tax ID
+<span className="info" data-tip="Format: 12-3456789">
+ⓘ
+</span>
+<input name="taxId" />
+</label>
+
+/* CSS */
+.info {
+position: relative;
+}
+.info::after {
+content: attr(data-tip);
+position: absolute;
+bottom: 100%;
+display: none;
+background: black;
+color: white;
+padding: 4px 8px;
+}
+.info:hover::after {
+display: block;
+}
+```
+
+## Why Bad
+- `<span>` trigger is not focusable — Tab key skips past it, keyboard users never see the tooltip
+- Mobile devices have no hover — touch users cannot trigger the tooltip at all
+- Tooltip content is required ('Format: 12-3456789') but invisible to ~50% of users
+- No `role='tooltip'` or `aria-describedby` — screen readers don't associate the description with the field
+- `display: none` removes the content from accessibility tree even when hover would otherwise reveal it
+
+## Good Code
+```
+<label htmlFor="taxId">
+Tax ID
+<button
+type="button"
+className="info"
+aria-describedby="tax-tip"
+aria-label="Tax ID format help"
+>
+ⓘ
+</button>
+<span id="tax-tip" role="tooltip" className="tip">
+Format: 12-3456789
+</span>
+<input id="taxId" name="taxId" aria-describedby="tax-tip" />
+</label>
+
+/* CSS */
+.tip {
+position: absolute;
+clip: rect(0 0 0 0);  /* visually hidden by default */
+clip-path: inset(50%);
+width: 1px;
+height: 1px;
+overflow: hidden;
+}
+.info:hover ~ .tip,
+.info:focus-visible ~ .tip,
+.info:focus-within ~ .tip {
+position: absolute;
+clip: auto;
+clip-path: none;
+width: auto;
+height: auto;
+bottom: 100%;
+background: var(--surface-inverse);
+color: var(--text-inverse);
+padding: var(--space-xs) var(--space-sm);
+}
+```
+
+## Why Good
+- `<button>` trigger is keyboard focusable and tap-friendly on touch devices
+- Hover OR focus OR focus-within all reveal the tip — works on mouse, keyboard, and touch
+- `role='tooltip'` + `aria-describedby` exposes the content to screen readers always (not just on hover)
+- Visually hidden (clip-path) instead of `display: none` keeps tooltip in the accessibility tree
+- Touch users tap the icon (it's a button), focus fires, tooltip appears — no broken UX
+
+## Anti Pattern
+@community/anti-pattern-hover-only-interaction

@@ -1,0 +1,21 @@
+id: "@community/anti-pattern-text-in-image"
+kind: anti-pattern
+version: "1.0.0"
+description: "Rasterizing important headlines, CTAs, prices, or product names directly into a JPG/PNG hero image instead of marking them up as HTML text. The text cannot be selected, copied, translated, screen-readered, or scaled. On retina displays it looks blurry; on small viewports it doesn't reflow. SEO crawlers don't see it. The page's primary message is invisible to half the access methods on the web."
+domain: accessibility
+content_hash: "sha256:cefca608da1e4585e6f88c0c600bdaf495e4c6445a1e89a917ea6835e3fef663"
+tokens:
+  summary: 114
+  core: 588
+  full: 1063
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/counter-example-hero-png-text" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@w3c/source-wcag-22" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-ios-live-activities"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="203"
+  q="4.0">
+  <description>Use ActivityKit Live Activities for real-time, time-bound events (delivery ETAs, sports scores, timers) surfaced on the lock screen and in the Dynamic Island&apos;s compact, expanded, and minimal layouts.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="65"/>
+    <level name="core"    file="chunks/core.md"    tokens="203"/>
+    <level name="full"    file="chunks/full.md"    tokens="341"/>
+  </projection>
+</atom>

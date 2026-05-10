@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-no-undocumented-platform-concept-rename"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="224"
+  q="4.0">
+  <description>Core feature and concept names must not differ between platforms unless the renaming decision is explicitly documented and justified in a design decision record.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="60"/>
+    <level name="core"    file="chunks/core.md"    tokens="224"/>
+    <level name="full"    file="chunks/full.md"    tokens="446"/>
+  </projection>
+</atom>

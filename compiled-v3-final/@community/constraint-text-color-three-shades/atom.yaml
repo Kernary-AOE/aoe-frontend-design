@@ -1,0 +1,21 @@
+id: "@community/constraint-text-color-three-shades"
+kind: constraint
+version: "1.0.0"
+description: "A complete UI text color system MUST use exactly three lightness tiers — primary (foreground, weight 500+, highest contrast), secondary (muted-foreground, ~60–70% lightness relative to primary), and tertiary (disabled/placeholder, ~40–50% relative to primary) — to create scannable hierarchy without requiring size or weight alone."
+domain: frontend-design
+content_hash: "sha256:c59cbe38a64fb7733789de43dcf3a11d3ab952b216626ae7c45a8319e7a0a531"
+tokens:
+  summary: 100
+  core: 407
+  full: 504
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-refactoring-ui-hierarchy" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/constraint-no-pure-black-text" }
+created_at: "2026-05-07"

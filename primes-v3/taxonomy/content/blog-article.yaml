@@ -1,0 +1,49 @@
+task_type: blog-article
+parent: content
+description: "Single blog or magazine article page with editorial typography, reading progress, and rich longform layout."
+trigger_keywords:
+  - "blog article"
+  - "blog post"
+  - "magazine article"
+  - "longform"
+  - "博客文章"
+  - "单篇文章"
+  - "文章页"
+  - "排版要讲究"
+  - "editorial"
+  - "article page"
+default_register_pool:
+  - school: magazine-editorial
+    weight: 0.55
+  - school: notion-warm
+    weight: 0.25
+  - school: warm-institutional
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-blog-article-layout"
+  - "@community/principle-typography-hierarchy"
+  - "@community/rule-line-length-optimal"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-scroll-reveal"
+  - "@community/pattern-table-of-contents-sticky"
+forbidden_atoms:
+  - "@impeccable/persona-dense-pragmatist"
+  - "@impeccable/persona-vercel-clean"
+  - "@community/pattern-dashboard-layout"
+  - "@community/pattern-data-table-dense"
+max_atoms_per_axis:
+  register: 1
+  pattern: 2
+  motion: 1
+  typography: 3
+  color: 1
+  rules: 2
+quality_checks:
+  - "Body text must be 16-18px with line-height 1.6-1.8"
+  - "Line length must be constrained to 60-75 characters (65ch target)"
+  - "Article must have clear heading hierarchy: h1 > h2 > h3"
+  - "Typography must feel crafted, not default browser styles"
+  - "Table of contents must be present for articles over 1500 words"
+  - "Reading progress indicator recommended for long articles"
+  - "Images must have captions and proper alt text"

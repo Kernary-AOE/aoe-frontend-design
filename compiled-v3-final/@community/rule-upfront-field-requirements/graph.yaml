@@ -1,0 +1,8 @@
+atom: "@community/rule-upfront-field-requirements"
+relations:
+  - type: related
+    target: "@community/check-form-label-associated"
+  - type: related
+    target: "@community/check-form-validation-inline"
+  - type: related
+    target: "@community/check-error-message-associated"

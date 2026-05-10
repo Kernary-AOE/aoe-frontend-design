@@ -1,0 +1,22 @@
+id: "@community/tool-axe-core"
+kind: tool
+version: "1.0.0"
+description: "Deque's axe-core accessibility testing engine. Runs a comprehensive set of automated accessibility rules against an HTML document or DOM and returns violations, passes, incomplete (needs manual check), and inapplicable rules. Industry standard for automated a11y testing."
+domain: accessibility
+content_hash: "sha256:6a5b2a596bce720bc9a7d0a7fd0d3bcd78333d73162f0c526c2a8c60f83bc9b2"
+tokens:
+  summary: 80
+  core: 302
+  full: 505
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@w3c/fact-wcag-contrast-aa" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-color-contrast" }
+  - { type: related, target: "@community/method-a11y-audit" }
+created_at: "2026-05-07"

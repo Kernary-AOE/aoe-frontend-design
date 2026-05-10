@@ -1,0 +1,45 @@
+method BrandDistinctivenessTest {
+  id: "@community/method-brand-distinctiveness-test"
+  version: "1.0.0"
+
+  label: "Brand Distinctiveness Test"
+  domain: frontend-design
+
+  description: "A 5-question audit that tests whether a design communicates specific brand identity rather than generic AI-generated output — applied before any public launch or design review."
+
+  steps: [
+    {
+      question: "If you removed all the logo and copy, could a competitor use this design without looking out of place?"
+      pass: "No — the visual language is owned by this brand."
+      fail: "Yes — the design is brand-neutral and therefore brand-absent."
+    }
+    {
+      question: "Can you name the specific design decision that makes this immediately recognizable as different from the AI-slop default?"
+      pass: "Yes — e.g. 'the serialized Cormorant Garamond headline', 'the zero-radius sharp brutalist grid', 'the warm amber OKLCH palette'."
+      fail: "No specific answer — the differentiation is vague or absent."
+    }
+    {
+      question: "Would a designer who knows v0, Bolt, and Claude output immediately recognize this as human-directed?"
+      pass: "Yes — at least one choice would prompt 'how did they do that?'"
+      fail: "No — the design looks like it could have been generated with no system prompt."
+    }
+    {
+      question: "Does the color palette have a traceable brand rationale (historical reference, industry signal, emotional intent)?"
+      pass: "Yes — the hue has a documented reason."
+      fail: "No — the color was chosen because it 'looked good' or was suggested by the tool."
+    }
+    {
+      question: "Is there a written design philosophy document (even one paragraph) that generated this design?"
+      pass: "Yes — the philosophy exists and the design visibly enacts it."
+      fail: "No — the design was generated iteratively with no upfront aesthetic commitment."
+    }
+  ]
+
+  scoring: "5/5 = distinctive brand identity. 3-4/5 = targeted improvements needed. 0-2/5 = generic output, restart from persona brief."
+
+  related: [
+    @impeccable/principle-distinctiveness,
+    @community/constraint-distinctiveness-mandate,
+    @community/principle-commit-bold-aesthetic,
+  ]
+}

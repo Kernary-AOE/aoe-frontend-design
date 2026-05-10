@@ -1,0 +1,24 @@
+id: "@community/pattern-right-to-be-forgotten"
+kind: pattern
+version: "1.0.0"
+description: "An end-to-end deletion architecture that fulfills GDPR Article 17 'right to erasure' (and CCPA §1798.105 right to delete) within the legally-required window. A user request flows through identity verification, system-of-record purge, downstream propagation, and verifiable completion."
+domain: legal-compliance
+content_hash: "sha256:7de64d74069993de434eda335c9459f707d90a7a8027e8a875e3094a3b177561"
+tokens:
+  summary: 87
+  core: 908
+  full: 1898
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-data-minimization" }
+  - { type: related, target: "@community/fact-pii-tokenization" }
+  - { type: related, target: "@community/rule-cookie-consent-banner" }
+  - { type: related, target: "@community/anti-pattern-dark-pattern-consent" }
+  - { type: compatible, target: "@community/rule-cookie-consent-banner" }
+  - { type: derived-from, target: "@community/principle-data-minimization" }
+created_at: "2026-05-07"

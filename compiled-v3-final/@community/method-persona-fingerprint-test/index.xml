@@ -1,0 +1,14 @@
+<atom
+  id="@community/method-persona-fingerprint-test"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="111"
+  q="4.0">
+  <description>A rapid 3-question audit to verify that a generated UI has the correct visual fingerprint for its declared persona — ensuring the persona brief was actually enacted rather than just named.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="64"/>
+    <level name="core"    file="chunks/core.md"    tokens="111"/>
+    <level name="full"    file="chunks/full.md"    tokens="159"/>
+  </projection>
+</atom>

@@ -1,0 +1,183 @@
+# ScrollReveal [pattern] v1.0.0
+元素滚动进入视口时触发 fade + slide 入场，长页面（landing page、blog post、portfolio）让分段内容感觉'一步步揭露'而不是页面 paint 完所有就位。用 IntersectionObserver 或 CSS animation-timeline: view() 实现。
+domain: frontend-design
+
+## Label
+Scroll Reveal
+
+## Problem
+长着陆页一次 paint 所有 section 内容，用户滚动时看到的都是'已经在那等着'的元素，缺少节奏。但全部用 JS 监听 scroll 性能差且代码复杂。
+
+## Solution
+首选 CSS animation-timeline: view()（Chrome 115+ 原生），元素进入视口时 0%→100% 推进 fade + slide-up 动画。回退用 IntersectionObserver 监听 entry，加 .in-view 类触发 keyframes。
+
+## Structure
+```
+    <section class="reveal-section">
+      <h2 class="reveal">Section heading</h2>
+      <p class="reveal">Section body text...</p>
+      <img class="reveal" src="/hero.jpg" alt="Demo screenshot" />
+    </section>
+  
+```
+
+## Styles
+```
+    /* Modern: native CSS scroll-driven (Chrome 115+, Edge 115+) */
+    @supports (animation-timeline: view()) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: reveal-on-scroll linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      @keyframes reveal-on-scroll {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    /* Fallback: IntersectionObserver toggles .in-view */
+    @supports not (animation-timeline: view()) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 500ms ease-out, transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.in-view {
+        opacity: 1;
+        transform: none;
+        animation: none;
+        transition: none;
+      }
+    }
+  
+```
+
+## Timing
+- **Duration**: 400-600ms (IntersectionObserver path)
+- **Easing**: cubic-bezier(0.16, 1, 0.3, 1)
+- **Threshold**: trigger when 15-25% of element is visible
+- **Distance**: translateY(16-32px)
+
+## Interaction
+- 用户向下滚动 → 元素进入视口 → 一次性触发动画，之后保持终态
+- 向上滚回看到已显示的元素：保持终态，不重播（reverse 会让长页面晕动）
+- 动画中点击 / hover 不受阻塞——transform 不影响 hit-test
+- 新元素动态加载（无限滚动 / lazy load）时为新增节点附加同一 .reveal 类即可
+
+## A11y
+- prefers-reduced-motion: reduce 必须完全跳过：opacity 1 / transform none / animation none
+- 屏幕阅读器朗读不依赖 .in-view —— DOM 节点始终存在，仅 opacity 控制视觉
+- IntersectionObserver 路径下，即使 JS 失败也要保证内容最终可见——用 noscript fallback 或在 1s 后强制添加 .in-view
+- 首屏 above-the-fold 元素禁用 reveal——首次渲染就该显示，否则影响 LCP
+- translateY 距离 ≤ 32px：超过会在前庭敏感用户视野中产生'飞入'感
+
+## Behavior
+- 优先用 animation-timeline: view()——零 JS、走合成层、自动跟手
+- 回退方案用 IntersectionObserver({ threshold: 0.2, rootMargin: '0px 0px -10% 0px' })——元素进入下方 90% 时触发
+- 触发后 unobserve 该元素，避免重复触发
+- 不要用 scroll 事件监听做 reveal——每帧触发 layout 抖动
+- section 内多元素若想错位入场，用 scroll-driven path 时给每个元素不同 animation-range；JS path 时给 transition-delay 根据 --i 错位
+- 永远不要 reveal 整个页面的所有元素——选择 hero / section heading / cta 等焦点元素，遵循 motion hierarchy
+
+## Label
+Scroll Reveal
+
+## Problem
+长着陆页一次 paint 所有 section 内容，用户滚动时看到的都是'已经在那等着'的元素，缺少节奏。但全部用 JS 监听 scroll 性能差且代码复杂。
+
+## Solution
+首选 CSS animation-timeline: view()（Chrome 115+ 原生），元素进入视口时 0%→100% 推进 fade + slide-up 动画。回退用 IntersectionObserver 监听 entry，加 .in-view 类触发 keyframes。
+
+## Structure
+```
+    <section class="reveal-section">
+      <h2 class="reveal">Section heading</h2>
+      <p class="reveal">Section body text...</p>
+      <img class="reveal" src="/hero.jpg" alt="Demo screenshot" />
+    </section>
+  
+```
+
+## Styles
+```
+    /* Modern: native CSS scroll-driven (Chrome 115+, Edge 115+) */
+    @supports (animation-timeline: view()) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: reveal-on-scroll linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      @keyframes reveal-on-scroll {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    /* Fallback: IntersectionObserver toggles .in-view */
+    @supports not (animation-timeline: view()) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 500ms ease-out, transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.in-view {
+        opacity: 1;
+        transform: none;
+        animation: none;
+        transition: none;
+      }
+    }
+  
+```
+
+## Timing
+- **Duration**: 400-600ms (IntersectionObserver path)
+- **Easing**: cubic-bezier(0.16, 1, 0.3, 1)
+- **Threshold**: trigger when 15-25% of element is visible
+- **Distance**: translateY(16-32px)
+
+## Interaction
+- 用户向下滚动 → 元素进入视口 → 一次性触发动画，之后保持终态
+- 向上滚回看到已显示的元素：保持终态，不重播（reverse 会让长页面晕动）
+- 动画中点击 / hover 不受阻塞——transform 不影响 hit-test
+- 新元素动态加载（无限滚动 / lazy load）时为新增节点附加同一 .reveal 类即可
+
+## A11y
+- prefers-reduced-motion: reduce 必须完全跳过：opacity 1 / transform none / animation none
+- 屏幕阅读器朗读不依赖 .in-view —— DOM 节点始终存在，仅 opacity 控制视觉
+- IntersectionObserver 路径下，即使 JS 失败也要保证内容最终可见——用 noscript fallback 或在 1s 后强制添加 .in-view
+- 首屏 above-the-fold 元素禁用 reveal——首次渲染就该显示，否则影响 LCP
+- translateY 距离 ≤ 32px：超过会在前庭敏感用户视野中产生'飞入'感
+
+## Behavior
+- 优先用 animation-timeline: view()——零 JS、走合成层、自动跟手
+- 回退方案用 IntersectionObserver({ threshold: 0.2, rootMargin: '0px 0px -10% 0px' })——元素进入下方 90% 时触发
+- 触发后 unobserve 该元素，避免重复触发
+- 不要用 scroll 事件监听做 reveal——每帧触发 layout 抖动
+- section 内多元素若想错位入场，用 scroll-driven path 时给每个元素不同 animation-range；JS path 时给 transition-delay 根据 --i 错位
+- 永远不要 reveal 整个页面的所有元素——选择 hero / section heading / cta 等焦点元素，遵循 motion hierarchy

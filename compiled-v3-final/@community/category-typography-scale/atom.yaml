@@ -1,0 +1,21 @@
+id: "@community/category-typography-scale"
+kind: category
+version: "1.0.0"
+description: "The typographic scale sub-category covers all decisions about relative and absolute type sizes across the interface: base size selection, scale ratio, display headings, body text, captions, and code."
+domain: visual-design
+content_hash: "sha256:11cc31a1406ffba2e9cb8c89b431b1cab6ec694d1a4c1843491acee8d4817edf"
+tokens:
+  summary: 65
+  core: 102
+  full: 140
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-optimal-line-length" }
+  - { type: related, target: "@community/value-focus-outline-width" }
+  - { type: related, target: "@impeccable/constraint-font-blacklist" }
+created_at: "2026-05-07"

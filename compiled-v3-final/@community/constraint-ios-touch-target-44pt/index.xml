@@ -1,0 +1,13 @@
+<atom
+  id="@community/constraint-ios-touch-target-44pt"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="103"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="58"/>
+    <level name="core"    file="chunks/core.md"    tokens="103"/>
+    <level name="full"    file="chunks/full.md"    tokens="195"/>
+  </projection>
+</atom>

@@ -1,0 +1,8 @@
+atom: "@community/check-dependency-audit"
+relations:
+  - type: related
+    target: "@community/principle-owasp-vulnerable-outdated-components"
+  - type: related
+    target: "@community/check-secrets-not-in-git"
+  - type: related
+    target: "@community/rule-dependency-pinning"

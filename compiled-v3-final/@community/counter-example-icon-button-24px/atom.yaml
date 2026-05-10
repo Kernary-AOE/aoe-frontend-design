@@ -1,0 +1,21 @@
+id: "@community/counter-example-icon-button-24px"
+kind: counter-example
+version: "1.0.0"
+description: "A modal close (×) button styled as a bare icon with no padding. The clickable area is 16×16 CSS pixels — well below the WCAG 2.2 AA 24×24 minimum and a third of the Apple/Material 44×44 recommendation. On a phone, the user taps three times before hitting it."
+domain: accessibility
+content_hash: "sha256:5541e5c274a1d44f834921a01cd662283a0c3d70cb5167907c42a14e788cf0bd"
+tokens:
+  summary: 81
+  core: 597
+  full: 1113
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/metric-target-size" }
+  - { type: related, target: "@community/pattern-modal-confirm" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+created_at: "2026-05-07"

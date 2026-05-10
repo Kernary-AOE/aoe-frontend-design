@@ -1,0 +1,20 @@
+id: "@community/fact-duration-perception-thresholds"
+kind: fact
+version: "1.0.0"
+description: "Human perception of system response time crosses well-studied thresholds: ≤100 ms feels instantaneous, ≤1 s feels continuous (the user keeps their flow), ≤10 s is the upper limit of attention before context switch."
+content_hash: "sha256:40a5c8bd1f4ea70df0a6be7067766c0a8671478e8fcbfd5ea4dcbdc5d10a00bb"
+tokens:
+  summary: 149
+  core: 376
+  full: 674
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-easing-cubic-bezier" }
+  - { type: related, target: "@community/fact-loading-skeleton-vs-spinner" }
+  - { type: related, target: "@community/fact-motion-as-feedback" }
+created_at: "2026-05-07"

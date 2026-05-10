@@ -1,0 +1,10 @@
+atom: "@community/fact-motion-as-feedback"
+relations:
+  - type: related
+    target: "@community/fact-easing-cubic-bezier"
+  - type: related
+    target: "@community/fact-duration-perception-thresholds"
+  - type: related
+    target: "@community/fact-animation-distraction-cost"
+  - type: related
+    target: "@community/constraint-animation-pref-respected"

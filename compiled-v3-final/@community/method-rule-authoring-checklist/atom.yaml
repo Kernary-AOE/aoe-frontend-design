@@ -1,0 +1,21 @@
+id: "@community/method-rule-authoring-checklist"
+kind: method
+version: "1.0.0"
+description: "Nine-point verification checklist for any new or updated design rule file — ensures every rule has a single purpose, clear activation condition, concrete examples, and anti-patterns before it is merged."
+domain: frontend-design
+content_hash: "sha256:d6281d32375b68f2b14acf4d37dc0e40fe66988466177d732e7ab6b2c071efb9"
+tokens:
+  summary: 67
+  core: 101
+  full: 135
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/method-design-qa-pre-ship" }
+  - { type: related, target: "@community/method-a11y-audit" }
+  - { type: related, target: "@community/rule-design-md-front-matter" }
+created_at: "2026-05-07"

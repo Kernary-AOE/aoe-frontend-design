@@ -1,0 +1,23 @@
+id: "@community/type-color-token-shape"
+kind: type
+version: "1.0.0"
+description: "Schema for a color token in a design system. A color token is more than its raw value — it carries semantic meaning, mode variants (light/dark), accessibility metadata (computed contrast), and provenance (primitive vs semantic vs component-scoped). This shape is compatible with the W3C Design Tokens Community Group format draft."
+domain: design-system
+content_hash: "sha256:084a3b080d2181490b79e61c65a64ee8e26710975d413da721d8a364c8d89841"
+tokens:
+  summary: 96
+  core: 695
+  full: 1294
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/type-design-token" }
+  - { type: related, target: "@community/term-oklch" }
+  - { type: related, target: "@community/value-brand-hue" }
+  - { type: related, target: "@community/transform-hex-to-oklch" }
+  - { type: related, target: "@community/check-contrast-aa" }
+created_at: "2026-05-07"

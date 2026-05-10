@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-brand-hue-required"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="360"
+  q="4.0">
+  <description>Brand color systems must derive their primary ramp from a single OKLCH hue (one --hue variable feeding 9–12 lightness stops at calibrated chroma). Multi-hue ad-hoc palettes assembled from picked hex values are forbidden for new design systems.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="360"/>
+    <level name="full"    file="chunks/full.md"    tokens="454"/>
+  </projection>
+</atom>

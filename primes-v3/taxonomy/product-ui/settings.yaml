@@ -1,0 +1,43 @@
+task_type: settings
+parent: product-ui
+description: "User preferences and settings page with tabbed sections for profile, notifications, and billing."
+trigger_keywords:
+  - "settings"
+  - "preferences"
+  - "user settings"
+  - "设置"
+  - "用户设置"
+  - "profile settings"
+  - "notification settings"
+  - "billing settings"
+  - "account page"
+default_register_pool:
+  - school: linear
+    weight: 0.4
+  - school: vercel-clean
+    weight: 0.35
+  - school: notion
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-multi-step-wizard"
+  - "@community/pattern-inline-validation"
+  - "@community/rule-single-primary-action-per-component"
+  - "@community/rule-form-label-associated"
+  - "@community/pattern-interaction-states"
+  - "@community/pattern-subscription-status"
+recommended_motion:
+  - "@community/pattern-motion-forms"
+  - "@community/pattern-motion-microinteraction"
+  - "@community/template-tabs-keyboard"
+forbidden_atoms:
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/template-animated-mesh-background"
+  - "@community/pattern-gradient-mesh-engine"
+quality_checks:
+  - "Tabs must be keyboard navigable with arrow keys"
+  - "Save/apply actions must provide clear success confirmation"
+  - "Destructive actions (delete account) must require confirmation"
+  - "Form sections must use fieldset + legend for grouped fields"
+  - "Unsaved changes must warn user before tab switch or navigation"
+  - "Billing section must clearly show current plan and next payment date"
+  - "Password change must follow security best practices (no reveal by default on desktop)"

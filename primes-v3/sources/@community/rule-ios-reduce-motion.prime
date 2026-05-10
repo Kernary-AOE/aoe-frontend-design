@@ -1,0 +1,34 @@
+rule IosReduceMotion {
+  id: "@community/rule-ios-reduce-motion"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  applies-to: "all iOS views with animations, transitions, or parallax effects"
+
+  statement: "Disable or replace decorative animations with a simple crossfade when the Reduce Motion accessibility preference (UIAccessibility.isReduceMotionEnabled) is active."
+
+  rationale: "Users with vestibular disorders enable Reduce Motion because animation causes dizziness or nausea. Ignoring this setting can cause physical discomfort. This is an accessibility requirement, not a preference."
+
+  examples: [
+    "SwiftUI: wrap decorative withAnimation calls in a guard !UIAccessibility.isReduceMotionEnabled.",
+    "Custom transitions: swap slide/zoom for .opacity when Reduce Motion is on.",
+    "Verify: enable Reduce Motion in Settings → Accessibility → Motion → Reduce Motion; all decorative movement must stop.",
+  ]
+
+  notes: [
+    "In SwiftUI, read @Environment(\\.accessibilityReduceMotion) to respond reactively.",
+    "Functional animations (loading indicators, progress) should be retained; only decorative motion must be suppressed.",
+    "Apple HIG source: Rule 5.4 — Support Reduce Motion.",
+  ]
+
+  related: [
+    @community/check-ios-bold-text-support,
+    @community/check-ios-increase-contrast,
+    @community/rule-ios-voiceover-labels,
+    @community/anti-pattern-decorative-spinning,
+    @community/anti-pattern-no-bounce-everything,
+    @community/rule-reduced-motion-required,
+    @community/rule-animation-duration,
+  ]
+}

@@ -1,0 +1,22 @@
+id: "@impeccable/anti-pattern-ai-slop-palette"
+kind: anti-pattern
+version: "1.0.0"
+description: "The statistically predictable default visual language produced by AI code generation tools when given no specific brand constraints: Inter typeface + saturated purple (#7c3aed–#8b5cf6) + near-black background + rounded corners everywhere + glowing shadow effects. Recognizable at a glance as machine-generated, communicates no brand identity, and satisfies only the lowest bar of 'looks professional'."
+domain: visual-design
+content_hash: "sha256:e10a922538a161f3151b555016e6b9f8cacca8ac39c6957ac637051999cee43e"
+tokens:
+  summary: 116
+  core: 449
+  full: 783
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/counter-example-inter-purple-dark" }
+  - { type: related, target: "@impeccable/constraint-font-blacklist" }
+  - { type: related, target: "@community/term-oklch" }
+  - { type: related, target: "@community/value-brand-hue" }
+created_at: "2026-05-07"

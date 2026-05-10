@@ -1,0 +1,20 @@
+id: "@community/rule-ios-semantic-system-colors"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:dca1034412ff43455a07cecc19843851426a7ded1f8a2fc64f72c8795f4dc316"
+tokens:
+  summary: 66
+  core: 87
+  full: 272
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-custom-color-dark-variants" }
+  - { type: related, target: "@community/fact-ios-background-hierarchy" }
+  - { type: related, target: "@community/check-ios-increase-contrast" }
+created_at: "2026-05-07"

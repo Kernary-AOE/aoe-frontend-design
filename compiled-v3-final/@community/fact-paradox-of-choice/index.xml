@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-paradox-of-choice"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="487"
+  q="4.0">
+  <description>Paradox of Choice (Schwartz, 2004): beyond a moderate number of options, adding more choices reduces decision satisfaction, increases anxiety, and can paralyze action entirely.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="160"/>
+    <level name="core"    file="chunks/core.md"    tokens="487"/>
+    <level name="full"    file="chunks/full.md"    tokens="902"/>
+  </projection>
+</atom>

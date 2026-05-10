@@ -1,0 +1,11 @@
+# Task
+
+{{BRIEF}}
+
+## Output
+
+Write a single HTML file to `./index.html` in this directory. Inline CSS only. Real content, not placeholders.
+
+## Available resources
+
+You have the `impeccable` skill installed at `.claude/skills/impeccable/`. Load it and apply it.

@@ -1,0 +1,8 @@
+atom: "@community/constraint-text-color-three-shades"
+relations:
+  - type: related
+    target: "@community/rule-refactoring-ui-hierarchy"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/constraint-no-pure-black-text"

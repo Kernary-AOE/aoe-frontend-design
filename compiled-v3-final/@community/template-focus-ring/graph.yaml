@@ -1,0 +1,16 @@
+atom: "@community/template-focus-ring"
+relations:
+  - type: related
+    target: "@community/value-focus-outline-width"
+  - type: related
+    target: "@community/term-focus-ring"
+  - type: related
+    target: "@w3c/fact-wcag-focus-contrast"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/check-focus-visible-styled"
+  - type: related
+    target: "@community/anti-pattern-outline-suppression"
+  - type: related
+    target: "@community/anti-pattern-invisible-focus"

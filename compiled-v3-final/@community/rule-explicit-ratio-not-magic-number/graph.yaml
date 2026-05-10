@@ -1,0 +1,8 @@
+atom: "@community/rule-explicit-ratio-not-magic-number"
+relations:
+  - type: related
+    target: "@community/anti-pattern-magic-numbers"
+  - type: related
+    target: "@community/rule-consistent-design-token-scale"
+  - type: related
+    target: "@community/rule-spacing-rhythm"

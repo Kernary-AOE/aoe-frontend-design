@@ -1,0 +1,56 @@
+provocation AccessibilityByDefault {
+  id: "@community/provocation-accessibility-by-default"
+  version: "1.0.0"
+
+  label: "If Accessibility Is a Feature, You Will Always Cut It"
+  domain: accessibility
+
+  trigger: "team treating accessibility as a separate workstream, a 'phase 2' commitment, an a11y-audit at launch, or a checklist that ships at the end of the sprint"
+
+  question: "If accessibility is a feature on your roadmap, ask yourself: when was the last time a feature on the roadmap was prioritized higher than a customer-facing growth metric? Now project: at the end of this quarter, when revenue targets slip and the design team is overloaded, which feature gets cut? Accessibility-as-a-feature is accessibility-as-a-cuttable-line-item. The only configuration that survives quarterly priority reviews is accessibility as a non-negotiable property of every shipped surface — like 'doesn't crash' or 'doesn't leak credit cards.'"
+
+  intent: "Treating accessibility as a deliverable is the root cause of most accessibility failures. Deliverables get scoped, deprioritized, and cut. The shift required is from 'we will add accessibility' to 'we cannot ship something inaccessible' — which means tooling, code review, design review, and definition-of-done must enforce a baseline at every gate. The provocation forces teams to confront that 'accessibility-when-we-have-time' is functionally identical to 'accessibility-never.'"
+
+  resolution-paths: [
+    {
+      context: "A11y is a backlog item / phase-2 / pre-launch audit"
+      answer: "Move it out of the backlog and into definition-of-done. No PR merges without axe-core CI passing. No design ships without contrast and focus checks. Make it a property, not a task."
+    }
+    {
+      context: "Team has no a11y expertise"
+      answer: "Hire one consultant for 4 weeks to set up: CI tooling (@community/tool-axe-core), design system primitives (Radix/Headless UI), and a definition-of-done checklist. Then maintain via tooling, not headcount."
+    }
+    {
+      context: "Existing product with massive a11y debt"
+      answer: "Stop the bleed first: a11y CI on new code only (no merges with violations). Then prioritize debt by user impact: keyboard navigation > color contrast > ARIA labels > screen-reader narration."
+    }
+    {
+      context: "Team claims 'our users don't need it'"
+      answer: "1.3 billion people have a disability. ~15% of any audience uses some assistive tech. Your users do need it — you've just designed a product that excludes them, which is selection bias not market signal."
+    }
+  ]
+
+  enforcement-mechanisms: [
+    "axe-core / @axe-core/playwright in CI — fail PR on critical/serious violations",
+    "ESLint plugins: eslint-plugin-jsx-a11y, eslint-plugin-vuejs-accessibility",
+    "Design tokens enforce minimum contrast (color pairs are pre-validated)",
+    "Component primitives (Radix, Headless UI, ARIA Patterns) handle focus/keyboard correctly by default",
+    "Definition-of-done includes: keyboard navigable, screen reader announces, contrast ≥ 4.5:1",
+    "Design review checklist includes focus-visible, target size, motion preference",
+  ]
+
+  notes: [
+    "ADA lawsuits in the US have grown 10x+ in the past decade. Accessibility is also a legal risk surface, not just an ethical one.",
+    "Most 'a11y issues' are caught for free by using a11y-correct primitives. The cost of doing it right from day one is near-zero; the cost of retrofitting is exponential.",
+    "WCAG 2.2 AA is the operating baseline; AAA is aspirational. Don't ship below AA.",
+    "The phrase 'inclusive by default' is design industry jargon for the same idea — it's only inclusive if it's the default, not the deliverable.",
+  ]
+
+  related: [
+    @community/principle-prove-not-prevent-ai-slop,
+    @community/anti-pattern-accessibility-after-thought,
+    @community/rule-no-shipping-a11y-violations,
+    @community/rule-accessibility-first-class,
+    @community/tool-axe-core,
+  ]
+}

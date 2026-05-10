@@ -1,0 +1,20 @@
+id: "@community/rule-csrf-token-state-changing"
+kind: rule
+version: "1.0.0"
+domain: security
+content_hash: "sha256:42f5a1781977ea1af8fa2ba9c50b74df1cbc887cb28767e9ddbfa4a510f30a45"
+tokens:
+  summary: 110
+  core: 332
+  full: 850
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-broken-access-control" }
+  - { type: related, target: "@community/principle-owasp-auth-failures" }
+  - { type: related, target: "@community/rule-tls-everywhere" }
+created_at: "2026-05-07"

@@ -1,0 +1,58 @@
+constraint OklchOnlyColor {
+  id: "@community/constraint-oklch-only-color"
+  version: "1.0.0"
+
+  target: ["color values in author CSS", "design-token primitives", "inline style color props"]
+  severity: high
+  domain: visual-design
+
+  description: "All new color declarations must use the oklch() color function. Hex (#rrggbb), rgb()/rgba(), hsl()/hsla(), and CSS named colors are forbidden in new author code and in design tokens."
+
+  values: [
+    {
+      forbidden: "#rrggbb / #rgb hex literals",
+      reason: "non-perceptual sRGB encoding",
+    }
+    {
+      forbidden: "rgb() / rgba()",
+      reason: "device-dependent, non-perceptual",
+    }
+    {
+      forbidden: "hsl() / hsla()",
+      reason: "lightness axis is not perceptually uniform across hues",
+    }
+    {
+      forbidden: "named colors (red, blue, rebeccapurple, …)",
+      reason: "imprecise, opaque to tooling",
+    }
+    {
+      required: "oklch(L C H [/ A])",
+    }
+    {
+      allowed: "transparent, currentColor, inherit, initial, unset",
+    }
+  ]
+
+  rationale: "OKLCH is perceptually uniform: equal numerical changes in L produce equal perceived changes in lightness across all hues. Hex/RGB/HSL fail this property — a 10% L bump in HSL yellow looks far brighter than a 10% L bump in HSL blue. Uniformity is the prerequisite for consistent ramps, mirrorable dark-mode tokens, and predictable contrast math."
+
+  exceptions: [
+    "Vendor / third-party CSS shipped by external libraries (track but do not block).",
+    "SVG paint values inside imported designer assets treated as binary blobs.",
+    "@supports not (color: oklch(0% 0 0)) fallback blocks targeting legacy browsers.",
+  ]
+
+  approved-alternatives: [
+    "oklch(L% C H) — primary form, e.g. oklch(62% 0.18 250)",
+    "color-mix(in oklch, …) — for blends, still oklch() space",
+    "var(--token) where --token resolves to oklch()",
+  ]
+
+  enforcement: "Stylelint plugin: `color-no-hex`, `color-named: never`, plus a custom matcher requiring the `oklch(` token in all color-bearing properties. CI uses @community/check-color-oklch-required."
+
+  related: [
+    @community/check-color-oklch-required,
+    @community/transform-rgb-to-oklch,
+    @community/term-oklch,
+    @community/constraint-brand-hue-required,
+  ]
+}

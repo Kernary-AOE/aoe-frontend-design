@@ -1,0 +1,14 @@
+<atom
+  id="@community/method-anti-ai-slop-checklist"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="157"
+  q="4.0">
+  <description>A structured pre-ship audit of the five AI fingerprint categories — color, typography, layout, visual effects, motion — that distinguishes intentionally designed output from statistical-average AI output.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="157"/>
+    <level name="full"    file="chunks/full.md"    tokens="251"/>
+  </projection>
+</atom>

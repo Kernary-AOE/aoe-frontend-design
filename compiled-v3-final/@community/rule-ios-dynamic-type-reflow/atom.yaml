@@ -1,0 +1,20 @@
+id: "@community/rule-ios-dynamic-type-reflow"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:1f1dd71f9101ac93f6575ddc261d0f97f993085e459fcc79a5038796fdcb1455"
+tokens:
+  summary: 51
+  core: 76
+  full: 228
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-dynamic-type-semantic" }
+  - { type: related, target: "@community/rule-ios-custom-font-dynamic-type" }
+  - { type: related, target: "@community/constraint-ios-text-min-17pt" }
+created_at: "2026-05-07"

@@ -1,0 +1,30 @@
+counter-example InterPurpleDark {
+  id: "@impeccable/counter-example-inter-purple-dark"
+  version: "1.0.0"
+
+  label: "The AI-slop Trio: Inter + Purple + Dark Mode"
+  domain: visual-design
+
+  description: "A statistically over-represented combination in AI-generated frontends: Inter as the typeface, a saturated purple (#7c3aed or similar) as the brand accent, on a near-black (#0f0f0f or #111827) background. The pattern appears in the majority of LLM-generated dashboards, landing pages, and SaaS UIs because these values appear frequently in training data (Tailwind defaults, shadcn/ui defaults, Vercel-adjacent starters)."
+
+  failures: [
+    "Distinctionless — when every AI-generated product looks the same, no brand identity is communicated.",
+    "Inter at small sizes on dark backgrounds suffers from reduced stroke contrast compared to fonts designed for dark mode (e.g. Söhne, Geist).",
+    "Purple #7c3aed on #111827 achieves only ~5.2:1 contrast for small text — barely passes AA, fails AAA.",
+    "The combination signals 'generated, not designed' to experienced designers.",
+  ]
+
+  detection: @community/check-ai-slop-palette
+
+  remediation: [
+    "Replace Inter with a distinctive typeface: Geist (Vercel), Söhne (Klim), Roc Grotesk, or a serif for editorial contexts.",
+    "Generate a custom oklch palette: fix a non-default hue (avoid 270°–300°), derive tonal steps.",
+    "Use oklch(58% 0.13 258) or oklch(55% 0.14 22) instead of Tailwind purple defaults.",
+  ]
+
+  related: [
+    @impeccable/constraint-font-blacklist,
+    @community/term-oklch,
+    @community/counter-example-outline-none,
+  ]
+}

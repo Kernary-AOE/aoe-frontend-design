@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-rail-targets"
+  kind="knowledge"
+  version="1.0.0"
+  domain="performance"
+  tokens="835"
+  q="4.0">
+  <description>The Chrome RAIL performance model defines four user-centric performance budgets: Response (≤100ms), Animation (≤16.67ms per frame), Idle (yield ≤50ms), Load (interactive ≤5000ms on slow 4G). These targets reflect human perception thresholds and remain the canonical engineering goals for web performance.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="338"/>
+    <level name="core"    file="chunks/core.md"    tokens="835"/>
+    <level name="full"    file="chunks/full.md"    tokens="1459"/>
+  </projection>
+</atom>

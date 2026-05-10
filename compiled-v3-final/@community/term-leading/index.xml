@@ -1,0 +1,13 @@
+<atom
+  id="@community/term-leading"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="178"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="86"/>
+    <level name="core"    file="chunks/core.md"    tokens="178"/>
+    <level name="full"    file="chunks/full.md"    tokens="270"/>
+  </projection>
+</atom>

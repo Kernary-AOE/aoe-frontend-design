@@ -1,0 +1,54 @@
+tool Lighthouse {
+  id: "@community/tool-lighthouse"
+  version: "1.0.0"
+
+  signature: (url: URL, options?: LighthouseOptions) -> LighthouseReport
+  external: true
+  package: "lighthouse@^12"
+
+  domain: [accessibility, performance, frontend-engineering]
+
+  description: "Google Lighthouse is an automated auditing tool for web pages that measures performance, accessibility, best practices, SEO, and PWA metrics. The accessibility category runs axe-core plus additional checks and returns a 0–100 score with per-audit details."
+
+  output-type: {
+    categories: {
+      performance: { score: 0..1, audits: AuditResult[] }
+      accessibility: { score: 0..1, audits: AuditResult[] }
+      "best-practices": { score: 0..1, audits: AuditResult[] }
+      seo: { score: 0..1, audits: AuditResult[] }
+    }
+    lhr: LighthouseResultJson  // full Lighthouse Result (LHR) JSON
+  }
+
+  usage: """
+    import { launch } from 'chrome-launcher';
+    import lighthouse from 'lighthouse';
+
+    const chrome = await launch({ chromeFlags: ['--headless'] });
+    const result = await lighthouse(url, {
+      port: chrome.port,
+      onlyCategories: ['accessibility', 'best-practices'],
+      output: 'json',
+    });
+
+    const a11yScore = result.lhr.categories.accessibility.score * 100;
+    const failedAudits = result.lhr.categories.accessibility.auditRefs
+      .filter(r => result.lhr.audits[r.id].score === 0)
+      .map(r => result.lhr.audits[r.id].title);
+
+    await chrome.kill();
+  """
+
+  notes: [
+    "Lighthouse a11y score is weighted — not all audits carry equal weight; a score of 100 does NOT mean full WCAG compliance.",
+    "For CI gates: fail pipeline if accessibility score < 90 (leaves room for audits requiring manual verification).",
+    "Lighthouse CI (@lhci/cli) provides budgets and delta tracking across commits.",
+    "Use with @community/tool-axe-core for comprehensive automated coverage.",
+  ]
+
+  related: [
+    @community/tool-axe-core,
+    @community/method-a11y-audit,
+    @community/metric-contrast-ratio,
+  ]
+}

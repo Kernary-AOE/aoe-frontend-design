@@ -1,0 +1,12 @@
+atom: "@community/fact-gestalt-common-fate"
+relations:
+  - type: related
+    target: "@community/fact-gestalt-proximity"
+  - type: related
+    target: "@community/fact-gestalt-similarity"
+  - type: related
+    target: "@community/fact-gestalt-continuity"
+  - type: related
+    target: "@community/fact-reduced-motion-priority"
+  - type: related
+    target: "@community/fact-stagger-feel-organic"

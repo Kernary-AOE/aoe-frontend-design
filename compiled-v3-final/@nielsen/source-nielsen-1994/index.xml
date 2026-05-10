@@ -1,0 +1,14 @@
+<atom
+  id="@nielsen/source-nielsen-1994"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="155"
+  q="4.0">
+  <description>The foundational text establishing Nielsen&apos;s 10 usability heuristics for interface design. Chapter 5 defines the heuristics used in expert review (heuristic evaluation). These 10 principles remain the most widely-cited and practically-applied UX evaluation framework in professional practice.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="155"/>
+    <level name="full"    file="chunks/full.md"    tokens="225"/>
+  </projection>
+</atom>

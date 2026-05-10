@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-aria-label-required"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="423"
+  q="4.0">
+  <description>Interactive elements that present no visible accessible name (icon-only buttons, icon-only links, image-only buttons) MUST carry a non-empty `aria-label` (or `aria-labelledby`, or visually-hidden text). Without an accessible name, screen-reader users hear &apos;button&apos; with no context.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="423"/>
+    <level name="full"    file="chunks/full.md"    tokens="771"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/counter-example-hardcoded-pixel-padding"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-system"
+  tokens="469"
+  q="4.0">
+  <description>A typical card component CSS where every dimension — padding, margin, radius, gap — is written as a raw pixel literal. Looks fine in isolation but represents the failure to extract a token layer.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="469"/>
+    <level name="full"    file="chunks/full.md"    tokens="870"/>
+  </projection>
+</atom>

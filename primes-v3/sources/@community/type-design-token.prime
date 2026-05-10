@@ -1,0 +1,63 @@
+type DesignToken {
+  id: "@community/type-design-token"
+  version: "1.0.0"
+
+  domain: design-system
+
+  description: "Schema for a design token — a named, typed design decision that is stored as data and consumed by design tools and code. Based on the W3C Design Tokens Community Group format (draft)."
+
+  fields: {
+    name: {
+      type: string
+      format: "kebab-case path, e.g. 'color.brand.500' or 'spacing.base'"
+      required: true
+    }
+    value: {
+      type: string | number | object
+      description: "The raw value. For colors: oklch() or hex. For dimensions: rem/px. For composites: object."
+      required: true
+    }
+    type: {
+      type: "color" | "dimension" | "font-family" | "font-weight" | "duration" | "cubic-bezier" | "number" | "composite"
+      required: true
+    }
+    description: {
+      type: string
+      description: "Human-readable intent: 'Primary brand color at 500 lightness step'"
+      required: false
+    }
+    group: {
+      type: string
+      description: "Token category for organizational grouping: 'primitive', 'semantic', 'component'"
+      required: false
+    }
+    deprecated: {
+      type: boolean
+      default: false
+      required: false
+    }
+    aliases: {
+      type: string[]
+      description: "Token paths that resolve to this token (for aliasing/theming)"
+      required: false
+    }
+  }
+
+  invariants: [
+    "name must be unique within a token set",
+    "color type tokens must be parseable as valid CSS color strings",
+    "dimension type tokens must include a unit (px, rem, em, %)",
+  ]
+
+  notes: [
+    "For oklch colors, store as string: 'oklch(58% 0.13 258)'.",
+    "Token groups: 'primitive' = raw values; 'semantic' = role-named (--color-text-primary); 'component' = scoped to one component.",
+    "Design tokens are the source of truth that both design tools (Figma) and code (CSS custom properties) should derive from.",
+  ]
+
+  related: [
+    @community/value-brand-hue,
+    @community/value-focus-outline-width,
+    @impeccable/template-oklch-palette,
+  ]
+}

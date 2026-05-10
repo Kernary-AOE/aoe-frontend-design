@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-jakob-law"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="345"
+  q="4.0">
+  <description>Jakob Nielsen&apos;s Law of the Internet User Experience: &apos;Users spend most of their time on other sites. So, users prefer your site to work the same way as all the other sites they already know.&apos;</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="130"/>
+    <level name="core"    file="chunks/core.md"    tokens="345"/>
+    <level name="full"    file="chunks/full.md"    tokens="618"/>
+  </projection>
+</atom>

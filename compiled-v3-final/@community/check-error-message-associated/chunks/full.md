@@ -1,0 +1,84 @@
+# ErrorMessageAssociated [check] v1.0.0
+Validates that form-error messages are programmatically associated with their failing inputs via aria-describedby + role='alert' (or aria-live), and that aria-invalid='true' is set on the visually-errored input.
+domain: forms
+
+signature: (html: string, context?: object) -> CheckResult
+predicate: // Error messages must be programmatically associated with the failing field via:
+//   1. aria-describedby on the input pointing to the error element id
+//   2. Error element has role="alert" or aria-live="assertive" for screen-reader announce
+//   3. Input has aria-invalid="true" when error is shown
+invalidInputs = querySelectorAll('input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"], .input--error, [data-state="error"]')
+for i in invalidInputs:
+// 1. aria-describedby must point to existing element
+descId = i.getAttribute('aria-describedby')
+if !descId:
+yield { selector: cssPath(i), fail: 'invalid-input-no-describedby' }
+continue
+
+// Multiple ids allowed (space-separated)
+ids = descId.split(/\s+/)
+missing = ids.filter(id => !document.getElementById(id))
+if missing.length > 0:
+yield { selector: cssPath(i), fail: 'describedby-target-missing', missing }
+continue
+
+// 2. At least one referenced element should be the error message with role/live
+errorEl = ids.map(id => document.getElementById(id)).find(el =>
+el.getAttribute('role') === 'alert' ||
+el.getAttribute('aria-live') === 'assertive' ||
+el.getAttribute('aria-live') === 'polite'
+)
+if !errorEl:
+yield { selector: cssPath(i), fail: 'no-live-error-region', describedby: descId, remedy: 'add role="alert" to the error span' }
+
+// 3. aria-invalid must be present and "true"
+if i.getAttribute('aria-invalid') !== 'true' && /error/.test(i.className):
+yield { selector: cssPath(i), fail: 'visual-error-without-aria-invalid' }
+
+// Also: error elements with role="alert" should be associated TO an input
+alerts = querySelectorAll('[role="alert"], [aria-live="assertive"]')
+for a in alerts:
+if !a.id: continue
+referrers = querySelectorAll(`[aria-describedby~="${a.id}"]`)
+if referrers.length === 0 && a.textContent.trim() !== '':
+yield { selector: cssPath(a), fail: 'orphan-error-region', remedy: 'reference this id from input aria-describedby' }
+
+## Validates
+@community/rule-error-message-associated
+
+## Severity
+high
+
+## Failure Message Template
+Error association failure on '{selector}': {fail}. {remedy}. Without programmatic association, screen readers cannot link the error to the field.
+
+## Evaluation Method
+automated
+
+## Tools
+- axe-core
+- @testing-library/dom
+- playwright
+
+## False Positive Rate
+low
+
+## Validates
+@community/rule-error-message-associated
+
+## Severity
+high
+
+## Failure Message Template
+Error association failure on '{selector}': {fail}. {remedy}. Without programmatic association, screen readers cannot link the error to the field.
+
+## Evaluation Method
+automated
+
+## Tools
+- axe-core
+- @testing-library/dom
+- playwright
+
+## False Positive Rate
+low

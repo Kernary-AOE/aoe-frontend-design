@@ -1,0 +1,14 @@
+<atom
+  id="@community/template-motion-system-tokens"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1011"
+  q="4.0">
+  <description>Complete motion system token set as CSS custom properties: 5 duration tiers (80ms–600ms), 6 easing curves (cubic-bezier values for each intent), and 3 semantic spring configs — all collapsed to 0ms under prefers-reduced-motion.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="73"/>
+    <level name="core"    file="chunks/core.md"    tokens="1011"/>
+    <level name="full"    file="chunks/full.md"    tokens="1011"/>
+  </projection>
+</atom>

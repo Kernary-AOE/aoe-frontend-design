@@ -1,0 +1,4 @@
+# FintechNumberDisplay [fact] v1.0.0
+Financial number display requires distinct typographic treatment at every scale: hero balances at 3–4rem with weight 700 and tabular lining numerals (`font-variant-numeric: tabular-nums lining-nums`), section totals at 2rem, card metrics at 1.5rem, and table rows at 0.875rem — each tier differentiating the most important metric from supporting data.
+> Fintech UI typography follows a strict numeric hierarchy: the primary metric (account balance, total transaction, price) must be 3–4× larger than the smallest supporting metric; every numeric context must use tabular-nums + lining-nums to prevent column jitter; color + weight must reinforce size hierarchy (hero: foreground + bold; supporting: foreground + regular; metadata: muted-foreground + regular).
+domain: frontend-design

@@ -1,0 +1,28 @@
+id: "@community/pattern-doc-toc"
+kind: pattern
+version: "1.0.0"
+description: "A sticky right-column table of contents that auto-generates from h2/h3 headings in the main content area and uses IntersectionObserver to highlight the currently visible section as the user scrolls."
+domain: frontend-design
+content_hash: "sha256:bbb201131116ff6fb2659086530dc04f7b4bb66768ac328fbf395a271727a476"
+tokens:
+  summary: 62
+  core: 500
+  full: 938
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-doc-page" }
+  - { type: related, target: "@community/rule-heading-hierarchy" }
+  - { type: related, target: "@community/rule-current-location-indicator" }
+  - { type: related, target: "@community/rule-aria-current-page" }
+  - { type: related, target: "@community/rule-aria-label-in-name" }
+  - { type: related, target: "@community/check-skip-link" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-heading-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

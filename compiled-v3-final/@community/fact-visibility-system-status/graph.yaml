@@ -1,0 +1,6 @@
+atom: "@community/fact-visibility-system-status"
+relations:
+  - type: related
+    target: "@nielsen/taxonomy-10-heuristics"
+  - type: related
+    target: "@community/fact-error-prevention"

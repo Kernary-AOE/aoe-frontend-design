@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-feature-store"
+  kind="knowledge"
+  version="1.0.0"
+  domain="machine-learning"
+  tokens="826"
+  q="4.0">
+  <description>A centralized system that defines, computes, stores, serves, and versions features for ML models — providing a single source of truth so the same feature definition is used in offline training and online inference.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="68"/>
+    <level name="core"    file="chunks/core.md"    tokens="826"/>
+    <level name="full"    file="chunks/full.md"    tokens="1735"/>
+  </projection>
+</atom>

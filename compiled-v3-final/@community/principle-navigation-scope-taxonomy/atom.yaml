@@ -1,0 +1,25 @@
+id: "@community/principle-navigation-scope-taxonomy"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:9e4e6fc04a2800273c29ac471eaf685873a2fc7e2674ee919415f98cfb9c9197"
+tokens:
+  summary: 99
+  core: 245
+  full: 425
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-sidebar-collapsible" }
+  - { type: related, target: "@community/pattern-breadcrumb-trail" }
+  - { type: related, target: "@community/pattern-table-of-contents-sticky" }
+  - { type: related, target: "@community/anti-pattern-deep-branching-nav" }
+  - { type: related, target: "@community/anti-pattern-ios-hamburger-menu" }
+  - { type: related, target: "@community/example-notion-sidebar" }
+  - { type: related, target: "@community/example-vercel-sidebar" }
+  - { type: related, target: "@community/rule-navigation-flat-when-shallow" }
+created_at: "2026-05-07"

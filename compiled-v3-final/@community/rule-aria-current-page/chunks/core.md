@@ -1,0 +1,36 @@
+# AriaCurrentPage [rule] v1.0.0
+The active navigation link must carry aria-current='page' so screen readers announce 'current page' and give keyboard users orientation within the site structure (WCAG SC 2.4.8, ARIA 1.2 aria-current attribute).
+domain: frontend-design
+
+## Applies When
+Rendering a navigation list (<nav>, role='navigation') where one link corresponds to the currently loaded page or route.
+
+## Rule
+```
+// The link matching the current page URL must have aria-current="page".
+// Only one link per navigation landmark should carry aria-current="page" at any time.
+// Sub-navigation: use aria-current="page" on the deepest matching link only.
+// Tabs / steps: use aria-current="step" instead.
+<nav aria-label="Main">
+<a href="/dashboard" aria-current="page">Dashboard</a>   // ✅ active route
+<a href="/settings">Settings</a>                          // no aria-current on inactive links
+</nav>
+```
+
+## Bad Patterns
+```
+// ❌ Active link has no aria-current — screen readers cannot distinguish it
+// <a href="/dashboard" class="active">Dashboard</a>
+
+// ❌ aria-current="true" — invalid value; spec allows "page"|"step"|"location"|"date"|"time"|true|false
+// <a href="/dashboard" aria-current="true">Dashboard</a>
+
+// ❌ Setting aria-current on wrapper <li> instead of the <a>
+// <li aria-current="page"><a href="/dashboard">Dashboard</a></li>
+```
+
+## Severity
+warning
+
+## Verification
+Navigate to any page; inspect the nav with DevTools; confirm the matching <a> has aria-current='page' and no other nav link carries the attribute.

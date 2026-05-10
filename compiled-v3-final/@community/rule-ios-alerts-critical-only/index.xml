@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-ios-alerts-critical-only"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="81"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="53"/>
+    <level name="core"    file="chunks/core.md"    tokens="81"/>
+    <level name="full"    file="chunks/full.md"    tokens="240"/>
+  </projection>
+</atom>

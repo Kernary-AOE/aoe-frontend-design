@@ -1,0 +1,19 @@
+id: "@community/fact-card-sort-method"
+kind: fact
+version: "1.0.0"
+description: "Card sorting is the standard IA validation method: participants group labelled cards (representing content / features) into categories that make sense to them, revealing the user's mental model rather than the team's internal taxonomy."
+content_hash: "sha256:32770d680d658729213d48e68f7ed068c3a062527be93ff7bc1380834c91893a"
+tokens:
+  summary: 144
+  core: 349
+  full: 625
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-jakob-law" }
+  - { type: related, target: "@community/fact-miller-rule-7" }
+created_at: "2026-05-07"

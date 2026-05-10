@@ -1,0 +1,45 @@
+rule ColorHueSelection {
+  id: "@community/rule-color-hue-selection"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "A palette must have hue spread of at least 120 degrees between primary and accent colors; primary and accent must differ in chroma by at least 0.04; semantic hues (success, warning, danger, info) must not collide with the brand primary hue."
+
+  rationale: "Small hue spread (< 120°) creates a monotone trap where everything is 'blue and slightly different blue.' Equal chroma on primary and accent produces flat hierarchy with no visual pop. Semantic color collision means warning/danger signals cannot be visually distinguished from brand actions — a critical usability and safety failure."
+
+  applies-to: [
+    "brand palette creation",
+    "design token specification",
+    "AI-generated color schemes",
+    "any project using OKLCH primitives",
+  ]
+
+  examples: [
+    "primary H=220, accent H=350 (spread = 130°) — PASS",
+    "primary H=145, accent H=22 (spread = 123°) — PASS",
+    "primary C=0.12 (restrained), accent C=0.18 (vivid pop) — chroma diff = 0.06, PASS",
+  ]
+
+  notes: [
+    "Bad hue spread: primary H=220, accent H=250 (spread = 30°) — monotone trap.",
+    "Bad chroma: primary C=0.15, accent C=0.15 — flat, no hierarchy.",
+    "Semantic color anchors (non-negotiable regardless of brand palette):",
+    "  Success: OKLCH Hue 145 ± 15, Chroma 0.14–0.18 (green, universal)",
+    "  Warning: OKLCH Hue 68 ± 12, Chroma 0.14–0.17 (yellow-amber)",
+    "  Danger:  OKLCH Hue 22 ± 10, Chroma 0.16–0.20 (red-orange)",
+    "  Info:    OKLCH Hue 220 ± 20, Chroma 0.10–0.14 (blue, neutral)",
+    "If brand hue is 145 (green), success must shift to ~160 and brand must differentiate by chroma or lightness.",
+  ]
+
+  related: [
+    @impeccable/template-oklch-palette,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-oklch-required,
+    @community/counter-example-tailwind-blue-500,
+    @community/anti-pattern-rainbow-explosion,
+    @community/example-stripe-dashboard,
+    @community/example-mercury-banking-dashboard,
+    @community/principle-color-system-foundation,
+  ]
+}

@@ -1,0 +1,21 @@
+id: "@community/fact-ai-fingerprint-detection"
+kind: fact
+version: "1.0.0"
+description: "Five visual signal categories reliably identify AI-generated UI output at a glance, each traceable to a specific training-data bias: typography defaults (Inter, Plus Jakarta Sans), palette defaults (Tailwind indigo/violet ~270° hue), border radius defaults (rounded-2xl universally), shadow defaults (shadow-lg universally), and layout defaults (hero→3col→testimonials→CTA)."
+domain: frontend-design
+content_hash: "sha256:0e65b20a06d68ba173836fda23c9d6ada738afd19e075ded45703ea8568dc9f2"
+tokens:
+  summary: 208
+  core: 245
+  full: 317
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/method-anti-ai-slop-checklist" }
+  - { type: related, target: "@community/anti-pattern-ai-generated-ui" }
+  - { type: related, target: "@impeccable/anti-pattern-ai-slop-palette" }
+created_at: "2026-05-07"

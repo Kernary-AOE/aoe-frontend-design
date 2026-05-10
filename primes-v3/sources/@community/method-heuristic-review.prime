@@ -1,0 +1,51 @@
+method HeuristicReview {
+  id: "@community/method-heuristic-review"
+  version: "1.0.0"
+
+  input:  { artifact: URL | FilePath | Base64Image, depth: "quick" | "deep" }
+  output: { issues: HeuristicIssue[], scores: HeuristicScores, overall: 0..4, summary: string }
+
+  domain: design-review
+
+  description: "A structured heuristic evaluation of a UI artifact against Nielsen's 10 usability heuristics. Produces a scored report with evidence-backed issues ranked by severity."
+
+  uses: [
+    @community/step-load-artifact,
+    @community/step-apply-heuristics,
+    @community/step-generate-report,
+  ]
+
+  body: [
+    // Phase 1: Load
+    @community/step-load-artifact(artifact) -> document
+
+    // Phase 2: Score
+    @community/step-apply-heuristics(document, @nielsen/taxonomy-10-heuristics) -> scores
+
+    // Phase 3: Depth gate
+    if depth == "deep":
+      for each heuristic H where scores.scores[H] < 3:
+        deepen analysis of H — read H.chunks/full.md
+        gather additional evidence from document.components
+
+    // Phase 4: Report
+    RANK issues by severity (0 = critical first)
+    SUMMARIZE: "X/10 heuristics scored good or better. Top issues: [...]"
+    @community/step-generate-report(scores, issues) -> report
+  ]
+
+  success-criteria: [
+    @community/check-all-heuristics-evaluated,
+  ]
+
+  notes: [
+    "For 'quick' depth, skip deep-dive on heuristics scoring 3+. Quick review ≈ 10 min; deep ≈ 30–45 min.",
+    "Artifacts that are screenshots only cannot be evaluated for SC 2.4.x keyboard behavior — mark those as unevaluated.",
+  ]
+
+  related: [
+    @nielsen/taxonomy-10-heuristics,
+    @community/step-load-artifact,
+    @community/method-a11y-audit,
+  ]
+}

@@ -1,0 +1,90 @@
+persona Apple {
+  id: "@community/persona-apple"
+  version: "1.0.0"
+
+  school: apple
+  domain: visual-design
+
+  description: "Cinematic product-as-sculpture marketing aesthetic: SF Pro Display/Text with optical sizing crossover at 20px, pure-black #000000 and cool-tinted #f5f5f7 alternating in binary film-cut rhythm, Apple Blue #0071e3 as the sole chromatic accent, and universal negative tracking at every text size."
+
+  implies: {
+    font: {
+      display: "SF Pro Display (fallbacks: SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif) — used at 20px and above"
+      body: "SF Pro Text (same fallbacks) — used below 20px; crossover at 20px is a hard boundary, not a suggestion"
+      monospace: "SF Mono (no dedicated mono role in Apple marketing; system mono as fallback)"
+    }
+    color: {
+      temperature: "cool-neutral"
+      palette: "pure black #000000 dark canvas, cool-tinted light gray #f5f5f7 light sections, near-black text #1d1d1f, Apple Blue #0071e3 interactive, bright link blue #2997ff on dark surfaces, dark glass surface #272729"
+      background: "#000000 (dark sections) / #f5f5f7 (light sections) — alternating binary rhythm, never mixed"
+    }
+    density: "spacious — one product per viewport rhythm, 8px base with 1px micro-adjustments, max content width ~980px, universal negative tracking (-0.374px at 17px, -0.224px at 14px, -0.12px at 12px)"
+    layout: "full-bleed alternating dark/light sections each featuring a single product or feature, 980px pill CTAs, centered 980px max-width content, sticky translucent nav"
+    imagery: "product as sculpture on pure black or #f5f5f7 — no lifestyle context, no background distractions, single soft shadow rgba(0,0,0,0.22) 3px 5px 30px"
+    motion: "cinematic — parallax on product reveals, smooth section transitions, translucent nav backdrop-filter saturate(180%) blur(20px), no bouncy springs"
+  }
+
+  compatible: ["swiss-modernist", "tokyo-minimal", "editorial"]
+  conflicts: ["brutalist", "warm-institutional", "magazine-editorial", "dense-pragmatist", "notion-warm"]
+
+  example-brands: [
+    "Apple",
+  ]
+
+  notes: [
+    "SF Pro Display ≥20px / SF Pro Text <20px optical sizing boundary is a design-system-level commitment — letterforms literally change shape by context. Without this crossover the typography reads as generic Apple-adjacent, not Apple.",
+    "Binary section rhythm: #000000 dark immersive scenes alternate with #f5f5f7 light informational scenes. No color, no gradients between sections — the cut is pure, like switching camera angles.",
+    "Translucent nav signature: rgba(0,0,0,0.8) + backdrop-filter: saturate(180%) blur(20px) at 48px height. This single element reads 'Apple web' from 3 feet away.",
+    "Universal negative tracking — not just headlines: body at -0.374px, 14px captions at -0.224px, 12px micro at -0.12px. Most systems only track headlines tight; Apple does it everywhere.",
+    "Use for consumer-hardware launches, premium product pages, or cinematic marketing where the product warrants theater. Avoid for information-dense or conversion-heavy sites — one-product-per-viewport is expensive restraint that only pays when the object deserves it.",
+    "Distinct from persona-tokyo-minimal: Apple is product-sculpture-forward with cinematic alternating black/light sections; tokyo-minimal is interface-precise with dense kanji-grid spatial reasoning and cooler systematic palette.",
+  ]
+
+  composition: {
+    must-include: [
+    @community/pattern-ios-large-title-nav,
+    @community/constraint-ios-touch-target-44pt,
+    @community/fact-ios-button-style-hierarchy,
+    ]
+    must-avoid: [
+    @impeccable/persona-brutalist,
+    @community/pattern-data-table-dense,
+    ]
+    typography-required: {
+      display: "SF Pro Display"
+      body: "SF Pro Text"
+      tracking: "universal negative — -0.374px at 17px, -0.224px at 14px, -0.12px at 12px"
+    }
+    color-required: {
+      dark-section: "#000000"
+      light-section: "#f5f5f7"
+      accent: "#0071e3"
+    }
+    motion-prescriptions: [
+    @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-swiss-modernist,
+    @impeccable/template-oklch-palette,
+    @impeccable/template-easing-curves,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-optical-sizing,
+    @community/rule-typography-letter-spacing,
+    @community/rule-font-feature-settings,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/rule-brand-color-primary-only,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @community/pattern-data-table-dense,
+  ]
+}

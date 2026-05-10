@@ -1,0 +1,45 @@
+rule KeyboardAccessible {
+  id: "@community/rule-keyboard-accessible"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: accessibility
+
+  description: "Enforces keyboard accessibility requirements: all interactive elements must be focusable, have visible focus indicators, and be operable with keyboard alone. Covers WCAG SC 2.1.1 (Keyboard), SC 2.4.3 (Focus Order), SC 2.4.7 (Focus Visible), SC 2.4.11 (Focus Not Obscured)."
+
+  checks: [
+    @community/check-focus-visible,
+    @community/check-keyboard-reachable,
+    @community/check-focus-order-logical,
+  ]
+
+  severity-combination: |
+    @community/check-focus-visible fails           → BLOCK  (SC 2.4.11)
+    @community/check-keyboard-reachable fails      → BLOCK  (SC 2.1.1)
+    @community/check-focus-order-logical fails     → WARN   (SC 2.4.3, often requires manual review)
+
+  remediation: [
+    "Non-focusable interactive elements: add `tabindex='0'` and keyboard event handlers (Enter/Space for buttons, arrow keys for custom widgets).",
+    "Custom components missing ARIA roles: add appropriate role (e.g., `role='button'`, `role='menuitem'`) and keyboard behavior per ARIA Authoring Practices Guide.",
+    "Focus order issues: reorder DOM to match visual order, or use `tabindex` values strategically (avoid positive tabindex > 0).",
+    "Modal dialogs: implement focus trap — on open, move focus to dialog; on close, return focus to trigger element.",
+  ]
+
+  notes: [
+    "WCAG SC 2.1.1 exempts content that requires path-dependent input (e.g., drawing tools, gaming).",
+    "Tab order should follow visual reading order; use `display: flex; order:` or grid placement instead of positive tabindex for reordering.",
+  ]
+
+  related: [
+    @community/check-focus-visible,
+    @w3c/fact-wcag-focus-contrast,
+    @community/collection-accessible-frontend,
+    @community/anti-pattern-breaking-keyboard-flow,
+    @community/counter-example-div-button-no-tabindex,
+    @community/counter-example-div-onclick-dropdown,
+    @community/anti-pattern-click-to-open-only,
+    @community/rule-focus-visible,
+    @community/rule-no-keyboard-trap,
+  ]
+}

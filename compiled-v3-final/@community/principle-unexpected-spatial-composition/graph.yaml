@@ -1,0 +1,16 @@
+atom: "@community/principle-unexpected-spatial-composition"
+relations:
+  - type: related
+    target: "@community/principle-ui-differentiation-memorability"
+  - type: related
+    target: "@community/principle-subtle-conceptual-reference"
+  - type: related
+    target: "@community/rule-vary-aesthetic-per-generation"
+  - type: related
+    target: "@community/anti-pattern-ai-slop-aesthetics"
+  - type: related
+    target: "@community/example-vercel-hero-gradient"
+  - type: related
+    target: "@community/example-nytmag-feature"
+  - type: related
+    target: "@community/principle-design-philosophy-before-canvas"

@@ -1,0 +1,31 @@
+rule IosDynamicTypeSemantic {
+  id: "@community/rule-ios-dynamic-type-semantic"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  applies-to: "all text elements in SwiftUI or UIKit iOS views"
+
+  statement: "Use semantic system text styles for all text; never specify hardcoded point sizes."
+
+  rationale: "Hardcoded point sizes ignore Dynamic Type and break accessibility for the millions of iOS users who increase or decrease text size in Settings. Semantic styles (.headline, .body, .caption, .footnote, etc.) scale proportionally across all Dynamic Type settings, including the five Larger Accessibility Sizes. Apple HIG source: Rule 3.1 — Use Built-in Text Styles; Anti-Pattern #6."
+
+  examples: [
+    "SwiftUI: .font(.body), .font(.headline), .font(.caption) — scales automatically.",
+    "UIKit: UIFont.preferredFont(forTextStyle: .body) with adjustsFontForContentSizeCategory = true.",
+    "Anti-example: .font(.system(size: 17)) or UIFont.systemFont(ofSize: 17) — hardcoded, ignores Dynamic Type.",
+  ]
+
+  notes: [
+    "Applies when: setting font on any text element in a SwiftUI or UIKit iOS view.",
+    "Verify by: change Dynamic Type size in Settings > Accessibility > Display & Text Size > Larger Text; all text should scale proportionally.",
+    "If you need a custom font, use UIFontMetrics(forTextStyle:).scaledFont(for:) to make it Dynamic Type–aware.",
+    "Apple HIG source: Rule 3.1 — Use Built-in Text Styles; Anti-Pattern #6.",
+  ]
+
+  related: [
+    @community/constraint-ios-text-min-17pt,
+    @community/check-ios-bold-text-support,
+    @community/rule-mobile-first,
+  ]
+}

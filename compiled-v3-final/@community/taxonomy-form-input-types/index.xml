@@ -1,0 +1,14 @@
+<atom
+  id="@community/taxonomy-form-input-types"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="890"
+  q="4.0">
+  <description>A taxonomy of HTML form input controls and their semantic types. The HTML5 specification defines 22 input `type` values plus several distinct elements (textarea, select, button). Choosing the correct type unlocks browser-native validation, mobile keyboard optimization, autocomplete behavior, and accessibility affordances — using the wrong type (e.g. `type=&apos;text&apos;` for an email) is a common, silent accessibility regression.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="123"/>
+    <level name="core"    file="chunks/core.md"    tokens="890"/>
+    <level name="full"    file="chunks/full.md"    tokens="1658"/>
+  </projection>
+</atom>

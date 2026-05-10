@@ -1,0 +1,25 @@
+id: "@community/pattern-motion-modal"
+kind: pattern
+version: "1.0.0"
+description: "Modal animation choreography: backdrop fades in at 200ms ease-out while panel slides from translateY(12px) to 0 at 300ms cubic-bezier(0.16,1,0.3,1) — exit reverses in 150ms; body scroll locked during open lifecycle."
+domain: frontend-design
+content_hash: "sha256:42ffd2086e16eeaeb5440d5931aed252de4183374a5196b6b9f5afd03eed9233"
+tokens:
+  summary: 68
+  core: 804
+  full: 1540
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-scroll-locked-modal-only" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@impeccable/template-modal-focus-trap" }
+  - { type: related, target: "@community/rule-animation-duration" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+  - { type: related, target: "@community/check-reduced-motion-required" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

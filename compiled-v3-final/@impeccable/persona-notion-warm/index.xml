@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/persona-notion-warm"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="618"
+  q="4.0">
+  <description>Friendly productivity-tool aesthetic: off-white #fbfaf9 paper background, soft warm-grey borders, Inter or SF Pro Display, callout cards with emoji, generous block spacing, hover states that feel tactile. Reads as &apos;a notebook your friend designed&apos; rather than &apos;enterprise software.&apos;</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="84"/>
+    <level name="core"    file="chunks/core.md"    tokens="618"/>
+    <level name="full"    file="chunks/full.md"    tokens="727"/>
+  </projection>
+</atom>

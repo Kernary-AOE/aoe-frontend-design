@@ -1,0 +1,8 @@
+atom: "@community/pattern-feature-flag-rollout"
+relations:
+  - type: related
+    target: "@community/principle-refactor-when-evidence-shows-it"
+  - type: related
+    target: "@community/rule-design-decisions-cite-research"
+  - type: related
+    target: "@community/check-focus-visible"

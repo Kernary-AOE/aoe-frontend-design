@@ -1,0 +1,3 @@
+# GestaltFigureGround [fact] v1.0.0
+Gestalt Principle of Figure-Ground (Rubin, 1915 / Köhler, 1929): the visual system separates a scene into a focal foreground object (figure) and a receding background (ground); this separation is a prerequisite for object recognition.
+> The brain automatically segregates any visual scene into a figure — the object of attention, which appears closer, more defined, and more 'thing-like' — and a ground — the background, which appears further away and shapeless. The same visual region cannot be both figure and ground simultaneously; when it can be, ambiguous figure-ground creates visual instability (e.g., Rubin's vase).

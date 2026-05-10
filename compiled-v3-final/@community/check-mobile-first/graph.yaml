@@ -1,0 +1,6 @@
+atom: "@community/check-mobile-first"
+relations:
+  - type: related
+    target: "@community/rule-mobile-first"
+  - type: related
+    target: "@community/check-touch-target-min"

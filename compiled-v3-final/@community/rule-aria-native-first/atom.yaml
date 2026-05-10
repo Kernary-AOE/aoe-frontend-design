@@ -1,0 +1,25 @@
+id: "@community/rule-aria-native-first"
+kind: rule
+version: "1.0.0"
+description: "Use a native HTML element before applying ARIA roles, states, or properties — native semantics are more robust, require less maintenance, and have broader assistive technology support than ARIA overrides (ARIA in HTML spec §2.1 'First Rule of ARIA Use')."
+domain: frontend-design
+content_hash: "sha256:179fffff15cfbf5111dccd1ed21174c1f77239ffad9efc0ece5c300789c2f69b"
+tokens:
+  summary: 78
+  core: 256
+  full: 527
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/counter-example-aria-bandaid" }
+  - { type: related, target: "@community/counter-example-div-button-no-tabindex" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/counter-example-div-onclick-dropdown" }
+  - { type: related, target: "@community/anti-pattern-breaking-keyboard-flow" }
+  - { type: related, target: "@community/example-radix-dropdown" }
+  - { type: related, target: "@community/rule-semantic-html-for-interactive-elements" }
+created_at: "2026-05-07"

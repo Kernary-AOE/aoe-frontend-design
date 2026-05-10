@@ -1,0 +1,8 @@
+atom: "@community/rule-consistent-product-terminology"
+relations:
+  - type: related
+    target: "@community/rule-active-voice-in-ui-copy"
+  - type: related
+    target: "@community/rule-culturally-neutral-copy"
+  - type: related
+    target: "@community/principle-clear-user-mental-model"

@@ -1,0 +1,81 @@
+voice EditorialInvestigative {
+  id: "@impeccable/voice-editorial-investigative"
+  version: "1.0.0"
+
+  label: "Editorial Investigative"
+  domain: longform-journalism
+
+  description: "The voice used in investigative reporting and longform features. Sourced, specific, predominantly past tense, attribution-heavy, allergic to adjectives that smuggle in opinion. Sounds like NYT, The Atlantic, ProPublica, Bellingcat."
+
+  tone: "measured + sourced + present-by-implication"
+  emphasis: "what is documented → who said so → when → what records show"
+  emotional-arc: "curious → mounting weight of evidence → conclusion the reader reaches before the writer states it"
+
+  patterns: [
+    {
+      label: "Sourced statement (past tense)"
+      template: "According to {document or named-source}, {what was found}, {when}."
+      example: "According to filings reviewed by The Atlantic, the company restated its revenue four times between 2019 and 2022."
+    }
+    {
+      label: "Specific number anchor"
+      template: "{Exact number}, not {imprecise alternative the reader might assume} — a figure {context}."
+      example: "Forty-seven, not 'dozens' as the press release suggested — a figure the company has never publicly confirmed."
+    }
+    {
+      label: "Time-stamped sequence"
+      template: "On {date}, {event}. Three {time-units} later, {next event}. By {final-date}, {outcome}."
+      example: "On March 4, the CFO resigned. Three weeks later, the auditor withdrew its opinion. By May, the stock had lost 60 percent of its value."
+    }
+    {
+      label: "Attribution rhythm"
+      template: "{Statement}, {speaker} said in a {medium} {date or context}."
+      example: "The decision had been reviewed twice, the spokesperson said in an emailed statement Monday."
+    }
+    {
+      label: "Documents-show framing"
+      template: "Internal {document-type} obtained by {outlet} show {finding}, contradicting {public claim}."
+      example: "Internal Slack messages obtained by ProPublica show engineers raised the safety concern in 2021, contradicting the company's public statement that the issue was discovered last month."
+    }
+    {
+      label: "Refusal-to-comment formula"
+      template: "{Party} did not respond to {N} requests for comment, sent {dates}."
+      example: "The company did not respond to four requests for comment, sent between April 2 and April 18."
+    }
+  ]
+
+  prohibitions: [
+    "Do not use unsourced adjectives ('shocking', 'devastating', 'massive') — let the numbers carry weight.",
+    "Do not write 'many', 'several', 'numerous' when an exact count is available.",
+    "Do not use anonymous sources without specifying why ('a person granted anonymity to discuss internal matters').",
+    "Do not collapse a timeline — give the reader the dates.",
+    "Do not editorialize in the voice of the reporting; conclusions emerge from the evidence stacked in order.",
+    "Do not begin a paragraph with 'In a stunning turn' or any phrase that telegraphs reaction.",
+  ]
+
+  examples: [
+    {
+      label: "Lede paragraph"
+      template: "On the morning of February 11, three engineers at the data center in Pryor, Oklahoma logged a temperature spike on rack 47. By noon, an internal ticket had been opened. By the end of the week, it had been closed without resolution. Six months later, the same rack failed — taking down a payment processor used by 14 percent of U.S. retailers, according to industry data reviewed for this story."
+    }
+    {
+      label: "Source attribution paragraph"
+      template: "The company's chief security officer, who left the role in November, declined to comment. Two engineers who reviewed the post-incident report, granted anonymity because they were not authorized to discuss it, said the failure was traced to a known software defect filed in the issue tracker eleven months earlier."
+    }
+  ]
+
+  compatible: [
+    @impeccable/persona-magazine-editorial,
+  ]
+
+  conflicts: [
+    @impeccable/voice-marketing-bold,
+    @impeccable/voice-casual-warm,
+    @impeccable/voice-brand-corporate,
+  ]
+
+  related: [
+    @impeccable/voice-poetic-literary,
+    @impeccable/voice-legal-formal,
+  ]
+}

@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-missing-empty-state"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="427"
+  q="4.0">
+  <description>Rendering an empty container — a blank table, an unstyled `&lt;div&gt;`, or just the page chrome with nothing inside — when a list, search, or workspace returns zero items. The user is left wondering whether the page failed, the filter excluded everything, or the feature is broken.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="84"/>
+    <level name="core"    file="chunks/core.md"    tokens="427"/>
+    <level name="full"    file="chunks/full.md"    tokens="769"/>
+  </projection>
+</atom>

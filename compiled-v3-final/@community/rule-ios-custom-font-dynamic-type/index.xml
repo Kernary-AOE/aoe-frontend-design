@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-ios-custom-font-dynamic-type"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="77"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="77"/>
+    <level name="full"    file="chunks/full.md"    tokens="234"/>
+  </projection>
+</atom>

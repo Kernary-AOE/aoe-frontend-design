@@ -1,0 +1,4 @@
+# ThreePillarsObservability [principle] v1.0.0
+A production system must emit three complementary signal types — metrics (numeric time-series, aggregable), logs (timestamped event records, contextual), and traces (causal request chains across services) — because each answers questions the others cannot.
+> Metrics tell you what is happening at scale (RED, USE, four-golden-signals); logs tell you what happened in a specific event (errors, audit, debug); traces tell you why a request was slow or failed across service boundaries (causal path + per-span timing). Eliminate any one and a class of question becomes answerable only by guessing. Modern practice unifies emission via OpenTelemetry — single SDK, common attributes (service.name, trace_id, span_id), then routed to three backends (Prometheus/Mimir, Loki/ELK, Tempo/Jaeger) or one unified backend (Datadog, Honeycomb, Grafana).
+domain: ops-observability

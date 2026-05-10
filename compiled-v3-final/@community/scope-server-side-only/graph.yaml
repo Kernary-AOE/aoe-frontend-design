@@ -1,0 +1,8 @@
+atom: "@community/scope-server-side-only"
+relations:
+  - type: related
+    target: "@community/tradeoff-server-vs-client-rendering"
+  - type: related
+    target: "@community/principle-owasp-broken-access-control"
+  - type: related
+    target: "@community/principle-owasp-cryptographic-failures"

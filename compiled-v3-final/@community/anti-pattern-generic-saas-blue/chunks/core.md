@@ -1,0 +1,29 @@
+# GenericSaasBlue [anti-pattern] v1.0.0
+Using the default framework primary blue — Tailwind `blue-500` (#3b82f6), Bootstrap primary (#0d6efd), Material `primary` (#1976d2), or Stripe-clone `#635bff` — as the product's main brand color. Indistinguishable from thousands of other SaaS products. Communicates 'we picked the default' rather than a brand decision.
+domain: visual-design
+
+## Label
+The Default Tailwind / Bootstrap Blue as Brand Primary
+
+## Trap
+Blue is the safest choice: it's trusted, gender-neutral, works on light and dark backgrounds, and ships as the framework default. Picking blue is the path of least resistance — every starter template already has it. AI agents trained on web data will pick this exact blue with high probability when prompted for 'a clean professional SaaS'.
+
+## Counter Examples
+- @community/counter-example-tailwind-blue-500
+
+## Detection Heuristics
+- Primary brand color hex matches one of: #3b82f6, #0d6efd, #1976d2, #2563eb, #635bff, #4f46e5
+- CSS uses `bg-blue-500`, `bg-blue-600`, `text-blue-500` for primary action color
+- HSL hue lands in 200°–230° (Tailwind blue band) without intentional design decision documented
+- Logo and primary CTA share a color from the framework's default palette
+- No `:root` override of brand colors — relying on framework defaults
+
+## Remediation
+- Pick a non-default hue: warm orange (22°), forest green (140°), rose (330°), or a desaturated indigo if blue is required.
+- Use @impeccable/template-oklch-palette to derive a tonal scale from a custom hue.
+- If you must stay in blue family, shift hue away from 220° (e.g. 195° teal-blue or 235° indigo) AND adjust chroma to differentiate from defaults.
+- Reference @community/value-brand-hue for guidance on selecting distinctive brand hues.
+- Document the brand decision: 'We chose oklch(58% 0.13 22) because [brand reasoning]' — anything beats picking the default.
+
+## Severity
+high

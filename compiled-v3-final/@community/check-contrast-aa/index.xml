@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-contrast-aa"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="227"
+  q="4.0">
+  <description>Evaluates whether the contrast ratio between foreground text color and background color meets WCAG 2.2 SC 1.4.3 Level AA. Large text (≥ 18pt regular or ≥ 14pt bold) requires 3:1; normal text requires 4.5:1.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="64"/>
+    <level name="core"    file="chunks/core.md"    tokens="227"/>
+    <level name="full"    file="chunks/full.md"    tokens="341"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-kbd-shortcut-chip"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="542"
+  q="4.0">
+  <description>Render keyboard shortcuts as an array of individual &lt;kbd&gt; elements (one chip per key, split on spaces) rather than a single &lt;kbd&gt; blob — the space-delimited shortcut string convention from cmdk&apos;s Raycast demo enables per-key chip visuals, clean copy-paste, and single-point platform swapping (⌘ → Ctrl).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="91"/>
+    <level name="core"    file="chunks/core.md"    tokens="542"/>
+    <level name="full"    file="chunks/full.md"    tokens="1063"/>
+  </projection>
+</atom>

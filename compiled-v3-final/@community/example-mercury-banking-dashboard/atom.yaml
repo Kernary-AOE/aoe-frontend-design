@@ -1,0 +1,21 @@
+id: "@community/example-mercury-banking-dashboard"
+kind: example
+version: "1.0.0"
+description: "Mercury's banking dashboard sits on a near-white #FAFAF7 background (warm tint, not pure gray). Top shows account balance in 48px serif (their signature 'Tiempos' or similar), followed by a horizontal cash-flow chart in muted blue #4A6CF7 + dotted line for projection. Below is a transaction list with 56px rows, each showing merchant logo (24px circle), name, category, and amount in tabular-nums."
+domain: visual-design
+content_hash: "sha256:1bace7996d3238ecc5791c21cbe4aa022dfb80a88fd27d3fc8bf5a9f36ddef96"
+tokens:
+  summary: 116
+  core: 528
+  full: 940
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-dashboard-grid" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/category-typography-scale" }
+created_at: "2026-05-07"

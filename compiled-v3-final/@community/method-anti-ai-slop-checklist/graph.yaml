@@ -1,0 +1,8 @@
+atom: "@community/method-anti-ai-slop-checklist"
+relations:
+  - type: related
+    target: "@community/anti-pattern-ai-generated-ui"
+  - type: related
+    target: "@impeccable/anti-pattern-ai-slop-palette"
+  - type: related
+    target: "@impeccable/constraint-font-blacklist"

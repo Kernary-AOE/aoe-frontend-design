@@ -1,0 +1,8 @@
+atom: "@community/metric-contrast-ratio"
+relations:
+  - type: related
+    target: "@w3c/fact-wcag-contrast-aa"
+  - type: related
+    target: "@community/check-contrast-aa"
+  - type: related
+    target: "@community/transform-rgb-to-oklch"

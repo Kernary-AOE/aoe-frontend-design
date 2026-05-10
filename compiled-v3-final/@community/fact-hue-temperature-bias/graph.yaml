@@ -1,0 +1,8 @@
+atom: "@community/fact-hue-temperature-bias"
+relations:
+  - type: related
+    target: "@community/fact-color-blindness-types"
+  - type: related
+    target: "@community/value-brand-hue"
+  - type: related
+    target: "@community/constraint-brand-hue-required"

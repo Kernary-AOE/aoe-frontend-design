@@ -1,0 +1,32 @@
+rule VerbBasedCtaLabels {
+  id: "@community/rule-verb-based-cta-labels"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: warning
+
+  statement: "Label every button and action link with a specific verb phrase that describes the action it performs — never use generic labels like 'Submit', 'OK', 'Yes', or 'Confirm'."
+
+  rationale: "Generic labels force users to infer context from surrounding text, increasing cognitive load and reducing confidence before clicking. Specific verb labels make the outcome unambiguous before the action is taken."
+
+  applies-when: "naming any interactive control that initiates an action"
+
+  verify-by: "Audit all buttons and links for generic labels (Submit, OK, Yes, Confirm). Replace each with a descriptive verb phrase (Send invite, Download report, Delete project, Save draft)."
+
+  examples: [
+    "Good: 'Send invite' (not 'Submit')",
+    "Good: 'Download report' (not 'OK')",
+    "Good: 'Delete project' (not 'Confirm')",
+    "Good: 'Save draft' (not 'Save')",
+    "Good: 'Start free trial' (not 'Sign up')",
+    "Bad: 'Submit' — submit what? from whose perspective?",
+    "Bad: 'OK' on a destructive confirmation — users click without reading.",
+    "Bad: 'Yes' / 'No' on a dialog — 'Yes what?' forces the user to re-read the question.",
+  ]
+
+  related: [
+    @community/rule-success-message-next-step,
+    @community/rule-single-primary-action-per-screen,
+    @community/principle-tone-calibration,
+  ]
+}

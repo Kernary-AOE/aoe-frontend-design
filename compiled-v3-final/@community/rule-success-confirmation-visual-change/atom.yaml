@@ -1,0 +1,24 @@
+id: "@community/rule-success-confirmation-visual-change"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:aa385771c454aa8cd71ad11f649e70aabdbdd948ea8e5aed2c24369ab67309f5"
+tokens:
+  summary: 75
+  core: 151
+  full: 403
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-success-message-next-step" }
+  - { type: related, target: "@community/principle-nielsen-visibility" }
+  - { type: related, target: "@community/example-stripe-payment-success" }
+  - { type: related, target: "@community/anti-pattern-no-loading-state" }
+  - { type: related, target: "@community/counter-example-button-no-loading" }
+  - { type: related, target: "@community/rule-loading-state-feedback" }
+  - { type: related, target: "@community/rule-progress-feedback-long-operations" }
+created_at: "2026-05-07"

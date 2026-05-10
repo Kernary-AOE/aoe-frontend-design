@@ -1,0 +1,24 @@
+id: "@community/constraint-accessibility-aa-minimum"
+kind: constraint
+version: "1.0.0"
+description: "Every shipped page must meet WCAG 2.2 Level AA at minimum. Internal tools, prototypes, and feature flags do not relax this requirement once exposed to end users."
+domain: accessibility
+content_hash: "sha256:1bfe60140bb873966ff11ce8a1a4c50c5e89767fd79f2413c011e80597a894b9"
+tokens:
+  summary: 57
+  core: 448
+  full: 529
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@w3c/fact-wcag-contrast-aa" }
+  - { type: related, target: "@w3c/source-wcag-22" }
+  - { type: related, target: "@community/rule-color-contrast" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/tool-axe-core" }
+  - { type: related, target: "@community/tool-lighthouse" }
+created_at: "2026-05-07"

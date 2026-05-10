@@ -1,0 +1,19 @@
+# TrainServeSkew [principle] v1.0.0
+Features used at inference time must be computed by exactly the same code, against exactly the same data sources, as features used at training time. Any divergence — different code path, different SQL, different rounding, different null handling — produces train-serve skew, the #1 cause of silent ML production failures.
+> Train-serve skew is the gap between the feature distribution a model saw during training and the distribution it sees in production. The model's accuracy degrades silently — predictions remain plausible but systematically wrong. Skew is caused by (1) duplicated feature logic in offline notebooks vs online services, (2) different snapshots of source data, (3) different time-window semantics ('last 7 days' computed in UTC vs local time), or (4) different missing-value handling. Eliminate skew architecturally: a single feature definition compiled into both batch (training) and online (serving) execution.
+domain: machine-learning
+
+## Attributed To
+Google, 'Rules of Machine Learning: Best Practices for ML Engineering' (Martin Zinkevich, 2017) — Rule #29: 'The best way to make sure that you train like you serve is to save the set of features used at serving time.'
+
+## Applies To
+- Any ML model in production where features are derived from raw events or DB rows
+- Recommender systems with session-level features (most-skew-prone)
+- Fraud / risk scoring with rolling-window aggregates (`avg_txn_amount_30d`)
+- Personalization features computed from user history
+- Anything using time-series joins (point-in-time correctness is mandatory)
+
+## Counter Examples
+- Training notebook computes `features = df.groupby('user_id').agg(...)`. Serving code re-implements the same logic in Java with subtly different null handling. Production AUC is 0.05 lower than offline; silent for 3 months.
+- Training uses `WHERE event_time < label_time` (correct). Serving uses `WHERE event_time < now()` (correct at serve-time but never matches training during backtest). Skew shows up only in production.
+- Categorical encoding: training fits a label-encoder on the training set; serving sees a new category and silently emits 0 (the encoder default). Model treats unknown items as item-id-zero.

@@ -1,0 +1,13 @@
+<atom
+  id="@community/step-debounce-search-input"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="455"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="16"/>
+    <level name="core"    file="chunks/core.md"    tokens="455"/>
+    <level name="full"    file="chunks/full.md"    tokens="861"/>
+  </projection>
+</atom>

@@ -1,0 +1,21 @@
+rule DialogAffordanceRequired {
+  id: "@community/rule-dialog-affordance-required"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: block
+
+  statement: "Every modal dialog must provide an explicit visible affordance to close it — a close button (×), a labelled 'Cancel' or 'Dismiss' button, or both. Dialogs closable only via Escape key or background click fail users who cannot infer or discover that mechanism."
+
+  applies-when: "Building any modal dialog, confirmation dialog, or blocking overlay."
+
+  verify-by: "Inspect the dialog component: confirm there is at least one visible close control with an accessible label. Test keyboard: Escape key closes. Test mouse: clicking outside the modal closes or the close button is visible."
+
+  rationale: "Modals interrupt the user's primary task. Without a visible affordance to dismiss them, users who do not know the Escape key shortcut are trapped. The close button is not decorative — it is the primary escape mechanism for mouse and touch users."
+
+  related: [
+    @community/constraint-focus-trap-modal,
+    @community/rule-keyboard-accessible,
+    @community/principle-nielsen-user-control,
+  ]
+}

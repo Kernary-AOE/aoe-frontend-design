@@ -1,0 +1,14 @@
+<atom
+  id="@community/feedback-i18n-launch-v1"
+  kind="knowledge"
+  version="1.0.0"
+  domain="i18n"
+  tokens="925"
+  q="4.0">
+  <description>Accumulated execution feedback for first-release i18n rollouts using @community/collection-i18n-ready-component. Synthesized from observed launches at multiple SaaS companies (anonymized) — captures the failure modes that consistently emerge between week 0 and month 6 of multi-locale support.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="925"/>
+    <level name="full"    file="chunks/full.md"    tokens="925"/>
+  </projection>
+</atom>

@@ -1,0 +1,20 @@
+id: "@community/fact-spacing-token-progression"
+kind: fact
+version: "1.0.0"
+description: "Spacing scales follow a geometric (or near-geometric) progression — typically doubling every 1–2 steps — rather than a linear progression, because perceived spacing differences scale logarithmically with size."
+content_hash: "sha256:88717ac58b3f3906e8ee3728fa98a7a0aedfd9571112653dcefaa4ee6a6ba971"
+tokens:
+  summary: 139
+  core: 326
+  full: 564
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-8pt-grid-system" }
+  - { type: related, target: "@community/fact-type-scale-modular" }
+  - { type: related, target: "@community/transform-scale-clamp" }
+created_at: "2026-05-07"

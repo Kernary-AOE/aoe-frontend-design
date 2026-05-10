@@ -1,0 +1,13 @@
+<atom
+  id="@community/principle-white-space-as-design-element"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="236"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="92"/>
+    <level name="core"    file="chunks/core.md"    tokens="236"/>
+    <level name="full"    file="chunks/full.md"    tokens="426"/>
+  </projection>
+</atom>

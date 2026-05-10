@@ -1,0 +1,43 @@
+task_type: signup-wizard
+parent: product-ui
+description: "Multi-step signup or onboarding wizard with progress indicator and step-by-step form flow."
+trigger_keywords:
+  - "signup"
+  - "onboarding"
+  - "registration"
+  - "multi-step"
+  - "注册流程"
+  - "三步注册"
+  - "wizard"
+  - "带进度"
+  - "step by step"
+  - "sign up flow"
+default_register_pool:
+  - school: warm-institutional
+    weight: 0.4
+  - school: linear
+    weight: 0.35
+  - school: notion-warm
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-multi-step-wizard"
+  - "@community/pattern-multi-step-flow-feedback"
+  - "@community/pattern-inline-validation"
+  - "@community/rule-form-label-associated"
+  - "@community/rule-auth-flow-reversibility"
+  - "@community/rule-progress-feedback-long-operations"
+recommended_motion:
+  - "@community/pattern-motion-forms"
+  - "@community/pattern-page-transition"
+  - "@community/template-framer-motion-pattern"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@community/pattern-dashboard-layout"
+quality_checks:
+  - "Progress indicator must show current step and total steps"
+  - "Back navigation must be always available and preserve entered data"
+  - "Inline validation must fire on blur, not on every keystroke"
+  - "Error messages must be specific and actionable, not generic"
+  - "Final step must show a clear summary before submission"
+  - "Success state must confirm completion and provide clear next steps"
+  - "Password fields must have show/hide toggle"

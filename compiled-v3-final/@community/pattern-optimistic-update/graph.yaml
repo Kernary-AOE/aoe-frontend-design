@@ -1,0 +1,16 @@
+atom: "@community/pattern-optimistic-update"
+relations:
+  - type: related
+    target: "@community/pattern-toast-stack"
+  - type: related
+    target: "@community/pattern-kanban-board"
+  - type: related
+    target: "@community/fact-visibility-system-status"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: compatible
+    target: "@community/pattern-toast-stack"
+  - type: compatible
+    target: "@community/pattern-kanban-board"
+  - type: compatible
+    target: "@community/pattern-data-table-dense"

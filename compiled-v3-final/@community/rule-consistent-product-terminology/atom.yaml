@@ -1,0 +1,20 @@
+id: "@community/rule-consistent-product-terminology"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:f7acbac45d306cc751692aeeba9633e7fa7e130160b2d235f2634c311fb10854"
+tokens:
+  summary: 80
+  core: 243
+  full: 406
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-active-voice-in-ui-copy" }
+  - { type: related, target: "@community/rule-culturally-neutral-copy" }
+  - { type: related, target: "@community/principle-clear-user-mental-model" }
+created_at: "2026-05-07"

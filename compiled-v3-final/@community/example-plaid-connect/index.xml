@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-plaid-connect"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="547"
+  q="4.0">
+  <description>Plaid Link is a multi-step modal (max-width 380px, fixed height ~600px) embedded via iframe. Steps: (1) intro screen with security messaging, (2) bank search with logo grid (32px logos in 6-column grid), (3) credentials entry with bank-branded header, (4) MFA challenge if needed, (5) success state. Each step has a back-arrow top-left and a step indicator (e.g., &apos;2 of 5&apos;) top-right.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="110"/>
+    <level name="core"    file="chunks/core.md"    tokens="547"/>
+    <level name="full"    file="chunks/full.md"    tokens="984"/>
+  </projection>
+</atom>

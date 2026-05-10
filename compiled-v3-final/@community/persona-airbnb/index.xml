@@ -1,0 +1,14 @@
+<atom
+  id="@community/persona-airbnb"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="541"
+  q="4.0">
+  <description>Warm photography-forward marketplace aesthetic: Airbnb Cereal VF in the 500-700 weight range, Rausch Red #ff385c as the single accent on pure white, with 20-32px radius cards that invite touch and three-layer shadow elevation that feels like warm natural light.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="541"/>
+    <level name="full"    file="chunks/full.md"    tokens="629"/>
+  </projection>
+</atom>

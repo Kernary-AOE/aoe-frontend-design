@@ -1,0 +1,50 @@
+task_type: doc-page
+parent: content
+description: "Technical documentation page with sidebar navigation, code blocks, and dense information architecture."
+trigger_keywords:
+  - "documentation"
+  - "docs page"
+  - "technical docs"
+  - "API docs"
+  - "文档"
+  - "技术文档"
+  - "API 文档"
+  - "reference"
+  - "guide"
+  - "developer docs"
+default_register_pool:
+  - school: mintlify
+    weight: 0.45
+  - school: dense-pragmatist
+    weight: 0.35
+  - school: vercel-clean
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-doc-page"
+  - "@community/pattern-doc-toc"
+  - "@community/pattern-sidebar-collapsible"
+  - "@community/rule-heading-hierarchy-logical"
+  - "@community/pattern-breadcrumb-trail"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-sidebar-collapsible"
+forbidden_atoms:
+  - "@impeccable/persona-magazine-editorial"
+  - "@impeccable/persona-warm-institutional"
+  - "@community/pattern-gradient-mesh-engine"
+  - "@community/template-animated-mesh-background"
+max_atoms_per_axis:
+  register: 1
+  pattern: 2
+  motion: 1
+  typography: 2
+  color: 1
+  rules: 2
+quality_checks:
+  - "Sidebar navigation must show current location with aria-current"
+  - "Code blocks must have syntax highlighting and copy button"
+  - "Breadcrumb trail must accurately reflect doc hierarchy"
+  - "Search must be accessible from keyboard shortcut (Cmd+K or /)"
+  - "Table of contents must be sticky on wide screens"
+  - "Page must be fully navigable by keyboard alone"
+  - "Previous/Next page navigation must appear at article bottom"

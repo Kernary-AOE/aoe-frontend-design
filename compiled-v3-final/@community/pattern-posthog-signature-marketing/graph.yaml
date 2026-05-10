@@ -1,0 +1,4 @@
+atom: "@community/pattern-posthog-signature-marketing"
+relations:
+  - type: related
+    target: "@community/persona-posthog"

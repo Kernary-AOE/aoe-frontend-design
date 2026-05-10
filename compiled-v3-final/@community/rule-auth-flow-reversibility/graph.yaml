@@ -1,0 +1,8 @@
+atom: "@community/rule-auth-flow-reversibility"
+relations:
+  - type: related
+    target: "@community/rule-access-change-consequence-disclosure"
+  - type: related
+    target: "@community/principle-error-prevention-and-recovery"
+  - type: related
+    target: "@community/principle-nielsen-user-control"

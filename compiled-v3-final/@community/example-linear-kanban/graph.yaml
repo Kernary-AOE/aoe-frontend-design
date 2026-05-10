@@ -1,0 +1,8 @@
+atom: "@community/example-linear-kanban"
+relations:
+  - type: related
+    target: "@community/pattern-kanban-board"
+  - type: related
+    target: "@community/example-linear-issues-table"
+  - type: related
+    target: "@community/constraint-reduced-motion"

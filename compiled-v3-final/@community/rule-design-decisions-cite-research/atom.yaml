@@ -1,0 +1,20 @@
+id: "@community/rule-design-decisions-cite-research"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:798c4a9858f8dc818d98aa06e685825356aeb471dc4b39aaa02e05b821246aa0"
+tokens:
+  summary: 75
+  core: 152
+  full: 286
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-align-changes-to-findings" }
+  - { type: related, target: "@community/anti-pattern-cherry-picking-evidence" }
+  - { type: related, target: "@community/principle-evidence-not-aesthetics" }
+created_at: "2026-05-07"

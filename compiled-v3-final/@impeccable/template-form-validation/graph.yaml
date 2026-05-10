@@ -1,0 +1,26 @@
+atom: "@impeccable/template-form-validation"
+relations:
+  - type: related
+    target: "@community/template-focus-ring"
+  - type: related
+    target: "@impeccable/template-oklch-palette"
+  - type: related
+    target: "@community/check-form-label-associated"
+  - type: related
+    target: "@community/check-error-message-associated"
+  - type: related
+    target: "@community/check-form-validation-inline"
+  - type: related
+    target: "@community/rule-aria-native-first"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@impeccable/template-button-press"
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/pattern-button-press-feedback"

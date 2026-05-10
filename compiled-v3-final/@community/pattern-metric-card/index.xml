@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-metric-card"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="702"
+  q="4.0">
+  <description>A single KPI card with label, large value, optional trend badge, and a secondary element chosen from a variation toolkit. Arranged in a responsive 4-column container-query grid. Pairs with @community/rule-kpi-card-secondary-variation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="72"/>
+    <level name="core"    file="chunks/core.md"    tokens="702"/>
+    <level name="full"    file="chunks/full.md"    tokens="1332"/>
+  </projection>
+</atom>

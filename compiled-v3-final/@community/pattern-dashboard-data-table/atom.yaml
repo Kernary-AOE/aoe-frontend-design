@@ -1,0 +1,25 @@
+id: "@community/pattern-dashboard-data-table"
+kind: pattern
+version: "1.0.0"
+description: "An interactive data table for dashboard pages: sticky muted header, hover-state rows, sortable columns with chevron indicators, search + categorical filter toolbar above, and paginated rows. Powered by TanStack Table. NEVER a static read-only table."
+domain: frontend-design
+content_hash: "sha256:5d5894c54b07e1620639c760c4f9b8ba47f0f1de8781e7fc3fd9f4639405acd6"
+tokens:
+  summary: 78
+  core: 889
+  full: 1700
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-data-table-dense" }
+  - { type: related, target: "@impeccable/template-data-table-base" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/check-heading-hierarchy" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

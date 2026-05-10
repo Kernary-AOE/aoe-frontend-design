@@ -1,0 +1,8 @@
+atom: "@community/rule-font-self-host"
+relations:
+  - type: related
+    target: "@community/rule-font-loading-fout-foit"
+  - type: related
+    target: "@community/rule-font-blacklist-applied"
+  - type: related
+    target: "@community/category-typography-scale"

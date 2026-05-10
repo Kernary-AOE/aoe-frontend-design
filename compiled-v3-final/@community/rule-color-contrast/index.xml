@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-color-contrast"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="278"
+  q="4.0">
+  <description>Enforces WCAG 2.2 color contrast requirements across all text and UI component elements in an HTML artifact. Covers SC 1.4.3 (text), SC 1.4.11 (non-text/UI), and SC 2.4.11 (focus ring).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="60"/>
+    <level name="core"    file="chunks/core.md"    tokens="278"/>
+    <level name="full"    file="chunks/full.md"    tokens="468"/>
+  </projection>
+</atom>

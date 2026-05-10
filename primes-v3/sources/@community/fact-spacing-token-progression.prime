@@ -1,0 +1,40 @@
+fact SpacingTokenProgression {
+  id: "@community/fact-spacing-token-progression"
+  version: "1.0.0"
+
+  description: "Spacing scales follow a geometric (or near-geometric) progression — typically doubling every 1–2 steps — rather than a linear progression, because perceived spacing differences scale logarithmically with size."
+
+  statement: "Effective spacing scales follow a near-geometric progression (e.g., 4, 8, 12, 16, 24, 32, 48, 64, 96, 128) rather than a linear one (4, 8, 12, 16, 20, 24, …) — equal *ratios* between steps produce visually balanced size relationships, while equal *differences* produce indistinguishable mid-range steps."
+
+  confidence: strong
+  source: [
+    "Tailwind CSS default spacing scale (geometric progression)",
+    "Material Design 3 motion + layout spacing tokens",
+    "Refactoring UI (Adam Wathan & Steve Schoger), chapter on spacing",
+  ]
+
+  applies-to: [
+    "spacing token scales",
+    "border-radius scales",
+    "shadow elevation scales",
+    "type-scale design (closely related)",
+  ]
+
+  quantitative: {
+    canonical-tailwind: [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+    canonical-doubling: [4, 8, 16, 32, 64, 128],
+    weber-fechner-basis: "perceived difference scales with log(stimulus)",
+  }
+
+  counter-conditions: [
+    "Tight UI density tiers (4, 8, 12, 16) read linear at the small end where geometric ratios collapse.",
+    "Print / editorial baseline grids may use a strict baseline-multiple progression that looks linear.",
+    "Tailwind's default scale is technically *near*-geometric — it adds linear stops in the small range.",
+  ]
+
+  related: [
+    @community/fact-8pt-grid-system,
+    @community/fact-type-scale-modular,
+    @community/transform-scale-clamp,
+  ]
+}

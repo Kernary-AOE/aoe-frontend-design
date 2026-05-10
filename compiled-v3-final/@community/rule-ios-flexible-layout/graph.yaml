@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-flexible-layout"
+relations:
+  - type: related
+    target: "@community/rule-ios-8pt-grid"
+  - type: related
+    target: "@community/rule-ios-safe-area-insets"
+  - type: related
+    target: "@community/rule-ios-dynamic-type-reflow"

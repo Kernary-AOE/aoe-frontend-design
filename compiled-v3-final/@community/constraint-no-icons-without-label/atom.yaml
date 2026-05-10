@@ -1,0 +1,21 @@
+id: "@community/constraint-no-icons-without-label"
+kind: constraint
+version: "1.0.0"
+description: "Every icon-only interactive control must expose an accessible name via aria-label, aria-labelledby, or visually-hidden text. Decorative icons inside a labeled control are exempt."
+domain: accessibility
+content_hash: "sha256:25690106c4ef894e9ce947a20660ee4ae46d8c894f56a7cb76bce7efc473dc4f"
+tokens:
+  summary: 61
+  core: 375
+  full: 462
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-accessibility-aa-minimum" }
+  - { type: related, target: "@community/tool-axe-core" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

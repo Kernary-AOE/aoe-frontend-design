@@ -1,0 +1,24 @@
+atom: "@community/rule-color-blacklist-brand"
+relations:
+  - type: related
+    target: "@impeccable/anti-pattern-ai-slop-palette"
+  - type: related
+    target: "@impeccable/template-oklch-palette"
+  - type: related
+    target: "@community/rule-color-oklch-required"
+  - type: related
+    target: "@impeccable/counter-example-inter-purple-dark"
+  - type: related
+    target: "@community/counter-example-tailwind-blue-500"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/example-mercury-banking-dashboard"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: see-also
+    target: "@community/check-color-blacklist-brand"
+  - type: validates-with
+    target: "@impeccable/anti-pattern-ai-slop-palette"
+  - type: validates-with
+    target: "@impeccable/counter-example-inter-purple-dark"

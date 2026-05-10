@@ -1,0 +1,10 @@
+atom: "@community/fact-animation-curve-anticipation"
+relations:
+  - type: related
+    target: "@community/fact-animation-curve-overshoot"
+  - type: related
+    target: "@community/fact-easing-mood-mapping"
+  - type: related
+    target: "@community/template-motion-system-tokens"
+  - type: related
+    target: "@community/anti-pattern-no-bounce-everything"

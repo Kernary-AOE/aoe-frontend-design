@@ -1,0 +1,23 @@
+id: "@community/principle-three-pillars-observability"
+kind: principle
+version: "1.0.0"
+description: "A production system must emit three complementary signal types — metrics (numeric time-series, aggregable), logs (timestamped event records, contextual), and traces (causal request chains across services) — because each answers questions the others cannot."
+domain: ops-observability
+content_hash: "sha256:7b32ae0a846de0edc00ec190d3c2075bdb9232ee8c8159f7b91b1bb5d1f04905"
+tokens:
+  summary: 228
+  core: 545
+  full: 912
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-slo-required-for-prod" }
+  - { type: related, target: "@community/pattern-error-budget-policy" }
+  - { type: related, target: "@community/anti-pattern-alert-on-everything" }
+  - { type: related, target: "@community/fact-percentile-vs-mean" }
+  - { type: requires, target: "@community/rule-slo-required-for-prod" }
+created_at: "2026-05-07"

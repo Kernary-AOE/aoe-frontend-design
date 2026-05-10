@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-burying-frequent-actions"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="461"
+  q="4.0">
+  <description>Placing actions that belong to core user workflows several menu levels or clicks deep in sub-menus, overflow menus, or secondary panels — forcing repeated multi-step navigation overhead on every session for the app&apos;s most common operations.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="461"/>
+    <level name="full"    file="chunks/full.md"    tokens="844"/>
+  </projection>
+</atom>

@@ -1,0 +1,24 @@
+id: "@community/rule-error-message-associated"
+kind: rule
+version: "1.0.0"
+description: "Every form-validation error message MUST be programmatically associated with its field via `aria-describedby`, AND the field MUST set `aria-invalid='true'`. Visually-adjacent error text without programmatic association is invisible to screen readers."
+domain: accessibility
+content_hash: "sha256:23225fecce629cd08472ebcb079952fa1a5b2f808acbbd99e92e3beab950a99d"
+tokens:
+  summary: 78
+  core: 394
+  full: 720
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-form-validation-inline" }
+  - { type: related, target: "@community/rule-form-label-associated" }
+  - { type: related, target: "@community/rule-aria-label-required" }
+  - { type: related, target: "@impeccable/template-form-validation" }
+  - { type: see-also, target: "@community/check-error-message-associated" }
+  - { type: validates-with, target: "@w3c/source-wcag-22" }
+created_at: "2026-05-07"

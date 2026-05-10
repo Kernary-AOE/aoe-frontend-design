@@ -1,0 +1,13 @@
+<atom
+  id="@community/collection-fintech-compliance-ui"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="870"
+  q="4.0">
+  <description>A bundle of atoms for building financial-product UI surfaces that meet regulatory and trust expectations: number display formatting, secure input handling, audit-trail visibility, and clear status communication. Fintech UIs are held to a higher bar — even small typographic ambiguity (e.g. comma vs period as decimal) can cause real money loss.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="99"/>
+    <level name="core"    file="chunks/core.md"    tokens="870"/>
+    <level name="full"    file="chunks/full.md"    tokens="870"/>
+  </projection>
+</atom>

@@ -1,0 +1,8 @@
+atom: "@community/counter-example-div-onclick-dropdown"
+relations:
+  - type: related
+    target: "@community/example-radix-dropdown"
+  - type: related
+    target: "@community/pattern-drawer-side"
+  - type: related
+    target: "@community/rule-keyboard-accessible"

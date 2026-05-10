@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-text-in-image"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="588"
+  q="4.0">
+  <description>Rasterizing important headlines, CTAs, prices, or product names directly into a JPG/PNG hero image instead of marking them up as HTML text. The text cannot be selected, copied, translated, screen-readered, or scaled. On retina displays it looks blurry; on small viewports it doesn&apos;t reflow. SEO crawlers don&apos;t see it. The page&apos;s primary message is invisible to half the access methods on the web.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="114"/>
+    <level name="core"    file="chunks/core.md"    tokens="588"/>
+    <level name="full"    file="chunks/full.md"    tokens="1063"/>
+  </projection>
+</atom>

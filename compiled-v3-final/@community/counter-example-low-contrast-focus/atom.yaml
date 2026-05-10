@@ -1,0 +1,22 @@
+id: "@community/counter-example-low-contrast-focus"
+kind: counter-example
+version: "1.0.0"
+description: "A button focus state that uses a 1px light-gray outline. Technically a focus indicator exists, but at 1.4:1 contrast it is invisible at normal viewing distance. Auditors checking 'is outline non-zero' pass it; humans tabbing through cannot see where focus is."
+domain: accessibility
+content_hash: "sha256:92e72ce2c76e86931315558b81b32e87e99d1ac238a8b8a45c68e623e2e56fbd"
+tokens:
+  summary: 82
+  core: 622
+  full: 1162
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-outline-suppression" }
+  - { type: related, target: "@community/template-focus-ring" }
+  - { type: related, target: "@community/value-focus-outline-width" }
+  - { type: related, target: "@w3c/fact-wcag-focus-contrast" }
+created_at: "2026-05-07"

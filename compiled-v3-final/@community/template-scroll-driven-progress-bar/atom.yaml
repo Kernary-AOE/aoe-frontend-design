@@ -1,0 +1,23 @@
+id: "@community/template-scroll-driven-progress-bar"
+kind: template
+version: "1.0.0"
+description: "Reading-progress bar using CSS animation-timeline: scroll(root) with scaleX transform (compositor-only, zero paint cost) — includes @supports fallback for Firefox and prefers-reduced-motion hide."
+domain: frontend-design
+content_hash: "sha256:2e9abc6e6f4e651eb92eaeeac3d343e7610e353e0cf0a5a48f11ac9c9cb955d9"
+tokens:
+  summary: 66
+  core: 721
+  full: 721
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/template-css-scroll-driven-animations" }
+  - { type: related, target: "@community/template-gsap-scroll-trigger" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@community/rule-animation-duration" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

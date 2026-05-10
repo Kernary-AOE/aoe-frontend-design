@@ -1,0 +1,20 @@
+id: "@community/rule-auth-flow-reversibility"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:78b58f445934a2cb542493e721e17926144e91ea8b94224bceff9e8bf4d56321"
+tokens:
+  summary: 70
+  core: 151
+  full: 291
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-access-change-consequence-disclosure" }
+  - { type: related, target: "@community/principle-error-prevention-and-recovery" }
+  - { type: related, target: "@community/principle-nielsen-user-control" }
+created_at: "2026-05-07"

@@ -1,0 +1,21 @@
+id: "@community/check-ios-hig-compliance"
+kind: check
+version: "1.0.0"
+description: "Verifies that an iPhone app meets the 20 most critical Apple Human Interface Guidelines covering layout, navigation, typography, accessibility, color, gestures, modality, permissions, and system integration."
+domain: frontend-design
+content_hash: "sha256:528eb9b3f0c61fed954be39b4d6ce2154d4f62609d5fd561896ad87eaf3ac814"
+tokens:
+  summary: 67
+  core: 486
+  full: 906
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-ios-touch-target-44pt" }
+  - { type: related, target: "@community/rule-ios-dynamic-type-semantic" }
+  - { type: related, target: "@community/check-ios-bold-text-support" }
+created_at: "2026-05-07"

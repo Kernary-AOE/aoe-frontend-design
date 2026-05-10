@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-font-feature-settings"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="335"
+  q="4.0">
+  <description>Display and body fonts MUST enable OpenType features at the CSS level: at minimum `font-feature-settings: &apos;kern&apos; 1, &apos;liga&apos; 1` globally; fintech/data UIs MUST add `&apos;tnum&apos; 1, &apos;lnum&apos; 1`; brand or editorial contexts SHOULD add stylistic sets `&apos;ss01&apos; 1` or character variants `&apos;cv01&apos; 1` where the typeface ships them.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="93"/>
+    <level name="core"    file="chunks/core.md"    tokens="335"/>
+    <level name="full"    file="chunks/full.md"    tokens="668"/>
+  </projection>
+</atom>

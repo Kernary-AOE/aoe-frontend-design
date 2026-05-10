@@ -1,0 +1,19 @@
+id: "@community/rule-confirm-before-applying-theme"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:e3be148d7bc2978dc24b25b2cac7c83e9b8fcc3732f561f9d0d0d9bed243cf2f"
+tokens:
+  summary: 76
+  core: 141
+  full: 275
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-clear-user-mental-model" }
+  - { type: related, target: "@community/principle-nielsen-user-control" }
+created_at: "2026-05-07"

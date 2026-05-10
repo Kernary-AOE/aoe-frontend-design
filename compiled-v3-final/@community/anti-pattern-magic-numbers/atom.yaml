@@ -1,0 +1,21 @@
+id: "@community/anti-pattern-magic-numbers"
+kind: anti-pattern
+version: "1.0.0"
+description: "Numeric values that have no traceable origin: `padding: 13px`, `top: 47px`, `width: calc(100% - 73px)`, `transform: translateY(-2.5rem)`. Unlike hardcoded-pixel-values (which are at least canonical step sizes like 16/24/32), magic numbers are off-grid values invented to make a particular layout look right at one viewport. They are unmaintainable because nobody — including the original author — remembers why they exist."
+domain: design-system
+content_hash: "sha256:91c7ac9444b4839b15e6c7480341a0b32cd4446fde4a924232eade28f5de7fc8"
+tokens:
+  summary: 121
+  core: 496
+  full: 871
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/counter-example-magic-number-padding" }
+  - { type: related, target: "@community/anti-pattern-hardcoded-pixel-values" }
+  - { type: related, target: "@community/type-design-token" }
+created_at: "2026-05-07"

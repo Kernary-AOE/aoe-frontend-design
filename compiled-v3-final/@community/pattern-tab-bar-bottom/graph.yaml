@@ -1,0 +1,30 @@
+atom: "@community/pattern-tab-bar-bottom"
+relations:
+  - type: related
+    target: "@community/metric-target-size"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/pattern-button-press-feedback"
+  - type: related
+    target: "@impeccable/template-button-press"
+  - type: related
+    target: "@community/fact-hover-feedback-latency"
+  - type: related
+    target: "@community/rule-aria-current-page"
+  - type: related
+    target: "@community/rule-aria-label-in-name"
+  - type: related
+    target: "@community/check-skip-link"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"
+  - type: related
+    target: "@community/check-touch-target-min"
+  - type: related
+    target: "@community/check-mobile-first"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: compatible
+    target: "@community/pattern-drawer-side"

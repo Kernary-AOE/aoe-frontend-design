@@ -1,0 +1,22 @@
+id: "@community/constraint-focus-indicator-min-size"
+kind: constraint
+version: "1.0.0"
+description: "A focus indicator must enclose the component with a perimeter area of at least (component perimeter × 2 CSS pixels) and achieve 3:1 contrast against every adjacent color, meeting WCAG 2.2 SC 2.4.11 Focus Appearance (AA)."
+domain: frontend-design
+content_hash: "sha256:bf0506e89103797801d28f46eceda52ce07d6b9aaf2688ac62154a547e2f52df"
+tokens:
+  summary: 72
+  core: 336
+  full: 336
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/value-focus-outline-width" }
+  - { type: related, target: "@community/template-focus-ring" }
+  - { type: related, target: "@community/anti-pattern-invisible-focus" }
+  - { type: related, target: "@community/anti-pattern-outline-suppression" }
+created_at: "2026-05-07"

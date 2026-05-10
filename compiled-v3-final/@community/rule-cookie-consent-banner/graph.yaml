@@ -1,0 +1,12 @@
+atom: "@community/rule-cookie-consent-banner"
+relations:
+  - type: related
+    target: "@community/principle-data-minimization"
+  - type: related
+    target: "@community/pattern-right-to-be-forgotten"
+  - type: related
+    target: "@community/anti-pattern-dark-pattern-consent"
+  - type: related
+    target: "@community/fact-coppa-13-yo-threshold"
+  - type: requires
+    target: "@community/anti-pattern-dark-pattern-consent"

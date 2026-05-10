@@ -1,0 +1,13 @@
+<atom
+  id="@community/template-intentional-gradient-hero"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="446"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="17"/>
+    <level name="core"    file="chunks/core.md"    tokens="446"/>
+    <level name="full"    file="chunks/full.md"    tokens="446"/>
+  </projection>
+</atom>

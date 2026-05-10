@@ -1,0 +1,21 @@
+id: "@community/rule-no-credentials-client"
+kind: rule
+version: "1.0.0"
+description: "API keys, secrets, OAuth client secrets, database connection strings, private signing keys, and any other credentials MUST NEVER appear in client-shipped code (HTML, JS bundles, source maps, config JSON, environment variables prefixed `NEXT_PUBLIC_` / `VITE_` / `REACT_APP_`). All such values MUST live exclusively on the server."
+domain: security
+content_hash: "sha256:f6d99298cc23782d821f2204069f382cec33fec31a709a4829d9559b11f717e6"
+tokens:
+  summary: 96
+  core: 463
+  full: 843
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-error-prevention" }
+  - { type: see-also, target: "@community/check-no-credentials-client" }
+  - { type: validates-with, target: "@community/fact-error-prevention" }
+created_at: "2026-05-07"

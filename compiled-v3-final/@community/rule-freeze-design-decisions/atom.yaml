@@ -1,0 +1,20 @@
+id: "@community/rule-freeze-design-decisions"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:eec5add5d13cf2a93ce416cf79279ae8a11da4501cf2e6f31bded808ae3e4321"
+tokens:
+  summary: 83
+  core: 246
+  full: 480
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-refactor-when-evidence-shows-it" }
+  - { type: related, target: "@community/rule-design-decisions-cite-research" }
+  - { type: related, target: "@community/rule-align-changes-to-findings" }
+created_at: "2026-05-07"

@@ -1,0 +1,21 @@
+id: "@community/constraint-reduced-motion"
+kind: constraint
+version: "1.0.0"
+description: "All non-essential motion (transitions, CSS animations, JavaScript-driven animations) must be disabled or substantially reduced when the user has enabled `prefers-reduced-motion: reduce`. Essential motion (progress indicators, video content) is exempt."
+domain: accessibility
+content_hash: "sha256:1a864fac7d70dd56219f342bdd1c7d27a02456ebd2bb391e9c321815c1ae086f"
+tokens:
+  summary: 78
+  core: 311
+  full: 377
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/example-vercel-sidebar" }
+  - { type: related, target: "@w3c/source-wcag-22" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+created_at: "2026-05-07"

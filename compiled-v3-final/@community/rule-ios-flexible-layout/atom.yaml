@@ -1,0 +1,20 @@
+id: "@community/rule-ios-flexible-layout"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:90c1b709e8cfd06a427c8ae4abba2cc22d689a6491048d612c9896ee5ab4d7fb"
+tokens:
+  summary: 47
+  core: 59
+  full: 202
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-8pt-grid" }
+  - { type: related, target: "@community/rule-ios-safe-area-insets" }
+  - { type: related, target: "@community/rule-ios-dynamic-type-reflow" }
+created_at: "2026-05-07"

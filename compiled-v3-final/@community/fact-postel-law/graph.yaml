@@ -1,0 +1,8 @@
+atom: "@community/fact-postel-law"
+relations:
+  - type: related
+    target: "@community/fact-error-prevention"
+  - type: related
+    target: "@community/fact-error-recovery-types"
+  - type: related
+    target: "@community/fact-jakob-law"

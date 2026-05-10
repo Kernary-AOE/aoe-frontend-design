@@ -1,0 +1,56 @@
+atom: "@community/persona-sanity"
+relations:
+  - type: related
+    target: "@impeccable/persona-vercel-clean"
+  - type: related
+    target: "@impeccable/template-oklch-dark-mode-cascade"
+  - type: related
+    target: "@impeccable/template-oklch-palette"
+  - type: related
+    target: "@community/principle-typography-hierarchy"
+  - type: related
+    target: "@community/check-line-length-optimal"
+  - type: related
+    target: "@community/rule-opentype-features-on"
+  - type: related
+    target: "@community/rule-typography-letter-spacing"
+  - type: related
+    target: "@community/fact-monospace-purpose"
+  - type: related
+    target: "@community/rule-font-self-host"
+  - type: related
+    target: "@community/pattern-color-dark-mode-pairing"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/check-color-oklch-required"
+  - type: related
+    target: "@community/check-color-dark-mode-cascade"
+  - type: related
+    target: "@community/check-contrast-aa"
+  - type: related
+    target: "@community/rule-single-accent-color"
+  - type: related
+    target: "@community/anti-pattern-generic-saas-blue"
+  - type: related
+    target: "@community/check-color-blacklist-brand"
+  - type: compatible
+    target: "vercel-clean"
+  - type: compatible
+    target: "dense-pragmatist"
+  - type: compatible
+    target: "swiss-modernist"
+  - type: compatible
+    target: "tokyo-minimal"
+  - type: conflicts
+    target: "warm-institutional"
+  - type: conflicts
+    target: "notion-warm"
+  - type: conflicts
+    target: "magazine-editorial"
+  - type: conflicts
+    target: "brutalist"
+  - type: contradicts
+    target: "@impeccable/persona-warm-institutional"
+  - type: contradicts
+    target: "@impeccable/persona-magazine-editorial"

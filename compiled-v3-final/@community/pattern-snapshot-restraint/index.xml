@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-snapshot-restraint"
+  kind="knowledge"
+  version="1.0.0"
+  domain="testing"
+  tokens="1127"
+  q="4.0">
+  <description>Snapshot tests are valuable for serialization formats, JSON schemas, and rare &apos;large output equivalence&apos; cases — and dangerous when used as a default for component or unit testing. Apply snapshot tests narrowly: small, intentional, reviewed.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="74"/>
+    <level name="core"    file="chunks/core.md"    tokens="1127"/>
+    <level name="full"    file="chunks/full.md"    tokens="2271"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-scroll-reveal"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="728"
+  q="4.0">
+  <description>元素滚动进入视口时触发 fade + slide 入场，长页面（landing page、blog post、portfolio）让分段内容感觉&apos;一步步揭露&apos;而不是页面 paint 完所有就位。用 IntersectionObserver 或 CSS animation-timeline: view() 实现。</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="53"/>
+    <level name="core"    file="chunks/core.md"    tokens="728"/>
+    <level name="full"    file="chunks/full.md"    tokens="1402"/>
+  </projection>
+</atom>

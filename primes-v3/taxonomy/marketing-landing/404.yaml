@@ -1,0 +1,39 @@
+task_type: 404
+parent: marketing-landing
+description: "404 error page with personality, clear navigation back, and optional search or suggestions."
+trigger_keywords:
+  - "404"
+  - "error page"
+  - "not found"
+  - "page missing"
+  - "404页"
+  - "找不到页面"
+  - "要有个性"
+  - "page not found"
+default_register_pool:
+  - school: magazine-editorial
+    weight: 0.35
+  - school: framer
+    weight: 0.35
+  - school: warm-institutional
+    weight: 0.3
+required_atoms:
+  - "@community/pattern-empty-state"
+  - "@community/principle-commit-bold-aesthetic"
+  - "@community/rule-empty-state-recovery"
+  - "@community/pattern-hero-with-demo"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/template-framer-motion-pattern"
+  - "@community/pattern-micro-interaction-css"
+forbidden_atoms:
+  - "@community/pattern-dashboard-layout"
+  - "@community/pattern-data-table-dense"
+  - "@impeccable/persona-dense-pragmatist"
+quality_checks:
+  - "404 number or error state must be visually memorable and prominent"
+  - "Navigation back to home or search must be immediately visible"
+  - "Page must not feel like a dead end — suggest at least 2 recovery paths"
+  - "Personality must match brand register, not generic stock illustration"
+  - "Page must load fast — minimal assets, no heavy images required"
+  - "Error message must be human, not technical HTTP jargon"

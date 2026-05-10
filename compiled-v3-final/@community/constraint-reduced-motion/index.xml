@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-reduced-motion"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="311"
+  q="4.0">
+  <description>All non-essential motion (transitions, CSS animations, JavaScript-driven animations) must be disabled or substantially reduced when the user has enabled `prefers-reduced-motion: reduce`. Essential motion (progress indicators, video content) is exempt.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="311"/>
+    <level name="full"    file="chunks/full.md"    tokens="377"/>
+  </projection>
+</atom>

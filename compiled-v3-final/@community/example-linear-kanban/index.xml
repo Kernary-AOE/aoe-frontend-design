@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-linear-kanban"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="505"
+  q="4.0">
+  <description>Linear&apos;s board view shows columns (Backlog / Todo / In Progress / Done) with subtle column headers and stacked cards. Each card is ~280px wide with 12px padding, showing issue ID, title, assignee avatar (16px), and labels as colored dots. Drag-and-drop uses a faint scale(1.02) lift and a placeholder rectangle at the drop target.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="96"/>
+    <level name="core"    file="chunks/core.md"    tokens="505"/>
+    <level name="full"    file="chunks/full.md"    tokens="913"/>
+  </projection>
+</atom>

@@ -1,0 +1,21 @@
+id: "@community/example-calcom-scheduler"
+kind: example
+version: "1.0.0"
+description: "Cal.com's booking page is a two-column layout: left side shows a month calendar grid with available days as filled circles in #292929 (dark mode) or solid black (light mode); right side shows time slots as a vertical list of buttons in 15-minute increments. Selected day has a filled accent #292929; selected time slot transitions to a 'Confirm' state with the time pinned at top."
+domain: visual-design
+content_hash: "sha256:08e94b2f24fad36def144f7b91b51f28810d8aae901e6dc200e74f75e912292b"
+tokens:
+  summary: 110
+  core: 495
+  full: 880
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-calendar-grid" }
+  - { type: related, target: "@community/metric-target-size" }
+  - { type: related, target: "@community/pattern-multi-step-wizard" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-pricing-tiers-toggle"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="938"
+  q="4.0">
+  <description>A 3-column pricing layout (typically Free / Pro / Team) with a monthly/annual billing toggle that updates all prices simultaneously, an emphasized recommended tier, and a feature checklist per column.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="66"/>
+    <level name="core"    file="chunks/core.md"    tokens="938"/>
+    <level name="full"    file="chunks/full.md"    tokens="1862"/>
+  </projection>
+</atom>

@@ -1,0 +1,16 @@
+atom: "@community/pattern-trust-social-proof-numbers"
+relations:
+  - type: related
+    target: "@community/pattern-trust-badge-row"
+  - type: related
+    target: "@community/pattern-trust-logo-strip"
+  - type: related
+    target: "@community/pattern-trust-testimonial-micro"
+  - type: related
+    target: "@community/pattern-trust-security-cert"
+  - type: related
+    target: "@community/rule-trust-signal-placement"
+  - type: related
+    target: "@community/rule-trust-signal-critical"
+  - type: related
+    target: "@community/anti-pattern-fake-trust-signals"

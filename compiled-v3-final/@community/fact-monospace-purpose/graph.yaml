@@ -1,0 +1,8 @@
+atom: "@community/fact-monospace-purpose"
+relations:
+  - type: related
+    target: "@community/fact-optical-sizing"
+  - type: related
+    target: "@community/fact-type-scale-modular"
+  - type: related
+    target: "@community/taxonomy-typography-roles"

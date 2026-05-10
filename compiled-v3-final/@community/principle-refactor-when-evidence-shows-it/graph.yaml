@@ -1,0 +1,16 @@
+atom: "@community/principle-refactor-when-evidence-shows-it"
+relations:
+  - type: related
+    target: "@community/rule-design-decisions-cite-research"
+  - type: related
+    target: "@community/rule-align-changes-to-findings"
+  - type: related
+    target: "@community/rule-freeze-design-decisions"
+  - type: related
+    target: "@community/anti-pattern-cherry-picking-evidence"
+  - type: related
+    target: "@community/anti-pattern-multi-change-experiment"
+  - type: related
+    target: "@community/rule-small-focused-experiment"
+  - type: related
+    target: "@community/rule-explicit-trade-off-disclosure"

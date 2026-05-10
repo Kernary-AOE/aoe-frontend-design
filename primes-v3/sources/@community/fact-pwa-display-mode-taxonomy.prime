@@ -1,0 +1,39 @@
+fact PwaDisplayModeTaxonomy {
+  id: "@community/fact-pwa-display-mode-taxonomy"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "The web app manifest display property has four values — fullscreen, standalone, minimal-ui, and browser — each trading browser chrome for app-like immersion; standalone is the standard choice for installable PWAs."
+
+  statement: """
+    Web App Manifest display mode values, ordered from most to least app-like:
+
+    | Value        | Browser chrome | Use case                                                      |
+    |--------------|----------------|---------------------------------------------------------------|
+    | fullscreen   | None           | Games, media players requiring edge-to-edge canvas            |
+    | standalone   | None           | Standard installed PWA — feels native, no URL bar             |
+    | minimal-ui   | Back + refresh | Light-touch install; users keep minimal navigation controls   |
+    | browser      | Full chrome    | No install feel; indistinguishable from a regular tab         |
+
+    fallback chain: if the browser does not support the declared value it falls back one step toward browser.
+    Recommendation: use standalone for most PWAs; only use fullscreen for immersive-media products.
+  """
+
+  source: [
+    "github.com/ehmo/platform-design-skills, skills/web/SKILL.md §11.5 (MIT)",
+    "https://developer.mozilla.org/en-US/docs/Web/Manifest/display",
+  ]
+
+  notes: [
+    "The display mode also affects CSS: use @media (display-mode: standalone) to conditionally show/hide back buttons or custom nav chrome.",
+    "On iOS, display:standalone hides the Safari URL bar and status bar chrome but does not give true fullscreen — test on device.",
+    "minimal-ui is not supported on iOS Safari; it falls back to browser there.",
+  ]
+
+  related: [
+    @community/rule-pwa-web-app-manifest,
+    @community/fact-pwa-installability-criteria,
+    @community/rule-ios-safe-area-insets,
+  ]
+}

@@ -1,0 +1,48 @@
+task_type: kanban-mobile
+parent: product-ui
+description: "Mobile kanban board with horizontal column swiping, iOS HIG-compliant interactions, and touch-optimized card management."
+trigger_keywords:
+  - "kanban"
+  - "看板"
+  - "kanban mobile"
+  - "任务看板"
+  - "手机看板"
+  - "横向滑"
+  - "board view"
+  - "task board"
+  - "mobile board"
+  - "像 Linear 那种"
+default_register_pool:
+  - school: linear
+    weight: 0.5
+  - school: apple
+    weight: 0.35
+  - school: toss
+    weight: 0.15
+required_atoms:
+  - "@community/pattern-kanban-board"
+  - "@community/pattern-tx-dnd-kit-kanban-columns"
+  - "@community/pattern-ios-tab-bar-top-level"
+  - "@community/pattern-ios-thumb-zone"
+  - "@community/constraint-ios-touch-target-44pt"
+  - "@community/rule-ios-safe-area-insets"
+  - "@community/check-ios-hig-compliance"
+  - "@community/pattern-ios-navigation-stack"
+recommended_motion:
+  - "@community/pattern-ios-haptic-feedback"
+  - "@community/pattern-ios-sheet-presentation"
+  - "@community/pattern-motion-microinteraction"
+forbidden_atoms:
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/anti-pattern-ios-hamburger-menu"
+  - "@community/anti-pattern-ios-ignore-safe-area"
+  - "@community/anti-pattern-tiny-touch-targets"
+quality_checks:
+  - "All touch targets must be minimum 44pt per iOS HIG"
+  - "Columns must swipe horizontally with momentum scrolling"
+  - "Cards must support long-press to enter drag mode"
+  - "Bottom tab bar must respect safe area insets on all devices"
+  - "Hamburger menu must NOT be used — bottom tab bar required"
+  - "iOS system gesture vocabulary must not be overridden"
+  - "Drag-and-drop must provide haptic feedback on card pickup and drop"
+  - "Column headers must remain visible while scrolling cards"

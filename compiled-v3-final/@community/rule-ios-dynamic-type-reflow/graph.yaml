@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-dynamic-type-reflow"
+relations:
+  - type: related
+    target: "@community/rule-ios-dynamic-type-semantic"
+  - type: related
+    target: "@community/rule-ios-custom-font-dynamic-type"
+  - type: related
+    target: "@community/constraint-ios-text-min-17pt"

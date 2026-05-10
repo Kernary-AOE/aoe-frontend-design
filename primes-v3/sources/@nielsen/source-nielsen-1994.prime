@@ -1,0 +1,31 @@
+source Nielsen1994 {
+  id: "@nielsen/source-nielsen-1994"
+  version: "1.0.0"
+
+  title: "Usability Engineering"
+  author: "Jakob Nielsen"
+  year: 1994
+  publisher: "Academic Press / Morgan Kaufmann"
+  isbn: "978-0125184069"
+  type: primary
+
+  domain: ux-design
+
+  description: "The foundational text establishing Nielsen's 10 usability heuristics for interface design. Chapter 5 defines the heuristics used in expert review (heuristic evaluation). These 10 principles remain the most widely-cited and practically-applied UX evaluation framework in professional practice."
+
+  relevant-sections: [
+    "Chapter 5 — Heuristic Evaluation",
+    "Appendix B — List of usability heuristics (the canonical 10)",
+  ]
+
+  notes: [
+    "Nielsen's heuristics were revised and named in: Nielsen, J. (1994). Enhancing the explanatory power of usability heuristics. Proc. ACM CHI'94, 152–158.",
+    "The heuristics are also available in updated form at https://www.nngroup.com/articles/ten-usability-heuristics/",
+    "Used as the evidentiary basis for @nielsen/taxonomy-10-heuristics.",
+  ]
+
+  related: [
+    @nielsen/taxonomy-10-heuristics,
+    @community/method-heuristic-review,
+  ]
+}

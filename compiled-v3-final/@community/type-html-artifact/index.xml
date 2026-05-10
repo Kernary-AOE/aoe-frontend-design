@@ -1,0 +1,14 @@
+<atom
+  id="@community/type-html-artifact"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="363"
+  q="4.0">
+  <description>Schema for an HTML artifact as consumed by design review and accessibility audit methods. Represents a parsed HTML document with extracted component metadata.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="54"/>
+    <level name="core"    file="chunks/core.md"    tokens="363"/>
+    <level name="full"    file="chunks/full.md"    tokens="671"/>
+  </projection>
+</atom>

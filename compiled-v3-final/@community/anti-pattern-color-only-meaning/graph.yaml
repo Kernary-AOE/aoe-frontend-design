@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-color-only-meaning"
+relations:
+  - type: related
+    target: "@community/counter-example-status-color-only"
+  - type: related
+    target: "@community/rule-color-contrast"
+  - type: related
+    target: "@w3c/source-wcag-22"

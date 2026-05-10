@@ -1,0 +1,20 @@
+id: "@community/fact-goal-gradient-effect"
+kind: fact
+version: "1.0.0"
+description: "Goal-Gradient Effect (Hull, 1932): motivation and effort accelerate as an individual approaches a goal — leverage this in onboarding progress bars, loyalty programs, and gamification."
+content_hash: "sha256:0f4c43127a293c52fd0ef9afd34d93ade25b64d5c92578ab186382ced7782761"
+tokens:
+  summary: 187
+  core: 560
+  full: 1066
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-zeigarnik-effect" }
+  - { type: related, target: "@community/fact-peak-end-rule" }
+  - { type: related, target: "@community/fact-visibility-system-status" }
+created_at: "2026-05-07"

@@ -1,0 +1,8 @@
+atom: "@community/fact-anthropic-brand-palette"
+relations:
+  - type: related
+    target: "@community/transform-rgb-to-oklch"
+  - type: related
+    target: "@community/template-color-layer-primitive"
+  - type: related
+    target: "@community/constraint-brand-hue-required"

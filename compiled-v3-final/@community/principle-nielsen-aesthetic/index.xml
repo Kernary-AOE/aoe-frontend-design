@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-nielsen-aesthetic"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="347"
+  q="4.0">
+  <description>Nielsen Heuristic 8: dialogues should not contain irrelevant or rarely needed information; every extra unit of information competes with relevant information and diminishes its relative visibility.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="116"/>
+    <level name="core"    file="chunks/core.md"    tokens="347"/>
+    <level name="full"    file="chunks/full.md"    tokens="507"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/metric-lcp-largest-contentful-paint"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="687"
+  q="4.0">
+  <description>LCP is one of Google&apos;s three Core Web Vitals — it measures the render time of the largest image, video poster, or text block visible within the viewport during initial page load. LCP is a perception metric: it approximates &apos;when does the page feel loaded?&apos; from the user&apos;s point of view. Optimizing LCP almost always improves user-reported satisfaction and conversion.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="112"/>
+    <level name="core"    file="chunks/core.md"    tokens="687"/>
+    <level name="full"    file="chunks/full.md"    tokens="1262"/>
+  </projection>
+</atom>

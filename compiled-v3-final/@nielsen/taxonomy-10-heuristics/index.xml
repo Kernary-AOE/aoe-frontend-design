@@ -1,0 +1,14 @@
+<atom
+  id="@nielsen/taxonomy-10-heuristics"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="252"
+  q="4.0">
+  <description>Jakob Nielsen&apos;s ten general principles for interaction design, derived from factor analysis of 249 usability problems. Used as the evaluation framework in heuristic review sessions. Each member fact represents one heuristic.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="252"/>
+    <level name="full"    file="chunks/full.md"    tokens="594"/>
+  </projection>
+</atom>

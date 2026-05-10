@@ -1,0 +1,24 @@
+id: "@community/fact-coppa-13-yo-threshold"
+kind: fact
+version: "1.0.0"
+description: "Under the US Children's Online Privacy Protection Act (COPPA, 15 U.S.C. §6501-6506) and its implementing FTC Rule, online services must obtain verifiable parental consent before knowingly collecting personal information from a child under 13. UK Age Appropriate Design Code applies up to 18; GDPR's age-of-consent for data processing is 16 (member states may lower to 13)."
+domain: legal-compliance
+content_hash: "sha256:e393557559ae9ff7825ebda33344315d14635e8064a4579dbc8105537c10df4b"
+tokens:
+  summary: 292
+  core: 750
+  full: 1365
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-data-minimization" }
+  - { type: related, target: "@community/rule-cookie-consent-banner" }
+  - { type: related, target: "@community/pattern-right-to-be-forgotten" }
+  - { type: related, target: "@community/anti-pattern-dark-pattern-consent" }
+  - { type: related, target: "@community/fact-pii-tokenization" }
+  - { type: derived-from, target: "@community/principle-data-minimization" }
+created_at: "2026-05-07"

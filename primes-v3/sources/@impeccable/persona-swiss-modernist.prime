@@ -1,0 +1,93 @@
+persona SwissModernist {
+  id: "@impeccable/persona-swiss-modernist"
+  version: "1.0.0"
+
+  school: swiss-modernist
+  domain: visual-design
+
+  description: "Müller-Brockmann on the web: mathematical baseline grids, neo-grotesque display set tight, ruled horizontal lines, asymmetric typographic compositions, one accent color in a sea of neutral. Form follows function follows grid."
+
+  implies: {
+    font: {
+      display: "neo-grotesque, large and tight-tracked — e.g. Helvetica Now, Neue Haas Grotesk, Akzidenz-Grotesk, ABC Diatype, GT America, Söhne"
+      body: "same family as display, smaller weight contrast — e.g. Helvetica Now Text, Neue Haas Grotesk Text, ABC Diatype, Inter Display"
+    }
+    color: {
+      temperature: "cool-neutral"
+      palette: "monochrome plus one chromatic accent — typically pure red (#e30613 Helvetica-poster red) or international-blue, no gradients"
+      background: "#ffffff with hairline #e5e5e5 rules, or inverted #0a0a0a with #ffffff text"
+    }
+    density: "measured — vertical rhythm 1.5 locked to 8px baseline grid, generous outer margins, tight inner letter spacing (-0.02em on display)"
+    layout: "12-column or 16-column grid, asymmetric placement, hairline rule-lines (1px solid) demarcating sections, ample top/bottom space"
+    imagery: "high-contrast B&W photography, geometric shapes (circle/square/rectangle as content), no decorative illustration"
+    motion: "minimal — instant or 120ms linear, no spring physics, no parallax"
+  }
+
+  compatible: ["minimal", "monochrome", "structured", "vercel-clean", "refined"]
+  conflicts: ["brutalist", "warm-institutional", "magazine-editorial", "notion-warm"]
+
+  example-brands: [
+    "Linear (marketing site)",
+    "Vitra design museum",
+    "Lufthansa (historical identity)",
+    "MoMA design store",
+    "Braun product pages",
+    "Massimo Vignelli's NYC subway map digital descendants",
+    "Apple HIG documentation",
+  ]
+
+  notes: [
+    "The defining move is the asymmetric grid + hairline rule. If your layout is centered and symmetrical, you've drifted into corporate-clean, not Swiss.",
+    "Don't pair Helvetica with serif body — Swiss is single-family typographic discipline. Mixing serifs into Swiss is editorial, not modernist.",
+    "8px baseline grid is non-negotiable. Margins, padding, line-heights all snap to 8/16/24/32. Off-grid values feel sloppy in this persona.",
+    "Single accent color used sparingly — one element per viewport, never two.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/principle-typography-hierarchy,
+      @community/rule-typography-letter-spacing,
+      @community/rule-single-accent-color,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-warm-institutional,
+    ]
+    typography-required: {
+      display: "neo-grotesque (Helvetica Now | Neue Haas Grotesk | Akzidenz-Grotesk | Söhne)"
+      body: "same family as display (single-family discipline)"
+      tracking: "-0.02em on display"
+    }
+    color-required: {
+      background: "#ffffff with #e5e5e5 hairline rules"
+      palette: "monochrome + ONE accent (no gradients)"
+      accent: "#e30613 Helvetica-poster red or international-blue"
+    }
+    motion-prescriptions: [
+      @community/principle-typography-hierarchy,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-editorial,
+    @impeccable/persona-dense-pragmatist,
+    @impeccable/principle-distinctiveness,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-typography-letter-spacing,
+    @community/category-typography-scale,
+    @community/check-heading-hierarchy,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/rule-brand-color-primary-only,
+    @community/check-color-blacklist-brand,
+    @community/anti-pattern-generic-saas-blue,
+    @community/anti-pattern-rainbow-explosion,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-warm-institutional,
+  ]
+}

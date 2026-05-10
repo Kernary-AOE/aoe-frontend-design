@@ -1,0 +1,14 @@
+atom: "@community/rule-ios-safe-area-insets"
+relations:
+  - type: related
+    target: "@community/anti-pattern-ios-ignore-safe-area"
+  - type: related
+    target: "@community/rule-ios-flexible-layout"
+  - type: related
+    target: "@community/constraint-ios-touch-target-44pt"
+  - type: related
+    target: "@community/anti-pattern-ios-fullscreen-spinner"
+  - type: related
+    target: "@community/rule-ios-tab-bar-always-visible"
+  - type: related
+    target: "@community/principle-consistent-cross-platform-mental-models"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-notion-sidebar"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="523"
+  q="4.0">
+  <description>Notion&apos;s sidebar is a 240px-wide rail in cream #F7F6F3 showing a tree of nested pages. Each page row is 28px tall with a 14px chevron (collapsed/expanded), 18px emoji/icon, and 14px text in #37352F. Indentation is exactly 18px per nesting level. Hover reveals an &apos;Add subpage&apos; (+) icon and a &apos;...&apos; menu on the right.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="93"/>
+    <level name="core"    file="chunks/core.md"    tokens="523"/>
+    <level name="full"    file="chunks/full.md"    tokens="953"/>
+  </projection>
+</atom>

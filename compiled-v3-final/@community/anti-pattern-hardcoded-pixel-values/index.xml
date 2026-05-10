@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-hardcoded-pixel-values"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-system"
+  tokens="471"
+  q="4.0">
+  <description>Writing raw pixel values (`padding: 16px`, `font-size: 14px`, `border-radius: 8px`) directly into component CSS instead of referencing CSS custom properties or design tokens. The values may individually look correct, but they bypass the token layer that allows theming, scaling, and consistent global change.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="94"/>
+    <level name="core"    file="chunks/core.md"    tokens="471"/>
+    <level name="full"    file="chunks/full.md"    tokens="848"/>
+  </projection>
+</atom>

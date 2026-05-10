@@ -1,0 +1,23 @@
+id: "@community/pattern-snapshot-restraint"
+kind: pattern
+version: "1.0.0"
+description: "Snapshot tests are valuable for serialization formats, JSON schemas, and rare 'large output equivalence' cases — and dangerous when used as a default for component or unit testing. Apply snapshot tests narrowly: small, intentional, reviewed."
+domain: testing
+content_hash: "sha256:5f8a08752705738c3b5363ba8d2ebc7414a7c34a490d208c4db0fc5d071b4355"
+tokens:
+  summary: 74
+  core: 1127
+  full: 2271
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-test-pyramid" }
+  - { type: related, target: "@community/rule-flaky-quarantine" }
+  - { type: related, target: "@community/anti-pattern-test-the-mock" }
+  - { type: related, target: "@community/fact-test-pyramid-ratios" }
+  - { type: derived-from, target: "@community/principle-test-pyramid" }
+created_at: "2026-05-07"

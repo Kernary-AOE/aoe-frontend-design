@@ -1,0 +1,6 @@
+atom: "@community/check-line-length-optimal"
+relations:
+  - type: related
+    target: "@community/rule-line-length-optimal"
+  - type: related
+    target: "@community/term-measure"

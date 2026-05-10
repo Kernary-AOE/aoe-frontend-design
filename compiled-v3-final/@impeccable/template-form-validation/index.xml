@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/template-form-validation"
+  kind="knowledge"
+  version="1.0.0"
+  domain="forms"
+  tokens="845"
+  q="4.0">
+  <description>Inline form field validation using native :invalid + custom validity messages + aria-live error region. Zero JS libraries; works without JS for HTML-native types.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="55"/>
+    <level name="core"    file="chunks/core.md"    tokens="845"/>
+    <level name="full"    file="chunks/full.md"    tokens="845"/>
+  </projection>
+</atom>

@@ -1,0 +1,16 @@
+atom: "@community/rule-destructive-action-differentiation"
+relations:
+  - type: related
+    target: "@community/pattern-button-hierarchy-web"
+  - type: related
+    target: "@community/pattern-modal-confirm"
+  - type: related
+    target: "@community/rule-refactoring-ui-hierarchy"
+  - type: related
+    target: "@community/example-radix-dialog"
+  - type: related
+    target: "@community/principle-nielsen-error-prevention"
+  - type: related
+    target: "@community/rule-single-primary-action-per-screen"
+  - type: related
+    target: "@community/principle-visual-hierarchy-action-distinction"

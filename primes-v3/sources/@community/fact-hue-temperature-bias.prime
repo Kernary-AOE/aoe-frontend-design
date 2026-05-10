@@ -1,0 +1,40 @@
+fact HueTemperatureBias {
+  id: "@community/fact-hue-temperature-bias"
+  version: "1.0.0"
+
+  description: "Hue carries learned + biological associations: warm hues (red-orange, 0–60° / 300–360°) are associated with urgency, energy, and warning; cool hues (cyan-blue, 180–240°) with calm, trust, and stability — biases empirically replicated across cultures with cultural variance."
+
+  statement: "Warm hues in the OKLCH 0°–60° and 300°–360° ranges (reds, oranges, magentas) tend to read as urgent / energetic / alarming and are widely used for warnings and CTAs, while cool hues in the 180°–240° range (cyans, blues, indigos) tend to read as calm / stable / trustworthy and dominate financial / enterprise / governance UIs — these associations have biological roots (red = blood / fire / ripe-fruit signaling) and cultural reinforcement, with non-trivial cross-cultural variation."
+
+  confidence: strong
+  source: [
+    "Elliot & Maier, 'Color Psychology: Effects of Perceiving Color on Psychological Functioning in Humans', Annual Review of Psychology (2014)",
+    "Labrecque, Patrick & Milne, 'Exciting red and competent blue: the importance of color in marketing', Journal of the Academy of Marketing Science (2012)",
+    "Karen Schloss et al., 'An ecological framework for color preferences', Cognition (2011)",
+  ]
+
+  applies-to: [
+    "brand-hue selection by domain (fintech / health / governance gravitate cool, food / fitness / urgency gravitate warm)",
+    "status color choices (red-for-danger, green-for-success — note green-for-money is US-centric)",
+    "marketing CTA color choice",
+    "dashboard alert palettes",
+  ]
+
+  quantitative: {
+    warm-hue-range-degrees: "0–60 and 300–360 (OKLCH H)",
+    cool-hue-range-degrees: "180–240 (OKLCH H)",
+    neutral-hue-range-degrees: "60–180 (greens, yellow-greens, cyans)",
+  }
+
+  counter-conditions: [
+    "Cultural variance: red signals luck / celebration in Chinese cultures, danger in Western; white signals mourning in some East Asian contexts.",
+    "Hue association is a weak prior — it is overridden by saturation / lightness / context (a pale dusty-red reads as warm-elegant, a saturated red reads as alarm).",
+    "Accessibility: never encode meaning by hue alone (color-blindness — see fact-color-blindness-types).",
+  ]
+
+  related: [
+    @community/fact-color-blindness-types,
+    @community/value-brand-hue,
+    @community/constraint-brand-hue-required,
+  ]
+}

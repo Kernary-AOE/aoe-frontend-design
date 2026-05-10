@@ -1,0 +1,23 @@
+id: "@community/check-focus-visible"
+kind: check
+version: "1.0.0"
+description: "Checks that a keyboard-focusable element renders a visible, WCAG-compliant focus indicator when it receives keyboard focus. Verifies: (1) outline is not suppressed, (2) outline is at least 2px wide, (3) outline color achieves 3:1 contrast against adjacent background."
+domain: accessibility
+content_hash: "sha256:d55ff71ffa36c086aabeed14aa82ca217587ddee04aa37cae5e6be30ee2c88cf"
+tokens:
+  summary: 80
+  core: 236
+  full: 342
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@w3c/fact-wcag-focus-contrast" }
+  - { type: related, target: "@community/term-focus-ring" }
+  - { type: related, target: "@community/counter-example-outline-none" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: see-also, target: "@community/rule-focus-visible" }
+created_at: "2026-05-07"

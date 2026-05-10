@@ -1,0 +1,21 @@
+rule DesignQaDefinitionOfDone {
+  id: "@community/rule-design-qa-definition-of-done"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: block
+
+  statement: "Design and UX quality review is a required gate — not optional — for any user-facing feature. A story or ticket is not done until the design QA checklist is completed and signed off."
+
+  applies-when: "Closing or releasing any feature that affects user-visible UI or flows."
+
+  verify-by: "Confirm the design QA checklist is completed before the story or ticket moves to done. 'Functionally correct' is not sufficient — UX must also be verified."
+
+  rationale: "Treating design QA as optional leads to shipping flows that are functionally correct but UX-broken — confusing navigation, inaccessible interactions, or copy that fails at the last step. These defects are expensive to fix post-ship."
+
+  related: [
+    @community/method-design-qa-pre-ship,
+    @community/rule-design-decisions-cite-research,
+    @community/principle-error-prevention-and-recovery,
+  ]
+}

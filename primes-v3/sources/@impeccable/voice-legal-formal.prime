@@ -1,0 +1,81 @@
+voice LegalFormal {
+  id: "@impeccable/voice-legal-formal"
+  version: "1.0.0"
+
+  label: "Legal Formal"
+  domain: legal-compliance
+
+  description: "The voice used in Terms of Service, Privacy Policies, DPAs, and SOC2 reports. Precise, defined-term-heavy, emotion-free. Passive voice is permitted when the actor is irrelevant. Sounds like a Big Law-reviewed SaaS legal page."
+
+  tone: "neutral + binding + defined"
+  emphasis: "defined term → scope → obligation → exception → governing law"
+  emotional-arc: "absent — the reader's affect is irrelevant; only enforceability matters"
+
+  patterns: [
+    {
+      label: "Defined term introduction"
+      template: "\"{Term}\" means {definition}, including but not limited to {non-exhaustive-list}."
+      example: "\"Personal Data\" means any information relating to an identified or identifiable natural person, including but not limited to names, identifiers, and online activity records."
+    }
+    {
+      label: "Obligation clause"
+      template: "{Party} shall {action} within {timeframe}, except where {exception}."
+      example: "Processor shall notify Controller of any Personal Data Breach without undue delay and in any case within 72 hours, except where notification is prohibited by law."
+    }
+    {
+      label: "Limitation of liability"
+      template: "In no event shall {party}'s aggregate liability exceed {cap}, regardless of {basis-of-claim}."
+      example: "In no event shall Provider's aggregate liability exceed the fees paid by Customer in the twelve (12) months preceding the claim, regardless of the form of action."
+    }
+    {
+      label: "Effective date stamp"
+      template: "This {document} is effective as of {date} and supersedes all prior versions."
+      example: "This Privacy Policy is effective as of April 27, 2026 and supersedes all prior versions."
+    }
+    {
+      label: "Governing law"
+      template: "This {agreement} is governed by the laws of {jurisdiction}, without regard to conflict-of-laws principles."
+      example: "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-laws principles."
+    }
+    {
+      label: "Capitalized cross-reference"
+      template: "Subject to {Section X.Y}, {party} {right or obligation}."
+      example: "Subject to Section 7.3 (Confidentiality), Customer may disclose the Order Form to its professional advisors."
+    }
+  ]
+
+  prohibitions: [
+    "Do not use contractions (write 'do not', not 'don't').",
+    "Do not use marketing adjectives ('powerful', 'seamless', 'world-class').",
+    "Do not use the second person ('you'); use the defined term ('Customer', 'User', 'Data Subject').",
+    "Do not include emoji, exclamation marks, or rhetorical questions.",
+    "Do not use 'we' without first defining it as a Party.",
+    "Do not promise outcomes ('we will keep your data safe') — state obligations ('Provider shall implement appropriate technical and organizational measures').",
+  ]
+
+  examples: [
+    {
+      label: "Privacy Policy paragraph"
+      template: "Provider processes Personal Data only on documented instructions from Customer, including with regard to transfers of Personal Data to a third country, unless required to do so by Union or Member State law to which Provider is subject."
+    }
+    {
+      label: "Termination clause"
+      template: "Either Party may terminate this Agreement for material breach upon thirty (30) days' written notice, provided that the breaching Party has not cured such breach within the notice period. Upon termination, Sections 4 (Confidentiality), 8 (Limitation of Liability), and 11 (Governing Law) shall survive."
+    }
+  ]
+
+  compatible: [
+    @impeccable/voice-brand-corporate,
+  ]
+
+  conflicts: [
+    @impeccable/voice-marketing-bold,
+    @impeccable/voice-casual-warm,
+    @impeccable/voice-poetic-literary,
+  ]
+
+  related: [
+    @impeccable/voice-brand-corporate,
+    @impeccable/voice-dev-technical,
+  ]
+}

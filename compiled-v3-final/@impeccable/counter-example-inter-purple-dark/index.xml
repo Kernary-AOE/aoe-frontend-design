@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/counter-example-inter-purple-dark"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="337"
+  q="4.0">
+  <description>A statistically over-represented combination in AI-generated frontends: Inter as the typeface, a saturated purple (#7c3aed or similar) as the brand accent, on a near-black (#0f0f0f or #111827) background. The pattern appears in the majority of LLM-generated dashboards, landing pages, and SaaS UIs because these values appear frequently in training data (Tailwind defaults, shadcn/ui defaults, Vercel-adjacent starters).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="122"/>
+    <level name="core"    file="chunks/core.md"    tokens="337"/>
+    <level name="full"    file="chunks/full.md"    tokens="553"/>
+  </projection>
+</atom>

@@ -1,0 +1,22 @@
+id: "@community/pattern-ux-experiment-hypothesis"
+kind: pattern
+version: "1.0.0"
+description: "A structured sentence template for writing testable UX experiment hypotheses: 'If we change X for Y users, we expect Z metric to move in direction because reason' — ensuring every experiment has a defined independent variable, target population, measurable outcome, and causal rationale."
+domain: frontend-design
+content_hash: "sha256:36cc4a9ce876ee56318ba7b356e9019e0463ef5c6363dc6601f57ccff7f8edb8"
+tokens:
+  summary: 89
+  core: 509
+  full: 1076
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-nielsen-error-prevention" }
+  - { type: related, target: "@community/pattern-inline-validation" }
+  - { type: related, target: "@community/pattern-multi-step-wizard" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

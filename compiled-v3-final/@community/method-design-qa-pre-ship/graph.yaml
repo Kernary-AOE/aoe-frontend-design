@@ -1,0 +1,8 @@
+atom: "@community/method-design-qa-pre-ship"
+relations:
+  - type: related
+    target: "@community/rule-design-qa-definition-of-done"
+  - type: related
+    target: "@community/constraint-accessibility-aa-minimum"
+  - type: related
+    target: "@community/rule-actionable-error-messages"

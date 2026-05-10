@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-no-state-reset-without-confirm"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="209"
+  q="4.0">
+  <description>Navigation away, session timeout, or flow reset must not silently discard unsaved changes or mid-flow state — users must be prompted to confirm or offered to save before loss occurs.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="209"/>
+    <level name="full"    file="chunks/full.md"    tokens="355"/>
+  </projection>
+</atom>

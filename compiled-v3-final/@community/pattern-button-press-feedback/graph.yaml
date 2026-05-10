@@ -1,0 +1,22 @@
+atom: "@community/pattern-button-press-feedback"
+relations:
+  - type: related
+    target: "@community/pattern-hover-lift"
+  - type: related
+    target: "@community/fact-hover-feedback-latency"
+  - type: related
+    target: "@community/fact-easing-mood-mapping"
+  - type: related
+    target: "@community/fact-duration-perception-thresholds"
+  - type: related
+    target: "@community/fact-motion-as-feedback"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/check-touch-target-min"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-tiny-touch-targets"
+  - type: related
+    target: "@community/anti-pattern-invisible-focus"

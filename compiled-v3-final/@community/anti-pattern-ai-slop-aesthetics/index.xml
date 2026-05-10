@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-ai-slop-aesthetics"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="269"
+  q="4.0">
+  <description>Generic, predictable visual choices — Inter/Roboto/Arial fonts, purple gradients on white backgrounds, context-free cookie-cutter components — that mark a UI as unthinkingly AI-generated because they represent the statistical average of training data.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="269"/>
+    <level name="full"    file="chunks/full.md"    tokens="458"/>
+  </projection>
+</atom>

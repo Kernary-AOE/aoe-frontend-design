@@ -1,0 +1,14 @@
+<atom
+  id="@community/scope-mobile-native"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="575"
+  q="4.0">
+  <description>Defines applicability for atoms whose guidance applies only to native mobile apps — iOS (Swift, SwiftUI, UIKit) and Android (Kotlin, Jetpack Compose, View system). Web-only atoms (DOM, mouse, hover, viewport meta) are out of scope; cross-cutting atoms (a11y, i18n, performance) apply with platform-specific tooling.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="94"/>
+    <level name="core"    file="chunks/core.md"    tokens="575"/>
+    <level name="full"    file="chunks/full.md"    tokens="575"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-form-validation-inline"
+  kind="knowledge"
+  version="1.0.0"
+  domain="usability"
+  tokens="441"
+  q="4.0">
+  <description>Form fields MUST be validated and feedback rendered at field `blur` (or after the user has clearly committed to a value), NOT only on submit. Submit-only validation forces the user to fix N errors at once and re-scan the entire form, increasing abandonment.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="441"/>
+    <level name="full"    file="chunks/full.md"    tokens="825"/>
+  </projection>
+</atom>

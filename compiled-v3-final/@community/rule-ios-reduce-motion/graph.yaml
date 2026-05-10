@@ -1,0 +1,16 @@
+atom: "@community/rule-ios-reduce-motion"
+relations:
+  - type: related
+    target: "@community/check-ios-bold-text-support"
+  - type: related
+    target: "@community/check-ios-increase-contrast"
+  - type: related
+    target: "@community/rule-ios-voiceover-labels"
+  - type: related
+    target: "@community/anti-pattern-decorative-spinning"
+  - type: related
+    target: "@community/anti-pattern-no-bounce-everything"
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/rule-animation-duration"

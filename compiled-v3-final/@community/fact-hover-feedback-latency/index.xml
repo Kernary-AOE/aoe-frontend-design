@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-hover-feedback-latency"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="413"
+  q="4.0">
+  <description>指针 hover / focus / tap 后视觉反馈必须在 100ms 内开始。超过 200ms 用户的认知开始怀疑&apos;我点中了吗 / 服务器卡了吗&apos;。100-200ms 是&apos;勉强可接受&apos;的灰色地带——产品级品质要求 &lt; 100ms。</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="106"/>
+    <level name="core"    file="chunks/core.md"    tokens="413"/>
+    <level name="full"    file="chunks/full.md"    tokens="834"/>
+  </projection>
+</atom>

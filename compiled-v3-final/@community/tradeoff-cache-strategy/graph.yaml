@@ -1,0 +1,12 @@
+atom: "@community/tradeoff-cache-strategy"
+relations:
+  - type: related
+    target: "@community/principle-idempotent-writes"
+  - type: related
+    target: "@community/anti-pattern-batch-only-pipelines"
+  - type: related
+    target: "@community/principle-perceived-vs-actual"
+  - type: related
+    target: "@community/fact-http-method-semantics"
+  - type: related
+    target: "@community/tradeoff-monolith-vs-microservices"

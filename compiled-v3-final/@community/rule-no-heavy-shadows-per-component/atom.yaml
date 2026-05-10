@@ -1,0 +1,21 @@
+id: "@community/rule-no-heavy-shadows-per-component"
+kind: rule
+version: "1.0.0"
+description: "Components must not define their own novel box-shadow values — all shadow styles must come from the design token system's elevation scale."
+domain: frontend-design
+content_hash: "sha256:1b51cc96123500add447d6cf577d8953f54148f20ed00723e706cd976b4f734b"
+tokens:
+  summary: 52
+  core: 147
+  full: 313
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-magic-numbers" }
+  - { type: related, target: "@community/rule-consistent-design-token-scale" }
+  - { type: related, target: "@community/rule-no-new-visual-primitives" }
+created_at: "2026-05-07"

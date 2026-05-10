@@ -1,0 +1,26 @@
+id: "@community/principle-error-prevention-and-recovery"
+kind: principle
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:3d54623492c77e596c4e32d106ffd30b5e3cfb98fcc31deb59ec87876b0583c7"
+tokens:
+  summary: 87
+  core: 206
+  full: 312
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-actionable-error-messages" }
+  - { type: related, target: "@community/principle-nielsen-error-prevention" }
+  - { type: related, target: "@community/principle-nielsen-error-recovery" }
+  - { type: related, target: "@community/anti-pattern-clear-form-on-failure" }
+  - { type: related, target: "@community/anti-pattern-generic-error-text" }
+  - { type: related, target: "@community/counter-example-button-no-loading" }
+  - { type: related, target: "@community/example-stripe-checkout" }
+  - { type: related, target: "@community/rule-preserve-user-input-on-error" }
+  - { type: related, target: "@community/rule-form-validation-inline" }
+created_at: "2026-05-07"

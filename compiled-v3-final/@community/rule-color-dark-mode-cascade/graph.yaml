@@ -1,0 +1,20 @@
+atom: "@community/rule-color-dark-mode-cascade"
+relations:
+  - type: related
+    target: "@impeccable/template-oklch-dark-mode-cascade"
+  - type: related
+    target: "@impeccable/template-dark-mode-toggle"
+  - type: related
+    target: "@community/rule-color-oklch-required"
+  - type: related
+    target: "@community/example-vercel-dashboard"
+  - type: related
+    target: "@community/example-shadcn-dashboard"
+  - type: related
+    target: "@community/principle-color-system-foundation"
+  - type: related
+    target: "@community/rule-light-mode-default-fallback"
+  - type: see-also
+    target: "@community/check-color-dark-mode-cascade"
+  - type: validates-with
+    target: "@impeccable/template-oklch-dark-mode-cascade"

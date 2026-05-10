@@ -1,0 +1,19 @@
+id: "@community/fact-match-real-world"
+kind: fact
+version: "1.0.0"
+domain: ux-design
+content_hash: "sha256:c30a43420b111d46a384451a356d26490328e8c2dab988b702be549f2fb86373"
+tokens:
+  summary: 85
+  core: 165
+  full: 302
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@nielsen/taxonomy-10-heuristics" }
+  - { type: related, target: "@community/fact-visibility-system-status" }
+created_at: "2026-05-07"

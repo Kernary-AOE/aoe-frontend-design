@@ -1,0 +1,19 @@
+id: "@community/fact-consistency-standards"
+kind: fact
+version: "1.0.0"
+domain: ux-design
+content_hash: "sha256:13ca8d2a5ff01de12732fa713094edf4e110e8b694421cbd631f16cb289c4843"
+tokens:
+  summary: 62
+  core: 142
+  full: 281
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@nielsen/taxonomy-10-heuristics" }
+  - { type: related, target: "@community/fact-recognition-over-recall" }
+created_at: "2026-05-07"

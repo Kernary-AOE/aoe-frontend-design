@@ -1,0 +1,16 @@
+atom: "@community/fact-http-method-semantics"
+relations:
+  - type: related
+    target: "@community/rule-resource-not-action"
+  - type: related
+    target: "@community/principle-pagination-first"
+  - type: related
+    target: "@community/pattern-cursor-pagination"
+  - type: related
+    target: "@community/anti-pattern-rpc-as-rest"
+  - type: related
+    target: "@community/principle-idempotent-writes"
+  - type: related
+    target: "@community/check-https-everywhere"
+  - type: derived-from
+    target: "@community/rule-resource-not-action"

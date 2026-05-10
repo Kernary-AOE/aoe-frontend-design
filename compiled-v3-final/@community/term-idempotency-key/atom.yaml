@@ -1,0 +1,22 @@
+id: "@community/term-idempotency-key"
+kind: term
+version: "1.0.0"
+domain: api-design
+content_hash: "sha256:3c19819b74ef380d151f095474e9b24199603cb6dfee58666db6bcc50abe5356"
+tokens:
+  summary: 108
+  core: 225
+  full: 342
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-idempotent-writes" }
+  - { type: related, target: "@community/fact-http-method-semantics" }
+  - { type: related, target: "@community/rule-resource-not-action" }
+  - { type: related, target: "@community/anti-pattern-rpc-as-rest" }
+  - { type: related, target: "@community/collection-rest-api-discipline" }
+created_at: "2026-05-07"

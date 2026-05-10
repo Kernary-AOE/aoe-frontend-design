@@ -1,0 +1,21 @@
+id: "@community/method-heuristic-review"
+kind: method
+version: "1.0.0"
+description: "A structured heuristic evaluation of a UI artifact against Nielsen's 10 usability heuristics. Produces a scored report with evidence-backed issues ranked by severity."
+domain: design-review
+content_hash: "sha256:c22f4295857af2b8b40e21ac5da786d88f38749de39b7ae63e54b1ab7189aa74"
+tokens:
+  summary: 56
+  core: 274
+  full: 493
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@nielsen/taxonomy-10-heuristics" }
+  - { type: related, target: "@community/step-load-artifact" }
+  - { type: related, target: "@community/method-a11y-audit" }
+created_at: "2026-05-07"

@@ -1,0 +1,8 @@
+atom: "@community/rule-platform-interaction-conventions"
+relations:
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/constraint-ios-reserved-gestures"
+  - type: related
+    target: "@community/anti-pattern-breaking-keyboard-flow"

@@ -1,0 +1,10 @@
+atom: "@community/rule-gsap-now-free"
+relations:
+  - type: related
+    target: "@community/constraint-animation-pref-respected"
+  - type: related
+    target: "@community/rule-animation-duration"
+  - type: related
+    target: "@community/template-gsap-scroll-trigger"
+  - type: related
+    target: "@community/template-gsap-stagger"

@@ -1,0 +1,8 @@
+atom: "@community/example-gallery-hero-sections"
+relations:
+  - type: related
+    target: "@community/example-gallery-full-landings"
+  - type: related
+    target: "@community/example-gallery-cta-sections"
+  - type: related
+    target: "@community/landing-page-section-patterns"

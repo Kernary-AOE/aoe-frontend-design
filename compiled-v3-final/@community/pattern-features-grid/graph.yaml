@@ -1,0 +1,18 @@
+atom: "@community/pattern-features-grid"
+relations:
+  - type: related
+    target: "@community/pattern-landing-page-sections"
+  - type: related
+    target: "@community/pattern-hero-3-layouts"
+  - type: related
+    target: "@community/pattern-card-component"
+  - type: related
+    target: "@community/constraint-card-grid-gap"
+  - type: related
+    target: "@community/anti-pattern-ai-generated-ui"
+  - type: related
+    target: "@impeccable/persona-vercel-clean"
+  - type: related
+    target: "@impeccable/persona-stripe"
+  - type: related
+    target: "@impeccable/persona-framer"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-slide-up-reveal"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="522"
+  q="4.0">
+  <description>内容从下方 16-24px 处上滑同时 opacity 渐入，比纯 fade 更强烈的&apos;到达&apos;感。Hero section、card grid、modal 内容进场最常用。Apple / Stripe / Notion 风格。</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="43"/>
+    <level name="core"    file="chunks/core.md"    tokens="522"/>
+    <level name="full"    file="chunks/full.md"    tokens="1000"/>
+  </projection>
+</atom>

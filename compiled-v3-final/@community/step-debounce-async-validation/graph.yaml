@@ -1,0 +1,12 @@
+atom: "@community/step-debounce-async-validation"
+relations:
+  - type: related
+    target: "@community/step-debounce-search-input"
+  - type: related
+    target: "@community/step-validate-required-fields"
+  - type: related
+    target: "@community/taxonomy-form-validation-states"
+  - type: related
+    target: "@community/rule-preserve-user-input-on-error"
+  - type: related
+    target: "@community/anti-pattern-clear-form-on-failure"

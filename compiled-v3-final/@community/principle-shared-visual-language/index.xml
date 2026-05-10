@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-shared-visual-language"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="352"
+  q="4.0">
+  <description>Color tokens, typography roles, spacing scale, and iconography must come from a shared design token system used consistently across all platforms, so the product feels visually unified even when interaction patterns differ per platform.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="352"/>
+    <level name="full"    file="chunks/full.md"    tokens="420"/>
+  </projection>
+</atom>

@@ -1,0 +1,30 @@
+pattern IosLargeTitleNav {
+  id: "@community/pattern-ios-large-title-nav"
+  version: "1.0.0"
+
+  label: "iOS Large Title Navigation Bar"
+  domain: frontend-design
+
+  description: "Top-level views use large navigation bar titles that collapse smoothly to inline (standard) size as the user scrolls down. This matches the standard iOS navigation visual language users expect across system and third-party apps."
+
+  problem: "Inline-only navigation bar titles on root views feel flat and hierarchy-less. Without a large title, primary views look identical to secondary push views, weakening the sense of navigational depth."
+
+  solution: "Use large navigation bar title display mode on top-level (root/primary list/grid) views. Allow the title to collapse to inline on scroll. Subordinate push views use the standard inline title to reinforce hierarchy."
+
+  notes: [
+    "Set navigationBarTitleDisplayMode(.large) on root views in SwiftUI, or preferredNavigationBarTitleDisplayMode = .always on UINavigationItem in UIKit.",
+    "Verify by scrolling the view: the title should transition from large to inline smoothly without a jump.",
+    "Applies only to root or top-level views in the navigation hierarchy; detail/push views should use inline titles.",
+    "Apple HIG source: Rule 2.3 — Large Titles in Primary Views.",
+  ]
+
+  related: [
+    @community/rule-mobile-first,
+    @community/pattern-tab-bar-bottom,
+    @community/rule-ios-dynamic-type-semantic,
+    @community/constraint-mobile-touch-target-44px,
+    @community/check-touch-target-min,
+    @community/check-mobile-first,
+    @community/check-focus-visible,
+  ]
+}

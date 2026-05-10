@@ -1,0 +1,13 @@
+<atom
+  id="@community/collection-accessible-frontend"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="357"
+  q="4.0">
+  <description>A comprehensive skill for reviewing any frontend artifact for accessibility compliance (WCAG 2.2 AA) and design quality (Nielsen heuristics). Covers automated and manual accessibility checks, keyboard navigation, color contrast, focus management, and design system quality.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="81"/>
+    <level name="core"    file="chunks/core.md"    tokens="357"/>
+    <level name="full"    file="chunks/full.md"    tokens="357"/>
+  </projection>
+</atom>

@@ -1,0 +1,92 @@
+persona Sentry {
+  id: "@community/persona-sentry"
+  version: "1.0.0"
+
+  school: sentry
+  domain: visual-design
+
+  description: "Late-night debugging aesthetic: warm purple-black #1f1633 canvas with bioluminescent inset-shadow buttons, Dammit Sans hero voice contrasted by Rubik UI workhorse, and lime green #c2ef4e as rare high-visibility pop against deep purple ambience."
+
+  implies: {
+    font: {
+      display: "Dammit Sans — hero and display only, brand personality; 88px / 700 / line-height 1.20"
+      body: "Rubik (fallbacks: -apple-system, system-ui, Segoe UI, Helvetica, Arial) — 4-tier weight system: 400 body / 500 nav+emphasis / 600 titles / 700 buttons+CTAs"
+      monospace: "Monaco (fallbacks: Menlo, Ubuntu Mono)"
+    }
+    color: {
+      temperature: "cool"
+      palette: "deep purple #1f1633 primary bg, deeper #150f23, border purple #362d59, sentry purple #6a5fc1 links/hover, muted purple #79628c buttons, lime #c2ef4e rare pop, coral focus #ffb287, pink outline #fa7faa, code yellow #dcdcaa syntax"
+      background: "#1f1633"
+    }
+    density: "balanced — 6px inputs / 8–12px cards+containers / 13px primary muted buttons / 18px pill images+badges, 8px base spacing, section padding 64–80px+, max-width 1152px"
+    layout: "centered max 1152px, single-column hero with ambient glow wrapping, feature sections with frosted-glass layered panels"
+    imagery: "code/terminal screenshots with syntax highlighting (#dcdcaa yellow), dark-on-dark frosted glass (blur 18px saturate 180%), no stock photography"
+    motion: "tactile — inset shadow transitions on button press; backdrop-blur panels; ambient glow `rgba(22,15,36,0.9) 0px 4px 4px 9px` wraps hero content"
+  }
+
+  compatible: ["vercel-clean", "dense-pragmatist", "tokyo-minimal"]
+  conflicts: ["warm-institutional", "magazine-editorial", "swiss-modernist", "notion-warm"]
+
+  example-brands: [
+    "Sentry",
+  ]
+
+  notes: [
+    "Warm purple-black canvas is non-negotiable: #1f1633 and #150f23 give the dark a bioluminescent quality — standard #000000 or cool gray would break the brand feel completely.",
+    "Inset button shadows: `rgba(0,0,0,0.1) 0px 1px 3px 0px inset` makes primary muted-purple buttons feel physically pressed into the surface — the tactile signature of the system.",
+    "Two-font personality split: Dammit Sans is hero-only brand voice (use on 0–2 elements per page max); Rubik handles 90%+ of UI. Misusing Dammit Sans on body copy destroys the personality contrast.",
+    "Lime green as rare pop: #c2ef4e used once per section maximum — high-visibility CTAs that stand out precisely because they're rare. Multiple limes per section neutralizes the effect.",
+    "Use for dev-tool, observability, monitoring, or error-tracking needing developer-authentic warmth with slight irreverence; avoid for enterprise-neutral B2B — Dammit Sans personality and lime pop read as opinionated, clashing with sober compliance positioning.",
+    "Distinct from persona-vercel-clean: Sentry is warm-purple (not cool-neutral), uses physical tactile buttons (not flat hover), and its brand voice is irreverent vs vercel-clean's precision-engineered restraint.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-button-press,
+      @impeccable/template-oklch-dark-mode-cascade,
+      @community/fact-monospace-purpose,
+    ]
+    must-avoid: [
+      @impeccable/persona-warm-institutional,
+      @impeccable/persona-magazine-editorial,
+    ]
+    typography-required: {
+      display: "Dammit Sans (hero-only, 0-2 elements max)"
+      body: "Rubik"
+      lime-accent-scarcity: "once per section maximum"
+    }
+    color-required: {
+      background: "#1f1633"
+      accent-lime: "#c2ef4e"
+      accent-purple: "#6a5fc1"
+    }
+    motion-prescriptions: [
+      @impeccable/template-button-press,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-dense-pragmatist,
+    @impeccable/template-button-press,
+    @impeccable/template-easing-curves,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-font-feature-settings,
+    @community/fact-monospace-purpose,
+    @community/check-body-readability,
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/pattern-color-dark-mode-pairing,
+    @community/principle-color-system-foundation,
+    @community/check-color-dark-mode-cascade,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-warm-institutional,
+    @impeccable/persona-magazine-editorial,
+  ]
+}

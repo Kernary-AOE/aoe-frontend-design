@@ -1,0 +1,4 @@
+# SloRequiredForProd [rule] v1.0.0
+Every user-facing service in production must publish at least one Service Level Objective (SLO) — a numeric target (99.9% / 99.95% / 99.99%) for a specific Service Level Indicator (SLI) measured over a rolling window (typically 28 or 30 days). No SLO = no production launch.
+> An SLO is the contract between the service team and its users about how reliable the service must be. The SLO has three required components: (1) an SLI — the precise mathematical definition of 'good' (e.g. 'fraction of HTTP requests with status < 500 AND latency < 500ms p95'), (2) a target — the percentage that must be 'good' (99.9% / 99.95% / 99.99%), and (3) a window — the rolling time period (28 or 30 days). The SLO defines the 'error budget' = (1 − target) × window; consuming the budget too quickly triggers freeze policies; consuming it slowly buys headroom for risk-taking.
+domain: ops-observability

@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-preserve-navigation-state"
+relations:
+  - type: related
+    target: "@community/pattern-ios-navigation-stack"
+  - type: related
+    target: "@community/rule-ios-tab-bar-always-visible"
+  - type: related
+    target: "@community/rule-ios-interruption-handling"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-kpi-card-secondary-variation"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="267"
+  q="4.0">
+  <description>In a 2x2 KPI grid, vary the secondary element across cards. Use each secondary type in at most 2 of the 4 cards. The most important metric goes top-left. Extracted from StyleSeed DESIGN-LANGUAGE.md §62 (github.com/bitjaru/styleseed, MIT).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="181"/>
+    <level name="core"    file="chunks/core.md"    tokens="267"/>
+    <level name="full"    file="chunks/full.md"    tokens="919"/>
+  </projection>
+</atom>

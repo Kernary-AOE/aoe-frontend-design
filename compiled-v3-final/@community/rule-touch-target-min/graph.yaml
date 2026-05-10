@@ -1,0 +1,20 @@
+atom: "@community/rule-touch-target-min"
+relations:
+  - type: related
+    target: "@community/rule-spacing-rhythm"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@w3c/source-wcag-22"
+  - type: related
+    target: "@community/anti-pattern-tiny-touch-targets"
+  - type: related
+    target: "@community/counter-example-icon-button-24px"
+  - type: related
+    target: "@community/example-calcom-scheduler"
+  - type: related
+    target: "@community/rule-mobile-first"
+  - type: see-also
+    target: "@community/check-touch-target-min"
+  - type: validates-with
+    target: "@w3c/source-wcag-22"

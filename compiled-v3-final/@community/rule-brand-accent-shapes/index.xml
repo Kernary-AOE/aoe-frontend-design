@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-brand-accent-shapes"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="222"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="222"/>
+    <level name="full"    file="chunks/full.md"    tokens="547"/>
+  </projection>
+</atom>

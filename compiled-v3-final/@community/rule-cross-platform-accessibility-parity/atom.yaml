@@ -1,0 +1,21 @@
+id: "@community/rule-cross-platform-accessibility-parity"
+kind: rule
+version: "1.0.0"
+description: "Each platform must implement the accessibility conventions native to that platform — web requires ARIA and keyboard navigation, iOS requires Dynamic Type and VoiceOver labels, Android requires TalkBack support — and accessibility features must not be silently absent on one platform."
+domain: frontend-design
+content_hash: "sha256:05f8a6b9af75dbf61fb2528f6b7c0e7b44c19cd46108c76e4e2831a78cbace65"
+tokens:
+  summary: 89
+  core: 300
+  full: 510
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-accessibility-aa-minimum" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/constraint-ios-touch-target-44pt" }
+created_at: "2026-05-07"

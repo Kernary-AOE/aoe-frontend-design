@@ -1,0 +1,20 @@
+atom: "@community/rule-mobile-first"
+relations:
+  - type: related
+    target: "@community/rule-touch-target-min"
+  - type: related
+    target: "@community/rule-image-optimization"
+  - type: related
+    target: "@community/fact-consistency-standards"
+  - type: related
+    target: "@community/anti-pattern-ios-hamburger-menu"
+  - type: related
+    target: "@community/anti-pattern-tiny-touch-targets"
+  - type: related
+    target: "@community/example-calcom-scheduler"
+  - type: related
+    target: "@community/rule-collapse-multi-column-mobile"
+  - type: see-also
+    target: "@community/check-mobile-first"
+  - type: validates-with
+    target: "@community/fact-consistency-standards"

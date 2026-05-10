@@ -1,0 +1,16 @@
+atom: "@anthropic-impeccable/pattern-undo-over-confirm"
+relations:
+  - type: related
+    target: "@community/pattern-toast-stack"
+  - type: related
+    target: "@community/pattern-optimistic-update"
+  - type: related
+    target: "@community/rule-destructive-action-differentiation"
+  - type: related
+    target: "@community/pattern-modal-confirm"
+  - type: related
+    target: "@anthropic-impeccable/anti-pattern-modal-as-default"
+  - type: related
+    target: "@community/fact-user-control-freedom"
+  - type: related
+    target: "@community/principle-nielsen-error-prevention"

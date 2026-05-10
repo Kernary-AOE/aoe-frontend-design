@@ -1,0 +1,21 @@
+id: "@community/rule-platform-native-navigation"
+kind: rule
+version: "1.0.0"
+description: "Navigation structure and affordances must conform to the established conventions of each target platform — iOS uses tab bar + navigation stack, Android uses bottom navigation + back stack, web uses top nav + breadcrumbs."
+domain: frontend-design
+content_hash: "sha256:5d58ae2e712a97a125299391ffc6f760ed169440f42bb58b9d45f8a64105d627"
+tokens:
+  summary: 72
+  core: 422
+  full: 772
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-ios-hamburger-menu" }
+  - { type: related, target: "@community/rule-platform-interaction-conventions" }
+  - { type: related, target: "@community/principle-consistent-cross-platform-mental-models" }
+created_at: "2026-05-07"

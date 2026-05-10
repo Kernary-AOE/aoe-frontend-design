@@ -1,0 +1,8 @@
+atom: "@community/constraint-no-pure-white-bg"
+relations:
+  - type: related
+    target: "@community/constraint-no-pure-black-text"
+  - type: related
+    target: "@community/example-atlantic-longform"
+  - type: related
+    target: "@community/example-readwise-reader"

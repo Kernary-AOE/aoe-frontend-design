@@ -1,0 +1,30 @@
+rule NoFixedWidthsNarrow {
+  id: "@community/rule-no-fixed-widths-narrow"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Fixed pixel widths that cause horizontal overflow or layout breakage on viewports narrower than 375px are forbidden — use fluid widths, max-width, or container queries instead."
+
+  claim: "No component may have a fixed px width wider than its containing block at the 375px (iPhone SE) viewport — min-width: 375px is the practical small-phone floor."
+
+  severity: high
+
+  forbidden: [
+    "width: 400px on any block-level element without a max-width: 100% fallback",
+    "min-width: 600px on form inputs, modals, or cards",
+    "Fixed table column widths that force horizontal scroll on mobile",
+  ]
+
+  correct-patterns: [
+    "width: min(400px, 100%) — never overflows its container",
+    "max-width: 400px; width: 100% — fluid until 400px",
+    "container queries for component-level layout changes",
+  ]
+
+  related: [
+    @community/rule-mobile-first,
+    @community/anti-pattern-hardcoded-pixel-values,
+    @community/rule-collapse-multi-column-mobile,
+  ]
+}

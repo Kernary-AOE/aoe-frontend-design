@@ -1,0 +1,20 @@
+id: "@community/rule-ios-interruption-handling"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:4061975ac371e682b459d91a73769254cd28cbddcc869fa4da4b5872cd4d6d62"
+tokens:
+  summary: 59
+  core: 93
+  full: 286
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-preserve-navigation-state" }
+  - { type: related, target: "@community/pattern-ios-navigation-stack" }
+  - { type: related, target: "@community/rule-ios-immediate-action-acknowledgment" }
+created_at: "2026-05-07"

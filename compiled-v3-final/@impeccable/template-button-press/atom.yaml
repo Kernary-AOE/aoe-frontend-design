@@ -1,0 +1,26 @@
+id: "@impeccable/template-button-press"
+kind: template
+version: "1.0.0"
+description: "Tactile button press feedback — transform-scale + shadow pulse + color darken on :active. Asymmetric timing (fast in, slower out) sells the physicality. Works on touch and mouse equally."
+domain: motion
+content_hash: "sha256:73e729064c6e52a67a946bd5cd7b6cc5ec04355c576fb0c5dcfe75a00d4eb24a"
+tokens:
+  summary: 59
+  core: 749
+  full: 749
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-card-hover-lift" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@impeccable/template-spring-config" }
+  - { type: related, target: "@community/fact-motion-as-feedback" }
+  - { type: related, target: "@community/check-touch-target-min" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-tiny-touch-targets" }
+  - { type: related, target: "@community/anti-pattern-invisible-focus" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-owasp-ssrf"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="424"
+  q="4.0">
+  <description>OWASP Top 10 A10:2021 — Server-Side Request Forgery (SSRF) occurs when a web application fetches a remote resource using a user-supplied URL without validating or sanitizing the target. Modern cloud architectures make SSRF critical: the metadata endpoint (169.254.169.254 or fd00:ec2::254) exposes IAM credentials.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="178"/>
+    <level name="core"    file="chunks/core.md"    tokens="424"/>
+    <level name="full"    file="chunks/full.md"    tokens="678"/>
+  </projection>
+</atom>

@@ -1,0 +1,22 @@
+id: "@community/principle-idempotent-writes"
+kind: principle
+version: "1.0.0"
+description: "Every write to a downstream system (database, queue, API, blob store) must be safely retryable: re-applying the same operation N times must produce exactly the same observable state as applying it once. In distributed systems, retries are inevitable — at-least-once delivery is the default."
+domain: data-engineering
+content_hash: "sha256:da2625ee956c97c24865efee924fad3ee7ab64fd0bd5c30af3f083c61b60c502"
+tokens:
+  summary: 192
+  core: 474
+  full: 788
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-data-integrity-failures" }
+  - { type: related, target: "@community/rule-event-schema-versioning" }
+  - { type: related, target: "@community/pattern-cdc-change-data-capture" }
+  - { type: requires, target: "@community/anti-pattern-batch-only-pipelines" }
+created_at: "2026-05-07"

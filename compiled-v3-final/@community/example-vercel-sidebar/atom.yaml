@@ -1,0 +1,21 @@
+id: "@community/example-vercel-sidebar"
+kind: example
+version: "1.0.0"
+description: "The Vercel dashboard sidebar transitions between expanded (240px) and collapsed (56px) states using a CSS `width` transition with `overflow: hidden` on the nav container. Icon-only mode preserves all navigation affordances via tooltips. The transition duration is ~200ms with an ease-out curve, making the collapse feel snappy without jarring."
+domain: visual-design
+content_hash: "sha256:b79d6bf798e222e690bd6ad475e8f1b11e96252228b345848680876b17f01a7c"
+tokens:
+  summary: 100
+  core: 284
+  full: 467
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-animation-reduced-motion" }
+  - { type: related, target: "@community/pattern-progressive-disclosure" }
+  - { type: related, target: "@community/category-layout-grid" }
+created_at: "2026-05-07"

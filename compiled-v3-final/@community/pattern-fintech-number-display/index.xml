@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-fintech-number-display"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="785"
+  q="4.0">
+  <description>Typography, formatting, and hierarchy rules for displaying financial amounts, KPI metrics, and change indicators in fintech and SaaS dashboards — where numbers are the primary signal and must command visual weight and communicate precision.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="785"/>
+    <level name="full"    file="chunks/full.md"    tokens="1496"/>
+  </projection>
+</atom>

@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-no-hidden-focus-outline"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="158"
+  q="4.0">
+  <description>Focus outlines must not be removed unless an equivalent visible focus indicator with at least 3:1 contrast ratio replaces them — outline:none without a replacement is forbidden.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="60"/>
+    <level name="core"    file="chunks/core.md"    tokens="158"/>
+    <level name="full"    file="chunks/full.md"    tokens="323"/>
+  </projection>
+</atom>

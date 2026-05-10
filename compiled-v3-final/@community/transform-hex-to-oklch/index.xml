@@ -1,0 +1,14 @@
+<atom
+  id="@community/transform-hex-to-oklch"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="550"
+  q="4.0">
+  <description>Converts a hex color string (&apos;#3B82F6&apos; or &apos;3B82F6&apos; or &apos;#fff&apos;) to oklch coordinates. Composes hex parsing → sRGB → linear sRGB → XYZ D65 → Oklab → polar oklch. The result is suitable for storing in a design token in oklch() form, enabling perceptually-even tonal palettes.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="82"/>
+    <level name="core"    file="chunks/core.md"    tokens="550"/>
+    <level name="full"    file="chunks/full.md"    tokens="1006"/>
+  </projection>
+</atom>

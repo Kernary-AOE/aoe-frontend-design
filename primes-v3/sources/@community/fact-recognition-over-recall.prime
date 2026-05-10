@@ -1,0 +1,40 @@
+fact RecognitionOverRecall {
+  id: "@community/fact-recognition-over-recall"
+  version: "1.0.0"
+
+  statement: "Nielsen Heuristic 6 — Recognition Rather Than Recall: Minimize the user's memory load by making objects, actions, and options visible. The user should not have to remember information from one part of the interface to another."
+
+  confidence: proven
+  evidence: @nielsen/source-nielsen-1994
+
+  domain: ux-design
+
+  heuristic-number: 6
+
+  examples: [
+    "Command palette showing available commands with keyboard shortcuts (e.g., Linear's Cmd+K interface).",
+    "Recent files list in the File menu — users recognize their work rather than typing a path.",
+    "Form field labels remaining visible above the input even when text is typed (floating labels).",
+    "Breadcrumb navigation showing the current path in a hierarchical structure.",
+  ]
+
+  violations: [
+    "Modal dialogs that require users to remember values from a previous screen to fill in a form.",
+    "Icon-only toolbars with no tooltips — users must memorize what each icon does.",
+    "Autocomplete that only appears after typing 3+ characters — user must already know the exact term.",
+    "Pagination without page number display — user must mentally track which page they are on.",
+  ]
+
+  notes: [
+    "This principle is the theoretical basis for command palettes, autocomplete, and progressive disclosure patterns.",
+    "This fact is a member of @nielsen/taxonomy-10-heuristics.",
+    "See @community/example-linear-kbd-shortcuts for a positive real-world example.",
+  ]
+
+  related: [
+    @nielsen/taxonomy-10-heuristics,
+    @community/example-linear-kbd-shortcuts,
+    @community/pattern-command-palette,
+    @community/fact-visibility-system-status,
+  ]
+}

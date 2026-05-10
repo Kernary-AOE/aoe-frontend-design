@@ -1,0 +1,34 @@
+pattern ColorScaleDecision {
+  id: "@community/pattern-color-scale-decision"
+  version: "1.0.0"
+
+  label: "Color Scale System Decision Flowchart"
+  domain: frontend-design
+
+  problem: "Designers and agents face three viable color scale systems (Radix Colors, Open Color, custom OKLCH ramp) and no clear decision criteria for choosing between them. Choosing the wrong system leads to missing dark mode support, brittle token structures, or over-engineering a prototype."
+
+  solution: "Follow a flowchart gated on three questions: dark mode requirement, production readiness need, and brand uniqueness. For most production projects, Radix Colors + OKLCH primitives + Tailwind v4 tokens is the recommended stack."
+
+  structure: """
+    Need dark mode auto-flip?
+      ├── Yes → Radix Colors (built-in dark variants)
+      └── No
+          ├── Need production design system? → Radix Colors
+          ├── Quick prototype or teaching? → Open Color
+          └── Unique brand with specific OKLCH targets? → Custom ramp via oklch-palette-generation-method
+  """
+
+  notes: [
+    "Radix Colors is the default choice — pre-built, production-tested, with automatic dark mode. Use it unless a specific constraint rules it out.",
+    "Open Color is the fallback for speed — simpler 10-step scales, good for prototypes and teaching, no dark mode variants.",
+    "Custom OKLCH ramp is for when neither library covers the brand's exact requirements — requires hand-authoring every step.",
+    "Recommended production stack: Radix Colors + OKLCH primitives + Tailwind v4 tokens.",
+  ]
+
+  related: [
+    @impeccable/template-oklch-palette,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-oklch-required,
+    @community/check-focus-visible,
+  ]
+}

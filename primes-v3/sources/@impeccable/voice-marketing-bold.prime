@@ -1,0 +1,85 @@
+voice MarketingBold {
+  id: "@impeccable/voice-marketing-bold"
+  version: "1.0.0"
+
+  label: "Marketing Bold"
+  domain: marketing-landing
+
+  description: "The voice used on confident product landing pages and feature launches. Verb-first, short, declarative, kinetic. Sounds like Stripe, Linear, Vercel, Framer headlines — momentum over explanation."
+
+  tone: "confident + kinetic"
+  emphasis: "verb → outcome → proof — no hedging, no apology, no qualifier"
+  emotional-arc: "intrigue → conviction → urge to click — reader feels the product is already shipping without them"
+
+  patterns: [
+    {
+      label: "Headline (verb-first imperative)"
+      template: "{Verb} {object}. {Verb} {outcome}."
+      example: "Ship faster. Move on."
+    }
+    {
+      label: "Subhead (concrete proof)"
+      template: "{Number}× {improvement}. {Concrete-feature-1}. {Concrete-feature-2}."
+      example: "2× faster page loads. Instant search. Zero config."
+    }
+    {
+      label: "Tagline (3-word manifesto)"
+      template: "{Verb} the {abstract-noun}."
+      example: "Build the future. Ship the web. Design the next."
+    }
+    {
+      label: "CTA (action + time)"
+      template: "{Verb} in {duration} →"
+      example: "Start in 30 seconds  →"
+    }
+    {
+      label: "Section opener (anti-status-quo)"
+      template: "Stop {old-behavior}. Start {new-behavior}."
+      example: "Stop fighting your stack. Start building."
+    }
+    {
+      label: "Social proof (named, specific)"
+      template: "{Number} teams at {recognized-brands} {verb} on {product}."
+      example: "40,000 teams at Vercel, Notion, and Ramp ship on Linear."
+    }
+  ]
+
+  prohibitions: [
+    "Do not write 'we are excited to announce' — it telegraphs corporate distance.",
+    "Do not use 'simply', 'just', or 'easily' — they erode the confidence the voice depends on.",
+    "Do not write sentences over 12 words for headlines.",
+    "Do not use the passive voice ('is enabled by') in primary copy.",
+    "Do not stack three adjectives — pick the strongest one.",
+    "Do not use exclamation marks — confidence does not shout.",
+  ]
+
+  examples: [
+    {
+      label: "Product launch"
+      template: "Ship faster. Move on. The new dashboard is built for speed: 2× faster page loads, instant search, zero config."
+    }
+    {
+      label: "Hero section"
+      template: "Build the future of payments. One API. Every currency. Live in production at Shopify, OpenAI, and Atlassian."
+    }
+    {
+      label: "Feature card"
+      template: "Edge-deployed. Globally cached. 50ms to anywhere."
+    }
+  ]
+
+  compatible: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/persona-stripe-fintech,
+  ]
+
+  conflicts: [
+    @impeccable/voice-legal-formal,
+    @impeccable/voice-brand-corporate,
+  ]
+
+  related: [
+    @impeccable/voice-dev-technical,
+    @impeccable/voice-casual-warm,
+  ]
+}

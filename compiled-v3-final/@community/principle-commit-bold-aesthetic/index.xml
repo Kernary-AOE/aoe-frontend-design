@@ -1,0 +1,13 @@
+<atom
+  id="@community/principle-commit-bold-aesthetic"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="191"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="191"/>
+    <level name="full"    file="chunks/full.md"    tokens="273"/>
+  </projection>
+</atom>

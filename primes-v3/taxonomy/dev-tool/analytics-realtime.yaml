@@ -1,0 +1,47 @@
+task_type: analytics-realtime
+parent: dev-tool
+description: "Real-time analytics or metrics dashboard with live-updating charts, event streams, and system health indicators."
+trigger_keywords:
+  - "realtime analytics"
+  - "real-time metrics"
+  - "live dashboard"
+  - "实时监控"
+  - "实时数据"
+  - "live metrics"
+  - "monitoring"
+  - "event stream"
+  - "live charts"
+  - "system health"
+default_register_pool:
+  - school: vercel-clean
+    weight: 0.45
+  - school: linear
+    weight: 0.35
+  - school: stripe-fintech
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-dashboard-layout"
+  - "@community/pattern-metric-card"
+  - "@community/pattern-chart-grid"
+  - "@community/pattern-chart-responsive-container"
+  - "@community/fact-fintech-number-display"
+  - "@community/constraint-monospace-tabular-numerics"
+  - "@community/rule-chart-never-alone"
+  - "@community/rule-loading-state-feedback"
+recommended_motion:
+  - "@community/pattern-dashboard-animations"
+  - "@community/pattern-motion-loading"
+  - "@community/pattern-skeleton-shimmer"
+  - "@community/pattern-optimistic-update"
+forbidden_atoms:
+  - "@impeccable/persona-warm-institutional"
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/template-animated-mesh-background"
+quality_checks:
+  - "Metrics must update without full page refresh — WebSocket or polling"
+  - "Live indicator (pulsing dot or 'LIVE' badge) must be visible when streaming"
+  - "Charts must animate updates smoothly, not jump between values"
+  - "Time range selector must allow zooming in on specific windows"
+  - "Connection loss must be indicated and auto-reconnection attempted"
+  - "All numeric metrics must use tabular numerics for stable layout during updates"
+  - "Alert/threshold indicators must be accessible (not color-only)"

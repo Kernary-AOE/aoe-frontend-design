@@ -1,0 +1,10 @@
+atom: "@community/method-a11y-audit"
+relations:
+  - type: related
+    target: "@community/tool-axe-core"
+  - type: related
+    target: "@community/tool-lighthouse"
+  - type: related
+    target: "@community/rule-color-contrast"
+  - type: related
+    target: "@community/rule-keyboard-accessible"

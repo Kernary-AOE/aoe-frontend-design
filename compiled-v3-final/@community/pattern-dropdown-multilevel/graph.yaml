@@ -1,0 +1,14 @@
+atom: "@community/pattern-dropdown-multilevel"
+relations:
+  - type: related
+    target: "@impeccable/template-dropdown-menu"
+  - type: related
+    target: "@community/rule-custom-component-aria-role"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-breaking-keyboard-flow"

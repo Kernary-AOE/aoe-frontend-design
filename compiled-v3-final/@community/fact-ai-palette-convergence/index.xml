@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-ai-palette-convergence"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="265"
+  q="4.0">
+  <description>Language-model agents, when given no color constraints, statistically converge on a narrow default palette derived from Tailwind&apos;s built-in color system and popular SaaS templates.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="138"/>
+    <level name="core"    file="chunks/core.md"    tokens="265"/>
+    <level name="full"    file="chunks/full.md"    tokens="443"/>
+  </projection>
+</atom>

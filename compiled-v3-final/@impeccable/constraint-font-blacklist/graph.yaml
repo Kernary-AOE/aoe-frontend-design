@@ -1,0 +1,8 @@
+atom: "@impeccable/constraint-font-blacklist"
+relations:
+  - type: related
+    target: "@impeccable/anti-pattern-ai-slop-palette"
+  - type: related
+    target: "@impeccable/persona-editorial"
+  - type: related
+    target: "@community/taxonomy-typography-roles"

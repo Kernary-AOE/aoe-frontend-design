@@ -1,0 +1,16 @@
+atom: "@community/rule-heading-hierarchy-logical"
+relations:
+  - type: related
+    target: "@community/category-typography-scale"
+  - type: related
+    target: "@community/check-line-length-optimal"
+  - type: related
+    target: "@community/fact-fitts-law"
+  - type: related
+    target: "@community/anti-pattern-thin-weight-body"
+  - type: related
+    target: "@community/example-notion-blocks"
+  - type: related
+    target: "@community/rule-heading-hierarchy"
+  - type: related
+    target: "@community/principle-typography-hierarchy"

@@ -1,0 +1,24 @@
+id: "@community/pattern-error-budget-policy"
+kind: pattern
+version: "1.0.0"
+description: "A pre-agreed, written policy that describes what happens automatically when a service consumes its error budget faster than the SLO target allows — typically a feature-freeze, a focus on reliability work, or shifting on-call burden — until burn rate returns to baseline."
+domain: ops-observability
+content_hash: "sha256:db395a3726169ca5843c56c429ec88795a30ed6548c7d923b8c9593945434433"
+tokens:
+  summary: 84
+  core: 1030
+  full: 2129
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-three-pillars-observability" }
+  - { type: related, target: "@community/rule-slo-required-for-prod" }
+  - { type: related, target: "@community/anti-pattern-alert-on-everything" }
+  - { type: related, target: "@community/fact-percentile-vs-mean" }
+  - { type: compatible, target: "@community/principle-three-pillars-observability" }
+  - { type: derived-from, target: "@community/rule-slo-required-for-prod" }
+created_at: "2026-05-07"

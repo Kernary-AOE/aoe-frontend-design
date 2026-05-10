@@ -1,0 +1,14 @@
+<atom
+  id="@community/counter-example-div-onclick-dropdown"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="648"
+  q="4.0">
+  <description>A user account dropdown where the trigger is a `&lt;div&gt;` with `onClick`. Mouse users can open it; keyboard users cannot tab to it; screen reader users have no idea it&apos;s a menu.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="61"/>
+    <level name="core"    file="chunks/core.md"    tokens="648"/>
+    <level name="full"    file="chunks/full.md"    tokens="1234"/>
+  </projection>
+</atom>

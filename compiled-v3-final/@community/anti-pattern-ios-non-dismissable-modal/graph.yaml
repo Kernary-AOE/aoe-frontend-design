@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-ios-non-dismissable-modal"
+relations:
+  - type: related
+    target: "@community/anti-pattern-ios-stacked-modals"
+  - type: related
+    target: "@community/pattern-ios-sheet-presentation"
+  - type: related
+    target: "@community/rule-ios-alerts-critical-only"

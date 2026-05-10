@@ -1,0 +1,14 @@
+atom: "@community/pattern-right-to-be-forgotten"
+relations:
+  - type: related
+    target: "@community/principle-data-minimization"
+  - type: related
+    target: "@community/fact-pii-tokenization"
+  - type: related
+    target: "@community/rule-cookie-consent-banner"
+  - type: related
+    target: "@community/anti-pattern-dark-pattern-consent"
+  - type: compatible
+    target: "@community/rule-cookie-consent-banner"
+  - type: derived-from
+    target: "@community/principle-data-minimization"

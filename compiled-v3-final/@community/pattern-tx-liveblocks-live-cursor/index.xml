@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tx-liveblocks-live-cursor"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="750"
+  q="4.0">
+  <description>Liveblocks Cursor + PresenceCursor pattern (Apache-2.0): arrow SVG with fill=&apos;currentColor&apos; inheriting from --lb-cursor-color CSS custom property, presence stored as normalized 0-1 coordinates multiplied by ResizeObserver-tracked container size, spring-interpolated via makeCursorSpring() to smooth chunky WebSocket packets, rendered with translate3d for GPU compositing.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="110"/>
+    <level name="core"    file="chunks/core.md"    tokens="750"/>
+    <level name="full"    file="chunks/full.md"    tokens="1468"/>
+  </projection>
+</atom>

@@ -1,0 +1,10 @@
+atom: "@community/pattern-container-queries"
+relations:
+  - type: related
+    target: "@community/rule-mobile-first"
+  - type: related
+    target: "@community/category-layout-grid"
+  - type: related
+    target: "@community/rule-collapse-multi-column-mobile"
+  - type: related
+    target: "@community/check-focus-visible"

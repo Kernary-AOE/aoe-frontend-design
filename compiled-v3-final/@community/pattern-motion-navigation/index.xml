@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-motion-navigation"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="827"
+  q="4.0">
+  <description>Navigation animation patterns: tab indicator sliding via Motion.dev layoutId with spring stiffness:400/damping:30, hamburger menu expanding at 250ms cubic-bezier(0.16,1,0.3,1), and GSAP indicator fallback for non-React contexts.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="72"/>
+    <level name="core"    file="chunks/core.md"    tokens="827"/>
+    <level name="full"    file="chunks/full.md"    tokens="1582"/>
+  </projection>
+</atom>

@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-single-accent-color"
+relations:
+  - type: related
+    target: "@community/rule-ios-semantic-system-colors"
+  - type: related
+    target: "@community/rule-ios-custom-color-dark-variants"
+  - type: related
+    target: "@community/fact-ios-button-style-hierarchy"

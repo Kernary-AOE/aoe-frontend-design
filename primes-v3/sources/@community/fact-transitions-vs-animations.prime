@@ -1,0 +1,57 @@
+fact TransitionsVsAnimations {
+  id: "@community/fact-transitions-vs-animations"
+  version: "1.0.0"
+  domain: frontend-design
+
+  description: "CSS transitions (property-triggered, auto-reversible) and CSS animations (@keyframes, scripted sequence) serve different purposes — transitions for state-toggled UI feedback, animations for entrances/exits/loading — mixing them incorrectly creates brittle, non-reversing motion."
+
+  statement: "CSS transitions and CSS animations are not interchangeable. A CSS transition fires when a CSS property value changes and automatically reverses when the trigger is removed — making it correct for hover, focus, and toggle states. A CSS animation (@keyframes) runs a scripted sequence independently of current property value, does not auto-reverse, and is correct for entrance/exit and looping motion. The most common mistake: using @keyframes animation for hover states (no auto-reverse) or CSS transition for entrance animations (requires a trigger to exist before mounting)."
+
+  confidence: strong
+  source: [
+    "CSS Transitions Level 1 — W3C specification",
+    "CSS Animations Level 1 — W3C specification",
+    "MDN: Using CSS transitions",
+    "MDN: Using CSS animations",
+  ]
+
+  decision-table: {
+    "hover/focus/active state": "transition — auto-reverses when state removed",
+    "element entrance (mount)": "animation — no trigger needed, fires on load",
+    "element exit (unmount)": "animation — JS class swap + animationend listener",
+    "loading indicator loop": "animation with iteration-count: infinite",
+    "toggle (open/close)": "transition — trigger is class change",
+    "scroll-linked progress": "animation-timeline: scroll() — CSS scroll-driven",
+    "spring physics": "JS (GSAP / Motion.dev / Web Animations API)",
+  }
+
+  code-examples: """
+    /* ── Transition: correct for :hover (auto-reverses) ─────────────────── */
+    .card {
+      transform: translateY(0);
+      transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card:hover { transform: translateY(-4px); }
+    /* Correct: mouse-leave auto-reverses the transition back to translateY(0) */
+
+    /* ── Animation: correct for entrance ────────────────────────────────── */
+    .card {
+      animation: slide-up 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+    /* Correct: fires once on mount, no trigger needed */
+
+    /* ── Wrong: @keyframes for hover (no auto-reverse) ───────────────────── */
+    /* .card:hover { animation: hover-lift 200ms; } ← this NEVER reverses! */
+  """
+
+  related: [
+    @community/fact-motion-vocabulary,
+    @community/template-motion-system-tokens,
+    @community/fact-easing-cubic-bezier,
+    @community/rule-animation-duration,
+  ]
+}

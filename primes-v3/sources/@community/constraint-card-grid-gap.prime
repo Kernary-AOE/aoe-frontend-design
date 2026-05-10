@@ -1,0 +1,41 @@
+constraint CardGridGap {
+  id: "@community/constraint-card-grid-gap"
+  version: "1.0.0"
+
+  label: "Card Grid Gap Minimum"
+  domain: frontend-design
+
+  description: "Card grids must use gap: 16px (gap-4) minimum for dense dashboards and gap: 24px (gap-6) for content layouts — never gap: 8px or less, so cards read as discrete units rather than a merged surface."
+
+  threshold: "16px minimum gap between cards in any grid or flex layout"
+  unit: "CSS px"
+  pass: ">= 16px"
+  warn: "8px – 15px"
+  block: "<= 8px"
+
+  rationale: "Cards are discrete informational units. Gaps below 16px cause adjacent card borders to appear merged, breaking the 'bounded object' affordance. Dashboards use 16px (gap-4); content grids use 24px (gap-6) for more breathing room."
+
+  code: """
+    /* Dense dashboard card grid */
+    .card-grid-dense {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;  /* gap-4 — dashboard minimum */
+    }
+
+    /* Content-focused card grid (blog, product listings) */
+    .card-grid-content {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px;  /* gap-6 — content layout */
+    }
+    @media (min-width: 640px)  { .card-grid-content { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .card-grid-content { grid-template-columns: repeat(3, 1fr); } }
+  """
+
+  related: [
+    @community/pattern-card-component,
+    @community/check-spacing-rhythm,
+    @community/fact-8pt-grid-system,
+  ]
+}

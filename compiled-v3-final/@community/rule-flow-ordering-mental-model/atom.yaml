@@ -1,0 +1,20 @@
+id: "@community/rule-flow-ordering-mental-model"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:a6113e7e211d0f39d716823bda5468e73afceacb0dd1d2939969a0e0ec60205d"
+tokens:
+  summary: 82
+  core: 259
+  full: 487
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-clear-user-mental-model" }
+  - { type: related, target: "@community/rule-auth-flow-reversibility" }
+  - { type: related, target: "@community/principle-nielsen-real-world-match" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+atom: "@community/template-svg-draw-on-stroke"
+relations:
+  - type: related
+    target: "@community/example-stripe-payment-success"
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/template-gsap-scroll-trigger"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/check-reduced-motion-required"
+  - type: related
+    target: "@community/check-focus-visible"

@@ -1,0 +1,20 @@
+id: "@community/fact-peak-end-rule"
+kind: fact
+version: "1.0.0"
+description: "Peak-End Rule (Kahneman & Fredrickson, 1993): people judge an experience by its emotional peak and its ending, not by an average or sum of all moments."
+content_hash: "sha256:ae13cd48ffc68dd7dfe77845bd99a841f3e72d9dce1bb483241bbd3dd314cc38"
+tokens:
+  summary: 136
+  core: 439
+  full: 831
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-zeigarnik-effect" }
+  - { type: related, target: "@community/fact-goal-gradient-effect" }
+  - { type: related, target: "@community/fact-visibility-system-status" }
+created_at: "2026-05-07"

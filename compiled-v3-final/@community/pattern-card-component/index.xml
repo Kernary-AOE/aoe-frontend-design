@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-card-component"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="933"
+  q="4.0">
+  <description>A bounded surface using border + border-radius: var(--radius) with 3 internal zones (header p-6, content p-6 pt-0, footer px-6 py-4), nested corner radius formula (inner = outer − padding), and interactive lift via transform: translateY(-2px) + box-shadow step-up on hover.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="83"/>
+    <level name="core"    file="chunks/core.md"    tokens="933"/>
+    <level name="full"    file="chunks/full.md"    tokens="1783"/>
+  </projection>
+</atom>

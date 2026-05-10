@@ -1,0 +1,29 @@
+fact IosSystemGestureVocabulary {
+  id: "@community/fact-ios-system-gesture-vocabulary"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "iOS defines a standard set of touch gestures with established, consistent meanings across all apps: tap (select/activate), long press (context menu/preview), horizontal swipe (delete/archive/back), vertical swipe (scroll/dismiss), pinch (zoom), and two-finger rotate (rotate content)."
+
+  evidence: [
+    "tap: primary action or selection — tapping a cell selects it, tapping a button triggers it.",
+    "long press: reveals context menu (.contextMenu) or enters edit mode; in Photos/Safari it previews content.",
+    "swipe horizontal (trailing edge): swipe-to-delete or swipe-to-archive on list rows.",
+    "swipe horizontal (leading edge from left): system back navigation in navigation stacks.",
+    "swipe vertical (sheet): dismisses a presented sheet modal.",
+    "pinch: zoom in/out on maps, photos, and web content.",
+    "two-finger rotate: rotates manipulable objects (Maps, image editors).",
+  ]
+
+  notes: [
+    "Assigning non-standard meanings to these gestures creates confusion — users have deeply ingrained expectations.",
+    "Apple HIG source: Rule 6.1 — Use Standard Gestures.",
+  ]
+
+  related: [
+    @community/constraint-ios-reserved-gestures,
+    @community/rule-ios-no-override-swipe-back,
+    @community/rule-ios-gesture-alternatives,
+  ]
+}

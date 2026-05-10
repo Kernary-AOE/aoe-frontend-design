@@ -1,0 +1,24 @@
+atom: "@impeccable/template-toast-stack"
+relations:
+  - type: related
+    target: "@impeccable/template-modal-focus-trap"
+  - type: related
+    target: "@community/template-focus-ring"
+  - type: related
+    target: "@impeccable/template-spring-config"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/pattern-stagger-reveal"
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@community/fact-stagger-feel-organic"
+  - type: related
+    target: "@community/fact-aria-live-politeness"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-accessibility-after-thought"
+  - type: enhances
+    target: "@community/pattern-toast-stack"

@@ -1,0 +1,67 @@
+pattern GradientMeshEngine {
+  id: "@community/pattern-gradient-mesh-engine"
+  version: "1.0.0"
+
+  label: "Gradient Mesh Engine — Multi-Layer Radial Atmosphere"
+  domain: frontend-design
+
+  problem: "Atmospheric backgrounds require the appearance of richness and depth without a heavy asset pipeline. A single gradient reads as trivial; a generated mesh gradient from a design tool produces baked-in markup that cannot be themed or adapted to dark mode."
+
+  solution: "Stack 3–5 radial-gradient layers in CSS, each positioned at a different quadrant, at very low alpha (0.04–0.10 per layer). Use OKLCH for stop colors to prevent gray dead zones at midpoints. This creates a perceptually rich, infinitely scalable mesh that adapts to dark mode via CSS custom property overrides."
+
+  structure: """
+    /* Gradient Mesh Engine — parameterised by CSS custom properties */
+    .mesh-bg {
+      background:
+        radial-gradient(
+          ellipse 70% 60% at 15% 45%,
+          oklch(var(--mesh-l1) var(--mesh-c1) var(--mesh-h1) / var(--mesh-a1, 0.06)) 0%,
+          transparent 60%
+        ),
+        radial-gradient(
+          ellipse 65% 55% at 85% 15%,
+          oklch(var(--mesh-l2) var(--mesh-c2) var(--mesh-h2) / var(--mesh-a2, 0.04)) 0%,
+          transparent 55%
+        ),
+        radial-gradient(
+          ellipse 60% 50% at 55% 88%,
+          oklch(var(--mesh-l3) var(--mesh-c3) var(--mesh-h3) / var(--mesh-a3, 0.04)) 0%,
+          transparent 52%
+        ),
+        var(--color-bg);
+    }
+
+    /* Light mode defaults */
+    :root {
+      --mesh-l1: 0.55; --mesh-c1: 0.10; --mesh-h1: 220;
+      --mesh-l2: 0.60; --mesh-c2: 0.08; --mesh-h2: 255;
+      --mesh-l3: 0.50; --mesh-c3: 0.09; --mesh-h3: 195;
+    }
+
+    /* Dark mode — same hues, reduced chroma + adjusted lightness */
+    [data-theme="dark"] {
+      --mesh-l1: 0.35; --mesh-c1: 0.08; --mesh-h1: 220;
+      --mesh-l2: 0.30; --mesh-c2: 0.06; --mesh-h2: 255;
+      --mesh-l3: 0.28; --mesh-c3: 0.07; --mesh-h3: 195;
+      --mesh-a1: 0.08;
+      --mesh-a2: 0.06;
+      --mesh-a3: 0.05;
+    }
+  """
+
+  notes: [
+    "Keep all layer alpha values below 0.12 — above this the mesh overwhelms content and reads as a graphic element rather than atmosphere.",
+    "Position layers at different quadrants (e.g., 15% 45%, 85% 15%, 55% 88%) to prevent muddy overlap in the center.",
+    "Use OKLCH for all stop colors. sRGB radial gradients with complementary hues produce a gray dead zone at the fade-out boundary.",
+    "For dark mode, increase alpha slightly (+0.01–0.02) to compensate for the reduced perceived contrast on dark surfaces.",
+    "A 4th or 5th layer can add richness — each adds ~4–6ms rendering overhead; cap at 5 for performance.",
+    "Spread hues at least 20–30° apart between layers for a harmonious mesh; beyond 60° the layers start competing visually.",
+  ]
+
+  related: [
+    @community/principle-intentional-gradient,
+    @community/rule-gradients-justified-only,
+    @community/rule-backgrounds-atmospheric,
+    @community/check-focus-visible,
+  ]
+}

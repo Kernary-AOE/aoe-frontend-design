@@ -1,0 +1,88 @@
+pattern CdcChangeDataCapture {
+  id: "@community/pattern-cdc-change-data-capture"
+  version: "1.0.0"
+
+  label: "Change Data Capture (CDC)"
+  domain: data-engineering
+
+  description: "Replicate a source-of-truth OLTP database to one or more downstream systems (data warehouse, search index, cache, replica) by tailing the database's transaction log rather than running periodic SELECT batches."
+
+  tags: [data-engineering, cdc, replication, kafka, debezium]
+
+  problem: "Polling a source database with `SELECT * WHERE updated_at > $last_seen` is O(N) per poll, misses hard deletes (rows are gone — no row to find), and lags behind the source by the polling interval. Dual-writes (app writes to DB AND to Kafka) split-brain on partial failures."
+
+  solution: "Stream the database's redo/WAL log directly. Postgres logical replication, MySQL binlog, MongoDB oplog, Oracle redo log — each emits an ordered sequence of (operation, before, after) tuples. A CDC connector (Debezium is the canonical implementation) reads the log and publishes typed events to Kafka, preserving order and including delete operations."
+
+  structure: """
+    # Topology
+    [Postgres (source-of-truth)]
+        │  WAL (logical replication slot)
+        ▼
+    [Debezium connector]  →  [Kafka topic: db.public.orders]
+                                       │
+                       ┌───────────────┼─────────────────┐
+                       ▼               ▼                 ▼
+                [Snowflake sink]  [OpenSearch]      [Redis cache]
+
+    # Postgres setup
+    ALTER SYSTEM SET wal_level = logical;
+    SELECT pg_create_logical_replication_slot('debezium_slot', 'pgoutput');
+    CREATE PUBLICATION debezium_pub FOR TABLE orders, customers, line_items;
+
+    # Debezium connector config (Kafka Connect)
+    {
+      "name": "orders-cdc",
+      "config": {
+        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "database.hostname":  "primary.db",
+        "database.dbname":    "shop",
+        "publication.name":   "debezium_pub",
+        "slot.name":          "debezium_slot",
+        "topic.prefix":       "db",
+        "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+        "tombstones.on.delete": "true"
+      }
+    }
+
+    # Outbox pattern variant — explicit events table inside the source DB
+    CREATE TABLE outbox (
+      id          UUID PRIMARY KEY,
+      aggregate   TEXT NOT NULL,
+      event_type  TEXT NOT NULL,
+      payload     JSONB NOT NULL,
+      created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+    );
+    -- App writes business row + outbox row in same TX → Debezium emits outbox rows
+  """
+
+  notes: [
+    "Initial snapshot phase reads the entire table once before tailing the log — large tables need `incremental.snapshot.chunk.size` tuning",
+    "Logical replication slots accumulate WAL until consumed — a stuck connector fills the disk on the source DB; alert on `pg_replication_slots.confirmed_flush_lsn` lag",
+    "Schema changes (ALTER TABLE) are captured by Debezium and propagate as schema-change events on a separate topic — sinks must handle them",
+    "Outbox pattern (Debezium + an `outbox` table the app writes inside its TX) gives you typed business events without coupling consumers to the schema of every table",
+    "`tombstones.on.delete=true` makes deletes emit a final null-value event — log-compacted topics use this to drop the row",
+    "AWS DMS, GCP Datastream, and Fivetran HVR are managed CDC alternatives — same primitive, vendor lock-in trade-off",
+  ]
+
+  facts: [
+    @community/principle-idempotent-writes,
+  ]
+
+  derived-from: @community/principle-idempotent-writes
+
+  examples: [
+    "Stripe: every Postgres mutation flows through Debezium → Kafka → analytic store; the same stream populates Stripe's audit log and search index.",
+    "Netflix DBLog: bespoke MySQL CDC engine that does dual-purpose snapshots + tail without holding row locks — published as the open-source DBLog framework.",
+    "Outbox-only pattern at LinkedIn: services write business events to a local `event_outbox` table inside the same transaction as the business write; Brooklin (LinkedIn's CDC) ships them to Kafka.",
+  ]
+
+  compatible: [
+    @community/rule-event-schema-versioning,
+  ]
+
+  related: [
+    @community/principle-idempotent-writes,
+    @community/rule-event-schema-versioning,
+    @community/anti-pattern-batch-only-pipelines,
+  ]
+}

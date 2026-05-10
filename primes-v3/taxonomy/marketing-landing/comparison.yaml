@@ -1,0 +1,40 @@
+task_type: comparison
+parent: marketing-landing
+description: "Product comparison page showing how your product stacks up against competitors across key features."
+trigger_keywords:
+  - "comparison"
+  - "vs"
+  - "versus"
+  - "对比"
+  - "competitor comparison"
+  - "alternative to"
+  - "feature matrix"
+  - "compare plans"
+  - "competitive analysis"
+  - "产品对比"
+default_register_pool:
+  - school: vercel-clean
+    weight: 0.4
+  - school: stripe-fintech
+    weight: 0.35
+  - school: warm-institutional
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-plan-comparison-table"
+  - "@community/pattern-trust-signal-components"
+  - "@community/rule-single-primary-action-per-screen"
+  - "@community/pattern-metric-card"
+  - "@community/fact-fintech-number-display"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-scroll-reveal"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@community/pattern-dashboard-grid"
+quality_checks:
+  - "Your product's column must be visually highlighted as the recommended choice"
+  - "Feature names must be clear user-benefit language, not internal terminology"
+  - "Table must be scannable — row striping or dividers required"
+  - "Mobile view must scroll or stack gracefully without losing context"
+  - "Checkmarks and X marks must be distinguishable for color-blind users"
+  - "CTA must appear above and below the comparison table"

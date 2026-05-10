@@ -1,0 +1,25 @@
+constraint IosReservedGestures {
+  id: "@community/constraint-ios-reserved-gestures"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  target: ["all custom UIGestureRecognizer or SwiftUI gesture modifiers in iOS apps"]
+
+  statement: "Apps must never attach gesture recognizers that intercept the four iOS reserved system gestures: swipe from left edge (back navigation), swipe down from top-left (Notification Center), swipe down from top-right (Control Center), and swipe up from bottom (home / app switcher)."
+
+  rationale: "These four gestures trigger system-level functions that iOS users rely on for navigation and device control. Intercepting them breaks system navigation, traps users inside the app, and violates App Store Review Guidelines — apps that do so are routinely rejected. Apple HIG source: Rule 6.2 — Never Override System Gestures."
+
+  notes: [
+    "Reserved gestures (verbatim): (1) swipe from left edge → back navigation; (2) swipe down from top-left → Notification Center; (3) swipe down from top-right → Control Center; (4) swipe up from bottom → home / app switcher.",
+    "Why tempting: custom navigation drawers and bottom sheets often use the same gesture directions.",
+    "Safe alternatives: use gestures that begin in the center of the screen, or use distinct directions (diagonal, multi-touch pinch) that don't conflict with system edges.",
+    "Apple HIG source: Rule 6.2 — Never Override System Gestures.",
+  ]
+
+  related: [
+    @community/rule-ios-gesture-alternatives,
+    @community/anti-pattern-ios-hamburger-menu,
+    @community/rule-mobile-first,
+  ]
+}

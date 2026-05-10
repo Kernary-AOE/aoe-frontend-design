@@ -1,0 +1,21 @@
+id: "@community/rule-cross-platform-flow-step-consistency"
+kind: rule
+version: "1.0.0"
+description: "Multi-step flows (onboarding, checkout, account setup) must present the same steps in the same logical order across all platforms, even if visual grouping or layout differs per platform."
+domain: frontend-design
+content_hash: "sha256:ccd7063454919c01d0a53fc1687566d2a84fa59f75c739776d79cd6130ca0c83"
+tokens:
+  summary: 65
+  core: 156
+  full: 303
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-consistent-cross-platform-mental-models" }
+  - { type: related, target: "@community/rule-no-divergent-platform-flows" }
+  - { type: related, target: "@community/pattern-multi-step-wizard" }
+created_at: "2026-05-07"

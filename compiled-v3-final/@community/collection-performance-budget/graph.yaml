@@ -1,0 +1,30 @@
+atom: "@community/collection-performance-budget"
+relations:
+  - type: related
+    target: "@community/rule-cls-budget"
+  - type: related
+    target: "@community/pattern-image-lcp-priority"
+  - type: related
+    target: "@community/anti-pattern-blocking-third-party"
+  - type: related
+    target: "@community/fact-rail-targets"
+  - type: related
+    target: "@community/tool-lighthouse"
+  - type: includes
+    target: "@community/fact-rail-targets"
+  - type: includes
+    target: "@community/principle-perceived-vs-actual"
+  - type: includes
+    target: "@community/rule-cls-budget"
+  - type: includes
+    target: "@community/metric-lcp-largest-contentful-paint"
+  - type: includes
+    target: "@community/metric-cls-cumulative-layout-shift"
+  - type: includes
+    target: "@community/pattern-image-lcp-priority"
+  - type: includes
+    target: "@community/anti-pattern-blocking-third-party"
+  - type: includes
+    target: "@community/tool-lighthouse"
+  - type: includes
+    target: "@community/tool-web-vitals-js"

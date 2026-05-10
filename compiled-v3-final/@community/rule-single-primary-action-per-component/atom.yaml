@@ -1,0 +1,24 @@
+id: "@community/rule-single-primary-action-per-component"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:5d131e4f10879fae9d98213a7df26b97c96f355783964c01162a6cd1403b0850"
+tokens:
+  summary: 60
+  core: 129
+  full: 319
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-single-primary-action-per-screen" }
+  - { type: related, target: "@community/principle-visual-hierarchy-action-distinction" }
+  - { type: related, target: "@community/rule-visual-design-safe-rules" }
+  - { type: related, target: "@community/anti-pattern-overloaded-screen" }
+  - { type: related, target: "@community/example-linear-issues-table" }
+  - { type: related, target: "@community/rule-ghost-button" }
+  - { type: related, target: "@community/rule-destructive-action-differentiation" }
+created_at: "2026-05-07"

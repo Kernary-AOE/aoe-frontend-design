@@ -1,0 +1,31 @@
+pattern IosLocationButton {
+  id: "@community/pattern-ios-location-button"
+  version: "1.0.0"
+
+  label: "iOS LocationButton for One-Time Location Access"
+  domain: frontend-design
+
+  description: "Use CoreLocationUI LocationButton with .currentLocation or .sendMyCurrentLocation title variant to grant one-time location access for a single action, bypassing the standard When-In-Use authorization flow."
+
+  problem: "Features that need the user's coordinates for a single action (find nearby stores, geotag a post) must request ongoing When-In-Use authorization, creating a privacy concern for users who don't want continuous tracking."
+
+  solution: "Import CoreLocationUI and use LocationButton(action:) in SwiftUI (or CLLocationButton in UIKit). Set a title variant (.currentLocation, .sendMyCurrentLocation) and labelStyle (.titleAndIcon). On tap, the system grants one-time location access without displaying the standard authorization dialog. No CLLocationManager authorization call is needed."
+
+  notes: [
+    "Use-when: feature needs the user's current coordinates for a single discrete action.",
+    "Use-when: app does not need persistent or background location access.",
+    "The button appearance is controlled by the system and cannot be fully customized — preserve its recognizable shape.",
+    "Requires iOS 15+.",
+    "Apple HIG source: Rule 9.6 — Location Button for One-Time Access.",
+  ]
+
+  related: [
+    @community/rule-ios-permission-in-context,
+    @community/rule-ios-att-compliance,
+    @community/rule-ios-permission-pre-prompt,
+    @community/constraint-mobile-touch-target-44px,
+    @community/check-touch-target-min,
+    @community/check-mobile-first,
+    @community/check-focus-visible,
+  ]
+}

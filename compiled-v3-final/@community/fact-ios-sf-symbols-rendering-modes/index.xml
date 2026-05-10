@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-ios-sf-symbols-rendering-modes"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="229"
+  q="4.0">
+  <description>SF Symbols support four rendering modes — monochrome, hierarchical, palette, and multicolor — each with a distinct visual purpose and SwiftUI symbolRenderingMode API.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="59"/>
+    <level name="core"    file="chunks/core.md"    tokens="229"/>
+    <level name="full"    file="chunks/full.md"    tokens="400"/>
+  </projection>
+</atom>

@@ -1,0 +1,13 @@
+<atom
+  id="@community/pattern-color-dark-mode-pairing"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="177"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="16"/>
+    <level name="core"    file="chunks/core.md"    tokens="177"/>
+    <level name="full"    file="chunks/full.md"    tokens="338"/>
+  </projection>
+</atom>

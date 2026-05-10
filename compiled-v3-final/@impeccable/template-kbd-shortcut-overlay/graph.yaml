@@ -1,0 +1,14 @@
+atom: "@impeccable/template-kbd-shortcut-overlay"
+relations:
+  - type: related
+    target: "@impeccable/template-cmd-palette-shell"
+  - type: related
+    target: "@impeccable/template-modal-focus-trap"
+  - type: related
+    target: "@community/constraint-focus-trap-modal"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/rule-no-keyboard-trap"
+  - type: related
+    target: "@community/anti-pattern-invisible-focus"

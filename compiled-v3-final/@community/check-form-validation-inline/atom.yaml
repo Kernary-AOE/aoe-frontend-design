@@ -1,0 +1,21 @@
+id: "@community/check-form-validation-inline"
+kind: check
+version: "1.0.0"
+description: "Validates that forms perform inline, field-level validation: each validatable input has an aria-describedby error region, validation triggers on blur/input (not just submit), and the form does not use window.alert() for error display."
+domain: forms
+content_hash: "sha256:b21ff18dbd315e57016e2e16569dfd86431957868bebcc6f4a92015fe2a7fe75"
+tokens:
+  summary: 72
+  core: 598
+  full: 694
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-form-validation-inline" }
+  - { type: related, target: "@community/check-error-message-associated" }
+  - { type: related, target: "@community/pattern-form-validation-inline" }
+created_at: "2026-05-07"

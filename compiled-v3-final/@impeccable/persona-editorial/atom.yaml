@@ -1,0 +1,44 @@
+id: "@impeccable/persona-editorial"
+kind: persona
+version: "1.0.0"
+description: "An aesthetic persona derived from high-quality editorial publishing: newspapers, literary magazines, annual reports. Characterized by deliberate whitespace, serif display type, restrained color use, and strong typographic hierarchy."
+domain: visual-design
+content_hash: "sha256:87fb9d7c5238880237092503e5cef1d980606dcf915b8fec7769928e25afc5f3"
+tokens:
+  summary: 71
+  core: 434
+  full: 514
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/anti-pattern-ai-slop-palette" }
+  - { type: related, target: "@impeccable/constraint-font-blacklist" }
+  - { type: related, target: "@community/taxonomy-typography-roles" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/principle-vertical-rhythm" }
+  - { type: related, target: "@community/rule-line-length-optimal" }
+  - { type: related, target: "@community/fact-line-height-readability" }
+  - { type: related, target: "@community/check-body-readability" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/constraint-no-pure-white-bg" }
+  - { type: related, target: "@community/rule-backgrounds-atmospheric" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: compatible, target: "warm" }
+  - { type: compatible, target: "refined" }
+  - { type: compatible, target: "minimal" }
+  - { type: compatible, target: "sophisticated" }
+  - { type: conflicts, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: conflicts, target: "@impeccable/persona-brutalist" }
+  - { type: conflicts, target: "neon-dark" }
+  - { type: conflicts, target: "ai-slop-default" }
+  - { type: contradicts, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: contradicts, target: "@impeccable/persona-brutalist" }
+created_at: "2026-05-07"

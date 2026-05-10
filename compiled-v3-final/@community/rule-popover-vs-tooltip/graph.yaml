@@ -1,0 +1,8 @@
+atom: "@community/rule-popover-vs-tooltip"
+relations:
+  - type: related
+    target: "@community/pattern-tooltip-keyboard"
+  - type: related
+    target: "@community/rule-custom-component-aria-role"
+  - type: related
+    target: "@community/constraint-no-icons-without-label"

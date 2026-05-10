@@ -1,0 +1,21 @@
+id: "@community/rule-primary-content-first"
+kind: rule
+version: "1.0.0"
+description: "The primary task or content must appear first in DOM order and receive the highest visual prominence — supplementary content, sidebars, and ads must come after the main content both structurally and visually."
+domain: frontend-design
+content_hash: "sha256:37b8fb69ed1bfa9f9e31d726e63f5fc9c1c3ad8399b7922d901ef75738788523"
+tokens:
+  summary: 67
+  core: 72
+  full: 255
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-heading-hierarchy" }
+  - { type: related, target: "@community/rule-landmark-elements" }
+  - { type: related, target: "@community/rule-skip-link" }
+created_at: "2026-05-07"

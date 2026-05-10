@@ -1,0 +1,21 @@
+id: "@community/fact-design-token-cascade"
+kind: fact
+version: "1.0.0"
+description: "Design tokens function best when organised in a three-tier cascade: primitive tokens (raw values), semantic tokens (named roles), and component tokens (component-specific aliases)."
+content_hash: "sha256:6ec64bf09299fd4dcab9ae69f11b4e39e0053d5480930797d74cfb738d3964db"
+tokens:
+  summary: 127
+  core: 293
+  full: 514
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-color-token-semantic-naming" }
+  - { type: related, target: "@community/fact-atomic-design-method" }
+  - { type: related, target: "@community/type-design-token" }
+  - { type: related, target: "@community/constraint-max-color-roles-7" }
+created_at: "2026-05-07"

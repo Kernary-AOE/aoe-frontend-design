@@ -1,0 +1,14 @@
+<atom
+  id="@community/persona-apple"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="613"
+  q="4.0">
+  <description>Cinematic product-as-sculpture marketing aesthetic: SF Pro Display/Text with optical sizing crossover at 20px, pure-black #000000 and cool-tinted #f5f5f7 alternating in binary film-cut rhythm, Apple Blue #0071e3 as the sole chromatic accent, and universal negative tracking at every text size.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="613"/>
+    <level name="full"    file="chunks/full.md"    tokens="699"/>
+  </projection>
+</atom>

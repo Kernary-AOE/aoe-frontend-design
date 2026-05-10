@@ -1,0 +1,21 @@
+id: "@community/example-stripe-pricing"
+kind: example
+version: "1.0.0"
+description: "Stripe's pricing page is a light-mode (#FFFFFF) layout showing each Stripe product (Payments, Billing, Connect) as a tall card with a colored gradient header (purple #635BFF for Payments, teal #00D4FF for Billing), product name, percentage rate ('2.9% + 30¢'), and a feature list. Cards are 320px wide, 480px+ tall, with a subtle 2px gradient border at top."
+domain: visual-design
+content_hash: "sha256:593b4335859649ade5e6d17f619cc1e37e3e2843b2d3cc1b8666d7c48f89879f"
+tokens:
+  summary: 103
+  core: 537
+  full: 970
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-pricing-tiers-toggle" }
+  - { type: related, target: "@community/example-vercel-pricing" }
+  - { type: related, target: "@community/value-brand-hue" }
+created_at: "2026-05-07"

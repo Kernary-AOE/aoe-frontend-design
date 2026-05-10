@@ -1,0 +1,20 @@
+id: "@community/rule-secrets-never-in-source"
+kind: rule
+version: "1.0.0"
+domain: security
+content_hash: "sha256:51f0e55277797e77f5e0c2846d6a32e9e89e1a993b2579fef9c245b358e50176"
+tokens:
+  summary: 133
+  core: 400
+  full: 999
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-security-misconfig" }
+  - { type: related, target: "@community/principle-owasp-data-integrity-failures" }
+  - { type: related, target: "@community/principle-owasp-cryptographic-failures" }
+created_at: "2026-05-07"

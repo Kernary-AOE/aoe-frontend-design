@@ -1,0 +1,19 @@
+id: "@community/pattern-replicate-signature-marketing"
+kind: pattern
+version: "1.0.0"
+description: "The seven signature design patterns that define Replicate's visual language: pill-radius absolutism (9999px everywhere), 128px manifesto closer, explosive orange-to-magenta hero gradient, dotted-underline links, AI-generated model gallery, heavy/light font contrast, and borders-not-shadows containment."
+domain: frontend-design
+content_hash: "sha256:c0571881b03c0db817fc929d8f18b388e1334cef2d250969ee6f50dfc70adf38"
+tokens:
+  summary: 94
+  core: 532
+  full: 970
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/persona-replicate" }
+created_at: "2026-05-07"

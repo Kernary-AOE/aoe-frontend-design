@@ -1,0 +1,24 @@
+id: "@community/template-shadcn-pricing-toggle"
+kind: template
+version: "1.0.0"
+description: "Monthly/yearly billing toggle from shadboard full-kit: a single discountRate state (0 = monthly, 0.15 = yearly) toggled by a shadcn/ui Switch, passed as prop to PricingPlans which threads it to each card's RenderPrice component via getDiscountedPrice(price, discountRate, true). Featured card gets border-primary and absolute-positioned Badge at -top-2.5."
+domain: frontend-design
+content_hash: "sha256:24a57560e9b5eb1df73cc116288a640f1ebaeb356f46f9d0a902a549b5dd14a7"
+tokens:
+  summary: 105
+  core: 1223
+  full: 1322
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-single-primary-action-per-screen" }
+  - { type: related, target: "@community/check-form-label-associated" }
+  - { type: related, target: "@community/rule-url-reflects-state" }
+  - { type: related, target: "@community/check-focus-visible" }
+sources:
+  - { url: "https://github.com/shadboard/shadboard" }
+created_at: "2026-05-07"

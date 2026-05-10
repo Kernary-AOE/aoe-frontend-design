@@ -1,0 +1,25 @@
+id: "@anthropic-impeccable/pattern-undo-over-confirm"
+kind: pattern
+version: "1.0.0"
+description: "For reversible destructive actions (delete, archive, remove), apply the action immediately and show an undo toast with a countdown window. Users click through confirmation dialogs mindlessly; undo provides real safety by making the action instantly reversible while preserving interaction flow."
+domain: frontend-design
+content_hash: "sha256:2850efe89d75f367b9f5e3ad87c6d568641a99ba0c34f956b7c2647b86b81e79"
+tokens:
+  summary: 89
+  core: 558
+  full: 1031
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-toast-stack" }
+  - { type: related, target: "@community/pattern-optimistic-update" }
+  - { type: related, target: "@community/rule-destructive-action-differentiation" }
+  - { type: related, target: "@community/pattern-modal-confirm" }
+  - { type: related, target: "@anthropic-impeccable/anti-pattern-modal-as-default" }
+  - { type: related, target: "@community/fact-user-control-freedom" }
+  - { type: related, target: "@community/principle-nielsen-error-prevention" }
+created_at: "2026-05-07"

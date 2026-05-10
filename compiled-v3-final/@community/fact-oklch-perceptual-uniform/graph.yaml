@@ -1,0 +1,10 @@
+atom: "@community/fact-oklch-perceptual-uniform"
+relations:
+  - type: related
+    target: "@community/term-oklch"
+  - type: related
+    target: "@community/transform-rgb-to-oklch"
+  - type: related
+    target: "@community/constraint-oklch-only-color"
+  - type: related
+    target: "@community/fact-contrast-ratio-aa-vs-aaa"

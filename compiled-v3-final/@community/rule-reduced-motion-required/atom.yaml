@@ -1,0 +1,27 @@
+id: "@community/rule-reduced-motion-required"
+kind: rule
+version: "1.0.0"
+description: "Every CSS animation, CSS transition, and JS-driven motion MUST respect the user's `prefers-reduced-motion: reduce` setting. Vestibular disorders, migraine triggers, and motion sensitivity make animation actively harmful for some users — opt-out is mandatory, not optional."
+domain: accessibility
+content_hash: "sha256:fd158e75afe8a118e4d73ba2fffd0dde90091a5eb0f2cc068019cc07eb47503c"
+tokens:
+  summary: 83
+  core: 439
+  full: 805
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-animation-duration" }
+  - { type: related, target: "@w3c/source-wcag-22" }
+  - { type: related, target: "@community/anti-pattern-infinite-marquee-no-pause" }
+  - { type: related, target: "@community/anti-pattern-decorative-spinning" }
+  - { type: related, target: "@community/example-framer-page-transition" }
+  - { type: related, target: "@community/example-vercel-hero-gradient" }
+  - { type: related, target: "@community/rule-hover-focus-animation-parity" }
+  - { type: see-also, target: "@community/check-reduced-motion-required" }
+  - { type: validates-with, target: "@w3c/source-wcag-22" }
+created_at: "2026-05-07"

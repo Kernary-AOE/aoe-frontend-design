@@ -1,0 +1,155 @@
+# StaggerReveal [pattern] v1.0.0
+List / grid 子项错位入场——每项延迟 50-100ms 开始 fade + slide。比同时入场更有节奏感，让用户的眼睛沿入场顺序扫描内容。Framer / Linear / Stripe dashboard 标志性手法。
+domain: frontend-design
+
+## Label
+Stagger Reveal
+
+## Problem
+10 张卡片同时 fade-in 显得机械、轰然出现，眼睛不知道从哪一张看起。但延迟太长（每张 200ms+）整体动画拖到 2 秒，用户已经在等待。
+
+## Solution
+用 CSS 自定义属性 --i 表达索引，animation-delay: calc(var(--i) * 70ms)。70ms 间隔被感知为'连续'但'有先后'，最后一项也在 700ms 内出场（10 项以内）。
+
+## Structure
+```
+    <ul class="stagger-grid">
+      <li class="stagger-item" style="--i: 0">Card 1</li>
+      <li class="stagger-item" style="--i: 1">Card 2</li>
+      <li class="stagger-item" style="--i: 2">Card 3</li>
+      <li class="stagger-item" style="--i: 3">Card 4</li>
+      <li class="stagger-item" style="--i: 4">Card 5</li>
+      <li class="stagger-item" style="--i: 5">Card 6</li>
+    </ul>
+  
+```
+
+## Styles
+```
+    @keyframes stagger-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stagger-item {
+      opacity: 0;
+      animation: stagger-in 360ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: calc(var(--i, 0) * 70ms);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stagger-item {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  
+```
+
+## Timing
+- **Duration**: 300-400ms per item
+- **Stagger Delay**: 50-100ms between siblings (sweet spot 70ms)
+- **Total Cap**: <= 800ms total (last item finish time)
+- **Easing**: cubic-bezier(0.16, 1, 0.3, 1)
+
+## Interaction
+- 首次挂载或数据加载完成后触发一次
+- 如果 list 是动态新增（infinite scroll），新增的子集应用相同 stagger，old items 保持静止
+- 和 IntersectionObserver 配合：grid 进入视口时为可见的子项设置 --i 然后启动
+- 动画期间内的 hover / click 仍可响应——transform/opacity 不阻塞 hit-test
+
+## A11y
+- prefers-reduced-motion: reduce 时全部 opacity: 1，无动画
+- stagger 子项数量 > 10 时考虑只 stagger 前 6-8 项，剩余项直接显示——避免最后一项延迟 > 700ms
+- 屏幕阅读器朗读顺序不受 animation-delay 影响（DOM 顺序优先）
+- 首屏 LCP / above-the-fold 主标题不要 stagger——LCP 计算延后，影响性能指标
+
+## Behavior
+- stagger 间隔遵循 fact-stagger-feel-organic：50-100ms 最自然
+- <30ms 间隔被感知为同步，stagger 失效；>150ms 感知为'断裂'的多个独立动画
+- 总动画时长 = (n-1) * delay + duration，控制在 800ms 内
+- 对 dashboard 卡片用 70ms，对 small list items 用 50ms（item 越小间隔越短）
+- 永远不要 stagger 大于 12 项的 list——超过的部分用户已不在屏幕焦点
+
+## Label
+Stagger Reveal
+
+## Problem
+10 张卡片同时 fade-in 显得机械、轰然出现，眼睛不知道从哪一张看起。但延迟太长（每张 200ms+）整体动画拖到 2 秒，用户已经在等待。
+
+## Solution
+用 CSS 自定义属性 --i 表达索引，animation-delay: calc(var(--i) * 70ms)。70ms 间隔被感知为'连续'但'有先后'，最后一项也在 700ms 内出场（10 项以内）。
+
+## Structure
+```
+    <ul class="stagger-grid">
+      <li class="stagger-item" style="--i: 0">Card 1</li>
+      <li class="stagger-item" style="--i: 1">Card 2</li>
+      <li class="stagger-item" style="--i: 2">Card 3</li>
+      <li class="stagger-item" style="--i: 3">Card 4</li>
+      <li class="stagger-item" style="--i: 4">Card 5</li>
+      <li class="stagger-item" style="--i: 5">Card 6</li>
+    </ul>
+  
+```
+
+## Styles
+```
+    @keyframes stagger-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stagger-item {
+      opacity: 0;
+      animation: stagger-in 360ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: calc(var(--i, 0) * 70ms);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stagger-item {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  
+```
+
+## Timing
+- **Duration**: 300-400ms per item
+- **Stagger Delay**: 50-100ms between siblings (sweet spot 70ms)
+- **Total Cap**: <= 800ms total (last item finish time)
+- **Easing**: cubic-bezier(0.16, 1, 0.3, 1)
+
+## Interaction
+- 首次挂载或数据加载完成后触发一次
+- 如果 list 是动态新增（infinite scroll），新增的子集应用相同 stagger，old items 保持静止
+- 和 IntersectionObserver 配合：grid 进入视口时为可见的子项设置 --i 然后启动
+- 动画期间内的 hover / click 仍可响应——transform/opacity 不阻塞 hit-test
+
+## A11y
+- prefers-reduced-motion: reduce 时全部 opacity: 1，无动画
+- stagger 子项数量 > 10 时考虑只 stagger 前 6-8 项，剩余项直接显示——避免最后一项延迟 > 700ms
+- 屏幕阅读器朗读顺序不受 animation-delay 影响（DOM 顺序优先）
+- 首屏 LCP / above-the-fold 主标题不要 stagger——LCP 计算延后，影响性能指标
+
+## Behavior
+- stagger 间隔遵循 fact-stagger-feel-organic：50-100ms 最自然
+- <30ms 间隔被感知为同步，stagger 失效；>150ms 感知为'断裂'的多个独立动画
+- 总动画时长 = (n-1) * delay + duration，控制在 800ms 内
+- 对 dashboard 卡片用 70ms，对 small list items 用 50ms（item 越小间隔越短）
+- 永远不要 stagger 大于 12 项的 list——超过的部分用户已不在屏幕焦点

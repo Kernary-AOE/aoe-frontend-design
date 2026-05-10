@@ -1,0 +1,14 @@
+<atom
+  id="@community/transform-scale-clamp"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="306"
+  q="4.0">
+  <description>Generates a CSS `clamp()` expression for fluid typography or spacing that linearly interpolates between minSize at minVp viewport width and maxSize at maxVp viewport width, clamped at both ends. The result is a single CSS value string suitable for use in a design token or component style.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="86"/>
+    <level name="core"    file="chunks/core.md"    tokens="306"/>
+    <level name="full"    file="chunks/full.md"    tokens="508"/>
+  </projection>
+</atom>

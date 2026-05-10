@@ -1,0 +1,21 @@
+id: "@community/example-stripe-checkout"
+kind: example
+version: "1.0.0"
+description: "Stripe Checkout renders a two-column layout: left side (~480px) shows the merchant's logo and an itemized summary on a #FAFBFC background; right side (~520px) is the payment form on white #FFFFFF with email input, card field (number + expiry + CVC inline), and a 'Pay $X' button in Stripe purple #635BFF. The card input uses dynamic icon switching (Visa/MC/Amex) as the user types."
+domain: visual-design
+content_hash: "sha256:a7a79ed75a79367927f620fef04bdac249448f36691b4cef8bceacc253b2ef0e"
+tokens:
+  summary: 110
+  core: 543
+  full: 977
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-checkout-summary" }
+  - { type: related, target: "@community/pattern-multi-step-wizard" }
+  - { type: related, target: "@community/fact-error-prevention" }
+created_at: "2026-05-07"

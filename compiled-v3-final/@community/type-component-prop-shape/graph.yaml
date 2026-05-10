@@ -1,0 +1,12 @@
+atom: "@community/type-component-prop-shape"
+relations:
+  - type: related
+    target: "@community/taxonomy-cta-styles"
+  - type: related
+    target: "@community/type-design-token"
+  - type: related
+    target: "@community/type-color-token-shape"
+  - type: related
+    target: "@community/category-form-input-states"
+  - type: related
+    target: "@community/value-touch-target-min"

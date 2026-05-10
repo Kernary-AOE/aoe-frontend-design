@@ -1,0 +1,24 @@
+id: "@community/pattern-landing-page-sections"
+kind: pattern
+version: "1.0.0"
+description: "Seven structural section patterns for landing pages — hero (centered/split/asymmetric), features (card-grid/divider/alternating), pricing (3-column with scale(1.05) featured card), testimonials (masonry/grid/carousel), nav (sticky with backdrop-filter: blur(8px)), footer (grid-template-columns: 2fr repeat(4, 1fr)), and section spacing (py-20 sm:py-32 vertical, gap: 2rem card grid)."
+domain: frontend-design
+content_hash: "sha256:05af44a1deba29b1d6725e9adbdc17d44ddb5336c8bc0b5fe573d5d22f16020b"
+tokens:
+  summary: 112
+  core: 774
+  full: 1436
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-card-component" }
+  - { type: related, target: "@community/pattern-hero-with-demo" }
+  - { type: related, target: "@community/pattern-pricing-tiers-toggle" }
+  - { type: related, target: "@community/rule-informative-image-alt" }
+  - { type: related, target: "@community/rule-functional-image-alt" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

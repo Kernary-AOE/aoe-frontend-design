@@ -1,0 +1,20 @@
+id: "@community/rule-ux-flow-task-completion"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:06f0d82d2d8c88a57ebcbd350f65eaba94d370151955c05bdb32cc8ca3816f2e"
+tokens:
+  summary: 82
+  core: 278
+  full: 531
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-upfront-field-requirements" }
+  - { type: related, target: "@community/rule-success-message-next-step" }
+  - { type: related, target: "@community/rule-single-primary-action-per-screen" }
+created_at: "2026-05-07"

@@ -1,0 +1,22 @@
+atom: "@community/pattern-stagger-reveal"
+relations:
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@community/pattern-slide-up-reveal"
+  - type: related
+    target: "@community/pattern-scroll-reveal"
+  - type: related
+    target: "@community/fact-stagger-feel-organic"
+  - type: related
+    target: "@community/fact-motion-hierarchy"
+  - type: related
+    target: "@community/fact-easing-cubic-bezier"
+  - type: related
+    target: "@community/fact-duration-perception-thresholds"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/check-reduced-motion-required"
+  - type: related
+    target: "@community/check-focus-visible"

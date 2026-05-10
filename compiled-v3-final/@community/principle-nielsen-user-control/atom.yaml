@@ -1,0 +1,27 @@
+id: "@community/principle-nielsen-user-control"
+kind: principle
+version: "1.0.0"
+description: "Nielsen Heuristic 3: users often choose system functions by mistake and need clearly marked emergency exits; undo and redo must be supported."
+domain: ux-design
+content_hash: "sha256:80577ce16660ecd0ef723078c864fc0b26da22311f83120d5bb8a420b2ec4b31"
+tokens:
+  summary: 100
+  core: 304
+  full: 451
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-nielsen-error-prevention" }
+  - { type: related, target: "@community/principle-nielsen-error-recovery" }
+  - { type: related, target: "@community/fact-user-control-freedom" }
+  - { type: related, target: "@community/fact-gestalt-common-fate" }
+  - { type: related, target: "@community/anti-pattern-ios-non-dismissable-modal" }
+  - { type: related, target: "@community/counter-example-button-no-loading" }
+  - { type: related, target: "@community/example-radix-dialog" }
+  - { type: related, target: "@community/rule-no-state-reset-without-confirm" }
+  - { type: related, target: "@community/rule-auth-flow-reversibility" }
+created_at: "2026-05-07"

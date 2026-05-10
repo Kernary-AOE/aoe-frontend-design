@@ -1,0 +1,26 @@
+id: "@community/principle-shared-visual-language"
+kind: principle
+version: "1.0.0"
+description: "Color tokens, typography roles, spacing scale, and iconography must come from a shared design token system used consistently across all platforms, so the product feels visually unified even when interaction patterns differ per platform."
+domain: frontend-design
+content_hash: "sha256:29d682ce89838faf5873fbb9d5706263adbc5973e11a02e77ab0622caa001ca6"
+tokens:
+  summary: 76
+  core: 352
+  full: 420
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-consistent-cross-platform-mental-models" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/rule-color-oklch-required" }
+  - { type: related, target: "@community/anti-pattern-rainbow-explosion" }
+  - { type: related, target: "@community/example-shadcn-settings" }
+  - { type: related, target: "@community/example-tailwindui-app-shell" }
+  - { type: related, target: "@community/rule-no-mixed-visual-languages" }
+  - { type: related, target: "@community/rule-consistent-design-token-scale" }
+created_at: "2026-05-07"

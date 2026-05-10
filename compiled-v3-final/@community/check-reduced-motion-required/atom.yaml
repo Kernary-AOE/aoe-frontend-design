@@ -1,0 +1,20 @@
+id: "@community/check-reduced-motion-required"
+kind: check
+version: "1.0.0"
+description: "Validates that any site using CSS animations/transitions also provides a @media (prefers-reduced-motion: reduce) block that effectively neutralizes motion (duration ≤ 0.01ms). Required for WCAG 2.2 SC 2.3.3 and vestibular safety."
+domain: accessibility
+content_hash: "sha256:3c3eacd8b1f51a4481938c2203d585c7089b6fb30704e9eb1c5c5d6b60addd23"
+tokens:
+  summary: 73
+  core: 506
+  full: 569
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/constraint-reduced-motion" }
+created_at: "2026-05-07"

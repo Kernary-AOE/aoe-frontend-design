@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-flaky-quarantine"
+  kind="knowledge"
+  version="1.0.0"
+  domain="testing"
+  tokens="644"
+  q="4.0">
+  <description>A test that fails non-deterministically (passes on retry without code change) MUST be quarantined within 24 hours: removed from the gating CI suite, tagged @flaky, and assigned an owner with a deadline. Flakes left in the gating suite destroy trust in CI; ignoring them trains engineers to retry mindlessly.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="263"/>
+    <level name="core"    file="chunks/core.md"    tokens="644"/>
+    <level name="full"    file="chunks/full.md"    tokens="1336"/>
+  </projection>
+</atom>

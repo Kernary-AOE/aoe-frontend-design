@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-stagger-reveal"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="569"
+  q="4.0">
+  <description>List / grid 子项错位入场——每项延迟 50-100ms 开始 fade + slide。比同时入场更有节奏感，让用户的眼睛沿入场顺序扫描内容。Framer / Linear / Stripe dashboard 标志性手法。</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="44"/>
+    <level name="core"    file="chunks/core.md"    tokens="569"/>
+    <level name="full"    file="chunks/full.md"    tokens="1095"/>
+  </projection>
+</atom>

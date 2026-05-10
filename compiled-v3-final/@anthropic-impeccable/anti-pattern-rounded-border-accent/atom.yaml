@@ -1,0 +1,23 @@
+id: "@anthropic-impeccable/anti-pattern-rounded-border-accent"
+kind: anti-pattern
+version: "1.0.0"
+description: "Adding a thick colored border on a single side (left or top) of a rounded-corner card or callout box as a design accent treatment. Appears frequently in dashboards, alert boxes, and information cards as a lazy brand color injection that almost never looks intentional."
+domain: frontend-design
+content_hash: "sha256:9e50940687c968d912d3170b282e3356077af8137e9402693ebcc4b0aee5c58c"
+tokens:
+  summary: 84
+  core: 445
+  full: 809
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-ai-slop-aesthetics" }
+  - { type: related, target: "@community/rule-brand-color-primary-only" }
+  - { type: related, target: "@community/principle-border-radius-aesthetic" }
+  - { type: related, target: "@community/pattern-border-radius-decision" }
+  - { type: related, target: "@community/fact-border-radius-platform" }
+created_at: "2026-05-07"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-resource-hints-preconnect"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="377"
+  q="4.0">
+  <description>Use &lt;link rel=&apos;preconnect&apos;&gt; for critical third-party origins, &lt;link rel=&apos;preload&apos;&gt; for critical first-party assets, and &lt;link rel=&apos;dns-prefetch&apos;&gt; as a fallback for lower-priority origins — placed in &lt;head&gt; before any stylesheet or script tags.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="377"/>
+    <level name="full"    file="chunks/full.md"    tokens="676"/>
+  </projection>
+</atom>

@@ -1,0 +1,31 @@
+constraint ShallowNavigationDepth {
+  id: "@community/constraint-shallow-navigation-depth"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Navigation hierarchy depth must stay at 3 levels or fewer — pass: ≤3, warn: 4, block: ≥5."
+
+  metric: "navigation depth in levels"
+  unit: "count"
+  pass: "<= 3"
+  warn: "== 4"
+  block: ">= 5"
+
+  rationale: "Deep navigation hierarchies force users to memorize paths, increase the chance of getting lost, and multiply the clicks required to reach content. Every nesting level adds cognitive load and a click. Most products can be organized in 3 levels or fewer: top-nav → section → item."
+
+  examples: [
+    "Good: Dashboard → Projects → Project Detail (3 levels)",
+    "Good: Settings → Account → Billing (3 levels — acceptable for settings depth)",
+    "Warn: Site → Category → Sub-category → Item → Detail (4 levels — review structure)",
+    "Block: Portal → Module → Section → Sub-section → Item → Sub-item (6 levels — restructure required)",
+  ]
+
+  mitigation: "Use progressive disclosure, search, and breadcrumbs to replace deep nesting. Merge shallow sibling categories. Favor flat navigation when the product has ≤ 7 top-level destinations (see rule-navigation-flat-when-shallow)."
+
+  related: [
+    @community/rule-navigation-flat-when-shallow,
+    @community/anti-pattern-deep-branching-nav,
+    @community/rule-single-primary-action-per-screen,
+  ]
+}

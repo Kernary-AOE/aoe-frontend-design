@@ -1,0 +1,14 @@
+atom: "@community/template-view-transitions-api"
+relations:
+  - type: related
+    target: "@community/pattern-page-transition"
+  - type: related
+    target: "@community/constraint-animation-pref-respected"
+  - type: related
+    target: "@community/template-css-scroll-driven-animations"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@community/check-reduced-motion-required"
+  - type: related
+    target: "@community/check-focus-visible"

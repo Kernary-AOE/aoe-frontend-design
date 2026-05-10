@@ -1,0 +1,20 @@
+id: "@community/rule-color-scheme-meta-tag"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:01e7c373d14345be67ba895a67f01fa7cb57e56239a0d97b750177a109080c0e"
+tokens:
+  summary: 76
+  core: 172
+  full: 477
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-color-dark-mode-cascade" }
+  - { type: related, target: "@community/pattern-color-dark-mode-pairing" }
+  - { type: related, target: "@impeccable/template-oklch-dark-mode-cascade" }
+created_at: "2026-05-07"

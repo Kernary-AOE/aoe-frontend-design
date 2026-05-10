@@ -1,0 +1,24 @@
+id: "@community/pattern-defense-in-depth"
+kind: pattern
+version: "1.0.0"
+description: "Security controls at every layer of the stack — network perimeter, transport, authentication, authorization, input validation, output encoding, and monitoring — so that compromise of any single layer does not result in full breach."
+domain: security
+content_hash: "sha256:beab02f0a8f716d0ef098ba0ea0512400e943e0d8f79e21711d0d339a33bed30"
+tokens:
+  summary: 71
+  core: 726
+  full: 1380
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-security-misconfiguration" }
+  - { type: related, target: "@community/principle-owasp-broken-access-control" }
+  - { type: related, target: "@community/principle-owasp-injection" }
+  - { type: related, target: "@community/pattern-csp-strict" }
+  - { type: related, target: "@community/pattern-input-validation-allowlist" }
+  - { type: related, target: "@community/pattern-rate-limit-token-bucket" }
+created_at: "2026-05-07"

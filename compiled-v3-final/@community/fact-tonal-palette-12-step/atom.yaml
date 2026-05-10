@@ -1,0 +1,20 @@
+id: "@community/fact-tonal-palette-12-step"
+kind: fact
+version: "1.0.0"
+description: "A 12-step tonal palette assigns each step a fixed functional role (steps 1–2: app backgrounds; 3–4: component backgrounds/hover; 5–6: borders/separators; 7–8: solid backgrounds; 9–10: high-contrast solids; 11–12: text), enabling automatic dark-mode parity and WCAG AA compliance when steps 9–10 are tested against steps 1–2."
+content_hash: "sha256:a4619b2a4764561d0d5bf421934e99c0329b791a1b62f3e34ab814e0f1f9ad2a"
+tokens:
+  summary: 201
+  core: 335
+  full: 531
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/template-color-layer-semantic" }
+  - { type: related, target: "@community/pattern-color-scale-decision" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+created_at: "2026-05-07"

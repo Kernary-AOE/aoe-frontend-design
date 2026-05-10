@@ -1,0 +1,21 @@
+id: "@community/example-nytmag-feature"
+kind: example
+version: "1.0.0"
+description: "NYT Magazine feature stories use bold expressive opening typography: the headline is 80-120px in 'NYT Cheltenham' or 'NYT Karnak' display serif, often laid over or beside the cover image with intentional overlap. Body uses NYT Imperial serif at 18px/30px, max-width 620px. Section breaks use a 3-asterisk centered glyph (* * *) in 18px black."
+domain: typography
+content_hash: "sha256:98022b0fa0d56c473176c373dcd76acb2996014e6888831faa9953f1c4de908a"
+tokens:
+  summary: 99
+  core: 513
+  full: 928
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-blog-article-layout" }
+  - { type: related, target: "@community/example-atlantic-longform" }
+  - { type: related, target: "@community/taxonomy-typography-roles" }
+created_at: "2026-05-07"

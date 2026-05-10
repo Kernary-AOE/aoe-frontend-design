@@ -1,0 +1,39 @@
+principle TintedNeutrals {
+  id: "@anthropic-impeccable/principle-tinted-neutrals"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "Neutrals (grays, near-blacks, off-whites) should carry a subtle tint of the brand hue. Even a chroma of 0.01 in OKLCH creates subconscious cohesion that pure achromatic grays cannot achieve."
+
+  rationale: "Pure gray (chroma = 0) is not how surfaces appear in the real world — every material surface has a color temperature cast. Brand-tinted neutrals create a perceptible unity between primary accent colors and background surfaces without being visually dominant. The effect is subliminal: viewers cannot name it, but the interface feels 'of a piece'. Pure achromatic neutrals feel detached from the brand palette, creating a dual-personality UI where surfaces and accents belong to different visual systems."
+
+  example: """
+    /* Dead neutrals — no personality */
+    --gray-100: oklch(95% 0 0);
+    --gray-900: oklch(15% 0 0);
+
+    /* Brand-tinted neutrals — warm brand at hue 60° */
+    --gray-100: oklch(95% 0.01 60);
+    --gray-900: oklch(15% 0.01 60);
+
+    /* Cool-tinted (tech, blue-brand) */
+    --gray-100: oklch(95% 0.01 250);
+    --gray-900: oklch(15% 0.01 250);
+  """
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — Color & Theme > DO: Tint your neutrals toward your brand hue",
+    "Anthropic Impeccable SKILL.md — color-and-contrast.md reference > The Tinted Neutral Trap section",
+  ]
+
+  related: [
+    @community/rule-color-oklch-required,
+    @community/term-oklch,
+    @community/constraint-no-pure-black-text,
+    @community/constraint-no-pure-white-bg,
+    @community/fact-oklch-perceptual-uniform,
+    @impeccable/template-oklch-palette,
+    @community/value-brand-hue,
+  ]
+}

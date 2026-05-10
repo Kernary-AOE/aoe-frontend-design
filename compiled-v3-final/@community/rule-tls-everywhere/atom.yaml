@@ -1,0 +1,20 @@
+id: "@community/rule-tls-everywhere"
+kind: rule
+version: "1.0.0"
+domain: security
+content_hash: "sha256:cf2d6ba495e793afb5a0e55d51a86fc483f149d62a1e35ec895f9f87cce51eff"
+tokens:
+  summary: 121
+  core: 403
+  full: 1022
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-cryptographic-failures" }
+  - { type: related, target: "@community/principle-owasp-security-misconfig" }
+  - { type: related, target: "@community/rule-csrf-token-state-changing" }
+created_at: "2026-05-07"

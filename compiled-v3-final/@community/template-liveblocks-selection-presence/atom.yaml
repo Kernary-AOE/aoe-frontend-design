@@ -1,0 +1,25 @@
+id: "@community/template-liveblocks-selection-presence"
+kind: template
+version: "1.0.0"
+description: "Multiplayer form field presence overlay using Liveblocks: an absolutely-positioned halo border and name pill that appears around an input when another user has focused it, driven by Liveblocks `useOthers()` and `updateMyPresence()`."
+domain: frontend-design
+content_hash: "sha256:ddf1d29b908e049f91b4ff44dbc8bfecf0ef3cd6937eaf51c47248d9af7642f3"
+tokens:
+  summary: 76
+  core: 964
+  full: 1062
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-form-label-associated" }
+  - { type: related, target: "@community/pattern-inline-validation" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/fact-aria-live-politeness" }
+  - { type: related, target: "@community/check-focus-visible" }
+sources:
+  - { url: "https://github.com/liveblocks/liveblocks" }
+created_at: "2026-05-07"

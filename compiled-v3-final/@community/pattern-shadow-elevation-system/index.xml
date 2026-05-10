@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-shadow-elevation-system"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="725"
+  q="4.0">
+  <description>Five-level CSS shadow elevation system using OKLCH-tinted colors and the Hobday blur rule (blur = 2× y-offset): --shadow-xs through --shadow-xl mapped to CSS custom properties, with dark-mode fallback via surface lightness steps instead of shadows.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="725"/>
+    <level name="full"    file="chunks/full.md"    tokens="1371"/>
+  </projection>
+</atom>

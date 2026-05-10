@@ -1,0 +1,21 @@
+id: "@community/rule-chart-never-alone"
+kind: rule
+version: "1.0.0"
+description: "Every chart requires paired context numbers. A line going up does not communicate a value, a range, or a delta — those are what users need for decisions. Extracted from StyleSeed DESIGN-LANGUAGE.md §69 (github.com/bitjaru/styleseed, MIT)."
+domain: frontend-design
+content_hash: "sha256:3372cb0f4cff14f803e749535763766e34fdfdc6adfd5a0976a5ba3b96c80cc4"
+tokens:
+  summary: 207
+  core: 300
+  full: 1099
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-chart-grid" }
+  - { type: related, target: "@community/pattern-metric-card" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+created_at: "2026-05-07"

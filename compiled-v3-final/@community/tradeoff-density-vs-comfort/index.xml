@@ -1,0 +1,14 @@
+<atom
+  id="@community/tradeoff-density-vs-comfort"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="352"
+  q="4.0">
+  <description>The fundamental tension in UI layout: dense layouts maximize information per viewport but increase cognitive load and require expert familiarity; comfortable layouts reduce stress and speed comprehension but reduce scannable data volume.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="74"/>
+    <level name="core"    file="chunks/core.md"    tokens="352"/>
+    <level name="full"    file="chunks/full.md"    tokens="375"/>
+  </projection>
+</atom>

@@ -1,0 +1,46 @@
+id: "@community/persona-framer"
+kind: persona
+version: "1.0.0"
+description: "Dark-first cinematic tool aesthetic: GT Walsheim at 500 weight only with extreme -5.5px tracking at 110px making headlines feel spring-loaded, void-black #000000 canvas with electric Framer Blue #0099ff as sole accent, and Inter Variable with 6+ OpenType features (cv01, cv05, cv09, cv11, ss03, ss07) giving body text a subtly custom character."
+domain: visual-design
+content_hash: "sha256:846d84348f6f7bec5f715678b5b2b828f20762985c04d2fa6d257b40525397fa"
+tokens:
+  summary: 98
+  core: 695
+  full: 784
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-vercel-clean" }
+  - { type: related, target: "@impeccable/template-spring-config" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/rule-opentype-features-on" }
+  - { type: related, target: "@community/fact-variable-font-axes" }
+  - { type: related, target: "@community/rule-typography-letter-spacing" }
+  - { type: related, target: "@community/fact-monospace-purpose" }
+  - { type: related, target: "@impeccable/template-oklch-dark-mode-cascade" }
+  - { type: related, target: "@community/pattern-color-dark-mode-pairing" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-color-oklch-required" }
+  - { type: related, target: "@community/check-color-dark-mode-cascade" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/principle-intentional-gradient" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: compatible, target: "@impeccable/persona-vercel-clean" }
+  - { type: compatible, target: "@impeccable/persona-brutalist" }
+  - { type: compatible, target: "@impeccable/persona-swiss-modernist" }
+  - { type: conflicts, target: "@impeccable/persona-warm-institutional" }
+  - { type: conflicts, target: "@impeccable/persona-notion-warm" }
+  - { type: conflicts, target: "@impeccable/persona-magazine-editorial" }
+  - { type: conflicts, target: "@impeccable/persona-stripe-fintech" }
+  - { type: contradicts, target: "@impeccable/persona-warm-institutional" }
+  - { type: contradicts, target: "@impeccable/persona-magazine-editorial" }
+created_at: "2026-05-07"

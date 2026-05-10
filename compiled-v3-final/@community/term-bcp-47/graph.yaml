@@ -1,0 +1,12 @@
+atom: "@community/term-bcp-47"
+relations:
+  - type: related
+    target: "@community/type-locale-tag"
+  - type: related
+    target: "@community/transform-locale-fallback-chain"
+  - type: related
+    target: "@community/rule-intl-api-locale-formatting"
+  - type: related
+    target: "@community/principle-no-string-concat"
+  - type: related
+    target: "@community/fact-bidi-direction"

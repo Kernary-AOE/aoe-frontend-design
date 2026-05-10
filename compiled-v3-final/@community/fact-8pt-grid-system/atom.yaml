@@ -1,0 +1,20 @@
+id: "@community/fact-8pt-grid-system"
+kind: fact
+version: "1.0.0"
+description: "The 8-point grid is the dominant spacing system in modern UI design, originating from iOS HIG and Material Design's density unit. Components, padding, margins, and type vertical-rhythm all align to multiples of 8 (with 4 as a half-step)."
+content_hash: "sha256:3286a7d26750944ee186c71c0ee1782302c85b7f65d58a3fdc5a720c0a61ee2d"
+tokens:
+  summary: 136
+  core: 313
+  full: 539
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-spacing-token-progression" }
+  - { type: related, target: "@community/category-layout-grid" }
+  - { type: related, target: "@community/transform-scale-clamp" }
+created_at: "2026-05-07"

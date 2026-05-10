@@ -1,0 +1,21 @@
+id: "@community/fact-semantic-html-element-taxonomy"
+kind: fact
+version: "1.0.0"
+description: "HTML5 provides 12+ semantic sectioning and landmark elements each with a built-in ARIA role — use them instead of generic divs so screen readers, search engines, and browser tools can interpret page structure without CSS."
+domain: frontend-design
+content_hash: "sha256:e76dca6d7d1e9723ec20df4a5321469130ec5ebc6c7652114000673641948582"
+tokens:
+  summary: 471
+  core: 471
+  full: 519
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-semantic-html-for-interactive-elements" }
+  - { type: related, target: "@community/rule-heading-hierarchy" }
+  - { type: related, target: "@community/rule-aria-native-first" }
+created_at: "2026-05-02"

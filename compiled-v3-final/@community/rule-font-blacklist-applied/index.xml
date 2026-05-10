@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-font-blacklist-applied"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="443"
+  q="4.0">
+  <description>The primary display and body typefaces in author CSS MUST NOT be drawn from @impeccable/constraint-font-blacklist (Inter, Roboto, Arial, Helvetica Neue, Space Grotesk, DM Sans, Nunito, Poppins, Open Sans, Lato). These fonts are the statistical mode of LLM-generated and shadcn/Tailwind-default output and produce a visually undifferentiated &apos;commodity&apos; result.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="105"/>
+    <level name="core"    file="chunks/core.md"    tokens="443"/>
+    <level name="full"    file="chunks/full.md"    tokens="805"/>
+  </projection>
+</atom>

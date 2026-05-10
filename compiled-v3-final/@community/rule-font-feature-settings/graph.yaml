@@ -1,0 +1,8 @@
+atom: "@community/rule-font-feature-settings"
+relations:
+  - type: related
+    target: "@community/fact-optical-sizing"
+  - type: related
+    target: "@community/rule-body-readability"
+  - type: related
+    target: "@community/taxonomy-typography-roles"

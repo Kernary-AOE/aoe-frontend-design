@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-shadcn-settings"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="535"
+  q="4.0">
+  <description>shadcn&apos;s settings example is a two-pane layout: left navigation list (Profile / Account / Appearance / Notifications / Display) at 200px, and main pane at max-width 600px. Each settings section uses a section title (24px bold), description (14px muted-foreground), a divider, then form rows with label-on-top (12px font-medium) + input + 13px help text below.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="104"/>
+    <level name="core"    file="chunks/core.md"    tokens="535"/>
+    <level name="full"    file="chunks/full.md"    tokens="967"/>
+  </projection>
+</atom>

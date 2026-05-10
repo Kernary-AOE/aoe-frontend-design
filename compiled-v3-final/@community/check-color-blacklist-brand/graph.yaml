@@ -1,0 +1,6 @@
+atom: "@community/check-color-blacklist-brand"
+relations:
+  - type: related
+    target: "@community/rule-color-blacklist-brand"
+  - type: related
+    target: "@community/transform-rgb-to-oklch"

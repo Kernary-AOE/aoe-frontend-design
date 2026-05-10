@@ -1,0 +1,8 @@
+atom: "@community/rule-url-reflects-state"
+relations:
+  - type: related
+    target: "@community/rule-navigation-flat-when-shallow"
+  - type: related
+    target: "@community/principle-nielsen-visibility"
+  - type: related
+    target: "@community/rule-platform-native-navigation"

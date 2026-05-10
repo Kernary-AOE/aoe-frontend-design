@@ -1,0 +1,21 @@
+id: "@community/example-vercel-analytics"
+kind: example
+version: "1.0.0"
+description: "Vercel Analytics shows Core Web Vitals (LCP, FID, CLS, INP) as four large stat cards with the metric value in 32px white, a delta indicator (green up arrow / red down arrow), and a 80px-tall sparkline chart underneath in muted blue #0070F3 at ~40% opacity. The full-page time-series chart uses a single accent color rather than the rainbow-multi-line approach."
+domain: visual-design
+content_hash: "sha256:dd414b9b9c14951222c8a487fdae20aca65011ce73788730649f4949f937627f"
+tokens:
+  summary: 105
+  core: 518
+  full: 932
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-dashboard-grid" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/category-typography-scale" }
+created_at: "2026-05-07"

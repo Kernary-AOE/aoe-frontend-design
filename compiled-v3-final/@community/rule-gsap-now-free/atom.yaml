@@ -1,0 +1,22 @@
+id: "@community/rule-gsap-now-free"
+kind: rule
+version: "1.0.0"
+description: "Since Webflow acquired GreenSock on 2025-04-30, all GSAP plugins (ScrollTrigger, SplitText, MorphSVG, DrawSVG, Flip, ScrollSmoother) are free for commercial use via a single 'npm install gsap' — default to GSAP for any animation beyond simple CSS transitions."
+domain: frontend-design
+content_hash: "sha256:fee4f1797e1cc1db0c0eb657945d467ad1c6f1d2aa4a12598d6d8e8a150a51b6"
+tokens:
+  summary: 178
+  core: 480
+  full: 842
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@community/rule-animation-duration" }
+  - { type: related, target: "@community/template-gsap-scroll-trigger" }
+  - { type: related, target: "@community/template-gsap-stagger" }
+created_at: "2026-05-07"

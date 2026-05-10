@@ -1,0 +1,8 @@
+atom: "@community/rule-plain-language"
+relations:
+  - type: related
+    target: "@community/rule-active-voice-in-ui-copy"
+  - type: related
+    target: "@community/rule-culturally-neutral-copy"
+  - type: related
+    target: "@community/rule-permissions-human-readable"

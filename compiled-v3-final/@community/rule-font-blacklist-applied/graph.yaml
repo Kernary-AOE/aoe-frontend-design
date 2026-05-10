@@ -1,0 +1,16 @@
+atom: "@community/rule-font-blacklist-applied"
+relations:
+  - type: related
+    target: "@impeccable/constraint-font-blacklist"
+  - type: related
+    target: "@impeccable/principle-distinctiveness"
+  - type: related
+    target: "@impeccable/anti-pattern-ai-slop-palette"
+  - type: related
+    target: "@community/rule-color-blacklist-brand"
+  - type: see-also
+    target: "@community/check-font-blacklist-applied"
+  - type: validates-with
+    target: "@impeccable/constraint-font-blacklist"
+  - type: validates-with
+    target: "@impeccable/principle-distinctiveness"

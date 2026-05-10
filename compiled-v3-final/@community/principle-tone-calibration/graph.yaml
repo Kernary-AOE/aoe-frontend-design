@@ -1,0 +1,18 @@
+atom: "@community/principle-tone-calibration"
+relations:
+  - type: related
+    target: "@community/rule-success-message-next-step"
+  - type: related
+    target: "@community/rule-verb-based-cta-labels"
+  - type: related
+    target: "@community/rule-suspicious-activity-next-step"
+  - type: related
+    target: "@community/anti-pattern-generic-error-text"
+  - type: related
+    target: "@community/example-stripe-payment-success"
+  - type: related
+    target: "@community/rule-actionable-error-messages"
+  - type: related
+    target: "@community/rule-plain-language"
+  - type: related
+    target: "@community/principle-security-copy"

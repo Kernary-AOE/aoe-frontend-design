@@ -1,0 +1,10 @@
+atom: "@community/fact-transitions-vs-animations"
+relations:
+  - type: related
+    target: "@community/fact-motion-vocabulary"
+  - type: related
+    target: "@community/template-motion-system-tokens"
+  - type: related
+    target: "@community/fact-easing-cubic-bezier"
+  - type: related
+    target: "@community/rule-animation-duration"

@@ -1,0 +1,65 @@
+scope PublicApi {
+  id: "@community/scope-public-api"
+  version: "1.0.0"
+
+  label: "Public-Facing REST/RPC API Surfaces"
+  domain: api-design
+
+  description: "Defines applicability for atoms whose guidance applies only to public API surfaces — endpoints exposed beyond the controlling team. Internal APIs (single-team monorepo) may relax some constraints; public APIs MUST satisfy them all due to long-term contract obligations."
+
+  preconditions: [
+    {
+      id: "consumed-by-external-clients",
+      check: "API is consumed by at least one consumer outside the producing team — partner integrations, third-party developers, separate product-team frontends, public SDK users",
+      on-fail: "Atom may not apply. Internal APIs can iterate freely; public APIs cannot."
+    }
+    {
+      id: "versioning-strategy-defined",
+      check: "API has an explicit versioning strategy (path /v1/, header-based, semver) and a documented deprecation policy",
+      on-fail: "Define the versioning strategy before opening the API to external consumers."
+    }
+    {
+      id: "openapi-or-equivalent-contract",
+      check: "API surface is described by an OpenAPI 3.x spec (REST), Protocol Buffer (gRPC), or GraphQL SDL — the contract is machine-readable and validated in CI",
+      on-fail: "Generate or author a contract spec before public release; SDK generation and partner integration require it."
+    }
+  ]
+
+  applies-to: [
+    "Public REST APIs (api.example.com/v1/*)",
+    "Partner-facing webhook receivers — consumers depend on payload schema",
+    "SDKs published to npm, PyPI, Maven Central — consumers pin versions",
+    "GraphQL endpoints exposed to third-party clients",
+    "OAuth-protected APIs that external developers register applications for",
+  ]
+
+  out-of-scope: [
+    "Internal microservice-to-microservice traffic within a single team's blast radius",
+    "Backend-for-frontend (BFF) endpoints owned and consumed by the same product team",
+    "Experimental APIs behind a feature flag with documented contract instability",
+    "Admin tools used only by employees",
+  ]
+
+  environment: {
+    runtime: "Any HTTP-capable backend (Node.js, Go, Rust, Python, Java)"
+    api-gateway: "Often present (Kong, Tyk, Zuul, AWS API Gateway, Cloudflare Workers)"
+    required-tooling: ["OpenAPI spec generator", "Schema-based validation (zod, ajv)", "Idempotency key store (Redis)"]
+    monitoring: ["per-endpoint latency p99", "error rate by status code", "rate-limit headers"]
+  }
+
+  notes: [
+    "Public APIs have a contract obligation — breaking changes require a major version bump and ≥ 12 months of legacy support.",
+    "Stripe, Twilio, and GitHub publicly document their API design conventions — model after these for industry-standard ergonomics.",
+    "Internal-only APIs can use richer paradigms (tRPC for type safety, gRPC for performance) without public-API constraints.",
+    "An 'internal' API consumed by a team's own frontend is technically internal; if a different team's frontend consumes it, treat as public.",
+    "OpenAPI-first design (spec written before code) reduces drift; OpenAPI-from-code (generated from annotations) reduces effort. Both work.",
+  ]
+
+  related: [
+    @community/collection-rest-api-discipline,
+    @community/rule-resource-not-action,
+    @community/principle-pagination-first,
+    @community/anti-pattern-rpc-as-rest,
+    @community/fact-http-method-semantics,
+  ]
+}

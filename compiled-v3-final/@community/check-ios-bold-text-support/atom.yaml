@@ -1,0 +1,21 @@
+id: "@community/check-ios-bold-text-support"
+kind: check
+version: "1.0.0"
+description: "Verifies that custom-rendered text in an iOS app responds to the Bold Text accessibility setting. Standard SwiftUI text styles pass automatically; custom UIFont or manual font weight assignments must explicitly observe legibilityWeight."
+domain: frontend-design
+content_hash: "sha256:9e2387a42607c8a24ae45557cef50db68fd15f05bedbc97cecad6b21dcdf3366"
+tokens:
+  summary: 74
+  core: 325
+  full: 575
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-dynamic-type-semantic" }
+  - { type: related, target: "@community/constraint-ios-text-min-17pt" }
+  - { type: related, target: "@community/rule-mobile-first" }
+created_at: "2026-05-07"

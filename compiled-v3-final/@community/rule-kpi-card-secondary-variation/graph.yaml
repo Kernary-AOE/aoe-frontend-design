@@ -1,0 +1,8 @@
+atom: "@community/rule-kpi-card-secondary-variation"
+relations:
+  - type: related
+    target: "@community/pattern-metric-card"
+  - type: related
+    target: "@community/rule-chart-never-alone"
+  - type: related
+    target: "@community/example-stripe-dashboard"

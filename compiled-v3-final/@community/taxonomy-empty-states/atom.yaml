@@ -1,0 +1,23 @@
+id: "@community/taxonomy-empty-states"
+kind: taxonomy
+version: "1.0.0"
+description: "A taxonomy of empty states by their underlying cause. Each cause requires distinct UX: 'no data yet' invites action; 'cleared' celebrates progress; 'error' explains failure; 'filtered to nothing' offers escape. Treating all empty states identically (one generic illustration + 'Nothing here yet') misses the chance to guide the user."
+domain: ux-design
+content_hash: "sha256:3620f82f39ca8c69e2555122b523fe75c405775aeabd7c30b3c2947a46550d97"
+tokens:
+  summary: 96
+  core: 1128
+  full: 2159
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-missing-empty-state" }
+  - { type: related, target: "@community/taxonomy-loading-states" }
+  - { type: related, target: "@community/taxonomy-form-validation-states" }
+  - { type: related, target: "@community/anti-pattern-generic-error-text" }
+  - { type: related, target: "@community/rule-actionable-error-messages" }
+created_at: "2026-05-07"

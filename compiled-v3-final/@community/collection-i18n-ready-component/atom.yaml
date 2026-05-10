@@ -1,0 +1,33 @@
+id: "@community/collection-i18n-ready-component"
+kind: collection
+version: "1.0.0"
+description: "Atoms required to ship a component that works correctly in all locales — LTR + RTL, single + plural, English + CJK + Arabic. Most components shipped without explicit i18n review have at least 3 of these atoms violated; this collection makes the audit checklist explicit."
+content_hash: "sha256:5d135cec54a36754db4ae59f946ebc6787d9e145a64995a81c039b7cda8467ab"
+tokens:
+  summary: 84
+  core: 888
+  full: 888
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-no-string-concat" }
+  - { type: related, target: "@community/rule-intl-api-locale-formatting" }
+  - { type: related, target: "@community/fact-bidi-direction" }
+  - { type: related, target: "@community/anti-pattern-flag-as-language" }
+  - { type: includes, target: "@community/type-locale-tag" }
+  - { type: includes, target: "@community/transform-locale-fallback-chain" }
+  - { type: includes, target: "@community/principle-no-string-concat" }
+  - { type: includes, target: "@community/pattern-icu-message-format" }
+  - { type: includes, target: "@community/rule-intl-api-locale-formatting" }
+  - { type: includes, target: "@community/fact-bidi-direction" }
+  - { type: includes, target: "@community/rule-rtl-directional-icons-flip" }
+  - { type: includes, target: "@community/rule-cjk-line-break" }
+  - { type: includes, target: "@community/term-leading" }
+  - { type: includes, target: "@community/value-content-line-length" }
+  - { type: includes, target: "@community/transform-relative-time-format" }
+  - { type: includes, target: "@community/anti-pattern-flag-as-language" }
+created_at: "2026-05-07"

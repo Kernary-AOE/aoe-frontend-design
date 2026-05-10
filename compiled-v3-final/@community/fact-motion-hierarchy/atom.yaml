@@ -1,0 +1,24 @@
+id: "@community/fact-motion-hierarchy"
+kind: fact
+version: "1.0.0"
+description: "屏幕上同时活跃的动效需要分层：一个屏幕只能有 1-2 个'主动效'承载用户注意力，其他元素必须用极短或零动效'退场'到背景。所有元素同时动等于没有动效——视觉噪音抵消信息层级。"
+content_hash: "sha256:a9916bf137f78b1f88ac287be899c4f2e3a6e835d6fde917acaa0fcfcb212bbc"
+tokens:
+  summary: 63
+  core: 263
+  full: 553
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-motion-as-feedback" }
+  - { type: related, target: "@community/fact-animation-distraction-cost" }
+  - { type: related, target: "@community/fact-stagger-feel-organic" }
+  - { type: related, target: "@community/fact-easing-mood-mapping" }
+  - { type: related, target: "@community/pattern-stagger-reveal" }
+  - { type: related, target: "@community/pattern-fade-in-on-load" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+created_at: "2026-05-07"

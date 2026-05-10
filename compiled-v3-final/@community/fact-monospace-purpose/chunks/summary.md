@@ -1,0 +1,3 @@
+# MonospacePurpose [fact] v1.0.0
+Monospace typefaces are designed for fixed-advance-width contexts (code, terminals, tabular numerics) where character alignment carries information. Using them as body type for prose is anti-pattern: they slow reading and signal a code aesthetic where none is intended.
+> Monospace typefaces (JetBrains Mono, Berkeley Mono, IBM Plex Mono, Söhne Mono) are designed for code, log output, terminals, IDs / hashes, and tabular numerics where column alignment is semantically meaningful — using them for prose body text reduces reading speed by ~10–15% and signals a code aesthetic that misframes the content.

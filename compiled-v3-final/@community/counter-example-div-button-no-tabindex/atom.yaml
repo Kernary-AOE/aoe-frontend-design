@@ -1,0 +1,21 @@
+id: "@community/counter-example-div-button-no-tabindex"
+kind: counter-example
+version: "1.0.0"
+description: "A 'submit' button reimplemented as a styled `<div onClick>` because the team disliked the default `<button>` styles. No tabindex, no role, no Enter/Space handler. Keyboard users tab past it; screen reader users don't know it exists."
+domain: accessibility
+content_hash: "sha256:cda898feabe519739a5486cd7d73b0c3a3446f387549388bab649cf6691463ef"
+tokens:
+  summary: 76
+  core: 599
+  full: 1123
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/anti-pattern-click-to-open-only" }
+  - { type: related, target: "@community/template-focus-ring" }
+created_at: "2026-05-07"

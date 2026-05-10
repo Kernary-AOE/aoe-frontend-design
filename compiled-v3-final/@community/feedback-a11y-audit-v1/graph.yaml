@@ -1,0 +1,10 @@
+atom: "@community/feedback-a11y-audit-v1"
+relations:
+  - type: related
+    target: "@community/method-a11y-audit"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/check-contrast-aa"
+  - type: related
+    target: "@community/scope-frontend-review"

@@ -1,0 +1,31 @@
+rule IosPermissionInContext {
+  id: "@community/rule-ios-permission-in-context"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  applies-to: "iOS apps requiring camera, location, notifications, contacts, or any permission-gated capability"
+
+  statement: "Trigger permission requests at the point of use, not at app launch."
+
+  rationale: "Requesting all permissions at launch provides no context for why they are needed, resulting in most users denying them. Contextual requests — shown immediately before the action that requires the permission — have significantly higher approval rates because the user understands the value exchange."
+
+  examples: [
+    "Ask for camera access when the user taps the camera shutter button, not on first app open.",
+    "Ask for location when the user taps 'Find stores near me', not during onboarding.",
+    "Ask for notification permission after the user completes their first booking and sees the confirmation screen.",
+  ]
+
+  notes: [
+    "Applies when: the app requires camera, location, notifications, contacts, health data, or any other permission-gated capability.",
+    "Verify by: cold-launching the app without any interaction — no permission dialogs should appear.",
+    "Apple HIG source: Rule 9.1 — Request Permissions in Context; Anti-Pattern #5.",
+    "Consider showing a custom pre-permission prompt explaining the benefit before triggering the system dialog.",
+  ]
+
+  related: [
+    @community/rule-mobile-first,
+    @community/constraint-ios-onboarding-max-3,
+    @community/pattern-ios-haptic-feedback,
+  ]
+}

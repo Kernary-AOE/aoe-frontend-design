@@ -1,0 +1,21 @@
+id: "@community/example-plaid-connect"
+kind: example
+version: "1.0.0"
+description: "Plaid Link is a multi-step modal (max-width 380px, fixed height ~600px) embedded via iframe. Steps: (1) intro screen with security messaging, (2) bank search with logo grid (32px logos in 6-column grid), (3) credentials entry with bank-branded header, (4) MFA challenge if needed, (5) success state. Each step has a back-arrow top-left and a step indicator (e.g., '2 of 5') top-right."
+domain: visual-design
+content_hash: "sha256:c13d1655f7b253b5e34b2420908ac24e768bb6c91fc264a4a4d90e13bc2ff9fd"
+tokens:
+  summary: 110
+  core: 547
+  full: 984
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-multi-step-wizard" }
+  - { type: related, target: "@community/example-stripe-checkout" }
+  - { type: related, target: "@community/fact-error-prevention" }
+created_at: "2026-05-07"

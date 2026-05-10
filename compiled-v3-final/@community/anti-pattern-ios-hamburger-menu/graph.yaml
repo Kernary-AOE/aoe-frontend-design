@@ -1,0 +1,8 @@
+atom: "@community/anti-pattern-ios-hamburger-menu"
+relations:
+  - type: related
+    target: "@community/pattern-tab-bar-bottom"
+  - type: related
+    target: "@community/constraint-ios-reserved-gestures"
+  - type: related
+    target: "@community/rule-mobile-first"

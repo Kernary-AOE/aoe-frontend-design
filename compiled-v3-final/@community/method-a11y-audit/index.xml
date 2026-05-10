@@ -1,0 +1,14 @@
+<atom
+  id="@community/method-a11y-audit"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="391"
+  q="4.0">
+  <description>A comprehensive accessibility audit combining automated tool analysis (axe-core + Lighthouse) with structured manual checks for keyboard navigation, focus management, and screen reader compatibility.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="391"/>
+    <level name="full"    file="chunks/full.md"    tokens="720"/>
+  </projection>
+</atom>

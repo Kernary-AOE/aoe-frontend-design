@@ -1,0 +1,23 @@
+rule VaryAestheticPerGeneration {
+  id: "@community/rule-vary-aesthetic-per-generation"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: warning
+
+  statement: "Each generated UI must vary its theme, fonts, and aesthetic — never reuse the same choices generation after generation. NEVER converge on common choices (e.g. always Space Grotesk) across distinct UI generation requests."
+
+  rationale: "Gravitating toward the same font, color scheme, or layout style across multiple distinct UI generation requests collapses diversity and marks output as uncreatively AI-generated. Familiar choices feel safe and require no aesthetic reasoning — exactly the trap that produces slop."
+
+  use-instead: "Vary between light and dark themes, select different font pairings, and use distinct aesthetic modes per request context. Consult the persona library to pick a different starting point each time."
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — Frontend Aesthetics Guidelines, variation paragraph",
+  ]
+
+  related: [
+    @impeccable/principle-distinctiveness,
+    @community/anti-pattern-ai-slop-aesthetics,
+    @community/principle-commit-bold-aesthetic,
+  ]
+}

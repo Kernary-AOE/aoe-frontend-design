@@ -1,0 +1,10 @@
+atom: "@community/fact-recognition-over-recall"
+relations:
+  - type: related
+    target: "@nielsen/taxonomy-10-heuristics"
+  - type: related
+    target: "@community/example-linear-kbd-shortcuts"
+  - type: related
+    target: "@community/pattern-command-palette"
+  - type: related
+    target: "@community/fact-visibility-system-status"

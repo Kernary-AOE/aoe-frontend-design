@@ -1,0 +1,8 @@
+atom: "@community/rule-informative-image-alt"
+relations:
+  - type: related
+    target: "@community/rule-aria-label-required"
+  - type: related
+    target: "@community/check-aria-label-required"
+  - type: related
+    target: "@community/anti-pattern-text-in-image"

@@ -1,0 +1,30 @@
+provocation AntiAntiAesthetic {
+  id: "@community/provocation-anti-anti-aesthetic"
+  version: "1.0.0"
+
+  label: "The Anti-Anti-Aesthetic Trap"
+  domain: frontend-design
+
+  trigger: "agent reacting against AI slop by making everything 'minimal', 'clean', or 'safe' in the opposite direction"
+
+  question: "Are you avoiding AI slop — or are you just reacting to it with a different kind of genericness? 'Minimal' and 'clean' have become the anti-slop defaults, which means they are now their own convergence. What makes your minimal design specifically this brand, this product, this audience — rather than just 'not the purple gradient site'?"
+
+  intent: "The antidote to AI slop is not its opposite aesthetic — it is intentionality. A brutally minimal design is just as generic as purple gradient slop if it was arrived at by reacting rather than by deliberate brand reasoning. Distinctiveness requires a positive reason ('this brand is warm and editorial') not a negative reason ('I didn't want to look like AI slop')."
+
+  resolution-paths: [
+    {
+      context: "Reaction-driven minimalism"
+      answer: "Ask: what does this brand believe? Design toward that belief, not away from its opposite."
+    }
+    {
+      context: "Intentional minimalism grounded in brand"
+      answer: "Document the specific reason this brand chooses minimalism — then the minimal choices become distinctive rather than generic."
+    }
+  ]
+
+  related: [
+    @impeccable/principle-distinctiveness,
+    @community/principle-commit-bold-aesthetic,
+    @community/constraint-distinctiveness-mandate,
+  ]
+}

@@ -1,0 +1,6 @@
+atom: "@community/fact-optimal-line-length"
+relations:
+  - type: related
+    target: "@community/category-typography-scale"
+  - type: related
+    target: "@community/value-focus-outline-width"

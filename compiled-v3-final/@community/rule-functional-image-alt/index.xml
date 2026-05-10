@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-functional-image-alt"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="310"
+  q="4.0">
+  <description>An &lt;img&gt; that is the sole content of a &lt;button&gt; or &lt;a&gt; element must have alt text describing the action the control performs, not the visual appearance of the image, so screen readers announce an actionable label (WCAG SC 1.1.1 Non-text Content, Level A).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="310"/>
+    <level name="full"    file="chunks/full.md"    tokens="620"/>
+  </projection>
+</atom>

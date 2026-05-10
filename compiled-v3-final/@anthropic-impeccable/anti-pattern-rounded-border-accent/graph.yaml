@@ -1,0 +1,12 @@
+atom: "@anthropic-impeccable/anti-pattern-rounded-border-accent"
+relations:
+  - type: related
+    target: "@community/anti-pattern-ai-slop-aesthetics"
+  - type: related
+    target: "@community/rule-brand-color-primary-only"
+  - type: related
+    target: "@community/principle-border-radius-aesthetic"
+  - type: related
+    target: "@community/pattern-border-radius-decision"
+  - type: related
+    target: "@community/fact-border-radius-platform"

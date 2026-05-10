@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-grid-baseline-aligned"
+  kind="knowledge"
+  version="1.0.0"
+  domain="layout"
+  tokens="518"
+  q="4.0">
+  <description>Validates vertical rhythm by checking that block gaps, heading margins, and body line-height are integer multiples of a baseline grid (4px or 8px). Off-baseline values create visual misalignment that compounds across long documents.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="518"/>
+    <level name="full"    file="chunks/full.md"    tokens="592"/>
+  </projection>
+</atom>

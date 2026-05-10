@@ -1,0 +1,10 @@
+atom: "@community/anti-pattern-batch-only-pipelines"
+relations:
+  - type: related
+    target: "@community/principle-idempotent-writes"
+  - type: related
+    target: "@community/pattern-cdc-change-data-capture"
+  - type: related
+    target: "@community/rule-event-schema-versioning"
+  - type: derived-from
+    target: "@community/pattern-cdc-change-data-capture"

@@ -1,0 +1,24 @@
+id: "@impeccable/voice-poetic-literary"
+kind: voice
+version: "1.0.0"
+description: "The voice used in literary magazine essays, Are.na profiles, Readwise highlights, and brand manifestos that aspire to last. Long-breath sentences, sensory specificity, restrained metaphor, deliberate rhythm. Sounds like The New Yorker, The Paris Review, an Are.na channel description by someone serious."
+domain: editorial-magazine
+content_hash: "sha256:4a6d30c9952e0bb99ba5982378a4eb7467f072e2376eedd1ea1ef44e1ff97c1b"
+tokens:
+  summary: 91
+  core: 630
+  full: 677
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/voice-editorial-investigative" }
+  - { type: related, target: "@impeccable/voice-brand-corporate" }
+  - { type: compatible, target: "@impeccable/persona-magazine-editorial" }
+  - { type: conflicts, target: "@impeccable/voice-dev-technical" }
+  - { type: conflicts, target: "@impeccable/voice-marketing-bold" }
+  - { type: conflicts, target: "@impeccable/voice-legal-formal" }
+created_at: "2026-05-07"

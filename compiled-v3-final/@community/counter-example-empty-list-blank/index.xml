@@ -1,0 +1,14 @@
+<atom
+  id="@community/counter-example-empty-list-blank"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="582"
+  q="4.0">
+  <description>A React issue-list component that renders a `&lt;ul&gt;` with `items.map(...)`. When `items` is an empty array, the component renders an empty `&lt;ul&gt;` and the page goes silent. No headline, no CTA, no explanation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="582"/>
+    <level name="full"    file="chunks/full.md"    tokens="1097"/>
+  </projection>
+</atom>

@@ -1,0 +1,43 @@
+constraint MonospaceTabularNumerics {
+  id: "@community/constraint-monospace-tabular-numerics"
+  version: "1.0.0"
+
+  target: "numeric display in tables, dashboards, fintech UIs"
+  severity: medium
+  domain: frontend-design
+
+  description: "Numeric data in tables, dashboards, financial UIs, and metric cards MUST use tabular-numeral rendering (`font-variant-numeric: tabular-nums`) — NOT a monospace typeface — unless the typeface is itself monospace for other semantic reasons (code, terminals). Monospace fonts are not required; `tnum` OpenType feature on a proportional font achieves column alignment without sacrificing aesthetics."
+
+  values: [
+    {
+      required: "font-variant-numeric: tabular-nums on all numeric table cells, balance displays, metric cards",
+    }
+    {
+      required: "font-variant-numeric: lining-nums (or lnum) for numbers alongside capitals in headers",
+    }
+    {
+      allowed: "Monospace font for CODE, hashes, IDs, terminal output, SKUs — where character-by-character alignment is the entire point",
+    }
+    {
+      forbidden: "Switching to full monospace font (JetBrains Mono, Courier) solely for column alignment in a proportional UI — use tnum instead",
+    }
+    {
+      forbidden: "Mixing proportional and tabular numerals within the same column of a data table",
+    }
+  ]
+
+  rationale: "Tabular figures (tnum) ensure each digit occupies the same horizontal advance, causing numbers in adjacent rows to align vertically in a column — exactly what monospace achieves, but without the aesthetic penalty of fixed-width letters on non-numeric characters. Most quality fonts (Inter, Geist, Söhne, Source Serif 4, IBM Plex) ship tnum as an OpenType feature. Switching the entire UI to a monospace face to solve numeric alignment is the typographic equivalent of using a sledgehammer for a thumbtack."
+
+  approved-alternatives: [
+    "font-variant-numeric: tabular-nums lining-nums on numeric contexts",
+    "CSS: `.metric, td.number, .amount { font-variant-numeric: tabular-nums lining-nums; }`",
+    "CSS shorthand: `font-variant: tabular-nums` (applies tnum, compatible with most browsers)",
+    "font-feature-settings: 'tnum' 1, 'lnum' 1 (explicit feature activation fallback)",
+  ]
+
+  related: [
+    @community/fact-monospace-purpose,
+    @community/rule-opentype-features-on,
+    @community/rule-font-feature-settings,
+  ]
+}

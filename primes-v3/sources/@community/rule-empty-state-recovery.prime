@@ -1,0 +1,24 @@
+rule EmptyStateRecovery {
+  id: "@community/rule-empty-state-recovery"
+  version: "1.0.0"
+
+  domain: frontend-design
+  severity: warning
+
+  statement: "Empty states caused by filters, search queries, or permissions (zero-results empty) must include a recovery affordance — a button or link that removes the filter, clears the search, or explains how to gain access. A zero-results state with no recovery is a dead end."
+
+  applies-when: "Rendering any empty state that resulted from a user action (filter, search, permission scope) rather than a first-run state."
+
+  verify-by: "Trigger the zero-results state (apply a filter that matches nothing). Confirm the empty state shows the cause ('No results match your filter') and provides a recovery action ('Clear filters')."
+
+  distinction: "Zero-data empty (first run, no items exist yet) needs a create-first-item CTA. Zero-results empty (filter excluded everything) needs a clear-filters CTA. Zero-permission empty needs an access request or explanation. Each has a different recovery affordance."
+
+  related: [
+    @community/pattern-empty-state,
+    @community/anti-pattern-missing-empty-state,
+    @community/principle-error-prevention-and-recovery,
+    @community/counter-example-empty-list-blank,
+    @community/example-linear-kanban,
+    @community/rule-success-message-next-step,
+  ]
+}

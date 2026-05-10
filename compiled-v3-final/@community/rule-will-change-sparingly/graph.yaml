@@ -1,0 +1,8 @@
+atom: "@community/rule-will-change-sparingly"
+relations:
+  - type: related
+    target: "@community/check-animation-duration"
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/template-webgl-shader-ogl"

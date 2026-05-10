@@ -1,0 +1,10 @@
+atom: "@community/check-secrets-not-in-git"
+relations:
+  - type: related
+    target: "@community/principle-owasp-cryptographic-failures"
+  - type: related
+    target: "@community/principle-owasp-security-misconfiguration"
+  - type: related
+    target: "@community/check-dependency-audit"
+  - type: related
+    target: "@community/rule-no-secrets-in-source"

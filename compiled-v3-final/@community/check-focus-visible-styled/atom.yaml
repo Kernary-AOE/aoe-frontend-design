@@ -1,0 +1,21 @@
+id: "@community/check-focus-visible-styled"
+kind: check
+version: "1.0.0"
+description: "Validates that focus-visible styling is intentional and tokenized (uses CSS custom properties, has outline-offset or box-shadow spread, and is not suppressed by an unreplaced global outline:none reset). Goes beyond mere existence — checks design quality."
+domain: accessibility
+content_hash: "sha256:02074815e3d26f15cb1df15cfeb984ee37108c235bc37783c3d448f2181e230a"
+tokens:
+  summary: 78
+  core: 630
+  full: 728
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/check-focus-visible-styled" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/counter-example-outline-none" }
+created_at: "2026-05-07"

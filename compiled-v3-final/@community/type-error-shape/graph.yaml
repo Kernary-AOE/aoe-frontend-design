@@ -1,0 +1,12 @@
+atom: "@community/type-error-shape"
+relations:
+  - type: related
+    target: "@community/fact-http-method-semantics"
+  - type: related
+    target: "@community/rule-resource-not-action"
+  - type: related
+    target: "@community/anti-pattern-rpc-as-rest"
+  - type: related
+    target: "@community/anti-pattern-generic-error-text"
+  - type: related
+    target: "@community/rule-actionable-error-messages"

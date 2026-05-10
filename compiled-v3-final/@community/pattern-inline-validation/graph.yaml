@@ -1,0 +1,22 @@
+atom: "@community/pattern-inline-validation"
+relations:
+  - type: related
+    target: "@community/fact-error-prevention"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/check-form-label-associated"
+  - type: related
+    target: "@community/check-error-message-associated"
+  - type: related
+    target: "@community/check-form-validation-inline"
+  - type: related
+    target: "@community/rule-aria-native-first"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: compatible
+    target: "@community/pattern-multi-step-wizard"
+  - type: compatible
+    target: "@community/pattern-autocomplete-combobox"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-gallery-cta-sections"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="2407"
+  q="4.0">
+  <description>17 curated CTA section screenshots from Land-book Pro, tagged by pattern type and persona lean. CTA sections are inflection points in the scroll narrative — they ask the visitor to make a decision. They appear in two primary positions: mid-page (as momentum checkpoints) and end-of-page (as the final conversion moment).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="96"/>
+    <level name="core"    file="chunks/core.md"    tokens="2407"/>
+    <level name="full"    file="chunks/full.md"    tokens="4718"/>
+  </projection>
+</atom>

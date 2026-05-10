@@ -1,0 +1,8 @@
+atom: "@community/fact-fitts-law"
+relations:
+  - type: related
+    target: "@community/fact-hick-law"
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"
+  - type: related
+    target: "@community/pattern-tab-bar-bottom"

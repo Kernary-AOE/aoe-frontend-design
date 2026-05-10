@@ -1,0 +1,8 @@
+atom: "@community/rule-cross-platform-accessibility-parity"
+relations:
+  - type: related
+    target: "@community/constraint-accessibility-aa-minimum"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/constraint-ios-touch-target-44pt"

@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/template-scroll-reveal-vanilla"
+  kind="knowledge"
+  version="1.0.0"
+  domain="motion"
+  tokens="735"
+  q="4.0">
+  <description>Scroll-reveal animation using IntersectionObserver — no GSAP, no AOS, ~25 lines of JS. Adds .is-visible class once an element scrolls into view; does NOT re-trigger on scroll-out. Reduced-motion users see content instantly without animation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="74"/>
+    <level name="core"    file="chunks/core.md"    tokens="735"/>
+    <level name="full"    file="chunks/full.md"    tokens="762"/>
+  </projection>
+</atom>

@@ -1,0 +1,94 @@
+tool Playwright {
+  id: "@community/tool-playwright"
+  version: "1.0.0"
+
+  signature: (testFile: string, config?: PlaywrightConfig) -> TestResult
+  external: true
+  package: "@playwright/test@^1.40"
+
+  domain: testing
+
+  description: "Microsoft's Playwright is a cross-browser automation framework for end-to-end testing. Drives Chromium, Firefox, and WebKit (Safari) with a single API; supports parallel test execution, automatic waiting, network interception, video recording, and trace viewer for failure debugging. Industry standard E2E choice for new projects."
+
+  output-type: {
+    status: "passed | failed | timedOut | skipped"
+    duration: "milliseconds"
+    errors: TestError[]
+    attachments: ["screenshot", "video", "trace.zip"]
+    retries: integer
+  }
+
+  usage: """
+    // playwright.config.ts
+    import { defineConfig, devices } from '@playwright/test';
+
+    export default defineConfig({
+      testDir: './tests',
+      fullyParallel: true,
+      retries: process.env.CI ? 2 : 0,
+      reporter: [['html'], ['github']],
+      use: {
+        baseURL: 'http://localhost:3000',
+        trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+      },
+      projects: [
+        { name: 'chromium', use: devices['Desktop Chrome'] },
+        { name: 'firefox',  use: devices['Desktop Firefox'] },
+        { name: 'webkit',   use: devices['Desktop Safari'] },
+        { name: 'mobile-safari', use: devices['iPhone 14'] },
+      ],
+      webServer: {
+        command: 'npm run dev',
+        url: 'http://localhost:3000',
+        reuseExistingServer: !process.env.CI,
+      },
+    });
+
+    // tests/checkout.spec.ts
+    import { test, expect } from '@playwright/test';
+
+    test('user can complete checkout', async ({ page }) => {
+      await page.goto('/products/widget');
+      await page.getByRole('button', { name: 'Add to cart' }).click();
+      await page.getByRole('link', { name: 'Cart' }).click();
+      await expect(page.getByRole('heading', { name: 'Cart' })).toBeVisible();
+      await page.getByRole('button', { name: 'Checkout' }).click();
+      // ... fill form, submit, assert success
+      await expect(page.getByText('Order confirmed')).toBeVisible({ timeout: 10000 });
+    });
+
+    // Accessibility integration via @axe-core/playwright
+    import AxeBuilder from '@axe-core/playwright';
+
+    test('homepage has no a11y violations', async ({ page }) => {
+      await page.goto('/');
+      const results = await new AxeBuilder({ page })
+        .withTags(['wcag22aa'])
+        .analyze();
+      expect(results.violations).toEqual([]);
+    });
+  """
+
+  notes: [
+    "Auto-waiting eliminates the most common flake source: Playwright waits for elements to be visible/stable before acting; explicit waits (await page.waitForTimeout) are an anti-pattern.",
+    "Locator API: prefer `getByRole`, `getByLabel`, `getByPlaceholder`, `getByText` over CSS/XPath. These match accessibility tree, supporting BOTH testability AND a11y discipline.",
+    "Trace Viewer: when a test fails, Playwright records every action + DOM snapshot + network request. Run `npx playwright show-trace trace.zip` to debug interactively.",
+    "Parallelism: workers default to half of CPU cores. Override with `--workers=N`. CI typically runs 2-4 workers per machine.",
+    "Test isolation: every test gets a fresh BrowserContext (cookies, localStorage, cache). No state leaks between tests by default.",
+    "Network mocking: `page.route('**/api/users', route => route.fulfill({ json: [...] }))` replaces real backend without server-side changes — useful for E2E that should not hit production data.",
+    "Pair with @community/tool-axe-core for accessibility-aware E2E (use @axe-core/playwright wrapper).",
+    "Compared to Cypress: similar API but Playwright supports multiple browser engines, multiple tabs/origins, and parallel test execution natively.",
+    "Reporting: HTML report (`playwright-report/`) is self-contained and can be hosted on CI artifacts; GitHub reporter annotates failed lines in PR.",
+  ]
+
+  related: [
+    @community/tool-axe-core,
+    @community/tool-lighthouse,
+    @community/principle-test-pyramid,
+    @community/rule-flaky-quarantine,
+    @community/fact-test-pyramid-ratios,
+    @community/pattern-snapshot-restraint,
+  ]
+}

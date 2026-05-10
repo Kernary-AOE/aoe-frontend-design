@@ -1,0 +1,19 @@
+id: "@community/pattern-fintech-hero-amount-card"
+kind: pattern
+version: "1.0.0"
+description: "A card component that establishes the primary financial metric as the visual focal point. The hero amount uses clamp(2.5rem, 6vw, 4rem) display font, tabular-nums, and a decorative gold radial gradient corner. The large number is 3–4× larger than any surrounding supporting text."
+domain: frontend-design
+content_hash: "sha256:8d496bc6bcfde662a511b1c5000319ed96329949c7525887cce488c1ee43989d"
+tokens:
+  summary: 86
+  core: 564
+  full: 1041
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-trust-social-proof-numbers" }
+created_at: "2026-05-07"

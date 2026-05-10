@@ -1,0 +1,26 @@
+id: "@community/pattern-tx-blocknote-drag-handle"
+kind: pattern
+version: "1.0.0"
+description: "BlockNote hover-gutter drag handle pattern: a six-dot MdDragIndicator button that is simultaneously a drag source (draggable={true}) and a dropdown menu trigger, with sideMenu.freezeMenu() / unfreezeMenu() preventing the 'menu flies away' bug when cursor leaves the handle toward the dropdown."
+domain: frontend-design
+content_hash: "sha256:c5a55c48840e10ea5091f654aa6ba17b88b7d0aaf2332106d94a6889212e2324"
+tokens:
+  summary: 90
+  core: 546
+  full: 1072
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-tx-blocknote-block-editor-core" }
+  - { type: related, target: "@community/pattern-tx-dnd-kit-kanban-columns" }
+  - { type: related, target: "@community/pattern-tx-blocknote-nested-indent" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/rule-aria-label-in-name" }
+sources:
+  - { url: "packages/react/src/components/SideMenu/DefaultButtons/DragHandleButton.tsx" }
+created_at: "2026-05-07"

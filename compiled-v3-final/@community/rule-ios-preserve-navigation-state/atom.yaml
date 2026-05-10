@@ -1,0 +1,20 @@
+id: "@community/rule-ios-preserve-navigation-state"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:40d0c21d130b4fe267ad57f1c5e37085e5b40b27a447e8073152dbb292e37e07"
+tokens:
+  summary: 56
+  core: 84
+  full: 254
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-ios-navigation-stack" }
+  - { type: related, target: "@community/rule-ios-tab-bar-always-visible" }
+  - { type: related, target: "@community/rule-ios-interruption-handling" }
+created_at: "2026-05-07"

@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-design-token-cascade"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="293"
+  q="4.0">
+  <description>Design tokens function best when organised in a three-tier cascade: primitive tokens (raw values), semantic tokens (named roles), and component tokens (component-specific aliases).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="127"/>
+    <level name="core"    file="chunks/core.md"    tokens="293"/>
+    <level name="full"    file="chunks/full.md"    tokens="514"/>
+  </projection>
+</atom>

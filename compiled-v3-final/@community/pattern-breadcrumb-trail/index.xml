@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-breadcrumb-trail"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="572"
+  q="4.0">
+  <description>A horizontal sequence of links showing the path from a root location to the current page (e.g., Workspace &gt; Project &gt; Issue). Provides hierarchical wayfinding and one-click jump-up navigation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="572"/>
+    <level name="full"    file="chunks/full.md"    tokens="1115"/>
+  </projection>
+</atom>

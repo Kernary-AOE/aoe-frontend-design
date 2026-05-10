@@ -1,0 +1,20 @@
+id: "@community/check-form-label-associated"
+kind: check
+version: "1.0.0"
+description: "Validates that every visible form input (text, email, password, select, textarea, etc.) has a programmatically associated label: <label for>, wrapping <label>, aria-labelledby, or aria-label. Placeholder text alone does not satisfy this requirement."
+domain: accessibility
+content_hash: "sha256:d566fba4786930fba47d8e42624952aea2b9f8b780a4dc387af381e1e54a27b9"
+tokens:
+  summary: 77
+  core: 519
+  full: 610
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-form-label-associated" }
+  - { type: related, target: "@community/rule-aria-label-required" }
+created_at: "2026-05-07"

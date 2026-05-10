@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/persona-dense-pragmatist"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="516"
+  q="4.0">
+  <description>An aesthetic persona derived from professional-grade data tools: Bloomberg Terminal, trading dashboards, IDE UIs, analytics platforms. Optimized for information density, expert-user efficiency, and zero decorative overhead. Every pixel carries information.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="516"/>
+    <level name="full"    file="chunks/full.md"    tokens="601"/>
+  </projection>
+</atom>

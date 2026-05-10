@@ -1,0 +1,10 @@
+atom: "@community/anti-pattern-breaking-keyboard-flow"
+relations:
+  - type: related
+    target: "@community/counter-example-div-button-no-tabindex"
+  - type: related
+    target: "@community/anti-pattern-click-to-open-only"
+  - type: related
+    target: "@community/rule-keyboard-accessible"
+  - type: related
+    target: "@community/check-focus-visible"

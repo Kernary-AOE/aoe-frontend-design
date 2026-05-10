@@ -1,0 +1,8 @@
+atom: "@community/example-calcom-scheduler"
+relations:
+  - type: related
+    target: "@community/pattern-calendar-grid"
+  - type: related
+    target: "@community/metric-target-size"
+  - type: related
+    target: "@community/pattern-multi-step-wizard"

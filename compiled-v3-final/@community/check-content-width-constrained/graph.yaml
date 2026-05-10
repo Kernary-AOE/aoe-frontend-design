@@ -1,0 +1,6 @@
+atom: "@community/check-content-width-constrained"
+relations:
+  - type: related
+    target: "@community/rule-content-width-constrained"
+  - type: related
+    target: "@community/check-line-length-optimal"

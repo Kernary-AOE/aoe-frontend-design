@@ -1,0 +1,21 @@
+id: "@community/transform-rgb-to-oklch"
+kind: transform
+version: "1.0.0"
+description: "Converts an sRGB color to oklch() coordinates via linear sRGB → XYZ D65 → Oklab → polar oklch. The result has perceptually uniform lightness (l), chroma (c), and hue-angle (h) suitable for generating accessible tonal palettes."
+domain: visual-design
+content_hash: "sha256:c5043a762494beb4c49a5693c9908979f37cf0cbeea21a89723252c419e65a35"
+tokens:
+  summary: 70
+  core: 392
+  full: 690
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/term-oklch" }
+  - { type: related, target: "@community/value-brand-hue" }
+  - { type: related, target: "@community/metric-contrast-ratio" }
+created_at: "2026-05-07"

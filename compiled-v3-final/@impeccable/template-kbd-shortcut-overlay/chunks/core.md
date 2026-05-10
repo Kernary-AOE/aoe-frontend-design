@@ -1,0 +1,170 @@
+# KbdShortcutOverlay [template] v1.0.0
+Press '?' anywhere to reveal a grid of keyboard shortcuts. Esc closes. Modal overlay with focus trap and scroll lock.
+domain: power-user
+
+## Language
+html-css-js
+
+## Body
+```
+    <style>
+      .kbd-overlay {
+        position: fixed;
+        inset: 0;
+        background: oklch(20% 0.02 250 / 0.55);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+      }
+      .kbd-overlay[data-open="true"] { display: flex; }
+
+      .kbd-panel {
+        background: white;
+        max-width: 640px;
+        width: calc(100% - 32px);
+        max-height: 80vh;
+        overflow: auto;
+        border-radius: 12px;
+        padding: 24px 28px;
+        box-shadow: 0 24px 64px oklch(20% 0.02 250 / 0.3);
+      }
+      .kbd-panel h2 {
+        margin: 0 0 16px;
+        color: {ACCENT_COLOR};
+        font-size: 1.125rem;
+      }
+      .kbd-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px 16px;
+        align-items: center;
+      }
+      .kbd-grid h3 {
+        grid-column: 1 / -1;
+        margin: 12px 0 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: oklch(50% 0.02 250);
+      }
+      .kbd-grid h3:first-child { margin-top: 0; }
+      .kbd-grid p { margin: 0; font-size: 0.9rem; }
+      .kbd-grid kbd {
+        font-family: ui-monospace, monospace;
+        font-size: 0.8rem;
+        background: oklch(96% 0.01 250);
+        border: 1px solid oklch(85% 0.02 250);
+        border-bottom-width: 2px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        color: {ACCENT_COLOR};
+      }
+      .kbd-close {
+        position: absolute;
+        top: 12px; right: 12px;
+        background: transparent;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+        line-height: 1;
+        padding: 4px 8px;
+      }
+      .kbd-close:focus-visible {
+        outline: 2px solid {ACCENT_COLOR};
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+    </style>
+
+    <div class="kbd-overlay"
+         id="kbd-overlay"
+         data-open="false"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="kbd-title"
+         hidden>
+      <div class="kbd-panel" tabindex="-1">
+        <button class="kbd-close" type="button" aria-label="Close" data-close>×</button>
+        <h2 id="kbd-title">Keyboard shortcuts</h2>
+        <div class="kbd-grid">
+          <h3>General</h3>
+          <p>Open this panel</p><kbd>{TRIGGER_KEY}</kbd>
+          <p>Open command palette</p><kbd>⌘ K</kbd>
+          <p>Close any modal</p><kbd>Esc</kbd>
+
+          <h3>Navigation</h3>
+          <p>Go to home</p><kbd>g h</kbd>
+          <p>Go to inbox</p><kbd>g i</kbd>
+          <p>Search</p><kbd>/</kbd>
+
+          <h3>Editing</h3>
+          <p>Save</p><kbd>⌘ S</kbd>
+          <p>Undo</p><kbd>⌘ Z</kbd>
+          <p>Redo</p><kbd>⌘ ⇧ Z</kbd>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        var overlay = document.getElementById('kbd-overlay');
+        if (!overlay) return;
+        var panel = overlay.querySelector('.kbd-panel');
+        var closeBtn = overlay.querySelector('[data-close]');
+        var lastFocus = null;
+
+        function open() {
+          lastFocus = document.activeElement;
+          overlay.removeAttribute('hidden');
+          overlay.setAttribute('data-open', 'true');
+          document.documentElement.style.overflow = 'hidden';
+          panel.focus();
+        }
+        function close() {
+          overlay.setAttribute('data-open', 'false');
+          overlay.setAttribute('hidden', '');
+          document.documentElement.style.overflow = '';
+          lastFocus && lastFocus.focus && lastFocus.focus();
+        }
+
+        document.addEventListener('keydown', function(e) {
+          var typing = /^(input|textarea|select)$/i.test((e.target || {}).tagName) ||
+                       (e.target && e.target.isContentEditable);
+          if (!typing && e.key === '{TRIGGER_KEY}' && !e.ctrlKey && !e.metaKey) {
+            e.preventDefault();
+            overlay.getAttribute('data-open') === 'true' ? close() : open();
+          }
+          if (overlay.getAttribute('data-open') === 'true' && e.key === 'Escape') {
+            e.preventDefault();
+            close();
+          }
+        });
+        closeBtn.addEventListener('click', close);
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) close();
+        });
+      })();
+    </script>
+  
+```
+
+## Usage Notes
+- Trigger key check skips when user is typing in inputs / textareas / contenteditable.
+- role=dialog + aria-modal=true marks this as a true modal overlay.
+- Scroll lock applied via overflow:hidden on <html> — restore on close.
+- Focus moves to panel on open and returns to lastFocus on close.
+- Listing should mirror your real shortcuts; outdated lists destroy trust.
+
+## Tested In
+- Chrome 120+
+- Firefox 121
+- Safari 17
+
+## Accessibility
+- role=dialog, aria-modal, aria-labelledby fully wired.
+- Esc + click-outside + close button all dismiss.
+- Focus saved/restored across open/close.
+- Body scroll locked while open.

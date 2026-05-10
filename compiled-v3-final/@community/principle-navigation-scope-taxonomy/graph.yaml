@@ -1,0 +1,18 @@
+atom: "@community/principle-navigation-scope-taxonomy"
+relations:
+  - type: related
+    target: "@community/pattern-sidebar-collapsible"
+  - type: related
+    target: "@community/pattern-breadcrumb-trail"
+  - type: related
+    target: "@community/pattern-table-of-contents-sticky"
+  - type: related
+    target: "@community/anti-pattern-deep-branching-nav"
+  - type: related
+    target: "@community/anti-pattern-ios-hamburger-menu"
+  - type: related
+    target: "@community/example-notion-sidebar"
+  - type: related
+    target: "@community/example-vercel-sidebar"
+  - type: related
+    target: "@community/rule-navigation-flat-when-shallow"

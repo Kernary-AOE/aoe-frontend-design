@@ -1,0 +1,37 @@
+anti-pattern DeepBranchingNav {
+  id: "@community/anti-pattern-deep-branching-nav"
+  version: "1.0.0"
+
+  label: "Deep Branching Hierarchy Over Flat Filters"
+  domain: frontend-design
+
+  description: "Building 3+ level nested folder navigation when flat tags, filters, or faceted search would better support findability — forcing users to memorize exact paths to items that conceptually belong in multiple categories."
+
+  trap: "Folder hierarchies feel intuitive because they mirror filesystem mental models. Teams default to them without testing whether users understand the classification scheme. The structure mirrors internal ownership boundaries, not user mental models."
+
+  consequence: "Deep branching reduces findability exponentially. Users must know the exact path. Items that belong in multiple categories either duplicate or hide. As content grows, the tree becomes unmaintainable. Users abandon navigation and use search instead — if search exists."
+
+  detection-heuristics: [
+    "Navigation depth > 3 levels for routine user tasks",
+    "Users frequently ask 'where is X?' or use search to find things they expect to be in the nav",
+    "The same item logically belongs under 2+ top-level categories",
+    "Navigation sections are named after teams or departments rather than user goals",
+    "Card-sort testing shows users disagree about which branch an item belongs in",
+  ]
+
+  remediation: [
+    "Replace nested folders with flat tags + faceted filter UI when items have multiple relevant attributes.",
+    "Use shallow trees (2 levels max) with search/filter as a first-class complement.",
+    "Apply @community/rule-ia-group-by-user-tasks: group by user tasks, domains, or objects — not org chart.",
+    "Run card-sorting exercises to discover user-native categories before building the tree.",
+    "If depth is unavoidable, add breadcrumbs and search to provide escape hatches.",
+  ]
+
+  severity: high
+
+  related: [
+    @community/pattern-breadcrumb-trail,
+    @community/rule-ia-group-by-user-tasks-not-org,
+    @community/rule-navigation-flat-when-shallow,
+  ]
+}

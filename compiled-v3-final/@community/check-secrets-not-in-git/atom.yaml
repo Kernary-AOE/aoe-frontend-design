@@ -1,0 +1,22 @@
+id: "@community/check-secrets-not-in-git"
+kind: check
+version: "1.0.0"
+description: "No secrets (API keys, passwords, tokens, private keys, connection strings) must exist in any git commit — past or present. A pre-commit hook and CI scan must enforce this automatically."
+domain: security
+content_hash: "sha256:45c009d97e57e72ba51144cd852acaf54a717f2c3a98eb5fd6c0e366e9469a2b"
+tokens:
+  summary: 59
+  core: 553
+  full: 1048
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-cryptographic-failures" }
+  - { type: related, target: "@community/principle-owasp-security-misconfiguration" }
+  - { type: related, target: "@community/check-dependency-audit" }
+  - { type: related, target: "@community/rule-no-secrets-in-source" }
+created_at: "2026-05-07"

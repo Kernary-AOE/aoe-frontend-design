@@ -1,0 +1,14 @@
+<atom
+  id="@community/term-visual-philosophy"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="362"
+  q="4.0">
+  <description>A visual philosophy is a named aesthetic movement (1-2 words) with a manifesto articulating how it expresses itself through space, form, color, scale, and composition — not a layout template, style guide, or design brief.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="70"/>
+    <level name="core"    file="chunks/core.md"    tokens="362"/>
+    <level name="full"    file="chunks/full.md"    tokens="758"/>
+  </projection>
+</atom>

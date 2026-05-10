@@ -1,0 +1,6 @@
+atom: "@community/fact-card-sort-method"
+relations:
+  - type: related
+    target: "@community/fact-jakob-law"
+  - type: related
+    target: "@community/fact-miller-rule-7"

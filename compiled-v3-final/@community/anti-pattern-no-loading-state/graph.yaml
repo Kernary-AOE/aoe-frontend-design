@@ -1,0 +1,10 @@
+atom: "@community/anti-pattern-no-loading-state"
+relations:
+  - type: related
+    target: "@community/counter-example-button-no-loading"
+  - type: related
+    target: "@community/pattern-skeleton-loader"
+  - type: related
+    target: "@community/pattern-optimistic-update"
+  - type: related
+    target: "@community/fact-visibility-system-status"

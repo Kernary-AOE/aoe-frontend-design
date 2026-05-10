@@ -1,0 +1,21 @@
+id: "@community/rule-number-unit-ratio"
+kind: rule
+version: "1.0.0"
+description: "Metric displays use a strict 2:1 size ratio between number and unit — 48px/24px for hero, 36px/18px for KPI cards, 24px/12px for donut centers — so the eye lands on the digit first and the unit whispers."
+domain: frontend-design
+content_hash: "sha256:49ff64bbf3646e5418759388f80e1352ce818dd146beec92f8380ec446432514"
+tokens:
+  summary: 249
+  core: 316
+  full: 504
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-chart-never-alone" }
+  - { type: related, target: "@community/fact-fintech-number-display" }
+  - { type: related, target: "@community/constraint-monospace-tabular-numerics" }
+created_at: "2026-05-07"

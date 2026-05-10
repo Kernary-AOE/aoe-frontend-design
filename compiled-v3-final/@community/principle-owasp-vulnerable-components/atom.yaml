@@ -1,0 +1,21 @@
+id: "@community/principle-owasp-vulnerable-components"
+kind: principle
+version: "1.0.0"
+description: "OWASP Top 10 A06:2021 (formerly Using Components with Known Vulnerabilities) — components such as libraries, frameworks, and runtimes run with the same privileges as the application. If a vulnerable component is exploited, it can facilitate data loss or server takeover."
+domain: security
+content_hash: "sha256:01a73eafc3191f0d3672e7048ad774f8a377f188003bada1338e08722a546698"
+tokens:
+  summary: 153
+  core: 379
+  full: 626
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-owasp-security-misconfig" }
+  - { type: related, target: "@community/rule-secrets-never-in-source" }
+  - { type: related, target: "@community/principle-owasp-data-integrity-failures" }
+created_at: "2026-05-07"

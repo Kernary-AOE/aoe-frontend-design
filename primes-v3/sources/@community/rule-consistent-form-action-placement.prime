@@ -1,0 +1,35 @@
+rule ConsistentFormActionPlacement {
+  id: "@community/rule-consistent-form-action-placement"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  description: "Primary and secondary form actions (submit, cancel, back) must use clear, consistent labels and be placed in a predictable position throughout a product, so users build reliable spatial memory for action buttons."
+
+  claim: "Form actions MUST be placed consistently across all forms in a product — primary action right-aligned (or full-width on mobile), secondary action to its left — and action labels must be specific verbs that name the outcome, not generic labels like 'Submit' or 'OK'."
+
+  severity: warning
+
+  rationale: "Inconsistent action placement violates Nielsen's consistency heuristic. Users who learn 'Continue is bottom-right' should not encounter 'Next' bottom-left on the next step. Generic labels like 'Submit' force users to reason about what will happen; specific labels like 'Create account' or 'Place order' confirm the outcome."
+
+  placement-convention: {
+    desktop: "Primary action right-aligned in the form footer; secondary (Cancel/Back) to its left."
+    mobile: "Primary action full-width; secondary as a text link below or styled as a secondary button."
+    multi-step: "Back left, Continue/Next right — consistent across all steps."
+  }
+
+  label-rules: [
+    "Use verb + noun: 'Save changes', 'Create account', 'Place order', 'Send message'.",
+    "Never use 'Submit', 'OK', 'Confirm' without a noun clarifying what is being confirmed.",
+    "Destructive actions (Delete, Remove) must use a distinct color (error/red tone) and a confirmation step.",
+    "On the final step of a wizard, change 'Continue' to the final action label: 'Create workspace'.",
+  ]
+
+  related: [
+    @community/pattern-multi-step-wizard,
+    @community/rule-button-type-explicit,
+    @community/rule-form-validation-inline,
+  ]
+}

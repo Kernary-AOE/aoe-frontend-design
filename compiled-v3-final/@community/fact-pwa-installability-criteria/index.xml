@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-pwa-installability-criteria"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="263"
+  q="4.0">
+  <description>A browser install prompt appears only when all four installability criteria are simultaneously met: served over HTTPS, has a registered service worker with a fetch handler, has a manifest with name/icons/start_url/display, and is not already installed.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="263"/>
+    <level name="core"    file="chunks/core.md"    tokens="263"/>
+    <level name="full"    file="chunks/full.md"    tokens="297"/>
+  </projection>
+</atom>

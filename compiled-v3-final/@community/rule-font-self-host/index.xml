@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-font-self-host"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="346"
+  q="4.0">
+  <description>Production web fonts MUST be self-hosted as WOFF2 files under the project&apos;s origin, not loaded from Google Fonts CDN or third-party font services, to eliminate third-party DNS latency (50–200 ms per domain), comply with GDPR (no IP leak to Google), and ensure availability when external CDNs are blocked.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="90"/>
+    <level name="core"    file="chunks/core.md"    tokens="346"/>
+    <level name="full"    file="chunks/full.md"    tokens="740"/>
+  </projection>
+</atom>

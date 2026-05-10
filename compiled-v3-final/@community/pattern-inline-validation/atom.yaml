@@ -1,0 +1,28 @@
+id: "@community/pattern-inline-validation"
+kind: pattern
+version: "1.0.0"
+description: "Validates form fields at the field level, displaying success/error messaging adjacent to each input rather than only on submit. Fires after the user signals they are 'done' with the field (blur or after a debounce)."
+domain: frontend-design
+content_hash: "sha256:646d09ab900cd14d487d1d60184a19892763516a1e8a7353a6fa2c01276ab87e"
+tokens:
+  summary: 69
+  core: 740
+  full: 1456
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-error-prevention" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/check-form-label-associated" }
+  - { type: related, target: "@community/check-error-message-associated" }
+  - { type: related, target: "@community/check-form-validation-inline" }
+  - { type: related, target: "@community/rule-aria-native-first" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: compatible, target: "@community/pattern-multi-step-wizard" }
+  - { type: compatible, target: "@community/pattern-autocomplete-combobox" }
+created_at: "2026-05-07"

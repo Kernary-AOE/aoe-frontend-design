@@ -1,0 +1,14 @@
+<atom
+  id="@community/type-locale-tag"
+  kind="knowledge"
+  version="1.0.0"
+  domain="i18n"
+  tokens="659"
+  q="4.0">
+  <description>Schema for a locale identifier conforming to BCP 47 (RFC 5646), the IETF standard for language tags. A locale tag combines language, optional script, optional region, and optional variants (e.g. &apos;en-US&apos;, &apos;zh-Hant-HK&apos;, &apos;sr-Cyrl&apos;, &apos;pt-BR&apos;).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="70"/>
+    <level name="core"    file="chunks/core.md"    tokens="659"/>
+    <level name="full"    file="chunks/full.md"    tokens="1249"/>
+  </projection>
+</atom>

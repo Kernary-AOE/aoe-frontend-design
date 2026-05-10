@@ -1,0 +1,19 @@
+id: "@community/fact-user-control-freedom"
+kind: fact
+version: "1.0.0"
+domain: ux-design
+content_hash: "sha256:b80e6b7233fe608b14607f64fde0f727f47c95505c0761eff9faf575412d17cc"
+tokens:
+  summary: 75
+  core: 158
+  full: 299
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@nielsen/taxonomy-10-heuristics" }
+  - { type: related, target: "@community/fact-error-prevention" }
+created_at: "2026-05-07"

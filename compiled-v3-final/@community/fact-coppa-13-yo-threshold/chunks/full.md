@@ -1,0 +1,59 @@
+# Coppa13YoThreshold [fact] v1.0.0
+Under the US Children's Online Privacy Protection Act (COPPA, 15 U.S.C. §6501-6506) and its implementing FTC Rule, online services must obtain verifiable parental consent before knowingly collecting personal information from a child under 13. UK Age Appropriate Design Code applies up to 18; GDPR's age-of-consent for data processing is 16 (member states may lower to 13).
+> If your service is 'directed to children' OR you have actual knowledge that a specific user is under 13, COPPA applies. Required: clear privacy notice; verifiable parental consent (credit card $0.50 charge, signed form, video call, government-ID match — not just a self-declared birthday); parent's right to review and delete child's data; data minimisation (only what is reasonably necessary for the activity). Penalties: up to $51,744 per violation (2024 inflation-adjusted). Notable: TikTok $5.7M (2019), YouTube $170M (2019), Epic Games $275M (2022) — the largest COPPA penalty to date. EU GDPR Art. 8 sets the analog threshold at 16 (member states may lower to 13); UK ICO's Children's Code applies stricter standards up to 18.
+domain: legal-compliance
+
+## Confidence
+strong
+
+## Applies To
+- US-targeted services (or globally if you serve US users) where 'directed to children' analysis triggers — kid-centric content, characters, schools, language
+- General audience services with actual knowledge of under-13 users (e.g. user self-declares age in profile)
+- EU/EEA — GDPR Art. 8 thresholds vary by country: Germany 16, France 15, Spain 14, UK 13, Italy 14, Sweden 13
+- EdTech (FERPA + COPPA in US, regulators have aggressive enforcement post-2020)
+- Game developers — Roblox, Epic, Microsoft Xbox have all faced COPPA enforcement
+
+## Quantitative
+- **Coppa Max Penalty**: $51,744 per violation (2024 inflation-adjusted; original $43,792 from 2019 statute)
+- **Largest Coppa Fines**: Epic Games $275M (2022), TikTok $5.7M (2019), YouTube $170M (2019), Microsoft Xbox $20M (2023)
+- **Gdpr Art 8 Thresholds**: Default 16; member-state floor 13 — UK 13, Germany 16, France 15, Spain 14, Italy 14, Netherlands 16, Sweden 13
+
+## Counter Conditions
+- COPPA's 'actual knowledge' standard is fact-specific — a service with no kid-directed content and no age-disclosure-prompt may avoid actual knowledge, but cannot willfully blind itself.
+- Aggregated, de-identified analytics (proper k-anonymity) is generally not 'personal information' under COPPA — but persistent identifiers (cookies, ad IDs) ARE PI under COPPA's expanded 2013 definition.
+- Schools may give consent in lieu of parents for educational services used in classrooms (FTC FAQ J.1) — but only for the educational purpose and only with district-level authorisation.
+- GDPR Art. 8 applies to 'information society services offered directly to a child' — services that don't target children at all may rely on Art. 6 lawful bases without the Art. 8 special protection, but practical guidance says assume children may be present.
+
+## Sources
+
+## Confidence
+strong
+
+## Source
+- 15 U.S.C. §6501-6506 — Children's Online Privacy Protection Act of 1998
+- 16 CFR Part 312 — Children's Online Privacy Protection Rule (FTC, current rev. 2013, proposed updates 2024)
+- FTC v. YouTube/Google, $170M settlement (Sept 2019) — largest COPPA penalty until Epic
+- FTC v. Epic Games, $275M COPPA penalty + $245M for dark patterns (Dec 2022)
+- GDPR Art. 8 — child's consent in relation to information society services (16 default, 13 minimum)
+- ICO Age Appropriate Design Code (UK, effective Sept 2021) — 15 standards applying up to age 18
+
+## Applies To
+- US-targeted services (or globally if you serve US users) where 'directed to children' analysis triggers — kid-centric content, characters, schools, language
+- General audience services with actual knowledge of under-13 users (e.g. user self-declares age in profile)
+- EU/EEA — GDPR Art. 8 thresholds vary by country: Germany 16, France 15, Spain 14, UK 13, Italy 14, Sweden 13
+- EdTech (FERPA + COPPA in US, regulators have aggressive enforcement post-2020)
+- Game developers — Roblox, Epic, Microsoft Xbox have all faced COPPA enforcement
+
+## Quantitative
+- **Coppa Max Penalty**: $51,744 per violation (2024 inflation-adjusted; original $43,792 from 2019 statute)
+- **Largest Coppa Fines**: Epic Games $275M (2022), TikTok $5.7M (2019), YouTube $170M (2019), Microsoft Xbox $20M (2023)
+- **Gdpr Art 8 Thresholds**: Default 16; member-state floor 13 — UK 13, Germany 16, France 15, Spain 14, Italy 14, Netherlands 16, Sweden 13
+
+## Counter Conditions
+- COPPA's 'actual knowledge' standard is fact-specific — a service with no kid-directed content and no age-disclosure-prompt may avoid actual knowledge, but cannot willfully blind itself.
+- Aggregated, de-identified analytics (proper k-anonymity) is generally not 'personal information' under COPPA — but persistent identifiers (cookies, ad IDs) ARE PI under COPPA's expanded 2013 definition.
+- Schools may give consent in lieu of parents for educational services used in classrooms (FTC FAQ J.1) — but only for the educational purpose and only with district-level authorisation.
+- GDPR Art. 8 applies to 'information society services offered directly to a child' — services that don't target children at all may rely on Art. 6 lawful bases without the Art. 8 special protection, but practical guidance says assume children may be present.
+
+## Derived From
+@community/principle-data-minimization

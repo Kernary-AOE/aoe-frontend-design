@@ -1,0 +1,18 @@
+atom: "@community/rule-progress-feedback-long-operations"
+relations:
+  - type: related
+    target: "@community/anti-pattern-no-loading-state"
+  - type: related
+    target: "@community/fact-doherty-threshold"
+  - type: related
+    target: "@community/principle-nielsen-visibility"
+  - type: related
+    target: "@community/counter-example-button-no-loading"
+  - type: related
+    target: "@community/example-vercel-analytics"
+  - type: related
+    target: "@community/example-stripe-payment-success"
+  - type: related
+    target: "@community/rule-loading-state-feedback"
+  - type: related
+    target: "@community/rule-success-confirmation-visual-change"

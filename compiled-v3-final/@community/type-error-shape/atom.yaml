@@ -1,0 +1,23 @@
+id: "@community/type-error-shape"
+kind: type
+version: "1.0.0"
+description: "Schema for an error response body in a JSON API. Based on RFC 9457 (Problem Details for HTTP APIs, July 2024) — the IETF-standard error format that supersedes RFC 7807. Provides machine-readable error code, human-readable message, identifying URI, and optional contextual fields."
+domain: api-design
+content_hash: "sha256:faedae817e7ddf4caba6e21caa46ea5107f0e9a569a81a62eb923ddbc05724e9"
+tokens:
+  summary: 82
+  core: 713
+  full: 1344
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-http-method-semantics" }
+  - { type: related, target: "@community/rule-resource-not-action" }
+  - { type: related, target: "@community/anti-pattern-rpc-as-rest" }
+  - { type: related, target: "@community/anti-pattern-generic-error-text" }
+  - { type: related, target: "@community/rule-actionable-error-messages" }
+created_at: "2026-05-07"

@@ -1,0 +1,22 @@
+id: "@community/pattern-persona-component-mapping"
+kind: pattern
+version: "1.0.0"
+description: "A cross-persona lookup table showing how the same HTML component renders under 6 distinct aesthetic personas — Brutalist, Editorial, Tokyo Minimal, Warm Institutional, Dense Pragmatist, Swiss Modernist — enabling rapid full-project recalibration when switching personas."
+domain: frontend-design
+content_hash: "sha256:2f3316300dfefc292e80ca164927efecaac384a021110a860df3964f754e388f"
+tokens:
+  summary: 85
+  core: 1157
+  full: 2230
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-brutalist" }
+  - { type: related, target: "@impeccable/persona-editorial" }
+  - { type: related, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

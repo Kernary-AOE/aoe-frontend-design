@@ -1,0 +1,8 @@
+atom: "@community/rule-freeze-design-decisions"
+relations:
+  - type: related
+    target: "@community/principle-refactor-when-evidence-shows-it"
+  - type: related
+    target: "@community/rule-design-decisions-cite-research"
+  - type: related
+    target: "@community/rule-align-changes-to-findings"

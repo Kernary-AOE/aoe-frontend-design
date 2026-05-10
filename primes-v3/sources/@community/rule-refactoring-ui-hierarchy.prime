@@ -1,0 +1,43 @@
+rule RefactoringUiHierarchy {
+  id: "@community/rule-refactoring-ui-hierarchy"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  statement: "Not everything deserves emphasis. Build hierarchy with at least 2–3 combined dimensions (size + weight + color + spacing). Labels must weigh less than values. Replace borders with spacing and background color differences wherever possible."
+
+  rationale: "Single-dimension emphasis (size only, or weight only) produces weak hierarchy — everything at 16px medium weight reads uniformly regardless of semantic importance. Combining multiple dimensions creates unambiguous hierarchy. Labels being visually lighter than values follows the data-ink ratio principle: the value is the content, the label is metadata. Borders create visual noise that competes with content; spacing and background color achieve the same grouping signal more quietly."
+
+  applies-to: [
+    "frontend-design",
+    "visual-design",
+    "component-styling",
+    "data-display patterns",
+  ]
+
+  examples: [
+    "Heading that is larger AND bolder AND has more whitespace above it — three hierarchy dimensions",
+    "Key-value pair: label in text-muted 12px, value in font-semibold 16px — weight differential communicates primacy",
+    "Card grid using background color differences and spacing for grouping, no border-bottom dividers",
+  ]
+
+  notes: [
+    "Rule 28 (Refactoring UI): Not everything deserves emphasis. De-emphasize secondary content (smaller, lighter, muted) to make primary content stand out.",
+    "Rule 29: Don't build hierarchy with size alone. Combine 2–3 dimensions: size + weight + color + spacing.",
+    "Rule 30: Labels should weigh less than values. In a key-value pair, label uses text-muted, value uses font-semibold.",
+    "Rule 31: Reduce borders, increase spacing. Spacing and background color differences group elements better than borders. Borders are visual noise.",
+    "Rule 32: Empty states should teach. 'No data' is a missed opportunity — empty states should guide users toward the first action.",
+    "Source: Refactoring UI by Steve Schoger and Adam Wathan; anthonyhobday.com/sideprojects/saferules — 28 Visual Design Rules.",
+  ]
+
+  related: [
+    @community/category-typography-scale,
+    @community/check-line-length-optimal,
+    @community/fact-fitts-law,
+    @community/example-linear-issues-table,
+    @community/example-shadcn-dashboard,
+    @community/principle-visual-hierarchy-action-distinction,
+    @community/principle-typography-hierarchy,
+    @community/rule-spacing-rhythm,
+  ]
+}

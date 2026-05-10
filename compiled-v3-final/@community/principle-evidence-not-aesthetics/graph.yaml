@@ -1,0 +1,16 @@
+atom: "@community/principle-evidence-not-aesthetics"
+relations:
+  - type: related
+    target: "@community/rule-design-decisions-cite-research"
+  - type: related
+    target: "@community/anti-pattern-cherry-picking-evidence"
+  - type: related
+    target: "@community/principle-refactor-when-evidence-shows-it"
+  - type: related
+    target: "@community/anti-pattern-ignoring-negative-experiments"
+  - type: related
+    target: "@community/anti-pattern-vanity-metrics"
+  - type: related
+    target: "@community/rule-align-changes-to-findings"
+  - type: related
+    target: "@community/rule-small-focused-experiment"

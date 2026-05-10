@@ -1,0 +1,8 @@
+atom: "@community/term-rasterization"
+relations:
+  - type: related
+    target: "@community/term-leading"
+  - type: related
+    target: "@community/transform-px-to-rem"
+  - type: related
+    target: "@community/check-image-optimization"

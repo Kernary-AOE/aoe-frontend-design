@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-semantic-html-element-taxonomy"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="471"
+  q="4.0">
+  <description>HTML5 provides 12+ semantic sectioning and landmark elements each with a built-in ARIA role — use them instead of generic divs so screen readers, search engines, and browser tools can interpret page structure without CSS.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="471"/>
+    <level name="core"    file="chunks/core.md"    tokens="471"/>
+    <level name="full"    file="chunks/full.md"    tokens="519"/>
+  </projection>
+</atom>

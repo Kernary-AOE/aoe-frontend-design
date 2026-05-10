@@ -1,0 +1,25 @@
+id: "@community/pattern-log-viewer-virtualized"
+kind: pattern
+version: "1.0.0"
+description: "A monospace, line-numbered scrollable viewer that virtualizes (only renders visible rows) for log streams of 100k+ lines. Supports follow-tail, level filtering, regex search, and click-to-pin a line."
+domain: frontend-design
+content_hash: "sha256:402e334a4e41d5e8fd4baa11960bb3dde991ed3f7b27f81bcb4972d6d9927f21"
+tokens:
+  summary: 66
+  core: 854
+  full: 1677
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-data-table-dense" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/check-heading-hierarchy" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: compatible, target: "@community/pattern-data-table-dense" }
+created_at: "2026-05-07"

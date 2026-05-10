@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-monospace-purpose"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="426"
+  q="4.0">
+  <description>Monospace typefaces are designed for fixed-advance-width contexts (code, terminals, tabular numerics) where character alignment carries information. Using them as body type for prose is anti-pattern: they slow reading and signal a code aesthetic where none is intended.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="160"/>
+    <level name="core"    file="chunks/core.md"    tokens="426"/>
+    <level name="full"    file="chunks/full.md"    tokens="761"/>
+  </projection>
+</atom>

@@ -1,0 +1,39 @@
+rule PrefersContrast {
+  id: "@community/rule-prefers-contrast"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Designs must respond to prefers-contrast:more by increasing text and border contrast, and must use CSS system color keywords when prefers-contrast:forced is active to support Windows High Contrast Mode."
+
+  claim: "Every product must include a @media (prefers-contrast: more) block that increases contrast ratios, and must not override system colors when forced-colors is active."
+
+  severity: high
+
+  implementation: [
+    "@media (prefers-contrast: more): increase text contrast to 7:1, thicken borders to at least 2px, remove low-opacity decorative elements",
+    "@media (forced-colors: active): use system color keywords (ButtonText, Canvas, Highlight) — do not fight the OS-provided color scheme",
+    "Do not use box-shadow as the sole border indicator — shadows are invisible in forced-colors mode",
+    "Focus indicators must use outline, not box-shadow, in forced-colors mode",
+  ]
+
+  css-skeleton: """
+    @media (prefers-contrast: more) {
+      :root {
+        --color-text: oklch(10% 0 0);    /* near-black */
+        --color-border: oklch(20% 0 0);  /* heavy border */
+      }
+      .btn { border: 2px solid currentColor; }
+    }
+    @media (forced-colors: active) {
+      .btn { forced-color-adjust: auto; }
+      /* Do not override: let OS colors apply */
+    }
+  """
+
+  related: [
+    @community/rule-color-contrast,
+    @community/constraint-accessibility-aa-minimum,
+    @community/check-contrast-aa,
+  ]
+}

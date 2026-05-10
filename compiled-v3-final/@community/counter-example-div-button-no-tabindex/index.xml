@@ -1,0 +1,14 @@
+<atom
+  id="@community/counter-example-div-button-no-tabindex"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="599"
+  q="4.0">
+  <description>A &apos;submit&apos; button reimplemented as a styled `&lt;div onClick&gt;` because the team disliked the default `&lt;button&gt;` styles. No tabindex, no role, no Enter/Space handler. Keyboard users tab past it; screen reader users don&apos;t know it exists.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="599"/>
+    <level name="full"    file="chunks/full.md"    tokens="1123"/>
+  </projection>
+</atom>

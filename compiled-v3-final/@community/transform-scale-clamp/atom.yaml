@@ -1,0 +1,20 @@
+id: "@community/transform-scale-clamp"
+kind: transform
+version: "1.0.0"
+description: "Generates a CSS `clamp()` expression for fluid typography or spacing that linearly interpolates between minSize at minVp viewport width and maxSize at maxVp viewport width, clamped at both ends. The result is a single CSS value string suitable for use in a design token or component style."
+domain: visual-design
+content_hash: "sha256:509456ad47a0cd43776264aeb7a499aac159d8087f9be79fa245e7ae1922fd9b"
+tokens:
+  summary: 86
+  core: 306
+  full: 508
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/category-typography-scale" }
+  - { type: related, target: "@impeccable/template-oklch-palette" }
+created_at: "2026-05-07"

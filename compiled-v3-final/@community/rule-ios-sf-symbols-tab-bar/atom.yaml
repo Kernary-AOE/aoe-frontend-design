@@ -1,0 +1,20 @@
+id: "@community/rule-ios-sf-symbols-tab-bar"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:c860f698b498f16dd23210e31d22e6caaa8b97860eb308536c86c5dde1a2f07f"
+tokens:
+  summary: 57
+  core: 72
+  full: 242
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-ios-tab-bar-top-level" }
+  - { type: related, target: "@community/rule-ios-tab-bar-always-visible" }
+  - { type: related, target: "@community/fact-ios-sf-symbols-rendering-modes" }
+created_at: "2026-05-07"

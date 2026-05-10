@@ -1,0 +1,8 @@
+atom: "@community/rule-flow-ordering-mental-model"
+relations:
+  - type: related
+    target: "@community/principle-clear-user-mental-model"
+  - type: related
+    target: "@community/rule-auth-flow-reversibility"
+  - type: related
+    target: "@community/principle-nielsen-real-world-match"

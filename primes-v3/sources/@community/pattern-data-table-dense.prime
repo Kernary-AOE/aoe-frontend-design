@@ -1,0 +1,95 @@
+pattern DataTableDense {
+  id: "@community/pattern-data-table-dense"
+  version: "1.0.0"
+
+  label: "Dense Data Table"
+  domain: frontend-design
+
+  description: "A high-density tabular grid optimized for scanning hundreds of rows: 28-36px row height, monospace numerals, sticky header, sortable columns, and inline-editable cells. The interface metaphor for issue trackers, query results, and admin consoles."
+
+  problem: "Power users need to scan, sort, and edit hundreds of structured records per minute. Card layouts and roomy tables waste vertical space; default browser tables lack sort, sticky headers, and selection."
+
+  solution: "A controlled `<table>` with sticky `<thead>`, fixed-height rows, monospaced numeric columns, sortable column headers (aria-sort), row selection checkboxes, and keyboard navigation across cells."
+
+  structure: """
+    <div role="region" aria-label="Issues" tabindex="0" class="dt-scroll">
+      <table class="dt">
+        <thead>
+          <tr>
+            <th scope="col">
+              <input type="checkbox" aria-label="Select all rows" />
+            </th>
+            <th scope="col" aria-sort="ascending">
+              <button>Title<svg aria-hidden="true"></svg></button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button>Status</button>
+            </th>
+            <th scope="col" aria-sort="none" class="num">
+              <button>Priority</button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button>Assignee</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr aria-selected="false">
+            <td><input type="checkbox" aria-label="Select PRM-1024" /></td>
+            <td><a href="/i/1024">PRM-1024 Fix login redirect</a></td>
+            <td><span class="badge">In Progress</span></td>
+            <td class="num">P1</td>
+            <td><img alt="" /> KH</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  """
+
+  uses: [
+    @community/method-heuristic-review,
+  ]
+
+  facts: [
+    @community/fact-flexibility-efficiency,
+    @community/fact-visibility-system-status,
+  ]
+
+  behavior: [
+    "Row height 28-36px; padding 6-10px vertical, 12px horizontal.",
+    "Sticky header: `position: sticky; top: 0` on `<thead>` so it stays visible during scroll.",
+    "Column header click toggles sort (asc -> desc -> none); reflect via `aria-sort` attribute.",
+    "Click row to select; Shift+Click range-selects; Cmd/Ctrl+Click toggles individual selection.",
+    "Arrow keys navigate cells when grid has focus; Enter activates row link or starts edit.",
+    "Numeric columns use tabular-nums (font-variant-numeric) for consistent width.",
+    "Resizable columns via drag-handles on header right edge; persist widths to localStorage.",
+  ]
+
+  a11y: [
+    "Use real `<table>` with `<thead>`/`<tbody>`/`<th scope='col'>` — not a div soup.",
+    "Sortable columns must reflect state via `aria-sort` (none / ascending / descending).",
+    "Wrap scroll container in `role='region'` with an accessible name and `tabindex='0'` so keyboard users can scroll horizontally.",
+    "Selection state on rows uses `aria-selected`; checkboxes must have accessible names (e.g., 'Select PRM-1024').",
+    "Avoid color-only status badges — pair color with text or icon.",
+  ]
+
+  examples: [
+    @community/example-linear-issues-table,
+    @community/example-notion-database,
+    @community/example-airtable-grid,
+  ]
+
+  compatible: [
+    @community/pattern-kanban-board,
+    @community/pattern-progressive-disclosure,
+  ]
+
+  related: [
+    @community/tradeoff-density-vs-comfort,
+    @community/check-focus-visible,
+    @community/rule-keyboard-accessible,
+    @community/check-heading-hierarchy,
+    @community/rule-keyboard-tab-order,
+    @community/anti-pattern-color-only-meaning,
+  ]
+}

@@ -1,0 +1,19 @@
+id: "@community/constraint-no-jquery-deps"
+kind: constraint
+version: "1.0.0"
+description: "New code must not introduce jQuery as a dependency. All DOM querying, event handling, and AJAX must use native browser APIs or the framework's built-in primitives."
+domain: engineering
+content_hash: "sha256:b2d4d57005edd6d46f16d9d471c192b2fd231af668dc48d32d2a297517d3664d"
+tokens:
+  summary: 55
+  core: 341
+  full: 451
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/scope-frontend-review" }
+created_at: "2026-05-07"

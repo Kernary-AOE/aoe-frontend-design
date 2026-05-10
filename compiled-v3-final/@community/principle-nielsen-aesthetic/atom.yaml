@@ -1,0 +1,26 @@
+id: "@community/principle-nielsen-aesthetic"
+kind: principle
+version: "1.0.0"
+description: "Nielsen Heuristic 8: dialogues should not contain irrelevant or rarely needed information; every extra unit of information competes with relevant information and diminishes its relative visibility."
+domain: ux-design
+content_hash: "sha256:c1863a0c131eb828858bc8871def836d1580cabefac4065d5096fd2bb5ccea51"
+tokens:
+  summary: 116
+  core: 347
+  full: 507
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-nielsen-recognition" }
+  - { type: related, target: "@community/principle-nielsen-flexibility" }
+  - { type: related, target: "@community/fact-gestalt-figure-ground" }
+  - { type: related, target: "@community/fact-gestalt-proximity" }
+  - { type: related, target: "@community/anti-pattern-overloaded-screen" }
+  - { type: related, target: "@community/example-stripe-checkout" }
+  - { type: related, target: "@community/example-vercel-pricing" }
+  - { type: related, target: "@community/rule-single-primary-action-per-screen" }
+created_at: "2026-05-07"

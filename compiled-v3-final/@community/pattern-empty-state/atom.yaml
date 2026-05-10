@@ -1,0 +1,26 @@
+id: "@community/pattern-empty-state"
+kind: pattern
+version: "1.0.0"
+description: "A purposeful screen shown when a list, table, or workspace has no data, combining a friendly illustration or icon, an explanatory headline, body copy, and a primary CTA that helps the user create their first item or recover from a filter."
+domain: frontend-design
+content_hash: "sha256:29ab3b5dcb09fb31a20137a01befdc1a3bb19c9da43f348019c2678d4dc30602"
+tokens:
+  summary: 73
+  core: 617
+  full: 1214
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-skeleton-loader" }
+  - { type: related, target: "@community/fact-match-real-world" }
+  - { type: related, target: "@community/pattern-fade-in-on-load" }
+  - { type: related, target: "@community/fact-motion-hierarchy" }
+  - { type: related, target: "@impeccable/template-fade-stagger" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: compatible, target: "@community/pattern-skeleton-loader" }
+  - { type: compatible, target: "@community/pattern-data-table-dense" }
+created_at: "2026-05-07"

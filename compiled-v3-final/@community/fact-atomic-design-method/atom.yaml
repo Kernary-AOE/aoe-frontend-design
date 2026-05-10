@@ -1,0 +1,20 @@
+id: "@community/fact-atomic-design-method"
+kind: fact
+version: "1.0.0"
+description: "Brad Frost's Atomic Design (2013) decomposes UI into a 5-level hierarchy — atoms, molecules, organisms, templates, pages — modelled after chemistry. It became the dominant mental model for component-system thinking in the 2010s."
+content_hash: "sha256:91d583e7541f1186d95277dad745c49524a8136213d1cada6b49daca8ca6e555"
+tokens:
+  summary: 143
+  core: 321
+  full: 536
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-design-token-cascade" }
+  - { type: related, target: "@community/fact-color-token-semantic-naming" }
+  - { type: related, target: "@community/type-design-token" }
+created_at: "2026-05-07"

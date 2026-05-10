@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-code-splitting"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="370"
+  q="4.0">
+  <description>Load JavaScript modules only when needed using dynamic import() — splitting bundles by route (load page code when navigated to) or by interaction (load heavy component code when user triggers it).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="64"/>
+    <level name="core"    file="chunks/core.md"    tokens="370"/>
+    <level name="full"    file="chunks/full.md"    tokens="680"/>
+  </projection>
+</atom>

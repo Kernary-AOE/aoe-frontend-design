@@ -1,0 +1,25 @@
+id: "@community/pattern-calendar-grid"
+kind: pattern
+version: "1.0.0"
+description: "A 7-column x 5-6 row grid showing a calendar month, with each day cell hosting event chips. Supports keyboard navigation between days, multi-day event spans, and view-switching between Month / Week / Day."
+domain: frontend-design
+content_hash: "sha256:361d5a2006b0f99fbf6197640ec252b5c250080c60ad11884ac3ebe4a2525694"
+tokens:
+  summary: 65
+  core: 812
+  full: 1593
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-date-range-picker" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/check-form-label-associated" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/rule-aria-native-first" }
+  - { type: compatible, target: "@community/pattern-date-range-picker" }
+created_at: "2026-05-07"

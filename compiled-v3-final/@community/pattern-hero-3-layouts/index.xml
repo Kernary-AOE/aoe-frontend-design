@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-hero-3-layouts"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1449"
+  q="4.0">
+  <description>Three battle-tested hero section layouts extracted from open-react-template (4.6k★), shadcn-landing-page (1.9k★), and next-saas-starter (1.7k★) — centered single-column, 2-column split (60/40), and left-aligned asymmetric — each with exact Tailwind classes and fluid h1 sizing.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="84"/>
+    <level name="core"    file="chunks/core.md"    tokens="1449"/>
+    <level name="full"    file="chunks/full.md"    tokens="2818"/>
+  </projection>
+</atom>

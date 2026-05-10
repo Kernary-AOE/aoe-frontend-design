@@ -1,0 +1,27 @@
+id: "@community/principle-nielsen-flexibility"
+kind: principle
+version: "1.0.0"
+description: "Nielsen Heuristic 7: accelerators unseen by novices can speed up expert interactions; the system should cater to both inexperienced and experienced users, and allow tailoring of frequent actions."
+domain: ux-design
+content_hash: "sha256:c8b8080624aba2f77f151513a61efd2e78ec56a3a72fb6df9a2f3972ac2d5336"
+tokens:
+  summary: 118
+  core: 355
+  full: 531
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-nielsen-recognition" }
+  - { type: related, target: "@community/principle-nielsen-aesthetic" }
+  - { type: related, target: "@community/fact-flexibility-efficiency" }
+  - { type: related, target: "@community/fact-hick-law" }
+  - { type: related, target: "@community/example-linear-cmdk" }
+  - { type: related, target: "@community/example-linear-kbd-shortcuts" }
+  - { type: related, target: "@community/example-notion-cmdk" }
+  - { type: related, target: "@community/anti-pattern-burying-frequent-actions" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+created_at: "2026-05-07"

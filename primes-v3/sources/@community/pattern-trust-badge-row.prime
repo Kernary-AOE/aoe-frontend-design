@@ -1,0 +1,78 @@
+pattern TrustBadgeRow {
+  id: "@community/pattern-trust-badge-row"
+  version: "1.0.0"
+
+  label: "Trust Badge Row"
+  domain: frontend-design
+
+  description: "Small pill badges communicate tangible trust attributes (security, compliance, reliability) inline without interrupting the reading flow. Placed directly below or beside the primary hero CTA."
+
+  problem: "Visitors need immediate reassurance that a product is legitimate and safe immediately after reading the hero CTA — but full security sections would interrupt the conversion flow."
+
+  solution: "A flex row of pill-shaped badges with an icon + short label. Each badge sits in a rounded container with a subtle border and muted surface. Row wraps on mobile."
+
+  structure: """
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-warm);   /* slightly warm white or light neutral */
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      border: 1px solid hsl(var(--border));
+      white-space: nowrap;
+    }
+
+    .trust-badge svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: hsl(var(--muted-foreground));
+    }
+
+    .trust-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    <!-- HTML -->
+    <div class="trust-badge-row" role="list" aria-label="Trust attributes">
+      <span class="trust-badge" role="listitem">
+        <svg aria-hidden="true"><!-- shield icon --></svg>
+        Audited
+      </span>
+      <span class="trust-badge" role="listitem">
+        <svg aria-hidden="true"><!-- umbrella icon --></svg>
+        Insured
+      </span>
+      <span class="trust-badge" role="listitem">
+        <svg aria-hidden="true"><!-- clock icon --></svg>
+        24/7 Monitoring
+      </span>
+      <span class="trust-badge" role="listitem">
+        <svg aria-hidden="true"><!-- lock icon --></svg>
+        256-bit Encryption
+      </span>
+    </div>
+  """
+
+  notes: [
+    "Placement: directly below or beside the primary hero CTA, not above it. User sees value prop first; badges reinforce the decision to act.",
+    "Do not repeat badge rows in multiple sections — each placement addresses one objection, one time.",
+  ]
+
+  related: [
+    @community/pattern-trust-logo-strip,
+    @community/pattern-trust-social-proof-numbers,
+    @community/pattern-trust-testimonial-micro,
+    @community/pattern-trust-security-cert,
+    @community/rule-trust-signal-placement,
+    @community/rule-trust-signal-critical,
+    @community/anti-pattern-fake-trust-signals,
+  ]
+}

@@ -1,0 +1,83 @@
+# ResendDashboard [example] v1.0.0
+Resend's email logs page shows a single dense table on a #0A0A0A background: timestamp (#71717A monospace), 'To' address (#FAFAFA), subject (truncated), status pill (delivered green / opened blue / bounced red), and a small click-count badge. Row height is 40px. Click expands a side panel with the rendered email preview.
+domain: visual-design
+
+## Label
+Resend — Email Logs Dashboard
+
+## Url
+https://resend.com/emails
+
+## Observed
+2026-Q1
+
+## Brand
+resend
+
+## Pattern Applied
+@community/pattern-data-table-dense
+
+## Aesthetic Notes
+- Table background: #0A0A0A; row hover #18181B; selected #1F1F23.
+- Row height: 40px, 12px vertical padding — denser than Vercel (56px), looser than Linear (32px).
+- Status pill: 11px/500 with colored dot + label, 'delivered' #22C55E, 'opened' #3B82F6, 'bounced' #EF4444.
+- Timestamp column: 12px monospace #71717A, fixed width 140px — reads as 'metadata column'.
+- Subject column: 13px #FAFAFA, max-width 360px with text-overflow:ellipsis.
+- Side panel (on click): 480px wide, slides in from right with 200ms ease-out, contains rendered HTML email.
+
+## What To Copy
+- 40px row height is the right sweet spot for technical lists with multi-attribute rows.
+- Side-panel preview (vs full navigation) preserves list context while showing detail — power-user pattern.
+- Fixed-width timestamp column in monospace creates a visual rail that helps vertical scanning.
+- Status pills with colored dot AND text outperform color-only pills for accessibility.
+
+## What To Skip
+- The side panel doesn't have a keyboard shortcut to close (only Esc on click) — bind 'X' or arrow keys for navigation.
+
+## Screenshot Hint
+scout query: resend email logs dark table status pills timestamp monospace
+
+## Demonstrates
+- List + side-panel preview is the canonical layout for 'inspect detail without losing context'.
+- Three-tier row density (Vercel 56 / Resend 40 / Linear 32) maps to user expertise level.
+- Monospace timestamp columns create alignment without explicit table dividers.
+
+## Label
+Resend — Email Logs Dashboard
+
+## Url
+https://resend.com/emails
+
+## Observed
+2026-Q1
+
+## Brand
+resend
+
+## Pattern Applied
+@community/pattern-data-table-dense
+
+## Aesthetic Notes
+- Table background: #0A0A0A; row hover #18181B; selected #1F1F23.
+- Row height: 40px, 12px vertical padding — denser than Vercel (56px), looser than Linear (32px).
+- Status pill: 11px/500 with colored dot + label, 'delivered' #22C55E, 'opened' #3B82F6, 'bounced' #EF4444.
+- Timestamp column: 12px monospace #71717A, fixed width 140px — reads as 'metadata column'.
+- Subject column: 13px #FAFAFA, max-width 360px with text-overflow:ellipsis.
+- Side panel (on click): 480px wide, slides in from right with 200ms ease-out, contains rendered HTML email.
+
+## What To Copy
+- 40px row height is the right sweet spot for technical lists with multi-attribute rows.
+- Side-panel preview (vs full navigation) preserves list context while showing detail — power-user pattern.
+- Fixed-width timestamp column in monospace creates a visual rail that helps vertical scanning.
+- Status pills with colored dot AND text outperform color-only pills for accessibility.
+
+## What To Skip
+- The side panel doesn't have a keyboard shortcut to close (only Esc on click) — bind 'X' or arrow keys for navigation.
+
+## Screenshot Hint
+scout query: resend email logs dark table status pills timestamp monospace
+
+## Demonstrates
+- List + side-panel preview is the canonical layout for 'inspect detail without losing context'.
+- Three-tier row density (Vercel 56 / Resend 40 / Linear 32) maps to user expertise level.
+- Monospace timestamp columns create alignment without explicit table dividers.

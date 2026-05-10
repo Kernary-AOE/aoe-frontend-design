@@ -1,0 +1,26 @@
+id: "@community/pattern-dashboard-layout"
+kind: pattern
+version: "1.0.0"
+description: "Structural composition for admin dashboards: a fixed sidebar on the left, a sticky topbar, metric cards at the top of the main content area, a chart section, and a data table below. Extracted from two open-source Next.js admin templates (2k★ and 631★)."
+domain: frontend-design
+content_hash: "sha256:f1ae815bb8102959e6803e24fd941a165f25de540489a71cea9ea643a71cd01f"
+tokens:
+  summary: 78
+  core: 473
+  full: 868
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-dashboard-sidebar" }
+  - { type: related, target: "@community/pattern-dashboard-header" }
+  - { type: related, target: "@community/pattern-metric-card" }
+  - { type: related, target: "@community/pattern-chart-grid" }
+  - { type: related, target: "@community/pattern-dashboard-data-table" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/anti-pattern-color-only-meaning" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

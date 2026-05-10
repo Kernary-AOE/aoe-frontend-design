@@ -1,0 +1,14 @@
+atom: "@community/pattern-sticky-header-on-scroll"
+relations:
+  - type: related
+    target: "@community/pattern-landing-page-sections"
+  - type: related
+    target: "@community/pattern-breadcrumb-trail"
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/check-skip-link"
+  - type: related
+    target: "@community/rule-aria-current-page"
+  - type: related
+    target: "@community/check-focus-visible"

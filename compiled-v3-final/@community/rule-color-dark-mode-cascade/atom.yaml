@@ -1,0 +1,27 @@
+id: "@community/rule-color-dark-mode-cascade"
+kind: rule
+version: "1.0.0"
+description: "Dark mode MUST be implemented via a CSS-cascade strategy keyed on `@media (prefers-color-scheme: dark)` or a single root-level `[data-theme='dark']` selector that flips token values. Hand-edited per-component dark colors, JS-driven inline-style toggling, and duplicated 'dark' class variants are forbidden."
+domain: visual-design
+content_hash: "sha256:5c02e18d85c86648d6ae1f264d10d83ce2966e9c6ddb295cfdde50776f8fa13c"
+tokens:
+  summary: 92
+  core: 417
+  full: 758
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/template-oklch-dark-mode-cascade" }
+  - { type: related, target: "@impeccable/template-dark-mode-toggle" }
+  - { type: related, target: "@community/rule-color-oklch-required" }
+  - { type: related, target: "@community/example-vercel-dashboard" }
+  - { type: related, target: "@community/example-shadcn-dashboard" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/rule-light-mode-default-fallback" }
+  - { type: see-also, target: "@community/check-color-dark-mode-cascade" }
+  - { type: validates-with, target: "@impeccable/template-oklch-dark-mode-cascade" }
+created_at: "2026-05-07"

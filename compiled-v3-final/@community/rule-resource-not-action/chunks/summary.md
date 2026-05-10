@@ -1,0 +1,4 @@
+# ResourceNotAction [rule] v1.0.0
+REST URLs MUST identify resources, not actions. Use nouns for paths and HTTP verbs for operations. URLs containing verbs (`/createUser`, `/getOrders`, `/deleteCart`) violate REST and produce inconsistent, ambiguous APIs.
+> Every URL path is a noun phrase identifying a resource or collection. State changes occur via HTTP methods: GET (read), POST (create), PUT (full replace), PATCH (partial update), DELETE (remove). For non-CRUD operations that don't fit standard verbs (e.g. 'send email', 'cancel subscription'), introduce a resource sub-collection (`POST /subscriptions/{id}/cancellations`) or use action-as-resource framing (`POST /transcoding-jobs`). Forbidden: verbs in path segments (`/getOrder`, `/listUsers`, `/deleteFile`). Forbidden: passing the operation in a query parameter (`?action=delete`). Forbidden: GET with side effects.
+domain: api-design

@@ -1,0 +1,29 @@
+# Rfc1918PrivateRanges [fact] v1.0.0
+RFC 1918 reserves three IPv4 ranges for private use: 10.0.0.0/8 (16,777,216 addresses), 172.16.0.0/12 (1,048,576 addresses), and 192.168.0.0/16 (65,536 addresses). These addresses are not routable on the public internet and are the canonical choice for VPC/internal networks.
+> RFC 1918 (Y. Rekhter et al., February 1996) allocates three IPv4 prefixes for use in 'private internets' — networks that do not need globally-unique addresses and whose traffic does not transit the public internet. (1) 10.0.0.0/8 = 10.0.0.0 – 10.255.255.255 (one /8 block); (2) 172.16.0.0/12 = 172.16.0.0 – 172.31.255.255 (sixteen /16 blocks); (3) 192.168.0.0/16 = 192.168.0.0 – 192.168.255.255 (256 /24 blocks). RFC 6598 separately reserves 100.64.0.0/10 for carrier-grade NAT (not RFC 1918, often confused). RFC 4193 reserves fc00::/7 (specifically fd00::/8 for locally-assigned) for IPv6 unique local addresses.
+domain: infrastructure
+
+## Confidence
+strong
+
+## Applies To
+- AWS VPC, GCP VPC, Azure VNet — default and recommended CIDR allocation
+- Kubernetes pod and service CIDRs (commonly 10.0.0.0/16 + 10.96.0.0/12 for kube services)
+- Docker default bridge network (172.17.0.0/16) — falls in 172.16/12
+- Home routers (192.168.0.0/24 or 192.168.1.0/24) — single most-deployed CIDR in the world
+- Site-to-site VPNs between corporate networks — RFC 1918 conflicts are the most common merger headache
+- Service mesh internal addressing (Istio, Linkerd) — pod IPs from RFC 1918 ranges
+
+## Quantitative
+- **Rfc1918 Total Addresses**: 17,891,328 IPv4 addresses across all three blocks (10/8: 16.7M + 172.16/12: 1.0M + 192.168/16: 65K)
+- **Common Vpc Sizes**: AWS default VPC: 172.31.0.0/16 (65K). Kubernetes: 10.0.0.0/16 pod, 10.96.0.0/12 service. Home: 192.168.1.0/24
+- **Cgnat 100 64 10**: 100.64.0.0/10 = 100.64.0.0 – 100.127.255.255 (4.2M addresses) — RFC 6598, not RFC 1918, but practically equivalent for ISP use
+- **Ipv6 Equivalent**: fc00::/7 (specifically fd00::/8 randomly-generated) — 2^121 addresses per /48 site allocation
+
+## Counter Conditions
+- RFC 1918 addresses are NOT globally unique — two enterprises both using 10.0.0.0/8 cannot peer their networks without NAT (or readdressing).
+- Cloud providers will route RFC 1918 traffic across regions/accounts via VPC peering or Transit Gateway, but the addresses must NOT overlap between peers — careful CIDR planning is mandatory.
+- RFC 1918 leaks across the public internet ARE filtered by every well-configured ISP edge router (BCP 38) — but accidental leaks (misconfigured firewalls) reveal internal topology.
+- 169.254.0.0/16 is link-local (RFC 3927), used for cloud metadata service (169.254.169.254) — not RFC 1918 but commonly confused.
+- 127.0.0.0/8 is loopback (RFC 1122), 224.0.0.0/4 is multicast — distinct reservations.
+- IPv6 deployments often skip ULA (fc00::/7) and use globally-routable addresses for everything, relying on firewalls instead of address-level isolation.

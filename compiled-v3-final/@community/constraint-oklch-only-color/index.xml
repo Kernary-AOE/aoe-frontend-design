@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-oklch-only-color"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="380"
+  q="4.0">
+  <description>All new color declarations must use the oklch() color function. Hex (#rrggbb), rgb()/rgba(), hsl()/hsla(), and CSS named colors are forbidden in new author code and in design tokens.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="61"/>
+    <level name="core"    file="chunks/core.md"    tokens="380"/>
+    <level name="full"    file="chunks/full.md"    tokens="469"/>
+  </projection>
+</atom>

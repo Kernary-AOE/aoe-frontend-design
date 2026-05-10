@@ -1,0 +1,12 @@
+atom: "@anthropic-impeccable/fact-stagger-cap-for-large-lists"
+relations:
+  - type: related
+    target: "@community/pattern-stagger-reveal"
+  - type: related
+    target: "@community/fact-stagger-feel-organic"
+  - type: related
+    target: "@community/rule-animation-duration"
+  - type: related
+    target: "@community/constraint-motion-page-load-budget"
+  - type: related
+    target: "@community/template-fade-stagger"

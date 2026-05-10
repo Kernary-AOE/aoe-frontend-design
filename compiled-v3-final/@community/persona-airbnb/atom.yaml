@@ -1,0 +1,44 @@
+id: "@community/persona-airbnb"
+kind: persona
+version: "1.0.0"
+description: "Warm photography-forward marketplace aesthetic: Airbnb Cereal VF in the 500-700 weight range, Rausch Red #ff385c as the single accent on pure white, with 20-32px radius cards that invite touch and three-layer shadow elevation that feels like warm natural light."
+domain: visual-design
+content_hash: "sha256:fac1d6ee894be8c08eeaec4938e1787c310bfe3b6d138dec6096a1dbe05bd5e8"
+tokens:
+  summary: 78
+  core: 541
+  full: 629
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-warm-institutional" }
+  - { type: related, target: "@impeccable/template-card-hover-lift" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/rule-opentype-features-on" }
+  - { type: related, target: "@community/fact-variable-font-axes" }
+  - { type: related, target: "@community/rule-font-self-host" }
+  - { type: related, target: "@community/rule-font-loading-fout-foit" }
+  - { type: related, target: "@community/constraint-typography-weight-blacklist" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/rule-brand-color-primary-only" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: related, target: "@community/anti-pattern-rainbow-explosion" }
+  - { type: compatible, target: "@impeccable/persona-magazine-editorial" }
+  - { type: compatible, target: "@impeccable/persona-warm-institutional" }
+  - { type: compatible, target: "@impeccable/persona-notion-warm" }
+  - { type: compatible, target: "@impeccable/persona-editorial" }
+  - { type: conflicts, target: "@impeccable/persona-vercel-clean" }
+  - { type: conflicts, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: conflicts, target: "@impeccable/persona-brutalist" }
+  - { type: contradicts, target: "@impeccable/persona-dense-pragmatist" }
+  - { type: contradicts, target: "@community/anti-pattern-thin-weight-body" }
+created_at: "2026-05-07"

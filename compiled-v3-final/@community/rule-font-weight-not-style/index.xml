@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-font-weight-not-style"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="238"
+  q="4.0">
+  <description>Font weight variation MUST be expressed via `font-weight` values (400, 510, 700) using a typeface that ships those weights — never via `font-style: oblique` or browser-synthesized faux-bold (`font-weight: bold` on a single-weight font).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="74"/>
+    <level name="core"    file="chunks/core.md"    tokens="238"/>
+    <level name="full"    file="chunks/full.md"    tokens="542"/>
+  </projection>
+</atom>

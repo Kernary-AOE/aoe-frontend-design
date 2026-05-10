@@ -1,0 +1,10 @@
+atom: "@community/pattern-csp-strict"
+relations:
+  - type: related
+    target: "@community/check-content-security-policy"
+  - type: related
+    target: "@community/anti-pattern-eval-user-input"
+  - type: related
+    target: "@community/principle-owasp-injection"
+  - type: related
+    target: "@community/rule-no-unsafe-inline-scripts"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-owasp-broken-access-control"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="346"
+  q="4.0">
+  <description>OWASP Top 10 A01:2021 — most widespread web application vulnerability category. Failures restricting authenticated users to only their own resources and actions.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="117"/>
+    <level name="core"    file="chunks/core.md"    tokens="346"/>
+    <level name="full"    file="chunks/full.md"    tokens="575"/>
+  </projection>
+</atom>

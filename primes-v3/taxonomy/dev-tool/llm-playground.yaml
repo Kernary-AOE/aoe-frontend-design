@@ -1,0 +1,45 @@
+task_type: llm-playground
+parent: dev-tool
+description: "LLM model comparison playground running multiple models side-by-side with latency and token metrics."
+trigger_keywords:
+  - "LLM playground"
+  - "model comparison"
+  - "AI playground"
+  - "多模型对比"
+  - "LLM 对比"
+  - "模型对比"
+  - "延迟和 token"
+  - "prompt testing"
+  - "AI testing tool"
+  - "model benchmark"
+default_register_pool:
+  - school: vercel-clean
+    weight: 0.5
+  - school: linear
+    weight: 0.3
+  - school: replicate
+    weight: 0.2
+required_atoms:
+  - "@community/pattern-dashboard-layout"
+  - "@community/pattern-metric-card"
+  - "@community/fact-fintech-number-display"
+  - "@community/constraint-monospace-tabular-numerics"
+  - "@community/pattern-data-table-dense"
+  - "@community/rule-loading-state-feedback"
+recommended_motion:
+  - "@community/pattern-skeleton-shimmer"
+  - "@community/pattern-motion-loading"
+  - "@community/pattern-motion-microinteraction"
+forbidden_atoms:
+  - "@impeccable/persona-warm-institutional"
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/template-animated-mesh-background"
+  - "@community/pattern-gradient-mesh-engine"
+quality_checks:
+  - "Model output panels must be displayed side-by-side or in comparable layout"
+  - "Latency metrics must use tabular numerics for column alignment"
+  - "Token count (input/output/total) must be prominently displayed per model"
+  - "Prompt input area must be large enough for multi-line prompts"
+  - "Streaming output must show tokens appearing progressively"
+  - "Copy button must be available on each model's output"
+  - "Model selector must show model name, version, and provider clearly"

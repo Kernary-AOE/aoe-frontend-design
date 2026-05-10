@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-vercel-pricing"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="573"
+  q="4.0">
+  <description>Vercel&apos;s pricing page presents three plans (Hobby, Pro, Enterprise) as side-by-side cards on a near-black canvas (#000) with the middle Pro tier elevated by a subtle 1px white border at ~12% alpha and a &apos;Recommended&apos; eyebrow. Feature lists use checkmark icons with feature names in white and qualifiers in muted gray (#A1A1A1).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="96"/>
+    <level name="core"    file="chunks/core.md"    tokens="573"/>
+    <level name="full"    file="chunks/full.md"    tokens="1050"/>
+  </projection>
+</atom>

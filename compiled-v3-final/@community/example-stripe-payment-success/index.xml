@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-stripe-payment-success"
+  kind="knowledge"
+  version="1.0.0"
+  domain="motion"
+  tokens="842"
+  q="4.0">
+  <description>After a successful payment, Stripe Checkout displays a 56px circle that draws itself in (~400ms), then a checkmark path strokes through (~300ms), then the words &apos;Payment successful&apos; fade up (~200ms). Total animation ≈ 900ms. Uses SVG stroke-dasharray + stroke-dashoffset for the draw-on effect — no external libraries, pure CSS animations.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="99"/>
+    <level name="core"    file="chunks/core.md"    tokens="842"/>
+    <level name="full"    file="chunks/full.md"    tokens="1584"/>
+  </projection>
+</atom>

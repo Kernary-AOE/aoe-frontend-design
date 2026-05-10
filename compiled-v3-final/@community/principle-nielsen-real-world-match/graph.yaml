@@ -1,0 +1,18 @@
+atom: "@community/principle-nielsen-real-world-match"
+relations:
+  - type: related
+    target: "@community/principle-nielsen-consistency"
+  - type: related
+    target: "@community/principle-nielsen-error-recovery"
+  - type: related
+    target: "@community/fact-match-real-world"
+  - type: related
+    target: "@community/fact-gestalt-similarity"
+  - type: related
+    target: "@community/anti-pattern-generic-error-text"
+  - type: related
+    target: "@community/example-plaid-connect"
+  - type: related
+    target: "@community/rule-plain-language"
+  - type: related
+    target: "@community/rule-active-voice-in-ui-copy"

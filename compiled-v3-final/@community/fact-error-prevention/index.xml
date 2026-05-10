@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-error-prevention"
+  kind="knowledge"
+  version="1.0.0"
+  domain="ux-design"
+  tokens="179"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="87"/>
+    <level name="core"    file="chunks/core.md"    tokens="179"/>
+    <level name="full"    file="chunks/full.md"    tokens="372"/>
+  </projection>
+</atom>

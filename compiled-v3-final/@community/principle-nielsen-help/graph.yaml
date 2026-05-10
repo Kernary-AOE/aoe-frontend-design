@@ -1,0 +1,18 @@
+atom: "@community/principle-nielsen-help"
+relations:
+  - type: related
+    target: "@community/principle-nielsen-recognition"
+  - type: related
+    target: "@community/principle-nielsen-error-recovery"
+  - type: related
+    target: "@community/principle-nielsen-visibility"
+  - type: related
+    target: "@community/fact-gestalt-proximity"
+  - type: related
+    target: "@community/anti-pattern-missing-empty-state"
+  - type: related
+    target: "@community/counter-example-empty-list-blank"
+  - type: related
+    target: "@community/example-notion-blocks"
+  - type: related
+    target: "@community/rule-empty-state-recovery"

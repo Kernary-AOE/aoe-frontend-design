@@ -1,0 +1,21 @@
+id: "@community/anti-pattern-rainbow-explosion"
+kind: anti-pattern
+version: "1.0.0"
+description: "Applying five or more distinct hue families (e.g., red badges, orange warnings, yellow highlights, green successes, blue links, purple headings, teal cards) in a single product UI without a systematic hierarchy — producing a carnival aesthetic that destroys visual hierarchy and brand identity."
+domain: visual-design
+content_hash: "sha256:cbd35fefc25e8677a3b6eaebd8848696d631fda2dbbab8fe665c394ff70af6dc"
+tokens:
+  summary: 90
+  core: 454
+  full: 818
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-max-color-roles-7" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/rule-color-hue-selection" }
+created_at: "2026-05-07"

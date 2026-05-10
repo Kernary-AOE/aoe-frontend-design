@@ -1,0 +1,20 @@
+id: "@community/fact-animation-distraction-cost"
+kind: fact
+version: "1.0.0"
+description: "Peripheral animation in a reading context measurably degrades reading speed and comprehension. Empirical work on animated banner ads adjacent to prose found reading speed drops by roughly a third when peripheral motion is present."
+content_hash: "sha256:9267bfd9c5ec973a59e1df8d68ce10b2979973247ba4b5206dbb78b8b52886f6"
+tokens:
+  summary: 131
+  core: 353
+  full: 676
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-motion-as-feedback" }
+  - { type: related, target: "@community/fact-reduced-motion-priority" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+created_at: "2026-05-07"

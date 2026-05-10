@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-consistent-form-action-placement"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="264"
+  q="4.0">
+  <description>Primary and secondary form actions (submit, cancel, back) must use clear, consistent labels and be placed in a predictable position throughout a product, so users build reliable spatial memory for action buttons.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="71"/>
+    <level name="core"    file="chunks/core.md"    tokens="264"/>
+    <level name="full"    file="chunks/full.md"    tokens="541"/>
+  </projection>
+</atom>

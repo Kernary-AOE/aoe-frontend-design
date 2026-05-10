@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tx-liveblocks-floating-comment"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="482"
+  q="4.0">
+  <description>Liveblocks FloatingThread component (Apache-2.0): comment thread anchored to any trigger via Radix Popover with updatePositionStrategy=&apos;always&apos; to survive scroll, onInteractOutside guard to prevent emoji picker / nested portals from dismissing the thread, and onEscapeKeyDown that closes the thread without propagating to parent modal layers.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="104"/>
+    <level name="core"    file="chunks/core.md"    tokens="482"/>
+    <level name="full"    file="chunks/full.md"    tokens="926"/>
+  </projection>
+</atom>

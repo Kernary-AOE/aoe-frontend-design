@@ -1,0 +1,20 @@
+id: "@community/rule-ios-spotlight-indexing"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:0999d570a18460d5c840005409c5aede43991f9d1ab852475b67404827ca6442"
+tokens:
+  summary: 54
+  core: 86
+  full: 266
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-ios-app-shortcuts-siri" }
+  - { type: related, target: "@community/rule-ios-share-sheet" }
+  - { type: related, target: "@community/pattern-ios-live-activities" }
+created_at: "2026-05-07"

@@ -1,0 +1,19 @@
+id: "@community/pattern-airbnb-signature-marketing"
+kind: pattern
+version: "1.0.0"
+description: "The eight signature design patterns that define Airbnb's visual language: three-layer shadow lift, Rausch Red as singular accent, warm near-black, circular navigation controls, generous radius scale, Cereal VF weights, palette-token system, and photography-first listing cards."
+domain: frontend-design
+content_hash: "sha256:68a2a0b9ad25253443cf56bb3cf47c317b6d9ecd642a519d1e0bf41257c864f6"
+tokens:
+  summary: 87
+  core: 393
+  full: 699
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/persona-airbnb" }
+created_at: "2026-05-07"

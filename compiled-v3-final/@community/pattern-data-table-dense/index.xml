@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-data-table-dense"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="767"
+  q="4.0">
+  <description>A high-density tabular grid optimized for scanning hundreds of rows: 28-36px row height, monospace numerals, sticky header, sortable columns, and inline-editable cells. The interface metaphor for issue trackers, query results, and admin consoles.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="767"/>
+    <level name="full"    file="chunks/full.md"    tokens="1511"/>
+  </projection>
+</atom>

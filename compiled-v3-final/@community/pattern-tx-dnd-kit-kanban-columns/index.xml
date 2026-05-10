@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tx-dnd-kit-kanban-columns"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="665"
+  q="4.0">
+  <description>dnd-kit (@dnd-kit/abstract) multi-list kanban board: both columns and items registered as useSortable with distinct type/accept tags, CollisionPriority.Low on columns so item drags never accidentally reorder columns, structuredClone snapshot for cancel-restore, and move() for cross-column transitions.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="92"/>
+    <level name="core"    file="chunks/core.md"    tokens="665"/>
+    <level name="full"    file="chunks/full.md"    tokens="1304"/>
+  </projection>
+</atom>

@@ -1,0 +1,29 @@
+id: "@community/pattern-button-hierarchy-web"
+kind: pattern
+version: "1.0.0"
+description: "A 5-variant (primary, secondary, outline, ghost, destructive) × 3-size (h-8/h-9/h-10) button system with loading states, icon-only variants sized to 44×44 CSS px on mobile, and CVA class-variance-authority composition pattern."
+domain: frontend-design
+content_hash: "sha256:3318fff57461d981db4227eefd9f44b735cce04adaf53ff06f9eba48769c6d80"
+tokens:
+  summary: 72
+  core: 929
+  full: 1786
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/rule-button-type-explicit" }
+  - { type: related, target: "@community/rule-reduced-motion-required" }
+  - { type: related, target: "@community/pattern-button-press-feedback" }
+  - { type: related, target: "@impeccable/template-button-press" }
+  - { type: related, target: "@community/fact-hover-feedback-latency" }
+  - { type: related, target: "@impeccable/template-easing-curves" }
+  - { type: related, target: "@community/check-touch-target-min" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/anti-pattern-tiny-touch-targets" }
+  - { type: related, target: "@community/anti-pattern-invisible-focus" }
+created_at: "2026-05-07"

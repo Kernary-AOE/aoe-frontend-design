@@ -1,0 +1,14 @@
+<atom
+  id="@community/check-color-blacklist-brand"
+  kind="knowledge"
+  version="1.0.0"
+  domain="aesthetic"
+  tokens="394"
+  q="4.0">
+  <description>Scans CSS color declarations for blacklisted default brand colors (Tailwind blue-500/600, violet-600, indigo-600, Bootstrap #007bff) that signal generic &apos;AI slop&apos; aesthetic.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="57"/>
+    <level name="core"    file="chunks/core.md"    tokens="394"/>
+    <level name="full"    file="chunks/full.md"    tokens="488"/>
+  </projection>
+</atom>

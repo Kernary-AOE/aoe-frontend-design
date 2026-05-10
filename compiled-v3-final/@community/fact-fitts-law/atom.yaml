@@ -1,0 +1,20 @@
+id: "@community/fact-fitts-law"
+kind: fact
+version: "1.0.0"
+description: "Fitts's Law (1954): movement time to a target is a logarithmic function of the ratio of distance to target size, approximately MT = a + b · log2(D/W + 1)."
+content_hash: "sha256:23bcc8b57410dae450ad83e17df66bd0982b0d5585064812bef9df26dedc199c"
+tokens:
+  summary: 128
+  core: 346
+  full: 652
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-hick-law" }
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/pattern-tab-bar-bottom" }
+created_at: "2026-05-07"

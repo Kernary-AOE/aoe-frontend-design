@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-card-sort-method"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="349"
+  q="4.0">
+  <description>Card sorting is the standard IA validation method: participants group labelled cards (representing content / features) into categories that make sense to them, revealing the user&apos;s mental model rather than the team&apos;s internal taxonomy.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="144"/>
+    <level name="core"    file="chunks/core.md"    tokens="349"/>
+    <level name="full"    file="chunks/full.md"    tokens="625"/>
+  </projection>
+</atom>

@@ -1,0 +1,87 @@
+taxonomy CtaStyles {
+  id: "@community/taxonomy-cta-styles"
+  version: "1.0.0"
+
+  label: "Call-To-Action (Button) Style Hierarchy"
+  domain: visual-design
+
+  description: "A taxonomy of button styles by hierarchy and intent. Distinct visual treatments are how a UI signals which action is primary, secondary, optional, or destructive. Conflating these styles (e.g. two primary buttons in one view) is the most common cause of weak action hierarchy."
+
+  members: [
+    "primary",
+    "secondary",
+    "tertiary",
+    "ghost",
+    "link",
+    "destructive",
+    "destructive-secondary",
+    "icon-only"
+  ]
+
+  styles: {
+    "primary": {
+      purpose: "The single most important action on a view — submit, continue, save, sign-up.",
+      visual: "Solid filled background with brand color; high-contrast text; bold weight.",
+      density-rule: "AT MOST ONE primary button visible per logical action region.",
+      example-tokens: "bg: var(--color-brand-500); color: var(--color-on-brand); border: none; weight: 500–600",
+    }
+    "secondary": {
+      purpose: "Important alternative action that pairs with primary — cancel, back, learn more.",
+      visual: "Outlined or low-fill background; brand-colored or neutral text.",
+      density-rule: "Typically paired with primary; multiple secondaries acceptable for equal-weight options.",
+      example-tokens: "bg: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary)",
+    }
+    "tertiary": {
+      purpose: "Optional or low-priority action — view details, see all, dismiss.",
+      visual: "No background, no border; brand-colored text with subtle hover.",
+      example-tokens: "bg: transparent; border: none; color: var(--color-text-secondary)",
+    }
+    "ghost": {
+      purpose: "Inline action that should recede until hovered/focused — header utility actions, table row actions.",
+      visual: "Transparent background and border; only text or icon visible at rest; subtle bg on hover.",
+      notes: "Often used for icon-only buttons where the icon must be discoverable but not visually heavy.",
+    }
+    "link": {
+      purpose: "Inline navigational action that looks like text — 'Learn more', 'Read the docs'.",
+      visual: "Brand-colored text with optional underline; same line-height as surrounding copy.",
+      a11y: "Use <a href=> for navigation; use <button> for action that does not change URL. NEVER style a div as a link.",
+    }
+    "destructive": {
+      purpose: "Irreversible negative action — delete, remove, unsubscribe.",
+      visual: "Solid red/error fill; white text; bold weight.",
+      density-rule: "Pair with confirmation dialog (see @community/principle-error-prevention-and-recovery). Never make destructive primary on default view; require user-initiated reveal.",
+      example-tokens: "bg: var(--color-destructive-500); color: white; weight: 500",
+    }
+    "destructive-secondary": {
+      purpose: "Cancel button on a destructive confirmation modal — softer than primary destructive but distinguishable.",
+      visual: "Outlined red border, red text on transparent bg.",
+    }
+    "icon-only": {
+      purpose: "Compact action where space is constrained — toolbar, table row, header utility.",
+      visual: "Icon only, optional bg on hover. MUST have aria-label and tooltip.",
+      a11y: "min 44×44 touch target (see @community/value-touch-target-min); aria-label required (see @community/check-aria-label-required).",
+    }
+  }
+
+  invariants: [
+    "Within a single decision point (modal footer, form actions row), there must be exactly ONE primary button.",
+    "Destructive primary must never be the visually-emphasized default action — use destructive style only AFTER user explicitly initiates the destructive flow.",
+    "Link buttons (<button> styled as link) must NOT navigate; use <a href> for navigation. Use the link style for in-flow text actions only.",
+    "All button styles must satisfy WCAG 2.2 AA contrast at default, hover, focus, active, and disabled states (4.5:1 text, 3:1 non-text UI).",
+  ]
+
+  notes: [
+    "Hierarchy clarity is more important than uniqueness — three secondaries are fine if no primary is also present, but mixing tiers requires deliberate rules.",
+    "iOS HIG's button hierarchy (filled / tinted / gray / plain) maps onto this taxonomy: filled=primary, tinted=secondary, gray=tertiary, plain=link.",
+    "Material 3 calls these: filled / outlined / text / elevated / tonal — the underlying hierarchy matches.",
+    "See @community/principle-visual-hierarchy-action-distinction for the underlying principle.",
+  ]
+
+  related: [
+    @community/taxonomy-form-input-types,
+    @community/category-button-hierarchy,
+    @community/principle-visual-hierarchy-action-distinction,
+    @community/value-touch-target-min,
+    @community/fact-ios-button-style-hierarchy,
+  ]
+}

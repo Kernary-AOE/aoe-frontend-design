@@ -1,0 +1,24 @@
+atom: "@community/pattern-button-hierarchy-web"
+relations:
+  - type: related
+    target: "@community/constraint-mobile-touch-target-44px"
+  - type: related
+    target: "@community/rule-button-type-explicit"
+  - type: related
+    target: "@community/rule-reduced-motion-required"
+  - type: related
+    target: "@community/pattern-button-press-feedback"
+  - type: related
+    target: "@impeccable/template-button-press"
+  - type: related
+    target: "@community/fact-hover-feedback-latency"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/check-touch-target-min"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-tiny-touch-targets"
+  - type: related
+    target: "@community/anti-pattern-invisible-focus"

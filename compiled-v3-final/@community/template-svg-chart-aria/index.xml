@@ -1,0 +1,14 @@
+<atom
+  id="@community/template-svg-chart-aria"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="740"
+  q="4.0">
+  <description>Accessibility code template for SVG-based charts. Provides two patterns: (1) simple svg with role=&apos;img&apos; and descriptive aria-label, (2) figure+figcaption+sr-only paragraph wrapping an aria-hidden SVG. Use pattern 2 for interactive/filterable charts.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="77"/>
+    <level name="core"    file="chunks/core.md"    tokens="740"/>
+    <level name="full"    file="chunks/full.md"    tokens="740"/>
+  </projection>
+</atom>

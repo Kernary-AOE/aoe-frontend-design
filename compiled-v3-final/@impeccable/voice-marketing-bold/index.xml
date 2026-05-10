@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/voice-marketing-bold"
+  kind="knowledge"
+  version="1.0.0"
+  domain="marketing-landing"
+  tokens="480"
+  q="4.0">
+  <description>The voice used on confident product landing pages and feature launches. Verb-first, short, declarative, kinetic. Sounds like Stripe, Linear, Vercel, Framer headlines — momentum over explanation.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="480"/>
+    <level name="full"    file="chunks/full.md"    tokens="526"/>
+  </projection>
+</atom>

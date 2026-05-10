@@ -1,0 +1,44 @@
+task_type: prompt-editor
+parent: dev-tool
+description: "Prompt editor with left-edit, right-preview split layout, variable support, and syntax highlighting."
+trigger_keywords:
+  - "prompt editor"
+  - "prompt 编辑器"
+  - "左编辑右预览"
+  - "variable editor"
+  - "template editor"
+  - "prompt template"
+  - "system prompt"
+  - "变量支持"
+  - "split editor"
+default_register_pool:
+  - school: linear
+    weight: 0.4
+  - school: dense-pragmatist
+    weight: 0.35
+  - school: vercel-clean
+    weight: 0.25
+required_atoms:
+  - "@community/pattern-dashboard-layout"
+  - "@community/fact-monospace-purpose"
+  - "@community/pattern-interaction-states"
+  - "@community/rule-keyboard-accessible"
+  - "@community/pattern-progressive-disclosure"
+recommended_motion:
+  - "@community/pattern-motion-microinteraction"
+  - "@community/pattern-motion-forms"
+  - "@community/template-tabs-keyboard"
+forbidden_atoms:
+  - "@impeccable/persona-warm-institutional"
+  - "@impeccable/persona-magazine-editorial"
+  - "@community/template-animated-mesh-background"
+  - "@community/pattern-gradient-mesh-engine"
+quality_checks:
+  - "Editor pane and preview pane must be split with adjustable divider"
+  - "Variable placeholders ({{var}} or similar) must be visually highlighted"
+  - "Monospace font must be used in the editor pane"
+  - "Preview must update in real-time or with debounce as user types"
+  - "Variable definition panel must be accessible without leaving editor"
+  - "Keyboard shortcuts for common actions (Cmd+Enter to run) must be shown"
+  - "Line numbers must be visible in editor pane"
+  - "Editor must support undo/redo with Cmd+Z / Cmd+Shift+Z"

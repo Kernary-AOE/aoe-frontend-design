@@ -1,0 +1,22 @@
+# IntentionalGradient [principle] v1.0.0
+> Gradients must serve one of three defined purposes — mesh atmosphere (depth behind content), linear accent wash (directional energy on surfaces), or radial accent glow (ambient light around a CTA) — and must interpolate in OKLCH color space to prevent the sRGB gray dead zone at midpoints.
+domain: frontend-design
+
+## Applies To
+- hero section backgrounds
+- page-level atmospheric backgrounds
+- section backgrounds and card surfaces
+- CTA area focal emphasis
+
+## Counter Examples
+- linear-gradient(135deg, #7c3aed, #2563eb) as brand hero background — purple-to-blue, full opacity, most overused gradient in SaaS
+- background: linear-gradient(135deg, #f97316, #ec4899) on a metric or heading — gradient on data is decorative not informational
+- Gradient at opacity: 1 as the primary page background — too aggressive, fights content
+
+## Examples
+- Mesh atmosphere: three radial-gradient layers at opacity 0.04–0.08, positioned at different quadrants, interpolating in OKLCH
+- Linear accent wash: linear-gradient(in oklch, 135deg, oklch(0.97 0.02 240) 0%, oklch(0.99 0.01 60) 100%) — a barely-there tonal shift
+- Accent glow: radial-gradient(ellipse at center, oklch(0.60 0.18 280 / 0.12) 0%, transparent 70%) behind a CTA section
+
+## Rationale
+The default instinct — purple to blue at full opacity as a brand gradient — is the most reliable marker of an unconsidered UI. It communicates nothing about the product and signals AI generation or framework default aesthetics. Intentional gradients serve distinct spatial roles at low opacity (< 12%), creating atmosphere rather than imposing identity. OKLCH interpolation is mandatory because sRGB gradients between complementary colors produce a desaturated gray band at the midpoint — this kills gradient energy and is the perceptual failure that makes cheap gradients look cheap. A gradient from oklch(0.65 0.20 40) to oklch(0.55 0.20 260) in OKLCH space produces a vivid green at the midpoint (hue 150°); the same gradient in sRGB produces brownish gray (#9da29e).

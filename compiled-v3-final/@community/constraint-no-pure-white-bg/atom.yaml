@@ -1,0 +1,21 @@
+id: "@community/constraint-no-pure-white-bg"
+kind: constraint
+version: "1.0.0"
+description: "Backgrounds for long-form prose must not be pure white (#ffffff). Use a warm or cool off-white such as #f9f7f4 or oklch(98% 0.008 var(--hue)) to reduce halation and reading fatigue."
+domain: visual-design
+content_hash: "sha256:33338d3e7ddf004cf2bd531add868dbfb27e58f712b5e677bd24f177f38b144e"
+tokens:
+  summary: 60
+  core: 313
+  full: 417
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-no-pure-black-text" }
+  - { type: related, target: "@community/example-atlantic-longform" }
+  - { type: related, target: "@community/example-readwise-reader" }
+created_at: "2026-05-07"

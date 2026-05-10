@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-input-validation-allowlist"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="755"
+  q="4.0">
+  <description>Validate all user input against an explicit allowlist of permitted characters, formats, or enum values — reject everything that does not match, rather than attempting to strip or escape known-bad patterns.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="67"/>
+    <level name="core"    file="chunks/core.md"    tokens="755"/>
+    <level name="full"    file="chunks/full.md"    tokens="1443"/>
+  </projection>
+</atom>

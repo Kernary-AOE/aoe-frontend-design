@@ -1,0 +1,22 @@
+id: "@community/anti-pattern-batch-only-pipelines"
+kind: anti-pattern
+version: "1.0.0"
+description: "Designing every data pipeline as a nightly (or hourly) batch job — typically Airflow + dbt + warehouse — when downstream use-cases require sub-minute freshness. The freshness ceiling becomes the batch interval, and there is no architectural seam to lower it."
+domain: data-engineering
+content_hash: "sha256:9c8a8bc5d3a80bbf9b9945f75d8468b636d543ef55b2e779740e82680c767aaf"
+tokens:
+  summary: 82
+  core: 665
+  full: 1263
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/principle-idempotent-writes" }
+  - { type: related, target: "@community/pattern-cdc-change-data-capture" }
+  - { type: related, target: "@community/rule-event-schema-versioning" }
+  - { type: derived-from, target: "@community/pattern-cdc-change-data-capture" }
+created_at: "2026-05-07"

@@ -1,0 +1,8 @@
+atom: "@community/rule-composable-layout-primitives"
+relations:
+  - type: related
+    target: "@community/category-layout-grid"
+  - type: related
+    target: "@community/fact-8pt-grid-system"
+  - type: related
+    target: "@community/rule-spacing-rhythm"

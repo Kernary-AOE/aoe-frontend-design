@@ -1,0 +1,14 @@
+<atom
+  id="@community/transform-px-to-rem"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="221"
+  q="4.0">
+  <description>Converts a CSS pixel value to its rem equivalent relative to the root element font-size (default 16px). rem-based sizing is an accessibility requirement: when users override their browser&apos;s default font size, rem values scale proportionally while px values do not.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="79"/>
+    <level name="core"    file="chunks/core.md"    tokens="221"/>
+    <level name="full"    file="chunks/full.md"    tokens="352"/>
+  </projection>
+</atom>

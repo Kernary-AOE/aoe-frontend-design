@@ -1,0 +1,13 @@
+<atom
+  id="@community/step-apply-heuristics"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-review"
+  tokens="305"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="14"/>
+    <level name="core"    file="chunks/core.md"    tokens="305"/>
+    <level name="full"    file="chunks/full.md"    tokens="574"/>
+  </projection>
+</atom>

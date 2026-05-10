@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-button-type-explicit"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="362"
+  q="4.0">
+  <description>Every `&lt;button&gt;` element MUST declare an explicit `type` attribute (`button`, `submit`, or `reset`). The HTML default is `submit`, which inside a `&lt;form&gt;` causes any unrelated button (e.g. an icon toggle) to submit the form on click — a common, hard-to-debug bug.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="82"/>
+    <level name="core"    file="chunks/core.md"    tokens="362"/>
+    <level name="full"    file="chunks/full.md"    tokens="656"/>
+  </projection>
+</atom>

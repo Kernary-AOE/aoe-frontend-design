@@ -1,0 +1,14 @@
+<atom
+  id="@community/counter-example-aria-bandaid"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="881"
+  q="4.0">
+  <description>A modal dialog where the engineer added `role=&apos;dialog&apos;`, `aria-label`, and `aria-modal=&apos;true&apos;` after the audit complained — but kept the underlying `&lt;div onClick&gt;` for the close button, kept the heading as a `&lt;p&gt;` because the design used a 14px label, and kept the focus loose (no trap). ARIA contradicts the actual structure.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="97"/>
+    <level name="core"    file="chunks/core.md"    tokens="881"/>
+    <level name="full"    file="chunks/full.md"    tokens="1665"/>
+  </projection>
+</atom>

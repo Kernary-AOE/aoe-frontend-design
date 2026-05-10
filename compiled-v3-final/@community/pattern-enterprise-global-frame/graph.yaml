@@ -1,0 +1,4 @@
+atom: "@community/pattern-enterprise-global-frame"
+relations:
+  - type: related
+    target: "@community/pattern-deep-nav-architecture"

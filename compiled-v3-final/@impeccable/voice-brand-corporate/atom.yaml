@@ -1,0 +1,25 @@
+id: "@impeccable/voice-brand-corporate"
+kind: voice
+version: "1.0.0"
+description: "The voice used by large legacy enterprises in annual reports, investor decks, and About pages. Stable, aspirational, third-person, abstraction-heavy. Sounds like IBM, Salesforce, Oracle, SAP. INCLUDED AS AN ANTI-PATTERN: agents should recognize this voice and, in most modern product contexts, deliberately avoid it."
+domain: enterprise-brand
+content_hash: "sha256:9657464a56f1c34129696e4a9ede147b1b8932a32d4e6080f585d39972cfe32c"
+tokens:
+  summary: 94
+  core: 656
+  full: 709
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/voice-legal-formal" }
+  - { type: related, target: "@impeccable/voice-editorial-investigative" }
+  - { type: compatible, target: "@impeccable/voice-brand-corporate" }
+  - { type: conflicts, target: "@impeccable/voice-marketing-bold" }
+  - { type: conflicts, target: "@impeccable/voice-casual-warm" }
+  - { type: conflicts, target: "@impeccable/voice-dev-technical" }
+  - { type: conflicts, target: "@impeccable/voice-poetic-literary" }
+created_at: "2026-05-07"

@@ -1,0 +1,26 @@
+atom: "@community/pattern-page-transition"
+relations:
+  - type: related
+    target: "@community/pattern-fade-in-on-load"
+  - type: related
+    target: "@community/pattern-slide-up-reveal"
+  - type: related
+    target: "@community/fact-duration-perception-thresholds"
+  - type: related
+    target: "@community/fact-easing-cubic-bezier"
+  - type: related
+    target: "@community/fact-motion-as-feedback"
+  - type: related
+    target: "@community/fact-motion-hierarchy"
+  - type: related
+    target: "@community/constraint-reduced-motion"
+  - type: related
+    target: "@impeccable/template-page-transition-view-transitions"
+  - type: related
+    target: "@impeccable/template-easing-curves"
+  - type: related
+    target: "@community/example-framer-page-transition"
+  - type: related
+    target: "@community/check-reduced-motion-required"
+  - type: related
+    target: "@community/check-focus-visible"

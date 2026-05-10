@@ -1,0 +1,20 @@
+id: "@community/fact-pareto-principle"
+kind: fact
+version: "1.0.0"
+description: "Pareto Principle (80/20 Rule, Vilfredo Pareto, 1896): roughly 80% of outcomes come from 20% of causes — in UX, ~80% of users rely on ~20% of features."
+content_hash: "sha256:1cddb62ed231a652aec11ccccb21e74454b440d9a44b31e330648ad42982b840"
+tokens:
+  summary: 167
+  core: 495
+  full: 922
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-hick-law" }
+  - { type: related, target: "@community/fact-flexibility-efficiency" }
+  - { type: related, target: "@community/fact-paradox-of-choice" }
+created_at: "2026-05-07"

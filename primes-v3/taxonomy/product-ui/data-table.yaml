@@ -1,0 +1,54 @@
+task_type: data-table
+parent: product-ui
+description: "Sortable, filterable data table with inline editing, row selection, and bulk actions."
+trigger_keywords:
+  - "data table"
+  - "sortable table"
+  - "filterable table"
+  - "用户表格"
+  - "数据表格"
+  - "可排序"
+  - "可筛选"
+  - "inline edit"
+  - "单元格点开能改"
+  - "spreadsheet"
+default_register_pool:
+  - school: linear
+    weight: 0.55
+  - school: vercel-clean
+    weight: 0.3
+  - school: stripe-fintech
+    weight: 0.15
+required_atoms:
+  - "@community/pattern-data-table-dense"
+  - "@community/pattern-dashboard-data-table"
+  - "@community/template-data-table-base"
+  - "@community/fact-fintech-number-display"
+  - "@community/constraint-monospace-tabular-numerics"
+  - "@community/rule-touch-target-min"
+recommended_motion:
+  - "@community/pattern-motion-microinteraction"
+  - "@community/pattern-skeleton-loader"
+forbidden_atoms:
+  - "@impeccable/persona-magazine-editorial"
+  - "@impeccable/persona-warm-institutional"
+  - "@community/template-animated-mesh-background"
+max_atoms_per_axis:
+  register: 1
+  pattern: 3
+  motion: 2
+  typography: 2
+  color: 2
+  rules: 3
+quality_checks:
+  - "Column headers must be clickable for sort with clear direction indicator AND aria-sort attribute"
+  - "Filter controls must be accessible and reflect current active filters"
+  - "Row selection must support shift-click range selection"
+  - "Bulk action bar must appear when rows are selected"
+  - "Numeric columns must use tabular/monospace numerics for alignment"
+  - "Table must virtualize or paginate for lists over 100 rows"
+  - "Inline edit cells must have clear edit affordance on hover/focus"
+  - "Table must have at least 8 rows of realistic named user data (not 'User 1' / 'User 2')"
+  - "TYPOGRAPHY: must import at least one named web font (Inter Variable / IBM Plex Sans / JetBrains Mono / Geist Mono) — pure system stack `-apple-system` only loses points on composition"
+  - "MOTION: must include at least 1 @keyframes animation (row appear, toolbar fade, bulk-action slide) AND a @media (prefers-reduced-motion: reduce) override — 0 keyframes loses motion_quality"
+  - "DISTINGUISHING ELEMENT: must include AT LEAST 2 of: (a) inline sparkline / mini-bar / progress in a numeric column, (b) avatar + colored status dot per row, (c) floating bulk-action bar (not inline), (d) status pill with live toggle, (e) kbd shortcut bar at viewport bottom"

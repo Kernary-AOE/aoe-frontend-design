@@ -1,0 +1,28 @@
+id: "@community/pattern-autocomplete-combobox"
+kind: pattern
+version: "1.0.0"
+description: "A text input that filters and surfaces a popup listbox of suggestions as the user types, allowing free-text entry and selection. Used for tag pickers, address inputs, mention pickers, and search-as-you-type."
+domain: frontend-design
+content_hash: "sha256:3228f8e351648035e4f89fee0e7d3ffa15fcfddbe248686ae39b2150dd76ee85"
+tokens:
+  summary: 68
+  core: 738
+  full: 1462
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-command-palette" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+  - { type: related, target: "@community/check-form-label-associated" }
+  - { type: related, target: "@community/check-error-message-associated" }
+  - { type: related, target: "@community/check-form-validation-inline" }
+  - { type: related, target: "@community/rule-aria-native-first" }
+  - { type: related, target: "@community/rule-keyboard-tab-order" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: compatible, target: "@community/pattern-inline-validation" }
+  - { type: compatible, target: "@community/pattern-command-palette-modal" }
+created_at: "2026-05-07"

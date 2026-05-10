@@ -1,0 +1,78 @@
+name: security
+version: "1.0.0"
+description: Domain plugin for web security knowledge. Covers authentication, authorization, OWASP Top 10 vulnerabilities, TLS, secrets management, input validation, and secure coding patterns.
+
+tags:
+  - security
+  - owasp
+  - auth
+  - authn
+  - authz
+  - csrf
+  - xss
+  - sqli
+  - rce
+  - deserialization
+  - ssrf
+  - cors
+  - csp
+  - tls
+  - encryption
+  - hashing
+  - secrets
+  - token
+  - session
+  - cookie
+  - rate-limit
+  - input-validation
+  - sanitize
+
+axes:
+  - name: threat-class
+    description: The OWASP threat category or attack class the atom addresses.
+    matches:
+      - injection
+      - xss
+      - csrf
+      - ssrf
+      - authentication
+      - authorization
+      - deserialization
+      - misconfiguration
+      - vulnerable-components
+      - logging
+
+  - name: defense-layer
+    description: Where in the stack the defense applies.
+    matches:
+      - network
+      - transport
+      - application
+      - database
+      - client
+      - server
+      - api
+      - cookie
+      - header
+
+contract:
+  must_include:
+    type: atom-id-array
+    description: Atoms that must appear in the retrieved set.
+  must_avoid:
+    type: atom-id-array
+    description: Atoms that must be excluded from the retrieved set.
+  compliance_standard:
+    type: enum-array
+    values:
+      - owasp-top10
+      - nist
+      - pci-dss
+      - gdpr
+      - soc2
+    description: Compliance frameworks the atoms must address.
+
+validators:
+  - name: fact-has-source
+    description: Every security fact atom must have an attributed source or CVE reference.
+    checker: builtin:every-fact-has-source

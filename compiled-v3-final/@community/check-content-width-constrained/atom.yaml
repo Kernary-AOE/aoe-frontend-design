@@ -1,0 +1,20 @@
+id: "@community/check-content-width-constrained"
+kind: check
+version: "1.0.0"
+description: "Validates that main content containers constrain max-width to keep prose readable: ≤ 720px (~75ch) for prose, ≤ 1280px for general content. Unconstrained containers stretch text across full 1440+ viewports, breaking the 45–75 CPL rule."
+domain: layout
+content_hash: "sha256:633224b329deaa3cb88890f4186e3e0e35db24dd17a46326ca346a3c9e93011b"
+tokens:
+  summary: 73
+  core: 532
+  full: 622
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-content-width-constrained" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+created_at: "2026-05-07"

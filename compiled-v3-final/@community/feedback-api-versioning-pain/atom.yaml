@@ -1,0 +1,24 @@
+id: "@community/feedback-api-versioning-pain"
+kind: feedback
+version: "1.0.0"
+description: "Accumulated feedback from teams who shipped a public REST API and lived through 2+ major versions. Captures the pain points that did not appear in v1 design but emerged once the contract was real and consumers existed."
+domain: api-design
+content_hash: "sha256:85976279cee9d1228fe4e833b5d52582b6a19ee3370130ba9ee2d2565dc0a5a9"
+tokens:
+  summary: 69
+  core: 929
+  full: 929
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/collection-rest-api-discipline" }
+  - { type: related, target: "@community/rule-resource-not-action" }
+  - { type: related, target: "@community/principle-pagination-first" }
+  - { type: related, target: "@community/principle-idempotent-writes" }
+  - { type: related, target: "@community/type-error-shape" }
+  - { type: related, target: "@community/anti-pattern-rpc-as-rest" }
+created_at: "2026-05-07"

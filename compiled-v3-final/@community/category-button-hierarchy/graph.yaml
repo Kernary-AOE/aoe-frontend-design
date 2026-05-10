@@ -1,0 +1,12 @@
+atom: "@community/category-button-hierarchy"
+relations:
+  - type: related
+    target: "@community/taxonomy-cta-styles"
+  - type: related
+    target: "@community/category-form-input-states"
+  - type: related
+    target: "@community/principle-visual-hierarchy-action-distinction"
+  - type: related
+    target: "@community/value-touch-target-min"
+  - type: related
+    target: "@community/fact-ios-button-style-hierarchy"

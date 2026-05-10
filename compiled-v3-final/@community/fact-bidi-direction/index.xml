@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-bidi-direction"
+  kind="knowledge"
+  version="1.0.0"
+  domain="i18n"
+  tokens="805"
+  q="4.0">
+  <description>RTL (right-to-left) scripts — Arabic, Hebrew, Persian, Urdu, Yiddish, Aramaic — require bidirectional text rendering specified by the Unicode Bidirectional Algorithm (UAX #9). Layouts must mirror, but specific elements (numerals, code, logos, media controls) must NOT mirror.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="317"/>
+    <level name="core"    file="chunks/core.md"    tokens="805"/>
+    <level name="full"    file="chunks/full.md"    tokens="1396"/>
+  </projection>
+</atom>

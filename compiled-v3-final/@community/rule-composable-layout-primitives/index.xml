@@ -1,0 +1,13 @@
+<atom
+  id="@community/rule-composable-layout-primitives"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="416"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="416"/>
+    <level name="full"    file="chunks/full.md"    tokens="815"/>
+  </projection>
+</atom>

@@ -1,0 +1,51 @@
+# IntentionalGradientHero [template] v1.0.0
+domain: frontend-design
+
+## Label
+Intentional Gradient Hero — Complete Implementation
+
+## Body
+```
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Mesh atmosphere layer */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at 20% 50%, oklch(0.55 0.12 220 / 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, oklch(0.60 0.09 260 / 0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 90%, oklch(0.50 0.10 190 / 0.05) 0%, transparent 50%);
+    }
+
+    /* CTA glow layer */
+    .hero__cta-area::before {
+      content: '';
+      position: absolute;
+      inset: -80px -40px;
+      background: radial-gradient(
+        ellipse at center,
+        oklch(0.55 0.18 260 / 0.10) 0%,
+        transparent 65%
+      );
+      z-index: -1;
+      pointer-events: none;
+    }
+  
+```
+
+## Usage
+- Apply .hero to the full-viewport hero section wrapper.
+- .hero::before supplies the three-node mesh atmosphere — OKLCH values are chosen for perceptual smoothness; do not swap to rgb/hsl.
+- .hero__cta-area::before adds a radial glow that halos the primary CTA button area — place .hero__cta-area around the button group.
+- Adjust the oklch() lightness (first value) and chroma (second value) to match the page's color persona. Keep opacity values low: 0.05–0.12 for atmosphere, 0.08–0.14 for CTA glow.
+- For dark-background heroes, increase chroma slightly (0.15–0.22) and reduce opacity to 0.06–0.10.
+- Three gradient nodes at 20%/50%, 80%/20%, and 50%/90% create natural triangular asymmetry — avoid centering all nodes.

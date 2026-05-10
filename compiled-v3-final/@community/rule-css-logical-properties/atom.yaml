@@ -1,0 +1,20 @@
+id: "@community/rule-css-logical-properties"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:32d7820ca6bc792d0c21a8c8105d4b511ce2b81c45177fc774f905b744562298"
+tokens:
+  summary: 103
+  core: 380
+  full: 729
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/rule-spacing-rhythm" }
+  - { type: related, target: "@community/category-layout-grid" }
+created_at: "2026-05-07"

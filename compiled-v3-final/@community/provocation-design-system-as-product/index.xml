@@ -1,0 +1,13 @@
+<atom
+  id="@community/provocation-design-system-as-product"
+  kind="knowledge"
+  version="1.0.0"
+  domain="design-system"
+  tokens="675"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="17"/>
+    <level name="core"    file="chunks/core.md"    tokens="675"/>
+    <level name="full"    file="chunks/full.md"    tokens="675"/>
+  </projection>
+</atom>

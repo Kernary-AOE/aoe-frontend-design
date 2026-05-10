@@ -1,0 +1,14 @@
+<atom
+  id="@community/template-web-animations-api"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1125"
+  q="4.0">
+  <description>Web Animations API (element.animate()) pattern for imperative JS-driven animations with full playback control — .cancel(), .pause(), await .finished — at cubic-bezier(0.16,1,0.3,1) with prefers-reduced-motion snap-to-end path.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="72"/>
+    <level name="core"    file="chunks/core.md"    tokens="1125"/>
+    <level name="full"    file="chunks/full.md"    tokens="1125"/>
+  </projection>
+</atom>

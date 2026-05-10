@@ -1,0 +1,22 @@
+id: "@community/check-content-security-policy"
+kind: check
+version: "1.0.0"
+description: "CSP header must be present on HTML responses, must not contain 'unsafe-inline' or 'unsafe-eval' in script-src, and must not use wildcard (*) as the sole source in script-src or default-src."
+domain: security
+content_hash: "sha256:b17bc091e8f24800d5f6b7be1d359f7758f1196f4aa7fe7b5830732b63c8c578"
+tokens:
+  summary: 62
+  core: 462
+  full: 863
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-csp-strict" }
+  - { type: related, target: "@community/anti-pattern-eval-user-input" }
+  - { type: related, target: "@community/principle-owasp-injection" }
+  - { type: related, target: "@community/rule-no-unsafe-inline-scripts" }
+created_at: "2026-05-07"

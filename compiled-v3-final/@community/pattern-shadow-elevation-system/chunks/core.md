@@ -1,0 +1,62 @@
+# ShadowElevationSystem [pattern] v1.0.0
+Five-level CSS shadow elevation system using OKLCH-tinted colors and the Hobday blur rule (blur = 2× y-offset): --shadow-xs through --shadow-xl mapped to CSS custom properties, with dark-mode fallback via surface lightness steps instead of shadows.
+domain: frontend-design
+
+## Problem
+Shadow tokens are either missing (every component invents its own box-shadow) or use pure-black rgba values that look flat and generic.
+
+## Solution
+Define five elevation tokens with tinted OKLCH shadow colors. Apply the Hobday ratio: blur = 2× y-offset. In dark mode, replace all shadows with surface lightness steps (+4% lightness per elevation level) because shadows are invisible on dark backgrounds.
+
+## Code
+```
+    /* ── Elevation tokens ─────────────────────────────────────────────── */
+    :root {
+      /* Tint shadow toward brand hue at low chroma */
+      --shadow-color: oklch(20% 0.04 240);
+
+      --shadow-xs: 0 1px 2px 0 oklch(20% 0.04 240 / 0.06);
+      --shadow-sm: 0 2px 4px 0 oklch(20% 0.04 240 / 0.08);
+      --shadow-md: 0 4px 8px 0 oklch(20% 0.04 240 / 0.10);
+      --shadow-lg:
+        0 8px  16px -2px oklch(20% 0.04 240 / 0.12),
+        0 2px  4px  -1px oklch(20% 0.04 240 / 0.06);
+      --shadow-xl:
+        0 16px 32px -4px oklch(20% 0.04 240 / 0.14),
+        0 4px  8px  -2px oklch(20% 0.04 240 / 0.08);
+    }
+
+    /* ── Surface tokens for dark mode elevation ───────────────────────── */
+    :root {
+      --surface-1: hsl(0 0% 100%);   /* page background */
+      --surface-2: hsl(0 0% 98%);    /* cards */
+      --surface-3: hsl(0 0% 96%);    /* raised cards, modals */
+    }
+    .dark {
+      --surface-1: hsl(222 20% 9%);   /* page bg */
+      --surface-2: hsl(222 20% 13%);  /* cards (+4%) */
+      --surface-3: hsl(222 20% 17%);  /* modals (+4%) */
+    }
+
+    /* ── Usage map ────────────────────────────────────────────────────── */
+    /* xs  → input fields, chips
+       sm  → standard cards
+       md  → raised cards, dropdowns
+       lg  → dialogs, popovers, date pickers
+       xl  → command palettes, floating panels  */
+
+    /* ── Dark mode: shadows invisible → use surface steps ────────────── */
+    .dark .card   { box-shadow: none; }   /* surface-2 token handles elevation */
+    .dark .dialog { box-shadow: none; }   /* surface-3 token handles elevation */
+
+    /* ── NEVER mix shadow styles ──────────────────────────────────────── */
+    /* All components must use the same style: soft OR hard OR none.      */
+  
+```
+
+## Rules
+- The Hobday Rule: blur = 2× y-offset. xs: 1→2px, sm: 2→4px, md: 4→8px, lg: 8→16px, xl: 16→32px.
+- Never use pure rgba(0,0,0,...) — tint toward brand hue at chroma 0.02–0.06.
+- Never mix shadow styles (soft+hard) across the same product.
+- In dark mode, disable box-shadow and use surface lightness to convey elevation.
+- Negative spread on lg/xl prevents shadow bleeding at large blur radii.

@@ -1,0 +1,14 @@
+atom: "@community/principle-data-minimization"
+relations:
+  - type: related
+    target: "@community/fact-pii-tokenization"
+  - type: related
+    target: "@community/pattern-right-to-be-forgotten"
+  - type: related
+    target: "@community/rule-cookie-consent-banner"
+  - type: related
+    target: "@community/anti-pattern-dark-pattern-consent"
+  - type: related
+    target: "@community/fact-coppa-13-yo-threshold"
+  - type: requires
+    target: "@community/pattern-right-to-be-forgotten"

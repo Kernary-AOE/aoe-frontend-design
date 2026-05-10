@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-no-jquery-deps"
+  kind="knowledge"
+  version="1.0.0"
+  domain="engineering"
+  tokens="341"
+  q="4.0">
+  <description>New code must not introduce jQuery as a dependency. All DOM querying, event handling, and AJAX must use native browser APIs or the framework&apos;s built-in primitives.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="55"/>
+    <level name="core"    file="chunks/core.md"    tokens="341"/>
+    <level name="full"    file="chunks/full.md"    tokens="451"/>
+  </projection>
+</atom>

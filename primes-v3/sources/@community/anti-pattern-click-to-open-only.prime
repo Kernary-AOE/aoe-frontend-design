@@ -1,0 +1,43 @@
+anti-pattern ClickToOpenOnly {
+  id: "@community/anti-pattern-click-to-open-only"
+  version: "1.0.0"
+
+  label: "Drawer / Dropdown Bound Only To Mouse Click"
+  domain: accessibility
+
+  description: "Building drawers, dropdowns, modals, or accordions that respond exclusively to `onClick` mouse events — with no keyboard activation (Enter/Space), no escape-to-close, no focus trap, no ARIA disclosure semantics. The component is a `<div onClick>` that mouse users can operate and nobody else can."
+
+  trap: "React documentation often shows `<div onClick>` as the simplest disclosure example. AI agents replicate the pattern without adding the keyboard layer because the prompt asked for 'a dropdown menu' and the click handler made it look like one. The fix requires multiple changes (button element, key handlers, focus management, aria attributes) so it's frequently skipped."
+
+  counter-examples: [
+    @community/counter-example-div-onclick-dropdown,
+  ]
+
+  detection-heuristics: [
+    "Disclosure trigger is a `<div>` or `<span>` with `onClick`, not a `<button>`",
+    "No `onKeyDown` handler for Enter/Space on the trigger element",
+    "Dropdown/drawer doesn't close on Escape key",
+    "No `aria-expanded`, `aria-controls`, or `aria-haspopup` attributes",
+    "Tab navigation skips the trigger entirely — no `tabindex='0'` or native focusable element",
+    "Touch on iOS/Android works inconsistently because click events are flaky on `<div>` taps",
+  ]
+
+  remediation: [
+    "Use a real `<button>` element for the trigger — gets keyboard, touch, and screen reader support free.",
+    "Add `aria-expanded={isOpen}` and `aria-controls={panelId}` to the trigger.",
+    "Bind `onKeyDown` handler: Escape closes, ArrowDown moves focus into menu (for menus).",
+    "Use Radix UI / Headless UI / Reach UI primitives instead of rolling your own — they handle all of this.",
+    "Reference @community/pattern-drawer-side and @community/example-radix-dropdown for canonical patterns.",
+    "Test with Tab + Enter + Escape only (mouse unplugged) before merging.",
+  ]
+
+  severity: critical
+
+  related: [
+    @community/counter-example-div-onclick-dropdown,
+    @community/anti-pattern-hover-only-interaction,
+    @community/anti-pattern-breaking-keyboard-flow,
+    @community/rule-keyboard-accessible,
+    @community/example-radix-dropdown,
+  ]
+}

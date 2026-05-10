@@ -1,0 +1,40 @@
+fact IdleVsErrorVsEmpty {
+  id: "@community/fact-idle-vs-error-vs-empty"
+  version: "1.0.0"
+
+  description: "Three different absence-of-content states are commonly conflated but require distinct UI: idle (no action taken yet — invite the user), empty (action taken but legitimately no data — show next-step CTA), and error (action taken, system failed — show recovery)."
+
+  statement: "Three states that all show 'nothing here' must be visually and semantically distinct: (1) idle / first-run — no query / filter / action yet, copy invites onboarding action; (2) empty result — query / filter ran successfully and returned zero, copy explains the criterion and offers refinement; (3) error — fetch failed, copy describes the failure and offers retry — collapsing them produces ambiguous UX where users cannot tell whether they should retry, change input, or take a first action."
+
+  confidence: strong
+  source: [
+    "Refactoring UI (Wathan & Schoger), chapter on empty states",
+    "Material Design — Empty States guidance",
+    "Patternfly / Carbon Design Systems — explicit Idle / Empty / Error pattern docs",
+    "NN/g, 'Empty State Design' (multiple articles 2013–2020)",
+  ]
+
+  applies-to: [
+    "list / table / search-result UI",
+    "first-run experience design",
+    "filter / search empty states",
+    "API failure UI",
+    "dashboard widgets with conditional data",
+  ]
+
+  quantitative: {
+    distinct-states: 3,
+    each-state-cta: "idle: onboarding/CTA; empty: refine/clear filter; error: retry/contact",
+  }
+
+  counter-conditions: [
+    "Trivial UI (no first-run distinction needed) may collapse idle into empty.",
+    "Loading state is a fourth orthogonal state — these three apply once loading completes.",
+    "Partial-error states (some rows loaded, some failed) need a hybrid — show what loaded, surface the failure inline.",
+  ]
+
+  related: [
+    @community/fact-error-recovery-types,
+    @community/pattern-empty-state,
+  ]
+}

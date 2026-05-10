@@ -1,0 +1,42 @@
+id: "@community/persona-coinbase"
+kind: persona
+version: "1.0.0"
+description: "Institutional crypto-financial aesthetic: CoinbaseDisplay/Sans/Text/Icons proprietary four-font stack, Coinbase Blue #0052ff as sole accent on white and near-black #0a0b0d, 56px pill CTAs with a counterintuitive hover-lightens pattern, and 1.00 line-height display density that signals financial-grade seriousness."
+domain: visual-design
+content_hash: "sha256:b4eaa80852db1c49a447b0e6bda80edd17faa20c808588b398e37eb68ad3c470"
+tokens:
+  summary: 91
+  core: 589
+  full: 673
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@impeccable/persona-stripe-fintech" }
+  - { type: related, target: "@impeccable/template-oklch-palette" }
+  - { type: related, target: "@impeccable/template-card-hover-lift" }
+  - { type: related, target: "@community/principle-typography-hierarchy" }
+  - { type: related, target: "@community/check-line-length-optimal" }
+  - { type: related, target: "@community/fact-fintech-number-display" }
+  - { type: related, target: "@community/rule-typography-letter-spacing" }
+  - { type: related, target: "@community/constraint-typography-weight-blacklist" }
+  - { type: related, target: "@community/principle-color-system-foundation" }
+  - { type: related, target: "@community/check-color-oklch-required" }
+  - { type: related, target: "@community/check-contrast-aa" }
+  - { type: related, target: "@community/rule-single-accent-color" }
+  - { type: related, target: "@community/rule-brand-color-primary-only" }
+  - { type: related, target: "@community/anti-pattern-generic-saas-blue" }
+  - { type: related, target: "@community/check-color-blacklist-brand" }
+  - { type: compatible, target: "@impeccable/persona-stripe-fintech" }
+  - { type: compatible, target: "@impeccable/persona-swiss-modernist" }
+  - { type: compatible, target: "@impeccable/persona-vercel-clean" }
+  - { type: conflicts, target: "@impeccable/persona-warm-institutional" }
+  - { type: conflicts, target: "@impeccable/persona-magazine-editorial" }
+  - { type: conflicts, target: "@impeccable/persona-brutalist" }
+  - { type: conflicts, target: "@impeccable/persona-notion-warm" }
+  - { type: contradicts, target: "@impeccable/persona-brutalist" }
+  - { type: contradicts, target: "@impeccable/persona-warm-institutional" }
+created_at: "2026-05-07"

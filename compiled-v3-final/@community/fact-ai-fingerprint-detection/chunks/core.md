@@ -1,0 +1,9 @@
+# AiFingerprintDetection [fact] v1.0.0
+Five visual signal categories reliably identify AI-generated UI output at a glance, each traceable to a specific training-data bias: typography defaults (Inter, Plus Jakarta Sans), palette defaults (Tailwind indigo/violet ~270° hue), border radius defaults (rounded-2xl universally), shadow defaults (shadow-lg universally), and layout defaults (hero→3col→testimonials→CTA).
+> A trained eye can identify AI-generated UI in under 5 seconds by checking: (1) Is the font Inter or Plus Jakarta Sans? (2) Is the primary color ~270° hue (purple/violet/indigo)? (3) Is rounded-2xl applied to everything? (4) Is shadow-lg the only elevation treatment? (5) Is the page structure hero→3col features→testimonials→CTA? Three or more 'yes' answers = AI slop with high confidence.
+domain: frontend-design
+
+## Applies To
+- any AI-generated frontend build without persona constraints
+- code review of AI-assisted UI work
+- design audit before public launch

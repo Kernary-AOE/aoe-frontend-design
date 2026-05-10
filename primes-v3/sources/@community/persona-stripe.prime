@@ -1,0 +1,96 @@
+persona Stripe {
+  id: "@community/persona-stripe"
+  version: "1.0.0"
+
+  school: stripe
+  domain: visual-design
+
+  description: "Premium fintech marketing aesthetic: weight-300 sohne-var headlines on pure white with deep navy #061b31 headings, saturated purple #533afd CTAs, and blue-tinted multi-layer shadows that signal financial-grade confidence."
+
+  implies: {
+    font: {
+      display: "sohne-var (Söhne variable) with fallback SF Pro Display"
+      body: "sohne-var weight 300 — same family, never switches"
+      monospace: "SourceCodePro with fallback SFMono-Regular"
+    }
+    color: {
+      temperature: "cool-neutral"
+      palette: "purple #533afd brand CTA, purple hover #4434d4, deep navy #061b31 headings, brand dark #1c1e54 immersive sections, body text #64748d, border #e5edf5, accent ruby #ea2261 and magenta #f96bee decoration-only"
+      background: "#ffffff"
+    }
+    density: "compact — 4–8px radius only, 8px base spacing with dense small-end scale (1/2/4/6/8/10/11/12px), 1080px max-width"
+    layout: "white canvas with alternating #1c1e54 dark immersive sections, centered 1080px, conservative grid"
+    imagery: "abstract gradient decoration (ruby #ea2261 → magenta #f96bee) in hero only — never applied to functional UI elements"
+    motion: "restrained — blue-tinted multi-layer shadows do the heavy lifting; interactive states via opacity and color shift on sohne-var weights"
+  }
+
+  compatible: ["stripe-fintech", "swiss-modernist", "dense-pragmatist", "editorial"]
+  conflicts: ["brutalist", "notion-warm", "magazine-editorial"]
+
+  example-brands: [
+    "Stripe",
+  ]
+
+  notes: [
+    "Weight 300 at 48–56px / line-height 1.03 / letter-spacing -1.4px is the defining typographic move — lightness as authority, the opposite of the 'bold hero' convention.",
+    "OpenType feature ss01 on sohne-var is non-negotiable — without it the type is generic; with it the geometric glyph modifications make it unmistakably Stripe.",
+    "Blue-tinted shadow: rgba(50,50,93,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.1) 0px 18px 36px -18px — one far blue-tinted layer + one near neutral layer, not generic drop-shadow.",
+    "Deep navy headings #061b31 (not black) add premium warmth; body text #64748d (blue-gray, not neutral gray) extends the cool premium palette consistently.",
+    "Ruby-to-magenta gradient (#ea2261 → #f96bee) is hero decoration only — applying these to buttons or functional UI breaks the persona's financial-grade restraint.",
+    "Distinct from @impeccable/persona-stripe-fintech: this is the actual stripe.com brand reference; persona-stripe-fintech is the generic premium-fintech school inspired by it.",
+    "Use when product handles money, compliance, or needs institutional-trustworthy modernity. Avoid when product needs youthful energy, playfulness, or consumer-social vibes.",
+  ]
+
+  composition: {
+    must-include: [
+    @community/template-shadcn-pricing-toggle,
+    @community/pattern-metric-card,
+    @community/fact-fintech-number-display,
+    ]
+    must-avoid: [
+    @impeccable/persona-brutalist,
+    @impeccable/template-fade-stagger,
+    ]
+    typography-required: {
+      display: "sohne-var (Söhne Variable)"
+      weight-signature: "300"
+      opentype-features: "ss01"
+    }
+    color-required: {
+      background: "#ffffff"
+      heading: "#061b31"
+      shadow-style: "rgba(50,50,93,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.1) 0px 18px 36px -18px"
+    }
+    motion-prescriptions: [
+    @impeccable/template-card-hover-lift,
+    @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-stripe-fintech,
+    @impeccable/template-oklch-palette,
+    @impeccable/template-card-hover-lift,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-opentype-features-on,
+    @community/constraint-typography-weight-blacklist,
+    @community/fact-fintech-number-display,
+    @community/fact-variable-font-axes,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/rule-brand-color-primary-only,
+    @community/principle-intentional-gradient,
+    @community/rule-gradients-justified-only,
+    @community/constraint-no-pure-white-bg,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/template-fade-stagger,
+  ]
+}

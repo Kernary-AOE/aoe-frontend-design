@@ -1,0 +1,14 @@
+<atom
+  id="@community/principle-owasp-insecure-design"
+  kind="knowledge"
+  version="1.0.0"
+  domain="security"
+  tokens="425"
+  q="4.0">
+  <description>OWASP Top 10 A04:2021 — new category focused on risks from design and architectural flaws. Unlike implementation bugs, insecure design cannot be fixed by a perfect implementation — the threat model was wrong from the start.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="146"/>
+    <level name="core"    file="chunks/core.md"    tokens="425"/>
+    <level name="full"    file="chunks/full.md"    tokens="665"/>
+  </projection>
+</atom>

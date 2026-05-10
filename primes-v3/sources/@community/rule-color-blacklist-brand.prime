@@ -1,0 +1,67 @@
+rule ColorBlacklistBrand {
+  id: "@community/rule-color-blacklist-brand"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: visual-design
+
+  description: "Forbids the canonical AI-slop color palette — Inter-purple (#6366F1 / oklch(60% 0.20 280)), pure black (#000) on pure white (#fff) body, and the default browser blue link (#0000EE / #1A0DAB) — from production artifacts. These choices broadcast 'LLM-generated commodity output' and erase brand identity."
+
+  claim: "An HTML artifact MUST NOT use Inter-purple, pure-black-on-pure-white body, or default browser-blue link colors as primary brand colors."
+
+  severity: high
+
+  validates-with: [
+    @impeccable/anti-pattern-ai-slop-palette,
+    @impeccable/counter-example-inter-purple-dark,
+  ]
+
+  checks: [
+    @community/check-color-blacklist-brand,
+  ]
+
+  severity-combination: |
+    blacklist color appears as primary/brand → BLOCK
+    blacklist color appears only as fallback → WARN
+    no blacklist color present              → PASS
+
+  failure-mode: "Output is visually indistinguishable from a default shadcn/ui scaffold; the brand has no visual signature; reviewers and users perceive the product as 'AI-generated', reducing trust and perceived craftsmanship."
+
+  remediation: [
+    "Replace Inter-purple with a brand-specific oklch() hue — derive from a real brand asset, not from a Tailwind default. See @impeccable/template-oklch-palette.",
+    "Replace `#000` body text with `oklch(20% 0.01 <brand-hue>)` and `#fff` body background with `oklch(98% 0.005 <brand-hue>)` — small chroma keeps the surface alive.",
+    "Replace default blue links with a derived brand accent at adequate contrast (≥ 4.5:1 against body bg).",
+  ]
+
+  exceptions: [
+    {
+      case: "System / OS native dialogs",
+      allowed-when: "Color is rendered by the user agent (e.g. <input type='color'> picker chrome) and cannot be overridden.",
+    }
+    {
+      case: "Brand palette legitimately uses one of these values",
+      allowed-when: "Brand book documents the value as official; in this case it is not 'AI-slop' but a coincidence — annotate with `data-brand-color='true'` to opt out.",
+    }
+  ]
+
+  notes: [
+    "The blacklist is opinionated — it targets the statistical mode of LLM-generated output, not all valid uses.",
+    "This rule is a cousin of @impeccable/constraint-font-blacklist (same anti-commodity philosophy, applied to color).",
+  ]
+
+  related: [
+    @impeccable/anti-pattern-ai-slop-palette,
+    @impeccable/template-oklch-palette,
+    @community/rule-color-oklch-required,
+    @impeccable/counter-example-inter-purple-dark,
+    @community/counter-example-tailwind-blue-500,
+    @community/anti-pattern-generic-saas-blue,
+    @community/example-mercury-banking-dashboard,
+    @community/principle-color-system-foundation,
+  ]
+
+  see-also: [
+    @community/check-color-blacklist-brand,
+  ]
+}

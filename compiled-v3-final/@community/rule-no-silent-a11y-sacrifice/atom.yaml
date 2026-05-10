@@ -1,0 +1,21 @@
+id: "@community/rule-no-silent-a11y-sacrifice"
+kind: rule
+version: "1.0.0"
+description: "Accessibility and clarity must not be silently dropped when they conflict with speed or visual aesthetics — any deliberate accessibility trade-off must be explicitly documented with a plan."
+domain: frontend-design
+content_hash: "sha256:533ea3e4229d10d40f606624c1235bf359c5ba7cd587f81f213ea391b6f62fba"
+tokens:
+  summary: 63
+  core: 123
+  full: 236
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-no-shipping-a11y-violations" }
+  - { type: related, target: "@community/rule-explicit-trade-off-disclosure" }
+  - { type: related, target: "@community/constraint-accessibility-aa-minimum" }
+created_at: "2026-05-07"

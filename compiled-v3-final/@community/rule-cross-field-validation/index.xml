@@ -1,0 +1,14 @@
+<atom
+  id="@community/rule-cross-field-validation"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="201"
+  q="4.0">
+  <description>Validation rules that span multiple form fields (e.g. password-confirm match, date-range overlap, conditional required fields) must run on form submission rather than per-field blur, and surface a grouped error summary at the top of the form.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="76"/>
+    <level name="core"    file="chunks/core.md"    tokens="201"/>
+    <level name="full"    file="chunks/full.md"    tokens="410"/>
+  </projection>
+</atom>

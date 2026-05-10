@@ -1,0 +1,21 @@
+id: "@community/constraint-no-account-existence-disclosure"
+kind: constraint
+version: "1.0.0"
+description: "Auth error messages must never reveal whether a given email or username exists in the system — use a single neutral message regardless of the failure reason."
+domain: frontend-design
+content_hash: "sha256:bf2820cb1236cec4566f5381cb01dff56e527df197c9d737c03158c620536cfe"
+tokens:
+  summary: 58
+  core: 217
+  full: 217
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-no-credentials-client" }
+  - { type: related, target: "@community/rule-actionable-error-messages" }
+  - { type: related, target: "@community/anti-pattern-generic-error-text" }
+created_at: "2026-05-07"

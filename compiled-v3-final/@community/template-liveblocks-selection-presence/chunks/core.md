@@ -1,0 +1,114 @@
+# LiveblocksSelectionPresence [template] v1.0.0
+Multiplayer form field presence overlay using Liveblocks: an absolutely-positioned halo border and name pill that appears around an input when another user has focused it, driven by Liveblocks `useOthers()` and `updateMyPresence()`.
+domain: frontend-design
+
+## Language
+tsx
+
+## Body
+```
+    // Selection.tsx — overlay component (source: liveblocks/examples/nextjs-live-form-selection)
+    import React from "react";
+    import styles from "./Selection.module.css";
+
+    export default function Selection({
+      name,
+      color,
+    }: {
+      name?: string;
+      color?: string;
+    }) {
+      return (
+        <div className={styles.selection}>
+          <div
+            className={styles.selection_border}
+            style={{ borderColor: color }}
+          />
+          <div className={styles.selection_name} style={{ background: color }}>
+            {name}
+          </div>
+        </div>
+      );
+    }
+
+    // Selection.module.css
+    /*
+    .selection {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      pointer-events: none;          -- never steals clicks from the input
+    }
+    .selection_border {
+      position: absolute;
+      top: -5px; right: -5px; bottom: -5px; left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-radius: 11px;
+      opacity: 0.2;                  -- halo effect: doesn't compete with focus ring
+    }
+    .selection_name {
+      position: absolute;
+      top: -29px; right: 0;
+      height: 20px;
+      padding: 0 6px;
+      border-radius: 3px;
+      color: white;
+      font-size: 12px;
+      line-height: 20px;
+    }
+    */
+
+    // Selections.tsx — renders overlays for all peers focused on a given input
+    import { useOthers } from "@liveblocks/react";
+
+    const NAMES = ["Alice", "Bob", "Carol", "Dave"];
+    const COLORS = ["#E03130", "#2F9E44", "#1971C2", "#F08C00"];
+
+    function Selections({ id }: { id: string }) {
+      const users = useOthers();
+      return (
+        <>
+          {users.map(({ connectionId, presence }) => {
+            if (presence.selectedId === id) {
+              return (
+                <Selection
+                  key={connectionId}
+                  name={NAMES[connectionId % NAMES.length]}
+                  color={COLORS[connectionId % COLORS.length]}
+                />
+              );
+            }
+          })}
+        </>
+      );
+    }
+
+    // Usage — wrap each input in a relative container:
+    function PresenceInput({ id, ...props }: React.InputHTMLAttributes<HTMLInputElement>) {
+      const { updateMyPresence } = useMyPresence();
+      return (
+        <div style={{ position: "relative" }}>
+          <input
+            id={id}
+            onFocus={() => updateMyPresence({ selectedId: id })}
+            onBlur={() => updateMyPresence({ selectedId: null })}
+            {...props}
+          />
+          <Selections id={id!} />
+        </div>
+      );
+    }
+  
+```
+
+## Usage Notes
+- Input container must be position:relative — the overlay latches to the nearest positioned ancestor.
+- onBlur MUST clear selectedId to null — forgetting leaves ghost selections for peers.
+- opacity: 0.2 on the halo border is intentional — below 0.4 to avoid fighting the input focus ring.
+- For concurrent selections (two peers on same input), stacked 0.2 opacity borders blend visually; add a chip-count badge for accessibility.
+- In production: replace the hardcoded NAMES/COLORS arrays with Liveblocks room metadata or user profile data.
+
+## Gotchas
+- Without position:relative on the wrapper, the halo renders relative to a distant ancestor.
+- Pair with a useWindowFocus hook that clears presence on window blur to prevent stale selections.
+- For rich-text editors, replace selectedId (string) with a range object {blockId, from, to} and use bounding-box overlays.

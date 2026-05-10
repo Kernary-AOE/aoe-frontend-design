@@ -1,0 +1,23 @@
+id: "@community/type-component-prop-shape"
+kind: type
+version: "1.0.0"
+description: "Schema for a design-system component's prop API. Captures variant + size + state dimensions, polymorphic 'as' support, accessibility props, and slot composition. Acts as a template that every primitive component (Button, Input, Card, Badge) instantiates."
+domain: design-system
+content_hash: "sha256:c11a784b17329cdbf4a0ec24c571f28ba7d115f87597be1fb686d745fe89b01b"
+tokens:
+  summary: 78
+  core: 897
+  full: 1715
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/taxonomy-cta-styles" }
+  - { type: related, target: "@community/type-design-token" }
+  - { type: related, target: "@community/type-color-token-shape" }
+  - { type: related, target: "@community/category-form-input-states" }
+  - { type: related, target: "@community/value-touch-target-min" }
+created_at: "2026-05-07"

@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-fitts-law"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="346"
+  q="4.0">
+  <description>Fitts&apos;s Law (1954): movement time to a target is a logarithmic function of the ratio of distance to target size, approximately MT = a + b · log2(D/W + 1).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="128"/>
+    <level name="core"    file="chunks/core.md"    tokens="346"/>
+    <level name="full"    file="chunks/full.md"    tokens="652"/>
+  </projection>
+</atom>

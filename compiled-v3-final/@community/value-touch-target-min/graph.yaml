@@ -1,0 +1,12 @@
+atom: "@community/value-touch-target-min"
+relations:
+  - type: related
+    target: "@community/metric-target-size"
+  - type: related
+    target: "@community/check-touch-target-min"
+  - type: related
+    target: "@community/fact-fitts-law"
+  - type: related
+    target: "@community/value-focus-outline-width"
+  - type: supplies-to
+    target: "@community/rule-touch-target-min"

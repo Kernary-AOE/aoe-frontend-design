@@ -1,0 +1,3 @@
+# LightVsDarkDefault [fact] v1.0.0
+Long-form reading interfaces converge on light defaults; data-heavy / always-on dashboards converge on dark defaults. The split is driven by reading-fatigue patterns and ambient-context expectations, not aesthetics.
+> Long-form reading apps (Readwise, Instapaper, Medium, NYT) default to light themes because positive contrast (dark text on light background) yields ~2% faster reading speeds and lower error rates for sustained prose, while always-on data dashboards (Linear, Vercel, Stripe Dashboard) default to dark themes because they reduce eye strain in office / late-night ambient contexts and emphasise data over chrome.

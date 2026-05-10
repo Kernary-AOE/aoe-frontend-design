@@ -1,0 +1,10 @@
+atom: "@community/fact-hick-law"
+relations:
+  - type: related
+    target: "@community/fact-miller-rule-7"
+  - type: related
+    target: "@community/fact-fitts-law"
+  - type: related
+    target: "@community/fact-jakob-law"
+  - type: related
+    target: "@community/pattern-progressive-disclosure"

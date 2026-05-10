@@ -1,0 +1,16 @@
+{
+  "enabledPlugins": {},
+  "env": {},
+  "hooks": {},
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,14 @@
+<atom
+  id="@community/template-svg-draw-on-stroke"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="1003"
+  q="4.0">
+  <description>SVG draw-on stroke animation using the pathLength=&apos;1&apos; normalization technique — eliminates getTotalLength() JS calls by normalizing path length to 1, enabling pure CSS stroke-dashoffset animation. Includes IntersectionObserver scroll-trigger variant and reduced-motion fallback.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="85"/>
+    <level name="core"    file="chunks/core.md"    tokens="1003"/>
+    <level name="full"    file="chunks/full.md"    tokens="1003"/>
+  </projection>
+</atom>

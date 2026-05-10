@@ -1,0 +1,33 @@
+id: "@community/collection-accessible-modal"
+kind: collection
+version: "1.0.0"
+description: "A complete bundle of atoms required to ship an accessible modal dialog. A modal is the most-failed accessible widget in production frontends — it requires focus management, keyboard handling, ARIA semantics, scroll containment, and portal rendering. This collection composes the rules, checks, and references needed for compliant implementation."
+content_hash: "sha256:d806a06907652c136b65b3906ae33487ca4c109629f04d845bd83ac14c2dd625"
+tokens:
+  summary: 101
+  core: 848
+  full: 848
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-dialog-affordance-required" }
+  - { type: related, target: "@community/example-radix-dialog" }
+  - { type: related, target: "@community/value-z-index-tokens" }
+  - { type: related, target: "@community/anti-pattern-ios-stacked-modals" }
+  - { type: includes, target: "@community/rule-dialog-affordance-required" }
+  - { type: includes, target: "@community/rule-aria-label-required" }
+  - { type: includes, target: "@community/check-aria-label-required" }
+  - { type: includes, target: "@community/rule-keyboard-accessible" }
+  - { type: includes, target: "@community/rule-no-keyboard-trap" }
+  - { type: includes, target: "@community/rule-keyboard-tab-order" }
+  - { type: includes, target: "@community/term-focus-ring" }
+  - { type: includes, target: "@community/check-focus-visible" }
+  - { type: includes, target: "@community/value-focus-outline-width" }
+  - { type: includes, target: "@community/value-z-index-tokens" }
+  - { type: includes, target: "@community/metric-target-size" }
+  - { type: includes, target: "@community/example-radix-dialog" }
+created_at: "2026-05-07"

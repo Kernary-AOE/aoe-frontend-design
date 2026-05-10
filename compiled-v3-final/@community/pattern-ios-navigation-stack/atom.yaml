@@ -1,0 +1,25 @@
+id: "@community/pattern-ios-navigation-stack"
+kind: pattern
+version: "1.0.0"
+description: "Use NavigationStack with a NavigationPath binding and .navigationDestination(for:) modifiers for type-safe, programmatically-navigable push/pop hierarchies in iOS 16+."
+domain: frontend-design
+content_hash: "sha256:15222ec252a83aed01c407daa0f1a464e2fa789e69324c9379ae9ef1f9ce77eb"
+tokens:
+  summary: 58
+  core: 208
+  full: 359
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-ios-large-title-nav" }
+  - { type: related, target: "@community/rule-ios-preserve-navigation-state" }
+  - { type: related, target: "@community/rule-ios-no-override-swipe-back" }
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/check-touch-target-min" }
+  - { type: related, target: "@community/check-mobile-first" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

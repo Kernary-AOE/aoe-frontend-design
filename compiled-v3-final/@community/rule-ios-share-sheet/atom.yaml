@@ -1,0 +1,20 @@
+id: "@community/rule-ios-share-sheet"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:5b066b2a8f322f2f24032dddebf06bb94f8407ab54db2d14c0d7a299ec2f7752"
+tokens:
+  summary: 50
+  core: 76
+  full: 247
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-ios-spotlight-indexing" }
+  - { type: related, target: "@community/pattern-ios-app-shortcuts-siri" }
+  - { type: related, target: "@community/rule-ios-safe-area-insets" }
+created_at: "2026-05-07"

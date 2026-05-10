@@ -1,0 +1,14 @@
+<atom
+  id="@community/constraint-no-content-flashing"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="148"
+  q="4.0">
+  <description>Content must not flash more than 3 times per second — the WCAG 2.1 Success Criterion 2.3.1 (Level A) threshold above which photosensitive seizures can be triggered.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="57"/>
+    <level name="core"    file="chunks/core.md"    tokens="148"/>
+    <level name="full"    file="chunks/full.md"    tokens="148"/>
+  </projection>
+</atom>

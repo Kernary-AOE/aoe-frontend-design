@@ -1,0 +1,20 @@
+id: "@community/fact-monospace-purpose"
+kind: fact
+version: "1.0.0"
+description: "Monospace typefaces are designed for fixed-advance-width contexts (code, terminals, tabular numerics) where character alignment carries information. Using them as body type for prose is anti-pattern: they slow reading and signal a code aesthetic where none is intended."
+content_hash: "sha256:4829de618f4daabe883e526f59517582a825abab188132f0f3596dc8b5c21cdc"
+tokens:
+  summary: 160
+  core: 426
+  full: 761
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-optical-sizing" }
+  - { type: related, target: "@community/fact-type-scale-modular" }
+  - { type: related, target: "@community/taxonomy-typography-roles" }
+created_at: "2026-05-07"

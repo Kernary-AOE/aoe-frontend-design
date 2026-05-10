@@ -1,0 +1,14 @@
+<atom
+  id="@community/tradeoff-typescript-strictness"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-engineering"
+  tokens="554"
+  q="4.0">
+  <description>Enabling TypeScript&apos;s `strict: true` (which turns on strictNullChecks, noImplicitAny, strictFunctionTypes, and others) catches a large class of bugs at compile time — but on a legacy JS-to-TS codebase, the upfront migration cost can be weeks-to-months of error suppression and refactoring. The tradeoff is upfront safety vs incremental adoption.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="104"/>
+    <level name="core"    file="chunks/core.md"    tokens="554"/>
+    <level name="full"    file="chunks/full.md"    tokens="567"/>
+  </projection>
+</atom>

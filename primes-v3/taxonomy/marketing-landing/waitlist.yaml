@@ -1,0 +1,48 @@
+task_type: waitlist
+parent: marketing-landing
+description: "Email signup waitlist page for product launch, focused on a single CTA above the fold."
+trigger_keywords:
+  - "waitlist"
+  - "email signup"
+  - "邮件订阅"
+  - "early access"
+  - "early adopter"
+  - "pre-launch"
+  - "sign up"
+  - "加入等待名单"
+  - "提前体验"
+default_register_pool:
+  - school: warm-institutional
+    weight: 0.4
+  - school: magazine-editorial
+    weight: 0.3
+  - school: notion-warm
+    weight: 0.3
+required_atoms:
+  - "@community/pattern-hero-with-demo"
+  - "@community/pattern-trust-signal-components"
+  - "@community/rule-single-primary-action-per-screen"
+  - "@community/pattern-inline-validation"
+recommended_motion:
+  - "@community/pattern-fade-in-on-load"
+  - "@community/pattern-slide-up-reveal"
+  - "@community/pattern-page-load-choreography"
+forbidden_atoms:
+  - "@impeccable/persona-brutalist"
+  - "@impeccable/persona-vercel-clean"
+  - "@community/template-skeleton-loader"
+  - "@impeccable/persona-dense-pragmatist"
+max_atoms_per_axis:
+  register: 1
+  pattern: 3
+  motion: 1
+  typography: 2
+  color: 1
+  rules: 2
+quality_checks:
+  - "Hero must have email input + CTA above the fold on mobile"
+  - "Body font must be readable at 16px minimum"
+  - "Background must not be pure white — warm cream or off-white preferred"
+  - "Single primary action: email submit only, no competing CTAs"
+  - "Trust signals (social proof, logos, or count) must appear within 2 scrolls"
+  - "Form must show inline validation on submit attempt"

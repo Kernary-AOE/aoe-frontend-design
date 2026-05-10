@@ -1,0 +1,14 @@
+<atom
+  id="@community/anti-pattern-multi-change-experiment"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="271"
+  q="4.0">
+  <description>Bundling two or more independent design changes into a single experiment variant makes it impossible to attribute outcome to any individual change — a fundamental confounding error.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="271"/>
+    <level name="full"    file="chunks/full.md"    tokens="478"/>
+  </projection>
+</atom>

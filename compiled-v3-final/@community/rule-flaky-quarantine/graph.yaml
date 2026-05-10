@@ -1,0 +1,14 @@
+atom: "@community/rule-flaky-quarantine"
+relations:
+  - type: related
+    target: "@community/principle-test-pyramid"
+  - type: related
+    target: "@community/pattern-snapshot-restraint"
+  - type: related
+    target: "@community/anti-pattern-test-the-mock"
+  - type: related
+    target: "@community/fact-test-pyramid-ratios"
+  - type: related
+    target: "@community/anti-pattern-vanity-metrics"
+  - type: enhances
+    target: "@community/principle-test-pyramid"

@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-aria-live-politeness"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="444"
+  q="4.0">
+  <description>aria-live=&apos;polite&apos; waits for the screen reader to finish the current utterance before announcing a region update, while aria-live=&apos;assertive&apos; interrupts immediately — use polite for status messages and assertive only for time-critical errors (ARIA 1.2 live region properties).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="84"/>
+    <level name="core"    file="chunks/core.md"    tokens="444"/>
+    <level name="full"    file="chunks/full.md"    tokens="804"/>
+  </projection>
+</atom>

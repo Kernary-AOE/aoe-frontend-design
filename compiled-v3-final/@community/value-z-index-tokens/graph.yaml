@@ -1,0 +1,10 @@
+atom: "@community/value-z-index-tokens"
+relations:
+  - type: related
+    target: "@community/term-z-index-stacking-context"
+  - type: related
+    target: "@community/collection-accessible-modal"
+  - type: related
+    target: "@community/type-color-token-shape"
+  - type: related
+    target: "@community/anti-pattern-magic-numbers"

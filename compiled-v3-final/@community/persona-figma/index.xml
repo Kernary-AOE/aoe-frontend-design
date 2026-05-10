@@ -1,0 +1,14 @@
+<atom
+  id="@community/persona-figma"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="697"
+  q="4.0">
+  <description>Achromatic tool-chrome aesthetic: figmaSans variable font with granular weight stops (320–700), strict black #000000 and white #ffffff interface shell hosting explosively colorful product-output heroes, pill and circle button geometry evoking a tool palette, and dashed focus outlines that mirror the product&apos;s own selection UI.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="94"/>
+    <level name="core"    file="chunks/core.md"    tokens="697"/>
+    <level name="full"    file="chunks/full.md"    tokens="785"/>
+  </projection>
+</atom>

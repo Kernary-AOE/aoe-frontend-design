@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-tx-dnd-kit-drop-indicator"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="615"
+  q="4.0">
+  <description>dnd-kit (@dnd-kit/abstract) drag feedback pattern: DragOverlay ghost that follows the cursor with a +N count badge for descendants, CSS data-shadow=&apos;true&apos; for source lift (scale 1.03 + heavier shadow), and aria-hidden=&apos;true&apos; for source dim (opacity 0.4) — the lift+ghost+dim model preferred over thin insertion-line indicators.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="98"/>
+    <level name="core"    file="chunks/core.md"    tokens="615"/>
+    <level name="full"    file="chunks/full.md"    tokens="1222"/>
+  </projection>
+</atom>

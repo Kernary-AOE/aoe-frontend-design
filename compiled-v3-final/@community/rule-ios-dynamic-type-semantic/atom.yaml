@@ -1,0 +1,20 @@
+id: "@community/rule-ios-dynamic-type-semantic"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:fda3b405a4b129edfd68d303ead0c0801b7ca90dd7f5a28e603582f77b0fc81f"
+tokens:
+  summary: 37
+  core: 53
+  full: 243
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-ios-text-min-17pt" }
+  - { type: related, target: "@community/check-ios-bold-text-support" }
+  - { type: related, target: "@community/rule-mobile-first" }
+created_at: "2026-05-07"

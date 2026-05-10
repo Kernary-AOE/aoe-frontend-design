@@ -1,0 +1,16 @@
+atom: "@community/fact-easing-mood-mapping"
+relations:
+  - type: related
+    target: "@community/fact-easing-cubic-bezier"
+  - type: related
+    target: "@community/fact-duration-perception-thresholds"
+  - type: related
+    target: "@community/fact-motion-as-feedback"
+  - type: related
+    target: "@community/fact-motion-hierarchy"
+  - type: related
+    target: "@community/pattern-hover-lift"
+  - type: related
+    target: "@community/pattern-button-press-feedback"
+  - type: related
+    target: "@community/pattern-slide-up-reveal"

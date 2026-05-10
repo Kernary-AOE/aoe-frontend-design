@@ -1,0 +1,24 @@
+{
+  "enabledPlugins": {},
+  "env": {},
+  "hooks": {},
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash",
+      "mcp__prime-wiki__prime_compile",
+      "mcp__prime-wiki__prime_mandate",
+      "mcp__prime-wiki__prime_checklist",
+      "mcp__prime-wiki__prime_search",
+      "mcp__prime-wiki__prime_related",
+      "mcp__prime-wiki__prime_template",
+      "mcp__prime-wiki__prime_gallery",
+      "mcp__prime-wiki__prime_scout"
+    ],
+    "deny": []
+  }
+}

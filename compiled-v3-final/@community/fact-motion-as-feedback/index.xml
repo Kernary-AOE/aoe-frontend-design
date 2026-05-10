@@ -1,0 +1,13 @@
+<atom
+  id="@community/fact-motion-as-feedback"
+  kind="knowledge"
+  version="1.0.0"
+  tokens="321"
+  q="4.0">
+  <description>Effective UI motion communicates state changes and causality (something happened, something moved here from there) rather than serving as decoration. Motion divorced from state is overhead — perceived cost without functional return.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="150"/>
+    <level name="core"    file="chunks/core.md"    tokens="321"/>
+    <level name="full"    file="chunks/full.md"    tokens="565"/>
+  </projection>
+</atom>

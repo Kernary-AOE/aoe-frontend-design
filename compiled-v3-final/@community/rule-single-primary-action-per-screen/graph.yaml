@@ -1,0 +1,18 @@
+atom: "@community/rule-single-primary-action-per-screen"
+relations:
+  - type: related
+    target: "@community/rule-single-primary-action-per-component"
+  - type: related
+    target: "@community/principle-visual-hierarchy-action-distinction"
+  - type: related
+    target: "@community/rule-verb-based-cta-labels"
+  - type: related
+    target: "@community/anti-pattern-overloaded-screen"
+  - type: related
+    target: "@community/example-stripe-checkout"
+  - type: related
+    target: "@community/example-stripe-pricing"
+  - type: related
+    target: "@community/rule-destructive-action-differentiation"
+  - type: related
+    target: "@community/rule-ghost-button"

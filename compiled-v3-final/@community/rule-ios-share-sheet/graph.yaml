@@ -1,0 +1,8 @@
+atom: "@community/rule-ios-share-sheet"
+relations:
+  - type: related
+    target: "@community/rule-ios-spotlight-indexing"
+  - type: related
+    target: "@community/pattern-ios-app-shortcuts-siri"
+  - type: related
+    target: "@community/rule-ios-safe-area-insets"

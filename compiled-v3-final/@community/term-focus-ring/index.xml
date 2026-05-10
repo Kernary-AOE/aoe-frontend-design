@@ -1,0 +1,13 @@
+<atom
+  id="@community/term-focus-ring"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="121"
+  q="4.0">
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="58"/>
+    <level name="core"    file="chunks/core.md"    tokens="121"/>
+    <level name="full"    file="chunks/full.md"    tokens="184"/>
+  </projection>
+</atom>

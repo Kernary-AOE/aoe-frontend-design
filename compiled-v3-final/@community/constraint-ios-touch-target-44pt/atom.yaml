@@ -1,0 +1,20 @@
+id: "@community/constraint-ios-touch-target-44pt"
+kind: constraint
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:475f92d88c8f82d73a274239f7392d23272c3a10394ea453d95601a97b197c63"
+tokens:
+  summary: 58
+  core: 103
+  full: 195
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/rule-mobile-first" }
+  - { type: related, target: "@community/pattern-tab-bar-bottom" }
+created_at: "2026-05-07"

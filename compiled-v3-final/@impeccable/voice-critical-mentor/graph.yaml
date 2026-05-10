@@ -1,0 +1,6 @@
+atom: "@impeccable/voice-critical-mentor"
+relations:
+  - type: related
+    target: "@community/method-heuristic-review"
+  - type: related
+    target: "@impeccable/provocation-why-not-serif"

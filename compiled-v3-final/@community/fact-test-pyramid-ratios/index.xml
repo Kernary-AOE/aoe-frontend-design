@@ -1,0 +1,14 @@
+<atom
+  id="@community/fact-test-pyramid-ratios"
+  kind="knowledge"
+  version="1.0.0"
+  domain="testing"
+  tokens="885"
+  q="4.0">
+  <description>Empirically observed test-suite ratios that produce fast, reliable CI: 70/20/10 (unit/integration/E2E) is the canonical pyramid; the Testing Trophy variant (5/30/55/10 = static/unit/integration/E2E) better fits frontend code; Google&apos;s published data shows their backends average ~80% unit, ~15% integration, ~5% E2E.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="358"/>
+    <level name="core"    file="chunks/core.md"    tokens="885"/>
+    <level name="full"    file="chunks/full.md"    tokens="1546"/>
+  </projection>
+</atom>

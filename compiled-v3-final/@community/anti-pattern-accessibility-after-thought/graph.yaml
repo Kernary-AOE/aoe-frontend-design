@@ -1,0 +1,10 @@
+atom: "@community/anti-pattern-accessibility-after-thought"
+relations:
+  - type: related
+    target: "@community/counter-example-aria-bandaid"
+  - type: related
+    target: "@community/method-a11y-audit"
+  - type: related
+    target: "@community/collection-accessible-frontend"
+  - type: related
+    target: "@community/rule-keyboard-accessible"

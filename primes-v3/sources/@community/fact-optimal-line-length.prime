@@ -1,0 +1,25 @@
+fact OptimalLineLength {
+  id: "@community/fact-optimal-line-length"
+  version: "1.0.0"
+
+  statement: "Optimal reading line length for body text is 45–75 characters per line (CPL) for single-column layouts, and 40–50 CPL for multi-column layouts. Lines outside this range measurably reduce reading speed and comprehension."
+
+  confidence: high
+  evidence: "@baymard/source-ux-research-reading"
+
+  domain: typography
+
+  notes: [
+    "In CSS, `ch` unit is approximately 1 character width of the current font's '0' glyph.",
+    "Recommended implementation: `max-width: clamp(45ch, 65ch, 75ch)` on prose containers.",
+    "Too-wide lines (> 75 CPL) cause readers to lose their place at line wrap.",
+    "Too-narrow lines (< 45 CPL) create excessive hyphenation and fragmented reading rhythm.",
+    "Digital reading (screen, 16px base) tends toward the lower end of the range (50–65 ch) compared to print.",
+    "This fact informs @community/category-typography-scale and @community/rule-typography.",
+  ]
+
+  related: [
+    @community/category-typography-scale,
+    @community/value-focus-outline-width,
+  ]
+}

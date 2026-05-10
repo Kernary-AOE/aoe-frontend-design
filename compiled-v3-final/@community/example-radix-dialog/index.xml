@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-radix-dialog"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="548"
+  q="4.0">
+  <description>Radix Dialog implements full WAI-ARIA modal-dialog semantics: opens with focus moving to the first focusable element (or the explicitly-marked initialFocus), traps Tab cycling within the dialog, restores focus to the trigger on close, and dismisses on Escape. Background scroll is locked via aria-hidden on siblings. Backdrop click closes by default (configurable).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="105"/>
+    <level name="core"    file="chunks/core.md"    tokens="548"/>
+    <level name="full"    file="chunks/full.md"    tokens="991"/>
+  </projection>
+</atom>

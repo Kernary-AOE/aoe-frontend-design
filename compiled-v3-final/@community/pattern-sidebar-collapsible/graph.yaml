@@ -1,0 +1,20 @@
+atom: "@community/pattern-sidebar-collapsible"
+relations:
+  - type: related
+    target: "@community/pattern-progressive-disclosure"
+  - type: related
+    target: "@community/example-vercel-sidebar"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/rule-aria-current-page"
+  - type: related
+    target: "@community/rule-aria-label-in-name"
+  - type: related
+    target: "@community/check-skip-link"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: compatible
+    target: "@community/pattern-progressive-disclosure"
+  - type: compatible
+    target: "@community/pattern-command-palette"

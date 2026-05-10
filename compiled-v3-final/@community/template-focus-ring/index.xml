@@ -1,0 +1,14 @@
+<atom
+  id="@community/template-focus-ring"
+  kind="knowledge"
+  version="1.0.0"
+  domain="accessibility"
+  tokens="307"
+  q="4.0">
+  <description>A baseline focus ring CSS template that satisfies WCAG 2.2 SC 2.4.11. Use as the foundation for per-component focus customization.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="47"/>
+    <level name="core"    file="chunks/core.md"    tokens="307"/>
+    <level name="full"    file="chunks/full.md"    tokens="307"/>
+  </projection>
+</atom>

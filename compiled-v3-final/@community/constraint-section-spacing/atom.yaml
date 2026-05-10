@@ -1,0 +1,24 @@
+id: "@community/constraint-section-spacing"
+kind: constraint
+version: "1.0.0"
+description: "Section vertical padding must use py-20 sm:py-32 (or clamp(80px, 10vw, 128px)) with max-w-6xl mx-auto px-4 sm:px-6 container — never arbitrary margins between sections. Extracted from shadcn-landing-page, open-react-template, and next-saas-starter analysis."
+domain: frontend-design
+content_hash: "sha256:cfb53f47b7462c0bd2a6e2e420da63656d94b0fa81cb5cce19f8ed96782f47ad"
+tokens:
+  summary: 80
+  core: 891
+  full: 984
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-landing-page-sections" }
+  - { type: related, target: "@community/constraint-card-grid-gap" }
+  - { type: related, target: "@community/check-spacing-rhythm" }
+  - { type: related, target: "@community/fact-8pt-grid-system" }
+  - { type: related, target: "@impeccable/persona-vercel-clean" }
+  - { type: related, target: "@impeccable/persona-stripe" }
+created_at: "2026-05-07"

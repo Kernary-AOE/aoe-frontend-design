@@ -1,0 +1,34 @@
+provocation WhyNotSerif {
+  id: "@impeccable/provocation-why-not-serif"
+  version: "1.0.0"
+
+  label: "Why Not Serif?"
+  domain: visual-design
+
+  trigger: "agent about to select a sans-serif typeface as the primary display font"
+
+  question: "Why are you using a sans-serif for display headings? Have you considered that a high-quality serif (Canela, GT Super, Freight Display) would immediately distinguish this design from the ~80% of AI-generated interfaces that default to sans-serif? What specific visual goal does sans-serif serve better here — and is that goal actually stated in the brief?"
+
+  intent: "Challenge the AI-slop default of universal sans-serif usage. Serif type at display scale is not 'old fashioned' — it signals deliberate editorial craft and immediately separates the work from commodity output. The question is not 'should we use serif' but 'have we consciously decided not to, and why'."
+
+  resolution-paths: [
+    {
+      context: "Dense product UI, data-heavy (@impeccable/persona-dense-pragmatist)",
+      answer: "Sans-serif is correct — legibility at small sizes and visual alignment with data tables justifies it.",
+    }
+    {
+      context: "Editorial, marketing, brand landing page",
+      answer: "Strong case for serif — proceed with @impeccable/persona-editorial guidance.",
+    }
+    {
+      context: "Ambiguous SaaS product",
+      answer: "Explore both: prototype serif display with sans body vs. geometric sans throughout. Let contrast testing decide.",
+    }
+  ]
+
+  related: [
+    @impeccable/persona-editorial,
+    @impeccable/constraint-font-blacklist,
+    @impeccable/anti-pattern-ai-slop-palette,
+  ]
+}

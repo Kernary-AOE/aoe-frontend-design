@@ -1,0 +1,14 @@
+<atom
+  id="@community/tradeoff-cache-strategy"
+  kind="knowledge"
+  version="1.0.0"
+  domain="backend-engineering"
+  tokens="838"
+  q="4.0">
+  <description>The four canonical cache strategies trade off freshness, write latency, consistency, and operational complexity. Picking the right one depends on read/write ratio, staleness tolerance, and the cost of cache misses.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="69"/>
+    <level name="core"    file="chunks/core.md"    tokens="838"/>
+    <level name="full"    file="chunks/full.md"    tokens="974"/>
+  </projection>
+</atom>

@@ -1,0 +1,21 @@
+id: "@community/constraint-scroll-locked-modal-only"
+kind: constraint
+version: "1.0.0"
+description: "Body scroll lock (overflow:hidden / scroll-position pinning) is permitted only while a fully-blocking overlay (modal dialog, full-screen drawer, lightbox) is visible. It must be released the moment the overlay closes."
+domain: interaction
+content_hash: "sha256:56c88a00f65ff27cbbdfc34094a89a0683fbd8cb20408ab85ffd5e039b0ab165"
+tokens:
+  summary: 71
+  core: 417
+  full: 502
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-modal-confirm" }
+  - { type: related, target: "@community/example-radix-dialog" }
+  - { type: related, target: "@community/constraint-focus-trap-modal" }
+created_at: "2026-05-07"

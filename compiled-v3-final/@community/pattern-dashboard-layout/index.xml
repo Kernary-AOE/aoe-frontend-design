@@ -1,0 +1,14 @@
+<atom
+  id="@community/pattern-dashboard-layout"
+  kind="knowledge"
+  version="1.0.0"
+  domain="frontend-design"
+  tokens="473"
+  q="4.0">
+  <description>Structural composition for admin dashboards: a fixed sidebar on the left, a sticky topbar, metric cards at the top of the main content area, a chart section, and a data table below. Extracted from two open-source Next.js admin templates (2k★ and 631★).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="78"/>
+    <level name="core"    file="chunks/core.md"    tokens="473"/>
+    <level name="full"    file="chunks/full.md"    tokens="868"/>
+  </projection>
+</atom>

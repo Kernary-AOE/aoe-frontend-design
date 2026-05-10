@@ -1,0 +1,14 @@
+<atom
+  id="@impeccable/template-fade-stagger"
+  kind="knowledge"
+  version="1.0.0"
+  domain="motion"
+  tokens="760"
+  q="4.0">
+  <description>Children of a list / grid fade-up in sequence using nth-child animation-delay — pure CSS, no JS. Triggered by adding .is-revealed to the parent (combine with scroll-reveal observer for on-scroll cascades).</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="63"/>
+    <level name="core"    file="chunks/core.md"    tokens="760"/>
+    <level name="full"    file="chunks/full.md"    tokens="760"/>
+  </projection>
+</atom>

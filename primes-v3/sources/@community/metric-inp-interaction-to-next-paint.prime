@@ -1,0 +1,86 @@
+metric InpInteractionToNextPaint {
+  id: "@community/metric-inp-interaction-to-next-paint"
+  version: "1.0.0"
+
+  name: "Interaction to Next Paint (INP)"
+  unit: "milliseconds"
+  domain: performance
+
+  description: "INP measures the latency from a discrete user input (click, tap, key press) to the next frame painted by the browser. Replaced FID (First Input Delay) as an official Core Web Vital in March 2024. Reports the 98th-percentile interaction across an entire page session — captures the worst-case responsiveness, not the average."
+
+  thresholds: [
+    {
+      level: "Good",
+      value: "≤ 200ms",
+      meaning: "Interactions feel snappy; below conscious notice for most users.",
+      target: "engineering should target this for all interactive surfaces"
+    }
+    {
+      level: "Needs Improvement",
+      value: "200ms < INP ≤ 500ms",
+      meaning: "Interactions noticeable; users perceive lag on heavy actions.",
+      action: "investigate top-3 slow interactions; profile main-thread work"
+    }
+    {
+      level: "Poor",
+      value: "> 500ms",
+      meaning: "Interactions feel broken; users may double-click or abandon.",
+      action: "block release until profiled and fixed; usually long-task or large state update"
+    }
+  ]
+
+  formula: "For each session: INP = the 98th-percentile latency across all eligible interactions (click, tap, key press; excludes scroll and continuous gestures), with a minimum of one interaction. Page-level INP reported is this per-session value at p75 across CrUX/RUM data."
+
+  measurement: {
+    api: "PerformanceObserver with type='event' + 'first-input' (with durationThreshold:40ms); web-vitals.js library wraps this"
+    field-data: "Chrome User Experience Report (CrUX), web-vitals.js, RUM tools (Sentry, Vercel Speed Insights, Cloudflare, DebugBear)"
+    lab-data: "Lighthouse 'TBT' (Total Blocking Time) is a synthetic proxy; Chrome DevTools Performance panel for per-interaction profiling"
+    note: "Lab tools approximate INP via interaction simulation; field RUM is the source of truth Google ranks on."
+  }
+
+  common-causes: [
+    {
+      cause: "Long-running JavaScript handler (> 50ms)",
+      fix: "Yield to main thread: `await scheduler.yield()` (Chrome 120+) or `await new Promise(r => setTimeout(r, 0))`. Break large work into chunks."
+    }
+    {
+      cause: "Forced synchronous layout (e.g. reading offsetHeight after style change)",
+      fix: "Batch reads and writes; use ResizeObserver / IntersectionObserver instead of polling layout."
+    }
+    {
+      cause: "Large React state update triggering full re-render",
+      fix: "Mark non-urgent updates with `useTransition` / `startTransition` (React 18). Memoize expensive subtrees."
+    }
+    {
+      cause: "Hydration on user interaction blocking the click handler",
+      fix: "Pre-hydrate critical components; consider islands architecture or progressive hydration (Astro, Qwik)."
+    }
+    {
+      cause: "Heavy event listener on document/window (analytics, instrumentation)",
+      fix: "Defer instrumentation listeners; use `passive: true` for scroll/touch listeners; pull to Web Worker (Partytown)."
+    }
+    {
+      cause: "Synchronous IndexedDB / localStorage on click",
+      fix: "Move storage to async path; use cache + lazy-write pattern."
+    }
+  ]
+
+  notes: [
+    "INP includes the entire pipeline: input delay (queue wait) + processing time (handler + layout) + presentation delay (next frame). All three matter.",
+    "FID measured only the first interaction's input delay — INP measures all and includes processing. Most pages had 'good' FID and 'poor' INP, exposing the FID gap.",
+    "Pages with very few interactions (one button on a static page) report INP from a small sample — single bad click can dominate. CrUX requires a minimum interaction count.",
+    "INP correlates with engagement metrics: pages with INP > 500ms see 5-10% higher abandon rates than INP < 200ms.",
+    "The new HTML 'popover' attribute and `<dialog>` element render in the top-layer outside the main-thread paint pipeline — typically have very low INP.",
+    "Animation handlers (scroll, mousemove) are NOT counted as INP-eligible interactions — they go to the FPS / animation budget instead.",
+  ]
+
+  related: [
+    @community/term-inp,
+    @community/metric-lcp-largest-contentful-paint,
+    @community/metric-cls-cumulative-layout-shift,
+    @community/fact-rail-targets,
+    @community/principle-perceived-vs-actual,
+    @community/tool-web-vitals-js,
+    @community/collection-performance-budget,
+  ]
+}

@@ -1,0 +1,6 @@
+atom: "@impeccable/voice-precise-technical"
+relations:
+  - type: related
+    target: "@impeccable/voice-critical-mentor"
+  - type: related
+    target: "@community/method-a11y-audit"

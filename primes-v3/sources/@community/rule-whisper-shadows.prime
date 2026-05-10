@@ -1,0 +1,52 @@
+rule WhisperShadows {
+  id: "@community/rule-whisper-shadows"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  description: "Card shadow opacity must stay between 4% and 12% across the elevation scale — shadows visible at arm's length are too strong; strong shadows (≥15% opacity) are prohibited in light-mode card surfaces."
+
+  statement: """
+    Shadow scale for light-mode card surfaces:
+    | Level    | Value                                     | Usage                    |
+    |----------|-------------------------------------------|--------------------------|
+    | card     | 0 1px 3px rgba(0,0,0,0.04)               | All cards default        |
+    | button   | 0 1px 3px rgba(0,0,0,0.06)               | Icon buttons, small CTAs |
+    | hover    | 0 2px 4px rgba(0,0,0,0.08)               | Card hover state         |
+    | elevated | 0 4px 12px rgba(0,0,0,0.08)              | Floating panels          |
+    | modal    | 0 8px 24px rgba(0,0,0,0.12)              | Modal / sheet overlay    |
+
+    Prohibited: box-shadow with alpha ≥ 0.15 on card surfaces.
+    Prohibited: drop-shadow(0 4px 8px #000) or similar fully-opaque shadows.
+    Test: hold the rendered UI at arm's length — a card shadow that is clearly visible at normal reading distance is too strong.
+  """
+
+  rationale: "Heavy shadows (≥15% opacity) create a 'floating' effect that competes with content for attention. The purpose of a card shadow is to hint at elevation without asserting it — the shadow is infrastructure, not a design statement. At 4% opacity, the shadow provides just enough depth to separate card from page background. The graduated scale (4% → 12%) maps to actual elevation levels: default cards are nearly flat; modals earn a stronger shadow because they are genuinely elevated above all page content. Extracted from StyleSeed DESIGN-LANGUAGE.md §12 and §18 (Golden Rule #7)."
+
+  applies-to: [
+    "Card components in light mode",
+    "Button surfaces",
+    "Dropdown and popover shadows",
+    "Modal and sheet overlays",
+    "Any surface that uses box-shadow for elevation",
+  ]
+
+  counter-example: "box-shadow: 0 4px 16px rgba(0,0,0,0.25) on a dashboard card — the card appears to levitate dramatically and pulls attention from the content inside it."
+
+  notes: [
+    "Source: github.com/bitjaru/styleseed, engine/DESIGN-LANGUAGE.md §12 and Golden Rule #7 (MIT).",
+    "For dark mode: drop shadows become invisible against dark backgrounds; switch to rgba(255,255,255,0.06) inner borders or use luminance-stepping elevation (lighter surface = higher elevation).",
+    "CSS custom properties pattern: --shadow-card: 0 1px 3px rgba(0,0,0,0.04); — reference via var() everywhere.",
+    "Respect prefers-reduced-motion: shadows are static and are not motion-affected, but ensure transitions on hover-shadow-change are ≤150ms.",
+  ]
+
+  related: [
+    @community/constraint-no-pure-black-text,
+    @community/rule-chart-never-alone,
+    @community/pattern-card-component,
+    @community/example-vercel-dashboard,
+    @community/example-shadcn-dashboard,
+    @community/rule-no-heavy-shadows-per-component,
+    @community/principle-white-space-as-design-element,
+  ]
+}

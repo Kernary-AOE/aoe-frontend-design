@@ -1,0 +1,20 @@
+id: "@community/rule-no-uniform-spacing-without-variation"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:b3e1f4a2354353e62720841fb26f7daa37ade3d83c8fae0722c97328ce000c9d"
+tokens:
+  summary: 97
+  core: 185
+  full: 347
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-spacing-rhythm" }
+  - { type: related, target: "@community/anti-pattern-ai-generated-ui" }
+  - { type: related, target: "@community/rule-grid-baseline-aligned" }
+created_at: "2026-05-07"

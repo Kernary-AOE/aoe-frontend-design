@@ -1,0 +1,24 @@
+id: "@community/principle-no-string-concat"
+kind: principle
+version: "1.0.0"
+description: "Translatable strings must never be assembled by concatenation in code. Word order, plural forms, gender agreement, and grammatical case differ across languages — concatenation hardcodes English grammar and produces broken translations in 6500+ other locales."
+domain: i18n
+content_hash: "sha256:0b40850fb831a28704dc3142fe7a7345530fc1cdd7bc167daf15376008daae52"
+tokens:
+  summary: 192
+  core: 453
+  full: 709
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-icu-message-format" }
+  - { type: related, target: "@community/anti-pattern-flag-as-language" }
+  - { type: related, target: "@community/rule-intl-api-locale-formatting" }
+  - { type: related, target: "@community/rule-cjk-line-break" }
+  - { type: related, target: "@community/fact-bidi-direction" }
+  - { type: requires, target: "@community/pattern-icu-message-format" }
+created_at: "2026-05-07"

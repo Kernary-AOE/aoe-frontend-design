@@ -1,0 +1,53 @@
+rule AutocompleteAttributes {
+  id: "@community/rule-autocomplete-attributes"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  description: "Form inputs collecting personal data (name, email, phone, address, credit card) MUST carry a valid HTML `autocomplete` attribute token so browsers and password managers can autofill correctly and meet WCAG 1.3.5."
+
+  claim: "Every input that collects user-identifiable data must have `autocomplete` set to an appropriate WCAG 1.3.5 token (e.g. `name`, `email`, `tel`, `street-address`, `cc-number`) — `autocomplete='off'` is only valid when autofill is genuinely harmful (e.g. OTP fields or security-challenge inputs)."
+
+  severity: warning
+
+  rationale: "Autofill reduces typing errors, speeds up form completion, and is required for WCAG 1.3.5 (Identify Input Purpose). Mobile users benefit most — they are on constrained keyboards where re-typing saved data is costly."
+
+  examples: {
+    correct: [
+      "<input type='text'  name='name'    autocomplete='name' />",
+      "<input type='email' name='email'   autocomplete='email' />",
+      "<input type='tel'   name='phone'   autocomplete='tel' />",
+      "<input type='text'  name='address' autocomplete='street-address' />",
+      "<input type='text'  name='cc'      autocomplete='cc-number' />",
+    ]
+    incorrect: [
+      "<input type='email' name='email' />",
+      "<input type='text'  name='name'  autocomplete='off' />",
+    ]
+  }
+
+  exceptions: [
+    {
+      case: "One-time passwords (OTP)"
+      allowed-when: "Use autocomplete='one-time-code' — not 'off'."
+    }
+    {
+      case: "Security challenge inputs (CAPTCHAs, PIN challenges)"
+      allowed-when: "autocomplete='off' is acceptable; user-hostile autofill would degrade security."
+    }
+  ]
+
+  remediation: [
+    "Audit all inputs with `querySelectorAll('input:not([autocomplete])')` to find missing attributes.",
+    "Map each input's semantic purpose to an WCAG token: https://www.w3.org/TR/WCAG21/#input-purposes",
+    "For multi-section forms (shipping vs billing), use section tokens: autocomplete='section-billing street-address'.",
+  ]
+
+  related: [
+    @community/rule-form-label-associated,
+    @community/pattern-inline-validation,
+    @community/pattern-multi-step-wizard,
+  ]
+}

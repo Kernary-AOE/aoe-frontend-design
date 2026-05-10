@@ -1,0 +1,67 @@
+constraint AccessibilityAaMinimum {
+  id: "@community/constraint-accessibility-aa-minimum"
+  version: "1.0.0"
+
+  target: ["all production-grade pages", "shipped product UI", "marketing pages on a public domain"]
+  severity: critical
+  domain: accessibility
+
+  description: "Every shipped page must meet WCAG 2.2 Level AA at minimum. Internal tools, prototypes, and feature flags do not relax this requirement once exposed to end users."
+
+  values: [
+    {
+      criterion: "1.4.3 Contrast (Minimum)",
+      threshold: "4.5:1 normal text / 3:1 large text",
+    }
+    {
+      criterion: "1.4.11 Non-text Contrast",
+      threshold: "3:1 for UI components and graphical objects",
+    }
+    {
+      criterion: "2.1.1 Keyboard",
+      threshold: "all functionality operable from keyboard",
+    }
+    {
+      criterion: "2.4.7 Focus Visible",
+      threshold: "visible focus indicator on every interactive element",
+    }
+    {
+      criterion: "2.4.11 Focus Not Obscured (Minimum)",
+      threshold: "focused element not entirely hidden by sticky elements",
+    }
+    {
+      criterion: "1.3.1 Info and Relationships",
+      threshold: "semantic markup conveys structure",
+    }
+    {
+      criterion: "4.1.2 Name, Role, Value",
+      threshold: "every control has accessible name + role",
+    }
+  ]
+
+  rationale: "WCAG AA is the de-facto legal floor in the EU (EAA 2025), the US (DOJ 2024 Title II rule), and most procurement processes. Below AA the product is liable, unusable for ~15% of the population, and demonstrably worse for everyone (low-light contexts, glare, ageing eyes). AAA is aspirational; AA is the floor."
+
+  exceptions: [
+    "Decorative imagery (alt-text exempt).",
+    "Logotypes (exempt from contrast).",
+    "Disabled controls (exempt from 1.4.11 contrast).",
+    "Pre-release prototypes behind authenticated test flags with no end-user exposure.",
+  ]
+
+  approved-alternatives: [
+    "Aim AAA where reading-heavy (long-form prose, documentation).",
+    "Pair @community/rule-color-contrast + @community/rule-keyboard-accessible + @community/check-focus-visible as a baseline gate.",
+    "Run @community/tool-axe-core and @community/tool-lighthouse in CI.",
+  ]
+
+  enforcement: "CI: axe-core + Lighthouse a11y score ≥ 95 as PR-blocking. Manual: keyboard-only walkthrough on every new page. Quarterly: full WCAG 2.2 AA audit."
+
+  related: [
+    @w3c/fact-wcag-contrast-aa,
+    @w3c/source-wcag-22,
+    @community/rule-color-contrast,
+    @community/rule-keyboard-accessible,
+    @community/tool-axe-core,
+    @community/tool-lighthouse,
+  ]
+}

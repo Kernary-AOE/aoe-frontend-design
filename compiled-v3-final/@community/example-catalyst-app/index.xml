@@ -1,0 +1,14 @@
+<atom
+  id="@community/example-catalyst-app"
+  kind="knowledge"
+  version="1.0.0"
+  domain="visual-design"
+  tokens="535"
+  q="4.0">
+  <description>Catalyst is Tailwind&apos;s premium app UI kit. Unlike basic Tailwind UI, Catalyst uses a refined zinc-neutral palette with rounded-xl (12px) cards, soft shadows, and a distinctive &apos;glass&apos; navbar with backdrop-blur. Sidebar uses bg-zinc-50 (light) / bg-zinc-900 (dark) with carefully tuned active states using zinc-950/zinc-50 inverse pairs.</description>
+  <projection>
+    <level name="summary" file="chunks/summary.md" tokens="98"/>
+    <level name="core"    file="chunks/core.md"    tokens="535"/>
+    <level name="full"    file="chunks/full.md"    tokens="972"/>
+  </projection>
+</atom>

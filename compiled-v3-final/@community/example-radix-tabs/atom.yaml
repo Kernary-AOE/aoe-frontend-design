@@ -1,0 +1,21 @@
+id: "@community/example-radix-tabs"
+kind: example
+version: "1.0.0"
+description: "Radix Tabs implements WAI-ARIA Authoring Practices for tabs: Tab/Shift+Tab moves focus into and out of the tablist; ArrowLeft/Right (or Up/Down with vertical orientation) moves focus between tabs WITHOUT activating; Space/Enter activates the focused tab. Optional 'activateOnFocus' prop switches to auto-activation. Underline indicator slides between tabs with framer-motion."
+domain: accessibility
+content_hash: "sha256:db9a7dbbc576324668d348ebb34aadb8e8ec91a0dd93cfc396c9a6080512170b"
+tokens:
+  summary: 107
+  core: 536
+  full: 966
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-tabs-keyboard" }
+  - { type: related, target: "@community/check-focus-visible" }
+  - { type: related, target: "@community/rule-keyboard-accessible" }
+created_at: "2026-05-07"

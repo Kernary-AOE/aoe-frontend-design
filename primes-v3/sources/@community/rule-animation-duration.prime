@@ -1,0 +1,67 @@
+rule AnimationDuration {
+  id: "@community/rule-animation-duration"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: visual-design
+
+  description: "UI motion (hover, focus, expand, collapse, page transition) MUST resolve in 100–300ms. Below 100ms the motion reads as a glitch; above 300ms it feels sluggish; above 500ms users perceive the UI as broken. Cap is 500ms."
+
+  claim: "Every CSS / JS animation that responds to user interaction MUST have a duration in the range 100–300ms (preferred) and never exceed 500ms."
+
+  severity: medium
+
+  validates-with: [
+    @community/fact-visibility-system-status,
+  ]
+
+  checks: [
+    @community/check-animation-duration,
+  ]
+
+  severity-combination: |
+    animation > 500ms                → BLOCK
+    animation 300–500ms              → WARN
+    animation 100–300ms              → PASS
+    animation < 100ms                → WARN  (likely missed by user)
+
+  failure-mode: "Slow motion makes the UI feel broken or laggy; users click again, double-fire, or abandon. Fast motion (<100ms) is invisible — the cognitive 'where did the menu go?' moment cancels the value of the animation."
+
+  remediation: [
+    "Standardize on tokens: `--motion-fast: 150ms`, `--motion-base: 200ms`, `--motion-slow: 300ms` — consume them in CSS and JS.",
+    "Reserve 400–500ms only for full-page route transitions; never for hover / focus.",
+    "If your animation truly needs > 500ms (e.g. a hero reveal), break it into stages with the user able to interact during.",
+    "Pair with @community/rule-reduced-motion-required to handle accessibility.",
+  ]
+
+  exceptions: [
+    {
+      case: "Decorative ambient animation",
+      allowed-when: "A background gradient or hero loop runs continuously and is not tied to interaction; duration is not perceived as 'response time'.",
+    }
+    {
+      case: "Loading skeleton",
+      allowed-when: "A pulse / shimmer cycles every 1500ms — this is feedback, not response.",
+    }
+  ]
+
+  notes: [
+    "Material Design specifies 200–300ms; iOS HIG implicitly uses ~250ms. Stay in that band for cross-platform familiarity.",
+    "Easing matters as much as duration — `cubic-bezier(0.4, 0, 0.2, 1)` (Material 'standard') is a safe default for entering UI.",
+  ]
+
+  related: [
+    @community/rule-reduced-motion-required,
+    @community/fact-visibility-system-status,
+    @community/anti-pattern-decorative-spinning,
+    @community/anti-pattern-no-bounce-everything,
+    @community/example-linear-card-hover,
+    @community/example-framer-page-transition,
+    @community/rule-hover-focus-animation-parity,
+  ]
+
+  see-also: [
+    @community/check-animation-duration,
+  ]
+}

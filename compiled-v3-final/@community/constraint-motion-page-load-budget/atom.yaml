@@ -1,0 +1,22 @@
+id: "@community/constraint-motion-page-load-budget"
+kind: constraint
+version: "1.0.0"
+description: "Page-load entrance animations must complete within 800ms total — hero in ≤ 600ms at 250-400ms per element, stagger cap of 70ms × 8 items = 560ms — to avoid blocking perceived interactivity."
+domain: frontend-design
+content_hash: "sha256:ffda7e10c24c23532303eac235adedaef5e2f29d54285f483bd4ffcfe684a400"
+tokens:
+  summary: 64
+  core: 291
+  full: 385
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/fact-motion-hierarchy" }
+  - { type: related, target: "@community/pattern-stagger-reveal" }
+  - { type: related, target: "@community/constraint-animation-pref-respected" }
+  - { type: related, target: "@community/rule-animation-duration" }
+created_at: "2026-05-07"

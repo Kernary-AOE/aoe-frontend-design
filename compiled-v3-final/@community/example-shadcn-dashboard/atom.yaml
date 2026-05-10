@@ -1,0 +1,21 @@
+id: "@community/example-shadcn-dashboard"
+kind: example
+version: "1.0.0"
+description: "The shadcn dashboard template uses HSL CSS variables for theming with a 240-deg neutral palette. Layout: 240px sidebar with collapsible groups, a 56px top nav with team-switcher dropdown, and a main grid of 4 KPI cards above a 2-column area (chart left / recent-sales list right). Light mode is bg-background (HSL 0 0% 100%), dark mode flips to HSL 240 10% 3.9%."
+domain: visual-design
+content_hash: "sha256:5c56a1f274f9c0f3a024dae56e8faaebbe3226f0517e42135586e85d9ad01ee1"
+tokens:
+  summary: 105
+  core: 542
+  full: 980
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/pattern-dashboard-grid" }
+  - { type: related, target: "@community/example-stripe-dashboard" }
+  - { type: related, target: "@community/term-oklch" }
+created_at: "2026-05-07"

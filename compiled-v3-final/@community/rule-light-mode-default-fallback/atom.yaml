@@ -1,0 +1,20 @@
+id: "@community/rule-light-mode-default-fallback"
+kind: rule
+version: "1.0.0"
+domain: frontend-design
+content_hash: "sha256:9647ccb84715db0ce930f8d05b713d5bbe074bcdf086c48a756a39b1c497300d"
+tokens:
+  summary: 64
+  core: 170
+  full: 508
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-color-scheme-meta-tag" }
+  - { type: related, target: "@community/rule-color-dark-mode-cascade" }
+  - { type: related, target: "@impeccable/template-oklch-dark-mode-cascade" }
+created_at: "2026-05-07"

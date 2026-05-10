@@ -1,0 +1,12 @@
+atom: "@impeccable/template-dropdown-menu"
+relations:
+  - type: related
+    target: "@impeccable/template-cmd-palette-shell"
+  - type: related
+    target: "@community/template-focus-ring"
+  - type: related
+    target: "@community/rule-keyboard-tab-order"
+  - type: related
+    target: "@community/check-focus-visible"
+  - type: related
+    target: "@community/anti-pattern-breaking-keyboard-flow"

@@ -1,0 +1,8 @@
+atom: "@community/rule-no-justified-text-narrow"
+relations:
+  - type: related
+    target: "@community/rule-line-length-optimal"
+  - type: related
+    target: "@community/rule-body-readability"
+  - type: related
+    target: "@community/check-line-length-optimal"

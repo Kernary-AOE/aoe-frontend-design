@@ -1,0 +1,20 @@
+id: "@community/check-color-blacklist-brand"
+kind: check
+version: "1.0.0"
+description: "Scans CSS color declarations for blacklisted default brand colors (Tailwind blue-500/600, violet-600, indigo-600, Bootstrap #007bff) that signal generic 'AI slop' aesthetic."
+domain: aesthetic
+content_hash: "sha256:bf5da71cf83a723f31518f2ad22d5822d882a2f025dd09d5ba4e991277e0b87e"
+tokens:
+  summary: 57
+  core: 394
+  full: 488
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/rule-color-blacklist-brand" }
+  - { type: related, target: "@community/transform-rgb-to-oklch" }
+created_at: "2026-05-07"

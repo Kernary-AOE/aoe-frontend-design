@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "prime-wiki": {
+      "command": "node",
+      "args": [
+        "--experimental-transform-types",
+        "--max-old-space-size=512",
+        "${CORPUS_ROOT}/app/mcp-server-frontend/index.ts"
+      ],
+      "env": {
+        "PRIME_BACKEND": "v3",
+        "PRIME_DIR": "${CORPUS_ROOT}/compiled-v3-final"
+      }
+    }
+  }
+}

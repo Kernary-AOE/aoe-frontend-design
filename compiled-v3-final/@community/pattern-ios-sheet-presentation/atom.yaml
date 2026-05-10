@@ -1,0 +1,25 @@
+id: "@community/pattern-ios-sheet-presentation"
+kind: pattern
+version: "1.0.0"
+description: "Present a .sheet or .fullScreenCover for a self-contained, discrete task; use .presentationDetents([.medium, .large]) for resizable partial-height sheets; always provide a cancel (cancellationAction) and confirm (confirmationAction) toolbar button."
+domain: frontend-design
+content_hash: "sha256:f943ab5bd2d268ef8f7fc6cd7d47fdf03ba8fdd5dd707aba8aa616baccffc9e7"
+tokens:
+  summary: 78
+  core: 224
+  full: 370
+projection:
+  summary: "chunks/summary.md"
+  core: "chunks/core.md"
+  full: "chunks/full.md"
+quality:
+  overall: 4
+relations:
+  - { type: related, target: "@community/anti-pattern-ios-non-dismissable-modal" }
+  - { type: related, target: "@community/anti-pattern-ios-stacked-modals" }
+  - { type: related, target: "@community/pattern-ios-navigation-stack" }
+  - { type: related, target: "@community/constraint-mobile-touch-target-44px" }
+  - { type: related, target: "@community/check-touch-target-min" }
+  - { type: related, target: "@community/check-mobile-first" }
+  - { type: related, target: "@community/check-focus-visible" }
+created_at: "2026-05-07"

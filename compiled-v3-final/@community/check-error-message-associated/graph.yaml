@@ -1,0 +1,8 @@
+atom: "@community/check-error-message-associated"
+relations:
+  - type: related
+    target: "@community/rule-error-message-associated"
+  - type: related
+    target: "@community/check-form-validation-inline"
+  - type: related
+    target: "@community/pattern-form-validation-inline"
