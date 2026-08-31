@@ -478,7 +478,7 @@ describe("mcp tools are a projection of the Model Package", () => {
       "prime_design_scout",
       "prime_design_validate",
     ]);
-    expect(document.generator).toBe("prime-design/mcp@0.1.0");
+    expect(document.generator).toBe("prime-design/mcp@0.2.0");
     expect(document.model.digest).toMatch(/^sha256:[0-9a-f]{64}$/);
   });
 
