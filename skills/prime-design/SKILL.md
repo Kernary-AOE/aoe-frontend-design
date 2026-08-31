@@ -1,12 +1,13 @@
 ---
 name: prime-design
-description: Use the Prime frontend-design domain tools to plan, implement, research, and validate HTML or frontend UI work. Apply when the user asks to design or revise a frontend artifact. Do not use for editing the Prime corpus itself; use prime-author for knowledge maintenance.
+description: Use the Kernary Frontend Design Domain Package tools to plan, implement, research, and validate HTML or frontend UI work. Apply when the user asks to design or revise a frontend artifact. The skill and prime_design tool prefix are compatibility names; do not use this skill to edit corpus sources.
 ---
 
-# Prime Design
+# Kernary Frontend Design
 
-Prime supplies design knowledge, constraints and validation. The agent writes the
-user's project code; the engine and its corpus remain read-only during this flow.
+The Frontend Design Domain Package supplies design knowledge, constraints and
+validation through Kernary. The Agent writes the user's project code; the model,
+corpus, and compiled snapshot remain read-only during this flow.
 
 ## Workflow
 

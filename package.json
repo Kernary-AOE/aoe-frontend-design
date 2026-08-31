@@ -1,10 +1,10 @@
 {
-  "name": "@prime-domain/frontend-design",
+  "name": "@kernary-domain/frontend-design",
   "version": "0.2.0",
   "license": "Apache-2.0",
   "private": true,
   "type": "module",
-  "description": "Reference frontend-design Model, Corpus, adapters, MCP transport and agent skills for Prime.",
+  "description": "Reference Frontend Design Domain Package for Kernary: model, corpus, adapters, tools, and Agent Skills.",
   "workspaces": ["../prime-system/packages/*"],
   "exports": {
     ".": "./adapters/design-ranker/src/index.ts",
@@ -41,7 +41,7 @@
     "typescript": "^5.6.0"
   },
   "notes": {
-    "system-repo-dependency": "This corpus repo depends on the prime-system repo for its DSL parser, compiler, runtime, CLI, and registry. Clone prime-system as a sibling directory: `git clone <prime-system-url> ../prime-system`. The `compile` script above assumes this layout. Override with PRIME_SYSTEM_ROOT env var if your layout differs.",
+    "system-repo-dependency": "This Domain Package currently resolves the Kernary engine from the compatibility local path ../prime-system. The remote and folder move to kernary-engine only after the external repository rename is verified.",
     "ownership": "This repository is the complete reference domain package: Model, Corpus, adapters, MCP and skills. It contains no engine implementation."
   }
 }

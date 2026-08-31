@@ -1,20 +1,26 @@
-# Prime Frontend Design
+# Frontend Design for Kernary
 
-The reference external domain package for Prime. It owns all frontend-design
-semantics and data; the Prime engine owns none of them.
+This repository is a complete Domain Package built on Kernary. It owns the
+Frontend Design model, curated corpus, retrieval profiles, validators, adapters,
+tools, and an optional Agent Skill.
+
+Nothing here is built into the Kernary engine. This package is a worked example
+of how a domain defines its own types and relations, compiles a versioned
+snapshot, and exposes domain tools without changing Core.
 
 ```text
-model/       prime-design types, relations, projections, retrieval and actions
-corpus/      declaration, 797 licensed sources, quarantine, eval and generated dist
-adapters/    intent, six-axis ranking, resolution, standards, validation and Scout
-mcp/         seven model-projected domain tools
-skills/      Agent consumption and source-authoring workflows
+model/       types, relations, projections, retrieval, actions, and migrations
+corpus/      declaration, 797 publishable sources, quarantine, eval, and dist
+adapters/    intent, ranking, resolution, standards, validation, and Scout
+mcp/         seven tools projected from the domain model
+skills/      optional Agent consumption workflow
 benchmarks/  fixed domain evaluation tasks
 ```
 
-## Verify
+## Verify the package
 
-Clone `prime-system` as a sibling directory, then:
+Clone the Kernary engine at the current compatibility path
+`../prime-system`, then run:
 
 ```bash
 bun install
@@ -27,13 +33,14 @@ bun run corpus:verify
 bun run smoke
 ```
 
-The build compiles exactly 797 publishable `.prime` sources. Another 102 units
-remain in `corpus/quarantine/` and cannot enter a release until their licence
-policy is resolved. `corpus/dist/` is generated and must not be edited manually.
+The release build compiles exactly 797 sources whose licence policy permits
+publication. Another 102 units remain in `corpus/quarantine/`; they cannot enter
+a release until their disposition is explicit. `corpus/dist/` is generated and
+must not be edited by hand.
 
-## Tools
+## Domain tools
 
-The Model Package projects these MCP tools; their schemas are not handwritten:
+The Model Package projects seven compatibility-prefixed MCP tools:
 
 - `prime_design_plan`
 - `prime_design_resolve`
@@ -43,12 +50,29 @@ The Model Package projects these MCP tools; their schemas are not handwritten:
 - `prime_design_checklist`
 - `prime_design_scout`
 
-The generic `prime_query`, `prime_plan` and `prime_resource` tools remain owned by
-Prime System. Both compositions mount the same immutable bundle and verify the
-same `model.lock`.
+The prefix remains during the Kernary v0.2 compatibility window. The generic
+query, plan, and resource tools belong to the engine. Both surfaces mount the
+same immutable snapshot and verify the same `model.lock`.
 
-## Ownership rule
+## Optional Skill
 
-Add or change a frontend-design kind, field, relation, profile or action in
-`model/`. Add knowledge in `corpus/sources/`. Add external integration code in
-`adapters/`. Do not patch Prime System for domain semantics.
+`skills/prime-design` teaches an Agent how to combine the seven domain tools.
+The folder name is retained for compatibility. It is not required to use the
+SDK, MCP, or HTTP contracts, and it cannot edit the model, corpus, or generated
+bundle during an ordinary design task.
+
+## Ownership
+
+- Change a Frontend Design type, field, relation, projection, retrieval profile,
+  action, or migration in `model/`.
+- Add or revise knowledge in `corpus/sources/`.
+- Connect external systems in `adapters/`.
+- Change Agent workflow guidance in `skills/`.
+- Do not patch Kernary Core for Frontend Design semantics.
+
+Start with [the domain overview](docs/overview.md), then read the
+[model](docs/model.md), [Corpus policy](docs/corpus.md),
+[retrieval](docs/retrieval.md), [tools](docs/mcp-tools.md),
+[HTML validation](docs/validator-html.md), [Scout](docs/scout.md), and
+[release operations](docs/operations.md). The architectural walkthrough is in
+the [case study](docs/case-study.md).
