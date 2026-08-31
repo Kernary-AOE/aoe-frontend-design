@@ -1,0 +1,74 @@
+scope MobileNative {
+  id: "@community/scope-mobile-native"
+  version: "1.0.0"
+
+  label: "Native Mobile App Surfaces (iOS / Android)"
+  domain: frontend-engineering
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Defines applicability for atoms whose guidance applies only to native mobile apps — iOS (Swift, SwiftUI, UIKit) and Android (Kotlin, Jetpack Compose, View system). Web-only atoms (DOM, mouse, hover, viewport meta) are out of scope; cross-cutting atoms (a11y, i18n, performance) apply with platform-specific tooling."
+
+  preconditions: [
+    {
+      id: "platform-is-native",
+      check: "code targets iOS (UIKit/SwiftUI) OR Android (Views/Compose) OR React Native / Flutter (cross-platform with native renderers)",
+      on-fail: "Atom does not apply to mobile web (browser-rendered). Use @community/scope-frontend-review for web."
+    }
+    {
+      id: "platform-tooling-installed",
+      check: "Xcode (iOS) AND/OR Android Studio installed; running on real device or emulator/simulator",
+      on-fail: "Mobile-specific toolchains are required. Web simulators (Chrome DevTools mobile) do NOT cover platform-specific behaviors."
+    }
+    {
+      id: "platform-targets-current",
+      check: "iOS deployment target ≥ iOS 16 (released Sept 2022) OR Android minSdk ≥ 26 (Android 8.0, August 2017)",
+      on-fail: "Older targets carry significant a11y and feature gaps. Document the cost; expect more polyfilling."
+    }
+  ]
+
+  applies-to: [
+    "iOS apps (UIKit, SwiftUI, AppKit if Catalyst)",
+    "Android apps (Views, Jetpack Compose)",
+    "React Native apps — mostly applicable, with platform-specific bridges",
+    "Flutter apps — mostly applicable, with Skia-rendered UI",
+    "Capacitor / Ionic — partially applicable; underlying webview makes it 'mobile web' for many concerns",
+    "Native widgets / extensions (Today widgets, App Clips, instant apps)",
+  ]
+
+  out-of-scope: [
+    "Mobile-web responsive sites — use @community/scope-frontend-review",
+    "PWA installed via Add-to-Home-Screen — bridges both, default to web scope",
+    "Desktop apps (Electron, Tauri, AppKit) — separate scope",
+  ]
+
+  environment: {
+    ios-runtime: "iOS 16+ recommended; Swift 5.9+; Xcode 15+"
+    android-runtime: "minSdk 26+ recommended (Android 8.0+); Kotlin 1.9+; Android Studio Hedgehog+"
+    cross-platform: "React Native 0.73+ (new architecture) OR Flutter 3.16+"
+    required-tooling: ["Xcode + Instruments OR Android Studio + Profiler", "Real device for haptics/biometrics testing"]
+  }
+
+  notes: [
+    "iOS HIG and Material Design are platform conventions — atoms in this scope often reference them as canonical.",
+    "Touch targets: iOS HIG 44pt, Material 48dp — see @community/value-touch-target-min.",
+    "Safe areas (notch, dynamic island, navigation gestures): use SwiftUI safeAreaInset / Android WindowInsets — NEVER hardcode.",
+    "Accessibility: iOS VoiceOver + Dynamic Type, Android TalkBack + system text scaling. Both have native APIs distinct from web ARIA.",
+    "Performance: 60fps minimum (120fps on ProMotion); jank visible immediately. Use Instruments / Android Profiler — not synthetic web tools.",
+    "Background execution: strict OS-level limits (iOS background tasks, Android Doze) — atoms about long-running work need mobile-specific guidance.",
+    "Distribution: App Store / Play Store review process adds release-cycle latency (1-7 days); over-the-air updates limited.",
+  ]
+
+  related: [
+    @community/value-touch-target-min,
+    @community/rule-ios-custom-font-dynamic-type,
+    @community/anti-pattern-ios-fullscreen-spinner,
+    @community/anti-pattern-ios-hamburger-menu,
+    @community/anti-pattern-ios-ignore-safe-area,
+    @community/anti-pattern-ios-non-dismissable-modal,
+  ]
+}

@@ -1,8 +1,0 @@
-atom: "@community/constraint-max-color-roles-7"
-relations:
-  - type: related
-    target: "@community/type-design-token"
-  - type: related
-    target: "@community/taxonomy-typography-roles"
-  - type: related
-    target: "@community/constraint-brand-hue-required"

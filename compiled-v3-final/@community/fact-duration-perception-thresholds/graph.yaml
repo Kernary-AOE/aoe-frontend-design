@@ -1,8 +1,0 @@
-atom: "@community/fact-duration-perception-thresholds"
-relations:
-  - type: related
-    target: "@community/fact-easing-cubic-bezier"
-  - type: related
-    target: "@community/fact-loading-skeleton-vs-spinner"
-  - type: related
-    target: "@community/fact-motion-as-feedback"

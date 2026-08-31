@@ -1,0 +1,35 @@
+rule IosNoForcedAccount {
+  id: "@community/rule-ios-no-forced-account"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  applies-to: "first-run experience and feature gating design for iOS apps"
+
+  statement: "Allow users to access and explore core app functionality without requiring sign-in or account creation; gate only features that are genuinely meaningless without an account (purchases, sync, social interactions)."
+
+  rationale: "Forcing account creation before demonstrating value drives abandonment. Users should experience the app's value proposition before committing personal information. App Store Review Guidelines discourage requiring account creation for features that don't need one."
+
+  examples: [
+    "A recipe app: browsing and viewing recipes works without sign-in; saving to collection or publishing requires account.",
+    "A fitness app: starting a free workout works without sign-in; syncing data and viewing history requires account.",
+    "Verify: use the app without signing in; basic features must be accessible.",
+  ]
+
+  notes: [
+    "Gate only: purchases, social features, sync, or content requiring a unique identity.",
+    "Apple HIG source: Rule 9.4 — Don't Require Accounts Unless Necessary.",
+  ]
+
+  related: [
+    @community/rule-ios-sign-in-with-apple,
+    @community/rule-ios-att-compliance,
+    @community/rule-ios-permission-pre-prompt,
+  ]
+}

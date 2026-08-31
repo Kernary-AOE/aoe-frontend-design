@@ -1,8 +1,0 @@
-atom: "@community/check-ios-hig-compliance"
-relations:
-  - type: related
-    target: "@community/constraint-ios-touch-target-44pt"
-  - type: related
-    target: "@community/rule-ios-dynamic-type-semantic"
-  - type: related
-    target: "@community/check-ios-bold-text-support"

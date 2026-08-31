@@ -1,8 +1,0 @@
-atom: "@community/rule-content-based-breakpoints"
-relations:
-  - type: related
-    target: "@community/rule-mobile-first"
-  - type: related
-    target: "@community/constraint-content-width-constrained"
-  - type: related
-    target: "@community/pattern-container-queries"

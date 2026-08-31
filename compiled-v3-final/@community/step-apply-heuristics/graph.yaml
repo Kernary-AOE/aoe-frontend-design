@@ -1,8 +1,0 @@
-atom: "@community/step-apply-heuristics"
-relations:
-  - type: related
-    target: "@community/step-load-artifact"
-  - type: related
-    target: "@nielsen/taxonomy-10-heuristics"
-  - type: related
-    target: "@community/method-heuristic-review"

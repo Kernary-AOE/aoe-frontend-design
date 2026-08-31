@@ -1,0 +1,35 @@
+rule IosVoiceoverOrder {
+  id: "@community/rule-ios-voiceover-order"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  applies-to: "any iOS screen where visual layout order does not match logical reading order (e.g., multi-column layouts, overlaid cards, Z-layered views)"
+
+  statement: "Ensure VoiceOver reads elements in a logical, content-meaningful order; use .accessibilitySortPriority() to override layout-driven order when the visual position produces a nonsensical traversal sequence."
+
+  rationale: "Out-of-order VoiceOver navigation is disorienting and can make content incomprehensible for blind users. Two-column or grid layouts are frequently read in Z-order (top-left → top-right → second-left → second-right) when a row-first order would be semantically correct."
+
+  examples: [
+    "A product card with price on the left and rating on the right: ensure price is read before rating.",
+    ".accessibilityElement(children: .combine) on a label+value row to announce them as one unit.",
+    "Verify: navigate with VoiceOver swipe-right; elements must be announced in semantic, not positional, order.",
+  ]
+
+  notes: [
+    "Use .accessibilityElement(children: .contain) to group related sub-elements into a single traversal unit.",
+    "Apple HIG source: Rule 5.2 — Logical VoiceOver Navigation Order.",
+  ]
+
+  related: [
+    @community/rule-ios-voiceover-labels,
+    @community/rule-ios-reduce-motion,
+    @community/check-ios-bold-text-support,
+  ]
+}

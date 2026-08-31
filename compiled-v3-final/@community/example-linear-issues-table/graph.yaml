@@ -1,8 +1,0 @@
-atom: "@community/example-linear-issues-table"
-relations:
-  - type: related
-    target: "@community/pattern-data-table-dense"
-  - type: related
-    target: "@community/example-vercel-dashboard"
-  - type: related
-    target: "@community/tradeoff-density-vs-comfort"

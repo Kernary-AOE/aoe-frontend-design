@@ -1,0 +1,98 @@
+persona Coinbase {
+  id: "@community/persona-coinbase"
+  version: "1.0.0"
+
+  school: coinbase
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Institutional crypto-financial aesthetic: CoinbaseDisplay/Sans/Text/Icons proprietary four-font stack, Coinbase Blue #0052ff as sole accent on white and near-black #0a0b0d, 56px pill CTAs with a counterintuitive hover-lightens pattern, and 1.00 line-height display density that signals financial-grade seriousness."
+
+  implies: {
+    font: {
+      display: "CoinbaseDisplay — hero-only, 80px / 400 / line-height 1.00 (ultra-tight financial-statement density)"
+      body: "CoinbaseText for reading prose, 18px / 400 / 1.56 line-height; CoinbaseSans for buttons/headings/nav, 16px / 600 / +0.16px tracking"
+      monospace: "system-monospace (CoinbaseIcons handles iconography; no code-display mono role)"
+    }
+    color: {
+      temperature: "cool"
+      palette: "Coinbase Blue #0052ff brand + interactive, button hover blue #578bfa lighter-on-hover, secondary link #0667d0, near-black #0a0b0d dark sections, cool gray surface #eef0f3 secondary buttons (blue-tinted), dark card #282b31"
+      background: "#ffffff primary light / #0a0b0d dark sections — decisive alternation only"
+    }
+    density: "compact display — 1.00 line-height on 80/64/52px display sizes, 8px base spacing, max content width ~1440px, 56px primary pill CTAs"
+    layout: "decisively alternating white ↔ #0a0b0d sections, centered content, feature grids and asset grids, 56px pill CTAs as focal CTA anchor"
+    imagery: "crypto asset icons, product UI screenshots, abstract data visualization; no lifestyle photography"
+    motion: "professional restraint — hover-lightens (CTA to #578bfa, counterintuitive), smooth section transitions, no bouncy springs; motion must never undermine trust"
+  }
+
+  compatible: ["stripe-fintech", "swiss-modernist", "vercel-clean"]
+  conflicts: ["warm-institutional", "magazine-editorial", "brutalist", "notion-warm"]
+
+  example-brands: [
+    "Coinbase",
+  ]
+
+  notes: [
+    "56px pill CTAs are not 9999px full-pill — specifically 56px. This creates a 'softer rounded-rectangle' that reads financial-approachable rather than tech-aggressive. Using full 9999px pill breaks the institutional register.",
+    "Hover-lightens pattern: buttons go from #0052ff to #578bfa (lighter) on hover — counterintuitive but signals 'opening up' rather than pressing down. Darkening on hover is wrong for this persona.",
+    "1.00 line-height on all display sizes (80px, 64px, 52px) compresses to zero leading — ultra-tight financial-statement density. This is a deliberate trust signal, not a typographic mistake.",
+    "Four-font proprietary family (CoinbaseDisplay / CoinbaseSans / CoinbaseText / CoinbaseIcons) with role separation is itself a trust signal — ownership of the typographic stack reads as institutional rigor.",
+    "Some button labels use text-transform: lowercase — an unusual crypto-friendly softening touch that counteracts the heaviness of the blue-binary palette.",
+    "Use for fintech, crypto, consumer investment, or any regulated-asset product needing blue-banking credibility without legacy stuffiness. Avoid for creative, playful, or rebellious products — blue-binary reads as compliance-aware.",
+    "Distinct from persona-stripe-fintech: Coinbase uses 56px pill CTAs and crypto-dark #0a0b0d sections; stripe-fintech is more data-grid-dense with gradient accents and lighter surface treatment.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/fact-fintech-number-display,
+      @impeccable/template-card-hover-lift,
+      @impeccable/template-oklch-palette,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-warm-institutional,
+    ]
+    typography-required: {
+      display: "CoinbaseDisplay"
+      line-height-display: "1.00"
+      cta-radius: "56px (not 9999px full pill)"
+    }
+    color-required: {
+      background: "#ffffff"
+      dark-section: "#0a0b0d"
+      accent: "#0052ff"
+    }
+    motion-prescriptions: [
+      @impeccable/template-card-hover-lift,
+      @community/pattern-hover-lift,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-stripe-fintech,
+    @impeccable/template-oklch-palette,
+    @impeccable/template-card-hover-lift,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-fintech-number-display,
+    @community/rule-typography-letter-spacing,
+    @community/constraint-typography-weight-blacklist,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/rule-brand-color-primary-only,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-warm-institutional,
+  ]
+}

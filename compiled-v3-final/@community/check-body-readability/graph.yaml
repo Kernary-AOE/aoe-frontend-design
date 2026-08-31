@@ -1,4 +1,0 @@
-atom: "@community/check-body-readability"
-relations:
-  - type: related
-    target: "@community/rule-body-readability"

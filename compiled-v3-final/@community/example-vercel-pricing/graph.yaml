@@ -1,8 +1,0 @@
-atom: "@community/example-vercel-pricing"
-relations:
-  - type: related
-    target: "@community/pattern-pricing-tiers-toggle"
-  - type: related
-    target: "@community/example-stripe-pricing"
-  - type: related
-    target: "@community/term-oklch"

@@ -1,0 +1,25 @@
+rule AlignChangesToFindings {
+  id: "@community/rule-align-changes-to-findings"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+  severity: warning
+
+  statement: "Proposed design changes must be cross-referenced against documented pain points, validated patterns, and known success metrics before finalizing direction. Any conflict between the proposal and existing research must be surfaced explicitly."
+
+  applies-when: "Project has research documents such as usability study findings, experiment outcomes, or analytics reports."
+
+  verify-by: "Cross-reference the proposed change against documented pain points and validated patterns. Note any conflicts in the design rationale. A proposal that ignores available research must be sent back."
+
+  rationale: "Ignoring prior research wastes its investment and reintroduces solved problems. A design change that contradicts a validated finding is riskier than one that extends it — that risk must be named and accepted deliberately."
+
+  related: [
+    @community/principle-refactor-when-evidence-shows-it,
+  ]
+}

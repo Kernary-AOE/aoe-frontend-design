@@ -1,0 +1,27 @@
+rule AuthFlowReversibility {
+  id: "@community/rule-auth-flow-reversibility"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+  severity: warning
+
+  statement: "Every step of sign-in, sign-out, password reset, account recovery, and MFA enrollment flows must have a clear back, cancel, or recovery path — users must never be able to reach a dead end in an authentication flow."
+
+  applies-when: "Implementing sign-in, sign-out, password reset, account recovery, or MFA enrollment."
+
+  verify-by: "Walk each auth flow as a new user and confirm every step has an accessible exit. Check: can a user cancel mid-flow without losing access? Is there recovery if MFA device is unavailable?"
+
+  rationale: "Users who get stuck in auth flows lose access to the product permanently. Reversibility prevents lockout and reduces support burden. A single missing 'Back' button or missing recovery code step can lock out legitimate users."
+
+  related: [
+    @community/rule-access-change-consequence-disclosure,
+    @community/principle-error-prevention-and-recovery,
+    @community/principle-nielsen-user-control,
+  ]
+}

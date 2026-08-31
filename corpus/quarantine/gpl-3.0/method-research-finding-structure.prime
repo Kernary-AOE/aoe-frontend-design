@@ -1,0 +1,57 @@
+method ResearchFindingStructure {
+  id: "@community/method-research-finding-structure"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Frame every UX research finding as three linked statements: the observed behavior, the underlying need driving it, and the design opportunity it reveals."
+
+  steps: [
+    {
+      step: 1,
+      label: "Observed Behavior",
+      instruction: "State exactly what users did — specific, behavioral, observable. Avoid interpretation.",
+      example: "5 of 8 participants clicked the secondary 'Help' link before attempting the primary onboarding task.",
+    },
+    {
+      step: 2,
+      label: "Underlying Need",
+      instruction: "State why users behaved that way — the goal or anxiety behind the observed action.",
+      example: "Users were uncertain about what the onboarding task would require before committing to it.",
+    },
+    {
+      step: 3,
+      label: "Design Opportunity",
+      instruction: "State how a design change could better serve that need — specific and actionable.",
+      example: "Add a one-line preview of what each onboarding step involves directly on the step card, before the user begins.",
+    },
+  ]
+
+  rationale: "Raw observations without interpretation are easy to dismiss. Interpretations without evidence are hard to trust. The three-part structure forces rigor: the observed behavior grounds the claim in data; the underlying need explains why it matters; the design opportunity makes it actionable. This structure also separates symptom (behavior) from diagnosis (need) from prescription (opportunity) — preventing the common mistake of jumping from 'users clicked Help' directly to 'add more help text everywhere.'"
+
+  applies-to: [
+    "Usability test result synthesis",
+    "User interview note processing",
+    "Survey data interpretation",
+    "Analytics anomaly investigation",
+    "Any design decision that cites user research",
+  ]
+
+  notes: [
+    "Source: github.com/spencergoldade/cursor-designer, .cursor/rules/binders/ux-research-usage.mdc (GPL-3.0).",
+    "When presenting findings to stakeholders, structure each slide/section as one finding in this format.",
+    "Pair with @community/rule-design-decisions-cite-research to ensure this structure feeds actual design decisions.",
+  ]
+
+  related: [
+    @community/rule-design-decisions-cite-research,
+    @community/rule-align-changes-to-findings,
+    @community/anti-pattern-cherry-picking-evidence,
+  ]
+}

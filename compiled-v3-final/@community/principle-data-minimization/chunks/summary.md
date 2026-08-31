@@ -1,4 +1,0 @@
-# DataMinimization [principle] v1.0.0
-Personal data must be 'adequate, relevant and limited to what is necessary in relation to the purposes for which it is processed' (GDPR Art. 5(1)(c)). Collect only fields the system actually needs for the stated purpose; delete data the moment its purpose is fulfilled.
-> Every data field collected creates ongoing legal liability (breach notification, DSAR fulfillment, retention controls), engineering cost (encryption, access controls, audit), and ethical risk. Default to NOT collecting. When collection is necessary, document the lawful basis (Art. 6) and purpose (Art. 5(1)(b)) per field, and set a retention period after which the field is purged. Pre-collection data-protection impact assessments (DPIA, Art. 35) are required for high-risk processing.
-domain: legal-compliance

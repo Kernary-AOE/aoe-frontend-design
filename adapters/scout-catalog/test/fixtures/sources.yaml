@@ -1,0 +1,62 @@
+protocol: prime/scout-catalog/v1
+adapter: scout-catalog-fixture
+
+retrieval:
+  weights:
+    titleMatch: 0.45
+    textMatch: 0.2
+    sourceAffinity: 0.15
+    assetPresence: 0.1
+    curatedSource: 0.1
+  defaultLimit: 4
+  # Deliberately small so the clamp is observable in a five-reference fixture.
+  maxLimit: 5
+  minTokenLength: 2
+
+sources:
+  # Array-shaped payload, with a thumbnail, an array-valued category, a record
+  # that maps neither title nor url, and a record relying on the `excerpt`
+  # description fallback.
+  - id: alpha
+    legacyAtomId: "@community/scout-catalog-alpha"
+    sourceName: "Alpha Gallery"
+    sourceUrl: "https://alpha.example"
+    license: "metadata-only (fixture)"
+    curated: true
+    usefulFor: ["footer patterns", "hero sections"]
+    personaLean: ["editorial"]
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: "thumbnail_url"
+      description: null
+    payload:
+      path: "payloads/alpha.json"
+      bytes: 0
+      sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+      declaredEntryCount: 3
+      loadableEntryCount: 2
+
+  # Object-of-arrays payload (`Object.values(raw).flatMap`), no thumbnail, and a
+  # record duplicated across two groups so the id-collision suffix is exercised.
+  - id: beta
+    legacyAtomId: "@community/scout-catalog-beta"
+    sourceName: "Beta Templates"
+    sourceUrl: "https://beta.example"
+    license: "varies per repo (fixture)"
+    curated: false
+    usefulFor: ["scroll animation"]
+    personaLean: []
+    fields:
+      title: "name"
+      url: "demo_url"
+      category: null
+      thumbnail: null
+      description: null
+    payload:
+      path: "payloads/beta.json"
+      bytes: 0
+      sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+      declaredEntryCount: 3
+      loadableEntryCount: 3

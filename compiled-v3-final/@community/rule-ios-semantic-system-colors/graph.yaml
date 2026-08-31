@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-semantic-system-colors"
-relations:
-  - type: related
-    target: "@community/rule-ios-custom-color-dark-variants"
-  - type: related
-    target: "@community/fact-ios-background-hierarchy"
-  - type: related
-    target: "@community/check-ios-increase-contrast"

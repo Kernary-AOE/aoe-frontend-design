@@ -1,0 +1,60 @@
+constraint MobileTouchTarget44px {
+  id: "@community/constraint-mobile-touch-target-44px"
+  version: "1.0.0"
+
+  target: ["interactive elements on touch viewports", "buttons / links / form controls / icon buttons rendered ≤ 768px"]
+  severity: high
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Every touch-activated control must present a hit area of at least 44×44 CSS pixels on touch viewports. Visual rendering may be smaller, but the effective hit target (via padding or ::before expansion) must reach 44×44."
+
+  values: [
+    {
+      minimum: "44 × 44 CSS px",
+      source: "Apple HIG (iOS)",
+    }
+    {
+      minimum: "48 × 48 dp",
+      source: "Material Design (Android)",
+    }
+    {
+      threshold: "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+      value: "24 × 24 CSS px",
+      level: "AA",
+    }
+    {
+      threshold: "WCAG 2.1 SC 2.5.5 Target Size (Enhanced)",
+      value: "44 × 44 CSS px",
+      level: "AAA",
+    }
+  ]
+
+  rationale: "Fitts's Law: smaller targets at greater distance from finger origin produce more mis-taps. Empirical Apple research found the average adult fingertip pad is 10–14mm, requiring ~44pt of touch surface to reliably target without parallax error. Sub-44 hit areas are the single most common cause of frustration in mobile UI tests."
+
+  exceptions: [
+    "Inline links inside a paragraph (covered by surrounding line-height / read-mode).",
+    "Decorative non-interactive elements.",
+    "Adjacent identical controls in a paginated list (per WCAG SC 2.5.8 'inline' exception) where 24×24 is acceptable.",
+    "Desktop / pointer-only viewports may relax to 32×32.",
+  ]
+
+  approved-alternatives: [
+    "Visual icon at 24×24 with `padding: 10px` to reach 44×44 hit area.",
+    "::before { content: ''; position: absolute; inset: -10px } to expand hit area without changing visual size.",
+    "Tailwind: `p-2.5` on icon buttons; minimum `h-11 w-11` (44px) on bare buttons.",
+  ]
+
+  enforcement: "Storybook a11y addon + axe-core target-size rule. Visual regression with min-touch-area overlay in dev mode."
+
+  related: [
+    @community/constraint-accessibility-aa-minimum,
+    @community/pattern-tab-bar-bottom,
+    @community/example-linear-cmdk,
+  ]
+}

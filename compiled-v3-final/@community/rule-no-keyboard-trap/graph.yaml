@@ -1,8 +1,0 @@
-atom: "@community/rule-no-keyboard-trap"
-relations:
-  - type: related
-    target: "@community/constraint-focus-trap-modal"
-  - type: related
-    target: "@community/rule-keyboard-accessible"
-  - type: related
-    target: "@community/anti-pattern-breaking-keyboard-flow"

@@ -1,8 +1,0 @@
-atom: "@community/rule-viewport-meta-required"
-relations:
-  - type: related
-    target: "@community/check-contrast-aa"
-  - type: related
-    target: "@community/constraint-mobile-touch-target-44px"
-  - type: related
-    target: "@community/rule-reduced-motion-required"

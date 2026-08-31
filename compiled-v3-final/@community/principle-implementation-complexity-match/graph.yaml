@@ -1,8 +1,0 @@
-atom: "@community/principle-implementation-complexity-match"
-relations:
-  - type: related
-    target: "@community/principle-commit-bold-aesthetic"
-  - type: related
-    target: "@community/principle-single-direction-aesthetic-bet"
-  - type: related
-    target: "@community/principle-taste-as-engineering"

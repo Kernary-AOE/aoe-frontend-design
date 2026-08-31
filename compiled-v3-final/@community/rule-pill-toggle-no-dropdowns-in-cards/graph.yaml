@@ -1,8 +1,0 @@
-atom: "@community/rule-pill-toggle-no-dropdowns-in-cards"
-relations:
-  - type: related
-    target: "@community/rule-chart-never-alone"
-  - type: related
-    target: "@community/pattern-chart-grid"
-  - type: related
-    target: "@community/pattern-metric-card"

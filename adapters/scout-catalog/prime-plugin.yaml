@@ -1,0 +1,60 @@
+# Plugin Manifest (§12.1) for the scout catalogue source adapter.
+#
+# This is the out-of-process registration face. The adapter is *also* usable
+# in-process through `registerScoutSourceAdapter()` (see `src/index.ts`), which is
+# how the domain MCP host consumes it today; this manifest is what lets a host
+# admit it as a confined plugin without a code change on the host side.
+#
+# Validated against the real schema with:
+#   cd projects/prime-system && bun -e '
+#     import { loadManifest } from "./packages/plugin-host/src/manifest.ts";
+#     const r = loadManifest("/Users/houxianchao/Desktop/prime/projects/prime-frontend-design/adapters/scout-catalog");
+#     console.log(r.ok ? "OK" : r.diagnostics);'
+#
+# `plugin-host` is intentionally NOT a dependency of `@prime-domain/frontend-design`:
+# it requires zod ^4 while the repository root pins zod 3.23.8, and this refactor
+# does not add a second copy of a validator to make a manifest self-testing.
+
+protocol: prime/plugin/v1
+name: prime-frontend-design-scout-catalog
+version: 0.1.0
+apiVersion: 1
+
+description: >-
+  Eighteen third-party frontend-design reference catalogues (61590 references),
+  normalised to one shape and searched with a feature breakdown. Provides
+  external visual anchors; ingests nothing into the corpus unit graph.
+
+# `provides` is an open `<role>:<id>` vocabulary (§12.1). Two roles, because the
+# adapter has two legacy consumers: the search surface and the `## References`
+# renderer that `prime_compile` used to inject.
+provides:
+  - source-adapter:scout-catalog
+  - renderer:scout-references
+
+# The payloads are read from disk, so exactly one capability is declared. No
+# `network:*`: acquisition is an operator step (see README §"Acquiring the
+# payload"), not something this adapter does at query time. Declaring
+# `network:https` so it could self-download would make an adapter that answers
+# queries also an adapter that reaches the internet, and the host grant would then
+# have to cover both.
+capabilities:
+  - filesystem:read
+
+sandbox:
+  mode: process
+  filesystem:
+    # `resolveInRoot` contains every read root inside the plugin's own root
+    # (`plugin-host/src/paths.ts`), so a sandboxed scout adapter can only read
+    # payloads staged under its own `data/`. It cannot reach the legacy
+    # repository-root `resources/` tree, and that constraint is the reason
+    # `data/` exists and is git-tracked-but-empty rather than being a symlink.
+    readRoots:
+      - data
+  networkAllowlist: []
+  # 12.45 MiB of JSON across 18 files parses in well under a second on a warm
+  # cache, but a cold first load of the largest payload (3.6 MiB, collectui) plus
+  # normalisation of 14374 records needs more headroom than the 5000 ms default.
+  timeoutMs: 20000
+
+entry: src/index.ts

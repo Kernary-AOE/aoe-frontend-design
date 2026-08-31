@@ -1,3 +1,0 @@
-# OpticalSizing [fact] v1.0.0
-Optically-sized typefaces adjust letter spacing, contrast, and proportion across size ranges: large display sizes need tighter tracking and higher stroke contrast; small body sizes need looser tracking and lower contrast for legibility.
-> Type set at large display sizes (> ~36 px) wants tighter letter-spacing (-1% to -3%) and may carry higher stroke contrast, while type set at small body sizes (≤ ~14 px) wants looser letter-spacing (+1% to +3%) and lower stroke contrast — variable fonts with optical-sizing axis (`opsz`) automate this; static fonts require manual tracking adjustments per size.

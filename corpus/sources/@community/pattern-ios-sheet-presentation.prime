@@ -1,0 +1,36 @@
+pattern IosSheetPresentation {
+  id: "@community/pattern-ios-sheet-presentation"
+  version: "1.0.0"
+
+  label: "iOS Sheet Presentation for Scoped Tasks"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Present a .sheet or .fullScreenCover for a self-contained, discrete task; use .presentationDetents([.medium, .large]) for resizable partial-height sheets; always provide a cancel (cancellationAction) and confirm (confirmationAction) toolbar button."
+
+  problem: "Full navigation pushes for short, bounded tasks (compose, filter, detail settings) feel heavy and break the sense of the user's current context."
+
+  solution: "Attach .sheet(isPresented:) to the triggering view. Inside the sheet, embed a NavigationStack with a toolbar containing Cancel (dismisses) and Done/Send (confirms). For half-sheet content, add .presentationDetents([.medium, .large]) to allow user resize. Never disable swipe-to-dismiss unless unsaved changes exist — and even then, present a .confirmationDialog."
+
+  notes: [
+    "Use-when: user needs to complete a focused task (compose, filter, settings detail) without leaving current context.",
+    "Use-when: content can be presented at half or full height.",
+    "presentationDetents requires iOS 16+.",
+    "Apple HIG source: Rule 7.3 — Sheets for Scoped Tasks.",
+  ]
+
+  related: [
+    @community/anti-pattern-ios-non-dismissable-modal,
+    @community/anti-pattern-ios-stacked-modals,
+    @community/pattern-ios-navigation-stack,
+    @community/constraint-mobile-touch-target-44px,
+    @community/check-touch-target-min,
+    @community/check-mobile-first,
+    @community/check-focus-visible,
+  ]
+}

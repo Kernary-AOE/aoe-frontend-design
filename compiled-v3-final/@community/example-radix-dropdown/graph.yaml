@@ -1,8 +1,0 @@
-atom: "@community/example-radix-dropdown"
-relations:
-  - type: related
-    target: "@community/pattern-dropdown-menu"
-  - type: related
-    target: "@community/example-radix-tabs"
-  - type: related
-    target: "@community/rule-keyboard-accessible"

@@ -1,6 +1,0 @@
-atom: "@community/fact-idle-vs-error-vs-empty"
-relations:
-  - type: related
-    target: "@community/fact-error-recovery-types"
-  - type: related
-    target: "@community/pattern-empty-state"

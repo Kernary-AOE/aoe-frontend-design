@@ -1,2 +1,0 @@
-# Accessible Modal / Dialog Pattern [collection] v1.0.0
-A complete bundle of atoms required to ship an accessible modal dialog. A modal is the most-failed accessible widget in production frontends — it requires focus management, keyboard handling, ARIA semantics, scroll containment, and portal rendering. This collection composes the rules, checks, and references needed for compliant implementation.

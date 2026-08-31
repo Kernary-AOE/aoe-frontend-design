@@ -1,8 +1,0 @@
-atom: "@community/principle-owasp-cryptographic-failures"
-relations:
-  - type: related
-    target: "@community/rule-passwords-bcrypt-or-argon2"
-  - type: related
-    target: "@community/rule-tls-everywhere"
-  - type: related
-    target: "@community/principle-owasp-data-integrity-failures"

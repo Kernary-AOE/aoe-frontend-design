@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-cramped-ui"
-relations:
-  - type: related
-    target: "@community/rule-touch-target-min"
-  - type: related
-    target: "@community/rule-spacing-rhythm"
-  - type: related
-    target: "@community/tradeoff-density-vs-comfort"

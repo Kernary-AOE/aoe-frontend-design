@@ -1,8 +1,0 @@
-atom: "@community/rule-active-voice-in-ui-copy"
-relations:
-  - type: related
-    target: "@community/rule-actionable-error-messages"
-  - type: related
-    target: "@community/rule-consistent-product-terminology"
-  - type: related
-    target: "@community/rule-culturally-neutral-copy"

@@ -1,4 +1,0 @@
-atom: "@community/check-font-blacklist-applied"
-relations:
-  - type: related
-    target: "@community/rule-font-blacklist-applied"

@@ -1,8 +1,0 @@
-atom: "@community/fact-pwa-display-mode-taxonomy"
-relations:
-  - type: related
-    target: "@community/rule-pwa-web-app-manifest"
-  - type: related
-    target: "@community/fact-pwa-installability-criteria"
-  - type: related
-    target: "@community/rule-ios-safe-area-insets"

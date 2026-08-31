@@ -1,8 +1,0 @@
-atom: "@community/rule-light-mode-default-fallback"
-relations:
-  - type: related
-    target: "@community/rule-color-scheme-meta-tag"
-  - type: related
-    target: "@community/rule-color-dark-mode-cascade"
-  - type: related
-    target: "@impeccable/template-oklch-dark-mode-cascade"

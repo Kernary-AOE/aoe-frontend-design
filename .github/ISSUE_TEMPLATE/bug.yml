@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a defect in the corpus, MCP tools, validator, or retrieval.
+title: "[bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug. The more reproducible the report, the faster the fix.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the defect.
+      placeholder: e.g. `prime_compile` returns no atoms for a magazine-editorial brief.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      render: shell
+      placeholder: |
+        $ bun run compile
+        $ PRIME_DIR=$(pwd)/compiled-v3-final ... mcp-server/index.ts
+        # call prime_compile with brief: "..."
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: e.g. macOS 15.1, Bun 1.3.12, Node 22.7
+
+  - type: input
+    id: version
+    attributes:
+      label: Corpus / commit version
+      placeholder: corpus 1.13 or commit hash

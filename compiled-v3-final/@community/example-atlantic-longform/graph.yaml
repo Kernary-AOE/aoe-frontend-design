@@ -1,8 +1,0 @@
-atom: "@community/example-atlantic-longform"
-relations:
-  - type: related
-    target: "@community/pattern-blog-article-layout"
-  - type: related
-    target: "@community/fact-optimal-line-length"
-  - type: related
-    target: "@community/category-typography-scale"

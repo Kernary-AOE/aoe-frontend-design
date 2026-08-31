@@ -1,3 +1,0 @@
-# OklchPerceptualUniform [fact] v1.0.0
-OKLCH is a perceptually-uniform color space: equal numerical changes in L (lightness) or C (chroma) produce equal perceived changes across all hues. sRGB hex / HSL fail this property — equal HSL lightness deltas read very differently across yellow vs blue.
-> OKLCH (Björn Ottosson, 2020) is perceptually uniform — a 5-point lightness step in OKLCH looks like the same brightness change regardless of hue, while the equivalent step in HSL produces a much larger change in yellows than in blues — making OKLCH the correct color space for tonal ramps, contrast math, and dark-mode mirroring.

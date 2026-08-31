@@ -1,0 +1,59 @@
+name: Compile corpus
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  compile:
+    name: bun run compile
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout corpus repo
+        uses: actions/checkout@v4
+        with:
+          path: prime-corpus-frontend-design
+
+      # The `compile` script in package.json invokes a build script
+      # from the sibling prime-system repo, so we vendor it next to us.
+      - name: Checkout sibling prime-system
+        uses: actions/checkout@v4
+        with:
+          repository: skill-wiki/prime-system
+          path: prime-system
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install (corpus)
+        working-directory: prime-corpus-frontend-design
+        run: bun install
+
+      - name: Install (prime-system)
+        working-directory: prime-system
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck and test domain
+        working-directory: prime-corpus-frontend-design
+        run: bun run typecheck && bun run test
+
+      - name: Validate external model
+        working-directory: prime-corpus-frontend-design
+        run: bun run model:check
+
+      - name: Compile corpus
+        working-directory: prime-corpus-frontend-design
+        run: bun run corpus:build
+
+      - name: Validate declaration and signed bundle
+        working-directory: prime-corpus-frontend-design
+        run: bun run corpus:check && bun run corpus:verify
+
+      - name: Smoke both MCP compositions
+        working-directory: prime-corpus-frontend-design
+        run: bun run smoke

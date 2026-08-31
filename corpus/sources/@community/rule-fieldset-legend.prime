@@ -1,0 +1,60 @@
+rule FieldsetLegend {
+  id: "@community/rule-fieldset-legend"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Logically related input groups (radio buttons, checkboxes, or multi-field address blocks) must be wrapped in `<fieldset>` with a `<legend>` that names the group, so screen readers announce the group context before each option."
+
+  claim: "Any set of radio buttons, checkbox group, or multi-field address block MUST use `<fieldset><legend>...</legend></fieldset>` to give the group an accessible name — standalone labels without grouping context cause screen readers to announce individual options without explaining what they belong to."
+
+  severity: warning
+
+  rationale: "Without fieldset/legend, a radio button labelled 'Yes' reads as just 'Yes, radio button'. With a legend of 'Receive marketing emails?', it reads as 'Receive marketing emails? Yes, radio button' — the user understands the question."
+
+  structure: """
+    <!-- Radio group -->
+    <fieldset>
+      <legend>Preferred contact method</legend>
+      <label><input type="radio" name="contact" value="email"> Email</label>
+      <label><input type="radio" name="contact" value="sms">   SMS</label>
+      <label><input type="radio" name="contact" value="phone"> Phone</label>
+    </fieldset>
+
+    <!-- Checkbox group -->
+    <fieldset>
+      <legend>Notification preferences</legend>
+      <label><input type="checkbox" name="notif" value="product"> Product updates</label>
+      <label><input type="checkbox" name="notif" value="security"> Security alerts</label>
+    </fieldset>
+
+    <!-- Multi-field address -->
+    <fieldset>
+      <legend>Billing address</legend>
+      <label for="street">Street</label><input id="street" name="street" autocomplete="street-address">
+      <label for="city">City</label><input id="city" name="city" autocomplete="address-level2">
+      <label for="zip">Zip</label><input id="zip" name="zip" autocomplete="postal-code">
+    </fieldset>
+  """
+
+  exceptions: [
+    {
+      case: "Single standalone checkbox (e.g. 'I agree to terms')"
+      allowed-when: "A plain <label> + <input type=checkbox> is sufficient; fieldset/legend not required."
+    }
+  ]
+
+  related: [
+    @community/rule-form-label-associated,
+    @community/rule-autocomplete-attributes,
+    @community/rule-aria-label-required,
+  ]
+}

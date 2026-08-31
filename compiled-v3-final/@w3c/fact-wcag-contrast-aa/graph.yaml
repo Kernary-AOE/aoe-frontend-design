@@ -1,8 +1,0 @@
-atom: "@w3c/fact-wcag-contrast-aa"
-relations:
-  - type: related
-    target: "@w3c/fact-wcag-contrast-aaa"
-  - type: related
-    target: "@w3c/fact-wcag-focus-contrast"
-  - type: related
-    target: "@community/metric-contrast-ratio"

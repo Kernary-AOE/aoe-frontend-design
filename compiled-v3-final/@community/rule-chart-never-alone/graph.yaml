@@ -1,8 +1,0 @@
-atom: "@community/rule-chart-never-alone"
-relations:
-  - type: related
-    target: "@community/pattern-chart-grid"
-  - type: related
-    target: "@community/pattern-metric-card"
-  - type: related
-    target: "@community/example-stripe-dashboard"

@@ -1,8 +1,0 @@
-atom: "@community/counter-example-aria-bandaid"
-relations:
-  - type: related
-    target: "@impeccable/template-modal-focus-trap"
-  - type: related
-    target: "@community/method-a11y-audit"
-  - type: related
-    target: "@community/rule-keyboard-accessible"

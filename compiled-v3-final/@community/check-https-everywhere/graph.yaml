@@ -1,8 +1,0 @@
-atom: "@community/check-https-everywhere"
-relations:
-  - type: related
-    target: "@community/rule-tls-everywhere"
-  - type: related
-    target: "@community/principle-owasp-cryptographic-failures"
-  - type: related
-    target: "@community/pattern-defense-in-depth"

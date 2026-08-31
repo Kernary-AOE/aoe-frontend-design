@@ -1,4 +1,0 @@
-# AnimationCurveOvershoot [fact] v1.0.0
-Overshoot easing (cubic-bezier Y > 1, e.g. cubic-bezier(0.34,1.56,0.64,1)) simulates a spring that passes its target before settling — perceived as physical and playful, correct for position-tracking elements (tab indicators, toggles) but not for entrances or exits.
-> An overshoot curve has a control point with Y value > 1 (or < 0), which causes the animated property to temporarily exceed its target value before settling. For a translateY animation from 20px to 0, an overshoot curve would momentarily reach -5px before returning to 0. This creates a 'spring past target then settle' feel that users perceive as physical inertia. The key constraint: overshoot only looks correct when the animated property represents a position or scale (transform) — it produces visual artifacts on opacity or color.
-domain: frontend-design

@@ -1,0 +1,78 @@
+pattern DashboardAnimations {
+  id: "@community/pattern-dashboard-animations"
+  version: "1.0.0"
+
+  label: "Dashboard Animation Patterns"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Three precise CSS animation patterns used in admin dashboards: sidebar collapse transition, accordion/collapsible content expand, and button press micro-interaction. All should respect prefers-reduced-motion."
+
+  problem: "Dashboard interactions without animation feel abrupt; dashboard interactions with excessive or poorly-timed animation feel slow. Three transitions are needed repeatedly: sidebar collapse, expandable sections, and button feedback."
+
+  solution: "Use targeted CSS transitions with short durations (200ms or less). Sidebar collapses on left/right/width simultaneously. Accordions use a Radix/CSS custom property height animation. Buttons use a 1px translateY press. Always gate all animations behind prefers-reduced-motion media query."
+
+  structure: """
+    <style>
+      /* 1. Sidebar collapse: animate left, right, and width together */
+      .sidebar {
+        transition: left 200ms ease-linear,
+                    right 200ms ease-linear,
+                    width 200ms ease-linear;
+      }
+
+      /* 2. Accordion / collapsible expand */
+      @keyframes accordion-down {
+        from { height: 0; overflow: hidden; }
+        to   { height: var(--radix-accordion-content-height); }
+      }
+      @keyframes accordion-up {
+        from { height: var(--radix-accordion-content-height); }
+        to   { height: 0; overflow: hidden; }
+      }
+      .accordion-content[data-state="open"] {
+        animation: accordion-down 0.2s ease-out;
+      }
+      .accordion-content[data-state="closed"] {
+        animation: accordion-up 0.2s ease-out;
+      }
+
+      /* 3. Button press micro-interaction */
+      button:active {
+        transform: translateY(1px);
+      }
+
+      /* 4. Respect reduced motion — disable all */
+      @media (prefers-reduced-motion: reduce) {
+        .sidebar,
+        .accordion-content,
+        button {
+          transition: none;
+          animation: none;
+        }
+      }
+    </style>
+  """
+
+  notes: [
+    "Sidebar transition: only animate left, right, width — never height (causes layout thrash).",
+    "Accordion height animation relies on CSS custom property --radix-accordion-content-height set by Radix UI; use vanilla JS equivalent if not using Radix.",
+    "Button press translateY(1px) works on all button types; do NOT apply to links.",
+    "Always wrap animation declarations in an @media (prefers-reduced-motion: no-preference) guard in production, or use the disable block shown above.",
+    "Duration guideline: 150-200ms for UI feedback, 200-300ms for layout transitions, never >400ms for interactive elements.",
+  ]
+
+  related: [
+    @community/pattern-dashboard-sidebar,
+    @community/example-stripe-dashboard,
+    @community/constraint-reduced-motion,
+    @community/check-reduced-motion-required,
+    @community/anti-pattern-color-only-meaning,
+    @community/check-focus-visible,
+  ]
+}

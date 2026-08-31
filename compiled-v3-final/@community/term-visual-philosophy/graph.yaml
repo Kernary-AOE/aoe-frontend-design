@@ -1,8 +1,0 @@
-atom: "@community/term-visual-philosophy"
-relations:
-  - type: related
-    target: "@community/principle-subtle-conceptual-reference"
-  - type: related
-    target: "@community/principle-unexpected-spatial-composition"
-  - type: related
-    target: "@community/rule-vary-aesthetic-per-generation"

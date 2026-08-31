@@ -1,0 +1,98 @@
+persona Superhuman {
+  id: "@community/persona-superhuman"
+  version: "1.0.0"
+
+  school: superhuman
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Luxury-productivity aesthetic: Super Sans VF at non-standard weight 540 / line-height 0.96 on pure white with a single cinematic hero in Mysteria Purple #1b1938, warm cream #e9e5dd CTAs, and lavender #cbb7fb as the sole accent."
+
+  implies: {
+    font: {
+      display: "Super Sans VF variable font with fallbacks system-ui, -apple-system, Segoe UI, Roboto"
+      body: "Super Sans VF weight 460 — workhorse body weight between conventional 400 and 500"
+      accent: "Messina Sans / Messina Serif / Messina Mono (Luzi Type) for product UI contexts"
+    }
+    color: {
+      temperature: "neutral"
+      palette: "hero bg #1b1938 Mysteria Purple, primary text #292827 Charcoal Ink (warm near-black), dark text color(srgb 1 1 1 / 0.95), accent #cbb7fb Lavender Glow, link #714cb6 Amethyst Link, button bg #e9e5dd Warm Cream, border #dcd7d3 Parchment Border"
+      background: "#ffffff"
+    }
+    density: "spacious — only two radius values (8px buttons/spans, 16px cards/links), 8px base spacing, 48–80px vertical section padding, ~1200px max-width"
+    layout: "cinematic single hero gradient dissolving to all-white content body, large product screenshots as content anchors, minimal surrounding copy"
+    imagery: "large product UI screenshots (email interface) as primary content — the interface sells itself; no stock photography"
+    motion: "cinematic but quiet — hero gradient is the one dramatic gesture; interactive states use opacity + underline, not color shifts or animation"
+  }
+
+  compatible: ["editorial", "warm-institutional", "notion-warm", "stripe-fintech"]
+  conflicts: ["brutalist", "dense-pragmatist", "vercel-clean"]
+
+  example-brands: [
+    "Superhuman",
+  ]
+
+  notes: [
+    "Non-standard variable font weights 460 (body) and 540 (display) sit deliberately between conventional stops — text feels subtly heavier than expected without reading as bold.",
+    "Ultra-tight display line-height 0.96 collapses headlines to nearly overlap vertically, creating architectural typographic blocks; body contrasts at generous 1.50 line-height.",
+    "Binary radius system — 8px or 16px only, never pills, never micro-rounding — radical simplicity that reads as curated luxury, not developer-default.",
+    "Warm cream CTAs #e9e5dd on dark purple or white: understated luxury signaling, the opposite of attention-grabbing saturation.",
+    "Lavender #cbb7fb is the sole chromatic departure from neutrals; a second accent color immediately collapses the luxury restraint into generic SaaS.",
+    "Hero border rgba(255,255,255,0.2) ghostly surface borders on the Mysteria Purple section maintain structure without breaking the cinematic gradient.",
+    "Use for exclusive/aspirational 'invite-only' vibes and premium productivity. Avoid for dev tools or mass-market consumer apps where restraint reads as gatekept.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-card-hover-lift,
+      @community/fact-variable-font-axes,
+      @community/principle-typography-hierarchy,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-dense-pragmatist,
+    ]
+    typography-required: {
+      display: "Super Sans VF weight 540"
+      body: "Super Sans VF weight 460"
+      line-height-display: "0.96"
+    }
+    color-required: {
+      background: "#ffffff"
+      hero: "#1b1938"
+      accent: "#cbb7fb"
+    }
+    motion-prescriptions: [
+      @impeccable/template-easing-curves,
+      @impeccable/template-card-hover-lift,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-editorial,
+    @impeccable/template-easing-curves,
+    @impeccable/template-card-hover-lift,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-variable-font-axes,
+    @community/constraint-typography-weight-blacklist,
+    @community/fact-line-height-readability,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/rule-brand-color-primary-only,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+    @community/constraint-max-color-roles-7,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-dense-pragmatist,
+  ]
+}

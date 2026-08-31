@@ -1,6 +1,0 @@
-atom: "@community/counter-example-tooltip-hover-only"
-relations:
-  - type: related
-    target: "@community/pattern-tooltip-keyboard"
-  - type: related
-    target: "@community/rule-keyboard-accessible"

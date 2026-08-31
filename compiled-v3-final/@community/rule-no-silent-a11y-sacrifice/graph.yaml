@@ -1,8 +1,0 @@
-atom: "@community/rule-no-silent-a11y-sacrifice"
-relations:
-  - type: related
-    target: "@community/rule-no-shipping-a11y-violations"
-  - type: related
-    target: "@community/rule-explicit-trade-off-disclosure"
-  - type: related
-    target: "@community/constraint-accessibility-aa-minimum"

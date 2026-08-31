@@ -1,8 +1,0 @@
-atom: "@community/rule-page-section-density"
-relations:
-  - type: related
-    target: "@community/check-spacing-rhythm"
-  - type: related
-    target: "@community/fact-8pt-grid-system"
-  - type: related
-    target: "@community/principle-vertical-rhythm"

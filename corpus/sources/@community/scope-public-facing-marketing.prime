@@ -1,0 +1,78 @@
+scope PublicFacingMarketing {
+  id: "@community/scope-public-facing-marketing"
+  version: "1.0.0"
+
+  label: "Public-Facing Marketing / Landing Pages"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Defines the applicability scope for atoms aimed at public landing pages, marketing sites, blog/docs, and pre-auth surfaces. These atoms emphasize brand expressiveness, SEO, conversion, and first-paint performance — and are NOT appropriate for authenticated app surfaces (dashboards, settings, data tables)."
+
+  preconditions: [
+    {
+      id: "audience-anonymous",
+      check: "page audience includes first-time anonymous visitors who have NOT logged in",
+      on-fail: "Use app-scope atoms for authenticated surfaces."
+    }
+    {
+      id: "seo-matters",
+      check: "page is indexable by search engines (no `noindex` meta) and ranking matters for the business",
+      on-fail: "If purely internal/auth-walled, treat as app surface."
+    }
+    {
+      id: "first-paint-critical",
+      check: "LCP target < 2.5s on 4G, FCP target < 1.8s — see @community/metric-lcp-largest-contentful-paint",
+      on-fail: "Marketing pages must hit Core Web Vitals; defer heavy interactivity."
+    }
+  ]
+
+  applies-to: [
+    "Landing pages, hero sections, feature pages",
+    "Pricing pages, comparison pages",
+    "Public blog and changelog",
+    "Documentation and help center (when public)",
+    "Sign-up flows pre-account-creation",
+    "About/team/careers pages",
+  ]
+
+  out-of-scope: [
+    "Authenticated dashboards, admin panels, settings",
+    "Internal-only B2B applications",
+    "Component library demos (use design-system scope)",
+    "Customer support tools and CRMs (use app scope)",
+  ]
+
+  defaults: {
+    rendering: "SSG or SSR with CDN cache — see @community/tradeoff-server-vs-client-rendering"
+    interactivity-budget: "minimal — JS only for nav, forms, conditional reveals"
+    image-strategy: "AVIF/WebP with responsive srcset; LCP image preloaded"
+    font-strategy: "self-hosted with `font-display: swap`; preload primary face"
+    analytics: "consent-gated; respect Do-Not-Track and GPC"
+  }
+
+  brand-expressiveness: {
+    tone: "high — marketing is the primary brand surface"
+    distinctiveness: "required — see @impeccable/principle-distinctiveness"
+    motion: "purposeful, respects prefers-reduced-motion"
+    typography: "may use display fonts; body must remain legible"
+  }
+
+  notes: [
+    "Marketing surfaces tolerate (and benefit from) more visual ambition than app surfaces. Density should drop, whitespace should grow.",
+    "Avoid AI-slop signals on landing pages — see @community/anti-pattern-ai-slop-aesthetics. Marketing is exactly where convergent looks hurt conversion.",
+    "Conversion forms (email capture, sign-up) must hit @community/metric-target-size 44px and have visible labels.",
+    "Cookie banner and consent UI MUST NOT block LCP element or shift layout.",
+  ]
+
+  related: [
+    @community/tradeoff-server-vs-client-rendering,
+    @community/metric-lcp-largest-contentful-paint,
+    @community/metric-cls-cumulative-layout-shift,
+    @community/anti-pattern-ai-slop-aesthetics,
+  ]
+}

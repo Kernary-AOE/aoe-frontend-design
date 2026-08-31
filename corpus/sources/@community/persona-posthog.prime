@@ -1,0 +1,101 @@
+persona PostHog {
+  id: "@community/persona-posthog"
+  version: "1.0.0"
+
+  school: posthog
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Anti-corporate open-source analytics: IBM Plex Sans at 700/800 on sage-tinted parchment #fdfdf8, PostHog Orange #F54E00 hidden until hover, hand-drawn hedgehog illustrations replacing stock photography, and an olive-green palette that deliberately rejects SaaS conventions."
+
+  implies: {
+    font: {
+      display: "IBM Plex Sans Variable (fallbacks: IBM Plex Sans, -apple-system, system-ui, Avenir Next, Avenir, Segoe UI, Helvetica Neue, Ubuntu, Roboto) — 30px/800/line-height 1.20/letter-spacing -0.75px for hero; 700/800 on all headings"
+      body: "IBM Plex Sans — 400/500 body; 16px/400/line-height 1.50–1.71 (generous editorial); 600 semibold for emphasis"
+      monospace: "Source Code Pro for code display (fallbacks: Menlo, Consolas, Monaco); system stack ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas for inline code"
+    }
+    color: {
+      temperature: "warm"
+      palette: "olive ink #4d4f46 primary text, deep olive #23251d high-emphasis headings/links, PostHog Orange #F54E00 hover-only accent, amber gold #F7A501 dark hover, warm parchment #fdfdf8 canvas, sage cream #eeefe9 input bg, sage button #e5e7e0, tan featured #d4c9b8, sage border #bfc1b7, dark CTA #1e1f23"
+      background: "#fdfdf8"
+    }
+    density: "compact-editorial — 2px inline / 4px primary UI (buttons/inputs/dropdowns) / 6px secondary containers / 9999px pill badges; 8px base (compact 2–34px scale); section padding 32–48px (tight for content-heavy); 13 defined breakpoints (425/482/640/768/800/900/1024/1076/1160/1280/1536px)"
+    layout: "content-heavy wiki-like flow with tight section padding; dark CTA #1e1f23 buttons for primary actions; alternating surface-color sections rather than border separation; long-form comfortable reading rhythm"
+    imagery: "hand-drawn hedgehog mascot illustrations + action-figure product photography throughout; no stock photos, no abstract gradients; illustrations ARE the brand differentiator"
+    motion: "PostHog Orange #F54E00 appears only on hover (buttons, links, cards) — a hidden interaction reward; dark buttons opacity: 0.7 with amber text on hover rather than color swap; single shadow 0px 25px 50px -12px rgba(0,0,0,0.25) for modals only"
+  }
+
+  compatible: ["warm-institutional", "editorial", "magazine-editorial", "brutalist"]
+  conflicts: ["vercel-clean", "swiss-modernist", "stripe-fintech"]
+
+  example-brands: [
+    "PostHog",
+  ]
+
+  notes: [
+    "Hidden orange hover flash is the signature interaction: #F54E00 PostHog Orange is invisible at rest — it only appears on hover for buttons, links, and cards. This restrained-then-surprise pattern is non-negotiable to the brand.",
+    "Entire palette rejects conventional SaaS blue-and-white: olive ink #4d4f46 text + sage borders #bfc1b7 + parchment canvas #fdfdf8 + deep olive #23251d headings — the anti-corporate-design-trends palette is the brand statement.",
+    "IBM Plex Sans at 700/800 on headings is deliberate contrast: heavy weight signals 'serious engineers' while the warm olive palette and hedgehog illustrations say 'but we don't take ourselves too seriously.'",
+    "Body line-height 1.50–1.71 is unusually generous for a SaaS product — signals content-heavy long-read commitment; tight line-height would undermine the wiki/editorial feel.",
+    "Opacity-based button hover (dark buttons → opacity 0.7 with amber text) rather than color swap — warmth-signal rather than state-swap; this avoids the typical SaaS 'darken on hover' convention.",
+    "Single shadow system: 0px 25px 50px -12px rgba(0,0,0,0.25) is the only shadow defined (modals/dropdowns only); all other depth uses border containment + surface-color layering.",
+    "Use for dev-tool, analytics, or open-source-startup products with irreverent brand voice. Avoid for enterprise-polished or financial-regulated contexts — sage palette and hedgehog mascots read as 'indie startup energy' that undermines institutional credibility.",
+    "Distinct from @impeccable/persona-warm-institutional: PostHog is scrappy and anti-corporate with illustration-driven personality; warm-institutional is refined, authoritative, and institution-signaling.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-button-press,
+      @community/fact-line-height-readability,
+      @community/check-body-readability,
+    ]
+    must-avoid: [
+      @impeccable/persona-vercel-clean,
+      @impeccable/persona-stripe-fintech,
+    ]
+    typography-required: {
+      display: "IBM Plex Sans Variable"
+      weight-heading: "700/800"
+      body-line-height: "1.50-1.71"
+    }
+    color-required: {
+      background: "#fdfdf8"
+      text-primary: "#4d4f46"
+      accent: "#F54E00 (hover-only, never at rest)"
+    }
+    motion-prescriptions: [
+      @impeccable/template-button-press,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-warm-institutional,
+    @impeccable/template-button-press,
+    @impeccable/template-easing-curves,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-variable-font-axes,
+    @community/fact-line-height-readability,
+    @community/fact-monospace-purpose,
+    @community/check-body-readability,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/constraint-no-pure-white-bg,
+    @community/rule-backgrounds-atmospheric,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+    @impeccable/anti-pattern-ai-slop-palette,
+  ]
+
+  contradicts: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/persona-stripe-fintech,
+  ]
+}

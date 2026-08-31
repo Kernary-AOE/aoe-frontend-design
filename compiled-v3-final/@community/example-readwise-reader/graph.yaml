@@ -1,8 +1,0 @@
-atom: "@community/example-readwise-reader"
-relations:
-  - type: related
-    target: "@community/pattern-blog-article-layout"
-  - type: related
-    target: "@community/example-atlantic-longform"
-  - type: related
-    target: "@community/fact-optimal-line-length"

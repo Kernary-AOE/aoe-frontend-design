@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-no-override-swipe-back"
-relations:
-  - type: related
-    target: "@community/constraint-ios-reserved-gestures"
-  - type: related
-    target: "@community/pattern-ios-navigation-stack"
-  - type: related
-    target: "@community/fact-ios-system-gesture-vocabulary"

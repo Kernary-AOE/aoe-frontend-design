@@ -1,8 +1,0 @@
-atom: "@community/constraint-no-content-flashing"
-relations:
-  - type: related
-    target: "@community/constraint-reduced-motion"
-  - type: related
-    target: "@community/rule-reduced-motion-required"
-  - type: related
-    target: "@community/constraint-animation-pref-respected"

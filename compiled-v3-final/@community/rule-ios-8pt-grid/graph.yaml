@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-8pt-grid"
-relations:
-  - type: related
-    target: "@community/constraint-ios-touch-target-44pt"
-  - type: related
-    target: "@community/rule-ios-safe-area-insets"
-  - type: related
-    target: "@community/pattern-ios-thumb-zone"

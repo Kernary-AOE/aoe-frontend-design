@@ -1,3 +1,0 @@
-# VisualDesignSafeRules [rule] v1.0.0
-> Apply these 12 mathematically-verifiable visual design rules: (1) near-black not pure black (oklch 12–15% lightness); (2) near-white not pure white (oklch 96–98%); (3) saturate neutrals with brand hue at chroma < 0.01; (4) 60-30-10 color ratio; (5) spacing values must come from an 8px base scale (4/8/12/16/24/32/48/64/96px); (6) outer padding ≥ inner padding; (7) button horizontal padding = 2× vertical; (8) body text minimum 16px; (9) line length 60–80ch; (10) shadow blur = 2× offset distance; (11) nested corner radius = outer − padding; (12) high contrast for CTAs, low contrast for structural borders.
-domain: frontend-design

@@ -1,8 +1,0 @@
-atom: "@community/rule-secrets-never-in-source"
-relations:
-  - type: related
-    target: "@community/principle-owasp-security-misconfig"
-  - type: related
-    target: "@community/principle-owasp-data-integrity-failures"
-  - type: related
-    target: "@community/principle-owasp-cryptographic-failures"

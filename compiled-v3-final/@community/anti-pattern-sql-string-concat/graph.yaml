@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-sql-string-concat"
-relations:
-  - type: related
-    target: "@community/principle-owasp-injection"
-  - type: related
-    target: "@community/pattern-input-validation-allowlist"
-  - type: related
-    target: "@community/anti-pattern-trusting-client-validation"

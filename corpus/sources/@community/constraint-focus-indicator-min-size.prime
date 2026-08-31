@@ -1,0 +1,57 @@
+constraint FocusIndicatorMinSize {
+  id: "@community/constraint-focus-indicator-min-size"
+  version: "1.0.0"
+
+  target: "CSS focus indicator (outline, box-shadow, or border)"
+  severity: block
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "A focus indicator must enclose the component with a perimeter area of at least (component perimeter × 2 CSS pixels) and achieve 3:1 contrast against every adjacent color, meeting WCAG 2.2 SC 2.4.11 Focus Appearance (AA)."
+
+  thresholds: {
+    minimum-area: "indicator area ≥ component perimeter × 2px"
+    minimum-contrast: "3:1 between focus indicator color and adjacent background / unfocused component color"
+    minimum-width: "2px outline (practical interpretation of perimeter × 2px rule)"
+    offset: "outline-offset: 2px recommended to ensure indicator sits outside the component edge"
+  }
+
+  rule: |
+    // Minimum compliant focus ring
+    :focus-visible {
+      outline: 2px solid oklch(60% 0.18 250); // high-chroma blue — check contrast against bg
+      outline-offset: 2px;
+    }
+
+    // For brand-colored buttons: invert the ring color
+    .btn-primary:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+  anti-patterns: [
+    "outline: 1px solid — single pixel hairline fails minimum width",
+    "box-shadow focus ring inside overflow: hidden parent — clipped, invisible",
+    "Focus ring same color as component background — contrast < 3:1",
+    "outline: none with no replacement — WCAG 2.4.7 AND 2.4.11 failure",
+  ]
+
+  notes: [
+    "WCAG 2.2 SC 2.4.11 is Level AA (not AAA); it is the minimum, not optional.",
+    "The 3:1 contrast requirement is against both the background AND the unfocused element color.",
+    "outline is preferred over box-shadow: outlines are not clipped by overflow: hidden on parent elements.",
+    "Use @community/value-focus-outline-width and @community/template-focus-ring as implementation references.",
+  ]
+
+  related: [
+    @community/value-focus-outline-width,
+    @community/template-focus-ring,
+    @community/anti-pattern-invisible-focus,
+    @community/anti-pattern-outline-suppression,
+  ]
+}

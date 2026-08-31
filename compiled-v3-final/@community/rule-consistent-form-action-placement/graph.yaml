@@ -1,8 +1,0 @@
-atom: "@community/rule-consistent-form-action-placement"
-relations:
-  - type: related
-    target: "@community/pattern-multi-step-wizard"
-  - type: related
-    target: "@community/rule-button-type-explicit"
-  - type: related
-    target: "@community/rule-form-validation-inline"

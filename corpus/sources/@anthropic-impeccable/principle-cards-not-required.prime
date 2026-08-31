@@ -1,0 +1,42 @@
+principle CardsNotRequired {
+  id: "@anthropic-impeccable/principle-cards-not-required"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  statement: "Cards are a container of last resort, not a default layout primitive. Spacing and alignment create visual grouping naturally — most contexts that ship cards would be better served by typography and whitespace alone."
+
+  rationale: "Cards communicate 'this is an isolated, actionable unit' — a strong semantic signal that is overused as a layout shortcut. When every content block is wrapped in a card, the card loses semantic meaning (everything is actionable and distinct) while adding visual noise (borders, shadows, corner radii multiply). Gestalt proximity and typographic hierarchy create grouping without containers; adding a card on top is redundant. Cards are appropriate when: (1) content is genuinely discrete and independently actionable; (2) items need visual comparison in a scanning grid; (3) content requires an explicit interaction boundary. Cards inside cards are never appropriate — they create nested containment semantics that the eye cannot parse."
+
+  use-cards-only-when: [
+    "Content is genuinely discrete and independently actionable (calendar event, kanban card, notification item)",
+    "Items require visual comparison in a scanning grid (product listings, team member directory)",
+    "An explicit click/tap target boundary is required for the entire content block",
+  ]
+
+  never-use-cards-when: [
+    "Wrapping a section header and its body content — spacing already groups these",
+    "Nesting cards inside cards — use typography and dividers for hierarchy within a container",
+    "The content is continuous prose — cards interrupt reading flow",
+    "The card's only purpose is to add visual weight — this is decoration, not containment",
+  ]
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — Layout & Space section",
+    "Anthropic Impeccable SKILL.md — spatial-design.md reference > Cards Are Not Required section",
+  ]
+
+  related: [
+    @community/principle-white-space-as-design-element,
+    @community/principle-vertical-rhythm,
+    @community/rule-no-uniform-spacing-without-variation,
+    @community/pattern-card-component,
+    @community/fact-gestalt-proximity,
+  ]
+}

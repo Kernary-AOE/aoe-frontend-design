@@ -1,0 +1,35 @@
+rule IosSingleAccentColor {
+  id: "@community/rule-ios-single-accent-color"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  applies-to: "all interactive controls in an iOS app (buttons, links, toggles, tab bar selection)"
+
+  statement: "Set a single app-wide tint/accent color applied uniformly to all buttons, links, and toggles; avoid using multiple competing accent colors across the interface."
+
+  rationale: "A consistent accent color trains users to recognize interactive affordances at a glance. Multiple accent colors create ambiguity about what is tappable and weaken the visual language. iOS enforces this pattern through the global tintColor system."
+
+  examples: [
+    "Set the app accent color once in Assets.xcassets → AccentColor → Appearance Any/Dark.",
+    "SwiftUI applies AccentColor automatically to all tintable controls unless overridden.",
+    "Audit: scan all screens; interactive elements must share one consistent tint color.",
+  ]
+
+  notes: [
+    "The single exception: destructive actions use systemRed — this is not a second accent color, it is a system-reserved semantic.",
+    "Apple HIG source: Rule 4.7 — One Accent Color for Interactive Elements.",
+  ]
+
+  related: [
+    @community/rule-ios-semantic-system-colors,
+    @community/rule-ios-custom-color-dark-variants,
+    @community/fact-ios-button-style-hierarchy,
+  ]
+}

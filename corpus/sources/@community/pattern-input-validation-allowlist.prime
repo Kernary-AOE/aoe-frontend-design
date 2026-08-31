@@ -1,0 +1,80 @@
+pattern InputValidationAllowlist {
+  id: "@community/pattern-input-validation-allowlist"
+  version: "1.0.0"
+
+  label: "Allow-List Input Validation"
+  domain: security
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Validate all user input against an explicit allowlist of permitted characters, formats, or enum values — reject everything that does not match, rather than attempting to strip or escape known-bad patterns."
+
+  problem: "Denylist (blacklist) validation tries to enumerate every dangerous input variant. Attackers use encoding tricks (URL encoding, Unicode normalization, double encoding, null bytes) to bypass denylists. A denylist is an unbounded enumeration of evil — allowlists are bounded enumerations of good."
+
+  solution: "For each input field, define the strictest allowable set: a regex anchored at start and end, an enum of permitted values, or a structured parser (date-parse, URL-parse). Reject inputs that fail; never sanitize-and-proceed on the same validation path. Apply validation server-side regardless of client-side checks."
+
+  structure: """
+    # 1. Enum allowlist (strictest — finite set of valid values)
+    const ALLOWED_ROLES  = ['user', 'editor', 'admin'] as const;
+    const ALLOWED_STATUS = ['active', 'inactive', 'pending'] as const;
+    function validateRole(input: string) {
+      if (!ALLOWED_ROLES.includes(input as typeof ALLOWED_ROLES[number]))
+        throw new ValidationError(`Invalid role: ${input}`);
+    }
+
+    # 2. Regex allowlist (anchored — ^ and $ mandatory)
+    const USERNAME_RE  = /^[a-zA-Z0-9_-]{3,32}$/;
+    const SLUG_RE      = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+    const UUID_RE      = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    const ISO_DATE_RE  = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+    const HEX_COLOR_RE = /^#[0-9a-fA-F]{6}$/;
+
+    function validate(input: string, pattern: RegExp, field: string) {
+      if (!pattern.test(input))
+        throw new ValidationError(`${field} contains invalid characters`);
+    }
+
+    # 3. Structural parser allowlist (for complex types)
+    import { z } from 'zod';
+    const UserInput = z.object({
+      username: z.string().regex(USERNAME_RE),
+      email:    z.string().email().max(254),
+      age:      z.number().int().min(13).max(120),
+      role:     z.enum(['user', 'editor']),
+      website:  z.string().url().startsWith('https://').optional(),
+    });
+
+    # 4. File upload — allowlist by MIME type AND extension (check both)
+    const ALLOWED_MIME = new Set(['image/jpeg', 'image/png', 'image/webp', 'application/pdf']);
+    const ALLOWED_EXT  = new Set(['.jpg', '.jpeg', '.png', '.webp', '.pdf']);
+    function validateUpload(mimetype: string, filename: string) {
+      const ext = path.extname(filename).toLowerCase();
+      if (!ALLOWED_MIME.has(mimetype) || !ALLOWED_EXT.has(ext))
+        throw new ValidationError('File type not permitted');
+    }
+
+    # WRONG — denylist approach (bypass examples):
+    # input.replace(/<script>/g, '')  →  bypassed by <scr<script>ipt>, uppercase, etc.
+    # input.replace(/'/g, '')         →  bypassed by SQL using comment syntax: --
+  """
+
+  notes: [
+    "Anchor all regexes with ^ and $ — without anchors /[a-z]/ matches 'abc; DROP TABLE' because it contains a-z",
+    "Validate on the server every time, even if client validated — client validation is UX-only",
+    "Prefer parsing over regex for complex types: use new URL() for URLs, new Date() for dates, then check for NaN/invalid",
+    "Log validation failures with the offending input (truncated) — repeated failures indicate probing",
+    "For free-text fields (comments, bio), use an HTML sanitizer on output rendering, not on storage",
+    "Maximum length limits are part of validation — they prevent buffer overrun and ReDoS on some regex engines",
+  ]
+
+  related: [
+    @community/principle-owasp-injection,
+    @community/anti-pattern-eval-user-input,
+    @community/anti-pattern-sql-string-concat,
+    @community/anti-pattern-trusting-client-validation,
+  ]
+}

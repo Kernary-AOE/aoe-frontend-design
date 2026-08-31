@@ -1,0 +1,41 @@
+fact UserControlFreedom {
+  id: "@community/fact-user-control-freedom"
+  version: "1.0.0"
+
+  statement: "Nielsen Heuristic 3 — User Control and Freedom: Users often choose system functions by mistake and will need a clearly marked 'emergency exit' to leave the unwanted state without having to go through an extended dialogue. Support undo and redo."
+
+  confidence: proven
+  evidence: @nielsen/source-nielsen-1994
+
+  domain: ux-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  heuristic-number: 3
+
+  examples: [
+    "Cmd+Z undo that works for at least 20 history steps in a rich text editor.",
+    "Gmail's 'Undo Send' with a 5–30 second window after clicking Send.",
+    "Clear 'Cancel' button in every modal dialog as a prominent escape hatch.",
+  ]
+
+  violations: [
+    "Irreversible delete with no undo — data is lost immediately on click.",
+    "Wizard-style flow with no 'Back' button — users are locked into forward progression.",
+    "No cancel option during a long-running operation (only a spinner).",
+  ]
+
+  notes: [
+    "Undo is the single most impactful error recovery mechanism in interactive software.",
+    "This fact is a member of @nielsen/taxonomy-10-heuristics.",
+  ]
+
+  related: [
+    @nielsen/taxonomy-10-heuristics,
+    @community/fact-error-prevention,
+  ]
+}

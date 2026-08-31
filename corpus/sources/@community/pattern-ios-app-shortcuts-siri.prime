@@ -1,0 +1,36 @@
+pattern IosAppShortcutsSiri {
+  id: "@community/pattern-ios-app-shortcuts-siri"
+  version: "1.0.0"
+
+  label: "iOS App Shortcuts for Siri and Spotlight"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Expose key app actions to Siri, Spotlight, and the Shortcuts app by implementing AppShortcutsProvider with AppIntent, phrases, shortTitle, and systemImageName — allowing users to invoke the action without opening the app."
+
+  problem: "Power users cannot trigger frequent app actions from outside the app, requiring multiple taps to navigate to the feature each time."
+
+  solution: "Implement AppShortcutsProvider conformance with one AppShortcut per key action. Define at least one Siri phrase with $(applicationName) substitution, a shortTitle, and a systemImageName. Use AppIntent to define the action logic."
+
+  notes: [
+    "Applies when the app has a primary action users perform frequently — start workout, order usual, check balance.",
+    "Each AppShortcut requires at least one phrase containing $(applicationName) to appear in Siri suggestions.",
+    "Shortcuts appear automatically in Spotlight and the Shortcuts app once AppShortcutsProvider is implemented.",
+    "Apple HIG source: Rule 10.2 — App Shortcuts for Key Actions.",
+  ]
+
+  related: [
+    @community/rule-ios-spotlight-indexing,
+    @community/pattern-ios-live-activities,
+    @community/pattern-ios-widgets-glanceable,
+    @community/constraint-mobile-touch-target-44px,
+    @community/check-touch-target-min,
+    @community/check-mobile-first,
+    @community/check-focus-visible,
+  ]
+}

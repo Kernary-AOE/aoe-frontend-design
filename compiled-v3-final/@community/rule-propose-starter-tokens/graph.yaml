@@ -1,8 +1,0 @@
-atom: "@community/rule-propose-starter-tokens"
-relations:
-  - type: related
-    target: "@community/anti-pattern-magic-numbers"
-  - type: related
-    target: "@community/fact-design-token-cascade"
-  - type: related
-    target: "@community/rule-consistent-design-token-scale"

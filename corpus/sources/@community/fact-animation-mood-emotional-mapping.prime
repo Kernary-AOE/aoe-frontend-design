@@ -1,0 +1,81 @@
+fact AnimationMoodEmotionalMapping {
+  id: "@community/fact-animation-mood-emotional-mapping"
+  version: "1.0.0"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Animation duration and easing curve combinations produce distinct emotional tones: slow+ease-out reads as 'confident/luxury', fast+spring reads as 'playful/energetic', instant+linear reads as 'precise/technical' — matching motion to brand persona is as important as matching color."
+
+  statement: "Users perceive motion character before they consciously notice it. A 1200ms ease-out entrance feels editorial; a 250ms spring feels app-like; a 80ms linear press feels precise. Duration, easing type, distance, and whether physics is used (spring vs curve) combine to create the personality of a product's motion system. Mismatched motion creates subconscious dissonance even when visual design is correct."
+
+  confidence: strong
+  source: [
+    "Val Head, 'Designing Interface Animation' (Rosenfeld, 2016) — motion personality systems",
+    "IBM Carbon Design System — motion guidelines 2023",
+    "Apple HIG — Motion: duration and easing by context",
+    "Stripe Design — motion principles (observed)",
+  ]
+
+  mood-map: {
+    "confident / authoritative": {
+      duration: "400-800ms",
+      easing: "ease-out (cubic-bezier(0.16, 1, 0.3, 1))",
+      distance: "moderate (20-40px)",
+      spring: false,
+      examples: "Government, financial, healthcare, enterprise SaaS",
+    }
+    "luxury / editorial": {
+      duration: "800-1400ms",
+      easing: "ease-out or ease-in-out (cubic-bezier(0.4, 0, 0.2, 1))",
+      distance: "generous (40-80px)",
+      spring: false,
+      examples: "Fashion brands, luxury products, editorial publications",
+    }
+    "playful / consumer": {
+      duration: "200-400ms",
+      easing: "spring or ease-spring (cubic-bezier(0.34, 1.56, 0.64, 1))",
+      distance: "exaggerated (overshoot)",
+      spring: true,
+      examples: "Consumer apps, games, social platforms, onboarding",
+    }
+    "precise / technical": {
+      duration: "80-200ms",
+      easing: "ease-out or linear for data viz",
+      distance: "small (4-8px)",
+      spring: false,
+      examples: "Developer tools, IDEs, data dashboards, terminal UIs",
+    }
+    "warm / approachable": {
+      duration: "250-400ms",
+      easing: "ease-out",
+      distance: "small to moderate (8-20px)",
+      spring: false,
+      examples: "Healthcare patient portals, educational apps, community platforms",
+    }
+    "minimal / neutral": {
+      duration: "150-250ms",
+      easing: "ease-out",
+      distance: "very small (4-12px)",
+      spring: false,
+      examples: "Productivity tools, document editors, system UIs",
+    }
+  }
+
+  applies-to: [
+    "Choosing duration scale for a new design system",
+    "Aligning motion to persona (see @community/persona-*)",
+    "Diagnosing motion-brand mismatch ('this feels too playful for a B2B tool')",
+  ]
+
+  related: [
+    @community/fact-easing-mood-mapping,
+    @community/fact-easing-cubic-bezier,
+    @community/template-motion-system-tokens,
+    @community/fact-animation-curve-overshoot,
+  ]
+}

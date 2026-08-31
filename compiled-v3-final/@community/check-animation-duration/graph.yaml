@@ -1,6 +1,0 @@
-atom: "@community/check-animation-duration"
-relations:
-  - type: related
-    target: "@community/rule-animation-duration"
-  - type: related
-    target: "@community/check-reduced-motion-required"

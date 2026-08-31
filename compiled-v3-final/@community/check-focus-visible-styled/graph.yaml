@@ -1,8 +1,0 @@
-atom: "@community/check-focus-visible-styled"
-relations:
-  - type: related
-    target: "@community/check-focus-visible-styled"
-  - type: related
-    target: "@community/check-focus-visible"
-  - type: related
-    target: "@community/counter-example-outline-none"

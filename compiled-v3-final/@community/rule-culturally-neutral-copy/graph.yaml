@@ -1,6 +1,0 @@
-atom: "@community/rule-culturally-neutral-copy"
-relations:
-  - type: related
-    target: "@community/rule-active-voice-in-ui-copy"
-  - type: related
-    target: "@community/rule-consistent-product-terminology"

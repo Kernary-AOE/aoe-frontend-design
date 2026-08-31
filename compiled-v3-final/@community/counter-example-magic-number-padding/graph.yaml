@@ -1,6 +1,0 @@
-atom: "@community/counter-example-magic-number-padding"
-relations:
-  - type: related
-    target: "@community/type-design-token"
-  - type: related
-    target: "@community/anti-pattern-hardcoded-pixel-values"

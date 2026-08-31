@@ -1,0 +1,65 @@
+tool FigmaTokensPlugin {
+  id: "@community/tool-figma-tokens-plugin"
+  version: "1.0.0"
+
+  signature: (figmaFile: FigmaFileId, options: TokensPluginOptions) -> { tokens: TokenSet, syncStatus: SyncResult }
+  external: true
+  package: "Figma plugin: Tokens Studio for Figma (formerly Figma Tokens)"
+
+  domain: design-system
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Tokens Studio for Figma is the de-facto plugin for managing design tokens inside Figma and syncing them with code repositories (GitHub, GitLab, JSON files, Style Dictionary). It supports the W3C Design Tokens Community Group format draft, theme switching (light/dark/brand), and round-trip editing between Figma and Git."
+
+  capabilities: [
+    "Define tokens in Figma: colors, typography, spacing, radii, shadows, opacity, composition tokens",
+    "Token references and aliases (semantic → primitive)",
+    "Theme/brand variants with `$themes` configuration",
+    "Sync to GitHub/GitLab/Bitbucket/Azure DevOps via personal access token",
+    "Export to: JSON (DTCG format), Style Dictionary, Tailwind config, CSS variables",
+    "Apply tokens to Figma layers as styles or variables (Figma Variables API since 2023)",
+    "Math/expressions: `{spacing.base} * 2` resolves at build time",
+  ]
+
+  output-type: {
+    tokens: TokenSet                  // hierarchical token tree
+    fileExports: ExportArtifact[]     // generated CSS/JS/JSON files
+    syncStatus: { ahead: number, behind: number, conflicts: ConflictInfo[] }
+  }
+
+  usage: """
+    1. Install plugin in Figma (Plugins → Tokens Studio).
+    2. Create or import a token set as JSON. Recommended structure:
+       - `core` (primitive palette, primitive scales)
+       - `semantic` (role-named: text.primary, surface.raised)
+       - `component` (button.primary.bg, card.padding-y)
+       - `themes/light`, `themes/dark`
+    3. Apply tokens to layers: select layer → token panel → click token name.
+    4. Sync to Git:
+       - Settings → Sync providers → GitHub
+       - Provide PAT, repo, branch, file path (e.g. `tokens/tokens.json`)
+       - Pull/push with conflict UI for round-trips
+    5. In code repo, run Style Dictionary or `pnpm dlx @tokens-studio/sd` to transform JSON → CSS/iOS/Android outputs.
+  """
+
+  notes: [
+    "Tokens Studio is preferred over Figma's built-in Variables alone for cross-team workflows because it supports text-based diffs in Git, themes, and DTCG-spec output.",
+    "Figma Variables (native, since 2023) is sufficient for design-only teams; Tokens Studio is needed when code consumes the tokens.",
+    "Style Dictionary (Amazon, open source) is the canonical transformer that converts the JSON output to platform-specific files (CSS custom properties, iOS Swift, Android XML).",
+    "Common pitfall: hand-editing the JSON file outside the plugin and pushing — the plugin's metadata (`$themes`, ordering) can desync. Always pull before pushing.",
+    "Pricing: free tier supports public repos and basic features; paid plans for advanced theming, team sync, and audit logs.",
+  ]
+
+  related: [
+    @community/type-color-token-shape,
+    @community/type-spacing-scale,
+    @community/type-design-token,
+    @community/persona-figma,
+    @community/transform-hex-to-oklch,
+  ]
+}

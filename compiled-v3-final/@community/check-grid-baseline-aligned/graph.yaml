@@ -1,6 +1,0 @@
-atom: "@community/check-grid-baseline-aligned"
-relations:
-  - type: related
-    target: "@community/rule-grid-baseline-aligned"
-  - type: related
-    target: "@community/rule-spacing-rhythm"

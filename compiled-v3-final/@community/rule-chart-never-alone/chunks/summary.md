@@ -1,4 +1,0 @@
-# ChartNeverAlone [rule] v1.0.0
-Every chart requires paired context numbers. A line going up does not communicate a value, a range, or a delta — those are what users need for decisions. Extracted from StyleSeed DESIGN-LANGUAGE.md §69 (github.com/bitjaru/styleseed, MIT).
-> Every chart requires paired context. Required pairings by chart type: Area chart → period toggle (1W/1M/3M) in card header + 2-3 stat items below a border-t in the card footer. Bar chart → category labels on X-axis + a highlight color on the max bar. Donut chart → center value + clickable legend list (3-4 items) beside or below. Progress bars → label text left + percentage right on each bar. Stat footer rules: max 4 columns (grid-cols-3 or grid-cols-4), each cell with [label 11px uppercase] + [value 18px bold] + [unit 10px].
-domain: frontend-design

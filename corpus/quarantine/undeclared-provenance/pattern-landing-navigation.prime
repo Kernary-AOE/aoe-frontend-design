@@ -1,0 +1,179 @@
+pattern LandingNavigation {
+  id: "@community/pattern-landing-navigation"
+  version: "1.0.0"
+
+  label: "Landing Page Navigation Pattern"
+  domain: frontend-design
+
+  _meta: {
+    license: unknown
+    license-provenance: "unestablished"
+  }
+
+
+  description: "Two landing nav structural variants — floating rounded bar (open-react-template: top: 1rem, border-radius: 1rem, backdrop-filter: blur(12px), h-14) and classic sticky full-width bar (shadcn: top: 0, backdrop-filter: blur(8px), h-16) — plus mobile Sheet drawer hamburger pattern."
+
+  problem: "AI-generated navigation defaults to a basic sticky top-0 bar with no glassmorphism, no scroll-hide behavior, and an inaccessible hamburger icon with no aria-expanded state."
+
+  solution: "Choose between floating rounded bar (personality brands) or classic sticky bar (product SaaS). Always add backdrop-filter blur. Always implement scroll-hide/reveal. Always use Sheet component for accessible mobile nav."
+
+  structure: """
+    <!-- Variant A: Floating Rounded Bar (open-react-template) -->
+    <!--
+    [Logo] left — [links] center — [CTA buttons] right
+    Not flush to edges — floats inside px-4 container
+    -->
+    <div class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+      <header class="header-floating max-w-6xl mx-auto flex items-center justify-between px-6">
+        <!-- Logo -->
+        <a href="/" class="font-bold text-lg">Brand</a>
+        <!-- Center links (hidden on mobile) -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/features">Features</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/docs">Docs</a>
+        </nav>
+        <!-- CTA buttons right -->
+        <div class="flex items-center gap-3">
+          <Button variant="ghost" size="sm" class="hidden md:inline-flex">Log in</Button>
+          <Button size="sm">Get started</Button>
+          <!-- Mobile hamburger — see below -->
+        </div>
+      </header>
+    </div>
+
+    <!-- Variant B: Classic Sticky Bar (shadcn / next-saas-starter) -->
+    <!--
+    Full-width w-full with max-w-6xl mx-auto px-4 container inside
+    Scroll-hide: translateY(-4rem) down fast, reveal on scroll up
+    -->
+    <nav class="nav-sticky w-full">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <a href="/" class="font-bold text-lg">Brand</a>
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="/features">Features</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <Button variant="ghost" size="sm">Log in</Button>
+          <Button size="sm">Sign up</Button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Hamburger — Sheet drawer (shadcn recommended) -->
+    <!-- MUST: aria-expanded on trigger, ESC closes (built into Sheet), focus trap (built into Sheet) -->
+    <!-- MUST: backdrop overlay closes on click -->
+    <!-- Show hamburger below md (768px), hide links -->
+    <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+      <SheetTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-expanded={mobileOpen}
+          aria-label="Open menu"
+          class="md:hidden"
+        >
+          <Menu class="h-5 w-5" />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="right" class="w-[280px]">
+        {/* nav links as block-level items */}
+        <nav class="flex flex-col gap-4 mt-8 text-base">
+          <a href="/features" onClick={() => setMobileOpen(false)}>Features</a>
+          <a href="/pricing" onClick={() => setMobileOpen(false)}>Pricing</a>
+          <a href="/docs" onClick={() => setMobileOpen(false)}>Docs</a>
+        </nav>
+        <div class="mt-8 flex flex-col gap-3">
+          <Button variant="outline" class="w-full">Log in</Button>
+          <Button class="w-full">Get started</Button>
+        </div>
+      </SheetContent>
+    </Sheet>
+  """
+
+  css: """
+    /* Floating Rounded Bar (open-react-template) */
+    .header-floating {
+      position: sticky;
+      top: 1rem;
+      border-radius: 1rem;       /* rounded-2xl */
+      background: oklch(0.12 0.005 240 / 0.90);
+      height: 3.5rem;            /* h-14 */
+      max-width: 72rem;          /* max-w-6xl */
+      margin: 0 auto;
+      backdrop-filter: blur(12px);
+    }
+
+    /* Gradient border technique for floating bar */
+    /* ::before pseudo with padding: 1px, border-radius: inherit */
+    /* mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) */
+    /* mask-composite: exclude — creates gradient border effect */
+    .header-floating::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03));
+      border-radius: inherit;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Classic Sticky Bar (shadcn / next-saas-starter) */
+    .nav-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--border);
+      background: hsl(var(--background) / 0.95);
+      backdrop-filter: blur(8px);
+      height: 4rem;   /* h-16 */
+    }
+  """
+
+  scroll-hide: """
+    // Scroll-hide pattern for classic sticky nav
+    // useScrollPosition() hook → translateY(-4rem) when scrolling down fast, reveal on scroll up
+    const [hidden, setHidden] = useState(false);
+    const prevScrollY = useRef(0);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        const currentY = window.scrollY;
+        setHidden(currentY > prevScrollY.current && currentY > 80);
+        prevScrollY.current = currentY;
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Apply: style={{ transform: hidden ? 'translateY(-4rem)' : 'translateY(0)', transition: 'transform 300ms ease' }}
+  """
+
+  behavior: [
+    "Floating rounded bar: for personality brands, agencies, editorial sites. Adds depth and separation from page.",
+    "Classic sticky bar: for product SaaS, developer tools — clean, professional, full-width.",
+    "MUST: backdrop-filter blur on all nav variants — never solid opaque background.",
+    "MUST: aria-expanded on mobile hamburger toggle button.",
+    "MUST: use Sheet component (or equivalent dialog/drawer) for mobile nav to get focus trap and ESC key for free.",
+    "Mobile breakpoint: md (768px) — hamburger below, desktop links above.",
+    "Scroll-hide: optional but recommended for long-scroll pages — translateY transition 300ms ease.",
+  ]
+
+  sources: [
+    "https://github.com/cruip/open-react-template (4.6k★) — floating rounded bar",
+    "https://github.com/leoMirandaa/shadcn-landing-page (1.9k★) — classic sticky + Sheet drawer",
+    "https://github.com/Blazity/next-saas-starter (1.7k★) — scroll-hide behavior",
+  ]
+
+  related: [
+    @community/pattern-landing-page-sections,
+    @community/check-focus-visible,
+    @community/rule-functional-image-alt,
+    @community/anti-pattern-breaking-keyboard-flow,
+    @impeccable/persona-vercel-clean,
+    @community/persona-framer,
+  ]
+}

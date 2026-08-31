@@ -1,0 +1,68 @@
+rule ColorDarkModeCascade {
+  id: "@community/rule-color-dark-mode-cascade"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Dark mode MUST be implemented via a CSS-cascade strategy keyed on `@media (prefers-color-scheme: dark)` or a single root-level `[data-theme='dark']` selector that flips token values. Hand-edited per-component dark colors, JS-driven inline-style toggling, and duplicated 'dark' class variants are forbidden."
+
+  claim: "Dark mode color values MUST be defined as CSS custom properties that re-bind under `prefers-color-scheme: dark` (or one root selector) — components MUST NOT hardcode dark-mode color literals."
+
+  severity: high
+
+  validates-with: [
+    @impeccable/template-oklch-dark-mode-cascade,
+  ]
+
+  checks: [
+    @community/check-color-dark-mode-cascade,
+  ]
+
+  severity-combination: |
+    component contains hardcoded dark-mode color literal       → BLOCK
+    dark mode driven by inline `style` set by JS               → BLOCK
+    dark mode delivered via cascading CSS custom properties    → PASS
+
+  failure-mode: "Dark mode rollout requires editing every component; tokens drift between light and dark; users see flash-of-incorrect-theme (FOIT) on hydration; preference changes do not propagate without a reload."
+
+  remediation: [
+    "Define semantic tokens at `:root` (e.g. `--color-bg`, `--color-text`) and re-bind them inside `@media (prefers-color-scheme: dark) { :root { ... } }`.",
+    "For user override, add `[data-theme='dark'] { ... }` at root only — never on individual components.",
+    "Replace `<div className={isDark ? 'bg-black' : 'bg-white'}>` with `<div className='bg-surface'>` where `bg-surface` resolves through the cascade.",
+    "See @impeccable/template-oklch-dark-mode-cascade for the canonical scaffold.",
+  ]
+
+  exceptions: [
+    {
+      case: "Brand asset with intentional fixed appearance",
+      allowed-when: "A logo or hero illustration is brand-locked; document with a comment and exclude via `@media (prefers-color-scheme) { ... }` opt-out.",
+    }
+  ]
+
+  notes: [
+    "FOIT prevention requires the theme decision to live in CSS, not in post-hydration JS — set the `[data-theme]` attribute in a synchronous `<script>` block before first paint.",
+    "Storybook / Ladle stories should toggle `data-theme` at the root, not at the story root, to mirror production behavior.",
+  ]
+
+  related: [
+    @impeccable/template-oklch-dark-mode-cascade,
+    @impeccable/template-dark-mode-toggle,
+    @community/rule-color-oklch-required,
+    @community/example-vercel-dashboard,
+    @community/example-shadcn-dashboard,
+    @community/principle-color-system-foundation,
+    @community/rule-light-mode-default-fallback,
+  ]
+
+  see-also: [
+    @community/check-color-dark-mode-cascade,
+  ]
+}

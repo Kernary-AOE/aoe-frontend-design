@@ -1,8 +1,0 @@
-atom: "@community/rule-no-undocumented-platform-concept-rename"
-relations:
-  - type: related
-    target: "@community/principle-consistent-cross-platform-mental-models"
-  - type: related
-    target: "@community/principle-nielsen-consistency"
-  - type: related
-    target: "@community/rule-cross-platform-flow-step-consistency"

@@ -1,8 +1,0 @@
-atom: "@community/rule-consistent-design-token-scale"
-relations:
-  - type: related
-    target: "@community/rule-spacing-rhythm"
-  - type: related
-    target: "@community/type-design-token"
-  - type: related
-    target: "@community/anti-pattern-hardcoded-pixel-values"

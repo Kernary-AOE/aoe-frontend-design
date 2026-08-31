@@ -1,8 +1,0 @@
-atom: "@community/check-ios-increase-contrast"
-relations:
-  - type: related
-    target: "@community/rule-ios-custom-color-dark-variants"
-  - type: related
-    target: "@community/rule-ios-semantic-system-colors"
-  - type: related
-    target: "@community/check-ios-bold-text-support"

@@ -1,8 +1,0 @@
-atom: "@community/constraint-visual-fingerprint-uniqueness"
-relations:
-  - type: related
-    target: "@impeccable/principle-distinctiveness"
-  - type: related
-    target: "@community/constraint-distinctiveness-mandate"
-  - type: related
-    target: "@community/method-brand-distinctiveness-test"

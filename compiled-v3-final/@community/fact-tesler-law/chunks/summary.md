@@ -1,3 +1,0 @@
-# TeslerLaw [fact] v1.0.0
-Tesler's Law of Conservation of Complexity (Larry Tesler, ~1984): every application has an irreducible core complexity that cannot be eliminated — it must be absorbed by either the system or the user.
-> Larry Tesler observed that all non-trivial applications contain inherent complexity that exists in the domain itself, not merely in the interface. Designers can shift where that complexity lives — hiding it inside the system, spreading it across a longer workflow, or exposing it to the user as configuration — but they cannot make it disappear. Attempts to over-simplify simply transfer hidden complexity to error states, edge cases, or support costs.

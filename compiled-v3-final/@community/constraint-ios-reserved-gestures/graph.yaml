@@ -1,8 +1,0 @@
-atom: "@community/constraint-ios-reserved-gestures"
-relations:
-  - type: related
-    target: "@community/rule-ios-gesture-alternatives"
-  - type: related
-    target: "@community/anti-pattern-ios-hamburger-menu"
-  - type: related
-    target: "@community/rule-mobile-first"

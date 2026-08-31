@@ -1,8 +1,0 @@
-atom: "@community/counter-example-hero-png-text"
-relations:
-  - type: related
-    target: "@community/pattern-hero-with-demo"
-  - type: related
-    target: "@community/example-vercel-hero"
-  - type: related
-    target: "@community/example-resend-hero"

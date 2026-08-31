@@ -1,4 +1,0 @@
-# EvaluationSetFrozen [fact] v1.0.0
-A model's holdout evaluation set must be frozen before model development begins and must never be examined, joined to, or used for any decision other than the final model-quality verdict. Repeated 'peeking' at the test set converts it from a generalization estimator into a training set with extra steps.
-> Generalization guarantees rely on the test set being statistically independent of the modeling decisions. Each time a researcher computes test-set metrics and then changes the model, hyperparameters, or feature set in response, the researcher introduces an information channel from test to model. After ~20 such cycles, the test-set metric is overfit at significance levels indistinguishable from random. Industrial practice: hold out a 'true holdout' (also called 'final test', 'lockbox', or 'evaluation set') that is computed once at release time, on a model selected entirely on the validation fold.
-domain: machine-learning

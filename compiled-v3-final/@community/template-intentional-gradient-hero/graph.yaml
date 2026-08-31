@@ -1,8 +1,0 @@
-atom: "@community/template-intentional-gradient-hero"
-relations:
-  - type: related
-    target: "@community/template-animated-mesh-background"
-  - type: related
-    target: "@community/constraint-animation-pref-respected"
-  - type: related
-    target: "@community/rule-animation-duration"

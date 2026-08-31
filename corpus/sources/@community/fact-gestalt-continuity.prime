@@ -1,0 +1,47 @@
+fact GestaltContinuity {
+  id: "@community/fact-gestalt-continuity"
+  version: "1.0.0"
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Gestalt Principle of Good Continuation (Wertheimer, 1923): the eye prefers to follow smooth, continuous paths over abrupt direction changes; elements arranged along a line or curve are perceived as a unified group."
+
+  statement: "The visual system naturally follows paths of least curvature — a smooth line is perceived as continuing beyond interruptions, and elements arranged along a curve or line are grouped together as a sequence. Abrupt changes in direction break this perceptual flow and require extra cognitive effort to follow."
+
+  confidence: proven
+
+  source: [
+    "Max Wertheimer, 'Untersuchungen zur Lehre von der Gestalt II', Psychologische Forschung (1923)",
+    "Wolfgang Köhler, 'Gestalt Psychology' (1929)",
+    "lawsofux.com / Laws of UX",
+  ]
+
+  applies-to: [
+    "breadcrumb navigation — chevron separators guide the eye left-to-right along a hierarchy",
+    "stepped progress indicators — dots or bars on a single horizontal axis imply a continuous sequence",
+    "timeline and feed layouts — vertical line or consistent left-margin creates a continuous scan path",
+    "horizontal scroll containers — items aligned on a shared baseline imply they belong to the same track",
+    "data visualization — line charts exploit continuity to imply trend; scatter plots do not",
+  ]
+
+  quantitative: {
+    practical-implication: "Align sequential UI elements on a shared axis (top edge, center line, or baseline) to create a natural reading path",
+    scan-path: "F-pattern and Z-pattern reading behaviors are continuity effects — design with them, not against them",
+  }
+
+  counter-conditions: [
+    "Breaking continuity intentionally (e.g., a visual break in a long list) can signal a category boundary — this is a valid design use of disruption",
+    "Continuity across Z-layers (overlapping elements) can create ambiguous figure-ground relationships — ensure the reading path doesn't cross itself confusingly",
+    "RTL layouts require mirroring continuity cues — chevrons and reading flow direction must be reversed",
+  ]
+
+  related: [
+    @community/fact-gestalt-closure,
+    @community/fact-gestalt-proximity,
+    @community/fact-gestalt-common-fate,
+  ]
+}

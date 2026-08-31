@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Dark minimal footer study",
+    "url": "https://alpha.example/footer-1",
+    "category": ["footer", "dark"],
+    "thumbnail_url": "https://alpha.example/footer-1.png"
+  },
+  {
+    "title": "",
+    "url": "",
+    "note": "neither title nor url maps to anything: discarded"
+  },
+  {
+    "title": "Bright hero section",
+    "url": "https://alpha.example/hero-2",
+    "excerpt": "a bright editorial hero with oversized type"
+  }
+]

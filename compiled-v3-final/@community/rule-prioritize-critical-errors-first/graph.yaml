@@ -1,8 +1,0 @@
-atom: "@community/rule-prioritize-critical-errors-first"
-relations:
-  - type: related
-    target: "@community/rule-form-validation-inline"
-  - type: related
-    target: "@community/rule-actionable-error-messages"
-  - type: related
-    target: "@community/principle-nielsen-error-prevention"

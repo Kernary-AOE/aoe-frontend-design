@@ -1,8 +1,0 @@
-atom: "@community/fact-light-vs-dark-default"
-relations:
-  - type: related
-    target: "@community/fact-density-vs-comfort-tradeoff"
-  - type: related
-    target: "@community/fact-contrast-amplification"
-  - type: related
-    target: "@community/check-color-dark-mode-cascade"

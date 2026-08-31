@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-generic-error-text"
-relations:
-  - type: related
-    target: "@community/rule-actionable-error-messages"
-  - type: related
-    target: "@community/rule-error-message-associated"
-  - type: related
-    target: "@community/principle-nielsen-error-recovery"

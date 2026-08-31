@@ -1,0 +1,97 @@
+persona Brutalist {
+  id: "@impeccable/persona-brutalist"
+  version: "1.0.0"
+
+  school: brutalist
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Raw concrete made digital: exposed structure, monospaced everywhere, harsh hierarchy, default browser blue links, intentionally awkward layouts that refuse polish. The page looks like the source code wrote itself onto the screen."
+
+  implies: {
+    font: {
+      display: "monospace or system-default — e.g. JetBrains Mono, IBM Plex Mono, Berkeley Mono, Departure Mono, Times New Roman (the browser default)"
+      body: "monospace dominant, occasionally Times New Roman or Arial as ironic counterpoint — e.g. JetBrains Mono, IBM Plex Mono, Space Mono, Times New Roman"
+    }
+    color: {
+      temperature: "neutral-harsh"
+      palette: "black on white plus one primary — pure #000000, #ffffff, and one of #ff0000 / #0000ff / #ffff00 (no OKLCH, no muted tones)"
+      background: "#ffffff (pure white) or #000000 (pure black) — never tinted, never warm"
+    }
+    density: "compact 1.4 — tight line-height, no decorative padding, content butted against edges"
+    layout: "single-column or 2-col with no gutter, full-bleed bands, raw HTML table semantics, asymmetric drops, intentional misalignment"
+    imagery: "raw photography (over-exposed, under-edited), screenshots-of-screenshots, default-styled <img> with visible alt fallbacks, no Figma-illustrations"
+    motion: "none — or jarring, instant, no easing; cursor effects acceptable, scroll-jacking not"
+  }
+
+  compatible: ["raw", "anti-design", "monospace", "high-contrast", "indie"]
+  conflicts: ["editorial", "warm-institutional", "stripe-fintech", "notion-warm", "vercel-clean"]
+
+  example-brands: [
+    "Are.na",
+    "brutalistwebsites.com",
+    "Solana (early site)",
+    "Cosmos.so",
+    "It's Nice That archive",
+    "Read.cv",
+    "Bloomberg Businessweek (graphics dept micro-sites)",
+  ]
+
+  notes: [
+    "Brutalist is not 'ugly on purpose' — it is honest material expression. Don't pair brutalist mono with rounded corners or soft shadows; you've crossed into pastiche.",
+    "Default browser blue (#0000EE) for unvisited links and #551A8B for visited is a defining move — overriding link colors signals you don't trust the medium.",
+    "Avoid container max-widths under 100% — brutalism wants edge-to-edge. If you find yourself adding `max-w-3xl mx-auto`, you're building editorial, not brutalist.",
+    "border: 1px solid black is acceptable; box-shadow is not.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/fact-monospace-purpose,
+      @community/check-contrast-aa,
+      @community/rule-no-justified-text-narrow,
+    ]
+    must-avoid: [
+      @impeccable/template-spring-config,
+      @impeccable/persona-magazine-editorial,
+    ]
+    typography-required: {
+      display: "monospace (JetBrains Mono | IBM Plex Mono | Berkeley Mono)"
+      link-color: "#0000EE default browser blue (never override)"
+      no-rounded-corners: true
+    }
+    color-required: {
+      background: "#ffffff or #000000 (never tinted)"
+      palette: "#000000 + #ffffff + one of #ff0000 / #0000ff / #ffff00"
+      no-shadows: true
+    }
+    motion-prescriptions: [
+      @community/check-contrast-aa,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-editorial,
+    @impeccable/principle-distinctiveness,
+    @impeccable/anti-pattern-ai-slop-palette,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/fact-monospace-purpose,
+    @impeccable/constraint-font-blacklist,
+    @community/rule-no-justified-text-narrow,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-brand-color-primary-only,
+    @community/check-color-blacklist-brand,
+    @community/anti-pattern-rainbow-explosion,
+  ]
+
+  contradicts: [
+    @impeccable/template-spring-config,
+    @impeccable/persona-magazine-editorial,
+  ]
+}

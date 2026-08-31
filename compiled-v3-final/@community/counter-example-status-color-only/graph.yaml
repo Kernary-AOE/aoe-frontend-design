@@ -1,8 +1,0 @@
-atom: "@community/counter-example-status-color-only"
-relations:
-  - type: related
-    target: "@community/rule-color-contrast"
-  - type: related
-    target: "@community/pattern-inline-validation"
-  - type: related
-    target: "@w3c/source-wcag-22"

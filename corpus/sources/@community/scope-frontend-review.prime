@@ -1,0 +1,52 @@
+scope FrontendReview {
+  id: "@community/scope-frontend-review"
+  version: "1.0.0"
+
+  label: "Frontend Review Execution Environment"
+  domain: frontend-engineering
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Defines the preconditions and environmental requirements for running frontend design review and accessibility audit methods. Agents must verify these conditions before executing @community/method-a11y-audit or @community/method-heuristic-review."
+
+  preconditions: [
+    {
+      id: "artifact-available",
+      check: "artifact input is a valid URL (fetchable), local file path (readable), base64 image, or raw HTML string",
+      on-fail: "Request the artifact from the user before proceeding."
+    }
+    {
+      id: "axe-core-available",
+      check: "axe-core@^4.9 is importable in the current Node.js environment OR the artifact is a URL and Playwright can be used for browser-based analysis",
+      on-fail: "Warn that automated axe-core analysis will be skipped; proceed with manual + visual analysis only."
+    }
+    {
+      id: "sufficient-context",
+      check: "remaining context budget > 2000 tokens",
+      on-fail: "Compact context before starting a full audit. Load only summary.md chunks for referenced atoms."
+    }
+  ]
+
+  environment: {
+    runtime: "Node.js >= 20 OR Bun >= 1.0"
+    browser: "Chromium (via Playwright) for live URL analysis"
+    required-packages: ["axe-core@^4.9", "lighthouse@^12"]
+    optional-packages: ["@playwright/test@^1.40"]
+  }
+
+  token-budget: {
+    method-a11y-audit: "~800 tokens (summary level atoms)"
+    method-heuristic-review: "~600 tokens (summary level atoms)"
+    full-deep-review: "~2000 tokens (core level atoms + violation details)"
+  }
+
+  related: [
+    @community/method-a11y-audit,
+    @community/method-heuristic-review,
+    @community/collection-accessible-frontend,
+  ]
+}

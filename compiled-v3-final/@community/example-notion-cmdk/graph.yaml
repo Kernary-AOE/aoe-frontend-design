@@ -1,8 +1,0 @@
-atom: "@community/example-notion-cmdk"
-relations:
-  - type: related
-    target: "@community/pattern-command-palette"
-  - type: related
-    target: "@community/example-linear-cmdk"
-  - type: related
-    target: "@community/fact-recognition-over-recall"

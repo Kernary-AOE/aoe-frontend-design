@@ -1,0 +1,46 @@
+fact ContrastAmplification {
+  id: "@community/fact-contrast-amplification"
+  version: "1.0.0"
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Light-on-dark text (negative polarity) needs ~10% higher contrast and slightly heavier weight than dark-on-light to feel equally legible, because halation around bright glyphs on dark backgrounds reduces effective edge sharpness."
+
+  statement: "Text rendered light-on-dark (negative polarity) requires roughly 10% higher luminance contrast and one weight step heavier than the same text dark-on-light to achieve perceptual parity, because of halation: bright glyphs on dark backgrounds bleed photons into adjacent dark pixels, softening edges and reducing effective contrast."
+
+  confidence: strong
+  source: [
+    "Buchner & Baumgartner, 'Text–background polarity affects performance irrespective of ambient illumination', Ergonomics (2007)",
+    "Piepenbrock et al., 'Positive Display Polarity Is Advantageous for Both Younger and Older Adults', Ergonomics (2014)",
+    "IBM Carbon Design — Dark Theme white paper (contrast amplification rationale)",
+  ]
+
+  applies-to: [
+    "dark-mode token derivation (don't naive-invert)",
+    "weight selection: bump body weight from 400 → 450/500 in dark themes",
+    "OKLCH lightness tuning when mirroring light tokens to dark",
+    "checking that AA-passing light tokens still pass when inverted",
+  ]
+
+  quantitative: {
+    contrast-amplification-factor: "≈ 1.1× (10%)",
+    weight-amplification: "+50 weight units typical (e.g., 400 → 450)",
+    halation-mechanism: "subpixel rendering + LCD photon scatter on adjacent dark pixels",
+  }
+
+  counter-conditions: [
+    "OLED displays with true blacks reduce halation considerably — amplification factor closer to 1.0.",
+    "Astigmatism users report inverse polarity preference — halation is *more* pronounced for them, but the discomfort flips relative to the median user.",
+    "Variable-font weight axes let dark-mode amplification be a continuous tweak rather than a discrete weight step.",
+  ]
+
+  related: [
+    @community/fact-light-vs-dark-default,
+    @community/fact-line-height-readability,
+    @community/check-color-dark-mode-cascade,
+  ]
+}

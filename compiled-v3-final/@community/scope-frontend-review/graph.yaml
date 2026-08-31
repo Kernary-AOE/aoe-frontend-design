@@ -1,8 +1,0 @@
-atom: "@community/scope-frontend-review"
-relations:
-  - type: related
-    target: "@community/method-a11y-audit"
-  - type: related
-    target: "@community/method-heuristic-review"
-  - type: related
-    target: "@community/collection-accessible-frontend"

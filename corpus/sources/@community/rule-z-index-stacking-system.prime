@@ -1,0 +1,57 @@
+rule ZIndexStackingSystem {
+  id: "@community/rule-z-index-stacking-system"
+  version: "1.0.0"
+
+  label: "Z-Index Must Use a Named Token Stacking System"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  statement: "All z-index values must be drawn from a named token scale (base: 0, raised: 10, dropdown: 100, sticky: 200, overlay-backdrop: 300, overlay: 400, toast/notification: 500, tooltip: 600) — never hard-coded arbitrary integers. Magic z-index values like z-index: 9999 are prohibited."
+
+  rationale: "Ad-hoc z-index values create stacking context race conditions. When one developer writes z-index: 9999 and another writes z-index: 10000, the system has failed. A named scale ensures predictable layering, makes stacking order self-documenting, and prevents unintentional clipping of tooltips behind modals."
+
+  applies-when: "any CSS property that sets z-index on a positioned element"
+
+  verify-by: "Search codebase for z-index values > 10 that are not from the token scale. Replace with the appropriate named token."
+
+  token-scale: """
+    :root {
+      --z-base:             0;
+      --z-raised:          10;   /* card hover lift, floating labels */
+      --z-dropdown:       100;   /* dropdown menus, autocomplete */
+      --z-sticky:         200;   /* sticky headers, sticky sidebars */
+      --z-overlay-backdrop: 300; /* modal/sheet backdrop */
+      --z-overlay:        400;   /* modal panels, sheet panels, dialogs */
+      --z-toast:          500;   /* toast notification stack */
+      --z-tooltip:        600;   /* tooltips — must be above everything */
+    }
+
+    /* Usage */
+    .dropdown__menu   { z-index: var(--z-dropdown);        }
+    .site-header      { z-index: var(--z-sticky);          }
+    .modal-backdrop   { z-index: var(--z-overlay-backdrop);}
+    .modal-panel      { z-index: var(--z-overlay);         }
+    .toast-region     { z-index: var(--z-toast);           }
+    .tooltip          { z-index: var(--z-tooltip);         }
+  """
+
+  anti-patterns: [
+    "z-index: 9999 — magic number; breaks as soon as someone adds z-index: 10000 elsewhere",
+    "z-index: 1 on a dropdown — invisible behind sticky headers at z-index: 40",
+    "Inline style z-index values — cannot be tracked or overridden systematically",
+    "Using z-index without position: relative/absolute/fixed/sticky — has no effect but adds confusion",
+  ]
+
+  severity: warning
+
+  related: [
+    @community/constraint-scroll-locked-modal-only,
+    @community/pattern-sticky-header-on-scroll,
+    @community/pattern-modal-non-blocking,
+  ]
+}

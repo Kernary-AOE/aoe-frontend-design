@@ -1,3 +1,0 @@
-# ZeigarnikEffect [fact] v1.0.0
-Zeigarnik Effect (Bluma Zeigarnik, 1927): people remember uncompleted or interrupted tasks significantly better than completed ones — use this to design persistent progress indicators and save-state notifications.
-> Bluma Zeigarnik, building on Kurt Lewin's tension-system theory, found that incomplete tasks create a persistent cognitive tension that keeps them more accessible in memory than finished tasks. Waiters remembered unpaid orders in detail but forgot them immediately after payment. In UX, this means progress indicators, abandoned cart reminders, and save-state prompts leverage a real psychological mechanism — uncompleted tasks demand cognitive closure and drive users back to finish them.

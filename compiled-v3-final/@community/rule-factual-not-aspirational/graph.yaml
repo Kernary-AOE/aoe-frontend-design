@@ -1,8 +1,0 @@
-atom: "@community/rule-factual-not-aspirational"
-relations:
-  - type: related
-    target: "@community/rule-active-voice-in-ui-copy"
-  - type: related
-    target: "@community/principle-clear-user-mental-model"
-  - type: related
-    target: "@community/rule-culturally-neutral-copy"

@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-sf-symbols-animations"
-relations:
-  - type: related
-    target: "@community/rule-ios-sf-symbols-weight-scale"
-  - type: related
-    target: "@community/fact-ios-sf-symbols-rendering-modes"
-  - type: related
-    target: "@community/rule-ios-reduce-motion"

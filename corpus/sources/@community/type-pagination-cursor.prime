@@ -1,0 +1,95 @@
+type PaginationCursor {
+  id: "@community/type-pagination-cursor"
+  version: "1.0.0"
+
+  domain: api-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Schema for a paginated response envelope. Carries the data array, has-more boolean, opaque cursor for fetching the next page, and optional total count. Independent of underlying storage; supports offset, cursor, or hybrid paginators."
+
+  fields: {
+    data: {
+      type: "T[]"
+      description: "Array of page results. Empty array when no results."
+      required: true
+    }
+    has-more: {
+      type: boolean
+      description: "True if there are more results after this page; false if this page is the last."
+      required: true
+    }
+    next-cursor: {
+      type: "string | null"
+      description: "Opaque cursor token to pass as `?cursor=...` for the next page. Null when has_more is false."
+      required: true
+    }
+    prev-cursor: {
+      type: "string | null"
+      description: "Opaque cursor for the previous page. Null on the first page."
+      required: false
+    }
+    page-size: {
+      type: integer
+      description: "Number of items requested for this page. Server-capped to a maximum (typically 100)."
+      required: true
+    }
+    total-estimate: {
+      type: "integer | null"
+      description: "Optional approximate total. Null when computing total is too expensive (large keyset paginated table)."
+      required: false
+    }
+    links: {
+      type: object
+      description: "Optional RFC 5988-compatible link map: { self, first, prev, next, last } — full URLs"
+      shape: "Record<string, string>"
+      required: false
+    }
+  }
+
+  invariants: [
+    "data.length <= page_size",
+    "if has_more is false, next_cursor MUST be null",
+    "if has_more is true, next_cursor MUST be non-null",
+    "next_cursor and prev_cursor are opaque to clients — must NOT be parsed or constructed",
+    "page_size returned reflects server-applied cap, not client-requested value (which may have been clamped)",
+    "total_estimate, if returned, is best-effort and MAY drift between requests — clients should not rely on exact equality",
+  ]
+
+  example: {
+    data: [
+      { id: "u_001", email: "alice@example.com", created_at: "2026-05-07T10:00:00Z" },
+      { id: "u_002", email: "bob@example.com", created_at: "2026-05-07T09:55:00Z" }
+    ],
+    "has-more": true,
+    "next-cursor": "eyJjcmVhdGVkX2F0IjoiMjAyNi0wNS0wN1QwOTo1NTowMFoiLCJpZCI6InVfMDAyIn0.signed",
+    "prev-cursor": null,
+    "page-size": 2,
+    "total-estimate": null,
+    links: {
+      self: "https://api.example.com/v1/users?limit=2",
+      next: "https://api.example.com/v1/users?limit=2&cursor=eyJjcmVhdGVkX2F0IjoiMjAyNi0wNS0wN1QwOTo1NTowMFoiLCJpZCI6InVfMDAyIn0.signed"
+    }
+  }
+
+  notes: [
+    "Pair this type with @community/pattern-cursor-pagination for the full implementation pattern.",
+    "JSON:API specifies a richer envelope: `{ data, meta: { total }, links: { first, prev, self, next, last }, included: [...] }`. Both formats can carry this type.",
+    "GraphQL Relay specifies `{ edges: [{ node, cursor }], pageInfo: { hasNextPage, hasPreviousPage, startCursor, endCursor } }` — semantically equivalent.",
+    "Stripe-style: `{ data, has_more, url }` — minimal; cursor is implicit (last item's id).",
+    "Don't add `page_number` to cursor pagination responses — it implies stable numbered pages, which cursor pagination explicitly does not provide.",
+    "If `total_estimate` is offered, document the staleness window (typically: 'eventual within 5 minutes').",
+  ]
+
+  related: [
+    @community/pattern-cursor-pagination,
+    @community/principle-pagination-first,
+    @community/rule-resource-not-action,
+    @community/type-error-shape,
+    @community/fact-http-method-semantics,
+  ]
+}

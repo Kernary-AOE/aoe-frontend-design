@@ -1,0 +1,180 @@
+# Frontend-design six-axis retrieval, expressed as an external RetrievalProfile.
+#
+# Plan §16 Phase 3 action 6 ("把 frontend 六轴迁成外部 RetrievalProfile") and §5.6
+# ("Frontend Design 的六轴只是另一份 profile，不进入 Core").
+#
+# Every number below is transcribed from the old implementation, not invented.
+# Provenance is given per block as `<file>:<line>` under the parent repo's
+# `packages/retrieval/`. A value with no provenance comment does not belong here.
+#
+# Shape is validated against `RetrievalProfileSchema` in
+# `@skill-wiki/model-schema` (`packages/model-schema/src/index.ts`), which is
+# `.strict()`. Note it differs from the YAML sketch in plan §5.6:
+# `candidateGenerators` is `[{name, weight}]` (not a string list) and `reranker`
+# is a string (not `{provider}`). The implementation is authoritative.
+kind: definitions
+version: 1.0.0
+definitions:
+  - kind: retrieval-profile
+    name: frontend-six-axis
+    version: 1.0.0
+
+    # This domain Model Package's `projections.yaml` declares summary/core/full.
+    projection: core
+
+    # One generator per design axis. The axis list is
+    # `packages/retrieval/src/types.ts:3` (`type Axis`) and the dispatch order is
+    # `packages/retrieval/src/multi-axis.ts:369`.
+    #
+    # Weights are uniform because the old code had NO cross-axis weighting: each
+    # axis was retrieved independently and the results were unioned
+    # (`multi-axis.ts:370-408`), then de-duplicated by atom id
+    # (`multi-axis.ts:412-416`). Any non-uniform number here would be invented.
+    candidateGenerators:
+      - { name: frontend-axis-register, weight: 1.0 }
+      - { name: frontend-axis-pattern, weight: 1.0 }
+      - { name: frontend-axis-motion, weight: 1.0 }
+      - { name: frontend-axis-typography, weight: 1.0 }
+      - { name: frontend-axis-color, weight: 1.0 }
+      - { name: frontend-axis-rules, weight: 1.0 }
+
+    # The five scoring dimensions and their weights are verbatim from
+    # `packages/retrieval/src/ranker-v2.ts:56-62` (`const W`). The old names were
+    # snake_case; camelCase here to match the feature-axis convention used by
+    # `model/projections.yaml` (`lexicalScore`, `graphAffinity`).
+    #
+    # Measured 2026-08-29, and it changes how these numbers should be read:
+    # `rankAtomsByIntent` — the only function in `ranker-v2.ts` that consumes `W` —
+    # has ZERO callers in the parent repo (`grep -rn rankAtomsByIntent packages/
+    # mcp-server/` returns only its own definition). The live legacy path was
+    # `multi-axis.ts`, where each axis retriever carried its own local scoring:
+    # `retrieveRegister` (`multi-axis.ts:100-110`) ranked personas by school match
+    # alone, and `retrieveTypography`/`retrieveColor` (`:240-244`, `:283-287`)
+    # ranked by kind preference alone with no relevance term at all. So this weight
+    # vector is a faithful transcription of code that never ran, and the six-axis
+    # profile is the first place it decides anything. It is kept — a declared,
+    # explainable blend is the shape §5.6 asks for and the register axis's
+    # `schoolMatch` term is what makes `source_persona` track the brief — but no
+    # claim of behavioural parity with legacy rests on these five numbers.
+    features:
+      tokenOverlap: 1.0 # W.token_overlap     ranker-v2.ts:57
+      axisAffinity: 2.0 # W.axis_affinity     ranker-v2.ts:58  (strongest signal)
+      schoolMatch: 1.5 # W.school_match      ranker-v2.ts:59
+      vibeAlignment: 0.8 # W.vibe_alignment    ranker-v2.ts:60
+      densityAlignment: 0.5 # W.density_alignment ranker-v2.ts:61
+
+    # `constraints` is a name list resolved by the engine. Only the one the old
+    # code actually enforced is listed: the taxonomy's `forbidden_atoms` set,
+    # applied by `excludeForbidden` (`multi-axis.ts:68-70`) before scoring on
+    # every axis. The old code enforced no closure, visibility or version
+    # constraint, so naming one here would claim behaviour that never existed.
+    constraints: [forbidden-atoms]
+
+    # `rankAtomsByIntent` (`ranker-v2.ts:65`) is a single stable linear blend of
+    # the five features above and then a descending sort (`ranker-v2.ts:120-121`).
+    # That is exactly what the engine's own weighted scorer does, so there is no
+    # second-pass reranker to declare. The field is omitted rather than set to a
+    # placeholder name that would fail generator resolution.
+
+    extensions:
+      # Per-axis candidate predicates. These are DATA read by the domain
+      # adapter's generators; they are not engine concepts and no engine package
+      # reads this block. They exist because `candidateGenerators` carries only
+      # `{name, weight}` and cannot express a predicate.
+      axes:
+        register:
+          # `multi-axis.ts:88` byKind(atoms, "persona")
+          kinds: [persona]
+          # `ranker-v2.ts:159-161` axis_affinity: persona 1.0, voice 0.5
+          affinityKinds: { persona: 1.0, voice: 0.5 }
+          # `multi-axis.ts:25-40` SCHOOL_TO_PERSONA
+          schoolPersonaMap:
+            warm-institutional: "@impeccable/persona-warm-institutional"
+            magazine-editorial: "@impeccable/persona-magazine-editorial"
+            notion-warm: "@impeccable/persona-notion-warm"
+            stripe-fintech: "@impeccable/persona-stripe-fintech"
+            stripe: "@impeccable/persona-stripe-fintech"
+            vercel-clean: "@impeccable/persona-vercel-clean"
+            vercel: "@impeccable/persona-vercel-clean"
+            linear-precise: "@impeccable/persona-linear-precise"
+            linear: "@impeccable/persona-linear-precise"
+            swiss-modernist: "@impeccable/persona-swiss-modernist"
+            tokyo-minimal: "@impeccable/persona-tokyo-minimal"
+            dense-pragmatist: "@impeccable/persona-dense-pragmatist"
+            brutalist: "@impeccable/persona-brutalist"
+            editorial: "@impeccable/persona-editorial"
+
+        pattern:
+          # `multi-axis.ts:128` byKind(atoms, "pattern", "template")
+          kinds: [pattern, template]
+          # `ranker-v2.ts:164-166` pattern/template 1.0, example 0.6
+          affinityKinds: { pattern: 1.0, template: 1.0, example: 0.6 }
+
+        motion:
+          # `multi-axis.ts:172-176` cluster === "motion" OR id contains any of:
+          idIncludes: [motion, animation, fade, spring, easing, scroll-reveal, stagger]
+          cluster: motion
+          # `ranker-v2.ts:170` /motion|easing|spring|stagger|fade|slide/
+          affinityIdPattern: "motion|easing|spring|stagger|fade|slide"
+          # `ranker-v2.ts:172-174` tagged template/pattern scores 0.8
+          affinityTaggedKinds: { template: 0.8, pattern: 0.8 }
+          # `multi-axis.ts:207` fallback when the axis yields nothing
+          fallbackUnit: "@impeccable/template-easing-curves"
+
+        typography:
+          # `multi-axis.ts:220` typoKinds
+          kinds: [principle, rule, fact, check]
+          # `multi-axis.ts:224-232` text substring test
+          textIncludes: [typograph, font, line-length, readab, letter-spacing, body-text, heading]
+          cluster: typography
+          # `multi-axis.ts:237` preference order
+          kindOrder: [principle, rule, fact, check]
+          # `ranker-v2.ts:180` /font|typo|text|heading|line/
+          affinityIdPattern: "font|typo|text|heading|line"
+          # `multi-axis.ts:243`
+          fallbackUnit: "@community/principle-typography-hierarchy"
+
+        color:
+          # `multi-axis.ts:260` colorKinds
+          kinds: [principle, template, check, rule, fact]
+          # `multi-axis.ts:264-273`
+          textIncludes: [color, colour, palette, contrast, hue, theme, dark-mode, accent]
+          # `multi-axis.ts:278` preference order
+          kindOrder: [template, principle, rule, check, fact]
+          # `ranker-v2.ts:185` /color|palette|hue|gradient|dark-mode/
+          affinityIdPattern: "color|palette|hue|gradient|dark-mode"
+          # `multi-axis.ts:284`
+          fallbackUnit: "@community/principle-color-system-foundation"
+
+        rules:
+          # `multi-axis.ts:307-310` byKind(atoms, "rule", "constraint", "check")
+          kinds: [rule, constraint, check]
+          # `ranker-v2.ts:190` includes anti-pattern, which the candidate filter
+          # above does NOT include. The asymmetry is in the original code; it is
+          # transcribed rather than reconciled, because reconciling it would
+          # change retrieval behaviour under cover of a refactor.
+          affinityKinds: { rule: 1.0, check: 1.0, constraint: 1.0, anti-pattern: 1.0 }
+
+      # `multi-axis.ts:75-81` axisBudget: default 3, overridable per axis by the
+      # task taxonomy's `max_atoms_per_axis`. Already data-driven in the old code.
+      #
+      # Applied by `design-ranker` AFTER the axis has ranked its candidates, never
+      # before. Slicing an unranked list is what made `source_persona`
+      # brief-insensitive (shadow report §4); see
+      # `adapters/design-ranker/test/budget-after-ranking.test.ts`.
+      defaultAxisBudget: 3
+
+      # `ranker-v2.ts:scoreDensityAlignment` (`ranker-v2.ts:266-268`) cue lists,
+      # and its no-signal neutral credit (`ranker-v2.ts:275`).
+      densityCues:
+        tight: [tight, compact, dense, condensed]
+        comfy: [comfy, comfortable, balanced, moderate]
+        loose: [loose, spacious, airy, generous, open]
+      densityNoSignalScore: 0.3
+
+      # `ranker-v2.ts:41-47` STOPWORDS, and `ranker-v2.ts:296` minimum token length.
+      minTokenLength: 3
+      stopwords:
+        [a, an, the, and, or, but, in, on, at, to, for, of, with, by, from, is, it, its, be, as, are,
+         was, were, has, have, had, do, does, did, will, would, could, should, may, might, that, this,
+         these, those, not, no, can, if, so, than, then, into, over]

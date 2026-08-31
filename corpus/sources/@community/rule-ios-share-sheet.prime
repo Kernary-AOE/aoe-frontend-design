@@ -1,0 +1,35 @@
+rule IosShareSheet {
+  id: "@community/rule-ios-share-sheet"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  applies-to: "any iOS app containing content users might share (links, images, text, files, locations)"
+
+  statement: "Use the iOS system share sheet — ShareLink in SwiftUI or UIActivityViewController in UIKit — for sharing content rather than custom share UIs."
+
+  rationale: "The system share sheet gives users access to all their installed apps and extensions (Messages, Mail, AirDrop, third-party apps). Custom share UIs limit options to a hard-coded list and break user expectations of how sharing works on iOS."
+
+  examples: [
+    "SwiftUI: ShareLink(item: url, subject: Text('Check this out'), message: Text(article.title)).",
+    "UIKit: UIActivityViewController(activityItems: [url], applicationActivities: nil); present modally.",
+    "Verify: trigger sharing; standard iOS share sheet must appear with the full roster of system apps and extensions.",
+  ]
+
+  notes: [
+    "Custom share UIs are only acceptable as a supplement to (not replacement for) the system sheet.",
+    "Apple HIG source: Rule 10.4 — Share Sheet Integration.",
+  ]
+
+  related: [
+    @community/rule-ios-spotlight-indexing,
+    @community/pattern-ios-app-shortcuts-siri,
+    @community/rule-ios-safe-area-insets,
+  ]
+}

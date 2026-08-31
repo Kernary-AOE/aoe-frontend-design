@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-spotlight-indexing"
-relations:
-  - type: related
-    target: "@community/pattern-ios-app-shortcuts-siri"
-  - type: related
-    target: "@community/rule-ios-share-sheet"
-  - type: related
-    target: "@community/pattern-ios-live-activities"

@@ -1,8 +1,0 @@
-atom: "@community/constraint-reduced-motion"
-relations:
-  - type: related
-    target: "@community/example-vercel-sidebar"
-  - type: related
-    target: "@w3c/source-wcag-22"
-  - type: related
-    target: "@community/rule-keyboard-accessible"

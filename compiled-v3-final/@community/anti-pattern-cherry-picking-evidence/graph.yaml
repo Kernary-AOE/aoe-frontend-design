@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-cherry-picking-evidence"
-relations:
-  - type: related
-    target: "@community/rule-design-decisions-cite-research"
-  - type: related
-    target: "@community/rule-align-changes-to-findings"
-  - type: related
-    target: "@community/principle-evidence-not-aesthetics"

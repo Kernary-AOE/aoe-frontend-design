@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-overloaded-screen"
-relations:
-  - type: related
-    target: "@community/pattern-multi-step-wizard"
-  - type: related
-    target: "@community/pattern-progressive-disclosure"
-  - type: related
-    target: "@community/anti-pattern-burying-frequent-actions"

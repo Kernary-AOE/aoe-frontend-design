@@ -1,8 +1,0 @@
-atom: "@community/category-layout-grid"
-relations:
-  - type: related
-    target: "@community/fact-optimal-line-length"
-  - type: related
-    target: "@community/pattern-card-grid"
-  - type: related
-    target: "@community/value-focus-outline-width"

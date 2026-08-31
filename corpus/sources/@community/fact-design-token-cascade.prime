@@ -1,0 +1,47 @@
+fact DesignTokenCascade {
+  id: "@community/fact-design-token-cascade"
+  version: "1.0.0"
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Design tokens function best when organised in a three-tier cascade: primitive tokens (raw values), semantic tokens (named roles), and component tokens (component-specific aliases)."
+
+  statement: "Design tokens cascade through three tiers — primitives (e.g., --blue-500: oklch(62% 0.18 250)), semantics (--primary: var(--blue-500)), and component tokens (--button-bg: var(--primary)) — and consumers should reference the highest semantically-meaningful tier available for their use case."
+
+  confidence: strong
+  source: [
+    "Nathan Curtis, 'Naming Tokens in Design Systems' — EightShapes (2020)",
+    "Adobe Spectrum design tokens documentation",
+    "Material Design 3 token system",
+    "W3C Design Tokens Community Group draft spec",
+  ]
+
+  applies-to: [
+    "design-token system architecture",
+    "theming strategy (light/dark, brand variants)",
+    "component API: which token tier a prop maps to",
+    "token rename refactors (semantic insulates primitives from breaking changes)",
+  ]
+
+  quantitative: {
+    tiers: 3,
+    canonical-order: "primitive → semantic → component",
+  }
+
+  counter-conditions: [
+    "Very small systems (< 30 components) may collapse to two tiers (primitive + semantic) without harm.",
+    "Components that are primitives themselves (Box, Stack) may bypass component tokens.",
+    "When variant explosion occurs at the component-token tier, it usually means the semantic tier is under-specified.",
+  ]
+
+  related: [
+    @community/fact-color-token-semantic-naming,
+    @community/fact-atomic-design-method,
+    @community/type-design-token,
+    @community/constraint-max-color-roles-7,
+  ]
+}

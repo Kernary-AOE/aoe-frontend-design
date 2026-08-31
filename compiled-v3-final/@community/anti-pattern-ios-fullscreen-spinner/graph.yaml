@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-ios-fullscreen-spinner"
-relations:
-  - type: related
-    target: "@community/anti-pattern-no-loading-state"
-  - type: related
-    target: "@community/rule-ios-launch-screen-match"
-  - type: related
-    target: "@community/rule-mobile-first"

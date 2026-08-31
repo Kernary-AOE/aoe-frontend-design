@@ -1,8 +1,0 @@
-atom: "@community/fact-8pt-grid-system"
-relations:
-  - type: related
-    target: "@community/fact-spacing-token-progression"
-  - type: related
-    target: "@community/category-layout-grid"
-  - type: related
-    target: "@community/transform-scale-clamp"

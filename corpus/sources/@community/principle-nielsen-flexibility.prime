@@ -1,0 +1,55 @@
+principle NielsenFlexibility {
+  id: "@community/principle-nielsen-flexibility"
+  version: "1.0.0"
+
+  description: "Nielsen Heuristic 7: accelerators unseen by novices can speed up expert interactions; the system should cater to both inexperienced and experienced users, and allow tailoring of frequent actions."
+
+  statement: "Accelerators — unseen by the novice user — may often speed up the interaction for the expert user such that the system can cater to both inexperienced and experienced users. Allow users to tailor frequent actions."
+
+  domain: ux-design
+
+  _meta: {
+    license: "LicenseRef-Citation-Only AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  attributed-to: "Jakob Nielsen, 1994"
+
+  source: [
+    "Jakob Nielsen, 'Heuristic Evaluation', in Nielsen & Mack (eds.), Usability Inspection Methods (1994)",
+    "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  ]
+
+  applies-to: [
+    "keyboard shortcuts: full shortcut coverage of common operations",
+    "command palettes: expert access layer over GUI menus",
+    "custom views and saved filters: tailoring the interface to individual workflows",
+    "bulk actions: batch operations for power users managing many items",
+    "API access: allowing programmatic control for expert users",
+    "quick-add flows: creating items from anywhere without navigating to a dedicated page",
+  ]
+
+  examples: [
+    "Notion's '/' command menu gives experts instant block insertion without touching the mouse, while novices use the visible + button at the start of each line.",
+    "Linear's keyboard shortcut coverage (every action has a shortcut, discoverable via Cmd+K) creates a dual-speed interface: same functionality, very different efficiency levels.",
+    "Superhuman email client is keyboard-first by design — all actions have shortcuts — targeting users who've invested in learning the system for maximum efficiency.",
+  ]
+
+  counter-examples: [
+    "A project management tool where creating a task always requires navigating to a project page via 3 clicks — no quick-add shortcut exists for the most frequent action.",
+    "A dashboard with no way to save custom filter configurations — expert users recreate the same complex filters from scratch each session.",
+    "A CRM where bulk email/status update requires selecting items one by one because there is no multi-select — power users lose hours to UI friction.",
+  ]
+
+  related: [
+    @community/principle-nielsen-recognition,
+    @community/principle-nielsen-aesthetic,
+    @community/fact-flexibility-efficiency,
+    @community/example-linear-cmdk,
+    @community/example-linear-kbd-shortcuts,
+    @community/example-notion-cmdk,
+    @community/anti-pattern-burying-frequent-actions,
+    @community/rule-keyboard-accessible,
+  ]
+}

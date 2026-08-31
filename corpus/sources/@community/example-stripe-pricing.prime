@@ -1,0 +1,56 @@
+example StripePricing {
+  id: "@community/example-stripe-pricing"
+  version: "1.0.0"
+
+  label: "Stripe — Pricing Page with Product Cards"
+  url: "https://stripe.com/pricing"
+  observed: "2026-Q1"
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Stripe's pricing page is a light-mode (#FFFFFF) layout showing each Stripe product (Payments, Billing, Connect) as a tall card with a colored gradient header (purple #635BFF for Payments, teal #00D4FF for Billing), product name, percentage rate ('2.9% + 30¢'), and a feature list. Cards are 320px wide, 480px+ tall, with a subtle 2px gradient border at top."
+
+  brand: "stripe"
+  pattern-applied: "@community/pattern-pricing-tiers-toggle"
+
+  aesthetic-notes: [
+    "Background: pure white #FFFFFF; cards have rgba(0,0,0,0.04) backgrounds with 0.5px solid rgba(0,0,0,0.08) borders.",
+    "Top accent: 4px linear-gradient(90deg, #635BFF, #00D4FF) bar (Stripe's signature purple-to-teal).",
+    "Primary brand color: Stripe purple #635BFF, used on CTAs and key prices.",
+    "Typography: Sohne (their custom sans), price in 32px/500, body 16px/400 #425466.",
+    "Card padding: 32px all sides, with 24px between price and feature list.",
+    "CTA: 'Start now' in 14px/500 white on #635BFF, full-width within card, 8px border-radius.",
+  ]
+
+  what-to-copy: [
+    "Top gradient accent bar (4px) on cards is distinctive without dominating — it's a 'mark', not a 'frame'.",
+    "Light-mode cards need 0.5px borders + soft fill — 1px borders feel too rigid on white.",
+    "Per-product (not per-tier) pricing layout when products are differentiated services, not feature levels.",
+    "Use the brand's signature gradient sparingly — top bar only, not full backgrounds.",
+  ]
+
+  what-to-skip: [
+    "The fixed-percentage rate ('2.9% + 30¢') hides volume tiers — clarify thresholds in body text.",
+    "Don't auto-default the comparison toggle to 'monthly' if your product is annual-first.",
+  ]
+
+  screenshot-hint: "scout query: stripe pricing page light mode product cards purple gradient accent"
+
+  demonstrates: [
+    "Brand gradient as a 4px top stripe is enough to mark a card as 'on-brand' without overwhelming.",
+    "Light mode cards need both subtle fill AND hairline border — neither alone reads as a card.",
+    "Product-level pricing (vs tier-level) suits multi-product platforms.",
+  ]
+
+  related: [
+    @community/pattern-pricing-tiers-toggle,
+    @community/example-vercel-pricing,
+    @community/value-brand-hue,
+  ]
+}

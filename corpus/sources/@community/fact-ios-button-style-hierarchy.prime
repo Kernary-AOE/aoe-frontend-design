@@ -1,0 +1,33 @@
+fact IosButtonStyleHierarchy {
+  id: "@community/fact-ios-button-style-hierarchy"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "iOS defines four button style roles with distinct visual weights: .borderedProminent for primary CTA, .bordered for secondary actions, .borderless for tertiary inline actions, and role: .destructive (red tint) for delete/remove actions."
+
+  evidence: [
+    ".borderedProminent: filled background, highest visual weight — one per screen, primary call-to-action.",
+    ".bordered: outlined or lightly filled — secondary and supporting actions.",
+    ".borderless: no frame, lowest weight — tertiary, inline, or supplementary actions.",
+    "role: .destructive: red tint applied to any style — delete, remove, or irreversible actions.",
+    "Using multiple .borderedProminent buttons on one screen creates ambiguity about the primary action.",
+  ]
+
+  notes: [
+    "In SwiftUI, set role: .destructive on Button to get automatic red tinting consistent with system styles.",
+    "Apple HIG source: Rule 7.1 — Button Styles.",
+  ]
+
+  related: [
+    @community/rule-ios-single-accent-color,
+    @community/constraint-ios-touch-target-44pt,
+    @community/rule-ios-alerts-critical-only,
+  ]
+}

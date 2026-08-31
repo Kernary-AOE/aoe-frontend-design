@@ -1,8 +1,0 @@
-atom: "@community/category-typography-scale"
-relations:
-  - type: related
-    target: "@community/fact-optimal-line-length"
-  - type: related
-    target: "@community/value-focus-outline-width"
-  - type: related
-    target: "@impeccable/constraint-font-blacklist"

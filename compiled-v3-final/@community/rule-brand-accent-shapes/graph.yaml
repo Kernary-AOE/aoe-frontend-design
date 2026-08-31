@@ -1,8 +1,0 @@
-atom: "@community/rule-brand-accent-shapes"
-relations:
-  - type: related
-    target: "@community/rule-brand-color-primary-only"
-  - type: related
-    target: "@community/constraint-max-color-roles-7"
-  - type: related
-    target: "@community/fact-anthropic-brand-palette"

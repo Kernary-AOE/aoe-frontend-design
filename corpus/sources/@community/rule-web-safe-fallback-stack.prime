@@ -1,0 +1,42 @@
+rule WebSafeFallbackStack {
+  id: "@community/rule-web-safe-fallback-stack"
+  version: "1.0.0"
+
+  applies-to: "@community/type-html-artifact"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Every `font-family` declaration for a custom web font MUST include a web-safe generic fallback stack ending in `serif`, `sans-serif`, or `monospace` — and SHOULD include at least one OS-native font (system-ui, -apple-system, 'Segoe UI', Roboto) before the generic to minimize layout shift when the custom font is absent."
+
+  claim: "No CSS `font-family` value may consist of only the custom font name without a fallback chain. Every font stack MUST end in a CSS generic font family keyword."
+
+  severity: medium
+
+  rationale: "When a web font fails to load (blocked CDN, font service outage, GDPR cookie rejection, offline mode), the browser falls back to the next font in the stack. Without a fallback, the browser applies the user-agent default — usually Times New Roman or equivalent — which often produces layout breaks. A curated fallback stack ensures legible, proportionally close rendering and prevents gross layout degradation."
+
+  quantitative: {
+    sans-serif-stack: "'CustomFont', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    serif-stack: "'CustomFont', Georgia, 'Times New Roman', serif",
+    monospace-stack: "'CustomFont', 'JetBrains Mono', 'Fira Code', ui-monospace, 'Courier New', monospace",
+    size-adjust-note: "Use @font-face size-adjust + ascent-override + descent-override + line-gap-override to metric-match the fallback to the primary font and minimize FOUT-induced layout shift",
+  }
+
+  remediation: [
+    "Always append `sans-serif` / `serif` / `monospace` as the final entry in every font-family stack.",
+    "Include at least one OS-native font before the generic: `system-ui, -apple-system` (Apple), `'Segoe UI'` (Windows), `Roboto` (Android).",
+    "For advanced FOUT elimination: use `@font-face` with `size-adjust` to metric-match the fallback to the primary.",
+    "Test fallback by disabling web fonts in DevTools (Network tab → Block requests matching *.woff2).",
+  ]
+
+  related: [
+    @community/rule-font-loading-fout-foit,
+    @community/rule-font-self-host,
+    @community/rule-font-blacklist-applied,
+  ]
+}

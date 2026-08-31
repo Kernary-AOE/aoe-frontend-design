@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-immediate-action-acknowledgment"
-relations:
-  - type: related
-    target: "@community/anti-pattern-ios-fullscreen-spinner"
-  - type: related
-    target: "@community/pattern-ios-skeleton-loading"
-  - type: related
-    target: "@community/rule-ios-alerts-critical-only"

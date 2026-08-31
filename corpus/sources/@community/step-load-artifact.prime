@@ -1,0 +1,45 @@
+step LoadArtifact {
+  id: "@community/step-load-artifact"
+  version: "1.0.0"
+
+  signature: (artifact: URL | FilePath | Base64Image) -> Document
+  effect: read-only
+  errors: [LoadTimeout, NotFound, UnsupportedFormat]
+
+  domain: design-review
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  body: """
+    1. Detect artifact type from extension or MIME:
+       - .html / .htm → parse as HTML Document
+       - .png / .jpg / .webp / .gif → treat as screenshot Image
+       - .fig / .sketch → treat as design file reference (metadata only)
+       - .pdf → extract text + images per page
+    2. For URL: fetch with a 30-second timeout. On timeout → throw LoadTimeout.
+    3. For Image: pass to vision model for structural analysis; extract:
+       - bounding regions of distinct UI components
+       - dominant colors (hex values)
+       - approximate text content
+    4. For HTML: parse DOM; collect:
+       - all interactive elements (buttons, links, inputs)
+       - computed styles on focusable elements
+       - ARIA roles and labels
+    5. Return unified Document with fields: { type, raw, components[], colors[], text, metadata }
+  """
+
+  notes: [
+    "This step is used as the entry point in @community/method-heuristic-review and @community/method-a11y-audit.",
+    "For Base64Image inputs, skip the fetch phase and go directly to vision analysis.",
+  ]
+
+  related: [
+    @community/method-heuristic-review,
+    @community/method-a11y-audit,
+    @community/step-apply-heuristics,
+  ]
+}

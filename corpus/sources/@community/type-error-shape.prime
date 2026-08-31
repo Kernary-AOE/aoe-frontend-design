@@ -1,0 +1,101 @@
+type ErrorShape {
+  id: "@community/type-error-shape"
+  version: "1.0.0"
+
+  domain: api-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Schema for an error response body in a JSON API. Based on RFC 9457 (Problem Details for HTTP APIs, July 2024) — the IETF-standard error format that supersedes RFC 7807. Provides machine-readable error code, human-readable message, identifying URI, and optional contextual fields."
+
+  fields: {
+    type: {
+      type: string
+      format: "URI reference identifying the error type, e.g. 'https://example.com/errors/insufficient-funds'"
+      required: true
+      description: "Stable URI; clients dispatch on this. Default 'about:blank' indicates no specific type."
+    }
+    title: {
+      type: string
+      description: "Short human-readable summary of the problem type. SHOULD be invariant across instances."
+      required: true
+    }
+    status: {
+      type: integer
+      description: "HTTP status code (200-599). MUST match the response status."
+      required: true
+    }
+    detail: {
+      type: string
+      description: "Instance-specific human-readable explanation. Distinct from title — describes THIS occurrence."
+      required: false
+    }
+    instance: {
+      type: string
+      format: "URI reference identifying this specific occurrence, e.g. '/orders/o_abc/errors/e_xyz'"
+      required: false
+    }
+    code: {
+      type: string
+      format: "snake_case stable identifier, e.g. 'insufficient_funds', 'rate_limited'"
+      description: "Application-specific error code. Stable across versions."
+      required: false
+    }
+    errors: {
+      type: "FieldError[]"
+      description: "For 400/422 validation errors: per-field error list"
+      required: false
+    }
+    request-id: {
+      type: string
+      description: "Server-generated request trace id; clients should include in support requests"
+      required: false
+    }
+    retry-after-seconds: {
+      type: "integer | null"
+      description: "For 429/503: seconds to wait before retrying. Mirrors Retry-After header."
+      required: false
+    }
+  }
+
+  invariants: [
+    "Content-Type response header MUST be 'application/problem+json' (RFC 9457 §3) when this shape is returned",
+    "status field MUST equal the HTTP response status code",
+    "type field MUST be a URI reference; 'about:blank' is the default if no specific type",
+    "Sensitive context (PII, secrets, internal stack traces) MUST NOT appear in detail, errors, or extension fields",
+    "Errors with 4xx status SHOULD include a stable code field for client dispatch logic",
+    "Each unique type SHOULD have public documentation accessible at the type URI",
+  ]
+
+  example: {
+    type: "https://api.example.com/errors/insufficient-funds",
+    title: "Insufficient funds",
+    status: 402,
+    detail: "Account balance ($45.00) is below the requested charge amount ($120.00).",
+    instance: "/v1/charges/ch_abc123/errors",
+    code: "insufficient_funds",
+    "request-id": "req_2cKbNc8vs",
+    "retry-after-seconds": null
+  }
+
+  notes: [
+    "RFC 9457 supersedes RFC 7807 (March 2016) — the field shape is identical; 9457 clarifies edge cases and adds extension guidance.",
+    "Stripe-style error envelope (`{ error: { type, code, message, param } }`) predates RFC 9457 but maps cleanly. Most clients tolerate either.",
+    "For validation errors (422), the `errors` array carries per-field issues: `[{ field: 'email', code: 'invalid_format', message: '...' }]`.",
+    "Localize `title` and `detail` based on `Accept-Language` header. NEVER localize `code` — clients dispatch on it.",
+    "GraphQL has its own error format (RFC-flavored but distinct) — `errors: [{ message, locations, path, extensions }]`. RFC 9457 applies to REST and HTTP-RPC.",
+    "Logging: store `request-id` + full error context server-side; return only sanitized fields to clients.",
+  ]
+
+  related: [
+    @community/fact-http-method-semantics,
+    @community/rule-resource-not-action,
+    @community/anti-pattern-rpc-as-rest,
+    @community/anti-pattern-generic-error-text,
+    @community/rule-actionable-error-messages,
+  ]
+}

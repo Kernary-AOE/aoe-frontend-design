@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-hardcoded-pixel-values"
-relations:
-  - type: related
-    target: "@community/counter-example-hardcoded-pixel-padding"
-  - type: related
-    target: "@community/type-design-token"
-  - type: related
-    target: "@community/anti-pattern-magic-numbers"

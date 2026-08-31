@@ -1,6 +1,0 @@
-atom: "@w3c/source-wcag-22"
-relations:
-  - type: related
-    target: "@w3c/fact-wcag-contrast-aa"
-  - type: related
-    target: "@w3c/fact-wcag-focus-contrast"

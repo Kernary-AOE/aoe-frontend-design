@@ -1,8 +1,0 @@
-atom: "@community/rule-dialog-affordance-required"
-relations:
-  - type: related
-    target: "@community/constraint-focus-trap-modal"
-  - type: related
-    target: "@community/rule-keyboard-accessible"
-  - type: related
-    target: "@community/principle-nielsen-user-control"

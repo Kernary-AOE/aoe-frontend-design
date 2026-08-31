@@ -1,0 +1,39 @@
+rule NoUndocumentedPlatformConceptRename {
+  id: "@community/rule-no-undocumented-platform-concept-rename"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Core feature and concept names must not differ between platforms unless the renaming decision is explicitly documented and justified in a design decision record."
+
+  claim: "Renaming a core concept between platforms (e.g. 'Projects' on web → 'Spaces' on mobile) is PROHIBITED unless: (a) the new name is documented in a design decision record, (b) a technical or UX reason is stated, and (c) a migration/disambiguation notice is planned for existing users."
+
+  severity: warning
+
+  rationale: "Undocumented renames create silent inconsistency: future designers and engineers building new features will use different names in different contexts, compounding the divergence. Documentation forces intentionality."
+
+  process: [
+    "Before renaming a concept: create a decision record noting the old name, new name, rationale, and affected surfaces.",
+    "If the rename is platform-specific (not global), document why the platform requires a different term.",
+    "Cross-link the decision record from the platform-specific component or screen spec.",
+  ]
+
+  exceptions: [
+    {
+      case: "Platform UI convention that has a native term"
+      allowed-when: "e.g. iOS calls the navigation component a 'navigation bar' — using that in iOS specs is correct even if web calls it 'top nav'. The underlying concept is the same; only the component name follows platform convention."
+    }
+  ]
+
+  related: [
+    @community/principle-consistent-cross-platform-mental-models,
+    @community/principle-nielsen-consistency,
+    @community/rule-cross-platform-flow-step-consistency,
+  ]
+}

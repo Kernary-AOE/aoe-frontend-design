@@ -1,0 +1,102 @@
+persona Linear {
+  id: "@community/persona-linear"
+  version: "1.0.0"
+
+  school: linear
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Dark-mode-native project management precision: Inter Variable at weight 510 with cv01/ss03 OpenType features on near-black #08090a, single indigo #5e6ad2 accent, and translucent rgba(255,255,255,0.05) borders as structure."
+
+  implies: {
+    font: {
+      display: "Inter Variable (fallbacks: SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto) — OpenType cv01/ss03 non-negotiable; 72px/510/line-height 1.00/letter-spacing -1.584px for display XL"
+      body: "Inter Variable same family — weight 510 signature (between 400 regular and 500 medium); 300 light for secondary text; 590 semibold for emphasis"
+      monospace: "Berkeley Mono (fallbacks: ui-monospace, SF Mono, Menlo)"
+    }
+    color: {
+      temperature: "cool"
+      palette: "indigo #5e6ad2 CTA, violet #7170ff active/links, accent hover #828fff, canvas #08090a (also #010102), panel #0f1011, elevated surface #191a1b, secondary #28282c, primary text #f7f8f8 (never pure white), secondary text #d0d6e0, tertiary #8a8f98"
+      background: "#08090a"
+    }
+    density: "compact-precise — 2px micro / 4px standard / 6px buttons-inputs / 8px cards / 12px panels / 22px large panels / 9999px pills; 8px base with 7px/11px micro-adjustments for optical alignment; 1200px max-width"
+    layout: "dark-canvas centered layout; content emerges from darkness via opacity stepping rather than color contrast; section padding 80px+"
+    imagery: "abstract product screenshots, command palette demos, keyboard-driven UI; no stock photography; luminance-stepping elevation replaces shadow depth"
+    motion: "opacity-only hover states; inset shadow rgba(0,0,0,0.2) 0px 0px 12px 0px for recessed panels; compressed tracking at large sizes progressively relaxing"
+  }
+
+  compatible: ["vercel-clean", "swiss-modernist", "dense-pragmatist", "tokyo-minimal"]
+  conflicts: ["warm-institutional", "magazine-editorial", "brutalist"]
+
+  example-brands: [
+    "Linear",
+  ]
+
+  notes: [
+    "Inter with cv01/ss03 OpenType features is identity — without them it's generic Inter; with them it's Linear's Inter (single-story 'a', adjusted letterforms). These features must be enabled globally.",
+    "Weight 510 is the signature: between regular 400 and medium 500, expressly not a standard CSS weight — must be specified as font-variation-settings or a variable font weight.",
+    "Luminance-stepping elevation: rgba(255,255,255,0.02 → 0.04 → 0.05) opacity steps replace solid backgrounds on dark; cards and buttons are always translucent, never solid.",
+    "Semi-transparent white borders rgba(255,255,255,0.05) to rgba(255,255,255,0.08) replace solid dark borders — visible structure without visual noise; solid variants (#23252a, #34343a, #3e3e44) exist only for accessibility-required contexts.",
+    "Display tracking: -1.584px at 72px, -1.056px at 48px, progressively relaxing to near-zero at body size — compressed at scale, normal at reading size.",
+    "Inset shadow rgba(0,0,0,0.2) 0px 0px 12px 0px creates recessed 'sunken' panel effects where traditional drop shadows would be invisible on dark backgrounds.",
+    "Use for keyboard-driven products where dark mode is primary (not alternate). Avoid for marketing sites needing warmth or consumer appeal — cool-grayscale restraint reads as elite, not approachable.",
+    "Distinct from @impeccable/persona-vercel-clean: Linear is darker (#08090a vs Vercel's #0a0a0a), uses a single fixed indigo accent vs Vercel's rotating neons, and opacity-steps instead of radial gradient heroes.",
+  ]
+
+  composition: {
+    must-include: [
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/pattern-data-table-dense,
+    @impeccable/template-cmd-palette-shell,
+    ]
+    must-avoid: [
+    @community/anti-pattern-thin-weight-body,
+    @impeccable/template-fade-stagger,
+    ]
+    typography-required: {
+      display: "Inter Variable | SF Pro Display"
+      weight-signature: "510"
+      opentype-features: "cv01, ss03"
+    }
+    color-required: {
+      background: "#08090a"
+      accent: "#5e6ad2"
+      shadow-style: "rgba(0,0,0,0.2) 0px 0px 12px 0px inset"
+    }
+    motion-prescriptions: [
+    @community/pattern-hover-lift,
+    @impeccable/template-card-hover-lift,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/template-oklch-palette,
+    @impeccable/template-easing-curves,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-opentype-features-on,
+    @community/fact-variable-font-axes,
+    @community/constraint-typography-weight-blacklist,
+    @community/fact-monospace-purpose,
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/pattern-color-dark-mode-pairing,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-color-dark-mode-cascade,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @community/anti-pattern-thin-weight-body,
+    @impeccable/template-fade-stagger,
+  ]
+}

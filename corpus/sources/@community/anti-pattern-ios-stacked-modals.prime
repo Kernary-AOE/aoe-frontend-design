@@ -1,0 +1,30 @@
+anti-pattern IosStackedModals {
+  id: "@community/anti-pattern-ios-stacked-modals"
+  version: "1.0.0"
+
+  label: "iOS Stacked Modals (Sheet on Sheet)"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Presenting a second .sheet or .fullScreenCover on top of an already-presented sheet, creating multiple layered modal contexts."
+
+  why-bad: "Users lose track of their position in the app when multiple sheets are stacked. Dismissal order is confusing — dismissing the top sheet may not return them where they expect. App navigation depth becomes unclear. Apple HIG Anti-Pattern #14 explicitly forbids this pattern."
+
+  instead-do: "Use a NavigationStack inside a single sheet to handle multi-step flows within the same modal context. Each step pushes a new view on the stack rather than presenting a new sheet. The outer sheet has one cancel path; individual steps use the navigation back button."
+
+  notes: [
+    "iOS 16+ allows sheet-on-sheet via the .sheet presentationDetents API, but this does not make it a good pattern.",
+    "Apple HIG source: Anti-Pattern #14 — Stacked Modals.",
+  ]
+
+  related: [
+    @community/anti-pattern-ios-non-dismissable-modal,
+    @community/pattern-ios-sheet-presentation,
+    @community/pattern-ios-navigation-stack,
+  ]
+}

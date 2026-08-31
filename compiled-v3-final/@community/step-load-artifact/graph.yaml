@@ -1,8 +1,0 @@
-atom: "@community/step-load-artifact"
-relations:
-  - type: related
-    target: "@community/method-heuristic-review"
-  - type: related
-    target: "@community/method-a11y-audit"
-  - type: related
-    target: "@community/step-apply-heuristics"

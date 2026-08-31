@@ -1,0 +1,36 @@
+rule IosSemanticSystemColors {
+  id: "@community/rule-ios-semantic-system-colors"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  applies-to: "all foreground and background color assignments in iOS UI elements"
+
+  statement: "Use iOS semantic system colors — Color.primary, Color.secondary, Color(UIColor.systemBackground), Color(UIColor.label), etc. — rather than hardcoded hex or named colors for all text and backgrounds."
+
+  rationale: "Hardcoded colors like .black or .white become invisible or glaring when the system appearance changes. Semantic system colors adapt automatically to light, dark, and high-contrast appearances without any extra code."
+
+  examples: [
+    "Text: Color.primary (black in light, white in dark), Color.secondary (grey in both).",
+    "Backgrounds: Color(UIColor.systemBackground) for primary surface, Color(UIColor.secondarySystemBackground) for cards.",
+    "Destructive: Color.red → use Color(UIColor.systemRed) which also adapts to high-contrast mode.",
+    "Verify: toggle between light and dark mode; all text and surfaces remain legible without inversion artifacts.",
+  ]
+
+  notes: [
+    "Never use Color.black, Color.white, or hardcoded hex for text or background in production code.",
+    "Apple HIG source: Rule 4.1 — Use Semantic System Colors; Anti-Pattern #15.",
+  ]
+
+  related: [
+    @community/rule-ios-custom-color-dark-variants,
+    @community/fact-ios-background-hierarchy,
+    @community/check-ios-increase-contrast,
+  ]
+}

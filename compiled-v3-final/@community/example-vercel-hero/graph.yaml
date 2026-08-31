@@ -1,8 +1,0 @@
-atom: "@community/example-vercel-hero"
-relations:
-  - type: related
-    target: "@community/pattern-hero-with-demo"
-  - type: related
-    target: "@community/example-resend-hero"
-  - type: related
-    target: "@community/category-typography-scale"

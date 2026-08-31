@@ -1,0 +1,70 @@
+rule SpacingRhythm {
+  id: "@community/rule-spacing-rhythm"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "All vertical spacing (margin, padding, gap) MUST be drawn from a single 8-point scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 px (or rem equivalents). Arbitrary 'eyeballed' values like 17px or 23px are forbidden — they break visual rhythm and frustrate later token migration."
+
+  claim: "Every spacing-related CSS value (margin / padding / gap / row-gap / column-gap) MUST resolve to a multiple of 4 from the documented 8-point scale."
+
+  severity: medium
+
+  validates-with: [
+    @community/fact-consistency-standards,
+  ]
+
+  checks: [
+    @community/check-spacing-rhythm,
+  ]
+
+  severity-combination: |
+    >5% of spacing values are off-scale         → BLOCK
+    1–5% off-scale (rounding artifacts)         → WARN
+    all spacing on the 8pt scale                → PASS
+
+  failure-mode: "Layouts look 'almost right but slightly off' — readers can't articulate why, but craft is perceived as low. Designer hand-offs require pixel-by-pixel correction. Migration to a token system later requires a full audit."
+
+  remediation: [
+    "Adopt Tailwind's default spacing scale (1=4px, 2=8px, 3=12px, 4=16px, 6=24px, 8=32px, 12=48px, 16=64px) — it is on-scale by design.",
+    "Define design tokens `--space-1 .. --space-12` and forbid raw px values via stylelint `declaration-property-value-allowed-list`.",
+    "For one-off micro-adjustments, prefer changing `font-size` or container width before reaching for an off-scale value.",
+  ]
+
+  exceptions: [
+    {
+      case: "Optical centering of glyphs",
+      allowed-when: "A 1–2px nudge is required to optically center an icon inside a button; document with a comment.",
+    }
+    {
+      case: "Third-party embeds with fixed dimensions",
+      allowed-when: "A vendor widget exposes only fixed pixel dims; wrap it in an on-scale container.",
+    }
+  ]
+
+  notes: [
+    "8pt is an iOS / macOS convention; 4pt is a finer baseline for dense UI. Pick one and stick to it.",
+  ]
+
+  related: [
+    @community/fact-consistency-standards,
+    @community/rule-grid-baseline-aligned,
+    @community/rule-touch-target-min,
+    @community/counter-example-magic-number-padding,
+    @community/counter-example-hardcoded-pixel-padding,
+    @community/example-shadcn-settings,
+    @community/principle-vertical-rhythm,
+  ]
+
+  see-also: [
+    @community/check-spacing-rhythm,
+  ]
+}

@@ -1,8 +1,0 @@
-atom: "@community/rule-group-related-form-fields"
-relations:
-  - type: related
-    target: "@community/rule-fieldset-legend"
-  - type: related
-    target: "@community/rule-heading-hierarchy-logical"
-  - type: related
-    target: "@community/pattern-multi-step-wizard"

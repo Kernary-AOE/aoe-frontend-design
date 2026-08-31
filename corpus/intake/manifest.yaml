@@ -1,0 +1,169 @@
+# §4.3 `sources/` intake ledger — lane L13-F
+#
+# The §4.3 declaration (`../prime-corpus.yaml`) names the source sets this corpus
+# ALREADY carries. This file is the other half: the standing decision for every
+# legacy unit the corpus does NOT carry, so that nothing is dropped silently.
+#
+# Scope: the 2734 legacy units the three-way reconciliation
+# (`docs/analysis/corpus-reconciliation/`) could not map to any bundle unit.
+# Row-level detail, all 2734 of them: `intake/legacy-unmapped-triage.csv`.
+# Rejections and their reasons: `REJECTED.md`.
+#
+# Every disposition below is a pure function of (tree, namespace, source.license,
+# content cosine to the nearest bundle unit). Regenerate with
+# `docs/analysis/corpus-reconciliation/tools/disposition.py`; do not hand-edit.
+
+schema: prime/corpus-intake/v1
+generatedBy: docs/analysis/corpus-reconciliation/tools/disposition.py
+basis: docs/analysis/corpus-reconciliation/reconciliation.manifest.json
+legacyUnmappedTotal: 2734
+
+# ---------------------------------------------------------------------------
+# The question this ledger answers: are these units abandoned old versions, or
+# assets that have not been migrated yet? Answer, with the evidence that carries
+# it, in `docs/analysis/corpus-reconciliation/UNMAPPED-VERDICT.md`. Short form:
+# not abandoned. 2727 of 2734 carry `status: validated`, and the whole
+# legacy corpus has zero non-null `deprecated_at`. Abandonment is not declared
+# anywhere; it was inferred from the absence of a mapping.
+# ---------------------------------------------------------------------------
+
+dispositions:
+  - action: ABSORB
+    units: 894
+    meaning: >-
+      licence clears the declared policy and no shipped unit covers the content — intake candidate
+    byTree: {modules: 590, atoms: 304}
+    byNamespace:
+      - namespace: @community
+        units: 166
+        licenses: {MIT: 135, MPL-2.0: 18, Apache-2.0: 13}
+      - namespace: @M15
+        units: 120
+        licenses: {CC0-1.0: 102, MIT: 18}
+      - namespace: @axe
+        units: 97
+        licenses: {MPL-2.0: 97}
+      - namespace: @M16
+        units: 95
+        licenses: {MIT: 48, Apache-2.0: 43, BSD-3-Clause: 4}
+      - namespace: @M06
+        units: 81
+        licenses: {CC-BY-4.0: 77, MPL-2.0: 3, Apache-2.0: 1}
+      - namespace: @M03
+        units: 80
+        licenses: {W3C Community Final Specification Agreement: 61, Apache-2.0: 10, MIT: 9}
+      - namespace: @M13
+        units: 60
+        licenses: {MIT: 54, CC-BY-4.0: 6}
+      - namespace: @impeccable
+        units: 41
+        licenses: {Apache-2.0: 41}
+      - namespace: @M12
+        units: 37
+        licenses: {Apache-2.0: 20, MIT: 17}
+      - namespace: @M11
+        units: 36
+        licenses: {MIT: 34, Apache-2.0: 2}
+      - namespace: @M01
+        units: 34
+        licenses: {MIT: 20, Apache-2.0: 14}
+      - namespace: @M09
+        units: 33
+        licenses: {Apache-2.0: 32, W3C-20150513: 1}
+      - namespace: @M04
+        units: 11
+        licenses: {MIT: 11}
+      - namespace: @M08
+        units: 2
+        licenses: {MIT: 1, W3C-20150513: 1}
+      - namespace: @M07
+        units: 1
+        licenses: {W3C-20150513: 1}
+    # Intake is NOT performed by this lane. Absorbing a unit means
+    # translating the legacy YAML dialect into the .prime dialect and
+    # adding a `sources:` entry to ../prime-corpus.yaml carrying its
+    # licence and attribution. That file is owned by lane L13-C this
+    # round, and unit translation needs the compiler regeneration L13-B
+    # is doing. This ledger is the input both of those need.
+    blockedOn: [L13-C prime-corpus.yaml sources[], L13-B compiler regeneration]
+  - action: DEFER-OVERLAP
+    units: 56
+    meaning: >-
+      licence clears but content overlaps a shipped unit (0.40 <= cosine < 0.55); a merge decision, not a copy
+  - action: REJECT
+    units: 1669
+    meaning: >-
+      cannot be taken in at all under the declared licence policy; see REJECTED.md for the per-licence reason
+    byLicence:
+      - licence: <undeclared>
+        verdict: BLOCKED-UNDECLARED
+        units: 1320
+      - licence: public leak
+        verdict: BLOCKED-NO-GRANT
+        units: 160
+      - licence: GPL-3.0
+        verdict: BLOCKED-COPYLEFT
+        units: 94
+      - licence: Proprietary
+        verdict: BLOCKED-NO-GRANT
+        units: 34
+      - licence: Refactoring UI
+        verdict: BLOCKED-NO-GRANT
+        units: 23
+      - licence: CC-BY-NC-SA-4.0
+        verdict: BLOCKED-NO-GRANT
+        units: 18
+      - licence: Anthropic
+        verdict: BLOCKED-NO-GRANT
+        units: 12
+      - licence: Good UI
+        verdict: BLOCKED-NO-GRANT
+        units: 4
+      - licence: fair-use
+        verdict: BLOCKED-NO-GRANT
+        units: 2
+      - licence: proprietary-excerpt
+        verdict: BLOCKED-NO-GRANT
+        units: 1
+      - licence: CC-BY-SA-2.5
+        verdict: BLOCKED-NO-GRANT
+        units: 1
+  - action: RECLASSIFY-MERGED
+    units: 100
+    meaning: >-
+      already in the bundle, absorbed into a coarser unit; the manifest verdict is wrong, there is nothing to intake
+  - action: RECLASSIFY-RENAMED
+    units: 15
+    meaning: >-
+      already in the bundle under a renamed slug; manifest verdict is wrong
+
+# ---------------------------------------------------------------------------
+# Bundle side: 698 shipped units with no legacy ancestor. Profiled in the same
+# verdict document; row detail in `intake/bundle-only-triage.csv`.
+#
+# This half is not an intake question — those units are already published. It is
+# a provenance-accuracy question, and the ledger records one finding the corpus
+# declaration currently contradicts.
+# ---------------------------------------------------------------------------
+bundleOnly:
+  total: 698
+  byNamespace: {@community: 635, @impeccable: 35, @anthropic-impeccable: 23, @w3c: 3, @nielsen: 2}
+  provenance:
+    - verdict: NO-UPSTREAM-CLAIMED
+      units: 672
+    - verdict: UNDECLARED-UPSTREAM-NO-LICENCE
+      units: 14
+    - verdict: UNDECLARED-UPSTREAM-LICENCE
+      units: 10
+    - verdict: DECLARED
+      units: 2
+  finding: >-
+    12 units under @community name GPL-3.0 and the repository
+    github.com/spencergoldade/cursor-designer inside their own `notes:` text while
+    declaring no `license:` field, so ../prime-corpus.yaml sorts them into the
+    `community-original` set — the set whose `origin` states that no upstream work
+    is redistributed and whose licence is Apache-2.0. GPL-3.0 is on that same
+    file's `license.policy.deny`. The gate did not fire because the licence was
+    dropped during the id-convention rewrite rather than carried into the unit.
+    Ids and evidence: RECONCILIATION-CORRECTIONS is not the place for this; see
+    REJECTED.md section 3.

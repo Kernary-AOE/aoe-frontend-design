@@ -1,8 +1,0 @@
-atom: "@community/constraint-no-account-existence-disclosure"
-relations:
-  - type: related
-    target: "@community/rule-no-credentials-client"
-  - type: related
-    target: "@community/rule-actionable-error-messages"
-  - type: related
-    target: "@community/anti-pattern-generic-error-text"

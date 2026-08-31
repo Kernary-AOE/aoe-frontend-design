@@ -1,0 +1,35 @@
+rule IosGestureAlternatives {
+  id: "@community/rule-ios-gesture-alternatives"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  applies-to: "any iOS view that introduces a non-standard gesture (long press for exclusive action, multi-finger swipe, custom drag, force touch)"
+
+  statement: "Every custom gesture must have an equivalent action accessible via a visible button or menu — no action may be gesture-only."
+
+  rationale: "Users with motor impairments, Switch Control users, and older users cannot reliably perform complex or multi-touch gestures. A visible alternative ensures equal access to every feature. This is required by Apple HIG Rule 5.7 and is a practical accessibility blocker for App Store review."
+
+  examples: [
+    "A two-finger swipe to reorder items also has a drag handle visible on each row.",
+    "A long-press for 'Mark as favourite' also appears in the item's action sheet or row swipe action.",
+  ]
+
+  notes: [
+    "Applies when: adding any non-standard gesture — long press for exclusive action, multi-finger swipe, custom drag, or custom pinch.",
+    "Verify by: disabling gestures (enable Switch Control); confirm every gesture-triggered action is reachable through a visible UI control.",
+    "Apple HIG source: Rule 5.7 — Alternative Interactions for All Gestures; Anti-Pattern #12.",
+  ]
+
+  related: [
+    @community/rule-ios-context-menu-redundant,
+    @community/constraint-ios-reserved-gestures,
+    @community/constraint-ios-touch-target-44pt,
+  ]
+}

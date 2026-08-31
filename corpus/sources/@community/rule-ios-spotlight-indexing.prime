@@ -1,0 +1,35 @@
+rule IosSpotlightIndexing {
+  id: "@community/rule-ios-spotlight-indexing"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  applies-to: "any iOS app containing content users might search for by name or keyword (articles, contacts, products, notes)"
+
+  statement: "Index key app content using CSSearchableItem with a CSSearchableItemAttributeSet so it is discoverable from iOS Spotlight search without opening the app."
+
+  rationale: "Spotlight integration extends app discoverability to the system level. Users who recall an article, contact, or product name from your app can find and re-engage with it directly from Spotlight, without having to navigate through the app hierarchy."
+
+  examples: [
+    "Index an article: CSSearchableItemAttributeSet with title, contentDescription, thumbnailData; wrap in CSSearchableItem with unique identifier.",
+    "Submit via CSSearchableIndex.default().indexSearchableItems([item]).",
+    "Verify: search for an in-app item title from the iOS Spotlight search; it must appear as a result.",
+  ]
+
+  notes: [
+    "Implement application(_:continue:restorationHandler:) to handle taps on Spotlight results that should deep-link into content.",
+    "Apple HIG source: Rule 10.3 — Spotlight Indexing.",
+  ]
+
+  related: [
+    @community/pattern-ios-app-shortcuts-siri,
+    @community/rule-ios-share-sheet,
+    @community/pattern-ios-live-activities,
+  ]
+}

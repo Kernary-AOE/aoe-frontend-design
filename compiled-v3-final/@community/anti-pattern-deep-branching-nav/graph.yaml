@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-deep-branching-nav"
-relations:
-  - type: related
-    target: "@community/pattern-breadcrumb-trail"
-  - type: related
-    target: "@community/rule-ia-group-by-user-tasks-not-org"
-  - type: related
-    target: "@community/rule-navigation-flat-when-shallow"

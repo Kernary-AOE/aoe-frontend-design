@@ -1,0 +1,41 @@
+anti-pattern BuryingFrequentActions {
+  id: "@community/anti-pattern-burying-frequent-actions"
+  version: "1.0.0"
+
+  label: "Burying High-Frequency Actions Multiple Clicks Deep"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Placing actions that belong to core user workflows several menu levels or clicks deep in sub-menus, overflow menus, or secondary panels — forcing repeated multi-step navigation overhead on every session for the app's most common operations."
+
+  trap: "Keeping top-level navigation clean feels like good design — fewer visible items means less visual noise. Teams hide frequently-used actions in 'catch-all' menus to maintain a sparse UI, inadvertently punishing power users."
+
+  consequence: "Every extra click on a core workflow multiplies across all sessions for all users. If 1000 users perform an action 5× per day and it requires 3 clicks instead of 1, that is 10000 wasted clicks per day. Task abandonment increases, help desk tickets increase, and power users seek keyboard shortcuts or workarounds."
+
+  detection-heuristics: [
+    "Core workflow action requires > 2 clicks to reach from any primary page",
+    "Users frequently open the same dropdown or panel to find the same action",
+    "User research shows top task completions buried in secondary menus",
+    "Frequent features only accessible via 'More' menus, overflow (⋯) buttons, or multi-level dropdowns",
+    "Keyboard shortcut exists for the action but the UI path is 3+ clicks — signal that someone knew it was used often",
+  ]
+
+  remediation: [
+    "Surface the top 3–5 core workflow actions at the primary level: in the nav, in the header toolbar, or in a persistent action bar.",
+    "Use progressive disclosure to hide advanced or rare options, not frequent ones.",
+    "Add keyboard shortcuts for high-frequency actions to parallel the mouse path.",
+    "Conduct task-frequency analysis: rank actions by usage data, then rank their click depth — mismatch = buried action.",
+  ]
+
+  severity: high
+
+  related: [
+    @community/rule-navigation-flat-when-shallow,
+    @community/pattern-progressive-disclosure,
+  ]
+}

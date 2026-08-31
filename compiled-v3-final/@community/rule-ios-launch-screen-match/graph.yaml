@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-launch-screen-match"
-relations:
-  - type: related
-    target: "@community/rule-mobile-first"
-  - type: related
-    target: "@community/anti-pattern-ios-fullscreen-spinner"
-  - type: related
-    target: "@community/pattern-ios-large-title-nav"

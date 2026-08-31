@@ -1,8 +1,0 @@
-atom: "@community/fact-pareto-principle"
-relations:
-  - type: related
-    target: "@community/fact-hick-law"
-  - type: related
-    target: "@community/fact-flexibility-efficiency"
-  - type: related
-    target: "@community/fact-paradox-of-choice"

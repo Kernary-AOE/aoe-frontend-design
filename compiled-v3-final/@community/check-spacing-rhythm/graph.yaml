@@ -1,4 +1,0 @@
-atom: "@community/check-spacing-rhythm"
-relations:
-  - type: related
-    target: "@community/rule-spacing-rhythm"

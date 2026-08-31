@@ -1,8 +1,0 @@
-atom: "@community/fact-paradox-of-choice"
-relations:
-  - type: related
-    target: "@community/fact-hick-law"
-  - type: related
-    target: "@community/fact-miller-rule-7"
-  - type: related
-    target: "@community/fact-tesler-law"

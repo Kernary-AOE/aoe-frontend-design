@@ -1,0 +1,39 @@
+check IosIncreaseContrast {
+  id: "@community/check-ios-increase-contrast"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  check-name: "iOS Increase Contrast Accessibility Setting Observed"
+
+  description: "Verifies that custom colors in an iOS app provide higher-contrast variants when the Increase Contrast accessibility setting is active. Semantic system colors handle this automatically; custom asset-catalog colors require an explicit 'High Contrast' variant."
+
+  success-criterion: "When Increase Contrast is enabled in Settings → Accessibility → Display & Text Size → Increase Contrast, all custom UI element colors shift to a higher-contrast version."
+
+  how-to-verify: [
+    "Enable Increase Contrast: Settings → Accessibility → Display & Text Size → Increase Contrast.",
+    "Open the app and inspect all screens — custom text, border, icon, and background colors should appear with higher contrast than the default.",
+    "In Xcode Assets.xcassets: each Color Set should have High Contrast variants in addition to Any/Dark.",
+    "In SwiftUI, check for colorSchemeContrast == .increased usage where dynamic colors are computed in code.",
+  ]
+
+  fix-suggestion: "In Assets.xcassets, select the Color Set → Attributes Inspector → Gamut: Any → Appearances: Any, Dark, Any (High Contrast), Dark (High Contrast). Provide a higher-contrast hex value for each high-contrast slot."
+
+  notes: [
+    "Standard UIColor / SwiftUI Color semantic tokens respond to Increase Contrast automatically.",
+    "Applies when: any app that defines custom colors for UI elements.",
+    "Apple HIG source: Rule 5.5 — Support Increase Contrast.",
+  ]
+
+  related: [
+    @community/rule-ios-custom-color-dark-variants,
+    @community/rule-ios-semantic-system-colors,
+    @community/check-ios-bold-text-support,
+  ]
+}

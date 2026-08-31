@@ -1,8 +1,0 @@
-atom: "@community/metric-target-size"
-relations:
-  - type: related
-    target: "@w3c/source-wcag-22"
-  - type: related
-    target: "@community/check-target-size"
-  - type: related
-    target: "@community/rule-mobile-accessible"

@@ -1,0 +1,72 @@
+check AriaLabelRequired {
+  id: "@community/check-aria-label-required"
+  version: "1.0.0"
+
+  signature: (html: string, context?: object) -> CheckResult
+  predicate: |
+    // Elements that MUST have an accessible name:
+    //   - <button> with no text content (icon-only)
+    //   - <a> with no text content (icon link)
+    //   - <input type="text|email|password|search|tel|url|number"> not associated to a <label>
+    //   - <img> without alt
+    //   - elements with role="button|link|tab|menuitem" and empty text
+    //
+    // Accessible name resolution order:
+    //   aria-labelledby → aria-label → label[for] → text content → title
+    candidates = querySelectorAll('button, a[href], [role="button"], [role="link"], [role="tab"], [role="menuitem"], img, input, [role="checkbox"], [role="radio"], [role="switch"]')
+    for el in candidates:
+      name = computeAccessibleName(el) // ARIA spec algorithm
+      if name && name.trim().length > 0: continue
+
+      tag = el.tagName.toLowerCase()
+      if tag === 'img' && el.getAttribute('alt') === null:
+        yield { selector: cssPath(el), fail: 'img-missing-alt' }
+      else if tag === 'img' && el.getAttribute('alt') === '':
+        // Empty alt is valid for decorative images — skip
+        continue
+      else if tag === 'input' && el.type !== 'hidden' && el.type !== 'submit' && el.type !== 'button':
+        // Submit/button get name from value
+        yield { selector: cssPath(el), fail: 'input-no-accessible-name', remedy: 'wrap in <label> or add aria-label' }
+      else if (tag === 'button' || el.getAttribute('role') === 'button'):
+        if el.textContent.trim() === '' && !el.querySelector('img[alt], svg[aria-label], svg title'):
+          yield { selector: cssPath(el), fail: 'icon-button-no-label', remedy: 'add aria-label or visible text' }
+      else if tag === 'a' && el.textContent.trim() === '':
+        yield { selector: cssPath(el), fail: 'icon-link-no-label' }
+
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Validates that interactive elements have an accessible name (computed via ARIA spec: aria-labelledby → aria-label → associated label → text → title). Focuses on icon-only buttons/links, unlabeled inputs, and images without alt."
+
+  validates: @community/rule-aria-label-required
+
+  severity: critical
+
+  failure-message-template: "Element '{selector}' has no accessible name: {fail}. {remedy}. Without a name, screen readers announce only the element type (e.g. 'button')."
+
+  evaluation-method: "automated"
+
+  tools: [
+    "axe-core",
+    "lighthouse",
+    "@testing-library/dom",
+  ]
+
+  false-positive-rate: low
+
+  notes: [
+    "axe-core rules: button-name, link-name, input-button-name, image-alt, input-image-alt, label, area-alt.",
+    "computeAccessibleName must follow https://www.w3.org/TR/accname-1.2/ — partial implementations miss aria-labelledby chains.",
+    "Decorative SVG inside a button is OK if the button has aria-label OR sibling visually-hidden text.",
+    "Empty alt='' on <img> is intentional decoration — not flagged.",
+  ]
+
+  related: [
+    @community/rule-aria-label-required,
+  ]
+}

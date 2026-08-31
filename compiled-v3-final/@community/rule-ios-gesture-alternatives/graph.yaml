@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-gesture-alternatives"
-relations:
-  - type: related
-    target: "@community/rule-ios-context-menu-redundant"
-  - type: related
-    target: "@community/constraint-ios-reserved-gestures"
-  - type: related
-    target: "@community/constraint-ios-touch-target-44pt"

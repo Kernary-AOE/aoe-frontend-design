@@ -1,0 +1,46 @@
+rule FunctionalImageAlt {
+  id: "@community/rule-functional-image-alt"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "An <img> that is the sole content of a <button> or <a> element must have alt text describing the action the control performs, not the visual appearance of the image, so screen readers announce an actionable label (WCAG SC 1.1.1 Non-text Content, Level A)."
+
+  rationale: "Screen readers announce the alt attribute as the button or link name. 'Logo of company' inside a link tells a blind user nothing actionable; 'Go to homepage' does. The alt text substitutes for the image in the context of what the control does — it is the accessible name of the control, not a caption."
+
+  rule: |
+    // Question to answer: "What does this button/link DO?" not "What does this image SHOW?"
+
+    // ✅ Functional — describes the action
+    <a href="/"><img src="logo.svg" alt="Go to homepage" /></a>
+    <button type="submit"><img src="search-icon.svg" alt="Search" /></button>
+    <a href="/cart"><img src="cart.svg" alt="View shopping cart" /></a>
+
+    // ❌ Describes image content, not action
+    <a href="/"><img src="logo.svg" alt="Company logo" /></a>
+    <button><img src="search-icon.svg" alt="Magnifying glass icon" /></button>
+
+    // ✅ Icon + visible text: alt="" (empty) — the visible text provides the accessible name
+    <button><img src="cart.svg" alt="" /> View cart</button>
+
+  severity: block
+
+  verification: "For every <img> inside a <button> or <a> with no other text content, read the alt value aloud and ask 'does this tell me what the control does?' If not, rewrite to describe the action."
+
+  tools: [
+    "axe-core",
+    "lighthouse",
+  ]
+
+  related: [
+    @community/rule-aria-label-required,
+    @community/check-aria-label-required,
+    @community/rule-informative-image-alt,
+  ]
+}

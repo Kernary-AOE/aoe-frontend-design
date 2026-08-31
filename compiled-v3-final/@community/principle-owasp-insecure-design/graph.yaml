@@ -1,8 +1,0 @@
-atom: "@community/principle-owasp-insecure-design"
-relations:
-  - type: related
-    target: "@community/principle-owasp-broken-access-control"
-  - type: related
-    target: "@community/principle-owasp-security-misconfig"
-  - type: related
-    target: "@community/principle-owasp-auth-failures"

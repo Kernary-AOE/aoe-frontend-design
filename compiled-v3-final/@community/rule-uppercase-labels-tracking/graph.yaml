@@ -1,8 +1,0 @@
-atom: "@community/rule-uppercase-labels-tracking"
-relations:
-  - type: related
-    target: "@community/rule-number-unit-ratio"
-  - type: related
-    target: "@community/rule-chart-never-alone"
-  - type: related
-    target: "@community/principle-typography-hierarchy"

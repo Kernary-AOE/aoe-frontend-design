@@ -1,0 +1,100 @@
+persona Intercom {
+  id: "@community/persona-intercom"
+  version: "1.0.0"
+
+  school: intercom
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Warm editorial B2B platform: Saans on cream-white #faf9f6 canvas, Fin Orange #ff5600 as singular AI accent, and near-rectangular 4px button radius that creates industrial precision against cozy warm neutrals."
+
+  implies: {
+    font: {
+      display: "Saans (fallbacks: Saans Fallback, ui-sans-serif, system-ui) — 80px/400/line-height 1.00/letter-spacing -2.4px for hero"
+      body: "Serrif serif (fallbacks: Serrif Fallback, ui-serif, Georgia) — 16px/300/line-height 1.40/letter-spacing -0.16px"
+      monospace: "SaansMono (fallbacks: SaansMono Fallback, ui-monospace) — 12px uppercase with positive tracking 0.6–1.2px"
+      accent: "MediumLL / LLMedium (fallbacks: system-ui, -apple-system) — UI chrome and emphasis"
+    }
+    color: {
+      temperature: "warm-neutral"
+      palette: "off-black #111111 primary, cream canvas #faf9f6 surface, Fin Orange #ff5600 AI accent, report orange #fe4c02 data-viz, black-80 #313130 / black-60 #626260 / black-50 #7b7b78 neutrals, oat border #dedbd6, warm sand #d3cec6"
+      background: "#faf9f6"
+    }
+    density: "precise — 4px button radius, 6px nav, 8px cards; 8px spacing base; breakpoints at 425/530/600/640/768/896px"
+    layout: "marketing editorial with billboard hero headlines, warm alternating sections, dashboard palette reserved for data-viz panels only"
+    imagery: "editorial photography and editorial illustration; multi-color report palette (blue #65b5ff, green #0bdf50, red #c41c1c, pink #ff2067, lime #b3e01c) for dashboards only"
+    motion: "scale(1.1) hover / scale(0.85) active on buttons — physical 'grow then press' transforms; oklab-based alpha borders for opacity management"
+  }
+
+  compatible: ["magazine-editorial", "warm-institutional", "notion-warm", "editorial"]
+  conflicts: ["vercel-clean", "brutalist", "tokyo-minimal"]
+
+  example-brands: [
+    "Intercom",
+  ]
+
+  notes: [
+    "Sharp 4px buttons against #faf9f6 cream canvas is the core tension — industrial-precise interactive elements on a warm editorial surface; nothing is rounded beyond 8px.",
+    "All headings share line-height 1.00 across every size (80/54/40/32/24px) — ultra-compressed billboard hierarchy, not conventional reading rhythm.",
+    "Fin Orange #ff5600 is reserved exclusively for AI/Fin brand moments; the rest of the system is warm neutrals + a separate multi-color dashboard palette (#65b5ff, #0bdf50, #c41c1c, #ff2067, #b3e01c) that appears only in reports.",
+    "Five-font ecosystem is intentional: Saans (display/UI) + Serrif (editorial body) + SaansMono (code) + MediumLL/LLMedium (emphasis) — each font has a non-overlapping role; flattening to one font breaks the system.",
+    "Oat-toned borders (#dedbd6), never cool gray — even the border color carries warmth; cool borders immediately break the editorial feel.",
+    "Use when product is conversation-centric needing 'friendly expert' signal. Avoid for pure developer tools — scale-hover warmth and editorial cream read as consumer/business-facing, not engineer-facing.",
+    "Distinct from @impeccable/persona-magazine-editorial: Intercom is a B2B SaaS platform with precise interactive elements; magazine-editorial is pure longform reading layout with drop caps and serif body.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-button-press,
+      @community/principle-vertical-rhythm,
+    ]
+    must-avoid: [
+      @impeccable/persona-vercel-clean,
+      @impeccable/persona-brutalist,
+    ]
+    typography-required: {
+      display: "Saans"
+      body: "Serrif (serif)"
+      button-radius: "4px (not rounded beyond 8px)"
+    }
+    color-required: {
+      background: "#faf9f6"
+      accent: "#ff5600"
+      border: "#dedbd6 (oat-toned, never cool gray)"
+    }
+    motion-prescriptions: [
+      @impeccable/template-button-press,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-warm-institutional,
+    @impeccable/template-button-press,
+    @impeccable/template-easing-curves,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/principle-vertical-rhythm,
+    @community/rule-line-length-optimal,
+    @community/fact-line-height-readability,
+    @community/fact-monospace-purpose,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/rule-brand-color-primary-only,
+    @community/constraint-no-pure-white-bg,
+    @community/rule-backgrounds-atmospheric,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/persona-brutalist,
+  ]
+}

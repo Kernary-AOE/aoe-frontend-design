@@ -1,8 +1,0 @@
-atom: "@community/example-notion-sidebar"
-relations:
-  - type: related
-    target: "@community/pattern-sidebar-collapsible"
-  - type: related
-    target: "@community/example-vercel-sidebar"
-  - type: related
-    target: "@community/pattern-progressive-disclosure"

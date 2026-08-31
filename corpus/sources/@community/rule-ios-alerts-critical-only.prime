@@ -1,0 +1,35 @@
+rule IosAlertsCriticalOnly {
+  id: "@community/rule-ios-alerts-critical-only"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  applies-to: "any iOS screen that needs to communicate feedback, warnings, tips, or confirmations to the user"
+
+  statement: "Reserve UIAlertController alerts for critical information that requires an immediate decision; prefer at most 2 action buttons, never more than 3."
+
+  rationale: "Alerts interrupt the user's flow and demand dismissal before any other action. Overuse trains users to dismiss without reading. Non-critical notifications belong in banners, inline messages, or action sheets."
+
+  examples: [
+    "Correct: alert asking 'Delete this item? This action cannot be undone.' with Cancel and Delete.",
+    "Correct: alert for a permission escalation or destructive purchase confirmation.",
+    "Wrong: alert saying 'Tip: swipe left to delete items' — use an inline tooltip or onboarding hint instead.",
+  ]
+
+  notes: [
+    "Verify by auditing every alert trigger: non-critical tips or confirmations should be replaced with banners or inline messages.",
+    "Apple HIG source: Rule 7.2 — Alerts, Critical Info Only.",
+  ]
+
+  related: [
+    @community/anti-pattern-ios-fullscreen-spinner,
+    @community/anti-pattern-ios-non-dismissable-modal,
+    @community/rule-ios-immediate-action-acknowledgment,
+  ]
+}

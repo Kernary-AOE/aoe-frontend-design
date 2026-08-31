@@ -1,0 +1,38 @@
+category LayoutGrid {
+  id: "@community/category-layout-grid"
+  version: "1.0.0"
+
+  label: "Layout / Grid"
+  parent: "@community/category-layout"
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Grid-based layout patterns for UI composition. This category covers CSS Grid usage patterns, column systems, gutter strategies, and responsive breakpoint behavior."
+
+  members: [
+    "fixed-column"      // Classic 12-col grid with fixed gutters
+    "auto-fill"         // CSS Grid repeat(auto-fill, minmax()) for fluid columns
+    "named-areas"       // CSS Grid template-areas for semantic regions
+    "subgrid"           // CSS Subgrid for cross-row/column alignment
+    "mosaic"            // Irregular editorial grid with spanning cells
+    "holy-grail"        // Header / sidebar / main / footer layout
+  ]
+
+  notes: [
+    "CSS Grid is now baseline (all modern browsers). Flexbox is preferred for 1D flow; Grid for 2D placement.",
+    "`subgrid` reached Baseline 2023 (all major browsers support as of Oct 2023). Use it for form alignment inside grid containers.",
+    "Avoid fixed px gutters; use `gap` with relative units (`rem` or `%`) for responsive behavior.",
+    "Named template areas make layout intent self-documenting and reduce positional magic numbers.",
+  ]
+
+  related: [
+    @community/fact-optimal-line-length,
+    @community/value-focus-outline-width,
+  ]
+}

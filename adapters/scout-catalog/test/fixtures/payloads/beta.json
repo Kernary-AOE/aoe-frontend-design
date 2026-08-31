@@ -1,0 +1,10 @@
+{
+  "groupA": [
+    { "name": "Scroll animation gallery", "demo_url": "https://beta.example/scroll" }
+  ],
+  "note": "a non-array value at the top level is skipped by the flatten rule",
+  "groupB": [
+    { "name": "Scroll animation gallery", "demo_url": "https://beta.example/scroll" },
+    { "name": "Kanban board template", "demo_url": "https://beta.example/kanban" }
+  ]
+}

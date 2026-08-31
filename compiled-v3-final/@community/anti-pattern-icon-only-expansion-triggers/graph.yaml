@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-icon-only-expansion-triggers"
-relations:
-  - type: related
-    target: "@community/pattern-expandable-disclosure"
-  - type: related
-    target: "@community/rule-aria-label-required"
-  - type: related
-    target: "@community/constraint-no-icons-without-label"

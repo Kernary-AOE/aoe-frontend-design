@@ -1,0 +1,44 @@
+fact FlexibilityEfficiency {
+  id: "@community/fact-flexibility-efficiency"
+  version: "1.0.0"
+
+  statement: "Nielsen Heuristic 7 — Flexibility and Efficiency of Use: Accelerators — unseen by the novice user — may often speed up the interaction for the expert user such that the system can cater to both inexperienced and experienced users. Allow users to tailor frequent actions."
+
+  confidence: proven
+  evidence: @nielsen/source-nielsen-1994
+
+  domain: ux-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  heuristic-number: 7
+
+  examples: [
+    "Keyboard shortcuts for every menu action (invisible to mouse-only users; powerful for experts).",
+    "Command palette (@community/pattern-command-palette) as an accelerator layer over GUI menus.",
+    "Customizable dashboard layouts saved per user.",
+    "Browser address bar that accepts both URLs and search queries.",
+  ]
+
+  violations: [
+    "All common actions require 3+ click navigations with no shortcut alternative.",
+    "Frequently-used actions buried in dropdown menus with no keyboard access.",
+    "No way to batch-select and operate on multiple items simultaneously.",
+  ]
+
+  notes: [
+    "This heuristic is the theoretical basis for the command palette pattern (@community/pattern-command-palette).",
+    "Efficiency accelerators should be discoverable — shown in tooltips, menus, and documentation — not hidden.",
+    "This fact is a member of @nielsen/taxonomy-10-heuristics.",
+  ]
+
+  related: [
+    @nielsen/taxonomy-10-heuristics,
+    @community/pattern-command-palette,
+    @community/example-linear-kbd-shortcuts,
+  ]
+}

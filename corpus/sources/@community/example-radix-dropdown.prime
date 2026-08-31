@@ -1,0 +1,56 @@
+example RadixDropdown {
+  id: "@community/example-radix-dropdown"
+  version: "1.0.0"
+
+  label: "Radix UI — DropdownMenu with Keyboard Nav"
+  url: "https://www.radix-ui.com/primitives/docs/components/dropdown-menu"
+  observed: "2026-Q1"
+
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Radix DropdownMenu opens on click or Space/Enter, supports ArrowUp/Down for item navigation, ArrowRight to open submenus, ArrowLeft to close back to parent, Home/End to jump to first/last, and type-ahead (typing 'p' jumps to the first item starting with P). Supports separators, item indicators (check/radio), and disabled state."
+
+  brand: "radix"
+  pattern-applied: "@impeccable/template-dropdown-menu"
+
+  aesthetic-notes: [
+    "Trigger: standard button styling with a 12px chevron-down icon, 8px gap.",
+    "Content: min-width matches trigger, white #FFFFFF bg, 1px solid #E5E7EB border, 8px border-radius, padding 4px.",
+    "Item: 32px tall, 8px horizontal padding, 14px text, hover/highlighted bg #F3F4F6.",
+    "Submenu trigger: shows chevron-right icon at right, opens on hover (300ms delay) or ArrowRight.",
+    "Separator: 1px solid #E5E7EB with 4px vertical margin.",
+    "Item indicator (CheckboxItem/RadioItem): 16px area at left for checkmark, label indented accordingly.",
+    "Animation: 150ms slide-in from trigger direction (origin-top, scale 0.95 → 1).",
+  ]
+
+  what-to-copy: [
+    "Type-ahead is the highest-ROI keyboard feature on long menus — Radix's default.",
+    "Submenu hover-delay (~300ms) prevents accidental opens during cursor traversal.",
+    "Use proper ARIA roles: role=menu, role=menuitem, role=menuitemcheckbox/radio with aria-checked.",
+    "Animation origin should match the trigger direction — top trigger → scale from top, etc.",
+  ]
+
+  what-to-skip: [
+    "Don't use DropdownMenu for navigation — it has menu semantics, not link semantics. Use NavigationMenu instead.",
+  ]
+
+  screenshot-hint: "scout query: radix dropdown menu keyboard navigation submenu indicator"
+
+  demonstrates: [
+    "Full WAI-ARIA menu pattern requires ArrowKey nav + type-ahead + Home/End.",
+    "Hover-delay on submenu triggers prevents 'flicker hell' during diagonal traversal.",
+    "Animation origin from trigger direction makes popovers feel anchored, not floating.",
+  ]
+
+  related: [
+    @impeccable/template-dropdown-menu,
+    @community/example-radix-tabs,
+    @community/rule-keyboard-accessible,
+  ]
+}

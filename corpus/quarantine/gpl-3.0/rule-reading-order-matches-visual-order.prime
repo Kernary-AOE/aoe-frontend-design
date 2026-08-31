@@ -1,0 +1,58 @@
+rule ReadingOrderMatchesVisualOrder {
+  id: "@community/rule-reading-order-matches-visual-order"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "DOM source order must match the visual reading order — CSS flex/grid reordering or absolute positioning must never create a mismatch between what sighted users see and what keyboard/screen reader users navigate."
+
+  statement: "The sequence in which elements appear in the HTML source must match the sequence in which they appear visually on screen. If CSS is disabled, the page must remain comprehensible in the same logical order. Prohibited: using CSS order property, flex row-reverse, grid placement by name, or position:absolute to visually reorder elements in a way that diverges from their DOM position."
+
+  rationale: "Screen readers and keyboard navigation follow DOM order, not visual order. A CSS grid that visually renders 'Icon → Label → Value' but has DOM order 'Label → Value → Icon' creates a disorienting navigation experience: the keyboard user's Tab sequence jumps around the screen apparently at random. The WCAG 2.1 Success Criterion 1.3.2 requires that information and relationships conveyed through presentation can be programmatically determined or available in text."
+
+  applies-to: [
+    "Any layout using CSS Grid with explicit column/row placement",
+    "Flexbox layouts using order or row-reverse",
+    "Absolutely or fixed positioned elements that appear between other flow elements",
+    "CSS columns that visually reorder content across column breaks",
+  ]
+
+  examples: [
+    """
+      {/* CORRECT — DOM order matches reading order */}
+      <article>
+        <h2>Card Title</h2>       {/* DOM first, visually first */}
+        <p>Description text</p>   {/* DOM second, visually second */}
+        <button>Read more</button> {/* DOM third, visually third */}
+      </article>
+    """,
+  ]
+
+  counter-example: """
+    /* WRONG — visual order 'Label | Input' but DOM order 'Input | Label' via CSS */
+    <div style="display:flex; flex-direction:row-reverse">
+      <label>Email</label>  /* DOM first but visually right */
+      <input type="email" /> /* DOM second but visually left */
+    </div>
+    /* Screen reader reads "Email, [input]" but keyboard user tabs to input first */
+  """
+
+  notes: [
+    "Source: github.com/spencergoldade/cursor-designer, .cursor/rules/frontend/ui-layout-and-density.mdc (GPL-3.0).",
+    "WCAG SC 1.3.2 (Level A): Meaningful Sequence — content sequence can be programmatically determined.",
+    "Audit: navigate the page with Tab only (no mouse). The focus order must feel logical and match what you see.",
+    "Exception: purely decorative reordering (e.g., reversing a row of visual-only icons) where no interactive or meaningful order is implied.",
+  ]
+
+  related: [
+    @community/rule-keyboard-tab-order,
+    @community/rule-ios-voiceover-order,
+    @community/rule-heading-hierarchy,
+  ]
+}

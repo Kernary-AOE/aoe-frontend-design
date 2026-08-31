@@ -1,0 +1,79 @@
+step DebounceSearchInput {
+  id: "@community/step-debounce-search-input"
+  version: "1.0.0"
+
+  signature: (input: HTMLInputElement, onQuery: (q: string) => Promise<Result[]>, delayMs?: number) -> CleanupFn
+  effect: side-effect
+  errors: [AbortedRequest, NetworkError]
+
+  domain: frontend-engineering
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  body: """
+    Setup:
+      let timeoutId = null;
+      let activeController = null;
+      const delay = delayMs ?? 250;  // 250ms is the perceptual sweet spot
+
+    On `input` event:
+      1. Clear any pending timeout: clearTimeout(timeoutId).
+      2. If activeController exists, abort the previous request: activeController.abort().
+      3. Read raw value: const q = input.value.trim().
+      4. If q.length < 2:
+           clear results UI immediately
+           announce "" via aria-live region (clear)
+           return
+      5. Schedule the search:
+           timeoutId = setTimeout(async () => {
+             activeController = new AbortController();
+             try {
+               const results = await onQuery(q, { signal: activeController.signal });
+               renderResults(results);
+               announce(`${results.length} results for "${q}"`);
+             } catch (err) {
+               if (err.name === 'AbortError') return;  // expected; superseded
+               renderError(err);
+             }
+           }, delay);
+
+    On unmount / cleanup:
+      clearTimeout(timeoutId);
+      activeController?.abort();
+
+    Return cleanup function.
+  """
+
+  preconditions: [
+    "input element is connected to the DOM",
+    "onQuery accepts AbortSignal in options for cancellation",
+    "an aria-live='polite' region exists for screen reader announcements",
+  ]
+
+  postconditions: [
+    "at most one in-flight network request per input session (older are aborted)",
+    "results UI updates only with the latest typed query",
+    "screen reader users hear result counts via aria-live announcement",
+  ]
+
+  notes: [
+    "250ms is the canonical debounce — fast enough to feel responsive, slow enough to skip intermediate keystrokes. Doherty Threshold (400ms) is the absolute upper limit before perceived lag.",
+    "Distinct from throttling: debounce waits for a quiet period, throttle limits frequency. For search-as-you-type, debounce is correct.",
+    "Use AbortController to cancel stale requests — without it, slow earlier requests can clobber newer results (race condition).",
+    "Min query length (2 chars typical) prevents needless requests; some products require 3 to reduce server load on autocomplete.",
+    "Debounce on `input` event, NOT on `keyup` — `input` fires for paste, autocomplete, and IME composition. Pair with `compositionstart`/`compositionend` checks for CJK input.",
+    "For server-side autocomplete, also implement client-side caching (LRU) keyed by query string to avoid re-fetching repeat queries within a session.",
+    "Announce result counts via aria-live (see @community/fact-aria-live-politeness) so screen reader users know when async results arrive.",
+  ]
+
+  related: [
+    @community/step-validate-required-fields,
+    @community/fact-aria-live-politeness,
+    @community/taxonomy-form-input-types,
+    @community/example-linear-cmdk,
+  ]
+}

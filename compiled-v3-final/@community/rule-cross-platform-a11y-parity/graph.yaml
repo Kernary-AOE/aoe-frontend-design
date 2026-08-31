@@ -1,8 +1,0 @@
-atom: "@community/rule-cross-platform-a11y-parity"
-relations:
-  - type: related
-    target: "@community/constraint-accessibility-aa-minimum"
-  - type: related
-    target: "@community/rule-keyboard-accessible"
-  - type: related
-    target: "@community/constraint-mobile-touch-target-44px"

@@ -1,3 +1,0 @@
-# LoadingSkeletonVsSpinner [fact] v1.0.0
-Skeleton loaders (content-shaped placeholders) outperform spinners on perceived performance because they preview the layout, set the user's expectation about what's loading, and avoid the 'time-passing' connotation of a spinning element.
-> Skeleton loaders produce shorter perceived wait times than spinners for content-shaped surfaces (lists, cards, articles) because they communicate what is loading, preserve final layout dimensions to avoid layout shift, and avoid the spinning-element connotation of unbounded waiting — though for indeterminate or short waits (< 1 s) a spinner remains appropriate.

@@ -1,8 +1,0 @@
-atom: "@community/rule-z-index-stacking-system"
-relations:
-  - type: related
-    target: "@community/constraint-scroll-locked-modal-only"
-  - type: related
-    target: "@community/pattern-sticky-header-on-scroll"
-  - type: related
-    target: "@community/pattern-modal-non-blocking"

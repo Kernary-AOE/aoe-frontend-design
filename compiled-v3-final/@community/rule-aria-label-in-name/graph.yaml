@@ -1,8 +1,0 @@
-atom: "@community/rule-aria-label-in-name"
-relations:
-  - type: related
-    target: "@community/rule-aria-label-required"
-  - type: related
-    target: "@community/check-aria-label-required"
-  - type: related
-    target: "@community/anti-pattern-accessibility-after-thought"

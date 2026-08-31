@@ -1,0 +1,101 @@
+persona TokyoMinimal {
+  id: "@impeccable/persona-tokyo-minimal"
+  version: "1.0.0"
+
+  school: tokyo-minimal
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Japanese minimalism translated to web: extreme negative space (ma), hairline rules, soft greys on warm off-white, mixed-script typography (Noto Sans JP + Inter), tatami-grid spatial logic. The page breathes like a tea ceremony — every element earned its place."
+
+  implies: {
+    font: {
+      display: "humanist-sans paired with Japanese sans — e.g. Noto Sans JP, Hiragino Sans, Yu Gothic, Inter, ABC Diatype, Söhne"
+      body: "Noto Sans JP, Hiragino Kaku Gothic ProN, Yu Gothic, system-ui — paired with Inter or Söhne for Latin"
+      accent: "Sazanami Mincho or Noto Serif JP for vertical/numbered ornaments only"
+    }
+    color: {
+      temperature: "neutral-warm"
+      palette: "warm off-white + 3 soft greys + ink-black, no chromatic accent — #fafaf7 / #ededea / #b8b6b0 / #4a4845 / #1a1a1a"
+      background: "#fafaf7 (warm paper) — never #ffffff, never tinted blue"
+    }
+    density: "generous 1.7 — line-height 1.8 for Japanese, 1.6 for Latin, padding 32/48/64, paragraph spacing > line-height"
+    layout: "single-column with extreme outer margins (15-25% viewport), max content width 540-620px, hairline rules (#ededea 1px) as section dividers, vertical numerical ornaments"
+    imagery: "Hiroshi Sugimoto-style long-exposure B&W photography, soft-focus product shots on natural backgrounds, no isometric illustrations, no emoji"
+    motion: "minimal — 240ms ease-out fade-in only, no parallax, scroll progress indicators acceptable, hover states extremely subtle (1% opacity shift)"
+  }
+
+  compatible: ["minimal", "warm", "refined", "editorial", "quiet-luxury"]
+  conflicts: ["brutalist", "vercel-clean", "stripe-fintech", "dense-pragmatist"]
+
+  example-brands: [
+    "Note.com",
+    "Studio Anywhere",
+    "Tonari",
+    "Muji online",
+    "Kinfolk magazine",
+    "Hiroshi Fujiwara's fragment design",
+    "Shisaku.com",
+    "Kurashicom (Hokuoh Kurashi no Dougu-ten)",
+  ]
+
+  notes: [
+    "Ma (negative space) is the protagonist, not the supporting cast. If your viewport is more than 60% covered in elements, you've drifted into Notion-warm territory.",
+    "Don't pair Noto Sans JP with high-contrast accent colors — Japanese minimalism rejects chromatic energy. The accent IS the white space.",
+    "Mix scripts deliberately: Japanese set in Noto Sans JP at 1.8 line-height, Latin set in Inter at 1.6 — never let the browser auto-fall-back, the rhythms collide.",
+    "Hairline rules (1px #ededea) replace the role colored cards play in Western SaaS. A horizontal rule between two sections is doing the work three nested divs would elsewhere.",
+  ]
+
+  composition: {
+    must-include: [
+      @community/principle-vertical-rhythm,
+      @community/fact-line-height-readability,
+      @community/principle-typography-hierarchy,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-dense-pragmatist,
+    ]
+    typography-required: {
+      display: "Noto Sans JP | Hiragino Sans paired with Inter or Söhne for Latin"
+      line-height-jp: "1.8"
+      line-height-latin: "1.6"
+    }
+    color-required: {
+      background: "#fafaf7 (warm paper, never #ffffff)"
+      palette: "warm off-white + 3 soft greys + ink-black (no chromatic accent)"
+    }
+    motion-prescriptions: [
+      @community/principle-vertical-rhythm,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-editorial,
+    @impeccable/principle-distinctiveness,
+    @community/fact-optimal-line-length,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/principle-vertical-rhythm,
+    @community/fact-line-height-readability,
+    @community/rule-line-length-optimal,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/constraint-no-pure-white-bg,
+    @community/rule-backgrounds-atmospheric,
+    @community/check-color-blacklist-brand,
+    @community/anti-pattern-generic-saas-blue,
+    @community/constraint-max-color-roles-7,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-dense-pragmatist,
+  ]
+}

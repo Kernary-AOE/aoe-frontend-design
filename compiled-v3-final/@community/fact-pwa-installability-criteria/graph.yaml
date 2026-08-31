@@ -1,8 +1,0 @@
-atom: "@community/fact-pwa-installability-criteria"
-relations:
-  - type: related
-    target: "@community/rule-pwa-web-app-manifest"
-  - type: related
-    target: "@community/fact-pwa-display-mode-taxonomy"
-  - type: related
-    target: "@community/pattern-pwa-service-worker-offline"

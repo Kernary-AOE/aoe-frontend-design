@@ -1,0 +1,70 @@
+tool AxeDevTools {
+  id: "@community/tool-axe-devtools"
+  version: "1.0.0"
+
+  signature: (page: BrowserPage, options?: AxeDevToolsOptions) -> AxeReport
+  external: true
+  package: "Browser extension: axe DevTools (Deque Systems)"
+
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Deque's axe DevTools is the browser-based companion to axe-core, providing an interactive UI for running accessibility scans during manual QA and design review. Available as Chrome, Firefox, and Edge extensions, plus paid extensions for guided checks (axe DevTools Pro). Industry standard for the manual half of an a11y workflow."
+
+  capabilities: [
+    "Run axe-core rules against the currently rendered DOM with a single click",
+    "Highlight violations directly in the page (DOM and screenshot annotation)",
+    "Provide impact severity (critical / serious / moderate / minor) and remediation guidance",
+    "'Best Practices' rules in addition to WCAG 2.x and WCAG 2.2 AA/AAA",
+    "Pro tier: Intelligent Guided Tests (IGT) for keyboard, focus order, color contrast picker, link purpose",
+    "Export findings as JSON, CSV, or HTML report",
+    "Integrate with Jira, GitHub Issues for ticket creation",
+  ]
+
+  output-type: {
+    violations: AxeViolation[]   // each with rule id, impact, html, target, helpUrl
+    incomplete: AxeViolation[]   // needs manual review
+    passes: AxeRule[]
+    bestPractices: AxeViolation[]
+  }
+
+  usage: """
+    1. Install from Chrome Web Store / Firefox Add-ons / Edge Add-ons.
+    2. Open browser DevTools (F12 or Cmd+Opt+I) → 'axe DevTools' tab.
+    3. Click 'Scan ALL of my page'.
+    4. Review violations grouped by severity. Each violation shows:
+       - WCAG criterion (e.g. 1.4.3 Contrast)
+       - Affected DOM element (highlighted)
+       - Failure summary
+       - Code fix suggestion + Help link
+    5. For dynamic content: interact with the page first, then re-scan. axe scans only what is currently in the DOM.
+    6. For SPA flows: scan after each route change / state transition.
+  """
+
+  comparison-with-axe-core: {
+    "axe-core": "Library for CI / programmatic scans. Use in Playwright, Jest, Cypress."
+    "axe-devtools": "Manual scanning during QA / design review. Use in browser."
+    "axe-devtools-pro": "Adds Intelligent Guided Tests for issues that automated scans miss (focus order, screen-reader narration)."
+  }
+
+  notes: [
+    "Free tier covers ~57% of WCAG issues — same coverage as axe-core. The remaining 43% requires manual checks (or Pro IGT).",
+    "Always re-scan after dynamic content changes; axe scans the current DOM snapshot only.",
+    "For Storybook component review, install the @storybook/addon-a11y addon — it embeds axe-core inline per-story.",
+    "axe DevTools and Lighthouse use the same underlying axe-core rules; Lighthouse is a CI-friendly format, axe DevTools is the interactive UI.",
+    "Pricing: free tier sufficient for most teams; Pro is ~$40/user/month and worth it for dedicated a11y QA roles.",
+  ]
+
+  related: [
+    @community/tool-axe-core,
+    @community/tool-lighthouse,
+    @community/method-a11y-audit,
+    @community/check-contrast-aa,
+    @community/check-focus-visible,
+  ]
+}

@@ -1,0 +1,36 @@
+method DesignQaPreShip {
+  id: "@community/method-design-qa-pre-ship"
+  version: "1.0.0"
+
+  label: "Design QA Pre-Ship Checklist"
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "A structured checklist for reviewing UX flows, design consistency, accessibility, and content quality before releasing any user-facing feature — covering the 10 categories most commonly skipped in AI-generated outputs."
+
+  pass-condition: "All items pass before the feature is marked done."
+
+  items: [
+    "Users can complete key tasks without confusion",
+    "Multi-step flows are labeled, ordered, and provide per-step feedback",
+    "Destructive or irreversible actions are visually differentiated and confirmed",
+    "Layout follows project spacing, typography, and visual language tokens",
+    "Navigation labels, headings, and actions are consistent across screens",
+    "Keyboard-only flow completion works and focus returns to sensible locations",
+    "Headings, landmarks, and labels are present and meaningful for screen readers",
+    "Text and interactive elements meet WCAG AA contrast (@community/constraint-accessibility-aa-minimum)",
+    "Error and success messages are actionable and context-specific",
+    "Copy is clear, concise, and consistent with the voice-and-tone guide",
+  ]
+
+  related: [
+    @community/rule-design-qa-definition-of-done,
+    @community/constraint-accessibility-aa-minimum,
+    @community/rule-actionable-error-messages,
+  ]
+}

@@ -1,8 +1,0 @@
-atom: "@community/constraint-typography-weight-blacklist"
-relations:
-  - type: related
-    target: "@community/anti-pattern-thin-weight-body"
-  - type: related
-    target: "@community/rule-body-readability"
-  - type: related
-    target: "@community/check-body-readability"

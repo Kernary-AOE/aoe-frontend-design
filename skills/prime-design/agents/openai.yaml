@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prime Design"
+  short_description: "Plan, implement, and validate frontend designs"
+  default_prompt: "Use $prime-design to plan and implement this frontend design request."

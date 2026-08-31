@@ -1,0 +1,50 @@
+rule PreserveUserInputOnError {
+  id: "@community/rule-preserve-user-input-on-error"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "When a form fails validation or a submission error occurs, all user-entered data must be retained in the fields so users can correct only the erroneous inputs without re-entering everything."
+
+  claim: "On any form validation failure or server error, user-entered field values MUST be preserved — clearing or resetting the form on a single field failure is a blocking usability violation that causes user frustration and abandonment."
+
+  severity: block
+
+  rationale: "Forcing re-entry after a single mistake violates Nielsen's error recovery heuristic. Users who typed a long address or paragraph should never lose that work due to an unrelated field error. Forms that clear on error have measurably higher abandonment rates."
+
+  behavior: [
+    "Never call form.reset() or clear input values on validation failure.",
+    "Server-rendered forms must re-populate fields from the submitted values on error response.",
+    "Client-side: keep state in component variables; only clear after confirmed successful submission.",
+    "Autosave to localStorage as an extra safety net for multi-field forms (see save-form-progress).",
+  ]
+
+  exceptions: [
+    {
+      case: "Password fields after a failed authentication"
+      allowed-when: "Clearing the password field is a security best practice; never clear the username."
+    }
+    {
+      case: "OTP / verification code fields"
+      allowed-when: "Clearing after failure is acceptable since OTPs are single-use."
+    }
+  ]
+
+  related: [
+    @community/anti-pattern-no-loading-state,
+    @community/pattern-inline-validation,
+    @community/rule-form-validation-inline,
+    @community/anti-pattern-clear-form-on-failure,
+    @community/example-stripe-checkout,
+    @community/principle-error-prevention-and-recovery,
+    @community/rule-actionable-error-messages,
+  ]
+}

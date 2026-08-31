@@ -1,6 +1,0 @@
-atom: "@community/check-link-purpose-clear"
-relations:
-  - type: related
-    target: "@community/rule-link-purpose-clear"
-  - type: related
-    target: "@community/rule-aria-label-required"

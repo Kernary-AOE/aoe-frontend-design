@@ -1,8 +1,0 @@
-atom: "@community/fact-occams-razor"
-relations:
-  - type: related
-    target: "@community/fact-tesler-law"
-  - type: related
-    target: "@community/fact-hick-law"
-  - type: related
-    target: "@community/fact-miller-rule-7"

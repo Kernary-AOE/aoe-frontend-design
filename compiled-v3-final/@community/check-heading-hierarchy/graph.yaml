@@ -1,6 +1,0 @@
-atom: "@community/check-heading-hierarchy"
-relations:
-  - type: related
-    target: "@community/rule-heading-hierarchy"
-  - type: related
-    target: "@w3c/source-wcag-22"

@@ -1,6 +1,0 @@
-atom: "@community/transform-scale-clamp"
-relations:
-  - type: related
-    target: "@community/category-typography-scale"
-  - type: related
-    target: "@impeccable/template-oklch-palette"

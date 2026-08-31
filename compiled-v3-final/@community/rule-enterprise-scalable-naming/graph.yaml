@@ -1,6 +1,0 @@
-atom: "@community/rule-enterprise-scalable-naming"
-relations:
-  - type: related
-    target: "@community/rule-consistent-product-terminology"
-  - type: related
-    target: "@community/principle-clear-user-mental-model"

@@ -1,0 +1,35 @@
+example LinearKbdShortcuts {
+  id: "@community/example-linear-kbd-shortcuts"
+  version: "1.0.0"
+
+  label: "Linear — Keyboard-First Command Interface"
+  url: "https://linear.app"
+  observed: "2024-Q4"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Linear's issue tracker exposes nearly every action through a command palette (Cmd/Ctrl+K) and single-key shortcuts (e.g. 'C' to create issue, 'P' to set priority). The shortcut system is discoverable via a persistent tooltip on every interactive element showing the key binding. The result is an interface where power users operate almost entirely without mouse interaction."
+
+  demonstrates: [
+    "Single-character shortcuts accelerate expert workflows dramatically (< 1 keystroke per action vs 3+ mouse interactions).",
+    "Command palette with fuzzy search as universal escape hatch — users never need to remember exact shortcuts.",
+    "Shortcuts are shown inline in context menus and tooltips, supporting learning-by-doing rather than requiring documentation.",
+    "Action grouping in the palette (Issues, Projects, Views) reduces cognitive load of a large command surface.",
+  ]
+
+  quality-signals: [
+    "no-mouse workflows complete in measurably fewer interactions",
+    "new users discover shortcuts organically through tooltip exposure",
+    "accessibility: all palette items are announced by screen readers; focus is trapped correctly while palette is open",
+  ]
+
+  related: [
+    @community/pattern-command-palette,
+  ]
+}

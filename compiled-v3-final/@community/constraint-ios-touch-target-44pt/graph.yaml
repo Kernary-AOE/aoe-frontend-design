@@ -1,8 +1,0 @@
-atom: "@community/constraint-ios-touch-target-44pt"
-relations:
-  - type: related
-    target: "@community/constraint-mobile-touch-target-44px"
-  - type: related
-    target: "@community/rule-mobile-first"
-  - type: related
-    target: "@community/pattern-tab-bar-bottom"

@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # Top-level package.json + workspace `app/*`. Dependencies are minimal
+  # at v0.1 (mostly typescript devDep), but tracking them keeps the
+  # workspace ready for future runtime additions.
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      npm-deps:
+        patterns: ["*"]
+        update-types: ["major", "minor", "patch"]
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      gha-deps:
+        patterns: ["*"]
+        update-types: ["major", "minor", "patch"]

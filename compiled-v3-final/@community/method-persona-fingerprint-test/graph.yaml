@@ -1,8 +1,0 @@
-atom: "@community/method-persona-fingerprint-test"
-relations:
-  - type: related
-    target: "@community/pattern-persona-component-mapping"
-  - type: related
-    target: "@impeccable/persona-brutalist"
-  - type: related
-    target: "@impeccable/persona-editorial"

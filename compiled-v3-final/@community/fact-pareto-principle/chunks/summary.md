@@ -1,3 +1,0 @@
-# ParetoPrinciple [fact] v1.0.0
-Pareto Principle (80/20 Rule, Vilfredo Pareto, 1896): roughly 80% of outcomes come from 20% of causes — in UX, ~80% of users rely on ~20% of features.
-> Vilfredo Pareto observed that 80% of Italy's land was owned by 20% of the population; Joseph M. Juran generalised this to quality management and product design. In software, telemetry consistently shows that a small fraction of features drives the majority of usage — meaning interface real estate, performance investment, and design iteration should be concentrated on the high-frequency 20%, while low-frequency features are progressively disclosed or placed in secondary surfaces.

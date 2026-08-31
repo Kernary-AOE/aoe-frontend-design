@@ -1,4 +1,0 @@
-# AnimationCurveAnticipation [fact] v1.0.0
-Anticipation easing (cubic-bezier with negative Y, e.g. cubic-bezier(0.36,-0.40,0.63,1.40)) briefly moves in the opposite direction before the main motion — a squash-and-stretch technique from Disney's 12 principles that signals 'action is about to begin'.
-> Anticipation is one of Disney's 12 principles of animation: before a character jumps, they crouch. In UI, an anticipation curve applies the same principle: before a button moves right, it briefly moves left. The cubic-bezier representation uses a negative Y control point (below 0) to create the backward dip. Anticipation is the rarest easing in UI — it is expressive and character-driven. Overuse makes UI feel clownish. Reserve for brand-expressive hero animations, mascot motion, or game-style UI.
-domain: frontend-design

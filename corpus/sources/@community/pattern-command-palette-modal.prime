@@ -1,0 +1,102 @@
+pattern CommandPaletteModal {
+  id: "@community/pattern-command-palette-modal"
+  version: "1.0.0"
+
+  label: "Command Palette Modal"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "A specific implementation of a command palette as a centered modal dialog (not full-screen, not inline) — a 480-640px-wide floating card overlaid on a scrim, opened with Cmd/Ctrl+K. Focuses on the modal-specific concerns: backdrop, focus trap, exit transition."
+
+  problem: "When a command palette is implemented as a centered modal rather than a top-bar inline input, the modal mechanics (scrim opacity, transform-from-y, focus trap, scroll lock) are easy to get wrong."
+
+  solution: "Use a native `<dialog>` element (or a role=dialog with proper focus trap), centered with margin auto, sized 480-640px, with a translucent backdrop and a fast scale+fade entry transition."
+
+  structure: """
+    <div class="palette-backdrop" aria-hidden="true"></div>
+    <dialog
+      role="dialog"
+      aria-modal="true"
+      aria-label="Command palette"
+      class="palette"
+    >
+      <header class="palette__search">
+        <svg aria-hidden="true"><!-- magnifier --></svg>
+        <input
+          type="search"
+          role="combobox"
+          aria-expanded="true"
+          aria-controls="palette-listbox"
+          aria-autocomplete="list"
+          aria-activedescendant="cmd-1"
+          placeholder="Type a command or search…"
+          autofocus
+        />
+        <kbd>Esc</kbd>
+      </header>
+      <ul id="palette-listbox" role="listbox">
+        <li id="cmd-1" role="option" aria-selected="true">
+          <span>Create issue</span><kbd>C</kbd>
+        </li>
+        <li id="cmd-2" role="option">
+          <span>Open settings</span><kbd>⌘,</kbd>
+        </li>
+      </ul>
+      <footer class="palette__hints" aria-hidden="true">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+        <span><kbd>↵</kbd> select</span>
+      </footer>
+    </dialog>
+  """
+
+  uses: [
+    @community/method-heuristic-review,
+  ]
+
+  facts: [
+    @community/fact-recognition-over-recall,
+    @community/fact-flexibility-efficiency,
+  ]
+
+  behavior: [
+    "Cmd+K (or Ctrl+K on Windows/Linux) opens the palette; Esc closes it.",
+    "When opened, focus moves to the input; when closed, focus returns to the previously focused element.",
+    "ArrowDown / ArrowUp move the highlighted option, updating aria-activedescendant — focus stays on the input.",
+    "Enter activates the highlighted command and closes the palette.",
+    "Backdrop click closes the palette unless the user has typed text (preserve typed input).",
+    "Lock body scroll while open (overflow:hidden on body) so background does not scroll.",
+    "Entry transition: scale 0.98 → 1 + opacity 0 → 1 over 120ms ease-out (skip if prefers-reduced-motion).",
+  ]
+
+  a11y: [
+    "Use `<dialog>` or `role='dialog' aria-modal='true'` so screen readers trap their virtual cursor.",
+    "Combobox pattern: input has `role='combobox'`, `aria-controls` pointing to listbox, `aria-activedescendant` on the highlighted option.",
+    "Focus trap: Tab from the last focusable cycles to the first; Shift+Tab from first cycles to last.",
+    "Result count must be in an `aria-live='polite'` region: 'Showing 12 results'.",
+    "Honor `prefers-reduced-motion: reduce` by removing scale/opacity transitions.",
+  ]
+
+  examples: [
+    @community/example-linear-cmdk,
+    @community/example-vercel-cmdk,
+    @community/example-raycast-launcher,
+  ]
+
+  compatible: [
+    @community/pattern-command-palette,
+    @community/pattern-modal-confirm,
+  ]
+
+  related: [
+    @community/pattern-command-palette,
+    @community/check-focus-visible,
+    @community/constraint-reduced-motion,
+    @community/constraint-focus-trap-modal,
+    @community/anti-pattern-invisible-focus,
+  ]
+}

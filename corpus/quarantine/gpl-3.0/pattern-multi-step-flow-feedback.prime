@@ -1,0 +1,43 @@
+pattern MultiStepFlowFeedback {
+  id: "@community/pattern-multi-step-flow-feedback"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Each step in a multi-step flow must carry a clear step label, current position indicator, logical step order, and per-step validation feedback before advancing."
+
+  problem: "Multi-step flows without progress indicators leave users uncertain how many steps remain, which causes abandonment. Flows that advance without validating the current step deliver errors at the wrong moment."
+
+  patterns: [
+    "Progress indicator: 'Step 2 of 5 — Account Details' at the top of every step",
+    "Step label: a short noun phrase naming the step's purpose, not just a number",
+    "Validation-before-advance: run client-side validation on 'Next'; show errors inline before moving",
+    "Back button: always visible; returns to the previous step without clearing current step data",
+    "Completion feedback: final step confirmation screen with summary of what was entered",
+    "aria-current='step' on the active step in a stepper progress component",
+  ]
+
+  thresholds: [
+    "Minimum steps that warrant a stepper: 3",
+    "Maximum steps before considering branching: 7",
+    "Step label max: 3 words",
+  ]
+
+  related: [
+    @community/pattern-multi-step-wizard,
+    @community/rule-save-form-progress,
+    @community/rule-no-state-reset-without-confirm,
+    @community/check-form-label-associated,
+    @community/check-error-message-associated,
+    @community/check-form-validation-inline,
+    @community/rule-aria-native-first,
+    @community/rule-keyboard-tab-order,
+    @community/check-focus-visible,
+  ]
+}

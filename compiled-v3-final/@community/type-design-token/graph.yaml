@@ -1,8 +1,0 @@
-atom: "@community/type-design-token"
-relations:
-  - type: related
-    target: "@community/value-brand-hue"
-  - type: related
-    target: "@community/value-focus-outline-width"
-  - type: related
-    target: "@impeccable/template-oklch-palette"

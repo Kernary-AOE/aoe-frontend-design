@@ -1,8 +1,0 @@
-atom: "@community/example-vercel-sidebar"
-relations:
-  - type: related
-    target: "@community/fact-animation-reduced-motion"
-  - type: related
-    target: "@community/pattern-progressive-disclosure"
-  - type: related
-    target: "@community/category-layout-grid"

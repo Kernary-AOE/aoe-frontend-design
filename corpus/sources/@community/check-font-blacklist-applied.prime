@@ -1,0 +1,69 @@
+check FontBlacklistApplied {
+  id: "@community/check-font-blacklist-applied"
+  version: "1.0.0"
+
+  signature: (css: string, html: string, context?: object) -> CheckResult
+  predicate: |
+    // Blacklisted font-family stacks (signal "AI default" aesthetic):
+    BLACKLIST = [
+      'Comic Sans MS',
+      'Papyrus',
+      'Times New Roman',          // raw — system Times is fine, Times New Roman explicit is dated
+      'Arial',                    // when used alone without sans-serif fallback chain
+      'Helvetica',                // when used alone — modern stacks use Inter/SF
+      'Courier New',
+    ]
+    // Also blacklist: any -apple-system-only stack with no custom font (signals "no design taste")
+    fontDecls = parseCSS(css).filter(d => d.property === 'font-family' || d.property === 'font')
+    for d in fontDecls:
+      stack = parseFontStack(d.value)
+      for f in stack.fonts:
+        for bad in BLACKLIST:
+          if f.toLowerCase() === bad.toLowerCase():
+            // Check if it's only the fallback (last in stack) — that's allowed
+            if stack.fonts.indexOf(f) === 0:
+              yield { selector: d.selector, value: d.value, fail: 'blacklisted-primary-font', font: f }
+
+    // Detect "no @font-face declared anywhere" → site relies on system defaults only
+    hasFontFace = /@font-face\s*\{/.test(css)
+    hasGoogleFonts = /fonts\.googleapis\.com|fonts\.bunny\.net/.test(html)
+    hasLocalFonts = /url\(['"]?[^)]*\.(woff2?|ttf|otf)/.test(css)
+    if !hasFontFace && !hasGoogleFonts && !hasLocalFonts:
+      yield { fail: 'no-custom-font-loaded', remedy: 'Load a custom display + body font pair' }
+
+  domain: typography
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Detects blacklisted default font-families (Arial, Helvetica, Times New Roman, Comic Sans, Papyrus, Courier New) used as PRIMARY font, and detects sites that load no custom fonts at all (signaling lack of typographic care)."
+
+  validates: @community/rule-font-blacklist-applied
+
+  severity: medium
+
+  failure-message-template: "Selector '{selector}' uses blacklisted primary font '{font}' (declaration: {value}). Replace with a custom display/body pair (e.g. Inter + Source Serif, or Geist + Newsreader)."
+
+  evaluation-method: "automated"
+
+  tools: [
+    "regex",
+    "postcss",
+    "@anthropic/claude-code",
+  ]
+
+  false-positive-rate: low
+
+  notes: [
+    "System UI font stacks (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto) are GENERICALLY acceptable as fallback but flagged when used alone.",
+    "Brand exemption: if context.brandFont matches a blacklisted name, suppress.",
+    "monospace check: Courier New is flagged; modern alternatives are JetBrains Mono, Geist Mono, IBM Plex Mono.",
+  ]
+
+  related: [
+    @community/rule-font-blacklist-applied,
+  ]
+}

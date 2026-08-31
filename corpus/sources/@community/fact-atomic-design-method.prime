@@ -1,0 +1,45 @@
+fact AtomicDesignMethod {
+  id: "@community/fact-atomic-design-method"
+  version: "1.0.0"
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Brad Frost's Atomic Design (2013) decomposes UI into a 5-level hierarchy — atoms, molecules, organisms, templates, pages — modelled after chemistry. It became the dominant mental model for component-system thinking in the 2010s."
+
+  statement: "A UI component system can be modelled as five compositional levels: Atoms (irreducible HTML elements like input, label, button), Molecules (small functional groups like a labeled input), Organisms (composite regions like a navbar), Templates (page-level skeletons), and Pages (templates with real content)."
+
+  confidence: strong
+  source: [
+    "Brad Frost, 'Atomic Design' (book, 2016)",
+    "https://atomicdesign.bradfrost.com/",
+    "Brad Frost blog post 'Atomic Design' (2013)",
+  ]
+
+  applies-to: [
+    "component library architecture",
+    "design-system documentation structure",
+    "design-token cascade boundaries",
+    "naming conventions for files and Storybook hierarchy",
+  ]
+
+  quantitative: {
+    levels: 5,
+    canonical-order: "atoms → molecules → organisms → templates → pages",
+  }
+
+  counter-conditions: [
+    "Atomic Design is a mental model, not a strict file taxonomy — many teams collapse molecules + organisms into one 'components' bucket.",
+    "Headless / primitive libraries (Radix, Headless UI) blur the atom/molecule line — the primitive may already be a 'molecule' (e.g., Dialog).",
+    "Token-driven systems often treat tokens as a layer below atoms, making the model effectively 6 levels.",
+  ]
+
+  related: [
+    @community/fact-design-token-cascade,
+    @community/fact-color-token-semantic-naming,
+    @community/type-design-token,
+  ]
+}

@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-sign-in-with-apple"
-relations:
-  - type: related
-    target: "@community/rule-ios-no-forced-account"
-  - type: related
-    target: "@community/rule-ios-att-compliance"
-  - type: related
-    target: "@community/rule-ios-permission-pre-prompt"

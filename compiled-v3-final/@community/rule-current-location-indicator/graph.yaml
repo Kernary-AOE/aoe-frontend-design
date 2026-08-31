@@ -1,8 +1,0 @@
-atom: "@community/rule-current-location-indicator"
-relations:
-  - type: related
-    target: "@community/rule-aria-current-page"
-  - type: related
-    target: "@community/pattern-sidebar-collapsible"
-  - type: related
-    target: "@community/pattern-breadcrumb-trail"

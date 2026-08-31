@@ -1,0 +1,45 @@
+constraint MotionPageLoadBudget {
+  id: "@community/constraint-motion-page-load-budget"
+  version: "1.0.0"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Page-load entrance animations must complete within 800ms total — hero in ≤ 600ms at 250-400ms per element, stagger cap of 70ms × 8 items = 560ms — to avoid blocking perceived interactivity."
+
+  threshold: {
+    hero-entrance-max: "600ms (first meaningful element visible)",
+    stagger-total-max: "800ms (last staggered item settled)",
+    stagger-delay-per-item: "50-100ms (70ms sweet-spot)",
+    stagger-item-cap: "8 items maximum before instant-showing remainder",
+    single-element-duration: "250-400ms for translate+opacity combo",
+    lcp-element: "0ms delay — never animate the LCP element",
+  }
+
+  rationale: "Google's Interaction to Next Paint (INP) and Time to Interactive (TTI) are hurt by long JS-driven entrance animations that block the main thread. CSS animations are compositor-only but still delay perceived readiness. Users make 'is this page working?' judgements within 1 second. Entrances that complete by 800ms feel instant; beyond that they feel like loading."
+
+  applies-when: [
+    "Page hero section with title, subtitle, CTA stagger",
+    "Dashboard card grid reveal on initial mount",
+    "List/table rows stagger reveal",
+    "Any animation triggered by DOMContentLoaded or first paint",
+  ]
+
+  anti-patterns: [
+    "Staggering 20+ items — user scrolls before animation ends",
+    "Animating LCP element (hero image, H1) — delays Core Web Vitals",
+    "Chaining GSAP timelines that total > 2s before first interactive state",
+    "Using animation-delay on above-the-fold content without a visibility guard",
+  ]
+
+  related: [
+    @community/fact-motion-hierarchy,
+    @community/pattern-stagger-reveal,
+    @community/constraint-animation-pref-respected,
+    @community/rule-animation-duration,
+  ]
+}

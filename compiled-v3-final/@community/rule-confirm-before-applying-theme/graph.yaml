@@ -1,6 +1,0 @@
-atom: "@community/rule-confirm-before-applying-theme"
-relations:
-  - type: related
-    target: "@community/principle-clear-user-mental-model"
-  - type: related
-    target: "@community/principle-nielsen-user-control"

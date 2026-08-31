@@ -1,0 +1,74 @@
+tradeoff TypeScriptStrictness {
+  id: "@community/tradeoff-typescript-strictness"
+  version: "1.0.0"
+
+  label: "TypeScript Strict Mode vs Migration Velocity"
+  domain: frontend-engineering
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Enabling TypeScript's `strict: true` (which turns on strictNullChecks, noImplicitAny, strictFunctionTypes, and others) catches a large class of bugs at compile time — but on a legacy JS-to-TS codebase, the upfront migration cost can be weeks-to-months of error suppression and refactoring. The tradeoff is upfront safety vs incremental adoption."
+
+  axes: ["type-safety", "migration-effort", "time-to-first-typed-feature", "team-typescript-fluency"]
+
+  decision: |
+    if codebase == greenfield OR codebase < 5k LOC:
+      → strict: true from day one
+      tsconfig: { "strict": true, "noUncheckedIndexedAccess": true }
+      cost: low — types are written alongside code
+      benefit: catch null/undefined bugs at compile time
+
+    elif codebase == legacy AND TS-fluency == high:
+      → incremental strict adoption per-file
+      use `// @ts-strict-ignore` or per-folder tsconfig overrides
+      enable one strict flag at a time:
+        1. noImplicitAny (start here — easiest wins)
+        2. strictNullChecks (highest bug-catching value)
+        3. strictFunctionTypes
+        4. strictBindCallApply
+        5. strictPropertyInitialization
+      cost: medium, distributed over months
+      benefit: incremental coverage without freezing feature work
+
+    elif codebase == legacy AND TS-fluency == low:
+      → start with `"strict": false, "noImplicitAny": false`
+      add types at file boundaries (public APIs) only
+      schedule strictness ramp-up after team training
+      cost: low up-front, deferred technical debt
+      benefit: not blocking shipping; type-safety added gradually
+
+  cost-of-strict: [
+    "Migration time: 1–4 weeks for a 50k LOC codebase, longer if state management is complex",
+    "Initial PR size grows — each file may need 5–50 type fixes",
+    "Library typings may force `any` or `unknown` casts at boundaries",
+    "Team friction if not all developers are comfortable with TS generics, conditional types",
+  ]
+
+  cost-of-loose: [
+    "Null/undefined runtime errors that strict mode would catch at compile",
+    "Implicit `any` propagates and erodes type safety silently",
+    "Refactoring confidence drops — IDE rename and find-references become unreliable",
+    "Type debt compounds: late strictness migrations are exponentially harder",
+  ]
+
+  examples: [
+    @community/anti-pattern-magic-numbers,
+  ]
+
+  notes: [
+    "`noUncheckedIndexedAccess` is the strictest flag and catches the most array/object access bugs. Often deferred but worth enabling.",
+    "TypeScript 5.x continues to add stricter flags; pin your tsconfig to a baseline and review yearly.",
+    "Tooling: `tsc --strict --noEmit` in CI is non-negotiable; combine with `eslint --max-warnings=0`.",
+    "Cross-team rule: never disable strict in shared packages — only in app code temporarily during migration.",
+  ]
+
+  related: [
+    @community/anti-pattern-magic-numbers,
+    @community/principle-taste-as-engineering,
+    @community/tool-axe-devtools,
+  ]
+}

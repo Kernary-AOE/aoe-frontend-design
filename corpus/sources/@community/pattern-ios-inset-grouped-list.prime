@@ -1,0 +1,36 @@
+pattern IosInsetGroupedList {
+  id: "@community/pattern-ios-inset-grouped-list"
+  version: "1.0.0"
+
+  label: "iOS Inset Grouped List Style"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "The .insetGrouped style is the standard iOS visual treatment for grouped scrollable lists. Rows appear with inset edges and rounded corners on the group containers, aligned with system apps (Settings, Contacts, Reminders) and user expectations."
+
+  problem: "Plain-style lists or full-bleed grouped lists look out of place in modern iOS UIs (iOS 13+). Custom list implementations without inset grouping feel inconsistent with system apps and break visual harmony."
+
+  solution: "Use List(.insetGrouped) in SwiftUI or UITableView.Style.insetGrouped in UIKit as the default for any grouped scrollable content. Set minimum row height to 44pt. Add swipe actions (leadingSwipeActions / trailingSwipeActions) for common row operations such as delete, archive, or flag."
+
+  notes: [
+    "Applies when: implementing a scrollable list of items in an iOS app.",
+    "Verify by: inspect the list style in code; rows should be grouped with inset edges and rounded corners; minimum row height >= 44pt.",
+    "Swipe actions (e.g., delete, archive) should be added for common operations to align with system list conventions.",
+    "Apple HIG source: Rule 7.4 — Lists, Inset Grouped Default.",
+  ]
+
+  related: [
+    @community/constraint-ios-touch-target-44pt,
+    @community/rule-ios-context-menu-redundant,
+    @community/rule-mobile-first,
+    @community/constraint-mobile-touch-target-44px,
+    @community/check-touch-target-min,
+    @community/check-mobile-first,
+    @community/check-focus-visible,
+  ]
+}

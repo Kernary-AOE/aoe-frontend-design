@@ -1,0 +1,41 @@
+principle ConsistentCrossPlatformMentalModels {
+  id: "@community/principle-consistent-cross-platform-mental-models"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Core concepts, terminology, and user mental models must remain consistent across all platforms of a product — when users switch from web to mobile to desktop, they should not have to learn a new vocabulary for the same features."
+
+  claim: "A product's fundamental concepts (what a 'project', 'workspace', 'draft', 'collaborator' is) must be named and behave identically across all platforms. Platform-specific adaptations are welcome for interaction patterns, but the underlying model must not diverge."
+
+  rationale: "Inconsistent terminology forces users to maintain separate mental models per platform, increasing cognitive load when switching contexts. If 'Tags' on web become 'Labels' on mobile, users genuinely wonder whether they are the same feature."
+
+  examples: {
+    good: [
+      "Notion calls collections 'Pages' on web, mobile, and desktop — same term, same concept everywhere.",
+      "Figma's 'Frames', 'Components', and 'Variants' have identical meaning in desktop app and web.",
+    ]
+    bad: [
+      "A task manager calls task grouping 'Projects' on web but 'Categories' on iOS.",
+      "An email app calls 'Archive' on desktop 'Done' on mobile — same action, different label.",
+    ]
+  }
+
+  scope: "Applies to: feature names, navigation labels, empty-state messages, help text, onboarding copy, and API-facing concepts surfaced in the UI."
+
+  related: [
+    @community/principle-nielsen-consistency,
+    @community/rule-no-undocumented-platform-concept-rename,
+    @community/principle-nielsen-real-world-match,
+    @community/anti-pattern-ios-hamburger-menu,
+    @community/example-notion-sidebar,
+    @community/rule-no-divergent-platform-flows,
+    @community/rule-cross-platform-flow-step-consistency,
+  ]
+}

@@ -1,3 +1,0 @@
-# OccamsRazor [fact] v1.0.0
-Occam's Razor (William of Ockham, ~1320): among competing solutions with equal explanatory power, prefer the one with the fewest assumptions — in UX, favour the simpler interface unless complexity adds clear user value.
-> William of Ockham's principle — 'entities should not be multiplied beyond necessity' — was formalised as a rule of parsimony in science and later adopted in design. In interface design, it translates to: remove any element, interaction, or feature whose absence does not reduce the interface's ability to serve its purpose. Every additional element competes for attention, increases load time, and introduces a new failure mode.

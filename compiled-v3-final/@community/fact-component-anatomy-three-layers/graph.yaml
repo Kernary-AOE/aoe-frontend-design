@@ -1,8 +1,0 @@
-atom: "@community/fact-component-anatomy-three-layers"
-relations:
-  - type: related
-    target: "@community/check-focus-visible-styled"
-  - type: related
-    target: "@community/rule-touch-target-min"
-  - type: related
-    target: "@community/rule-aria-label-required"

@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-md5-for-passwords"
-relations:
-  - type: related
-    target: "@community/principle-owasp-cryptographic-failures"
-  - type: related
-    target: "@community/principle-owasp-broken-authentication"
-  - type: related
-    target: "@community/check-dependency-audit"

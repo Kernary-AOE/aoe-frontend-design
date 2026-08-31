@@ -1,8 +1,0 @@
-atom: "@community/rule-no-heavy-shadows-per-component"
-relations:
-  - type: related
-    target: "@community/anti-pattern-magic-numbers"
-  - type: related
-    target: "@community/rule-consistent-design-token-scale"
-  - type: related
-    target: "@community/rule-no-new-visual-primitives"

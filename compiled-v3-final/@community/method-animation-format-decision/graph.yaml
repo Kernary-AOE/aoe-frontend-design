@@ -1,8 +1,0 @@
-atom: "@community/method-animation-format-decision"
-relations:
-  - type: related
-    target: "@community/rule-reduced-motion-required"
-  - type: related
-    target: "@community/constraint-reduced-motion"
-  - type: related
-    target: "@community/rule-gsap-now-free"

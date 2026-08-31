@@ -1,8 +1,0 @@
-atom: "@community/rule-small-focused-experiment"
-relations:
-  - type: related
-    target: "@community/anti-pattern-vanity-metrics"
-  - type: related
-    target: "@community/rule-user-value-metrics"
-  - type: related
-    target: "@community/fact-doherty-threshold"

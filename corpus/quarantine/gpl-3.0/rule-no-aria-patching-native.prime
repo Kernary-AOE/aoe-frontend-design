@@ -1,0 +1,37 @@
+rule NoAriaPatchingNative {
+  id: "@community/rule-no-aria-patching-native"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Never add ARIA roles to non-semantic elements when a native HTML element already provides the same semantics — use the native element instead."
+
+  claim: "Using role='button' on a <div> is forbidden when a <button> element is available; use the native element that carries the correct role, states, and keyboard behavior natively."
+
+  severity: high
+
+  anti-patterns: [
+    "<div role='button' tabindex='0'> — use <button> instead",
+    "<div role='checkbox'> — use <input type='checkbox'>",
+    "<div role='navigation'> — use <nav>",
+    "<div role='main'> — use <main>",
+    "<span role='link' tabindex='0'> — use <a href>",
+    "<div role='list'> on a <div> — use <ul> or <ol>",
+  ]
+
+  rationale: "Native elements carry built-in keyboard event handling, platform-native focus management, and browser AT integration. ARIA roles on divs require manually replicating all of this, which is error-prone and frequently incomplete. 'No ARIA is better than bad ARIA.'"
+
+  exception: "When the native element's default visual appearance cannot be overridden to match the design and restyling is not feasible — very rare. Document with a comment explaining why."
+
+  related: [
+    @community/rule-aria-native-first,
+    @community/counter-example-div-button-no-tabindex,
+    @community/counter-example-aria-bandaid,
+  ]
+}

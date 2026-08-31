@@ -1,0 +1,38 @@
+rule SuccessConfirmationVisualChange {
+  id: "@community/rule-success-confirmation-visual-change"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+  severity: warning
+
+  statement: "After any create, update, delete, or submit action completes successfully, confirm what changed with explicit language and a corresponding visible UI update — a toast alone is insufficient if the affected element is in view."
+
+  rationale: "Without explicit confirmation, users may repeat an action or doubt it occurred. Bare 'Saved' toasts without visual change in the affected area create uncertainty — users re-check, re-click, or lose trust in the system state."
+
+  applies-when: "any create, update, delete, or submit action completes successfully"
+
+  verify-by: "Confirm that (1) a message names the completed action, and (2) the affected UI element reflects the change visually (updated list item, changed button state, new badge, removed row)."
+
+  examples: [
+    "Saving a profile: 'Profile updated' toast + input fields briefly flash a success ring + Save button returns to idle state.",
+    "Deleting a task: row animates out + 'Task deleted. Undo' toast appears + item count badge decrements.",
+    "Publishing a post: button label changes to 'Published' with a checkmark + status badge updates inline.",
+    "Bad: Submit button spins → stops → nothing changes visually → bare 'Done' toast appears. User unsure if the save took.",
+  ]
+
+  related: [
+    @community/rule-success-message-next-step,
+    @community/principle-nielsen-visibility,
+    @community/example-stripe-payment-success,
+    @community/anti-pattern-no-loading-state,
+    @community/counter-example-button-no-loading,
+    @community/rule-loading-state-feedback,
+    @community/rule-progress-feedback-long-operations,
+  ]
+}

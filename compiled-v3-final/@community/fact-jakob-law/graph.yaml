@@ -1,8 +1,0 @@
-atom: "@community/fact-jakob-law"
-relations:
-  - type: related
-    target: "@community/fact-consistency-standards"
-  - type: related
-    target: "@community/fact-card-sort-method"
-  - type: related
-    target: "@nielsen/taxonomy-10-heuristics"

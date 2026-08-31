@@ -1,0 +1,68 @@
+rule GridBaselineAligned {
+  id: "@community/rule-grid-baseline-aligned"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Long-form text and adjacent typographic elements (captions, metadata, sidebars) MUST share a vertical baseline grid — the typographic baseline of one block aligns with another at a consistent rhythmic interval. The interval is typically the body-text `line-height` (e.g. 24px for 16px×1.5 body)."
+
+  claim: "Vertical positions of body text in a long-form region MUST land on multiples of the body `line-height` (the baseline grid step) — adjacent regions MUST share the same step."
+
+  severity: low
+
+  validates-with: [
+    @community/fact-consistency-standards,
+  ]
+
+  checks: [
+    @community/check-grid-baseline-aligned,
+  ]
+
+  severity-combination: |
+    >15% of text rows off the baseline grid           → WARN
+    adjacent columns desynchronized by >2px           → WARN
+    text rows align to baseline grid within 1px       → PASS
+
+  failure-mode: "Designed pages feel 'almost right' — readers can't articulate the dissonance, but it reduces perceived craft. Compare a New York Times article (baseline-aligned) to a typical SaaS landing page (not) to feel the difference."
+
+  remediation: [
+    "Choose a baseline step (e.g. 8px or 24px), apply `line-height: <step>px` to body, and constrain heading `margin-top` / `margin-bottom` to multiples of the step.",
+    "For mixed-size headings, use `font-size + leading-trim` (CSS `text-edge: cap alphabetic`) to recover predictable baselines — chrome 132+ supports it.",
+    "If full baseline alignment is impractical, at least align the first line of adjacent columns.",
+  ]
+
+  exceptions: [
+    {
+      case: "Hero / display typography",
+      allowed-when: "Display-size text breaks baseline by design; the rule applies to body-and-caption regions, not hero.",
+    }
+    {
+      case: "Single-column long-form",
+      allowed-when: "With one column, baseline-grid alignment is internally consistent so long as body line-height is constant.",
+    }
+  ]
+
+  notes: [
+    "This is the most subtle of the typography rules — most teams ship without it. Including it makes the difference between 'designed' and 'crafted'.",
+    "Pair with @community/rule-spacing-rhythm: 8pt rhythm and 24px baseline grid compose naturally.",
+  ]
+
+  related: [
+    @community/rule-spacing-rhythm,
+    @community/rule-line-length-optimal,
+    @community/rule-body-readability,
+    @community/fact-consistency-standards,
+  ]
+
+  see-also: [
+    @community/check-grid-baseline-aligned,
+  ]
+}

@@ -1,0 +1,54 @@
+check ColorContrastAAA {
+  id: "@community/check-color-contrast-aaa"
+  version: "1.0.0"
+
+  signature: (fg: Color, bg: Color, fontSize: px, fontWeight: number) -> bool
+  predicate: |
+    // WCAG 2.2 SC 1.4.6 Level AAA:
+    //   - Large text (>= 18pt regular OR >= 14pt bold): 4.5:1
+    //   - Normal text: 7.0:1
+    isLarge = fontSize >= 18 || (fontSize >= 14 && fontWeight >= 700)
+    required = isLarge ? 4.5 : 7.0
+    ratio = wcag-contrast-ratio(fg, bg)
+    return ratio >= required
+
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Evaluates contrast against WCAG 2.2 SC 1.4.6 Level AAA: 7:1 for normal text, 4.5:1 for large text (≥18pt or ≥14pt bold). Stricter than AA — recommended for prose-heavy products and a11y-first brands."
+
+  validates: @community/rule-color-contrast-aaa
+
+  severity: medium
+
+  failure-message-template: "Color pair (fg={fg}, bg={bg}) achieves {actual_ratio}:1 — required {required}:1 for {size}pt/{weight} text at AAA level. Increase contrast or relax target to AA (4.5:1)."
+
+  evaluation-method: "automated"
+
+  tools: [
+    "axe-core",
+    "lighthouse",
+    "@anthropic/claude-code",
+  ]
+
+  false-positive-rate: low
+
+  notes: [
+    "AAA is aspirational, not legally required in most jurisdictions — use as quality bar, not blocker.",
+    "Same exemptions as AA: decorative text, logos, disabled controls.",
+    "Large-text threshold uses CSS px — convert pt at 1pt = 1.333px (browser default).",
+    "Auto-suggest fix: drop fg L by 0.05 increments in oklch() until ratio met.",
+  ]
+
+  related: [
+    @community/rule-color-contrast-aaa,
+    @community/check-contrast-aa,
+    @w3c/fact-wcag-contrast-aa,
+    @community/metric-contrast-ratio,
+  ]
+}

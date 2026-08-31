@@ -1,0 +1,45 @@
+rule SaveFormProgress {
+  id: "@community/rule-save-form-progress"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Long or high-stakes forms (multi-step wizards, job applications, checkout with many fields) should auto-save draft progress to localStorage or a backend draft endpoint so users can resume after accidental navigation, session expiry, or browser crash."
+
+  claim: "Forms with more than 5 fields or that require significant user effort SHOULD auto-save progress on blur/change and offer a 'Continue where you left off' restoration on next visit — loss of filled data on interruption is a critical retention failure."
+
+  severity: warning
+
+  applies-when: [
+    "Multi-step wizards with 3+ steps",
+    "Job applications, grant submissions, or forms with uploaded documents",
+    "Checkout or booking flows where re-entry cost is high",
+    "Any form where session expiry during completion is plausible",
+  ]
+
+  behavior: [
+    "Debounce auto-save to localStorage on field change (300-500ms idle).",
+    "On form load, check for a saved draft and prompt: 'You have unsaved progress — continue?'",
+    "Clear the draft from storage on successful submission.",
+    "For sensitive data (SSN, CC), auto-save only non-sensitive fields; never persist card numbers locally.",
+    "Provide explicit 'Save draft' button in multi-step wizards as a complement to auto-save.",
+  ]
+
+  storage-strategy: {
+    client: "localStorage keyed by form-id + user-id hash (or anonymous session id)"
+    server: "Draft API endpoint for authenticated users; preferred for high-stakes forms"
+  }
+
+  related: [
+    @community/pattern-multi-step-wizard,
+    @community/rule-form-validation-inline,
+  ]
+}

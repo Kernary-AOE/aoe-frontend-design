@@ -1,8 +1,0 @@
-atom: "@community/fact-gestalt-figure-ground"
-relations:
-  - type: related
-    target: "@community/fact-gestalt-similarity"
-  - type: related
-    target: "@community/fact-gestalt-closure"
-  - type: related
-    target: "@community/anti-pattern-outline-suppression"

@@ -1,0 +1,37 @@
+pattern IosHapticFeedback {
+  id: "@community/pattern-ios-haptic-feedback"
+  version: "1.0.0"
+
+  label: "iOS Haptic Feedback for Significant Actions"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Pair visual state changes with haptic feedback for significant user actions using UIFeedbackGenerator. Haptic confirmation closes the feedback loop — the user feels the device acknowledge their action, not just sees it."
+
+  problem: "On touchscreens, users lack the tactile click of physical buttons. Significant actions (form submit, task complete, error) can feel unacknowledged if the only response is a visual change that may be subtle or off-screen."
+
+  solution: "Trigger the appropriate UIFeedbackGenerator subclass immediately when a significant state change occurs. Match the intensity/type to the weight of the action: .success for completion, .error for failure, .warning for caution, .medium impact for discrete selections."
+
+  notes: [
+    "Use UIImpactFeedbackGenerator (.light, .medium, .heavy) for impact-style feedback (e.g., snapping an element into place).",
+    "Use UINotificationFeedbackGenerator (.success, .warning, .error) for the outcome of a task.",
+    "Use UISelectionFeedbackGenerator for selection changes in a picker or segmented control.",
+    "Brief example: trigger UINotificationFeedbackGenerator(.success) when the user completes a form submission.",
+    "Do not trigger haptics for minor or repeated interactions (scrolling, hover) — haptic fatigue degrades the signal.",
+    "Respect the user's system haptics setting; UIFeedbackGenerator silently no-ops when haptics are disabled.",
+  ]
+
+  related: [
+    @community/rule-mobile-first,
+    @community/constraint-mobile-touch-target-44px,
+    @community/pattern-tab-bar-bottom,
+    @community/check-touch-target-min,
+    @community/check-mobile-first,
+    @community/check-focus-visible,
+  ]
+}

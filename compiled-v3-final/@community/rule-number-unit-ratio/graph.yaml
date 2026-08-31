@@ -1,8 +1,0 @@
-atom: "@community/rule-number-unit-ratio"
-relations:
-  - type: related
-    target: "@community/rule-chart-never-alone"
-  - type: related
-    target: "@community/fact-fintech-number-display"
-  - type: related
-    target: "@community/constraint-monospace-tabular-numerics"

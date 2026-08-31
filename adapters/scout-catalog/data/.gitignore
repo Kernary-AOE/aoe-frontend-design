@@ -1,0 +1,8 @@
+# Payload staging directory. Nothing here is committed.
+#
+# `prime-plugin.yaml` declares `sandbox.filesystem.readRoots: [data]`, and
+# `plugin-host`'s `resolveInRoot` requires a declared read root to *exist* at
+# manifest load time (`PATH_NOT_FOUND` otherwise). So this directory has to be
+# tracked while its contents must not be — which is what this file does.
+*
+!.gitignore

@@ -1,0 +1,47 @@
+fact ZeigarnikEffect {
+  id: "@community/fact-zeigarnik-effect"
+  version: "1.0.0"
+
+  _meta: {
+    license: "CC-BY-NC-SA-4.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Zeigarnik Effect (Bluma Zeigarnik, 1927): people remember uncompleted or interrupted tasks significantly better than completed ones — use this to design persistent progress indicators and save-state notifications."
+
+  statement: "Bluma Zeigarnik, building on Kurt Lewin's tension-system theory, found that incomplete tasks create a persistent cognitive tension that keeps them more accessible in memory than finished tasks. Waiters remembered unpaid orders in detail but forgot them immediately after payment. In UX, this means progress indicators, abandoned cart reminders, and save-state prompts leverage a real psychological mechanism — uncompleted tasks demand cognitive closure and drive users back to finish them."
+
+  confidence: proven
+
+  source: [
+    "Zeigarnik, B., 'On Finished and Unfinished Tasks', Psychologische Forschung (1927) — original experimental study",
+    "Lewin, K., 'Intention, Will and Need', in Ellis (Ed.), 'A Source Book of Gestalt Psychology' (1938) — theoretical foundation (tension systems)",
+    "Baumeister, R. F. & Masicampo, E. J., 'Consider It Done! Plan Making Can Eliminate the Cognitive Effects of Unfulfilled Goals', Psychological Science (2011) — modern replication and extension",
+  ]
+
+  applies-to: [
+    "multi-step profile completion bars ('Your profile is 60% complete') — incomplete state drives return visits",
+    "abandoned cart and saved-for-later notifications — the uncompleted purchase creates closure-seeking motivation",
+    "progress-saved indicators in long forms — reassures users they can leave and return without losing state",
+    "gamification streak counters — breaking a streak is an uncompleted task; fear of incompletion sustains daily engagement",
+  ]
+
+  quantitative: {
+    threshold: "N/A — effect magnitude varies by task importance and user motivation; no universal numeric threshold"
+    practical-implication: "Show progress completion percentage or step count prominently; leaving a task visibly '80% done' is more motivating than hiding progress"
+    related-metric: "return-to-complete rate for interrupted flows; abandoned cart recovery rate after Zeigarnik-triggered notifications"
+  }
+
+  counter-conditions: [
+    "Users who deliberately abandon a task (changed mind, out of scope) find persistent incomplete-task reminders annoying rather than motivating — provide a clear 'dismiss permanently' escape.",
+    "The effect is weaker for low-stakes tasks; a half-completed newsletter preferences form does not generate the same tension as an incomplete purchase.",
+    "Fabricating artificial incompleteness (e.g. a progress bar that starts at 50% for an empty profile) is a dark pattern and erodes trust when users notice.",
+  ]
+
+  related: [
+    @community/fact-goal-gradient-effect,
+    @community/fact-peak-end-rule,
+    @community/fact-visibility-system-status,
+  ]
+}

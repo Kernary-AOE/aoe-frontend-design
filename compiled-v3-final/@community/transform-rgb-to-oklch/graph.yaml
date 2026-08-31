@@ -1,8 +1,0 @@
-atom: "@community/transform-rgb-to-oklch"
-relations:
-  - type: related
-    target: "@community/term-oklch"
-  - type: related
-    target: "@community/value-brand-hue"
-  - type: related
-    target: "@community/metric-contrast-ratio"

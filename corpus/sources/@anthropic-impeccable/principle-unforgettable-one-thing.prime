@@ -1,0 +1,35 @@
+principle UnforgettableOneThing {
+  id: "@anthropic-impeccable/principle-unforgettable-one-thing"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  statement: "Every interface needs one differentiating element — the single thing a viewer will remember. Intentional design means knowing what that one thing is before writing the first line of code."
+
+  rationale: "Design that tries to be impressive in every direction impresses in none. The question 'What makes this UNFORGETTABLE? What's the one thing someone will remember?' forces creative prioritization. It may be an unexpected typeface pairing, a motion signature, an unusual color palette, an asymmetric layout — but it must be deliberate and singular. Without a designated 'one thing', all design energy dissipates into uniform mediocrity."
+
+  implications: [
+    "State the one differentiator explicitly in the design brief (as a comment or design.md) before implementation.",
+    "All other design decisions should support the 'one thing', not compete with it.",
+    "The 'one thing' can be conservative (a quietly perfect spacing system) or bold (a generative mesh background) — its identity matters less than its intentionality.",
+    "If you can't name the one thing after implementation, the design has no clear point of view.",
+  ]
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — Design Direction > Differentiation bullet",
+  ]
+
+  related: [
+    @community/principle-commit-bold-aesthetic,
+    @community/principle-single-direction-aesthetic-bet,
+    @community/principle-implementation-complexity-match,
+    @community/principle-taste-as-engineering,
+    @community/method-brand-distinctiveness-test,
+  ]
+}

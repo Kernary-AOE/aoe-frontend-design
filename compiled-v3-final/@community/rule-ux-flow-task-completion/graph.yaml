@@ -1,8 +1,0 @@
-atom: "@community/rule-ux-flow-task-completion"
-relations:
-  - type: related
-    target: "@community/rule-upfront-field-requirements"
-  - type: related
-    target: "@community/rule-success-message-next-step"
-  - type: related
-    target: "@community/rule-single-primary-action-per-screen"

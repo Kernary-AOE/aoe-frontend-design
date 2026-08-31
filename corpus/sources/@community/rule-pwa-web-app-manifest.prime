@@ -1,0 +1,65 @@
+rule PwaWebAppManifest {
+  id: "@community/rule-pwa-web-app-manifest"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Every Progressive Web App must link a manifest.json in <head> with all required fields (name, icons, start_url, display) — omitting any field silently blocks the browser install prompt."
+
+  statement: """
+    A PWA manifest requires ALL of the following or the install prompt will not appear:
+    - name: full app name displayed in install dialogs
+    - short_name: ≤12 characters, shown under the home screen icon
+    - icons: array containing at minimum { src, sizes: "192x192", type: "image/png" } and { src, sizes: "512x512", type: "image/png" }
+    - start_url: typically "/" or the entry point URL
+    - display: "standalone" | "fullscreen" | "minimal-ui" (NOT "browser")
+    - theme_color: status bar tint on Android (must match <meta name="theme-color">)
+    - background_color: splash screen background while app loads
+
+    Link in HTML: <link rel="manifest" href="/manifest.json">
+  """
+
+  rationale: "Missing manifest fields silently prevent the browser install prompt with no error in the console. Incomplete manifests are the most common PWA installability failure found in Lighthouse PWA audits. The manifest must be complete before the service worker is even evaluated for installability."
+
+  applies-to: "Any web app intended to be installable as a PWA (Progressive Web App)."
+
+  examples: [
+    """
+      // manifest.json — minimal complete manifest
+      {
+        "name": "MyApp — Full Name",
+        "short_name": "MyApp",
+        "start_url": "/",
+        "display": "standalone",
+        "theme_color": "#5e6ad2",
+        "background_color": "#ffffff",
+        "icons": [
+          { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+          { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+          { "src": "/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+        ]
+      }
+    """,
+  ]
+
+  counter-example: "A manifest that has name and icons but omits start_url — Lighthouse reports 'Manifest does not have a start_url' and the install banner never appears."
+
+  notes: [
+    "Source: github.com/ehmo/platform-design-skills, skills/web/SKILL.md §11.1 (MIT).",
+    "Add a maskable icon (purpose: maskable) so Android can display the icon in a circular/squircle container without white padding.",
+    "Verify with Lighthouse PWA audit or chrome://flags → 'Enable Install Prompt' in DevTools Application panel.",
+    "theme_color on the manifest must match the <meta name='theme-color'> in HTML — mismatches cause visual flash on launch.",
+  ]
+
+  related: [
+    @community/fact-pwa-installability-criteria,
+    @community/fact-pwa-display-mode-taxonomy,
+    @community/pattern-pwa-service-worker-offline,
+  ]
+}

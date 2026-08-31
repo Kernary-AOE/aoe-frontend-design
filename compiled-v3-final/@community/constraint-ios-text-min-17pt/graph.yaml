@@ -1,8 +1,0 @@
-atom: "@community/constraint-ios-text-min-17pt"
-relations:
-  - type: related
-    target: "@community/rule-ios-dynamic-type-semantic"
-  - type: related
-    target: "@community/check-ios-bold-text-support"
-  - type: related
-    target: "@community/constraint-mobile-touch-target-44px"

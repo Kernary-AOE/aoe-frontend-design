@@ -1,6 +1,0 @@
-atom: "@community/fact-gestalt-proximity"
-relations:
-  - type: related
-    target: "@community/fact-gestalt-similarity"
-  - type: related
-    target: "@community/fact-gestalt-closure"

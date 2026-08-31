@@ -1,8 +1,0 @@
-atom: "@community/rule-user-value-metrics"
-relations:
-  - type: related
-    target: "@community/anti-pattern-vanity-metrics"
-  - type: related
-    target: "@community/rule-small-focused-experiment"
-  - type: related
-    target: "@community/principle-nielsen-visibility"

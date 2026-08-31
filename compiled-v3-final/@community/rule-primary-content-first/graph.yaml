@@ -1,8 +1,0 @@
-atom: "@community/rule-primary-content-first"
-relations:
-  - type: related
-    target: "@community/rule-heading-hierarchy"
-  - type: related
-    target: "@community/rule-landmark-elements"
-  - type: related
-    target: "@community/rule-skip-link"

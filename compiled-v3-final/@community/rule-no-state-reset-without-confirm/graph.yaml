@@ -1,8 +1,0 @@
-atom: "@community/rule-no-state-reset-without-confirm"
-relations:
-  - type: related
-    target: "@community/rule-save-form-progress"
-  - type: related
-    target: "@community/rule-auth-flow-reversibility"
-  - type: related
-    target: "@community/fact-user-control-freedom"

@@ -1,8 +1,0 @@
-atom: "@community/provocation-no-perfect-symmetry"
-relations:
-  - type: related
-    target: "@impeccable/principle-distinctiveness"
-  - type: related
-    target: "@community/anti-pattern-ai-generated-ui"
-  - type: related
-    target: "@community/principle-commit-bold-aesthetic"

@@ -1,0 +1,66 @@
+anti-pattern CustomCursorA11y {
+  id: "@community/anti-pattern-custom-cursor-a11y"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Custom cursor implementations that apply cursor: none globally or add trailing/lerp animation create five distinct accessibility failures: semantic cursor loss, click hot-zone misalignment, vestibular motion harm (prefers-reduced-motion), silent breakage on touch devices, and invisibility under Windows High Contrast Mode."
+
+  label: "Custom Cursor Without Accessibility Safeguards"
+
+  trap: "A custom cursor passes visual QA and device testing but fails silently for three user groups simultaneously: users with vestibular disorders (cursor-follow is continuous full-viewport motion triggered by every pointer move), low-vision users who depend on the OS high-contrast system cursor, and touch device users who may see a ghost cursor element stuck at coordinates 0,0."
+
+  risks: [
+    "cursor: none on :root — erases system cursor on browser scrollbars, native dialogs, and <select> elements that CSS cannot reach",
+    "Lerp-smoothed cursor trail — continuous spatial displacement; no escape; vestibular harm for every mouse movement",
+    "Custom cursor DOM element missing pointer-events: none — eats clicks, breaking interactive elements underneath",
+    "Missing aria-hidden='true' on cursor element — screen readers announce a decorative div",
+    "No hover: hover + pointer: fine guard — touch users see a stuck element on screen",
+    "Low-contrast custom cursor — invisible under macOS Increase Contrast / Windows High Contrast Mode",
+  ]
+
+  remediation: [
+    "Gate cursor activation on (hover: hover) AND (pointer: fine) AND (prefers-reduced-motion: no-preference) — all three must pass.",
+    "Never apply cursor: none globally; restrict to a specific .branded-zone class and restore cursor: auto on all interactive descendants.",
+    "Always set pointer-events: none and aria-hidden='true' on the cursor DOM element.",
+    "Restore system cursor semantics on <a>, <button>, <input>, <textarea>, <select> even inside the branded zone.",
+    "Use translate3d for positioning (compositor thread); never lerp unless prefers-reduced-motion is explicitly no-preference.",
+    "For SaaS, dashboards, utilities, or any WCAG AA project: skip custom cursors entirely.",
+  ]
+
+  safe-variant: |
+    const canUseCursor =
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+      window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
+    if (canUseCursor) {
+      const cursor = document.createElement('div');
+      cursor.setAttribute('aria-hidden', 'true');
+      cursor.style.pointerEvents = 'none';
+      document.body.appendChild(cursor);
+      document.addEventListener('pointermove', (e) => {
+        cursor.style.transform = `translate3d(${e.clientX}px,${e.clientY}px,0)`;
+      }, { passive: true });
+    }
+
+  severity: critical
+
+  detection-heuristics: [
+    "cursor: none appears on body, :root, or html in any stylesheet",
+    "A JS file initializes a cursor-tracking element without matchMedia guards",
+    "A DOM element with class *cursor* exists without aria-hidden='true'",
+    "pointer-events is not set to none on the custom cursor element",
+  ]
+
+  related: [
+    @community/constraint-reduced-motion,
+    @community/anti-pattern-hover-only-interaction,
+    @community/check-reduced-motion-required,
+  ]
+}

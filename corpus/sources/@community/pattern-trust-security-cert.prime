@@ -1,0 +1,72 @@
+pattern TrustSecurityCert {
+  id: "@community/pattern-trust-security-cert"
+  version: "1.0.0"
+
+  label: "Security Certifications Badge Row"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Compliance badges (SOC 2, ISO 27001, GDPR, PCI DSS) in a centered flex row at 0.65 opacity with 30% grayscale. Positioned at the bottom of the page where procurement teams look."
+
+  problem: "Enterprise buyers scan for compliance certifications as a procurement requirement before signing contracts — but these badges distract early visitors who are not yet at the decision stage."
+
+  solution: "A lightly-styled, centered badge row at the bottom of the page with a small all-caps 'Compliance & Security' label. Images at 32px height, 0.65 opacity, grayscale(30%) — present and credible but not visually dominant."
+
+  structure: """
+    .cert-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      justify-content: center;
+      opacity: 0.65;
+    }
+
+    .cert-badge-row img {
+      height: 32px;
+      width: auto;
+      filter: grayscale(30%);
+    }
+
+    .cert-label {
+      font-size: 0.6875rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: hsl(var(--muted-foreground));
+      margin-bottom: 0.75rem;
+    }
+
+    <!-- HTML -->
+    <div class="cert-section">
+      <p class="cert-label">Compliance & Security</p>
+      <div class="cert-badge-row" role="list" aria-label="Security certifications">
+        <img src="/certs/soc2.svg" alt="SOC 2 Type II certified" role="listitem" />
+        <img src="/certs/iso27001.svg" alt="ISO 27001 certified" role="listitem" />
+        <img src="/certs/gdpr.svg" alt="GDPR compliant" role="listitem" />
+        <img src="/certs/pci-dss.svg" alt="PCI DSS compliant" role="listitem" />
+      </div>
+    </div>
+  """
+
+  notes: [
+    "Badges are decorative (not links). If a user needs to verify, add a nearby text link — do not link the badge images as this breaks visual scannability.",
+    "Only display certifications your product genuinely holds. False compliance claims are a legal liability.",
+    "Bottom of page placement is correct — procurement teams navigate directly to footer-zone for compliance info.",
+  ]
+
+  related: [
+    @community/pattern-trust-badge-row,
+    @community/pattern-trust-logo-strip,
+    @community/pattern-trust-social-proof-numbers,
+    @community/pattern-trust-testimonial-micro,
+    @community/rule-trust-signal-placement,
+    @community/rule-trust-signal-critical,
+    @community/anti-pattern-fake-trust-signals,
+  ]
+}

@@ -1,14 +1,22 @@
 {
   "mcpServers": {
     "prime-wiki": {
-      "command": "node",
+      "command": "bun",
       "args": [
-        "--experimental-transform-types",
-        "--max-old-space-size=512",
-        "${CORPUS_ROOT}/app/mcp-server-frontend/index.ts"
+        "run",
+        "${ENGINE_ROOT}/packages/mcp-server-core/src/index.ts"
       ],
       "env": {
-        "PRIME_BACKEND": "v3",
+        "PRIME_DIR": "${CORPUS_ROOT}/compiled-v3-final"
+      }
+    },
+    "prime-design": {
+      "command": "bun",
+      "args": [
+        "run",
+        "${DOMAIN_ROOT}/mcp/src/server.ts"
+      ],
+      "env": {
         "PRIME_DIR": "${CORPUS_ROOT}/compiled-v3-final"
       }
     }

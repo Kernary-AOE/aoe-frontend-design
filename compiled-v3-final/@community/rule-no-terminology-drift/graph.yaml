@@ -1,8 +1,0 @@
-atom: "@community/rule-no-terminology-drift"
-relations:
-  - type: related
-    target: "@community/rule-consistent-product-terminology"
-  - type: related
-    target: "@community/rule-no-undocumented-platform-concept-rename"
-  - type: related
-    target: "@community/principle-nielsen-consistency"

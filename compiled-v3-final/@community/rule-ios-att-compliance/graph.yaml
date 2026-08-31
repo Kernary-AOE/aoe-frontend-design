@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-att-compliance"
-relations:
-  - type: related
-    target: "@community/rule-ios-permission-in-context"
-  - type: related
-    target: "@community/rule-ios-no-forced-account"
-  - type: related
-    target: "@community/rule-ios-sign-in-with-apple"

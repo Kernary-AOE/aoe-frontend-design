@@ -1,0 +1,57 @@
+principle TrainServeSkew {
+  id: "@community/principle-train-serve-skew"
+  version: "1.0.0"
+
+  domain: machine-learning
+
+  _meta: {
+    license: unknown
+    license-provenance: "unestablished"
+  }
+
+
+  description: "Features used at inference time must be computed by exactly the same code, against exactly the same data sources, as features used at training time. Any divergence — different code path, different SQL, different rounding, different null handling — produces train-serve skew, the #1 cause of silent ML production failures."
+
+  tags: [machine-learning, mlops, feature-engineering, production]
+
+  statement: "Train-serve skew is the gap between the feature distribution a model saw during training and the distribution it sees in production. The model's accuracy degrades silently — predictions remain plausible but systematically wrong. Skew is caused by (1) duplicated feature logic in offline notebooks vs online services, (2) different snapshots of source data, (3) different time-window semantics ('last 7 days' computed in UTC vs local time), or (4) different missing-value handling. Eliminate skew architecturally: a single feature definition compiled into both batch (training) and online (serving) execution."
+
+  attributed-to: "Google, 'Rules of Machine Learning: Best Practices for ML Engineering' (Martin Zinkevich, 2017) — Rule #29: 'The best way to make sure that you train like you serve is to save the set of features used at serving time.'"
+
+  source: [
+    "Zinkevich, 'Rules of Machine Learning' (2017) — Rules #29, #31, #32 specifically on train/serve skew",
+    "Polyzotis, Roy, Whang, Zinkevich, 'Data Lifecycle Challenges in Production Machine Learning' (SIGMOD 2018)",
+    "Uber Michelangelo paper (2017) — feature pipeline reuse between offline training and online serving",
+    "Tecton & Feast feature store documentation — point-in-time correct joins as the canonical defense against skew",
+  ]
+
+  applies-to: [
+    "Any ML model in production where features are derived from raw events or DB rows",
+    "Recommender systems with session-level features (most-skew-prone)",
+    "Fraud / risk scoring with rolling-window aggregates (`avg_txn_amount_30d`)",
+    "Personalization features computed from user history",
+    "Anything using time-series joins (point-in-time correctness is mandatory)",
+  ]
+
+  examples: [
+    "Feast / Tecton / Hopsworks feature store: feature defined once in Python, materialized to (a) a parquet table for offline training joins and (b) Redis/DynamoDB for online lookup — single definition, zero duplication.",
+    "Point-in-time-correct join: training pipeline must compute `user_avg_txn_30d AS OF event_timestamp` for every label row — never the latest value (which would leak future data).",
+    "Inference-time logging: log every feature value the model received, plus the prediction. Compare distributions vs training set in a daily skew-detection job — alert on KS-statistic or population-stability-index drift.",
+    "Featuretools / dbt-based feature defs that compile to both Spark (training) and Flink (serving) — same SQL semantics on both sides.",
+  ]
+
+  counter-examples: [
+    "Training notebook computes `features = df.groupby('user_id').agg(...)`. Serving code re-implements the same logic in Java with subtly different null handling. Production AUC is 0.05 lower than offline; silent for 3 months.",
+    "Training uses `WHERE event_time < label_time` (correct). Serving uses `WHERE event_time < now()` (correct at serve-time but never matches training during backtest). Skew shows up only in production.",
+    "Categorical encoding: training fits a label-encoder on the training set; serving sees a new category and silently emits 0 (the encoder default). Model treats unknown items as item-id-zero.",
+  ]
+
+  requires: @community/pattern-feature-store
+
+  related: [
+    @community/pattern-feature-store,
+    @community/anti-pattern-leaky-target,
+    @community/fact-evaluation-set-frozen,
+    @community/rule-model-card-required,
+  ]
+}

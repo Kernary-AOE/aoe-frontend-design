@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose a new persona, pattern, domain, MCP tool, or retrieval improvement.
+title: "[feature] "
+labels: ["enhancement", "needs-discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing this. For protocol-level changes (new atom kind, edge verb), open the issue against `prime-system` instead.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What can't you do today, or what is harder than it should be?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Sketch the user-facing change (new persona, new pattern, new domain plugin, etc.).
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What else did you think about? Why is this proposal preferred?
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use case
+      description: Who benefits from this change, and in what scenario?

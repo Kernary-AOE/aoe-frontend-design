@@ -1,8 +1,0 @@
-atom: "@community/example-tailwindui-app-shell"
-relations:
-  - type: related
-    target: "@community/pattern-sidebar-collapsible"
-  - type: related
-    target: "@community/example-shadcn-dashboard"
-  - type: related
-    target: "@community/example-catalyst-app"

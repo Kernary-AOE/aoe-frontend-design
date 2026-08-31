@@ -1,4 +1,0 @@
-atom: "@community/check-image-optimization"
-relations:
-  - type: related
-    target: "@community/rule-image-optimization"

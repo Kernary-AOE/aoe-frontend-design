@@ -1,8 +1,0 @@
-atom: "@community/example-vercel-analytics"
-relations:
-  - type: related
-    target: "@community/pattern-dashboard-grid"
-  - type: related
-    target: "@community/example-stripe-dashboard"
-  - type: related
-    target: "@community/category-typography-scale"

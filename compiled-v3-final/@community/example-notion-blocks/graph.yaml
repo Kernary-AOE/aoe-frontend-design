@@ -1,8 +1,0 @@
-atom: "@community/example-notion-blocks"
-relations:
-  - type: related
-    target: "@community/pattern-empty-state"
-  - type: related
-    target: "@community/example-notion-cmdk"
-  - type: related
-    target: "@community/fact-recognition-over-recall"

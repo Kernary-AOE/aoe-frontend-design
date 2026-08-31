@@ -1,0 +1,42 @@
+principle UiDifferentiationMemorability {
+  id: "@community/principle-ui-differentiation-memorability"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  statement: "Before building any UI, identify the one element a user will remember — and execute it with precision. Undifferentiated UIs have no recall value."
+
+  attributed-to: "Anthropic Frontend Design Skill"
+
+  rationale: "Gravitating toward safe, common choices produces UIs that blend into the statistical mean of AI-generated output. A single strong differentiator — a distinctive typography treatment, a non-standard compositional move, a reserved signature color, an unexpected interaction — anchors user memory and brand identity."
+
+  applies-to: [
+    "frontend-design",
+    "design thinking before implementation",
+    "any UI that will compete for user attention",
+  ]
+
+  examples: [
+    "Linear: the narrow, precise monospace-influenced data density is the unforgettable differentiator in a world of padded cards.",
+    "Notion: the slash command menu that turns the editor into a creation tool — no other app had it first.",
+    "Figma: the real-time multiplayer cursor stack — makes the collaboration visible in a way that felt impossible.",
+    "Bad: 'a clean, modern interface with rounded corners and a blue primary button' — describes 10,000 SaaS apps simultaneously.",
+  ]
+
+  related: [
+    @community/principle-unexpected-spatial-composition,
+    @community/rule-vary-aesthetic-per-generation,
+    @community/anti-pattern-ai-slop-aesthetics,
+    @community/anti-pattern-ai-generated-ui,
+    @community/counter-example-tailwind-blue-500,
+    @community/example-linear-issues-table,
+    @community/example-mercury-banking-dashboard,
+    @community/principle-commit-bold-aesthetic,
+  ]
+}

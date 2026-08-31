@@ -1,0 +1,55 @@
+method DesignMdExtraction {
+  id: "@community/method-design-md-extraction"
+  version: "1.0.0"
+
+  label: "Design.md Extraction Protocol"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "A protocol for extracting a structured design.md file from any existing UI, reference gallery screenshot, or design brief — producing a reusable design system document that can guide AI-agent frontend generation."
+
+  steps: [
+    {
+      name: "Identify the source artifact"
+      do: "The source is either: an existing live site (screenshot), a gallery reference (land-book.com, godly.website), or a design brief in text form."
+    }
+    {
+      name: "Extract the front matter"
+      do: "Write YAML front matter: project name, persona archetype, primary use case, target audience, aesthetic keywords (3-5 nouns)."
+      check: "@community/rule-design-md-front-matter — front matter is required or the document is invalid."
+    }
+    {
+      name: "Document color system"
+      do: "Extract: primary brand hue in OKLCH (h: angle in degrees), chroma range, background color (L% and chroma), foreground color. Note whether neutrals are tinted toward brand hue."
+    }
+    {
+      name: "Document typography"
+      do: "Extract: display font name, body font name, font size ratio (display:body), heading line-height, body line-height, letter spacing rule."
+    }
+    {
+      name: "Document spacing and radius"
+      do: "Extract: base spacing unit (4px or 8px), whether spacing is uniform or varied, border radius value per persona level (button / card / container), and whether radius is consistent or varied."
+    }
+    {
+      name: "Document component decisions"
+      do: "List the 3-5 most distinctive component-level decisions: what makes this button unique, what makes this card unique, what is the navigation pattern."
+    }
+    {
+      name: "Document motion"
+      do: "Note: presence of scroll-triggered animation (yes/no), easing approach (bounce / exponential deceleration / none), and any distinctive motion pattern."
+    }
+  ]
+
+  output: "A .md file with YAML front matter and 6 sections covering color, type, spacing, components, motion, and at least one distinctive design decision."
+
+  related: [
+    @community/rule-design-md-front-matter,
+    @community/method-gallery-research,
+    @community/principle-design-philosophy-before-canvas,
+  ]
+}

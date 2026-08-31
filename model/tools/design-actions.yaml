@@ -1,0 +1,304 @@
+# The seven domain actions `prime_design_{plan,resolve,validate,related,mandate,
+# checklist,scout}` are projected from.
+#
+# ── What arrays and enums changed here (L14-D) ──────────────────────────────
+#
+# `model-schema` now declares two things it did not before: `typeRef` is a grammar
+# (`T`, `T[]`, `T[][]`) and a field may carry an `enum` of values on a `string`
+# element (`model-schema/src/index.ts` parseTypeRef / validateLinks). So:
+#
+#   - every field that holds a list says so. `unknown[]` is NOT the same statement
+#     as `unknown`: it emits `{"type":"array","items":{}}`, so an object passed
+#     where a list is declared is now rejected by the schema instead of by a
+#     handler — where `unknown` emitted `{}` and accepted every shape.
+#   - `severity` and `sources` are real arrays. They were comma-separated strings
+#     only because no array form existed; the `commaList` reader in `mcp/src/index.ts`
+#     is gone with them.
+#
+# Still `unknown`: the OBJECT-valued fields (`typography`, `color`, `motion`,
+# `layout`, ValidationReport's `l1`/`l2`/`l3`, and the element type of every
+# `unknown[]`). `model-schema` has no inline object or nested shape form, and
+# hand-writing a nested JSON Schema here would be a second, unvalidated shape
+# authority next to the TypeScript interfaces in `adapters/*/src/index.ts`. That is
+# the remaining protocol gap and it is reported, not worked around.
+#
+# ── Where an enum is declared, and where declaring one would be a lie ───────
+#
+# An enum is a promise the runtime keeps. Measured in
+# `adapters/intent-classifier/src/index.ts` `repairIntent` (the LLM path, which is
+# the only path that can produce a value the heuristic never would):
+#
+#   motion_priority  MOTION_PRIORITIES.includes(...) ? ... : fallback   -> closed, enum declared
+#   density          DENSITIES.includes(...) ? ... : fallback           -> closed, enum declared
+#   task_type        typeof parsed.task_type === "string" ? ... : ...   -> OPEN, no enum
+#   sub_type/domain  same string-only guard                             -> OPEN, no enum
+#   required_axes    isStringArray(...) only                            -> OPEN, string[] without enum
+#   ambiguity_flags  isStringArray(...) only                            -> OPEN, string[] without enum
+#
+# `severity` carries no enum on purpose. The corpus's severity vocabulary is
+# unnormalised today (`warn` beside `warning`, `error` beside `critical`/`block`;
+# 231 of 899 units declare one) and normalising it plus declaring its order is
+# L14-E's lane, in `model/retrieval/`. Pinning a value set here first would make
+# this file a second severity authority and guarantee the two disagree.
+# `sources` carries no enum for a different reason: the 18 ids are catalogue DATA
+# (`adapters/scout-catalog/sources.yaml`), so a model-side enum would go stale
+# whenever a catalogue is added. `kind` likewise — unit kinds come from the corpus.
+#
+# ── Why seven actions and not one `prime_design_query(scope, …)` ────────────
+#
+# An enum makes `scope` DECLARABLE, and it is still the wrong shape. Measured:
+#
+#   1. capabilities differ per action. `related`/`mandate`/`checklist`/`resolve`
+#      need `corpus:read`; `validate` and `scout` need `filesystem:read`; `plan`
+#      needs none. `ActionDefinition.capabilities` is per action, so one merged
+#      action must declare the UNION, and every call — including `plan`, which
+#      touches nothing — would then be authorised for the filesystem. That is a
+#      real loss of least privilege for a cosmetic gain.
+#   2. required-ness is per scope and cannot be expressed. `brief` is required for
+#      plan/resolve/validate, `id` for related, `task` for checklist, `query` for
+#      scout. One input object has ONE `required` list, so every key would have to
+#      become optional and the schema would stop rejecting `query(scope='related')`
+#      with no `id`. The handler would re-validate by hand — the same "second,
+#      undeclared shape authority" this file exists to avoid.
+#   3. the output type would have to be a union of seven types, and `model-schema`
+#      has no union form. The merged action's `output` would be `unknown`, so
+#      `outputSchema` collapses from seven `$ref`s to `{}` and the generated
+#      TypeScript from seven interfaces to `unknown`.
+#   4. `.mcp.json` consumers break for nothing: both servers there project their
+#      tool list from a model, so seven names disappear at once. 34 bundle units
+#      carry a `scout query: …` line meant to be passed to `prime_design_scout`
+#      verbatim.
+#
+# So: NOT merged. The enum capability is used where it strengthens a schema, and
+# the tool surface is unchanged.
+#
+# ── Input parity with the frozen v1 tools (W9-A §1) ─────────────────────────
+#
+#   prime_intent(brief)              -> prime_design_plan(brief)
+#   prime_resolve(brief)             -> prime_design_resolve(brief)
+#   prime_validate(html_path, brief) -> prime_design_validate(html_path, brief)
+#
+# Same key names, same required-ness. An MCP client written against the v1 server
+# can call the projected tools without changing its arguments.
+kind: definitions
+version: 1.0.0
+definitions:
+  # ── Types ──────────────────────────────────────────────────────────────────
+
+  - kind: type
+    name: DesignIntent
+    version: 1.0.0
+    # Closed: the adapter's `DesignIntent` has exactly these nine members and the
+    # heuristic classifier fills every one of them on every path, so an
+    # undeclared key can only be a bug.
+    additionalFields: reject
+    fields:
+      - { name: task_type, typeRef: string, required: true, description: "Usually one of marketing-landing|content|product-ui|interaction|dev-tool (TASK_RULES). No enum: repairIntent accepts any string an LLM returns." }
+      - { name: sub_type, typeRef: string, required: true, description: "Taxonomy sub-type, e.g. waitlist. Open for the same reason as task_type." }
+      - { name: register_candidates, typeRef: "unknown[]", required: true, description: "Array of {school, weight, rationale?}. The element is an object, which the protocol still cannot declare." }
+      - { name: vibe, typeRef: "string[]", required: true, description: "Adjective list. isStringArray-guarded, so string elements are a promise; the values themselves are open." }
+      - { name: motion_priority, typeRef: string, required: true, enum: [low, med, high], description: "MOTION_PRIORITIES. repairIntent falls back to the heuristic value unless the LLM's value is one of these, so the enum is enforced." }
+      - { name: density, typeRef: string, required: true, enum: [tight, comfy, loose], description: "DENSITIES, enforced the same way in repairIntent." }
+      - { name: domain, typeRef: string, required: true, description: "Product domain, e.g. fintech. Open vocabulary." }
+      - { name: required_axes, typeRef: "string[]", required: true, description: "Subset of register|pattern|typography|color|rules|motion. No enum: repairIntent checks only that it is a non-empty string array." }
+      - { name: ambiguity_flags, typeRef: "string[]", required: true, description: "Fields the classifier is unsure about, e.g. brief-too-short. isStringArray-guarded only." }
+
+  - kind: type
+    name: ResolvedDesign
+    version: 1.0.0
+    # Closed for the same reason: `resolveDesign` builds the object literally and
+    # returns no other key.
+    additionalFields: reject
+    fields:
+      - { name: intent, typeRef: DesignIntent, required: true, description: "The intent this spec was resolved for." }
+      - { name: typography, typeRef: unknown, required: true, description: "Typed font values merged from implies.font.* and composition.typography-required. Object, hence unknown." }
+      - { name: color, typeRef: unknown, required: true, description: "Typed colour values merged from implies.color.* and composition.color-required. Object, hence unknown." }
+      - { name: density, typeRef: unknown, required: true, description: "radius/gap/max_width/row_height parsed from implies.density prose. Object, hence unknown." }
+      - { name: motion, typeRef: unknown, required: true, description: "ease/duration_ms/stagger_ms parsed from implies.motion prose. Object, hence unknown." }
+      - { name: layout, typeRef: unknown, required: true, description: "grid/max_width parsed from implies.layout prose. Object, hence unknown." }
+      - { name: must_include_patterns, typeRef: "string[]", required: true, description: "Pattern unit ids from the persona contract. `readonly string[]` in design-resolver/src/index.ts:105." }
+      - { name: must_include_templates, typeRef: "string[]", required: true, description: "Template unit ids from the persona contract (index.ts:106)." }
+      - { name: must_avoid_atoms, typeRef: "string[]", required: true, description: "Unit ids the persona contract forbids (index.ts:107)." }
+      - { name: recommended_motion, typeRef: "string[]", required: true, description: "Unit ids the motion axis returned (index.ts:108)." }
+      - { name: rules_to_honor, typeRef: "string[]", required: true, description: "Quality checks from the task taxonomy. Always empty: the compiled snapshot carries no taxonomy YAML (index.ts:471)." }
+      - { name: source_persona, typeRef: string, required: true, description: "Unit id of the persona the register axis ranked first." }
+      - { name: source_atoms, typeRef: "string[]", required: true, description: "Every ranked unit id, for attribution (index.ts:473)." }
+
+  - kind: type
+    name: ValidationReport
+    version: 1.0.0
+    additionalFields: reject
+    fields:
+      - { name: pass, typeRef: boolean, required: true, description: "l1 && l2 && l3. packages/validator/src/index.ts:20." }
+      - { name: l1, typeRef: unknown, required: true, description: "{pass, issues} structure and a11y. Object, hence unknown." }
+      - { name: l2, typeRef: unknown, required: true, description: "{pass, alignment_score, issues, skipped?} aesthetic alignment. Object, hence unknown." }
+      - { name: l3, typeRef: unknown, required: true, description: "{pass, honored, violated, unverifiable?} composition contract. Object, hence unknown." }
+      - { name: feedback, typeRef: string, required: true, description: "\"OK\" when passing, otherwise the retry prompt. feedback-builder.ts:3-19." }
+
+  # ── Types for the four restored legacy scopes (L13-D) ──────────────────────
+  #
+  # `diagnostics` is a declared member of all four rather than an out-of-band log.
+  # The legacy scopes reported a miss by returning prose into the content channel
+  # ("Template \"x\" not found.\nAvailable: …", `No checklist for "x"`), which a
+  # client cannot distinguish from a result. A `DiagnosticIR[]` can be.
+
+  - kind: type
+    name: RelatedUnits
+    version: 1.0.0
+    additionalFields: reject
+    fields:
+      - { name: id, typeRef: string, required: true, description: "The subject unit the walk started from. Never itself in `units`." }
+      - { name: depth, typeRef: integer, required: true, description: "Hops actually walked, after clamping to 1..3." }
+      - { name: count, typeRef: integer, required: true, description: "Units matched within `depth`, BEFORE `limit` truncation." }
+      - { name: units, typeRef: "unknown[]", required: true, description: "Array of {id, kind, depth, relation, from, description, projections}. Object element, hence unknown[]." }
+      - { name: diagnostics, typeRef: "unknown[]", required: true, description: "DiagnosticIR[]: unknown subject, clamped depth, dangling targets, truncation." }
+
+  - kind: type
+    name: MandateSet
+    version: 1.0.0
+    additionalFields: reject
+    fields:
+      - { name: severities, typeRef: "string[]", required: true, description: "The severity words this call selected on. No enum — the vocabulary authority is L14-E's declaration in model/retrieval/." }
+      - { name: count, typeRef: integer, required: true, description: "Mandates matched before `limit` truncation." }
+      - { name: mandates, typeRef: "unknown[]", required: true, description: "Array of {id, kind, domain, severity, statement, failureMessage?, enforcement?, exceptions}. Object element, hence unknown[]." }
+      - { name: diagnostics, typeRef: "unknown[]", required: true, description: "DiagnosticIR[]." }
+
+  - kind: type
+    name: Checklist
+    version: 1.0.0
+    additionalFields: reject
+    fields:
+      - { name: task, typeRef: string, required: true, description: "The task string as given, echoed so a client can key a cache on it." }
+      - { name: count, typeRef: integer, required: true, description: "Check units available before `limit` truncation." }
+      - { name: items, typeRef: "unknown[]", required: true, description: "Array of StandardRecord + {nonNegotiable, taskRelevance, selectedBecause}. Object element, hence unknown[]." }
+      - { name: diagnostics, typeRef: "unknown[]", required: true, description: "DiagnosticIR[]." }
+
+  - kind: type
+    name: ScoutReferences
+    version: 1.0.0
+    additionalFields: reject
+    fields:
+      - { name: query, typeRef: string, required: true, description: "The query as given." }
+      - { name: count, typeRef: integer, required: true, description: "References matched before `limit` truncation." }
+      - { name: items, typeRef: "unknown[]", required: true, description: "Array of ExternalCandidate {reference, score, features, selectedBecause}. Object element, hence unknown[]." }
+      - { name: sources, typeRef: "unknown[]", required: true, description: "Declared source ids with their licences, so a caller can honour them. Object element, hence unknown[]." }
+      - { name: diagnostics, typeRef: "unknown[]", required: true, description: "DiagnosticIR[]: absent payload root, digest mismatch, unknown source id." }
+
+  # ── Actions ────────────────────────────────────────────────────────────────
+  #
+  # All three are `sideEffects: read` / `idempotency: idempotent` /
+  # `approval: never`, which `emitMcpTools` turns into `readOnlyHint: true`,
+  # `destructiveHint: false`, `idempotentHint: true` (`emit-mcp.ts` annotations).
+  # That is measured, not assumed: none of the three writes anything, and calling
+  # any of them twice with the same input yields the same output, given the same
+  # corpus snapshot and no LLM provider attached.
+
+  - kind: action
+    name: plan
+    version: 1.0.0
+    output: DesignIntent
+    sideEffects: read
+    idempotency: idempotent
+    approval: never
+    # No capability: with no provider attached the classifier is pure computation
+    # over the brief string. An LLM provider is a plugin and declares
+    # `network:https:…` in its own manifest, which is where plugin-host reads it.
+    capabilities: []
+    provider: prime-design/intent-classifier
+    inputs:
+      - { name: brief, typeRef: string, required: true, description: "Free-form brief in any language. Same key as the frozen prime_intent(brief)." }
+
+  - kind: action
+    name: resolve
+    version: 1.0.0
+    output: ResolvedDesign
+    sideEffects: read
+    idempotency: idempotent
+    approval: never
+    # `ns:verb` per plugin-host's CAPABILITY_SHAPE (capabilities.ts:42).
+    capabilities: [corpus:read]
+    provider: prime-design/design-resolver
+    inputs:
+      - { name: brief, typeRef: string, required: true, description: "Free-form brief. Same key as the frozen prime_resolve(brief)." }
+
+  - kind: action
+    name: validate
+    version: 1.0.0
+    output: ValidationReport
+    sideEffects: read
+    idempotency: idempotent
+    approval: never
+    capabilities: [filesystem:read]
+    provider: prime-design/html-validator
+    inputs:
+      - { name: html_path, typeRef: string, required: true, description: "Absolute path to the HTML to validate. Same key as the frozen prime_validate(html_path, brief)." }
+      - { name: brief, typeRef: string, required: true, description: "Original brief, re-classified for the aesthetic check. Same key as the frozen tool." }
+
+  # ── The four restored legacy scopes (L13-D) ────────────────────────────────
+  #
+  # Input keys are kept verbatim from legacy `prime_query` (`id`, `depth`, `task`,
+  # `query`, `limit`) so a client that was calling the old scopes changes the tool
+  # name and nothing else — except `severity` and `sources`, which are now arrays
+  # rather than comma-separated strings (see the header). `variables` and `section`
+  # are NOT here — see `mcp/DISPOSITION.md` for the measurement that retired
+  # `template` and `gallery`.
+
+  - kind: action
+    name: related
+    version: 1.0.0
+    output: RelatedUnits
+    sideEffects: read
+    idempotency: idempotent
+    approval: never
+    capabilities: [corpus:read]
+    provider: prime-design/corpus-graph
+    inputs:
+      - { name: id, typeRef: string, required: true, description: "Unit id to walk out from. Same key as legacy prime_query(scope='related', id=…)." }
+      - { name: depth, typeRef: integer, required: false, description: "Hops to walk, 1..3, default 1. Restores the parameter legacy declared (mcp-server/index.ts:793) and the production `related` scope dropped. Out-of-range values are clamped with a diagnostic, not rejected." }
+      - { name: limit, typeRef: integer, required: false, description: "Max units returned, default 10, ceiling 50. `count` reports the untruncated total." }
+      - { name: kind, typeRef: string, required: false, description: "Keep only units of this kind. Filters the result, not the frontier, so a depth-3 walk still reaches through non-matching units. No enum: the kind vocabulary is the corpus's, not the model's." }
+
+  - kind: action
+    name: mandate
+    version: 1.0.0
+    output: MandateSet
+    sideEffects: read
+    idempotency: idempotent
+    approval: never
+    capabilities: [corpus:read]
+    provider: prime-design/design-standards
+    inputs:
+      - { name: severity, typeRef: "string[]", required: false, description: "Severity words to select on. Default ['block','critical'] — the corpus's own two words for non-negotiable (27 + 32 units). A real array since L14-D; it was a comma-separated string only because no array typeRef existed." }
+      - { name: limit, typeRef: integer, required: false, description: "Max mandates returned, default 20, ceiling 50." }
+
+  - kind: action
+    name: checklist
+    version: 1.0.0
+    output: Checklist
+    sideEffects: read
+    idempotency: idempotent
+    approval: never
+    capabilities: [corpus:read]
+    provider: prime-design/design-standards
+    inputs:
+      - { name: task, typeRef: string, required: true, description: "Free-form task description. Legacy took an 8-value enum indexing a literal table (compiler.ts:873); this ranks the corpus's own `check` units against the text instead, so an unknown task degrades to the non-negotiables rather than to an error string." }
+      - { name: limit, typeRef: integer, required: false, description: "Max checks returned, default 20, ceiling 50." }
+
+  - kind: action
+    name: scout
+    version: 1.0.0
+    output: ScoutReferences
+    sideEffects: read
+    idempotency: idempotent
+    approval: never
+    # Not `corpus:read`: the 18 payloads are third-party reference catalogues that
+    # are deliberately NOT corpus units (adapters/scout-catalog/src/types.ts states
+    # why at length), and they live under a payload root the host configures
+    # separately from PRIME_DIR.
+    capabilities: [filesystem:read]
+    provider: prime-design/scout-catalog
+    inputs:
+      - { name: query, typeRef: string, required: true, description: "Keywords. Same key as legacy prime_query(scope='scout', query=…). 34 bundle units carry a `scout query: …` line under `## Screenshot Hint` that is meant to be passed here verbatim; before this action existed they pointed at no tool." }
+      - { name: sources, typeRef: "string[]", required: false, description: "Source ids to restrict to. A real array since L14-D. No enum: the 18 ids are catalogue data in adapters/scout-catalog/sources.yaml, so a model-side value set would go stale when a catalogue is added." }
+      - { name: require_thumbnail, typeRef: boolean, required: false, description: "Keep only references carrying a thumbnail. This is what the retired `gallery` scope was for — a visual anchor." }
+      - { name: limit, typeRef: integer, required: false, description: "Max references returned. Default and ceiling come from sources.yaml `retrieval`." }

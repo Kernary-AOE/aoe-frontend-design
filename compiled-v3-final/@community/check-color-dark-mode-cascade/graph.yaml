@@ -1,6 +1,0 @@
-atom: "@community/check-color-dark-mode-cascade"
-relations:
-  - type: related
-    target: "@community/rule-color-dark-mode-cascade"
-  - type: related
-    target: "@impeccable/template-oklch-dark-mode-cascade"

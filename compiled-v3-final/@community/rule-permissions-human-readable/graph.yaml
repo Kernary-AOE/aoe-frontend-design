@@ -1,8 +1,0 @@
-atom: "@community/rule-permissions-human-readable"
-relations:
-  - type: related
-    target: "@community/rule-plain-language-over-jargon"
-  - type: related
-    target: "@community/rule-active-voice-in-ui-copy"
-  - type: related
-    target: "@community/fact-recognition-over-recall"

@@ -1,0 +1,36 @@
+rule IosAttCompliance {
+  id: "@community/rule-ios-att-compliance"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  applies-to: "any iOS app that uses cross-app or cross-website tracking, advertising identifiers, or fingerprinting"
+
+  statement: "Show the ATT (App Tracking Transparency) prompt via ATTrackingManager.requestTrackingAuthorization before collecting any cross-app tracking data, and provide full app functionality to users who deny."
+
+  rationale: "ATT is required by iOS 14.5+ and App Store Review Guidelines. Collecting tracking data without the ATT prompt, or degrading app experience for opt-out users, results in App Store rejection. Users who deny tracking must receive the same core experience as those who allow it."
+
+  examples: [
+    "Show ATT prompt after onboarding, not at first launch, so user has context about the app's value.",
+    "Deny ATT → all ad-free and analytics-free app paths remain fully functional.",
+    "Never gate features, show extra ads, or degrade performance for users who deny tracking.",
+  ]
+
+  notes: [
+    "Verify by denying ATT; core features and app quality must be unchanged.",
+    "NSUserTrackingUsageDescription must be set in Info.plist or the system dialog will not appear.",
+    "Apple HIG source: Rule 9.5 — App Tracking Transparency.",
+  ]
+
+  related: [
+    @community/rule-ios-permission-in-context,
+    @community/rule-ios-no-forced-account,
+    @community/rule-ios-sign-in-with-apple,
+  ]
+}

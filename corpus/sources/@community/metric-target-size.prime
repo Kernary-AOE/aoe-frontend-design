@@ -1,0 +1,50 @@
+metric TargetSize {
+  id: "@community/metric-target-size"
+  version: "1.0.0"
+
+  name: "touch-target-size"
+  unit: "CSS pixels (width × height)"
+  domain: accessibility
+
+  _meta: {
+    license: "MPL-2.0 AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "The minimum interactive hit area for touch and pointer targets to be usable without accidental activation or difficulty. WCAG 2.2 SC 2.5.8 sets a 24×24 CSS px minimum with spacing rules; Apple and Google recommend higher targets for mobile."
+
+  thresholds: [
+    {
+      level: "WCAG 2.2 AA (SC 2.5.8)",
+      min-width: "24px",
+      min-height: "24px",
+      note: "OR the component offset from adjacent targets is enough that the 24px area (possibly including spacing) isn't reduced."
+    }
+    {
+      level: "Apple HIG recommended",
+      min-width: "44px",
+      min-height: "44px",
+      note: "Minimum for comfortable single-finger tap on iOS; also Google Material 3 recommendation."
+    }
+    {
+      level: "Google Material 3 minimum",
+      min-width: "48px",
+      min-height: "48px",
+      note: "Preferred size for Android interactive elements."
+    }
+  ]
+
+  formula: "target-width >= threshold AND target-height >= threshold"
+
+  notes: [
+    "CSS `padding` can increase hit area without changing visual size — commonly used for icon buttons.",
+    "`min-width: 44px; min-height: 44px` can be applied to icon-only buttons while keeping icon size at 24px.",
+    "Inline links in body text are exempt from SC 2.5.8 when their size is constrained by the surrounding text.",
+  ]
+
+  related: [
+    @w3c/source-wcag-22,
+    @community/metric-target-size,
+  ]
+}

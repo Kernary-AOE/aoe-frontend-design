@@ -1,8 +1,0 @@
-atom: "@community/rule-web-safe-fallback-stack"
-relations:
-  - type: related
-    target: "@community/rule-font-loading-fout-foit"
-  - type: related
-    target: "@community/rule-font-self-host"
-  - type: related
-    target: "@community/rule-font-blacklist-applied"

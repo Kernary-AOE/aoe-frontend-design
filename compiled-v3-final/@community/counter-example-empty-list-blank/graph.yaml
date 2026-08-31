@@ -1,8 +1,0 @@
-atom: "@community/counter-example-empty-list-blank"
-relations:
-  - type: related
-    target: "@community/pattern-empty-state"
-  - type: related
-    target: "@impeccable/template-empty-state"
-  - type: related
-    target: "@community/fact-visibility-system-status"

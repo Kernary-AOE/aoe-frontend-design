@@ -1,6 +1,0 @@
-atom: "@community/rule-canvas-elements-within-boundaries"
-relations:
-  - type: related
-    target: "@community/rule-canvas-visual-text-ratio"
-  - type: related
-    target: "@community/principle-design-philosophy-before-canvas"

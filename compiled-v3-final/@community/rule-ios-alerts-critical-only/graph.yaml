@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-alerts-critical-only"
-relations:
-  - type: related
-    target: "@community/anti-pattern-ios-fullscreen-spinner"
-  - type: related
-    target: "@community/anti-pattern-ios-non-dismissable-modal"
-  - type: related
-    target: "@community/rule-ios-immediate-action-acknowledgment"

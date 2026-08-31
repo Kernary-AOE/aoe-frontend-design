@@ -1,8 +1,0 @@
-atom: "@impeccable/counter-example-inter-purple-dark"
-relations:
-  - type: related
-    target: "@impeccable/constraint-font-blacklist"
-  - type: related
-    target: "@community/term-oklch"
-  - type: related
-    target: "@community/counter-example-outline-none"

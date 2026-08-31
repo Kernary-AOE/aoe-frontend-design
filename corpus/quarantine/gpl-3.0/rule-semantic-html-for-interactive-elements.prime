@@ -1,0 +1,68 @@
+rule SemanticHtmlForInteractiveElements {
+  id: "@community/rule-semantic-html-for-interactive-elements"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Use the native HTML element that matches its purpose — <button> for actions, <a href> for navigation, <input> for data entry — never a div or span with an onClick and custom ARIA."
+
+  statement: """
+    Match element to purpose:
+    - Actions (submit, open modal, toggle, delete): use <button type="button"> or <button type="submit">
+    - Navigation (changes URL, follows a link): use <a href="...">
+    - Page structure (headings, sections, lists): use <h1>–<h6>, <section>, <ul>/<ol>
+    - Form inputs: use <input>, <select>, <textarea> with associated <label>
+    - Expandable content: use <details>/<summary> or <button aria-expanded> pattern
+    - Modal: use <dialog> or aria-modal pattern with proper focus trap
+
+    Never substitute: <div onClick>, <span onClick>, <div role="button"> when a native element exists.
+    ARIA is a supplement to semantics, not a replacement for them.
+  """
+
+  rationale: "Native HTML elements carry built-in keyboard behavior, ARIA roles, and browser affordances that custom ARIA cannot fully replicate. A <button> is keyboard-focusable, activates on Enter/Space, announces as 'button' to AT, and participates in forms — a <div role='button'> requires explicit tabIndex, keyboard event handlers, and role declarations to achieve the same result, and will still miss edge cases. Using semantic HTML is the lowest-effort, highest-reliability path to accessibility."
+
+  applies-to: [
+    "Any interactive component that triggers an action",
+    "Any navigation element",
+    "Any form control",
+    "Any expandable/collapsible UI",
+    "Any modal or dialog",
+  ]
+
+  examples: [
+    """
+      {/* CORRECT */}
+      <button type="button" onClick={openModal}>Open settings</button>
+      <a href="/dashboard">Go to dashboard</a>
+      <label htmlFor="email">Email <input id="email" type="email" required /></label>
+    """,
+  ]
+
+  counter-example: """
+    {/* WRONG — div acting as button */}
+    <div className="cursor-pointer" onClick={openModal}>Open settings</div>
+    {/* Not keyboard focusable; not announced as button; Enter/Space won't fire */}
+  """
+
+  notes: [
+    "Source: github.com/spencergoldade/cursor-designer, .cursor/rules/frontend/accessibility-frontend.mdc (GPL-3.0).",
+    "First Rule of ARIA (W3C): If you can use a native HTML element with the semantics you need, do that — don't use ARIA.",
+    "When native elements cannot be used (e.g., a custom listbox), add ARIA role + keyboard event handlers + focus management — all three are required.",
+  ]
+
+  related: [
+    @community/rule-aria-native-first,
+    @community/fact-semantic-html-element-taxonomy,
+    @community/rule-keyboard-accessible,
+    @community/counter-example-div-button-no-tabindex,
+    @community/counter-example-div-onclick-dropdown,
+    @community/example-radix-dropdown,
+    @community/rule-no-pointer-only-components,
+  ]
+}

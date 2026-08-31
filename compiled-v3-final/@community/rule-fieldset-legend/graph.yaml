@@ -1,8 +1,0 @@
-atom: "@community/rule-fieldset-legend"
-relations:
-  - type: related
-    target: "@community/rule-form-label-associated"
-  - type: related
-    target: "@community/rule-autocomplete-attributes"
-  - type: related
-    target: "@community/rule-aria-label-required"

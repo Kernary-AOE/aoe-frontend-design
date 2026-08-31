@@ -1,0 +1,93 @@
+category FormInputStates {
+  id: "@community/category-form-input-states"
+  version: "1.0.0"
+
+  label: "Form / Input States"
+  parent: "@community/category-forms"
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "The visual states an input control passes through during user interaction. A complete form-input system specifies the visual treatment for each state and the transitions between them. Incomplete state coverage (e.g. missing focus state, no disabled affordance) is a recurring source of confusion and accessibility regressions."
+
+  members: [
+    "default",       // resting / unfocused
+    "hover",         // pointer hovering (mouse only)
+    "focus",         // keyboard focus or active text entry
+    "focus-visible", // focus from keyboard (NOT mouse click)
+    "active",        // mouse-down or key-down on the element
+    "filled",        // has user-supplied value (distinct from default empty)
+    "disabled",      // not interactive; aria-disabled or disabled attribute
+    "readonly",      // displayable but not editable; differs from disabled
+    "error",         // failed validation; aria-invalid='true'
+    "warning",       // soft validation concern (e.g. weak password)
+    "success",       // confirmed valid (e.g. unique username, valid CC)
+    "loading",       // async validation or autocomplete in progress
+  ]
+
+  state-rules: {
+    "default": {
+      visual: "neutral border (1px), neutral background, placeholder text optional"
+      a11y: "label MUST be associated via for/id or wrapping <label>"
+    }
+    "hover": {
+      visual: "border darkens by ~10% lightness; subtle bg tint optional"
+      caveat: "Touch devices have no hover — never rely on it for affordance discovery"
+    }
+    "focus-visible": {
+      visual: "2px outline at 2px offset (see @community/value-focus-outline-width); brand-colored ring; box-shadow alternative for rounded corners"
+      a11y: "REQUIRED. WCAG 2.4.7 Focus Visible (AA) — see @community/term-focus-ring"
+    }
+    "filled": {
+      visual: "label may shift to a smaller floating-label position; chevron/clear-button may appear"
+      caveat: "Floating labels MUST remain readable against the input background; do not hide the label entirely"
+    }
+    "disabled": {
+      visual: "reduced opacity (~50–60%), neutral grayscale, no border emphasis"
+      a11y: "Use disabled attribute on form controls (removes from tab order). For aria-disabled='true' (still in tab order), provide context."
+      contrast: "Disabled text contrast may go below 4.5:1 (WCAG SC 1.4.3 exception for disabled controls), but ≥3:1 is recommended for legibility"
+    }
+    "readonly": {
+      visual: "subtly de-emphasized but DIFFERENT from disabled (e.g. no border, normal text color)"
+      a11y: "readonly attribute keeps element in tab order and copyable; disabled does not"
+    }
+    "error": {
+      visual: "red/destructive-colored border; error icon; inline error text directly below input"
+      a11y: "aria-invalid='true' + aria-describedby pointing to error message id (see @community/step-validate-required-fields)"
+      caveat: "Color-only error indication violates SC 1.4.1; pair with icon and text"
+    }
+    "warning": {
+      visual: "amber-colored border or icon; soft helper text"
+      use-case: "weak password, deprecated value, recommended-not-required field issue"
+    }
+    "success": {
+      visual: "green checkmark icon (post-validation); subtle border tint"
+      caveat: "Avoid permanent green borders — too visually noisy; use for transient confirmation"
+    }
+    "loading": {
+      visual: "spinner adjacent to or inside the input; disabled while loading"
+      a11y: "aria-busy='true'; aria-live region announces status"
+    }
+  }
+
+  notes: [
+    "Every input component must have ALL of: default, focus-visible, filled, disabled, error states defined. The remaining states are situational.",
+    "Focus and hover are easy to forget on custom-built (non-native) inputs (e.g. div-based combobox). Test keyboard-only.",
+    "State transitions should be subtle — 100–200ms ease for color/border changes. Avoid layout shifts on state change.",
+    "Storybook is the canonical place to document these states — one story per state per component.",
+    "Error and success states should not flicker rapidly during onChange validation — debounce the validation (see @community/step-debounce-search-input pattern).",
+  ]
+
+  related: [
+    @community/category-button-hierarchy,
+    @community/taxonomy-form-input-types,
+    @community/term-focus-ring,
+    @community/value-focus-outline-width,
+    @community/step-validate-required-fields,
+  ]
+}

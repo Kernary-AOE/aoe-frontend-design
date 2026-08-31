@@ -1,8 +1,0 @@
-atom: "@community/rule-custom-component-aria-role"
-relations:
-  - type: related
-    target: "@community/rule-aria-label-required"
-  - type: related
-    target: "@community/rule-keyboard-accessible"
-  - type: related
-    target: "@community/constraint-focus-trap-modal"

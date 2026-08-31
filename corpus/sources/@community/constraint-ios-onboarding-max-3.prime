@@ -1,0 +1,33 @@
+constraint IosOnboardingMax3 {
+  id: "@community/constraint-ios-onboarding-max-3"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  target: ["iOS app onboarding / first-launch flows"]
+
+  statement: "Onboarding flows must be at most 3 pages, must always be skippable, and must defer sign-in / account creation until after the user has experienced core app value."
+
+  threshold: "Maximum 3 onboarding screens before first app use. Pass: ≤ 3. Warn: 4. Block: ≥ 5."
+
+  rationale: "Long onboarding flows reduce day-1 retention: users want to use the app, not be lectured about it. Deferring sign-in removes the largest abandonment barrier — users who cannot immediately use the app without creating an account frequently uninstall. Apple HIG source: Rule 8.1 — Onboarding, Max 3 Pages, Skippable."
+
+  notes: [
+    "Each onboarding screen should teach one concept with a concrete visual, not show walls of text.",
+    "Always provide a 'Skip' or 'Get Started' button on the first page — never require completing all pages.",
+    "Defer account creation: let users explore the app as a guest, then prompt to sign in when they take an action that requires it (saving, syncing, purchasing).",
+    "Apple HIG source: Rule 8.1 — Onboarding, Max 3 Pages, Skippable.",
+  ]
+
+  related: [
+    @community/rule-ios-permission-in-context,
+    @community/rule-mobile-first,
+    @community/constraint-ios-touch-target-44pt,
+  ]
+}

@@ -1,8 +1,0 @@
-atom: "@community/fact-type-scale-modular"
-relations:
-  - type: related
-    target: "@community/fact-spacing-token-progression"
-  - type: related
-    target: "@community/category-typography-scale"
-  - type: related
-    target: "@community/transform-scale-clamp"

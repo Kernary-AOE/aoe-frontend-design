@@ -1,8 +1,0 @@
-atom: "@community/counter-example-div-button-no-tabindex"
-relations:
-  - type: related
-    target: "@community/rule-keyboard-accessible"
-  - type: related
-    target: "@community/anti-pattern-click-to-open-only"
-  - type: related
-    target: "@community/template-focus-ring"

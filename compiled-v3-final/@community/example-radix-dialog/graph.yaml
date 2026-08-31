@@ -1,8 +1,0 @@
-atom: "@community/example-radix-dialog"
-relations:
-  - type: related
-    target: "@community/pattern-modal-focus-trap"
-  - type: related
-    target: "@community/template-focus-ring"
-  - type: related
-    target: "@community/rule-keyboard-accessible"

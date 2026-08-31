@@ -1,0 +1,71 @@
+pattern LandingPageSections {
+  id: "@community/pattern-landing-page-sections"
+  version: "1.0.0"
+
+  label: "Landing Page Section Patterns"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Seven structural section patterns for landing pages — hero (centered/split/asymmetric), features (card-grid/divider/alternating), pricing (3-column with scale(1.05) featured card), testimonials (masonry/grid/carousel), nav (sticky with backdrop-filter: blur(8px)), footer (grid-template-columns: 2fr repeat(4, 1fr)), and section spacing (py-20 sm:py-32 vertical, gap: 2rem card grid)."
+
+  problem: "AI-generated landing pages default to identical card grids, centered layouts, and predictable section sequences. Real high-converting pages use differentiated section types, asymmetric layouts, and intentional rhythm."
+
+  solution: "Compose landing pages from 7 distinct section types. Never repeat the same section type consecutively. Alternate structural density to create rhythm. Use content-based spacing values rather than arbitrary margins."
+
+  sections: [
+    "Hero: centered single-column OR 2-column split (60%/40%) OR left-aligned asymmetric with clamp(3rem, 7.5vw, 7rem) fluid h1",
+    "Features: card grid (md:grid-cols-2 lg:grid-cols-3 gap-8) OR divider layout (horizontal rule between rows) OR alternating image/text",
+    "Pricing: 3-column with featured card at scale(1.05) + z-index: 1 + border-top: 3px solid var(--accent) + shadow-xl",
+    "Testimonials: masonry (columns: 3; break-inside: avoid) OR 3-column grid OR carousel with pauseOnMouseEnter",
+    "Navigation: sticky top-0 with background: hsl(var(--bg) / 0.95) backdrop-filter: blur(8px), h-16, z-40",
+    "Footer: grid-template-columns: 2fr repeat(4, 1fr) on xl; 2fr repeat(2, 1fr) on md; 1fr on mobile",
+    "Section spacing: py-20 sm:py-32 vertical padding; max-w-6xl mx-auto px-4 container",
+  ]
+
+  spacing-tokens: """
+    /* Section spacing standards */
+    .section          { padding-block: clamp(80px, 10vw, 128px); }
+    .section + .section { margin-block-start: 0; }  /* rely on padding, not gaps between sections */
+    .container        { max-width: 1152px; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+
+    /* Card grid in features section */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 768px)  { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Featured pricing card */
+    .pricing-card--featured {
+      transform: scale(1.05);
+      box-shadow: 0 20px 60px oklch(0 0 0 / 0.15);
+      border-top: 3px solid hsl(var(--accent));
+      z-index: 1;
+      position: relative;
+    }
+  """
+
+  behavior: [
+    "NEVER repeat the same section type consecutively (two card grids in a row).",
+    "Hero background: always add depth — radial-gradient, animated blur, or film grain. Never solid color.",
+    "Featured pricing plan: use exactly ONE differentiation technique (scale OR accent border OR filled bg).",
+    "Footer social icons: aria-label on each link; never rely on icon shape alone for accessibility.",
+  ]
+
+  related: [
+    @community/pattern-card-component,
+    @community/pattern-hero-with-demo,
+    @community/pattern-pricing-tiers-toggle,
+    @community/rule-informative-image-alt,
+    @community/rule-functional-image-alt,
+    @community/check-focus-visible,
+  ]
+}

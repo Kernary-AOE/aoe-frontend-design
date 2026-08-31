@@ -1,0 +1,32 @@
+principle TasteAsEngineering {
+  id: "@community/principle-taste-as-engineering"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  statement: "Aesthetic taste in design is an engineering discipline: it is learnable, reproducible, testable, and decomposable into specific decisions. 'Good taste' is not a mystical quality — it is the sum of many small, specific, evidence-informed design decisions, each of which can be named, documented, and enforced in a knowledge system."
+
+  rationale: "Treating taste as intuition makes it unteachable and inconsistent across contributors. Treating taste as engineering — naming each decision, documenting its rationale, testing it against alternatives — makes it scalable. Prime Wiki exists precisely to encode taste as structured, retrievable atoms rather than locked-in individual sensibility."
+
+  implications: [
+    "Every aesthetic choice should be nameable and documentable as an atom.",
+    "If you cannot explain why a design decision is correct in concrete terms, it is a hunch — test it before shipping.",
+    "The opposite of good taste is not bad taste — it is unexamined taste. Examining any taste systematically is the engineering discipline.",
+  ]
+
+  related: [
+    @impeccable/principle-distinctiveness,
+    @community/principle-commit-bold-aesthetic,
+    @community/principle-prove-not-prevent-ai-slop,
+    @community/anti-pattern-ai-generated-ui,
+    @community/example-linear-issues-table,
+    @community/example-resend-dashboard,
+    @community/principle-generative-creative-not-utility,
+  ]
+}

@@ -1,6 +1,0 @@
-atom: "@community/rule-passwords-bcrypt-or-argon2"
-relations:
-  - type: related
-    target: "@community/principle-owasp-cryptographic-failures"
-  - type: related
-    target: "@community/principle-owasp-auth-failures"

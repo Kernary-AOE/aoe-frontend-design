@@ -1,8 +1,0 @@
-atom: "@community/example-linear-cmdk"
-relations:
-  - type: related
-    target: "@community/pattern-command-palette"
-  - type: related
-    target: "@community/example-notion-cmdk"
-  - type: related
-    target: "@community/example-linear-kbd-shortcuts"

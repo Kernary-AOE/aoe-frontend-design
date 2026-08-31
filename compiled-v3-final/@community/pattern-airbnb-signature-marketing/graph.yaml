@@ -1,4 +1,0 @@
-atom: "@community/pattern-airbnb-signature-marketing"
-relations:
-  - type: related
-    target: "@community/persona-airbnb"

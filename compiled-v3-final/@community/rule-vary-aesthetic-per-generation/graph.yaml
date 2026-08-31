@@ -1,8 +1,0 @@
-atom: "@community/rule-vary-aesthetic-per-generation"
-relations:
-  - type: related
-    target: "@impeccable/principle-distinctiveness"
-  - type: related
-    target: "@community/anti-pattern-ai-slop-aesthetics"
-  - type: related
-    target: "@community/principle-commit-bold-aesthetic"

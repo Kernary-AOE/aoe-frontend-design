@@ -1,8 +1,0 @@
-atom: "@community/fact-easing-cubic-bezier"
-relations:
-  - type: related
-    target: "@community/fact-duration-perception-thresholds"
-  - type: related
-    target: "@community/fact-motion-as-feedback"
-  - type: related
-    target: "@community/constraint-animation-pref-respected"

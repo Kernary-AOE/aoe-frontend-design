@@ -1,0 +1,41 @@
+rule TrustSignalCritical {
+  id: "@community/rule-trust-signal-critical"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  statement: "Never fabricate social proof numbers, and never place trust badges on every section. These are the two highest-severity mistakes in trust signal design."
+
+  rationale: "Fabricated metrics (made-up user counts, invented uptime stats) destroy trust the instant any visitor does verification — the discovered lie causes more distrust than no claim at all, plus creates legal liability. Over-repeated badges lose their meaning through signal fatigue: a badge on every section communicates nothing."
+
+  applies-to: [
+    "Social proof numbers (user counts, uptime SLAs, revenue figures)",
+    "Trust badge rows (security, compliance, reliability badges)",
+    "All testimonials and review counts",
+  ]
+
+  examples: [
+    "BAD: '100,000+ happy customers' when actual users are under 500",
+    "BAD: Trust badge row in hero, features, pricing, and footer",
+    "GOOD: Real, auditable user count with '+' suffix to indicate minimum floor",
+    "GOOD: One badge row placement — directly below the primary CTA",
+  ]
+
+  notes: [
+    "For numbers: only use metrics you can defend under audit. If you cannot produce the data, do not make the claim.",
+    "For placement: see rule-trust-signal-placement for the correct one-per-section sequence.",
+  ]
+
+  related: [
+    @community/pattern-trust-badge-row,
+    @community/pattern-trust-social-proof-numbers,
+    @community/rule-trust-signal-placement,
+    @community/anti-pattern-fake-trust-signals,
+  ]
+}

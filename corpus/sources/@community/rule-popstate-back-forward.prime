@@ -1,0 +1,34 @@
+rule PopstateBackForward {
+  id: "@community/rule-popstate-back-forward"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Single-page applications must listen to the popstate event and restore the correct view state when the user navigates back or forward with browser controls."
+
+  claim: "SPAs must implement popstate handling so browser Back/Forward buttons restore the exact previous view — broken back-button behavior is a critical UX defect."
+
+  severity: high
+
+  rationale: "Browser back/forward navigation is the #1 UI pattern users depend on. SPAs that manage their own routing via history.pushState must also handle history.popstate, or back/forward silently loads the wrong state while the URL changes."
+
+  implementation: [
+    "React Router / Next.js: built-in if routes are mapped to pages — no manual popstate needed",
+    "Custom SPA: window.addEventListener('popstate', (e) => restoreState(e.state))",
+    "Serialize view state into history.pushState(stateObject, '', url) when navigating",
+    "On popstate: read e.state, restore scroll position, restore focused element, re-fetch if needed",
+    "Test: navigate forward 3 pages, hit back 3 times — all states must be correct",
+  ]
+
+  related: [
+    @community/rule-save-form-progress,
+    @community/rule-no-state-reset-without-confirm,
+    @community/fact-user-control-freedom,
+  ]
+}

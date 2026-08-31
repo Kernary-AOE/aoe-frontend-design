@@ -1,0 +1,91 @@
+voice BrandCorporate {
+  id: "@impeccable/voice-brand-corporate"
+  version: "1.0.0"
+
+  label: "Brand Corporate (anti-pattern reference)"
+  domain: enterprise-brand
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "The voice used by large legacy enterprises in annual reports, investor decks, and About pages. Stable, aspirational, third-person, abstraction-heavy. Sounds like IBM, Salesforce, Oracle, SAP. INCLUDED AS AN ANTI-PATTERN: agents should recognize this voice and, in most modern product contexts, deliberately avoid it."
+
+  tone: "stable + aspirational + abstract"
+  emphasis: "global scope → trusted partner framing → outcomes phrased as transformation"
+  emotional-arc: "neutral → reassured-by-scale → too-distant-to-act — which is precisely why this voice fails on product surfaces"
+
+  patterns: [
+    {
+      label: "Third-person company self-reference"
+      template: "{CompanyName} {action verb} {abstract noun} for {category of customer} worldwide."
+      example: "Globex empowers digital transformation for enterprises worldwide."
+    }
+    {
+      label: "Abstraction stack"
+      template: "Through {platform}, {customer-type} can {abstract-verb} {abstract-outcome} at {scale-modifier}."
+      example: "Through the Globex Cloud Platform, organizations can accelerate innovation at unprecedented scale."
+    }
+    {
+      label: "Trusted-partner phrasing"
+      template: "A trusted partner to {N} of the {prestige-list}, {company} delivers {category} solutions."
+      example: "A trusted partner to 95 of the Fortune 100, Globex delivers AI-driven enterprise solutions."
+    }
+    {
+      label: "Mission-statement abstraction"
+      template: "Our mission is to {verb} {abstract-noun} through {abstract-method}."
+      example: "Our mission is to advance human progress through intelligent systems."
+    }
+    {
+      label: "Aspirational future tense"
+      template: "We envision a future where {idealized-state}."
+      example: "We envision a future where every business is empowered by data."
+    }
+    {
+      label: "Tri-pillar framing"
+      template: "Built on three pillars: {abstract-1}, {abstract-2}, and {abstract-3}."
+      example: "Built on three pillars: trust, innovation, and partnership."
+    }
+  ]
+
+  prohibitions: [
+    "Do not use this voice on product surfaces (landing pages, dashboards, in-product copy) — it actively reduces conversion.",
+    "Do not use this voice when the audience is a developer or a builder.",
+    "Do not combine with `voice-marketing-bold` or `voice-casual-warm` — the resulting tone reads as committee-edited.",
+    "Do not let an LLM default to this voice when the persona is anything other than a regulated-industry homepage.",
+    "Do not use first-person plural ('we') alongside the third-person company name in the same paragraph — pick one.",
+  ]
+
+  examples: [
+    {
+      label: "Annual-report opener"
+      template: "Globex continues to deliver durable value to its customers, partners, and shareholders. Across more than 170 countries, our solutions are trusted by the world's most demanding organizations to advance their most consequential work."
+    }
+    {
+      label: "About page paragraph"
+      template: "Founded in 1962, Globex has grown into a global leader in enterprise technology. Today, our platform helps organizations of every size unlock the full potential of their data through trusted, intelligent, and scalable solutions."
+    }
+    {
+      label: "Anti-pattern recognition cue"
+      template: "If a draft contains 'empowers', 'unlocks', 'leverages', and 'world-class' in the same paragraph, it has slid into Brand Corporate. Rewrite in `voice-marketing-bold` (for product) or `voice-poetic-literary` (for manifesto)."
+    }
+  ]
+
+  compatible: [
+    @impeccable/voice-brand-corporate,
+  ]
+
+  conflicts: [
+    @impeccable/voice-marketing-bold,
+    @impeccable/voice-casual-warm,
+    @impeccable/voice-dev-technical,
+    @impeccable/voice-poetic-literary,
+  ]
+
+  related: [
+    @impeccable/voice-legal-formal,
+    @impeccable/voice-editorial-investigative,
+  ]
+}

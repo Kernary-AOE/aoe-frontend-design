@@ -1,0 +1,56 @@
+example NotionSidebar {
+  id: "@community/example-notion-sidebar"
+  version: "1.0.0"
+
+  label: "Notion — Nested Pages Sidebar"
+  url: "https://notion.so"
+  observed: "2026-Q1"
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Notion's sidebar is a 240px-wide rail in cream #F7F6F3 showing a tree of nested pages. Each page row is 28px tall with a 14px chevron (collapsed/expanded), 18px emoji/icon, and 14px text in #37352F. Indentation is exactly 18px per nesting level. Hover reveals an 'Add subpage' (+) icon and a '...' menu on the right."
+
+  brand: "notion"
+  pattern-applied: "@community/pattern-sidebar-collapsible"
+
+  aesthetic-notes: [
+    "Sidebar background: #F7F6F3 (warm cream, NOT pure gray); main content #FFFFFF — the contrast is intentional.",
+    "Row height: 28px (denser than typical 36px sidebars to support deep nesting).",
+    "Indentation: 18px per level (~equal to icon width), with no visible guide lines.",
+    "Chevron: 14px, color #9B9A97, rotates 90° on expand with 100ms ease-out.",
+    "Hover state: rgba(55,53,47,0.05) row, '+' and '...' icons fade in at right.",
+    "Active page: rgba(55,53,47,0.08) row + bold 14px/600 weight on title.",
+  ]
+
+  what-to-copy: [
+    "Use a warm off-white (#F7F6F3) for sidebar instead of #FFFFFF or gray — it disambiguates from main content while staying calm.",
+    "18px indentation per level is the sweet spot — 16px feels cramped, 24px wastes horizontal space at deep nesting.",
+    "Reveal action icons on hover only — always-visible '...' menus add visual noise to long lists.",
+    "Active state via background tint + font-weight bump (not color change) reads as 'selected' without being loud.",
+  ]
+
+  what-to-skip: [
+    "Deep nesting (>5 levels) becomes unreadable; consider breadcrumb badges at level 4+.",
+    "The drag-to-reorder is finicky on touch devices — provide a long-press alternative.",
+  ]
+
+  screenshot-hint: "scout query: notion sidebar nested pages cream background emoji icons chevrons"
+
+  demonstrates: [
+    "Off-white sidebar backgrounds (cream, not gray) feel warmer than typical productivity tools.",
+    "Density is power-user-friendly when nesting goes deep (28px rows over 36px).",
+    "Hover-revealed actions reduce visual noise at rest while preserving discoverability.",
+  ]
+
+  related: [
+    @community/pattern-sidebar-collapsible,
+    @community/example-vercel-sidebar,
+    @community/pattern-progressive-disclosure,
+  ]
+}

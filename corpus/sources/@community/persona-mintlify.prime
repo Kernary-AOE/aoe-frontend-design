@@ -1,0 +1,99 @@
+persona Mintlify {
+  id: "@community/persona-mintlify"
+  version: "1.0.0"
+
+  school: mintlify
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Documentation-as-product design: Inter on pure white #ffffff with atmospheric green-to-white gradient hero, brand green #18E299 reserved exclusively for interactive states, full-pill 9999px buttons and inputs, and whisper-thin 5%-opacity borders throughout."
+
+  implies: {
+    font: {
+      display: "Inter (fallbacks: Inter Fallback, system-ui, -apple-system, sans-serif) — 64px/600/line-height 1.15/letter-spacing -1.28px for display hero"
+      body: "Inter — 400 body, 500 UI, 600 headings (no bold 700 used); section labels 13px/500/tracking 0.65px uppercase"
+      monospace: "Geist Mono (fallbacks: Geist Mono Fallback, ui-monospace, SFMono-Regular) — 12px uppercase/500–600/tracking +0.6px for terminal labels"
+    }
+    color: {
+      temperature: "cool-neutral"
+      palette: "near-black #0d0d0d primary text, brand green #18E299 CTA/hover/focus, green light #d4fae8 tinted surface, green deep #0fa76e badge text, gray-500 #666666, gray-200 #e5e5e5, gray-100 #f5f5f5, gray-50 #fafafa, border rgba(0,0,0,0.05)"
+      background: "#ffffff"
+    }
+    density: "airy — 4px inline-code radius, 8px nav buttons, 16px standard cards, 24px featured cards, 9999px pills; 8px base; section padding 48–96px vertical; 1200px max-width; 24px mobile / 32px desktop horizontal padding"
+    layout: "luminous white centered layout with atmospheric cloud-like green-to-white gradient hero wash; white-on-white sections separated by 5%-opacity borders only; demonstrates reading comfort as product value"
+    imagery: "light documentation UI screenshots; no decorative fills or gradients beyond the hero wash; dark mode bg #0d0d0d / card #141414 / text #ededed"
+    motion: "whisper shadows rgba(0,0,0,0.03) 0px 2px 4px maximum; button shadow rgba(0,0,0,0.06) 0px 1px 2px; depth is border-driven not shadow-driven"
+  }
+
+  compatible: ["swiss-modernist", "vercel-clean", "editorial", "notion-warm"]
+  conflicts: ["brutalist", "dense-pragmatist", "magazine-editorial"]
+
+  example-brands: [
+    "Mintlify",
+  ]
+
+  notes: [
+    "Full-pill 9999px is applied to both buttons AND email inputs — inputs and CTAs share the same shape, creating a unified 'input device' language. Pill on inputs (not just buttons) is the distinguishing move.",
+    "Brand green #18E299 appears only on CTAs, hover states, and focus rings — never as decorative fill, never as static text color. Passive interface is white and gray; green is purely interactive.",
+    "5%-opacity borders rgba(0,0,0,0.05) create barely-there section separation; stronger borders would break the airy feeling. Maximum shadow is rgba(0,0,0,0.03) — depth is border-driven, shadows are atmospheric.",
+    "Strict two-font boundary: Inter for all human-readable content, Geist Mono uppercase only for technical labels (12px uppercase, tracking +0.6px). This boundary is absolute — Geist Mono does not appear in body copy.",
+    "16px standard cards + 24px featured cards feel open rather than boxed; paired with 24px+ internal padding — the product demonstrates reading comfort as its own brand value.",
+    "Use for documentation, dev-docs platforms, and API-reference marketing where clarity IS the product. Avoid for dense dashboards or analytics tools — generous whitespace fails when signal density per pixel is required.",
+    "Distinct from @impeccable/persona-vercel-clean: Mintlify is light-first (white canvas vs dark), uses pill buttons vs Vercel's 6-8px radius, and the accent is emerald green vs neon accents on dark.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-card-hover-lift,
+      @community/check-body-readability,
+      @community/principle-typography-hierarchy,
+    ]
+    must-avoid: [
+      @impeccable/persona-brutalist,
+      @impeccable/persona-dense-pragmatist,
+    ]
+    typography-required: {
+      display: "Inter"
+      weight-range: "400-600 (no 700)"
+      pill-radius: "9999px on buttons AND inputs"
+    }
+    color-required: {
+      background: "#ffffff"
+      accent: "#18E299"
+      border: "rgba(0,0,0,0.05)"
+    }
+    motion-prescriptions: [
+      @impeccable/template-card-hover-lift,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-swiss-modernist,
+    @impeccable/template-oklch-palette,
+    @impeccable/template-card-hover-lift,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-typography-letter-spacing,
+    @community/fact-monospace-purpose,
+    @community/check-body-readability,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/rule-brand-color-primary-only,
+    @community/principle-intentional-gradient,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-brutalist,
+    @impeccable/persona-dense-pragmatist,
+  ]
+}

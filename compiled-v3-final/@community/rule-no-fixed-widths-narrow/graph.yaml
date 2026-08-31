@@ -1,8 +1,0 @@
-atom: "@community/rule-no-fixed-widths-narrow"
-relations:
-  - type: related
-    target: "@community/rule-mobile-first"
-  - type: related
-    target: "@community/anti-pattern-hardcoded-pixel-values"
-  - type: related
-    target: "@community/rule-collapse-multi-column-mobile"

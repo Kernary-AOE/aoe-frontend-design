@@ -1,8 +1,0 @@
-atom: "@community/principle-owasp-broken-access-control"
-relations:
-  - type: related
-    target: "@community/principle-owasp-auth-failures"
-  - type: related
-    target: "@community/principle-owasp-insecure-design"
-  - type: related
-    target: "@community/rule-csrf-token-state-changing"

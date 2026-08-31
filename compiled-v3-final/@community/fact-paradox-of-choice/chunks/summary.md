@@ -1,3 +1,0 @@
-# ParadoxOfChoice [fact] v1.0.0
-Paradox of Choice (Schwartz, 2004): beyond a moderate number of options, adding more choices reduces decision satisfaction, increases anxiety, and can paralyze action entirely.
-> Barry Schwartz synthesised psychological research showing that while some choice is essential for autonomy and satisfaction, an abundance of options triggers choice overload: users take longer to decide, feel less confident in their choice, experience post-decision regret ('buyer's remorse'), and are more likely to abandon the decision entirely. The effect is amplified when options are hard to compare and stakes feel high.

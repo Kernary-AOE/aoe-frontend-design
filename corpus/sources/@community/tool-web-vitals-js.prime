@@ -1,0 +1,86 @@
+tool WebVitalsJs {
+  id: "@community/tool-web-vitals-js"
+  version: "1.0.0"
+
+  signature: (callback: (metric: Metric) => void) -> void
+  external: true
+  package: "web-vitals@^4"
+
+  domain: performance
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Google's web-vitals.js library exposes the Core Web Vitals (LCP, INP, CLS) and supplemental metrics (FCP, TTFB) in a small, consistent API. The official measurement implementation that Lighthouse and Chrome User Experience Report (CrUX) use under the hood. Drop into any page and ship metrics to RUM."
+
+  output-type: {
+    name: "'LCP' | 'INP' | 'CLS' | 'FCP' | 'TTFB'"
+    value: number
+    rating: "'good' | 'needs-improvement' | 'poor'"
+    delta: number
+    id: string
+    entries: PerformanceEntry[]
+    navigationType: string
+  }
+
+  usage: """
+    // 1) Vanilla — ship metrics on every value change
+    import { onCLS, onINP, onLCP, onFCP, onTTFB } from 'web-vitals';
+
+    function send(metric) {
+      // sendBeacon is preferred — fires reliably on unload
+      const body = JSON.stringify(metric);
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('/analytics/vitals', body);
+      } else {
+        fetch('/analytics/vitals', { body, method: 'POST', keepalive: true });
+      }
+    }
+
+    onCLS(send);
+    onINP(send);
+    onLCP(send);
+    onFCP(send);
+    onTTFB(send);
+
+    // 2) Attribution mode — ships the offending element + cause
+    import { onLCP } from 'web-vitals/attribution';
+
+    onLCP((metric) => {
+      // metric.attribution.element is the LCP element
+      // metric.attribution.url is the resource URL
+      // metric.attribution.timeToFirstByte breaks down the load
+      console.log('LCP element:', metric.attribution.element);
+      send(metric);
+    });
+
+    // 3) Server-side aggregation
+    // Per page-view: send single CLS/INP/LCP per session (use reportAllChanges: false default)
+    // Per change: useful for SPAs with route changes
+    onCLS(send, { reportAllChanges: true });
+  """
+
+  notes: [
+    "Library size is ~3KB gzipped — negligible cost; safe to ship to all visitors.",
+    "Use the `web-vitals/attribution` build during development and bug-bash phases — it adds ~2KB but identifies the offending element/network resource. Switch to base build in production after RUM is stable.",
+    "INP replaced FID as a Core Web Vital in March 2024. INP measures ALL interactions, not just the first; better captures real responsiveness.",
+    "CrUX (the public dataset Google ranks search results on) uses these exact metrics. Field RUM data + CrUX should converge over a sample.",
+    "Default behavior: each metric fires ONCE per page load with the final value (after page hidden / unload). Set `reportAllChanges: true` for live updates (useful for SPAs).",
+    "Pair with synthetic Lighthouse runs (@community/tool-lighthouse) — synthetic catches regressions in CI; RUM measures real users.",
+    "Common pipelines: web-vitals.js → /analytics endpoint → ClickHouse / BigQuery / Datadog → dashboard with p75 by route, device, country.",
+    "Rating thresholds: LCP good ≤2500ms, poor >4000ms; INP good ≤200ms, poor >500ms; CLS good ≤0.1, poor >0.25 — see @community/fact-rail-targets.",
+    "Don't roll your own — the math for INP attribution and CLS session windows is non-trivial. web-vitals.js encodes the spec correctly.",
+  ]
+
+  related: [
+    @community/tool-lighthouse,
+    @community/metric-lcp-largest-contentful-paint,
+    @community/metric-cls-cumulative-layout-shift,
+    @community/rule-cls-budget,
+    @community/principle-perceived-vs-actual,
+    @community/fact-rail-targets,
+  ]
+}

@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-rainbow-explosion"
-relations:
-  - type: related
-    target: "@community/constraint-max-color-roles-7"
-  - type: related
-    target: "@community/rule-single-accent-color"
-  - type: related
-    target: "@community/rule-color-hue-selection"

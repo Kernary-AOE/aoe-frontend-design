@@ -1,0 +1,58 @@
+fact FintechNumberDisplay {
+  id: "@community/fact-fintech-number-display"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Financial number display requires distinct typographic treatment at every scale: hero balances at 3–4rem with weight 700 and tabular lining numerals (`font-variant-numeric: tabular-nums lining-nums`), section totals at 2rem, card metrics at 1.5rem, and table rows at 0.875rem — each tier differentiating the most important metric from supporting data."
+
+  statement: "Fintech UI typography follows a strict numeric hierarchy: the primary metric (account balance, total transaction, price) must be 3–4× larger than the smallest supporting metric; every numeric context must use tabular-nums + lining-nums to prevent column jitter; color + weight must reinforce size hierarchy (hero: foreground + bold; supporting: foreground + regular; metadata: muted-foreground + regular)."
+
+  confidence: strong
+  source: [
+    "Land-book gallery analysis of 156 fintech screenshots",
+    "Goldsand banking UI replica decomposition",
+    "Stripe, Mercury, Brex dashboard typographic analysis",
+  ]
+
+  applies-to: [
+    "account balance displays",
+    "price / amount typography",
+    "dashboard KPI cards",
+    "data tables with financial figures",
+    "transaction history lists",
+  ]
+
+  quantitative: {
+    hero-balance: "clamp(2.5rem, 5vw, 4rem), font-weight: 700, color: foreground",
+    section-total: "clamp(1.5rem, 3vw, 2.5rem), font-weight: 600, color: foreground",
+    card-metric: "clamp(1.25rem, 2vw, 1.5rem), font-weight: 600, color: foreground",
+    table-row: "0.875rem, font-weight: 400, color: foreground",
+    caption-label: "0.75rem, font-weight: 400, color: muted-foreground",
+    numeric-feature: "font-variant-numeric: tabular-nums lining-nums",
+    negative-value: "color: red-semantic-token, NOT just font-weight change",
+    positive-delta: "color: green-semantic-token, with directional arrow glyph",
+  }
+
+  counter-conditions: [
+    "Crypto / trading UIs may show 8+ decimal places — compress with abbreviated notation (1.23456 BTC → 1.23 BTC) to maintain hierarchy.",
+    "Dense data tables may reduce hero metric size to fit viewport — use min() / clamp() to prevent overflow.",
+    "Dark mode requires adjusting numeric colors: red-400 (light) → red-300 (dark) to maintain 4.5:1 contrast on dark backgrounds.",
+  ]
+
+  related: [
+    @community/constraint-monospace-tabular-numerics,
+    @community/rule-opentype-features-on,
+    @community/principle-typography-hierarchy,
+  ]
+
+  supplies-to: [
+    @community/pattern-fintech-number-display,
+  ]
+}

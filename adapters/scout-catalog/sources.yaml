@@ -1,0 +1,394 @@
+# Scout catalog source manifest — the git-tracked declaration face of a
+# capability whose payload is NOT git-tracked.
+#
+# Every field here was measured, not copied: `bytes`, `sha256`,
+# `declaredEntryCount` and `loadableEntryCount` come from reading the 18 JSON
+# payloads through `src/loader.ts`'s normalisation on 2026-08-29. See
+# `docs/analysis/corpus-ownership/02-scout-catalog.md` for the measurement and
+# `README.md` for why the payload stays out of git.
+#
+# `loadableEntryCount` < `declaredEntryCount` is not a rounding error: it is the
+# count of records the normaliser keeps after dropping those with neither a title
+# nor a URL. Only `footer-design` differs (763 declared, 646 loadable, 117
+# dropped), and the loader raises SCOUT_ENTRY_COUNT_DRIFT when a payload stops
+# matching this number — which is the whole point of recording it.
+
+protocol: prime/scout-catalog/v1
+adapter: scout-catalog
+
+# Feature weights for `src/search.ts`. Externalised because the legacy
+# implementation hardcoded a five-name CURATED_SOURCES set inside a scoring
+# function (`mcp-server/index.ts:493`), which made source authority
+# unauditable and unchangeable without a code edit.
+retrieval:
+  weights:
+    titleMatch: 0.45
+    textMatch: 0.2
+    sourceAffinity: 0.15
+    assetPresence: 0.1
+    curatedSource: 0.1
+  defaultLimit: 10
+  maxLimit: 50
+  minTokenLength: 2
+
+sources:
+  - id: awesome
+    legacyAtomId: "@community/scout-catalog-awesome"
+    sourceName: "Awesome Lists (aggregated)"
+    sourceUrl: "https://github.com/topics/awesome"
+    license: "metadata-only (each resource has its own license)"
+    curated: false
+    usefulFor: ["CSS framework selection", "design tools", "icon libraries", "animation libraries", "color tools", "typography tools", "Tailwind plugins", "Next.js plugins", "React component libraries", "font resources"]
+    personaLean: []
+    fields:
+      title: "name"
+      url: "url"
+      category: "section"
+      thumbnail: null
+      description: null
+    payload:
+      path: "resources/awesome/deduplicated-index.json"
+      bytes: 174132
+      sha256: "5101cec6da48def40726b1d3c1dda4022343aa12a93f876fbae6b1ad4b0bf771"
+      declaredEntryCount: 847
+      loadableEntryCount: 847
+  - id: calltoidea
+    legacyAtomId: "@community/scout-catalog-calltoidea"
+    sourceName: "Call To Idea"
+    sourceUrl: "https://www.calltoidea.com"
+    license: "metadata-only (screenshots remain copyright of original designers)"
+    curated: false
+    usefulFor: ["404 pages", "alert components", "calendar UI", "careers pages", "dashboard layouts", "footer patterns", "form designs", "gallery grids", "list patterns", "branding exploration"]
+    personaLean: []
+    fields:
+      title: "category"
+      url: "image_url"
+      category: "category"
+      thumbnail: "image_url"
+      description: null
+    payload:
+      path: "resources/gallery/calltoidea/designs.json"
+      bytes: 202273
+      sha256: "9e024b5288399d90dc84676de78820f16452212aedf1867c633193838ae1f3f9"
+      declaredEntryCount: 1317
+      loadableEntryCount: 1317
+  - id: codrops
+    legacyAtomId: "@community/scout-catalog-codrops"
+    sourceName: "Codrops"
+    sourceUrl: "https://tympanus.net/codrops"
+    license: "metadata-only (articles and demos copyright Codrops/individual authors)"
+    curated: false
+    usefulFor: ["scroll animations", "GSAP tutorials", "CSS transitions", "image effects", "text animations", "WebGL demos", "hover effects", "page transitions", "creative interaction patterns", "case studies"]
+    personaLean: ["brutalist-expressive", "editorial"]
+    fields:
+      title: "title"
+      url: "url"
+      category: "categories"
+      thumbnail: null
+      description: null
+    payload:
+      path: "resources/codrops/articles.json"
+      bytes: 757762
+      sha256: "f2f621276e710408a7689891d702b039e0b61ce7c97e611bcaf32aa40167e8f2"
+      declaredEntryCount: 1643
+      loadableEntryCount: 1643
+  - id: collectui
+    legacyAtomId: "@community/scout-catalog-collectui"
+    sourceName: "Collect UI"
+    sourceUrl: "https://collectui.com"
+    license: "metadata-only (screenshots remain copyright of original designers)"
+    curated: true
+    usefulFor: ["buttons", "forms", "login screens", "micro-interactions", "sign up flows", "dashboards", "onboarding", "pricing", "404", "empty states", "modals", "navigation"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: "thumbnail_url"
+      description: null
+    payload:
+      path: "resources/gallery/collectui/designs.json"
+      bytes: 3673437
+      sha256: "2f5446589a90866d35cd4ac13b9b30d19ef3fe646246563481d571c49d85c826"
+      declaredEntryCount: 14374
+      loadableEntryCount: 14374
+  - id: component-libs
+    legacyAtomId: "@community/scout-catalog-component-libs"
+    sourceName: "Component Library Source Trees (local)"
+    sourceUrl: "local://resources/component-libs"
+    license: "code is under each upstream project's license (see LICENSE files in the source tree)"
+    curated: false
+    usefulFor: ["compare component APIs across libraries", "shadcn registry patterns", "mantine hooks/components examples", "tremor chart/metric patterns", "DaisyUI utility-class composition"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: null
+      description: "description"
+    payload:
+      path: "resources/gallery/component-libs/entries.json"
+      bytes: 456812
+      sha256: "eaa51c6525a90bbce7ccc3e7242552e8c1971a23d0d609d0ecf00d44c3cc295f"
+      declaredEntryCount: 2175
+      loadableEntryCount: 2175
+  - id: design-colors
+    legacyAtomId: "@community/scout-catalog-design-colors"
+    sourceName: "Design Color Systems Reference (local)"
+    sourceUrl: "local://resources/colors"
+    license: "code is under each upstream project's license (see LICENSE files in the source tree)"
+    curated: false
+    usefulFor: ["Radix Colors integration", "Open Color hex lookup", "alternative to rolling your own palette"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: null
+      description: "description"
+    payload:
+      path: "resources/gallery/design-colors/entries.json"
+      bytes: 277
+      sha256: "deba1041a1163750545181141279282c70bfd55761a774fff26171d94cef6b2a"
+      declaredEntryCount: 2
+      loadableEntryCount: 2
+  - id: design-md
+    legacyAtomId: "@community/scout-catalog-design-md"
+    sourceName: "Awesome Design Resources (local md)"
+    sourceUrl: "local://resources/design-md"
+    license: "code is under each upstream project's license (see LICENSE files in the source tree)"
+    curated: false
+    usefulFor: ["discover design tools by topic", "find articles on a specific design principle", "curated resource discovery"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: null
+      description: "description"
+    payload:
+      path: "resources/gallery/design-md/entries.json"
+      bytes: 10842
+      sha256: "b1083f11d863307e802b55e335a89506fb3d4d1ffd9d18edfe50150946ff82a2"
+      declaredEntryCount: 61
+      loadableEntryCount: 61
+  - id: footer-design
+    legacyAtomId: "@community/scout-catalog-footer-design"
+    sourceName: "Footer Design"
+    sourceUrl: "https://www.footer.design"
+    license: "metadata-only (screenshots remain copyright of original site owners)"
+    curated: false
+    usefulFor: ["footer navigation patterns", "footer CTA design", "newsletter signup in footer", "legal links layout", "social media footer", "multi-column footer", "minimal footer", "dark footer"]
+    personaLean: []
+    fields:
+      title: "slug"
+      url: "url"
+      category: null
+      thumbnail: null
+      description: null
+    payload:
+      path: "resources/gallery/footer-design/footers.json"
+      bytes: 66701
+      sha256: "8028e261ec402eeeaa173bababf6072f0391fa721add1334630fe19a5eb41e13"
+      declaredEntryCount: 763
+      loadableEntryCount: 646
+  - id: godly
+    legacyAtomId: "@community/scout-catalog-godly"
+    sourceName: "Godly"
+    sourceUrl: "https://godly.website"
+    license: "metadata-only (screenshots remain copyright of original site owners)"
+    curated: true
+    usefulFor: ["award-winning design", "WebGL examples", "scroll animation", "3D web", "interaction design", "motion-rich sites", "luxury brands", "creative agencies"]
+    personaLean: ["brutalist-expressive", "editorial"]
+    fields:
+      title: "title"
+      url: "url"
+      category: null
+      thumbnail: "thumbnail_url"
+      description: null
+    payload:
+      path: "resources/gallery/godly/sites.json"
+      bytes: 425701
+      sha256: "12abbe9d6c65901db474b94b01c914fe2772a5ef8a3dbdfd59659fced11ec7da"
+      declaredEntryCount: 1017
+      loadableEntryCount: 1017
+  - id: htmlrev
+    legacyAtomId: "@community/scout-catalog-htmlrev"
+    sourceName: "HTMLrev"
+    sourceUrl: "https://htmlrev.com"
+    license: "metadata-only; individual templates have their own licenses (mostly MIT or free)"
+    curated: true
+    usefulFor: ["admin dashboard templates", "React admin starter", "Tailwind UI kit", "Bootstrap templates", "free HTML starters", "Angular admin", "Vue dashboard", "pricing page templates", "landing page templates"]
+    personaLean: []
+    fields:
+      title: "name"
+      url: "demo_url"
+      category: "category"
+      thumbnail: null
+      description: null
+    payload:
+      path: "resources/gallery/htmlrev/templates.json"
+      bytes: 845059
+      sha256: "cbcc93e01677aacefd4ca1079bcf9d26a89cb6a15a3c79167cc2c926c51931b7"
+      declaredEntryCount: 2222
+      loadableEntryCount: 2222
+  - id: httpster
+    legacyAtomId: "@community/scout-catalog-httpster"
+    sourceName: "Httpster"
+    sourceUrl: "https://httpster.net"
+    license: "metadata-only (screenshots remain copyright of original site owners)"
+    curated: false
+    usefulFor: ["brutalist layouts", "experimental typography", "indie aesthetics", "creative studios", "editorial websites", "art direction reference", "non-SaaS design"]
+    personaLean: ["brutalist-expressive", "editorial", "tokyo-minimal"]
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: "thumbnail_url"
+      description: null
+    payload:
+      path: "resources/gallery/httpster/sites.json"
+      bytes: 691202
+      sha256: "79691990bcc788b9b124f946e6994d3d6adb823a60c6cf7d1056a145c70fc9a7"
+      declaredEntryCount: 2958
+      loadableEntryCount: 2958
+  - id: lapaninja
+    legacyAtomId: "@community/scout-catalog-lapaninja"
+    sourceName: "Lapa Ninja"
+    sourceUrl: "https://www.lapa.ninja"
+    license: "metadata-only (screenshots remain copyright of original site owners)"
+    curated: true
+    usefulFor: ["landing page inspiration", "SaaS homepage", "startup branding", "marketing page layouts", "hero patterns", "value proposition copy styles"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: "thumbnail_url"
+      description: null
+    payload:
+      path: "resources/gallery/lapaninja/sites.json"
+      bytes: 2674976
+      sha256: "275f4c6c7f32ca61f9ce1ebac3b2b38fe40520c411428476949d513337304ce5"
+      declaredEntryCount: 16525
+      loadableEntryCount: 16525
+  - id: local-templates
+    legacyAtomId: "@community/scout-catalog-local-templates"
+    sourceName: "Frontend Starter Templates (local)"
+    sourceUrl: "local://resources/templates"
+    license: "code is under each upstream project's license (see LICENSE files in the source tree)"
+    curated: false
+    usefulFor: ["SaaS landing page scaffolding", "admin dashboard layout", "shadcn integration patterns", "Next.js app-router setup", "theme provider wiring"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: null
+      description: "description"
+    payload:
+      path: "resources/gallery/local-templates/entries.json"
+      bytes: 304918
+      sha256: "0904842e37b958dbbaf70e8554016e703907f401ca1662ad10886e73f366022f"
+      declaredEntryCount: 1193
+      loadableEntryCount: 1193
+  - id: notion-clones
+    legacyAtomId: "@community/scout-catalog-notion-clones"
+    sourceName: "Notion Clones (local source)"
+    sourceUrl: "local://resources/notion-clones"
+    license: "code is under each upstream project's license (see LICENSE files in the source tree)"
+    curated: false
+    usefulFor: ["Notion-style doc product reference", "block editor implementation", "workspace sidebar patterns", "rich-text editing composition", "real-time collab schema (Convex)"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: null
+      description: "description"
+    payload:
+      path: "resources/gallery/notion-clones/entries.json"
+      bytes: 12459
+      sha256: "980af5ec076090a2d721cebe412cfa1eb46179e6c4ee2431e135a2b6012c885b"
+      declaredEntryCount: 70
+      loadableEntryCount: 70
+  - id: onepagelove
+    legacyAtomId: "@community/scout-catalog-onepagelove"
+    sourceName: "One Page Love"
+    sourceUrl: "https://onepagelove.com"
+    license: "metadata-only (screenshots remain copyright of original site owners)"
+    curated: true
+    usefulFor: ["one-page sites", "portfolio design", "coming soon pages", "product launch pages", "personal branding", "minimal marketing sites", "scrollytelling", "scroll-driven layouts"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: "thumbnail_url"
+      description: null
+    payload:
+      path: "resources/gallery/onepagelove/sites.json"
+      bytes: 2316451
+      sha256: "6b3978e1828df45c99660ff0ac0cb831b88b2a3c9635e2854d68ea7d463b6ae2"
+      declaredEntryCount: 14359
+      loadableEntryCount: 14359
+  - id: skills-ref
+    legacyAtomId: "@community/scout-catalog-skills-ref"
+    sourceName: "Claude Skills Reference Implementations (local)"
+    sourceUrl: "local://resources/skills-ref"
+    license: "code is under each upstream project's license (see LICENSE files in the source tree)"
+    curated: false
+    usefulFor: ["skill authoring pattern", "SKILL.md format examples", "skill bundled resources (scripts/references/assets)", "spec compliance check"]
+    personaLean: []
+    fields:
+      title: "title"
+      url: "url"
+      category: "category"
+      thumbnail: null
+      description: "description"
+    payload:
+      path: "resources/gallery/skills-ref/entries.json"
+      bytes: 30149
+      sha256: "184f025a4c9db1d1db290e534eb612180aff47ea255b34f9fec826389b09da12"
+      declaredEntryCount: 157
+      loadableEntryCount: 157
+  - id: undraw
+    legacyAtomId: "@community/scout-catalog-undraw"
+    sourceName: "unDraw"
+    sourceUrl: "https://undraw.co/illustrations"
+    license: "MIT-equivalent open license (free for commercial use, no attribution required)"
+    curated: false
+    usefulFor: ["empty states", "onboarding illustrations", "error pages", "success states", "hero illustrations", "about page art", "404 pages", "feature highlights", "product mockups"]
+    personaLean: ["warm-institutional"]
+    fields:
+      title: "title"
+      url: "media"
+      category: null
+      thumbnail: "media"
+      description: null
+    payload:
+      path: "resources/illustrations/undraw/illustrations.json"
+      bytes: 299534
+      sha256: "f86768bb0296f5f11a0c8f38ea45f6a45c9831102a9af70f0455c5cbf3982041"
+      declaredEntryCount: 1624
+      loadableEntryCount: 1624
+  - id: vercel-nextjs
+    legacyAtomId: "@community/scout-catalog-vercel-nextjs"
+    sourceName: "Vercel/Next.js GitHub Templates"
+    sourceUrl: "https://github.com/topics/nextjs-template"
+    license: "varies per repo (mostly MIT, Apache 2.0)"
+    curated: false
+    usefulFor: ["Next.js starters", "React template", "TypeScript starter", "full-stack template", "AI app template", "SaaS boilerplate", "e-commerce template", "blog template", "portfolio template", "auth starter"]
+    personaLean: []
+    fields:
+      title: "name"
+      url: "url"
+      category: "language"
+      thumbnail: null
+      description: null
+    payload:
+      path: "resources/gallery/vercel-nextjs/templates.json"
+      bytes: 108394
+      sha256: "a492a9c18368314a96c3333e1fcae6b164fb23aa85f975b5fe8c1e91ca8641c1"
+      declaredEntryCount: 400
+      loadableEntryCount: 400

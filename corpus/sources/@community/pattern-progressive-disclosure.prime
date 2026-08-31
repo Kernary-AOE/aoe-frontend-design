@@ -1,0 +1,71 @@
+pattern ProgressiveDisclosure {
+  id: "@community/pattern-progressive-disclosure"
+  version: "1.0.0"
+
+  label: "Progressive Disclosure"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "A UX pattern that initially shows only the most important information or options, revealing additional detail on user demand. Reduces cognitive load for new users while remaining efficient for experts who trigger disclosure shortcuts."
+
+  problem: "Complex interfaces overwhelm first-time users with too many options simultaneously, while power users need rapid access to advanced features. A single fixed UI cannot serve both without compromise."
+
+  solution: "Layer information: show the minimal-sufficient view by default; provide clear affordances (chevrons, 'more options', detail panels) that reveal advanced content on demand."
+
+  levels: [
+    {
+      level: 1,
+      label: "Primary",
+      description: "Core actions and most-needed information. Always visible.",
+      example: "Card with title, key metric, and a single primary action button."
+    }
+    {
+      level: 2,
+      label: "Secondary",
+      description: "Contextual details available on hover/focus or explicit expand.",
+      example: "Hovering a card reveals secondary actions (edit, archive, share)."
+    }
+    {
+      level: 3,
+      label: "Tertiary",
+      description: "Advanced or rarely-needed configuration, behind an explicit 'Advanced' expand.",
+      example: "A 'Show advanced options' accordion in a settings form."
+    }
+  ]
+
+  uses: [
+    @community/method-heuristic-review,
+  ]
+
+  facts: [
+    @community/fact-recognition-over-recall,
+    @community/fact-error-prevention,
+  ]
+
+  examples: [
+    @community/example-vercel-sidebar,
+  ]
+
+  a11y: [
+    "Disclosure widgets must use `aria-expanded` on the trigger element.",
+    "Revealed content must follow the trigger in DOM order for logical tab sequence.",
+    "Use `aria-controls` to associate trigger with the region it controls.",
+  ]
+
+  related: [
+    @community/fact-recognition-over-recall,
+    @community/example-vercel-sidebar,
+    @community/pattern-command-palette,
+    @community/constraint-focus-trap-modal,
+    @community/check-focus-visible,
+    @community/anti-pattern-invisible-focus,
+    @community/pattern-fade-in-on-load,
+    @impeccable/template-easing-curves,
+    @impeccable/template-spring-config,
+  ]
+}

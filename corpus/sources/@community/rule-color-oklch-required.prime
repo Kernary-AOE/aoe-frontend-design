@@ -1,0 +1,73 @@
+rule ColorOklchRequired {
+  id: "@community/rule-color-oklch-required"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "All new color declarations in CSS / inline styles MUST use the oklch() color function. Hex (#rrggbb), rgb(), and hsl() are prohibited for new code because they encode color in non-perceptual spaces, making consistent lightness ramps and dark-mode mirroring mathematically painful."
+
+  claim: "Every color value in author-written CSS MUST be expressed as oklch(L C H) — hex, rgb(), and hsl() are forbidden."
+
+  severity: medium
+
+  validates-with: [
+    @impeccable/template-oklch-palette,
+    @impeccable/template-oklch-dark-mode-cascade,
+  ]
+
+  checks: [
+    @community/check-color-oklch-required,
+  ]
+
+  severity-combination: |
+    any non-oklch color in author CSS → WARN
+    any non-oklch color in design tokens → BLOCK
+    all colors are oklch()             → PASS
+
+  failure-mode: "Designers cannot reason about lightness consistency across hues; dark-mode mirroring requires bespoke tweaks per token; the palette drifts perceptually across components."
+
+  remediation: [
+    "Convert hex tokens with @community/transform-rgb-to-oklch — feed the hex, store the oklch().",
+    "Adopt @impeccable/template-oklch-palette as the starting scaffold (12 lightness stops × N hues).",
+    "Add a stylelint rule `color-no-hex` and `color-named: never` plus a custom matcher that requires the `oklch(` token.",
+  ]
+
+  exceptions: [
+    {
+      case: "Vendor / third-party CSS",
+      allowed-when: "The CSS is shipped by an external library and not authored by the team; track but do not block.",
+    }
+    {
+      case: "Color values inside SVG <path fill='...'> imported from a designer asset",
+      allowed-when: "Asset is treated as a binary; flag for follow-up but do not block PR.",
+    }
+  ]
+
+  notes: [
+    "oklch() is supported in all evergreen browsers as of 2023+; for legacy browsers fall back via `@supports not (color: oklch(0% 0 0)) { ... }`.",
+    "Display-P3 wide-gamut content benefits from oklch() — hex cannot represent P3 colors.",
+  ]
+
+  related: [
+    @impeccable/template-oklch-palette,
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/transform-rgb-to-oklch,
+    @community/rule-color-blacklist-brand,
+    @community/counter-example-tailwind-blue-500,
+    @community/anti-pattern-generic-saas-blue,
+    @community/example-vercel-dashboard,
+    @community/principle-color-system-foundation,
+  ]
+
+  see-also: [
+    @community/check-color-oklch-required,
+  ]
+}

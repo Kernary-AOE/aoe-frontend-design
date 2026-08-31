@@ -1,0 +1,105 @@
+collection I18nReadyComponent {
+  id: "@community/collection-i18n-ready-component"
+  version: "1.0.0"
+
+  name: "Internationalization-Ready Component Bundle"
+  description: "Atoms required to ship a component that works correctly in all locales — LTR + RTL, single + plural, English + CJK + Arabic. Most components shipped without explicit i18n review have at least 3 of these atoms violated; this collection makes the audit checklist explicit."
+
+  domain: [i18n, frontend-engineering, accessibility]
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+  target: claude-code
+
+  includes: [
+    // Locale identity
+    @community/type-locale-tag,
+    @community/transform-locale-fallback-chain,
+
+    // Strings
+    @community/principle-no-string-concat,
+    @community/pattern-icu-message-format,
+    @community/rule-intl-api-locale-formatting,
+
+    // Layout direction
+    @community/fact-bidi-direction,
+    @community/rule-rtl-directional-icons-flip,
+
+    // Typography rules
+    @community/rule-cjk-line-break,
+    @community/term-leading,
+    @community/value-content-line-length,
+
+    // Date/time
+    @community/transform-relative-time-format,
+
+    // Anti-patterns
+    @community/anti-pattern-flag-as-language,
+  ]
+
+  entry-point: """
+    When implementing a component that will render localized content, the bundle enforces:
+
+    1. STRING SOURCING
+       - Every user-visible string is keyed via the i18n catalog (no inline literals).
+       - Concatenation is forbidden — single ICU MessageFormat templates with placeholders.
+       - Plurals via ICU `{count, plural, ...}` — never `count === 1 ? 'X' : 'Xs'`.
+       - Gender via ICU `{gender, select, ...}` when grammar requires.
+
+    2. NUMBERS, DATES, CURRENCIES, LISTS
+       - Use `Intl.NumberFormat`, `Intl.DateTimeFormat`, `Intl.RelativeTimeFormat`, `Intl.ListFormat`.
+       - Currency display uses `style: 'currency'` with locale-aware symbol placement (€100 vs 100 €).
+       - Never `arr.join(', ')` for translatable lists — use `Intl.ListFormat`.
+
+    3. DIRECTION (RTL/LTR)
+       - Honor `dir` attribute from root or container; do not hardcode direction in component CSS.
+       - Use CSS logical properties (margin-inline-start, padding-block-end) NOT physical (left/right).
+       - Mirror chevrons, sliders, and drawer-slide directions; do NOT mirror numbers, code, logos, media controls.
+
+    4. TYPOGRAPHY
+       - For CJK locales, set `line-break: strict` and `word-break: normal` (never break-all).
+       - Allow user font-size scaling (rem-based sizes) — see @community/transform-px-to-rem.
+       - Line length max 65ch for Latin, 30-40em for CJK.
+
+    5. INPUT
+       - Native `<input>` accepts all Unicode by default; do not strip non-ASCII.
+       - Names: do not assume given/family order; allow single full-name field as default.
+       - Phone: use libphonenumber for validation, NOT regex.
+       - Address: country-specific forms — start with country selector, render fields accordingly.
+
+    6. LOCALE SELECTION
+       - Show language autonyms ('Français', '日本語'), NOT flags.
+       - Default to `Accept-Language` (server) or `navigator.languages` (client).
+       - Persist user override across sessions (cookie + profile).
+
+    7. FALLBACKS
+       - Missing translation: fall back via @community/transform-locale-fallback-chain.
+       - Never display the raw key as user-facing text — fall back to default locale.
+       - Log missing translations with severity=warn for translator backlog.
+  """
+
+  recommended-implementation: """
+    Use FormatJS (react-intl) or LinguiJS for React; vue-i18n for Vue; angular/localize for Angular. All
+    of these support ICU MessageFormat, BCP 47 locale resolution, and pluralization out of the box.
+
+    For Next.js: pair with next-intl which handles SSR locale negotiation.
+
+    Translation pipeline: extract → Lokalise/Phrase/Crowdin → import → validate (ICU syntax + placeholder parity) → ship.
+  """
+
+  notes: [
+    "Most i18n bugs ship at the COMPONENT layer, not the strings layer — wrong line-breaking, wrong number alignment, missing dir support. The bundle catches these.",
+    "Test fixtures: use 'pseudo-locale' (Pseudoloc) for CI — replaces ASCII with extended characters and adds 30% length expansion to catch truncation. Available in FormatJS.",
+    "RTL audit: load page with `<html dir='rtl' lang='ar'>` and visually inspect — chevrons, scrollbars, alignment. Most layout bugs surface immediately.",
+  ]
+
+  related: [
+    @community/principle-no-string-concat,
+    @community/rule-intl-api-locale-formatting,
+    @community/fact-bidi-direction,
+    @community/anti-pattern-flag-as-language,
+  ]
+}

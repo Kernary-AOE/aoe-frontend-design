@@ -1,0 +1,36 @@
+rule Ios8ptGrid {
+  id: "@community/rule-ios-8pt-grid"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  applies-to: "all spacing, padding, margin, gap, and element dimension values in iOS apps"
+
+  statement: "All spacing and sizing values in iOS layouts must align to multiples of 8pt; use 4pt only for fine adjustments."
+
+  rationale: "The 8pt grid creates consistent visual rhythm and aligns to iOS's design density expectations. Values of 4, 8, 16, 24, 32, 40, and 48pt map cleanly onto the logical pixel grid across all Retina densities."
+
+  examples: [
+    "Card padding: 16pt (2 × 8pt) top/bottom, 16pt left/right.",
+    "List row height: 48pt (6 × 8pt).",
+    "Icon-to-label gap: 8pt; section-to-section gap: 24pt.",
+  ]
+
+  notes: [
+    "Use 4pt spacing only for micro-adjustments within a component (e.g., icon-text gap inside a button label).",
+    "Verify by inspecting computed frame values in Xcode's View Debugger — all should be divisible by 4.",
+    "Apple HIG source: Rule 1.5 — 8pt Grid Alignment.",
+  ]
+
+  related: [
+    @community/constraint-ios-touch-target-44pt,
+    @community/rule-ios-safe-area-insets,
+    @community/pattern-ios-thumb-zone,
+  ]
+}

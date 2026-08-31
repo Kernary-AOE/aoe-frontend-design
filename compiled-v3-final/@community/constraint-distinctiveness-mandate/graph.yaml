@@ -1,8 +1,0 @@
-atom: "@community/constraint-distinctiveness-mandate"
-relations:
-  - type: related
-    target: "@impeccable/principle-distinctiveness"
-  - type: related
-    target: "@community/fact-ai-fingerprint-detection"
-  - type: related
-    target: "@community/method-anti-ai-slop-checklist"

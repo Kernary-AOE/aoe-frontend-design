@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-ai-generated-ui"
-relations:
-  - type: related
-    target: "@impeccable/anti-pattern-ai-slop-palette"
-  - type: related
-    target: "@impeccable/principle-distinctiveness"
-  - type: related
-    target: "@community/fact-ai-palette-convergence"

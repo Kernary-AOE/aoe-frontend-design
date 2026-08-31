@@ -1,0 +1,10 @@
+protocol: prime/model/v2
+name: prime-design
+version: 1.0.0
+files:
+  - types.yaml
+  - relations.yaml
+  - projections.yaml
+  - retrieval/six-axis.yaml
+  - retrieval/severity.yaml
+  - tools/design-actions.yaml

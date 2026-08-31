@@ -1,0 +1,371 @@
+# Plan §4.3 Corpus Package declaration for the frontend-design corpus.
+#
+# This is the input declaration a corpus owner writes. It is NOT
+# `dist/corpus.manifest.json` — those 12 fields are §8.4's Release
+# Manifest, the identity a compiler stamps on a built bundle. Until this file
+# existed the repo had only the output half, which is why licence, default
+# retrieval profile, publication policy and eval had nowhere to be recorded.
+#
+# Validate with `bun run corpus:build && bun run corpus:check && bun run corpus:verify`.
+#
+# Every count below was measured, not estimated. Reproduce:
+#   find sources -name '*.prime' | wc -l                      # 797 (was 899; see the licence audit)
+#   for d in dist/@*; do \
+#     echo "$d $(find $d -mindepth 1 -maxdepth 1 -type d | wc -l)"; done
+#   grep -rl 'license:' sources | wc -l                       # 797 (was 13)
+protocol: prime/corpus/v2
+
+# A formal namespace, and since the L13-C cutover the one that is actually served.
+#
+# `SnapshotRef.corpus` flows into every outward-facing §11.3 URI. It used to carry
+# `compiled-v3-final` — a bundle directory basename — so every published URI
+# used a machine-local path label. A renameable directory basename cannot be a
+# published identity. The authority
+# segment is the reverse-DNS form of the host this corpus is published from, so
+# two corpora from two publishers can never collide.
+#
+# Adopted, not merely declared: `mountCorpus` now defaults to
+# `namespaceSource: "declaration"`, and the compiler stamps this same value into
+# `corpus.manifest.json`, so served URIs read
+# `prime://local/com.github.skill-wiki%2Ffrontend-design@<release>/units/…`. The
+# `/` is percent-encoded by `formatProjectionUri` before it is ever placed between
+# path separators; the round-trip through `parseProjectionUri` is pinned by test.
+# `MOUNT_NAMESPACE_MISMATCH` now means the two authorities genuinely disagree —
+# i.e. the bundle on disk was built from a different declaration than this one.
+namespace: com.github.skill-wiki/frontend-design
+version: 0.2.0
+title: Prime Frontend Design Corpus
+description: >-
+  Queryable frontend-design knowledge — facts, rules, patterns, anti-patterns,
+  checks, templates and personas — compiled from .prime sources into a projection
+  bundle servable by the Prime engine.
+
+# §4.3 declaration 1 of 6 — which models, and in what version RANGE.
+#
+# A range, not the exact pin `corpus.manifest.json` carries. `validateCorpusManifest`
+# (runtime/src/corpus-snapshot.ts) only checks that a model version is a non-empty
+# string; `resolveCorpusPackage` parses this range and picks the highest available
+# match, so a model that moves to 1.1.0 resolves here instead of silently mismatching.
+models:
+  - name: prime-design
+    versionRange: ^1.0.0
+    required: true
+
+# §4.3 declaration 2 of 6 — provenance and licence, per source set.
+#
+# REWRITTEN BY THE L14-A LICENCE AUDIT. The previous version of this block was a
+# claim, not a measurement, and the claim was false. It declared 809 units as
+# `community-original` — "no upstream work is redistributed", `Apache-2.0` — on
+# the sole basis that those units carry no `license:` field. Absence of a
+# declaration was read as absence of an upstream.
+#
+# Measured instead (method and per-unit rows in the workspace licence audit and
+# `quarantine/README.md`):
+# 73 of those units carry GPL-3.0 upstream content, 12 carry CC-BY-NC-SA-4.0,
+# and 17 name an upstream code repository whose terms were never recorded. All
+# 102 are now out of the release set — see `quarantine/`. Every one of
+# the 797 that remain carries an explicit `_meta.license` in its own `.prime`
+# file, so the set licences below are derived from per-unit facts rather than
+# asserted over a directory.
+#
+# The audit's three-way split, and why it is three ways and not two: a unit whose
+# licence could not be recovered is only `unknown` if something indicates an
+# upstream at all. Treating every unrecovered unit as `unknown` would infer
+# absence of provenance from absence of a slug match, on a matcher that reaches
+# 155 of 899.
+#
+# 604 + 73 + 13 + 29 + 1 + 26 + 46 + 3 + 2 = 797.
+#
+# The protocol `_meta` envelope is lifted into UnitIR provenance. The emitter
+# writes a top-level licence into all 797 `dist/**/atom.yaml` artifacts and the
+# bundle conformance gate refuses any missing value.
+sources:
+  - id: community-original
+    origin: >-
+      Originally authored for this corpus by Prime Knowledge Protocol contributors;
+      no upstream work is redistributed.
+    path: sources/@community
+    license: Apache-2.0
+    attribution: >-
+      The 604 units in this set name no upstream repository, carry no upstream
+      attribution, and have no counterpart in the legacy `primes/` tree under
+      either the reconciliation manifest's edges or a direct kind-stripped slug
+      match. They are covered by this package's LICENSE and NOTICE. This rests on
+      the package's own authorship claim — it is unverified, but unlike the
+      previous 809 it is not contradicted by any evidence found.
+    unitCount: 604
+
+  - id: community-legacy-backfilled
+    origin: >-
+      Re-encodings of legacy `primes/atoms` and `primes/modules` units whose
+      `source.license` was recovered by matching the v3 unit back to its legacy
+      counterpart. The licence existed in the legacy dialect and was dropped by
+      the id-convention rewrite that produced the `.prime` sources.
+    path: sources/@community
+    # Conjunctive for the same reason community-upstream-transcriptions is: the
+    # set carries every obligation in it simultaneously (MIT 69, MPL-2.0 4), plus
+    # this project's own terms on the re-encoding.
+    license: MIT AND MPL-2.0 AND Apache-2.0
+    attribution: >-
+      69 units recovered as MIT and 4 as MPL-2.0. Each carries its recovered
+      expression in its own `.prime` `source.license`, with
+      `license-provenance: "legacy-backfill"` recording how it was established.
+      The 4 MPL-2.0 units must remain individually identifiable as MPL-covered
+      (MPL-2.0 §3.3), which is why the per-unit field and not this summary is
+      the operative record.
+    unitCount: 73
+
+  - id: community-citation-restatements
+    origin: >-
+      Restatements of published works — books, standards, and specifications —
+      at unit granularity. The material is cited, not redistributed, which is the
+      same relationship w3c-references and nielsen-references already carry.
+    path: sources/@community
+    license: LicenseRef-Citation-Only AND LicenseRef-W3C-Citation-Only AND Apache-2.0
+    attribution: >-
+      Rights holders named in each unit's own `attributed-to`: Jakob Nielsen
+      (1994, 10 units), OWASP Foundation (Top 10 2021, 10 units), and one unit
+      each restating W3C material, GDPR Art. 5(1)(c) / ICO / CCPA, Pat Helland
+      (ACM Queue 2012), Chad Fowler / Kief Morris, Mozilla L10n / ICU / Mark
+      Davis, Mark Nottingham / JSON:API, Walter Doherty (IBM 1979) / Souders /
+      Chrome RAIL, Cindy Sridharan (O'Reilly 2018) / OpenTelemetry, and the
+      Anthropic Canvas Design Skill. Copyright remains with each rights holder.
+    unitCount: 29
+
+  - id: community-cc0-backfilled
+    origin: >-
+      One legacy re-encoding whose recovered `source.license` is a CC0-1.0
+      public-domain dedication.
+    path: sources/@community
+    license: CC0-1.0 AND Apache-2.0
+    attribution: >-
+      CC0-1.0 imposes no attribution or share-alike obligation, so nothing is
+      inherited beyond the dedication itself. Added to `policy.allow` on that
+      basis: it is strictly weaker than MIT, which was already allowed.
+    unitCount: 1
+
+  - id: community-upstream-transcriptions
+    origin: >-
+      Code excerpts transcribed from dnd-kit, BlockNote, Liveblocks, cmdk and
+      shadcn-derived kits; the 13 units that declare `source.license` inline.
+    path: sources/@community
+    # Conjunctive, not disjunctive: the set as a whole carries all three
+    # obligations simultaneously, because different units in it come from
+    # differently licensed upstreams (MIT 5, Apache-2.0 5, MPL-2.0 3). Writing
+    # `OR` here would claim a consumer may pick one, which is false.
+    license: MIT AND Apache-2.0 AND MPL-2.0
+    attribution: >-
+      MIT: pattern-tx-dnd-kit-drop-indicator, pattern-tx-dnd-kit-nested-tree,
+      pattern-tx-dnd-kit-kanban-columns, pattern-tx-cmdk-fuzzy-search,
+      template-shadcn-pricing-toggle. MPL-2.0: pattern-tx-blocknote-drag-handle,
+      pattern-tx-blocknote-nested-indent, pattern-tx-blocknote-block-editor-core.
+      Apache-2.0: pattern-tx-liveblocks-floating-comment,
+      pattern-tx-liveblocks-sync-badge, pattern-tx-liveblocks-avatar-stack,
+      pattern-tx-liveblocks-live-cursor, template-liveblocks-selection-presence.
+    unitCount: 13
+
+  - id: anthropic-impeccable
+    origin: https://github.com/anthropics/skills
+    path: sources/@anthropic-impeccable
+    # NOTICE §1: upstream is MIT and its terms are preserved per Apache-2.0 §4(c);
+    # the DSL re-encoding is this project's own Apache-2.0 work. Both hold.
+    license: MIT AND Apache-2.0
+    attribution: >-
+      Derived from the "Impeccable" frontend-design skill in anthropics/skills.
+      Upstream MIT notice reproduced verbatim in NOTICE. The @anthropic-impeccable
+      namespace marks provenance and implies no endorsement or affiliation.
+    unitCount: 26
+
+  - id: impeccable
+    origin: >-
+      Authored for this corpus; the @impeccable namespace predates the
+      @anthropic-impeccable provenance split and carries no upstream attribution
+      in NOTICE.
+    path: sources/@impeccable
+    license: Apache-2.0
+    unitCount: 46
+
+  - id: w3c-references
+    origin: https://www.w3.org/WAI/WCAG22/quickref/
+    path: sources/@w3c
+    # NOTICE §2: these atoms cite but do not redistribute W3C material, and
+    # original copyright remains with the W3C. No SPDX id expresses
+    # "restatement under citation", so a LicenseRef names it explicitly rather
+    # than being smuggled in as NOASSERTION, which the policy would reject.
+    license: LicenseRef-W3C-Citation-Only AND Apache-2.0
+    attribution: >-
+      Restates published WCAG success criteria at unit granularity. Each atom
+      carries an inline attributed_to: source URL. Copyright remains with the W3C.
+    unitCount: 3
+
+  - id: nielsen-references
+    origin: https://www.nngroup.com/articles/ten-usability-heuristics/
+    path: sources/@nielsen
+    license: LicenseRef-NNG-Citation-Only AND Apache-2.0
+    attribution: >-
+      Restates the Ten Usability Heuristics at unit granularity. Copyright remains
+      with Nielsen Norman Group.
+    unitCount: 2
+
+# §4.3's `assets/` — declared empty, not omitted-by-accident.
+#
+# This corpus is pure text: every one of the 797 units compiles to YAML/Markdown
+# and there are no bytes to copy through. `assets/` is the only §4.3 directory with
+# a counterpart in §8.3's CorpusBundle, i.e. the only declared material a consumer
+# receives verbatim; an image or font added later must be declared here so its
+# licence is gated before it is published, which is what `ASSET_LICENSE_UNPARSABLE`
+# and `ASSET_PATH_CLAIMED_TWICE` exist for.
+#   find sources -type f ! -name '*.prime' | wc -l   → 0
+assets: []
+
+# §4.3's `citations/` — external works this corpus restates but does not redistribute.
+#
+# The distinguishing fact, and why these are not `sources[]`: §8.3's CorpusBundle
+# has `assets/` and no `citations/`. Sources compile into the bundle, assets are
+# copied into it, citations appear in neither — the material stays with its rights
+# holder. That is why a citation carries no `license`: the terms that apply belong
+# to the source set doing the restating, which is what `appliesTo` points back at.
+# The two `LicenseRef-*-Citation-Only` ids above are precisely this relationship,
+# and until this field existed the citation itself was prose inside `attribution`.
+#
+# Every value below is taken from the corpus's own `source` units, not looked up:
+#   sources/@w3c/source-wcag-22.prime
+#   sources/@nielsen/source-nielsen-1994.prime
+# `publishedOn` rather than `retrievedAt` in both cases, deliberately: no retrieval
+# date was ever recorded, and inventing one would be worse than anchoring on the
+# publication date the source units do state.
+citations:
+  - id: wcag-22
+    work: Web Content Accessibility Guidelines (WCAG) 2.2
+    rightsHolder: W3C (World Wide Web Consortium)
+    url: https://www.w3.org/TR/WCAG22/
+    identifier: w3c:REC-wcag22-20231005
+    # W3C Recommendation, 5 October 2023, per source-wcag-22.prime's description.
+    publishedOn: "2023-10-05"
+    appliesTo: [w3c-references]
+    use: restatement
+
+  - id: nielsen-usability-engineering
+    work: Usability Engineering, ch. 5 and appendix B (the canonical ten heuristics)
+    rightsHolder: Jakob Nielsen / Academic Press
+    # A printed book. `url` is the online restatement NNG publishes; the ISBN is
+    # what actually identifies the cited edition, which is why the schema requires
+    # a locator rather than specifically a URL.
+    url: https://www.nngroup.com/articles/ten-usability-heuristics/
+    identifier: isbn:978-0125184069
+    publishedOn: "1994"
+    appliesTo: [nielsen-references]
+    use: restatement
+
+# The corpus-level summary plus the policy it is checked against.
+license:
+  # Must mention every id the source sets carry, or `CORPUS_LICENSE_INCOMPLETE`
+  # fires: a corpus licence that omits an obligation its content carries is a
+  # claim, not a summary.
+  expression: >-
+    Apache-2.0 AND MIT AND MPL-2.0 AND CC0-1.0 AND LicenseRef-Citation-Only
+    AND LicenseRef-W3C-Citation-Only AND LicenseRef-NNG-Citation-Only
+  policy:
+    allow:
+      - Apache-2.0
+      - MIT
+      - MPL-2.0
+      # Added by the L14-A audit. A public-domain dedication with no attribution
+      # and no share-alike obligation — strictly weaker than MIT, which was
+      # already here, so allowing it inherits nothing new.
+      - CC0-1.0
+      # Added by the L14-A audit. Not a loosening: the corpus already allowed two
+      # instances of exactly this relationship (W3C, NNG) and 29 further units
+      # restate published works under the same terms. Before the audit those 29
+      # were silently inside `community-original`, i.e. declared as material with
+      # no upstream at all, which was the more permissive reading.
+      - LicenseRef-Citation-Only
+      - LicenseRef-W3C-Citation-Only
+      - LicenseRef-NNG-Citation-Only
+    # NOT added, deliberately: CC-BY-4.0, BSD-3-Clause and the W3C CFSA — the 253
+    # legacy units the L13-F tiering puts behind a policy extension. Both CC-BY
+    # and BSD-3 carry PER-UNIT attribution obligations, and this corpus has no
+    # mechanism to carry a per-unit licence into the published artifact: 0 of the
+    # compiled `atom.yaml` files hold a licence field. Extending `allow` before
+    # the emitter can record the obligation would repeat precisely the failure
+    # this audit found — an obligation that exists only in a source dialect and
+    # reaches no consumer. Gated on the emitter carrying `source.license`.
+    #
+    # Load-bearing, and now demonstrated rather than asserted. The previous
+    # version of this comment said copyleft "must fail the gate if a later
+    # migration pulls it in, rather than arriving unnoticed". It had already
+    # arrived unnoticed: 73 published units carry GPL-3.0 upstream content while
+    # declaring no licence, so no GPL-3.0 string existed anywhere for this list
+    # to match. The gate was not broken — it was never given the fact. Those 73
+    # are now in `sources/quarantine/gpl-3.0/`, and
+    # `../prime-system/packages/corpus-schema/test/license-policy-gate.test.ts`
+    # pins that re-admitting any one of them makes CD-PROVENANCE-LICENSE FAIL.
+    #
+    # GPL-3.0 §5 puts the whole conveyed work under GPL-3.0, so an Apache-2.0
+    # corpus incorporating it is either misdeclared or relicensed, and the second
+    # propagates to every downstream consumer. No attribution notice fixes that,
+    # which is why the disposition is removal and not a new source set.
+    deny:
+      - GPL-2.0
+      - GPL-3.0
+      - AGPL-3.0
+      # Non-commercial plus share-alike: incompatible with this package's
+      # Apache-2.0 terms in both directions. 12 published units carried it; they
+      # are in `sources/quarantine/cc-by-nc-sa-4.0/`.
+      - CC-BY-NC-SA-4.0
+    requireDeclared: true
+    # A consumer, not the corpus, picks a branch of an OR. Leaving this false
+    # forces a disjunctive licence to be resolved explicitly before it can pass.
+    allowDisjunctiveEscape: false
+
+# §4.3 declaration 4 of 6 — the corpus's default retrieval profile.
+#
+# `loadServeModel` (mcp-server-core/src/model-context.ts) reads retrieval profiles
+# only from the Model Package, so before this field the model was the only party
+# that could name a default. A corpus may choose among the profiles the model
+# declares; it may not invent one, because retrieval semantics are §4.2 model
+# policy. `prime-design` declares the generic `default` and the domain-specific
+# `frontend-six-axis` profiles.
+retrieval:
+  defaultProfile: default
+  additionalProfiles: [frontend-six-axis]
+
+# §4.3 declaration 5 of 6 — publication policy and visibility.
+publication:
+  # `internal` rather than `public`: `dist/signature.json` (§8.3) does
+  # not exist, so a public declaration would have to set requireSignature: false,
+  # which `PUBLIC_WITHOUT_SIGNATURE` correctly refuses. Raising this to `public`
+  # is gated on the bundle actually being signed.
+  visibility: public
+  # `pinned`: a run is bound to one release (§8.5). An unpinned consumer whose
+  # results change under it cannot reproduce anything.
+  channel: pinned
+  requireSignature: true
+  publishers:
+    - prime-knowledge-protocol-contributors
+
+# §4.3 declaration 6 of 6 — eval and golden queries.
+#
+# Exact-id expectations are the minimum release gate; domain benchmarks cover
+# ranking and output quality above them.
+eval:
+  goldenQueries:
+    - name: wcag-contrast-exact-id
+      request:
+        unitId: "@w3c/fact-wcag-contrast-aa"
+        profile: default
+      expectedUnitIds:
+        - "@w3c/fact-wcag-contrast-aa"
+    - name: dnd-drop-indicator-exact-id
+      request:
+        unitId: "@community/pattern-tx-dnd-kit-drop-indicator"
+        profile: default
+      expectedUnitIds:
+        - "@community/pattern-tx-dnd-kit-drop-indicator"
+  minimumPassRate: 1
+
+# The built bundle this declaration describes (§4.3's `dist/`).
+#
+# Generated atomically from 797 licensed source units. It includes model.lock,
+# per-unit provenance and only relations resolved to units in this release.
+dist: dist

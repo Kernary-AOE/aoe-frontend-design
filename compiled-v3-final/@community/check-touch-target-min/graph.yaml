@@ -1,6 +1,0 @@
-atom: "@community/check-touch-target-min"
-relations:
-  - type: related
-    target: "@community/rule-touch-target-min"
-  - type: related
-    target: "@w3c/source-wcag-22"

@@ -1,4 +1,0 @@
-atom: "@community/check-button-type-explicit"
-relations:
-  - type: related
-    target: "@community/rule-button-type-explicit"

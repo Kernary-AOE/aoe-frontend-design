@@ -1,0 +1,93 @@
+collection FintechComplianceUI {
+  id: "@community/collection-fintech-compliance-ui"
+  version: "1.0.0"
+
+  name: "Fintech Compliance UI Bundle"
+  description: "A bundle of atoms for building financial-product UI surfaces that meet regulatory and trust expectations: number display formatting, secure input handling, audit-trail visibility, and clear status communication. Fintech UIs are held to a higher bar — even small typographic ambiguity (e.g. comma vs period as decimal) can cause real money loss."
+
+  domain: [frontend-design, ux-design, accessibility]
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+  target: claude-code
+
+  includes: [
+    // Number/currency display
+    @community/fact-fintech-number-display,
+    @community/pattern-fintech-number-display,
+    @community/pattern-fintech-hero-amount-card,
+
+    // Secure input handling
+    @community/principle-owasp-cryptographic-failures,
+    @community/principle-owasp-broken-access-control,
+    @community/anti-pattern-md5-for-passwords,
+    @community/rule-passwords-bcrypt-or-argon2,
+
+    // Trust, status, and visibility
+    @community/pattern-trust-social-proof-numbers,
+    @community/principle-nielsen-visibility,
+
+    // Cookie & session security
+    @community/check-cookie-secure-flags,
+    @community/check-https-everywhere,
+    @community/check-no-credentials-client,
+
+    // Number formatting types
+    @community/type-color-token-shape,
+  ]
+
+  entry-point: """
+    When building a fintech surface (account balance, transaction list, transfer flow, payment form):
+
+    1. NUMBER DISPLAY (see @community/fact-fintech-number-display)
+       - Use tabular-figures (`font-feature-settings: 'tnum'` OR `font-variant-numeric: tabular-nums`).
+       - Right-align all monetary columns.
+       - Decimal alignment: align on the decimal point, not the right edge, when mixing integer and fractional values.
+       - Use `Intl.NumberFormat(locale, { style: 'currency', currency: 'USD' })` — never hand-roll formatting.
+       - Display sign explicitly for credits (+) and debits (−) using minus character (U+2212), not hyphen.
+
+    2. SECURE INPUT
+       - Card numbers, CVV, SSN: type='text' with `autocomplete` (e.g. `cc-number`, `cc-csc`),
+         `inputmode='numeric'`, `pattern='[0-9 ]*'`. Use Stripe Elements / Plaid for PCI scope reduction.
+       - Passwords: bcrypt/Argon2 server-side (see @community/rule-passwords-bcrypt-or-argon2).
+       - NEVER log card numbers, full account numbers, or SSNs (mask all but last 4).
+
+    3. AUDIT-TRAIL VISIBILITY
+       - Every money-moving action must surface: who, what, when, amount, status.
+       - Show last login, last password change, last 2FA event in account settings.
+       - Surface pending transactions distinctly from cleared (different visual weight + status badge).
+
+    4. STATUS COMMUNICATION (see @community/principle-nielsen-visibility)
+       - Pending / posted / failed / reversed each get a distinct, color-coded badge — but never color-only
+         (see @community/anti-pattern-color-only-meaning). Pair color with icon + text label.
+       - Currency conversion shows source amount, target amount, FX rate, and timestamp.
+
+    5. CONFIRMATION BEFORE COMMIT
+       - All destructive money operations (transfer, send, withdraw) require explicit confirmation
+         showing recipient, amount, and fee — see @community/principle-error-prevention-and-recovery.
+       - Show recipient identity (last 4 of account, bank name) — never just an account-id string.
+
+    6. TRUST SIGNALS
+       - Display security indicators (lock icon, encrypted badge) only where TRUE.
+         See @community/anti-pattern-fake-trust-signals.
+       - Show insurance/regulatory disclosures (FDIC, SIPC, PRA) at point of relevance, not just footer.
+  """
+
+  notes: [
+    "Fintech UI is the most-scrutinized surface category for accessibility — visually impaired users lose money to ambiguous numbers. Tabular-figures and decimal alignment are accessibility, not just polish.",
+    "Cross-border products must respect locale-specific decimal/thousands separators (1,000.00 in en-US vs 1.000,00 in de-DE). Never hardcode.",
+    "Audit-trail UI doubles as compliance evidence — design it as a queryable, exportable surface, not just a settings tab.",
+    "PCI DSS scope minimization: never collect card data through your own form fields if a vendor (Stripe Elements, Adyen) can host them in an iframe.",
+  ]
+
+  related: [
+    @community/fact-fintech-number-display,
+    @community/pattern-fintech-number-display,
+    @community/principle-owasp-cryptographic-failures,
+    @community/example-stripe-checkout,
+    @community/example-mercury-banking-dashboard,
+  ]
+}

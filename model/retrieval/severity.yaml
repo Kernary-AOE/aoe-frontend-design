@@ -1,0 +1,172 @@
+# The frontend-design severity scale, declared as model data.
+#
+# ── Why this file exists ─────────────────────────────────────────────────────
+#
+# `adapters/design-standards/src/index.ts` used to carry `SEVERITY_ORDER` as a
+# literal `readonly string[]` and `NON_NEGOTIABLE_SEVERITIES` as a second literal.
+# Both are model semantics: which words this domain accepts, how they order, and
+# which of them stop a ship. An adapter that decides those is an adapter that owns
+# the domain's meaning, which is exactly what §2.2/§4.5 move out of code.
+#
+# So the scale is declared HERE and the adapter reads it. There is no fallback copy
+# in code: if this file is missing or malformed the adapter throws
+# `SEVERITY_MODEL_INVALID` rather than quietly ordering by a hardcoded table.
+#
+# ── Where the numbers come from ──────────────────────────────────────────────
+#
+# The `observed` counts are measured over the 797 publishable sources in
+# `corpus/sources`; 185 units declare a literal `severity:` value. Alias counts
+# stay on the authored word rather than being folded into their target.
+#
+#   rg '^  severity:' corpus/sources -g '*.prime' | sed 's/.*severity: *//' | sort | uniq -c
+#
+# 185 = 19 + 27 + 55 + 39 + 40 + 2 (scale) + 3 + 0 (aliases).
+#
+# ── Why the ORDER is declared here and not derived from the corpus ───────────
+#
+# The corpus does not declare a total order over its own severity words. It does
+# state two fragments of one, both in prose:
+#
+#   - `@community/check-ios-hig-compliance` (`## Fix Suggestion`): "Prioritize
+#     block-severity items ... before warning-severity items."  => block > warning
+#   - `@community/rule-mobile-first` (`## Code`): ">50% of breakpoints use
+#     max-width -> BLOCK / 1-50% use max-width -> WARN".          => BLOCK > WARN
+#
+# Two attestations of one pair is not a scale. The remaining rungs are this
+# DOMAIN's decision, which is why the domain's model package is the right owner:
+# a domain may declare semantics the corpus leaves open; an adapter may not.
+#
+# This definition belongs to the domain's single `model/prime-model.yaml` beside
+# the corpus types, projections, retrieval profiles and actions.
+kind: definitions
+version: 1.0.0
+definitions:
+  - kind: type
+    name: severity
+    version: 1.0.0
+
+    fields:
+      # `typeRef: string` because the schema cannot yet say "one of scale[].name".
+      # See the enum handoff note above. `required: true` states that a unit which
+      # declares a `## Severity` section must put a word in it; it does NOT say
+      # every unit must declare the section (only `requireDeclarationForKinds`
+      # below says that, and only for `check`).
+      - name: value
+        typeRef: string
+        required: true
+        description: >-
+          The severity word as authored. Normalised through
+          `extensions.severity.aliases`, then ranked by position in
+          `extensions.severity.scale`.
+    additionalFields: reject
+
+    extensions:
+      severity:
+        # ── The scale ──────────────────────────────────────────────────────
+        #
+        # ORDERED MOST-SEVERE-FIRST. Array position IS the rank; there is no
+        # separate rank number to drift out of sync with the order.
+        #
+        # `gate: blocking` is the successor of the adapter's old
+        # `NON_NEGOTIABLE_SEVERITIES` literal. It is a property of each rung
+        # rather than a second list, so the two cannot disagree.
+        scale:
+          # `block` is above `critical` because `block` is the word the corpus
+          # uses when it is talking about a GATE ("Prioritize block-severity
+          # items", "-> BLOCK"), whereas `critical` is used as an adjective of
+          # importance. Both are `blocking`, so this pair only decides
+          # presentation order within the mandate list, never membership.
+          - { name: block, observed: 19, gate: blocking }
+          - { name: critical, observed: 27, gate: blocking }
+          - { name: high, observed: 55, gate: advisory }
+          - { name: medium, observed: 39, gate: advisory }
+          - { name: warning, observed: 40, gate: advisory }
+          # `low` is authored deliberately, not as a fallback:
+          # `@community/check-grid-baseline-aligned.prime:59` says "Baseline
+          # rhythm is aesthetic, not functional — severity intentionally low."
+          - { name: low, observed: 2, gate: advisory }
+
+        # ── Normalisation ─────────────────────────────────────────────────
+        #
+        # `from` is matched case-insensitively after trimming, against the raw
+        # authored word. `to` must name a `scale[].name`.
+        #
+        # `basis` is how much interpretation the mapping required, and the
+        # adapter reports it: `spelling` is applied silently, `inferred` emits
+        # `SEVERITY_ALIAS_INFERRED` so a reader can see that this domain, not the
+        # corpus, decided the rung.
+        aliases:
+          # Pure spelling variant. All 3 are `kind: rule` in NON-frontend domains
+          # (`i18n` @community/rule-cjk-line-break, `api-design`
+          # @community/rule-resource-not-action, `testing`
+          # @community/rule-flaky-quarantine) — authors reaching for the
+          # lint diad `warn`/`error` rather than for this six-rung scale.
+          - { from: warn, to: warning, observed: 3, basis: spelling }
+
+          # JUDGEMENT (lane L14-E item 2). One unit:
+          # `@community/rule-collapse-multi-column-mobile` (`domain:
+          # frontend-design`, `kind: rule`).
+          #
+          # Mapped to `high`, i.e. the top ADVISORY rung, not to `critical`.
+          #
+          # For `critical`: in every lint vocabulary `error` is the failing tier,
+          # and the unit's own text is a MUST ("must reflow to a single column").
+          #
+          # For `high`, which is what this declares:
+          #   1. `critical` and `block` are the corpus's OWN two words for the
+          #      blocking tier, and 59 units already use them. An author with
+          #      those words available who typed `error` was not reaching for
+          #      this scale's top; they were reaching for a different scale.
+          #   2. Its two nearest declared neighbours — the units it names in
+          #      `relations` — sit right there:
+          #      `@community/constraint-mobile-touch-target-44px` = `high`,
+          #      `@community/rule-mobile-first` = `medium`.
+          #   3. Its `## Verify By` is "Resize browser to 375px; confirm no
+          #      horizontal scrollbar", an automatable regression check, not a
+          #      launch gate.
+          #   4. Consequence asymmetry: `gate: blocking` feeds
+          #      `prime_design_mandate`, whose contract is "violating one = task
+          #      failure". Mapping to `critical` would promote a unit into a GATE
+          #      on the strength of one word nothing in the corpus orders (both
+          #      attested order fragments are about `block` vs `warning`;
+          #      `error` appears in neither). Mapping to `high` leaves it exactly
+          #      where its neighbours already rank it. Being wrong toward
+          #      `advisory` costs one place in a ranked list; being wrong toward
+          #      `blocking` puts a false non-negotiable in front of a caller.
+          #
+          # This is the domain's inference, not the corpus's statement, so it is
+          # `basis: inferred` and the adapter says so out loud. The real fix is
+          # upstream: rewrite that unit's source `severity:` to a scale word.
+          - {
+              from: error,
+              to: high,
+              observed: 0,
+              basis: inferred,
+              rationale: "`error` is the lint diad's failing tier, not a rung of this scale; the corpus never orders it against `block`/`critical`. Ranked with its declared neighbours (high, medium) rather than promoted into the mandate gate.",
+            }
+
+        # ── Which kinds MUST declare a severity ───────────────────────────
+        #
+        # A `check` is the only kind this domain runs as a gate
+        # (`buildChecklist` selects on `kind: check`), and a check that cannot
+        # say whether it blocks cannot be a gate. So an undeclared severity on a
+        # `check` is a corpus defect the adapter must SURFACE
+        # (`SEVERITY_REQUIRED_UNDECLARED`), not skip.
+        #
+        # Measured: 36 `kind: check` units, 33 declare `## Severity`, 3 do not:
+        #   @community/check-ios-increase-contrast
+        #   @community/check-ios-bold-text-support
+        #   @community/check-ios-hig-compliance
+        #
+        # All three are a SOURCE gap, not a projection loss: their
+        # `primes-v3/sources/@community/*.prime` files carry no `severity:` key
+        # at all. `check-ios-hig-compliance` even names the vocabulary in its
+        # `fix-suggestion` ("Prioritize block-severity items ... before
+        # warning-severity items") while leaving its own field unset. Not
+        # mechanically derivable — inferring a rung from a sibling would be the
+        # adapter inventing model data — so it stays a diagnostic.
+        #
+        # No other kind is listed. 24 further kinds have units with no severity
+        # (pattern 143, fact 98, rule 69, principle 63, ...), and that is correct:
+        # a `pattern` is not a gate and has nothing to declare.
+        requireDeclarationForKinds: [check]

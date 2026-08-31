@@ -1,8 +1,0 @@
-atom: "@community/rule-cross-platform-flow-step-consistency"
-relations:
-  - type: related
-    target: "@community/principle-consistent-cross-platform-mental-models"
-  - type: related
-    target: "@community/rule-no-divergent-platform-flows"
-  - type: related
-    target: "@community/pattern-multi-step-wizard"

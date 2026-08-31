@@ -1,8 +1,0 @@
-atom: "@community/rule-explicit-trade-off-disclosure"
-relations:
-  - type: related
-    target: "@community/rule-design-decisions-cite-research"
-  - type: related
-    target: "@community/principle-error-prevention-and-recovery"
-  - type: related
-    target: "@community/tradeoff-density-vs-comfort"

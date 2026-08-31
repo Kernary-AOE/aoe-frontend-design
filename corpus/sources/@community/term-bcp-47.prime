@@ -1,0 +1,34 @@
+term Bcp47 {
+  id: "@community/term-bcp-47"
+  version: "1.0.0"
+
+  meaning: "Best Current Practice 47, the IETF document collection (currently RFC 5646 + RFC 4647) defining the syntax and use of language tags. The canonical format for identifying human languages and locales in HTML, HTTP, JSON, and software systems globally."
+
+  domain: i18n
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  aliases: ["language tag", "locale tag", "RFC 5646", "IETF language tag"]
+
+  notes: [
+    "BCP 47 = RFC 5646 (syntax for tags) + RFC 4647 (matching language tags). 'BCP' is a permanent designation; the underlying RFC numbers may evolve while BCP 47 remains the stable reference.",
+    "Tag format: language[-script][-region][-variant][-extensions][-x-private]. All subtags hyphen-separated. Example: 'zh-Hant-HK' = Chinese, Traditional script, Hong Kong region.",
+    "Subtag registry: maintained by IANA at https://www.iana.org/assignments/language-subtag-registry — authoritative list of valid language, script, region, and variant codes.",
+    "Letter case is informational, not normative: language lowercase ('zh'), script Title Case ('Hant'), region UPPERCASE ('HK'). Tag matching MUST be case-insensitive.",
+    "Common usage: HTML `lang` attribute, HTTP `Accept-Language` and `Content-Language` headers, JSON-LD `@language`, locale parameter in Intl APIs (`new Intl.NumberFormat('zh-Hant-HK')`).",
+    "Resolution: RFC 4647 specifies Lookup (single best match) and Filtering (all matches) algorithms — see @community/transform-locale-fallback-chain.",
+    "Privacy concern: full BCP 47 tags (en-US-NYC) leak more entropy than necessary; most servers only need language + region. Browsers reduce Accept-Language entropy by sending fewer bits.",
+  ]
+
+  related: [
+    @community/type-locale-tag,
+    @community/transform-locale-fallback-chain,
+    @community/rule-intl-api-locale-formatting,
+    @community/principle-no-string-concat,
+    @community/fact-bidi-direction,
+  ]
+}

@@ -1,0 +1,105 @@
+pattern LogViewerVirtualized {
+  id: "@community/pattern-log-viewer-virtualized"
+  version: "1.0.0"
+
+  label: "Virtualized Log Viewer"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "A monospace, line-numbered scrollable viewer that virtualizes (only renders visible rows) for log streams of 100k+ lines. Supports follow-tail, level filtering, regex search, and click-to-pin a line."
+
+  problem: "Rendering a full log stream as DOM nodes is O(n) memory and freezes scroll above ~10k lines. Tailing logs needs sticky scroll-to-bottom unless the user scrolls up to inspect."
+
+  solution: "A virtualized list rendering only the visible rows + a small overscan buffer; absolute-positioned line numbers; toolbar for level filter + regex search; auto-follow toggle that sticks to the latest line until user scrolls up."
+
+  structure: """
+    <section aria-label="Application logs" class="logs">
+      <header class="logs-toolbar">
+        <input
+          type="search"
+          aria-label="Filter logs"
+          placeholder="Search or /regex/"
+        />
+        <fieldset role="group" aria-label="Log level">
+          <label><input type="checkbox" checked /> Error</label>
+          <label><input type="checkbox" checked /> Warn</label>
+          <label><input type="checkbox" checked /> Info</label>
+          <label><input type="checkbox" /> Debug</label>
+        </fieldset>
+        <button aria-pressed="true" aria-label="Follow tail">Follow</button>
+        <button aria-label="Clear">Clear</button>
+      </header>
+      <div
+        class="logs-viewport"
+        role="log"
+        aria-live="polite"
+        aria-relevant="additions"
+        tabindex="0"
+      >
+        <ol class="logs-virt" style="height: 6400000px">
+          <li
+            data-level="error"
+            data-line="1042"
+            style="position:absolute; top: 24px"
+          >
+            <span class="ln" aria-hidden="true">1042</span>
+            <time datetime="2026-04-27T14:32:01Z">14:32:01</time>
+            <span class="lvl" aria-label="Error">ERR</span>
+            <pre>connect ECONNREFUSED 127.0.0.1:5432</pre>
+          </li>
+        </ol>
+      </div>
+      <footer class="logs-status">
+        <span>Showing 1,042 of 124,818</span>
+      </footer>
+    </section>
+  """
+
+  uses: [
+    @community/method-heuristic-review,
+  ]
+
+  facts: [
+    @community/fact-flexibility-efficiency,
+  ]
+
+  behavior: [
+    "Virtualize: render only rows whose offset intersects the scroll viewport plus a small overscan (e.g., 8 rows).",
+    "Follow-tail: when on, auto-scroll to the latest line on every new entry. Disable as soon as user scrolls up; show 'Jump to latest' button.",
+    "Search input treats text as substring; if wrapped in /.../, treat as regex.",
+    "Color rows by level (error=red, warn=amber, info=neutral, debug=muted) but always keep level label visible.",
+    "Click a line to pin it (sticky at top); click again to unpin.",
+    "Cmd/Ctrl+F focuses the filter input; Esc clears it; Cmd/Ctrl+End jumps to latest.",
+  ]
+
+  a11y: [
+    "Container uses `role='log'` with `aria-live='polite'` and `aria-relevant='additions'` so screen readers announce new lines without re-reading old ones.",
+    "Level badges (ERR/WRN) need `aria-label` (e.g., 'Error') so screen readers do not read 'ER R'.",
+    "Color is supplemental — every level has a text label, not just background color.",
+    "Follow-tail toggle uses `aria-pressed`; announce state changes via live region: 'Following tail' / 'Paused'.",
+    "Virtualized rows must keep keyboard focus stable when items reflow — pin focus to the row's data id, not its DOM position.",
+  ]
+
+  examples: [
+    @community/example-vercel-runtime-logs,
+    @community/example-datadog-log-explorer,
+  ]
+
+  compatible: [
+    @community/pattern-data-table-dense,
+  ]
+
+  related: [
+    @community/pattern-data-table-dense,
+    @community/rule-keyboard-accessible,
+    @community/check-heading-hierarchy,
+    @community/rule-keyboard-tab-order,
+    @community/anti-pattern-color-only-meaning,
+    @community/check-focus-visible,
+  ]
+}

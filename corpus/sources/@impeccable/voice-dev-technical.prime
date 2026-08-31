@@ -1,0 +1,91 @@
+voice DevTechnical {
+  id: "@impeccable/voice-dev-technical"
+  version: "1.0.0"
+
+  label: "Developer Technical"
+  domain: developer-docs
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "The voice used in API references, SDK guides, and engineering documentation. Reference-friendly, low-hype, second-person imperative for tasks. Sounds like Stripe API docs, Tailwind docs, Anthropic docs, Postgres manual."
+
+  tone: "neutral + reference-friendly"
+  emphasis: "what it does → how to use it → constraints → example — every claim shippable"
+  emotional-arc: "flat by design — the reader's emotion is replaced by competence"
+
+  patterns: [
+    {
+      label: "Method definition"
+      template: "`{method}` {verbs} a {return-type}. Required: {params}. Optional: {params}."
+      example: "`createSession` returns a `Session` object. Required: `userId`. Optional: `metadata`, `expiresAt`."
+    }
+    {
+      label: "Task instruction (imperative)"
+      template: "To {goal}, call `{method}` with {param-shape}."
+      example: "To revoke an API key, send `DELETE /v1/keys/{id}`."
+    }
+    {
+      label: "Behavioral guarantee"
+      template: "{Subject} is {idempotent | atomic | eventually-consistent} across {scope}."
+      example: "Webhook delivery is at-least-once. Endpoints must be idempotent."
+    }
+    {
+      label: "Constraint statement"
+      template: "{Limit}: {value}. Exceeding {value} returns `{error-code}`."
+      example: "Rate limit: 100 req/sec per key. Exceeding returns `429 Too Many Requests`."
+    }
+    {
+      label: "Code-first paragraph"
+      template: "```{lang}\n{code}\n```\nThe call returns {shape}. Errors surface as {error-shape}."
+      example: "```ts\nconst s = await client.sessions.create({ userId })\n```\nReturns `{ id, expiresAt }`. Errors surface as `APIError` with `.status` and `.code`."
+    }
+    {
+      label: "Versioning note"
+      template: "Available since `v{n}`. Deprecated in `v{m}`; use `{replacement}` instead."
+      example: "Available since v2.4. Deprecated in v3.0; use `client.sessions.create` instead."
+    }
+  ]
+
+  prohibitions: [
+    "Do not write 'simply', 'easily', 'just' — they imply the reader should already know.",
+    "Do not use first-person plural ('we recommend') without naming the team or doc author.",
+    "Do not omit error cases from method documentation.",
+    "Do not use marketing adjectives ('blazing-fast', 'powerful', 'seamless') in reference material.",
+    "Do not write code without a language tag on the fence.",
+    "Do not pluralize endpoints inconsistently (`/users` vs `/user`) within one doc.",
+  ]
+
+  examples: [
+    {
+      label: "API reference entry"
+      template: "`client.messages.create()` sends a message and returns a `Message`. Required: `model`, `messages`, `max_tokens`. Streaming is opt-in via `stream: true`. Errors: `400` on invalid model, `429` on rate limit."
+    }
+    {
+      label: "Quickstart paragraph"
+      template: "Install the SDK: `npm i @anthropic-ai/sdk`. Authenticate by setting `ANTHROPIC_API_KEY`. The first request validates credentials and returns within 200ms p50."
+    }
+    {
+      label: "Migration note"
+      template: "Migrating from v0.x: `prompt` is replaced by `messages`. The `messages` array uses `{ role, content }` shape. Behavior is unchanged for single-turn calls."
+    }
+  ]
+
+  compatible: [
+    @impeccable/persona-stripe-fintech,
+    @impeccable/persona-vercel-clean,
+  ]
+
+  conflicts: [
+    @impeccable/voice-poetic-literary,
+    @impeccable/voice-brand-corporate,
+  ]
+
+  related: [
+    @impeccable/voice-precise-technical,
+    @impeccable/voice-marketing-bold,
+  ]
+}

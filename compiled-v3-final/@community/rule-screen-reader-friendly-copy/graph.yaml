@@ -1,8 +1,0 @@
-atom: "@community/rule-screen-reader-friendly-copy"
-relations:
-  - type: related
-    target: "@community/rule-actionable-error-messages"
-  - type: related
-    target: "@community/rule-active-voice-in-ui-copy"
-  - type: related
-    target: "@community/fact-aria-live-politeness"

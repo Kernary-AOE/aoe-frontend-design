@@ -1,0 +1,35 @@
+pattern ColorPersonaMapping {
+  id: "@community/pattern-color-persona-mapping"
+  version: "1.0.0"
+
+  label: "Persona Color Preference Quick Reference"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  problem: "Agents and designers default to safe palette choices (blue-cyan, indigo) that match no specific persona. Without a mapping from persona intent to color parameters, the palette cannot serve the product's actual audience."
+
+  solution: "Match brand hue range, chroma level, and gray tint to the target persona using the six-persona reference table from Prime's A/B data. These are starting points to break default palettes, not mandates."
+
+  notes: [
+    "Persona color reference table (from Prime A/B test data):",
+    "  Developer (pragmatic):  Hue 200–230 (blue-cyan),  Chroma Low (0.06–0.10),  Gray: Cool slate.  Dislikes decorative color; prefers monochrome + one accent.",
+    "  Designer (aesthetic):   Hue 270–310 (purple-magenta), Chroma Medium (0.10–0.16), Gray: Warm mauve. Appreciates intentional color; sensitive to clashing chroma.",
+    "  Marketer (conversion):  Hue 15–45 (red-orange),   Chroma High (0.14–0.20),   Gray: Neutral gray. Wants CTA contrast; orange/red for urgency.",
+    "  Executive (authority):  Hue 220–250 (deep blue),  Chroma Low-medium (0.08–0.12), Gray: Slate. Trust, authority; avoids playful colors.",
+    "  Creator (expressive):   Hue 310–350 (pink-magenta), Chroma High (0.15–0.22),  Gray: Warm sand. Bold, distinctive; tolerates high saturation.",
+    "  Educator (accessible):  Hue 145–185 (green-cyan), Chroma Medium (0.10–0.14), Gray: Olive/sage. Calming, readable; prioritizes contrast ratios.",
+    "Use these to validate that color choices align with the target audience, not to mechanically apply hue ranges without judgment.",
+  ]
+
+  related: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/persona-magazine-editorial,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-focus-visible,
+  ]
+}

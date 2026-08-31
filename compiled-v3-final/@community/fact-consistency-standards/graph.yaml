@@ -1,6 +1,0 @@
-atom: "@community/fact-consistency-standards"
-relations:
-  - type: related
-    target: "@nielsen/taxonomy-10-heuristics"
-  - type: related
-    target: "@community/fact-recognition-over-recall"

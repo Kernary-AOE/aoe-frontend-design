@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-context-menu-redundant"
-relations:
-  - type: related
-    target: "@community/pattern-ios-inset-grouped-list"
-  - type: related
-    target: "@community/rule-ios-gesture-alternatives"
-  - type: related
-    target: "@community/rule-mobile-first"

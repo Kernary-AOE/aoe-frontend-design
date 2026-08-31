@@ -1,0 +1,51 @@
+principle OwaspDataIntegrityFailures {
+  id: "@community/principle-owasp-data-integrity-failures"
+  version: "1.0.0"
+
+  domain: security
+
+  _meta: {
+    license: "LicenseRef-Citation-Only AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "OWASP Top 10 A08:2021 (merged Insecure Deserialization + Software and Data Integrity Failures) — code and infrastructure that does not protect against integrity violations in software updates, critical data, and CI/CD pipelines."
+
+  statement: "Deserialized data from untrusted sources must be validated against a strict schema before use. Software updates, packages, and CI/CD pipeline steps must verify cryptographic signatures. Unsigned or unverified data must never be used to make authorization or code-execution decisions."
+
+  attributed-to: "OWASP Foundation, Top 10 2021"
+
+  source: [
+    "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/",
+    "CVE-2019-14234 (Django insecure deserialization via Pickle in cache backend) — arbitrary code execution if attacker controls cache key.",
+    "SolarWinds Orion supply-chain attack (2020): malicious code injected into signed build artifacts — 18,000 organizations received the trojanized update via trusted update mechanism.",
+  ]
+
+  applies-to: [
+    "Deserialization of Java, Python Pickle, PHP unserialize, .NET BinaryFormatter",
+    "npm package integrity (package-lock.json integrity hashes, `npm ci`)",
+    "CI/CD pipeline artifact signing and verification",
+    "Software update mechanisms (auto-update without signature verification)",
+    "JWT and cookie tamper detection",
+    "CDN-hosted third-party JavaScript (subresource integrity checks)",
+  ]
+
+  examples: [
+    "npm package publishing with provenance attestations (2023): packages published via GitHub Actions include a verifiable build attestation linking the package to the exact commit and workflow — consumers can verify with `npm audit signatures`.",
+    "Sigstore / cosign: signs container images with keyless signing tied to OIDC identity — every Google distroless image ships with a Rekor transparency log entry verifiable offline.",
+    "Subresource Integrity (SRI): `<script src='cdn.example.com/lib.js' integrity='sha384-...' crossorigin='anonymous'>` — browser refuses to execute if hash doesn't match, blocking CDN compromise.",
+  ]
+
+  counter-examples: [
+    "SolarWinds 2020: Orion build server compromised, malicious DLL inserted into signed MSI before code signing step — no independent binary artifact attestation to detect the tampering.",
+    "Python Pickle deserialization: `pickle.loads(user_supplied_bytes)` — arbitrary Python execution; used to gain RCE in multiple ML platforms (MLflow, Weights & Biases model registry).",
+    "Auto-update client that fetches update over HTTP without signature check — man-in-the-middle delivers malicious installer; confirmed vector in older versions of Squirrel.Windows.",
+  ]
+
+  related: [
+    @community/principle-owasp-cryptographic-failures,
+    @community/principle-owasp-vulnerable-components,
+    @community/rule-secrets-never-in-source,
+  ]
+}

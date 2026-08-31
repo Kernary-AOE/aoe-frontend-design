@@ -1,8 +1,0 @@
-atom: "@community/example-nytmag-feature"
-relations:
-  - type: related
-    target: "@community/pattern-blog-article-layout"
-  - type: related
-    target: "@community/example-atlantic-longform"
-  - type: related
-    target: "@community/taxonomy-typography-roles"

@@ -1,8 +1,0 @@
-atom: "@community/rule-rtl-directional-icons-flip"
-relations:
-  - type: related
-    target: "@community/rule-css-logical-properties"
-  - type: related
-    target: "@community/rule-intl-api-locale-formatting"
-  - type: related
-    target: "@community/rule-culturally-neutral-copy"

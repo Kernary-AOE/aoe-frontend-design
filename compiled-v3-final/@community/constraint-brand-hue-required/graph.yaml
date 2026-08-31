@@ -1,8 +1,0 @@
-atom: "@community/constraint-brand-hue-required"
-relations:
-  - type: related
-    target: "@community/value-brand-hue"
-  - type: related
-    target: "@community/term-oklch"
-  - type: related
-    target: "@community/check-color-oklch-required"

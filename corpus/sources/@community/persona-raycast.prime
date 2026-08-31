@@ -1,0 +1,98 @@
+persona Raycast {
+  id: "@community/persona-raycast"
+  version: "1.0.0"
+
+  school: raycast
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "macOS-native precision instrument: near-black blue-tinted void #07080a with Inter + GeistMono, layered multi-layer inset box-shadows simulating pressed-glass depth, and Raycast Red #FF6363 reserved exclusively for the diagonal hero stripe pattern."
+
+  implies: {
+    font: {
+      display: "Inter (features: calt, kern, liga, ss02, ss03, ss08) — liga disabled on hero headings"
+      body: "Inter (weight 500 baseline on dark — heavier than typical 400 for legibility)"
+      monospace: "GeistMono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco"
+    }
+    color: {
+      temperature: "cool-neutral"
+      palette: "near-black #07080a canvas, elevated #101111, card #1b1c1e, text #f9f9f9 primary / #cecece secondary / #9c9c9d dim, red #FF6363 hero punctuation, blue hsl(202,100%,67%) ~#55b3ff interactive"
+      background: "#07080a"
+    }
+    density: "balanced-compact — 2–3px micro / 6px button workhorse / 12px standard cards / 86px+ pill CTAs, 8px base spacing, ~1200px max-width, section padding 80–120px"
+    layout: "centered hero with diagonal red stripe pattern, max-width ~1200px, keyboard-showcase sections with physical keycap renders as primary prop"
+    imagery: "physical keycap renders with 3D gradient depth, macOS-native window chrome screenshots, no stock photography"
+    motion: "opacity-only hover (buttons to opacity 0.6) — no background-color transitions, no bouncy springs"
+  }
+
+  compatible: ["vercel-clean", "swiss-modernist", "dense-pragmatist", "tokyo-minimal"]
+  conflicts: ["warm-institutional", "magazine-editorial", "brutalist"]
+
+  example-brands: [
+    "Raycast",
+  ]
+
+  notes: [
+    "macOS-native multi-layer shadow signature: `rgba(255,255,255,0.05) 0px 1px 0px inset` (top highlight) + `rgba(255,255,255,0.25) 0px 0px 0px 1px` (containment ring) + `rgba(0,0,0,0.2) 0px -1px 0px inset` (bottom shadow) — this triad is what makes elements feel pressed-glass physical.",
+    "Positive letter-spacing on dark body: +0.2–0.4px on dark-mode text is deliberately counterintuitive but delivers airy readability — do not 'fix' it to negative tracking.",
+    "Red as punctuation not paint: #FF6363 is identity marker and destructive state only; interactive accents use blue hsl(202,100%,67%). Any surface with broad red application breaks the system.",
+    "Use for desktop-utility, power-user-tool, or command-palette aesthetic with macOS-native credibility; avoid for web-first SaaS — its heavy inset shadows and keycap treatments only pay off when the product genuinely has a macOS-native soul.",
+    "Distinct from persona-vercel-clean: Raycast is more physically tactile (inset shadows, keycap depth) and uses a warm red punctuation color vs vercel-clean's monochrome-plus-neon approach.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-cmd-palette-shell,
+      @community/pattern-kbd-shortcut-chip,
+      @impeccable/template-button-press,
+    ]
+    must-avoid: [
+      @impeccable/persona-magazine-editorial,
+      @impeccable/persona-warm-institutional,
+    ]
+    typography-required: {
+      display: "Inter"
+      weight-signature: "500"
+      opentype-features: "calt, kern, liga, ss02, ss03, ss08"
+    }
+    color-required: {
+      background: "#07080a"
+      accent-interactive: "hsl(202,100%,67%)"
+      accent-punctuation: "#FF6363"
+    }
+    motion-prescriptions: [
+      @impeccable/template-button-press,
+      @community/pattern-hover-lift,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/template-cmd-palette-shell,
+    @impeccable/template-button-press,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-opentype-features-on,
+    @community/rule-font-feature-settings,
+    @community/fact-monospace-purpose,
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/pattern-color-dark-mode-pairing,
+    @community/principle-color-system-foundation,
+    @community/check-color-dark-mode-cascade,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+    @community/constraint-no-pure-black-text,
+  ]
+
+  contradicts: [
+    @impeccable/persona-magazine-editorial,
+    @impeccable/persona-warm-institutional,
+  ]
+}

@@ -1,0 +1,68 @@
+taxonomy TypographyRoles {
+  id: "@community/taxonomy-typography-roles"
+  version: "1.0.0"
+
+  label: "Typography Roles in UI"
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "A classification of typographic roles in digital product interfaces. Each role carries distinct size, weight, and spacing requirements. This taxonomy is used to evaluate typographic system completeness and hierarchy clarity."
+
+  members: [
+    @community/fact-optimal-line-length,
+    @community/fact-recognition-over-recall,
+    @community/category-typography-scale,
+    @community/value-focus-outline-width,
+  ]
+
+  roles: {
+    "display": {
+      purpose: "Hero headlines, marketing copy, feature names",
+      css-typical: "font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 700–900; line-height: 1.0–1.15",
+      notes: "Often uses display-variant font or heavier weight. Avoid Inter at this scale — optical distortion at large sizes."
+    }
+    "heading-1": {
+      purpose: "Page title, top-level section name",
+      css-typical: "font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600–700; line-height: 1.2–1.3",
+    }
+    "heading-2": {
+      purpose: "Sub-section header within a page",
+      css-typical: "font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 600; line-height: 1.3",
+    }
+    "body": {
+      purpose: "Primary reading content — articles, descriptions, labels",
+      css-typical: "font-size: 1rem (16px base); line-height: 1.5–1.7; max-width: 65ch",
+      constraint: "@community/fact-optimal-line-length must be respected"
+    }
+    "caption": {
+      purpose: "Image captions, helper text, timestamps",
+      css-typical: "font-size: 0.75–0.875rem; line-height: 1.4; color: secondary-text-color",
+      a11y: "Minimum 4.5:1 contrast even at small size"
+    }
+    "code": {
+      purpose: "Inline code snippets, code blocks, terminal output",
+      css-typical: "font-family: monospace; font-size: 0.875em; line-height: 1.6",
+    }
+  }
+
+  notes: [
+    "A complete type system should define all 6 roles with tokens; missing roles lead to ad-hoc size choices.",
+    "Type role hierarchy must be visually distinguishable — adjacent roles should differ by ≥ 2px or ≥ 1 weight step.",
+  ]
+
+  related: [
+    @community/category-typography-scale,
+    @impeccable/constraint-font-blacklist,
+    @community/fact-optimal-line-length,
+  ]
+
+  relationships: [
+    @community/fact-recognition-over-recall,
+    @community/value-focus-outline-width,
+  ]
+}

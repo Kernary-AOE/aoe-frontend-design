@@ -1,0 +1,42 @@
+fact ConsistencyStandards {
+  id: "@community/fact-consistency-standards"
+  version: "1.0.0"
+
+  statement: "Nielsen Heuristic 4 — Consistency and Standards: Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform and industry conventions."
+
+  confidence: proven
+  evidence: @nielsen/source-nielsen-1994
+
+  domain: ux-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  heuristic-number: 4
+
+  examples: [
+    "Using the same icon for 'Settings' (gear) throughout the entire product.",
+    "Primary action button always the same color (brand blue) in every dialog.",
+    "Keyboard shortcuts matching the OS convention: Cmd+S to save on macOS.",
+  ]
+
+  violations: [
+    "Delete action is red in one part of the UI, grey in another.",
+    "Some modals close with Escape, others require clicking X explicitly.",
+    "Navigation items change label or position between different sections of the app.",
+  ]
+
+  notes: [
+    "External consistency (matching platform conventions) reduces the learning curve for new users.",
+    "Internal consistency (matching your own patterns) reduces errors for existing users.",
+    "This fact is a member of @nielsen/taxonomy-10-heuristics.",
+  ]
+
+  related: [
+    @nielsen/taxonomy-10-heuristics,
+    @community/fact-recognition-over-recall,
+  ]
+}

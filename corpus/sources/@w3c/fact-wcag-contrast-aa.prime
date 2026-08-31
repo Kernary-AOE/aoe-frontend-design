@@ -1,0 +1,30 @@
+fact WcagContrastAA {
+  id: "@w3c/fact-wcag-contrast-aa"
+  version: "1.0.0"
+
+  statement: "Normal text (< 18pt or < 14pt bold) must have a luminance contrast ratio of ≥ 4.5:1 against its background to meet WCAG 2.2 Level AA Success Criterion 1.4.3."
+
+  confidence: proven
+  evidence: @w3c/source-wcag-22
+
+  domain: accessibility
+
+  _meta: {
+    license: "LicenseRef-W3C-Citation-Only AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  notes: [
+    "Large text (≥ 18pt regular or ≥ 14pt bold) requires only 3:1 under SC 1.4.3.",
+    "Decorative text and logotypes are exempt.",
+    "Contrast ratio formula: (L1 + 0.05) / (L2 + 0.05) where L1 is the lighter relative luminance.",
+    "This fact is the basis for @community/check-contrast-aa and @community/rule-color-contrast.",
+  ]
+
+  related: [
+    @w3c/fact-wcag-contrast-aa,
+    @w3c/fact-wcag-focus-contrast,
+    @community/metric-contrast-ratio,
+  ]
+}

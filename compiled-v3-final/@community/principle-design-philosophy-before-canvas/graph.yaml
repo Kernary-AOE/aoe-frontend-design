@@ -1,8 +1,0 @@
-atom: "@community/principle-design-philosophy-before-canvas"
-relations:
-  - type: related
-    target: "@community/principle-commit-bold-aesthetic"
-  - type: related
-    target: "@community/rule-canvas-visual-text-ratio"
-  - type: related
-    target: "@community/rule-canvas-elements-within-boundaries"

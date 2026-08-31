@@ -1,8 +1,0 @@
-atom: "@community/rule-sql-prepared-statements"
-relations:
-  - type: related
-    target: "@community/principle-owasp-injection"
-  - type: related
-    target: "@community/principle-owasp-insecure-design"
-  - type: related
-    target: "@community/rule-secrets-never-in-source"

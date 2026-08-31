@@ -1,0 +1,27 @@
+rule ConsistentDesignTokenScale {
+  id: "@community/rule-consistent-design-token-scale"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+  severity: warning
+
+  statement: "All spacing, typography, and border-radius values must come from a defined token scale — never ad-hoc numeric literals. Every value in the codebase must be traceable to a named token or scale step."
+
+  applies-when: "Setting any spacing, font size, line height, or border radius in a UI."
+
+  verify-by: "Check that all values reference a CSS custom property, Tailwind class, or named scale step — not raw px/rem literals. A value like `margin: 13px` with no corresponding token is a violation."
+
+  rationale: "Ad-hoc values fragment visual consistency and make systematic changes (increasing density, adjusting scale) require hunting and patching individual values rather than updating a token. The token scale is what makes the design system a system."
+
+  related: [
+    @community/rule-spacing-rhythm,
+    @community/type-design-token,
+    @community/anti-pattern-hardcoded-pixel-values,
+  ]
+}

@@ -1,0 +1,95 @@
+pattern FintechNumberDisplay {
+  id: "@community/pattern-fintech-number-display"
+  version: "1.0.0"
+
+  label: "Fintech Number Display Patterns"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Typography, formatting, and hierarchy rules for displaying financial amounts, KPI metrics, and change indicators in fintech and SaaS dashboards — where numbers are the primary signal and must command visual weight and communicate precision."
+
+  critical-rules: [
+    "NEVER use a body/sans font for hero amounts. Financial numbers demand a display or serif typeface (Playfair Display, DM Serif Display).",
+    "NEVER use gradient text on amounts. Reserve gradients for decorative elements — not the data itself.",
+    "ALWAYS use font-variant-numeric: tabular-nums on all financial columns so digit changes don't shift layout.",
+    "ALWAYS pair color with icon for change direction — never rely on color alone (fails color-blind users).",
+  ]
+
+  font-size-scale: {
+    hero-balance:    "clamp(2.5rem, 6vw, 4rem) — display/serif"
+    section-total:   "1.875rem (30px) — display/serif"
+    card-metric:     "1.5rem (24px) — display or semi-bold sans"
+    table-row:       "0.875rem (14px) — sans, tabular-nums"
+    caption:         "0.75rem (12px) — muted sans"
+  }
+
+  change-indicators: """
+    .change-indicator.positive {
+      background-color: hsl(142 71% 45% / 0.12);
+      color: hsl(142 71% 30%);
+    }
+    .change-indicator.negative {
+      background-color: hsl(0 84% 60% / 0.12);
+      color: hsl(0 72% 38%);
+    }
+    /* Dark mode: lighten text, keep bg subtle */
+    @media (prefers-color-scheme: dark) {
+      .change-indicator.positive { color: hsl(142 71% 60%); }
+      .change-indicator.negative { color: hsl(0 84% 70%); }
+    }
+  """
+
+  currency-formatting: """
+    // Standard: always show symbol, 2 decimal places
+    const formatAmount = (value, currency = 'USD') =>
+      new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(value);
+    // → "$22,933.00"
+
+    // Compact: abbreviate above 10,000 in display contexts
+    const formatCompact = (value) => {
+      if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
+      if (value >= 1_000)     return `$${(value / 1_000).toFixed(1)}K`;
+      return formatAmount(value);
+    };
+    // → "$1.9M", "$48.2K", "$933.00"
+  """
+
+  formatting-table: {
+    "Hero balance":    { format: "Full 2 decimals",  example: "$22,933.00" }
+    "Stat card":       { format: "Compact K/M",      example: "$48.2K" }
+    "Table row":       { format: "Full 2 decimals",  example: "$1,200.00" }
+    "Chart tooltip":   { format: "Full 2 decimals",  example: "$22,933.00" }
+    "Marketing copy":  { format: "Compact + round",  example: "$50M+" }
+  }
+
+  visual-hierarchy-rule: "The most important metric must be 3–4× larger than supporting metrics. Never let secondary numbers compete visually with the primary number."
+
+  anti-patterns: [
+    "Monospace font for amounts — reads as 'code' or 'terminal', devalues the number",
+    "Raw cents without formatting — 193456 is unreadable",
+    "Gradient text on amounts — reduces legibility, conflicts with change-indicator colors",
+    "Color-only change direction — fails color-blind users",
+  ]
+
+  sources: [
+    "Land-book gallery analysis (156 fintech screenshots)",
+    "Impeccable skill interaction-design reference",
+  ]
+
+  related: [
+    @community/rule-color-contrast,
+    @community/rule-data-viz-accessible,
+    @community/anti-pattern-color-only-meaning,
+    @community/check-focus-visible,
+  ]
+}

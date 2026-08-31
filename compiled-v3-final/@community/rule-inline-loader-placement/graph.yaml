@@ -1,8 +1,0 @@
-atom: "@community/rule-inline-loader-placement"
-relations:
-  - type: related
-    target: "@community/anti-pattern-no-loading-state"
-  - type: related
-    target: "@community/pattern-skeleton-loader"
-  - type: related
-    target: "@community/fact-loading-skeleton-vs-spinner"

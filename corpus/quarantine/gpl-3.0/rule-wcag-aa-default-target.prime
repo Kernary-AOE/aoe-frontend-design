@@ -1,0 +1,45 @@
+rule WcagAaDefaultTarget {
+  id: "@community/rule-wcag-aa-default-target"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+  severity: warning
+
+  statement: "All frontend components must meet WCAG 2.1 Level AA conformance by default — AA is the widely accepted legal and ethical baseline for web accessibility."
+
+  rationale: "AA is the conformance level required or referenced by most accessibility regulations worldwide (ADA, EN 301 549, AODA). Targeting it by default ensures broad user coverage and limits legal exposure. Level A alone is insufficient; AAA is aspirational but not required universally."
+
+  metric: "WCAG conformance level"
+  pass: "AA or AAA"
+  warn: "A only"
+  block: "below A"
+
+  key-aa-requirements: [
+    "1.4.3 Contrast (Minimum): text ≥ 4.5:1, large text ≥ 3:1",
+    "1.4.4 Resize Text: text resizes to 200% without loss of content (no user-scalable=no)",
+    "1.4.10 Reflow: content reflows at 320px width without horizontal scrolling",
+    "1.4.11 Non-text Contrast: UI component boundaries ≥ 3:1 against adjacent colors",
+    "1.4.12 Text Spacing: no content or functionality lost when letter-spacing ≥ 0.12em, line-height ≥ 1.5, word-spacing ≥ 0.16em",
+    "2.1.1 Keyboard: all functionality operable by keyboard without time-dependent path",
+    "2.4.3 Focus Order: focus sequence preserves meaning and operability",
+    "2.4.7 Focus Visible: any keyboard operable UI has a visible focus indicator",
+    "4.1.3 Status Messages: status messages programmatically determined without receiving focus",
+  ]
+
+  related: [
+    @community/check-contrast-aa,
+    @community/check-focus-visible,
+    @community/rule-viewport-meta-required,
+    @community/anti-pattern-accessibility-after-thought,
+    @community/example-radix-tabs,
+    @community/example-catalyst-app,
+    @community/rule-accessibility-first-class,
+    @community/rule-color-contrast,
+  ]
+}

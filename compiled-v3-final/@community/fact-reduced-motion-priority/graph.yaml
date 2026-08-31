@@ -1,8 +1,0 @@
-atom: "@community/fact-reduced-motion-priority"
-relations:
-  - type: related
-    target: "@community/constraint-reduced-motion"
-  - type: related
-    target: "@community/constraint-animation-pref-respected"
-  - type: related
-    target: "@w3c/source-wcag-22"

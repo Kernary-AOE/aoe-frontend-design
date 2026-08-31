@@ -1,0 +1,70 @@
+value MotionDurationFast {
+  id: "@community/value-motion-duration-fast"
+  version: "1.0.0"
+
+  name: "motion-duration-fast"
+  constant: "150ms"
+  type: css-duration
+
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  rationale: "150ms is the canonical 'fast' UI motion duration: long enough to be perceived as a transition (>100ms perceptual threshold) and short enough to feel responsive (<200ms Doherty threshold). Apple HIG, Material Design 3, IBM Carbon, and Adobe Spectrum all converge on 100-150ms for hover, focus, and micro-state changes. Going faster (<100ms) skips perception entirely and feels like a glitch; going slower (>200ms) makes hover-state stutter and feels sluggish."
+
+  usage: """
+    :root {
+      --motion-fast:    150ms;   /* hover, focus, button press, ripple, color transition */
+      --motion-base:    250ms;   /* default ease for entering/exiting components */
+      --motion-medium:  350ms;   /* drawer slide, modal entrance */
+      --motion-slow:    500ms;   /* page-level transitions, accordion expand */
+      --easing-out:     cubic-bezier(0.0, 0.0, 0.2, 1);   /* enter, ease-out */
+      --easing-in:      cubic-bezier(0.4, 0.0, 1.0, 1);   /* exit, ease-in */
+      --easing-in-out:  cubic-bezier(0.4, 0.0, 0.2, 1);   /* both ends */
+    }
+
+    /* Hover/focus/press */
+    .button {
+      transition:
+        background-color var(--motion-fast) var(--easing-out),
+        box-shadow var(--motion-fast) var(--easing-out);
+    }
+
+    /* Reduced motion — kill durations */
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        --motion-fast:   1ms;
+        --motion-base:   1ms;
+        --motion-medium: 1ms;
+        --motion-slow:   1ms;
+      }
+    }
+  """
+
+  variants: {
+    "Apple-HIG": "100-150ms for state changes (button press, switch toggle)"
+    "Material-3": "M3 motion tokens — short1: 50ms, short2: 100ms, short3: 150ms, short4: 200ms"
+    "Carbon-IBM": "fast-01: 70ms, fast-02: 110ms, moderate-01: 150ms"
+    "Linear-app": "ui-fast: 80ms, ui: 150ms, ui-slow: 280ms"
+  }
+
+  notes: [
+    "Hover/focus durations should be at the FAST end (≤ 150ms). Users expect instant response to mouse-over.",
+    "Entrance animations (modal opens, toast appears) work better at 200-300ms with ease-out — gives weight without stalling.",
+    "Exit animations should be FASTER than entrance (~70-80% of entrance duration) — users want to dismiss quickly.",
+    "ALWAYS pair motion tokens with `prefers-reduced-motion` overrides — see @w3c/fact-prefers-reduced-motion. Setting durations to 1ms (not 0) avoids breaking transitionend listeners.",
+    "Animate transform and opacity only; never width/height/top/left for hover states (causes layout shift, see @community/rule-cls-budget).",
+  ]
+
+  related: [
+    @community/value-focus-outline-width,
+    @community/value-touch-target-min,
+    @community/type-design-token,
+    @community/rule-cls-budget,
+    @community/anti-pattern-decorative-spinning,
+  ]
+}

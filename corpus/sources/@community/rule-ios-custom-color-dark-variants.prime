@@ -1,0 +1,35 @@
+rule IosCustomColorDarkVariants {
+  id: "@community/rule-ios-custom-color-dark-variants"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  applies-to: "all custom or brand colors added to an iOS app's color assets"
+
+  statement: "Every custom color in an iOS app must define both Any Appearance and Dark Appearance variants in the asset catalog (.xcassets) so it adapts automatically when the system appearance changes."
+
+  rationale: "A single-variant custom color will look wrong in the opposing appearance mode — a bright brand color designed for light backgrounds can become glaring or invisible in dark mode. The asset catalog's appearance-variant system is the correct iOS mechanism for this."
+
+  examples: [
+    "BrandBlue: light variant #0057FF; dark variant #4D90FF (lightened for dark backgrounds).",
+    "Verify by switching to dark mode in Settings — custom colors should adjust, not invert or disappear.",
+  ]
+
+  notes: [
+    "In Xcode, select a Color Set in Assets.xcassets → Attributes inspector → Appearances → Any, Dark.",
+    "In SwiftUI, reference the asset color with Color('BrandBlue') — system applies the correct variant automatically.",
+    "Apple HIG source: Rule 4.2 — Provide Light and Dark Variants for Custom Colors.",
+  ]
+
+  related: [
+    @community/rule-ios-semantic-system-colors,
+    @community/check-ios-increase-contrast,
+    @community/fact-ios-background-hierarchy,
+  ]
+}

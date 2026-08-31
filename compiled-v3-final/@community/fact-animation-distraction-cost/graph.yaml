@@ -1,8 +1,0 @@
-atom: "@community/fact-animation-distraction-cost"
-relations:
-  - type: related
-    target: "@community/fact-motion-as-feedback"
-  - type: related
-    target: "@community/fact-reduced-motion-priority"
-  - type: related
-    target: "@community/constraint-animation-pref-respected"

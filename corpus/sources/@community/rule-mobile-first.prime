@@ -1,0 +1,70 @@
+rule MobileFirst {
+  id: "@community/rule-mobile-first"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-engineering
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "CSS responsive breakpoints MUST be authored mobile-first: base styles target the smallest viewport, and `@media (min-width: ...)` queries layer on enhancements for larger viewports. Desktop-first authoring (`@media (max-width: ...)`) requires the cascade to override styles repeatedly and tends to bloat mobile payloads."
+
+  claim: "Responsive CSS MUST use `@media (min-width: ...)` queries layered on top of mobile defaults — `@media (max-width: ...)` queries are forbidden as the primary breakpoint pattern."
+
+  severity: medium
+
+  validates-with: [
+    @community/fact-consistency-standards,
+  ]
+
+  checks: [
+    @community/check-mobile-first,
+  ]
+
+  severity-combination: |
+    >50% of breakpoints use max-width        → BLOCK
+    1–50% use max-width                      → WARN
+    all breakpoints use min-width            → PASS
+
+  failure-mode: "Mobile devices (the majority of traffic) parse and discard desktop styles; CSS specificity wars erupt as each breakpoint must un-set the previous; new components require copy-paste of all-but-mobile resets."
+
+  remediation: [
+    "Refactor: write base styles for mobile, then `@media (min-width: 640px) { ... }` for tablet, `@media (min-width: 1024px) { ... }` for desktop.",
+    "Adopt Tailwind's mobile-first variants (`md:` `lg:` `xl:`) — they enforce min-width by default.",
+    "If a feature is *desktop-only* (e.g. a hover-dependent pattern), add it inside a min-width AND `@media (hover: hover) and (pointer: fine)` query.",
+  ]
+
+  exceptions: [
+    {
+      case: "Print stylesheet",
+      allowed-when: "Print styles use `@media print { ... }` — orthogonal to width-based breakpoints.",
+    }
+    {
+      case: "Print-like 'narrow desktop window' constraint",
+      allowed-when: "A specific desktop-only override is cleaner as a max-width override; flag with a comment but don't block.",
+    }
+  ]
+
+  notes: [
+    "Mobile-first is also a performance win: `@media (min-width: ...)` rules can be skipped by the browser on mobile entirely if not loaded.",
+    "Combine with `<picture>` / `srcset` for responsive images (see @community/rule-image-optimization).",
+  ]
+
+  related: [
+    @community/rule-touch-target-min,
+    @community/rule-image-optimization,
+    @community/fact-consistency-standards,
+    @community/anti-pattern-ios-hamburger-menu,
+    @community/anti-pattern-tiny-touch-targets,
+    @community/example-calcom-scheduler,
+  ]
+
+  see-also: [
+    @community/check-mobile-first,
+  ]
+}

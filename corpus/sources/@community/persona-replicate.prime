@@ -1,0 +1,97 @@
+persona Replicate {
+  id: "@community/persona-replicate"
+  version: "1.0.0"
+
+  school: replicate
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Festival-energy AI platform: rb-freigeist-neue 700 at 128px manifesto scale on a white canvas with explosive orange #ea2804→magenta hero gradient, and 9999px pill radius applied absolutely to every element without exception."
+
+  implies: {
+    font: {
+      display: "rb-freigeist-neue (fallbacks: ui-sans-serif, system-ui) — weight 600–700, hero at 72px / -1.8px tracking, manifesto at 128px / 1.00 line-height"
+      body: "basier-square (fallbacks: ui-sans-serif, system-ui) — geometric clean sans, weight 400"
+      monospace: "jetbrains-mono (fallbacks: ui-monospace, SFMono-Regular, Menlo, Monaco)"
+    }
+    color: {
+      temperature: "warm"
+      palette: "brand red #ea2804 Replicate Red hero gradient start, secondary red #dd4425 button borders, dark #202020 text/surfaces, white #ffffff background, green #2b9a66 status, code-bg #24292e"
+      background: "#ffffff"
+    }
+    density: "dramatic — 9999px pill radius on ALL elements without exception, 8px base spacing with 96/160/192px dramatic section breaks, fluid width no explicit breakpoints"
+    layout: "fluid full-width, explosive gradient hero, AI model pill-gallery grid, 128px manifesto closer section with images embedded between words"
+    imagery: "community-generated AI model output thumbnails in pill containers — user content is the marketing, no stock photography"
+    motion: "energetic — gradient animation on hero wash; no fine hover micro-interactions needed given pill-absolutism geometry"
+  }
+
+  compatible: ["brutalist", "editorial", "magazine-editorial"]
+  conflicts: ["swiss-modernist", "stripe-fintech", "vercel-clean", "dense-pragmatist"]
+
+  example-brands: [
+    "Replicate",
+  ]
+
+  notes: [
+    "Pill-radius absolutism: 9999px on EVERYTHING — AI model gallery images, badges, buttons, labels, featured cards. No other radius value exists in this system. Any 4–12px radius immediately breaks the identity.",
+    "128px manifesto closer: 'Imagine what you can build.' at 128px rb-freigeist-neue weight 700 with small AI images embedded between words — an emotional climax bigger than most mobile screens; this section is the brand signature.",
+    "Borders not shadows: 1px solid #202020 for containment, 1px solid #ea2804 for featured items — zero drop shadows anywhere in the system.",
+    "Use for ai-platform, creative-dev-tool, or community-marketplace that needs alive, playful, participatory energy; avoid for enterprise or serious B2B — the 128px manifesto and absolute pill-radius read as festival energy that undermines institutional trust.",
+    "Distinct from persona-vercel-clean: Replicate is light-background, warm-hued, and pill-extremist vs vercel-clean's dark-first, cool-neutral, moderate-radius developer aesthetic.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-fade-stagger,
+      @community/pattern-gradient-mesh-engine,
+      @community/principle-intentional-gradient,
+    ]
+    must-avoid: [
+      @impeccable/persona-stripe-fintech,
+      @impeccable/persona-swiss-modernist,
+    ]
+    typography-required: {
+      display: "rb-freigeist-neue"
+      weight-signature: "700"
+      manifesto-size: "128px"
+    }
+    color-required: {
+      background: "#ffffff"
+      hero-gradient: "#ea2804 → magenta"
+      radius: "9999px on ALL elements (no exceptions)"
+    }
+    motion-prescriptions: [
+      @impeccable/template-fade-stagger,
+      @community/pattern-gradient-mesh-engine,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-brutalist,
+    @impeccable/template-oklch-palette,
+    @impeccable/template-fade-stagger,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-typography-letter-spacing,
+    @community/fact-monospace-purpose,
+    @community/rule-font-self-host,
+    @community/principle-color-system-foundation,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/principle-intentional-gradient,
+    @community/rule-gradients-justified-only,
+    @community/pattern-gradient-mesh-engine,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-stripe-fintech,
+    @impeccable/persona-swiss-modernist,
+  ]
+}

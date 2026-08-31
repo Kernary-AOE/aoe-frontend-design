@@ -1,0 +1,86 @@
+voice CustomerSupport {
+  id: "@impeccable/voice-customer-support"
+  version: "1.0.0"
+
+  label: "Customer Support"
+  domain: help-center
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "The voice used in help articles, support replies, and onboarding emails. Calm, empathetic, step-by-step. Acknowledges the user's situation before solving it. Sounds like Notion help, Linear support, Help Scout's own docs."
+
+  tone: "warm + patient + procedural"
+  emphasis: "acknowledge feeling → name the cause → numbered fix → escalation path"
+  emotional-arc: "frustrated → understood → guided → resolved"
+
+  patterns: [
+    {
+      label: "Acknowledgement opener"
+      template: "{Situation} can be frustrating — here's what's happening and how to fix it."
+      example: "A duplicated invoice can be frustrating — here's what's happening and how to fix it."
+    }
+    {
+      label: "Numbered steps"
+      template: "1. {Action with concrete UI label}\n2. {Action}\n3. {Verification step}"
+      example: "1. Open Settings → Billing.\n2. Click 'View invoices'.\n3. Confirm only one entry shows for the current period."
+    }
+    {
+      label: "Cause framing (no blame)"
+      template: "This usually happens when {cause}. It's not something you did wrong — {reassurance}."
+      example: "This usually happens when a payment retries within the same hour. It's not something you did wrong — the second charge is automatically refunded."
+    }
+    {
+      label: "Escalation handoff"
+      template: "If {condition} after {timeframe}, reply to this thread or email {address} with {what-to-include}."
+      example: "If the duplicate is still visible after 24 hours, reply to this thread with the invoice number and we'll resolve it directly."
+    }
+    {
+      label: "Empathetic close"
+      template: "Sorry for the friction. {Reassuring-fact about the system or team}."
+      example: "Sorry for the friction. Every refund is reviewed by a real person within one business day."
+    }
+    {
+      label: "Pre-emptive next-question"
+      template: "You may also be wondering: {anticipated-question}. {One-line-answer}."
+      example: "You may also be wondering: will this affect my billing date? It won't — the cycle stays on the original day."
+    }
+  ]
+
+  prohibitions: [
+    "Do not write 'unfortunately' before declining — name the constraint instead.",
+    "Do not say 'as per our policy' — quote the relevant rule in plain language.",
+    "Do not use 'kindly' as a softener — it reads as cold in modern support.",
+    "Do not blame the user ('you forgot to', 'you should have').",
+    "Do not promise timelines you do not control ('this will be fixed today').",
+    "Do not close without an escalation path.",
+  ]
+
+  examples: [
+    {
+      label: "Reply to a confused user"
+      template: "Totally understand the confusion — your subscription renewed on the 14th, not the 1st, because you upgraded mid-cycle. Here's the breakdown:\n\n1. Original plan: billed Apr 1.\n2. Upgrade on Apr 14: prorated charge, new cycle starts.\n3. Next charge: May 14.\n\nIf the May charge still looks wrong, reply here with a screenshot and we'll dig in."
+    }
+    {
+      label: "Help article opener"
+      template: "Can't sign in? You're in the right place. Most sign-in issues fall into three buckets — magic link, password reset, and SSO. Pick the one that matches and follow the steps below."
+    }
+  ]
+
+  compatible: [
+    @impeccable/persona-notion-warm,
+  ]
+
+  conflicts: [
+    @impeccable/voice-marketing-bold,
+    @impeccable/voice-legal-formal,
+  ]
+
+  related: [
+    @impeccable/voice-casual-warm,
+    @impeccable/voice-dev-technical,
+  ]
+}

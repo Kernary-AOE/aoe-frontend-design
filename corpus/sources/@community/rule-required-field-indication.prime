@@ -1,0 +1,59 @@
+rule RequiredFieldIndication {
+  id: "@community/rule-required-field-indication"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Required form fields must be marked both visually (asterisk or label text) and programmatically (required attribute + aria-required) — visual-only asterisks are invisible to screen readers."
+
+  statement: """
+    For every form with required fields:
+    1. Add the required (or aria-required="true") attribute to the input — provides browser validation and AT announcement.
+    2. Add a visible marker: asterisk (*) is conventional; ensure it is wrapped in aria-hidden="true" with an sr-only sibling providing "(required)" in text.
+    3. Inversion rule: if most fields in a form are required and only a few are optional, mark the optional fields as "(optional)" instead of marking each required field — reduces visual noise.
+    4. Place the required indicator adjacent to the label, not the input.
+  """
+
+  rationale: "A purely visual asterisk communicates nothing to screen reader users — the AT announces the label text only. The required attribute adds browser-native validation behavior and causes AT to announce '(required)' after the label in most screen readers. The inversion rule (mark optional when >70% are required) follows the principle of marking the minority case — marking 8 required fields with asterisks when only 1 is optional creates more noise than value."
+
+  applies-to: "Any form with a combination of required and optional inputs."
+
+  examples: [
+    """
+      {/* CORRECT */}
+      <label htmlFor="email">
+        Email
+        <span aria-hidden="true" className="text-red-500 ml-0.5">*</span>
+        <span className="sr-only">(required)</span>
+      </label>
+      <input id="email" type="email" required aria-required="true" />
+
+      {/* CORRECT — inversion: most are required, mark the optional one */}
+      <label htmlFor="company">
+        Company
+        <span className="text-text-secondary text-[12px] ml-1">(optional)</span>
+      </label>
+      <input id="company" type="text" />
+    """,
+  ]
+
+  counter-example: "An asterisk-only required indicator with no required attribute and no sr-only text — screen reader users cannot determine which fields are mandatory."
+
+  notes: [
+    "Source: github.com/ehmo/platform-design-skills, skills/web/SKILL.md §3.6 (MIT).",
+    "WCAG SC 3.3.2 (Level A): Labels or Instructions — required fields must be labeled.",
+    "The required attribute also enables the browser's built-in constraint validation API (checkValidity, setCustomValidity).",
+  ]
+
+  related: [
+    @community/rule-form-label-associated,
+    @community/rule-form-validation-inline,
+    @community/check-form-label-associated,
+  ]
+}

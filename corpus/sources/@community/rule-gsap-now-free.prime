@@ -1,0 +1,63 @@
+rule GsapNowFree {
+  id: "@community/rule-gsap-now-free"
+  version: "1.0.0"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Since Webflow acquired GreenSock on 2025-04-30, all GSAP plugins (ScrollTrigger, SplitText, MorphSVG, DrawSVG, Flip, ScrollSmoother) are free for commercial use via a single 'npm install gsap' — default to GSAP for any animation beyond simple CSS transitions."
+
+  statement: "In any project with a JS bundler and node_modules, GSAP is the default animation engine for anything beyond simple :hover CSS transitions. The paywall that previously justified CSS-only defaults has been removed. Decision rule: CSS for micro-interactions (hover, focus, toggle); GSAP for choreography (sequenced timelines, scroll-linked animation, SVG morphing, text splitting, layout transitions)."
+
+  rationale: "GSAP's timeline API, ScrollTrigger plugin, and spring/elastic easing far exceed CSS capabilities. Pre-2025 the paywall made CSS-only a legitimate default. Post-acquisition there is no cost barrier — only capability gaps remain."
+
+  applies-when: [
+    "Any npm-based project needing animation beyond simple CSS transitions",
+    "Scroll-linked animation (scrub, pin, parallax)",
+    "Sequenced multi-element timelines",
+    "SVG path draw/morph animation",
+    "Text character/word stagger animation via SplitText",
+    "Layout transitions on DOM reorder/reparent via Flip",
+  ]
+
+  exceptions: [
+    "Plain HTML files without a bundler — CSS-only remains correct",
+    "React-only codebases with simple enter/exit — Motion.dev (Framer Motion) is valid alternative",
+    "3 or fewer animation-delay values — CSS is sufficient",
+    "No scroll-position dependency — CSS transitions are sufficient",
+  ]
+
+  installation: """
+    # Single package — all plugins included
+    npm install gsap
+
+    # React integration (auto cleanup + scoped selectors)
+    npm install gsap @gsap/react
+  """
+
+  reduced-motion: """
+    // gsap.matchMedia() — cleanest pattern
+    const mm = gsap.matchMedia();
+    mm.add({
+      isReduced: "(prefers-reduced-motion: reduce)",
+      isFull:    "(prefers-reduced-motion: no-preference)",
+    }, (ctx) => {
+      if (ctx.conditions.isReduced) {
+        gsap.set(".section", { opacity: 1, y: 0 });
+        return;
+      }
+      // full motion experience here
+    });
+  """
+
+  related: [
+    @community/constraint-animation-pref-respected,
+    @community/rule-animation-duration,
+    @community/template-gsap-scroll-trigger,
+    @community/template-gsap-stagger,
+  ]
+}

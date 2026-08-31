@@ -1,0 +1,58 @@
+rule NumberUnitRatio {
+  id: "@community/rule-number-unit-ratio"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: unknown
+    license-provenance: "unestablished"
+  }
+
+
+  description: "Metric displays use a strict 2:1 size ratio between number and unit — 48px/24px for hero, 36px/18px for KPI cards, 24px/12px for donut centers — so the eye lands on the digit first and the unit whispers."
+
+  statement: """
+    When displaying a metric with a unit (K, M, %, GB, /mo, $, etc.), render the number at 2× the unit's font size.
+    The unit sits immediately after the number with ms-0.5 (2px) margin, at weight equal to or lighter than the number,
+    same color, same baseline.
+
+    Canonical size pairs:
+    | Context       | Number | Unit | Ratio |
+    |---------------|--------|------|-------|
+    | Hero metric   | 48px   | 24px | 2:1   |
+    | KPI card      | 36px   | 18px | 2:1   |
+    | Donut center  | 24px   | 12px | 2:1   |
+    | List amount   | 17px   | 11px | ~1.5:1|
+
+    Implementation:
+    <p className="text-[48px] font-bold leading-none">
+      3.8
+      <span className="text-[24px] font-medium ms-0.5">/mo</span>
+    </p>
+  """
+
+  rationale: "When number and unit are the same size, the eye reads them with equal weight and must parse the compound 'what is the unit of this number' cognitively. At 2:1, the number registers as a visual anchor and the unit registers as annotation — the user reads value first, qualifies second. This is how financial terminals, stock tickers, and athletic performance dashboards have displayed metrics for decades. Extracted from StyleSeed DESIGN-LANGUAGE.md §2 (Golden Rule #4)."
+
+  applies-to: [
+    "Dashboard KPI cards",
+    "Fintech balance/metric displays",
+    "Progress or usage stats",
+    "Any numeric metric with a unit suffix",
+  ]
+
+  counter-example: "A metric displayed as <p>3.8/mo</p> at uniform 24px — number and unit are indistinguishable in visual weight."
+
+  notes: [
+    "Source: github.com/bitjaru/styleseed, engine/DESIGN-LANGUAGE.md §2 Golden Rule #4 (MIT).",
+    "The list-amount pair (~1.5:1 at 17px/11px) is an acceptable deviation at smaller sizes where strict 2:1 becomes illegible.",
+    "Units that are single characters (%, K, M, $) work best; multi-word units should be placed on a separate smaller line below.",
+    "Apply tabular-nums (font-variant-numeric: tabular-nums) to metric numbers to prevent column jitter.",
+  ]
+
+  related: [
+    @community/rule-chart-never-alone,
+    @community/fact-fintech-number-display,
+    @community/constraint-monospace-tabular-numerics,
+  ]
+}

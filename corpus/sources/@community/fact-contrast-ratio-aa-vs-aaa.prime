@@ -1,0 +1,52 @@
+fact ContrastRatioAaVsAaa {
+  id: "@community/fact-contrast-ratio-aa-vs-aaa"
+  version: "1.0.0"
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "WCAG 2.2 specifies two contrast tiers: AA (4.5:1 normal text, 3:1 large) is the legal compliance floor; AAA (7:1 normal, 4.5:1 large) is the recommended target for sustained reading and reflects the publishing-industry contrast standard."
+
+  statement: "WCAG 2.2 SC 1.4.3 requires luminance contrast ≥ 4.5:1 for normal text (Level AA) and SC 1.4.6 requires ≥ 7:1 (Level AAA) — AA is the legal compliance floor required by the EAA (EU 2025), DOJ Title II (US 2024), and most procurement frameworks; AAA approximates the contrast standard used by professional publishers for sustained reading and is recommended for long-form content."
+
+  confidence: proven
+  source: [
+    "W3C WCAG 2.2 — SC 1.4.3 (AA) and SC 1.4.6 (AAA)",
+    "EU European Accessibility Act (EAA) — June 2025 enforcement",
+    "US DOJ Title II rule (2024) — WCAG 2.1 AA reference",
+    "Lighthouse / axe-core contrast checks",
+  ]
+
+  applies-to: [
+    "normal-text contrast targets (body, label, caption)",
+    "large-text contrast targets (heading, display)",
+    "compliance gating in CI",
+    "reading-app target choice (long-form prose should aim AAA)",
+  ]
+
+  quantitative: {
+    aa-normal-text: "4.5:1",
+    aa-large-text: "3:1",
+    aaa-normal-text: "7:1",
+    aaa-large-text: "4.5:1",
+    large-text-definition: "≥ 18 pt regular OR ≥ 14 pt bold (≈ 24 px / 18.66 px on standard 96 dpi)",
+    formula: "(L1 + 0.05) / (L2 + 0.05) where L1 is the lighter relative luminance",
+  }
+
+  counter-conditions: [
+    "WCAG contrast formula is a sRGB-luminance approximation — the upcoming APCA model (used by WCAG 3 drafts) better predicts perceived contrast for thin / large text, especially light-on-dark.",
+    "Decorative text and logotypes are exempt from both AA and AAA.",
+    "Disabled controls are exempt (SC 1.4.3 explicit exception).",
+  ]
+
+  related: [
+    @w3c/fact-wcag-contrast-aa,
+    @w3c/source-wcag-22,
+    @community/check-contrast-aa,
+    @community/constraint-accessibility-aa-minimum,
+    @community/fact-oklch-perceptual-uniform,
+  ]
+}

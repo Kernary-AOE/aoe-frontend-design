@@ -1,8 +1,0 @@
-atom: "@community/rule-aria-current-page"
-relations:
-  - type: related
-    target: "@community/rule-keyboard-accessible"
-  - type: related
-    target: "@community/check-skip-link"
-  - type: related
-    target: "@community/anti-pattern-breaking-keyboard-flow"

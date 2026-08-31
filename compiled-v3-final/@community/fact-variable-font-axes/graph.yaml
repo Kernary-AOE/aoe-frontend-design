@@ -1,8 +1,0 @@
-atom: "@community/fact-variable-font-axes"
-relations:
-  - type: related
-    target: "@community/fact-optical-sizing"
-  - type: related
-    target: "@community/rule-font-loading-fout-foit"
-  - type: related
-    target: "@community/rule-font-self-host"

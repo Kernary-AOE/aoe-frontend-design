@@ -1,0 +1,36 @@
+anti-pattern CenterEverything {
+  id: "@anthropic-impeccable/anti-pattern-center-everything"
+  version: "1.0.0"
+
+  label: "Centering All Layout Elements"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Default-centering all text, cards, and sections as a safe layout strategy. Results in symmetrical layouts that feel templated, safe, and lacking in designed intentionality."
+
+  trap: "Centering feels safe and balanced — it avoids the 'which side should this go?' decision. But a fully centered layout communicates 'I didn't make a layout decision', the same way a fully symmetric face communicates nothing about the person. Left-aligned text with intentional whitespace to its right creates natural reading flow, directional tension, and opportunities for asymmetric composition. Centering collapses spatial tension into visual comfort — and visual comfort is not the same as visual interest."
+
+  remediation: [
+    "Default to left-aligned text and block-level content. Reserve center alignment for hero headlines, pull quotes, and decorative type treatments where centering is the intentional design choice.",
+    "Use asymmetric grid layouts: two-thirds content column with one-third whitespace creates more energy than a centered content column.",
+    "Break the centered hero template: place content left-aligned with an image or illustration to the right in an asymmetric split.",
+    "Even a heading that starts at left-edge while body text is constrained to 65ch creates hierarchy through asymmetry.",
+  ]
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — Layout & Space > DON'T: Center everything—left-aligned text with asymmetric layouts feels more designed",
+  ]
+
+  related: [
+    @community/principle-unexpected-spatial-composition,
+    @community/principle-white-space-as-design-element,
+    @community/rule-no-uniform-spacing-without-variation,
+    @community/anti-pattern-ai-slop-aesthetics,
+    @community/rule-primary-content-first,
+  ]
+}

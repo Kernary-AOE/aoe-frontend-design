@@ -1,0 +1,72 @@
+rule ColorContrastAAA {
+  id: "@community/rule-color-contrast-aaa"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Mission-critical body text — long-form articles, legal disclosures, healthcare information, financial figures — MUST meet WCAG 2.2 SC 1.4.6 Level AAA contrast: ≥ 7:1 for normal text and ≥ 4.5:1 for large text. AAA is the appropriate floor for content that users will read for minutes, not seconds."
+
+  claim: "Body text in long-form / mission-critical contexts MUST meet a luminance contrast ratio ≥ 7:1 (normal) or ≥ 4.5:1 (large text)."
+
+  severity: medium
+
+  validates-with: [
+    @w3c/source-wcag-22,
+    @w3c/fact-wcag-contrast-aa,
+  ]
+
+  checks: [
+    @community/check-color-contrast-aaa,
+  ]
+
+  severity-combination: |
+    long-form body < 4.5:1                       → BLOCK  (also fails AA)
+    long-form body 4.5–7:1 (passes AA, fails AAA) → WARN
+    long-form body ≥ 7:1                          → PASS
+
+  failure-mode: "Sustained-reading fatigue, especially under bright sunlight or for users with low vision; legal / medical content becomes unreadable for the audience that needs it most. Sites cannot claim WCAG AAA conformance."
+
+  remediation: [
+    "Push body text closer to `oklch(15% 0.01 <hue>)` on a `oklch(98% 0.005 <hue>)` background — small chroma keeps the surface alive while increasing luminance distance.",
+    "If the brand requires a softer pairing, restrict softer contrast to ephemeral UI (toast, hover) and reserve high-contrast for the long-form region.",
+    "Verify with @community/metric-contrast-ratio and the OKLCH Color Picker.",
+  ]
+
+  exceptions: [
+    {
+      case: "Marketing / hero typography",
+      allowed-when: "Display text at ≥ 24px is read for seconds, not minutes; AA (3:1 large) is acceptable.",
+    }
+    {
+      case: "Disabled / placeholder text",
+      allowed-when: "WCAG exempts inactive UI elements; placeholder may pass AA but should be supplemented by a real label.",
+    }
+  ]
+
+  notes: [
+    "AAA is required only for SC 1.4.6 (long-form text); UI components and focus indicators are governed by SC 1.4.11 / 2.4.11 with 3:1 minima.",
+    "Pair this rule with @community/rule-color-contrast for a graduated AA → AAA enforcement strategy.",
+  ]
+
+  related: [
+    @community/rule-color-contrast,
+    @w3c/fact-wcag-contrast-aa,
+    @community/metric-contrast-ratio,
+    @community/example-atlantic-longform,
+    @community/example-readwise-reader,
+    @community/rule-body-readability,
+    @community/principle-typography-hierarchy,
+  ]
+
+  see-also: [
+    @community/check-color-contrast-aaa,
+  ]
+}

@@ -1,4 +1,0 @@
-atom: "@community/check-no-credentials-client"
-relations:
-  - type: related
-    target: "@community/rule-no-credentials-client"

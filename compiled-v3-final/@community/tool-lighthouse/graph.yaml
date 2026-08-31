@@ -1,8 +1,0 @@
-atom: "@community/tool-lighthouse"
-relations:
-  - type: related
-    target: "@community/tool-axe-core"
-  - type: related
-    target: "@community/method-a11y-audit"
-  - type: related
-    target: "@community/metric-contrast-ratio"

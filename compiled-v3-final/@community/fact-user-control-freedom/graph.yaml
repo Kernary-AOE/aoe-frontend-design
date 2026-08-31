@@ -1,6 +1,0 @@
-atom: "@community/fact-user-control-freedom"
-relations:
-  - type: related
-    target: "@nielsen/taxonomy-10-heuristics"
-  - type: related
-    target: "@community/fact-error-prevention"

@@ -1,0 +1,62 @@
+pattern MultiDimensionHierarchy {
+  id: "@anthropic-impeccable/pattern-multi-dimension-hierarchy"
+  version: "1.0.0"
+
+  label: "Visual Hierarchy Through Multiple Simultaneous Dimensions"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Strong visual hierarchy requires combining at least two of the five hierarchy dimensions simultaneously on primary elements: size, weight, color contrast, position, and surrounding whitespace. Single-dimension hierarchy (size alone, or color alone) is weak and fails the squint test."
+
+  problem: "Designers creating hierarchy through only font size create layouts where the visual weight difference between headings and body is insufficient for fast scanning. The squint test reveals this: blur your eyes (or apply a blur filter to a screenshot) — if you cannot identify the most important element, the hierarchy is insufficient."
+
+  five-dimensions: [
+    {
+      dimension: "Size",
+      strong: "3:1 ratio or more between heading and body",
+      weak: "Less than 2:1 ratio — close sizes compete rather than separate",
+    }
+    {
+      dimension: "Weight",
+      strong: "Bold vs. Regular, or Semibold (600) vs. Regular (400)",
+      weak: "Medium (500) vs. Regular (400) — barely perceptible",
+    }
+    {
+      dimension: "Color contrast",
+      strong: "High-saturation or dark text vs. muted secondary text",
+      weak: "Black text vs. dark gray text — insufficient tonal separation",
+    }
+    {
+      dimension: "Position",
+      strong: "Top-left anchor with natural reading-order priority",
+      weak: "Centered hierarchy — removes directional reading advantage",
+    }
+    {
+      dimension: "Whitespace",
+      strong: "Primary elements surrounded by generous breathing room",
+      weak: "Uniform spacing throughout — no element commands attention",
+    }
+  ]
+
+  squint-test: "Blur or squint at the layout. If you cannot identify: (1) the most important element, (2) the second most important, (3) clear groupings — you have a hierarchy problem. Fix by stacking two or more dimensions on the primary element."
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — spatial-design.md reference > Visual Hierarchy > Hierarchy Through Multiple Dimensions section",
+  ]
+
+  related: [
+    @community/principle-typography-hierarchy,
+    @community/principle-vertical-rhythm,
+    @community/rule-refactoring-ui-hierarchy,
+    @community/rule-no-uniform-spacing-without-variation,
+    @community/fact-gestalt-proximity,
+    @community/fact-contrast-amplification,
+    @community/anti-pattern-thin-weight-body,
+    @anthropic-impeccable/principle-cards-not-required,
+  ]
+}

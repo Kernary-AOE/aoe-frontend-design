@@ -1,0 +1,169 @@
+example PricingSectionGallery {
+  id: "@community/example-gallery-pricing-sections"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+  description: "20 curated pricing section screenshots from Land-book Pro, tagged by pattern type and persona lean. The pricing section is the most analytically loaded section on a landing page: it must communicate value tiers, justify cost, reduce anxiety, and drive conversion — often to a single highlighted action. Pricing design is tightly coupled to business model, buyer persona, and brand register."
+
+  observations: [
+    "The 3-tier card grid is the dominant SaaS convention — and it signals trust. The majority of SaaS products in this gallery (base44, claudeai, durable, sprout, rideaway, ambrook) use a 3-column card layout with a center or right tier visually highlighted as 'recommended.' This is a convention strong enough that departing from it requires conscious justification. The convention works because it mirrors the buyer's mental model: 'free / starter / pro' or 'basic / growth / enterprise.'",
+    "Dark-background pricing clusters around developer and fintech products. Cypher, codegen, spread, jace-ai, and sendrai all use dark or dark-adjacent backgrounds on pricing. This is consistent with the hero gallery pattern: dark = technical/infrastructure/financial. It also creates contrast that makes glowing accent cards (the 'recommended' tier) more dramatic.",
+    "Non-SaaS products break the tier-card mold intentionally. Offcoustic (hardware) uses a specs/configuration matrix. Good-fella (agency) uses a project/retainer model. Titan (wealth management) surfaces a single premium tier with minimal comparison. Polar (open-source) leads with a percentage-fee transparency model. These breaks are intentional and aligned to the actual purchase decision the buyer is making.",
+    "Usage-based pricing gets special visual treatment. Codegen, sendrai, and polar all have usage/volume as the primary axis. Visually they tend toward simpler layouts (fewer columns) with clear 'how pricing works' explanatory copy — because the cognitive model is different from tiered plans.",
+    "Feature checklists vs. outcome language split along persona lines. B2B SaaS targeting technical or operational buyers (rideaway, codegen, claudeai) uses dense feature checklists. B2C and professional services (claimable, rhetorich, titan) use outcome/benefit language instead. The choice is as much about the buyer's vocabulary as design aesthetics.",
+  ]
+
+  items: [
+    {
+      file: "ambrook.webp"
+      pattern: "3-tier card grid + feature comparison rows + agri-sector color"
+      persona_lean: [warm-institutional, swiss-modernist]
+      notes: "Earthy green palette; clear tier differentiation; farm/agri brand"
+    },
+    {
+      file: "base39.webp"
+      pattern: "minimal 2-tier + large price numerals + clean whitespace"
+      persona_lean: [tokyo-minimal, swiss-modernist]
+      notes: "Very restrained; price number is the typographic hero"
+    },
+    {
+      file: "build-apps-with-ai-in-minutes--base44.webp"
+      pattern: "toggle monthly/annual + 3 tiers + highlighted recommended tier"
+      persona_lean: [warm-institutional, dense-pragmatist]
+      notes: "Standard SaaS pricing layout; recommended tier uses brand color ring"
+    },
+    {
+      file: "claimable--easily-appeal-denied-health-claims.webp"
+      pattern: "single prominent tier + outcome-framing copy + health sector"
+      persona_lean: [warm-institutional, editorial]
+      notes: "Avoids comparison grid; focuses on value delivery promise"
+    },
+    {
+      file: "claudeai.webp"
+      pattern: "clean 3-tier + free + pro + enterprise + feature list"
+      persona_lean: [swiss-modernist, dense-pragmatist]
+      notes: "Anthropic brand; neutral palette; dense feature checklist rows"
+    },
+    {
+      file: "codegen--the-os-for-code-agents.webp"
+      pattern: "usage-based pricing + developer-facing copy + code-adjacent aesthetic"
+      persona_lean: [dense-pragmatist, swiss-modernist]
+      notes: "Credits/usage model framing; dark SaaS tone; dev-tool positioning"
+    },
+    {
+      file: "cypher.webp"
+      pattern: "dark bg pricing + glowing accent card + crypto/web3 palette"
+      persona_lean: [brutalist-expressive, dense-pragmatist]
+      notes: "Neon accent on highlighted tier; dark-mode-first; web3 brand energy"
+    },
+    {
+      file: "durable-ai-website-builder-and-small-business-software.webp"
+      pattern: "3 tiers + icon feature list + SMB-friendly copy + bright CTA"
+      persona_lean: [warm-institutional]
+      notes: "Bright colors; simplified language; targets non-technical users"
+    },
+    {
+      file: "exactlyai--train-ai-to-replicate-your-brand-style.webp"
+      pattern: "2-tier comparison + visual feature matrix + AI-brand palette"
+      persona_lean: [editorial, swiss-modernist]
+      notes: "Visual/image-centric feature callouts to match AI image product"
+    },
+    {
+      file: "gogetta.webp"
+      pattern: "illustrated pricing + mascot presence + friendly tier names"
+      persona_lean: [warm-institutional]
+      notes: "Character mascot persists into pricing; consistent brand voice"
+    },
+    {
+      file: "good-fella--frontend-development-studio--websites-tha.webp"
+      pattern: "agency project pricing + deliverables-focused + studio aesthetic"
+      persona_lean: [editorial, brutalist-expressive]
+      notes: "Project/retainer model rather than SaaS tiers; creative studio tone"
+    },
+    {
+      file: "jace-ai--your-247-email-assistant-that-drafts-for-you.webp"
+      pattern: "single-tier highlight + AI email use case callouts + clean dark"
+      persona_lean: [dense-pragmatist, swiss-modernist]
+      notes: "Email use cases as feature proof points alongside price"
+    },
+    {
+      file: "offcoustic--affordable-phone-booths-for-your-office-c.webp"
+      pattern: "physical product pricing + configuration matrix + office hardware"
+      persona_lean: [swiss-modernist, warm-institutional]
+      notes: "Hardware/configuration model; specs table rather than feature checkboxes"
+    },
+    {
+      file: "polar--monetize-your-software-with-ease--polar.webp"
+      pattern: "usage-based open-source pricing + percentage fee model + developer"
+      persona_lean: [dense-pragmatist, tokyo-minimal]
+      notes: "Transparent percentage-cut model; very developer-community-focused"
+    },
+    {
+      file: "rhetorich--make-speaking-your-firms-most-powerful-adv.webp"
+      pattern: "B2B service tiers + outcome language + professional services"
+      persona_lean: [swiss-modernist, warm-institutional]
+      notes: "Firm/agency buyer framing; outcome-based tier naming"
+    },
+    {
+      file: "rideaway--all-in-one-booking--management-platform-for.webp"
+      pattern: "SaaS platform tiers + booking feature highlights + mobility sector"
+      persona_lean: [warm-institutional, dense-pragmatist]
+      notes: "Feature-heavy comparison; targets operators/fleet managers"
+    },
+    {
+      file: "sendrai.webp"
+      pattern: "email infrastructure pricing + volume tiers + technical copy"
+      persona_lean: [dense-pragmatist, swiss-modernist]
+      notes: "Message volume as primary pricing axis; API/developer product"
+    },
+    {
+      file: "spread--flip-smarter.webp"
+      pattern: "fintech tier cards + dark bg + trading product feature list"
+      persona_lean: [dense-pragmatist, swiss-modernist]
+      notes: "Financial product; dark premium aesthetic; feature-dense cards"
+    },
+    {
+      file: "sprout.webp"
+      pattern: "3-tier centered + soft palette + SMB growth tool"
+      persona_lean: [warm-institutional]
+      notes: "Friendly color palette; growth/marketing tool; approachable copy"
+    },
+    {
+      file: "titan--wealth-management.webp"
+      pattern: "premium single-tier + wealth management aesthetic + trust signals"
+      persona_lean: [editorial, swiss-modernist]
+      notes: "High-end wealth product; minimal tiers; credibility over features"
+    },
+  ]
+
+  base_path: "resources/landbook/sections-pricing"
+
+  persona_mapping: {
+    "dense-pragmatist": ["claudeai", "codegen--the-os-for-code-agents", "sendrai", "jace-ai--your-247-email-assistant-that-drafts-for-you", "spread--flip-smarter", "rideaway--all-in-one-booking--management-platform-for"]
+    "swiss-modernist": ["base39", "claudeai", "offcoustic--affordable-phone-booths-for-your-office-c", "sendrai", "rhetorich--make-speaking-your-firms-most-powerful-adv"]
+    "warm-institutional": ["ambrook", "durable-ai-website-builder-and-small-business-software", "gogetta", "sprout", "rideaway--all-in-one-booking--management-platform-for"]
+    "editorial": ["claimable--easily-appeal-denied-health-claims", "exactlyai--train-ai-to-replicate-your-brand-style", "good-fella--frontend-development-studio--websites-tha", "titan--wealth-management"]
+    "brutalist-expressive": ["cypher", "good-fella--frontend-development-studio--websites-tha"]
+    "tokyo-minimal": ["base39", "polar--monetize-your-software-with-ease--polar"]
+  }
+
+  agent_workflow: """
+    1. Match pricing model to sample type first. Select samples from this gallery whose business model matches the target (SaaS subscription, usage-based, agency project, hardware). Structural decisions (number of columns, axis of comparison) depend on model, not persona.
+    2. Filter by buyer persona second. Within a model type, persona determines palette, copy density, and typography register. A developer-tool pricing section (polar, codegen) looks structurally similar to an SMB tool (durable, sprout) but reads completely differently in tone.
+    3. Use highlighted-tier examples for conversion emphasis. Samples where a center/right tier has a distinct background, border, or badge (build-apps-with-ai, base44) show how visual emphasis directs attention without additional copy.
+    4. Cross-reference CTAs. The CTA inside pricing cards is its own pattern set — see the CTA gallery atom for how button hierarchy and copy work in conversion contexts.
+    5. Anchor on notes for tonal calibration. The notes field captures the brand register that cannot be read from pattern alone — 'earthy green, farm brand' vs. 'neon accent, web3 energy' require different execution even if both use 3-tier grids.
+  """
+
+  related: [
+    @community/example-gallery-full-landings,
+    @community/example-gallery-cta-sections,
+    @community/example-gallery-feature-sections,
+  ]
+}

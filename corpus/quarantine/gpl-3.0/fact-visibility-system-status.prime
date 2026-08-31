@@ -1,0 +1,41 @@
+fact VisibilitySystemStatus {
+  id: "@community/fact-visibility-system-status"
+  version: "1.0.0"
+
+  statement: "Nielsen Heuristic 1 — Visibility of System Status: The system should always keep users informed about what is going on, through appropriate feedback within a reasonable time."
+
+  confidence: proven
+  evidence: @nielsen/source-nielsen-1994
+
+  domain: ux-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  heuristic-number: 1
+
+  examples: [
+    "Progress bars, loading spinners, and status messages during file uploads.",
+    "Email client showing 'Sending...' → 'Sent' state change in the toolbar.",
+    "Shopping cart badge count updating immediately after adding an item.",
+  ]
+
+  violations: [
+    "Button that triggers an async action with no loading state — user clicks repeatedly.",
+    "Form submission with no confirmation, leaving user uncertain if it worked.",
+    "Background sync with no indicator that data is being refreshed.",
+  ]
+
+  notes: [
+    "Feedback should be timely: < 100ms feels instant; 100ms–1s needs no indicator; 1–10s needs progress; > 10s needs percentage/ETA.",
+    "This fact is a member of @nielsen/taxonomy-10-heuristics.",
+  ]
+
+  related: [
+    @nielsen/taxonomy-10-heuristics,
+    @community/fact-error-prevention,
+  ]
+}

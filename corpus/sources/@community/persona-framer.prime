@@ -1,0 +1,102 @@
+persona Framer {
+  id: "@community/persona-framer"
+  version: "1.0.0"
+
+  school: framer
+  domain: visual-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Dark-first cinematic tool aesthetic: GT Walsheim at 500 weight only with extreme -5.5px tracking at 110px making headlines feel spring-loaded, void-black #000000 canvas with electric Framer Blue #0099ff as sole accent, and Inter Variable with 6+ OpenType features (cv01, cv05, cv09, cv11, ss03, ss07) giving body text a subtly custom character."
+
+  implies: {
+    font: {
+      display: "GT Walsheim Framer Medium / GT Walsheim Medium — weight 500 only, never bold (700), never regular (400); -5.5px tracking at 110px / -4.25px at 85px / -3.1px at 62px"
+      body: "Inter Variable with OpenType cv01, cv05, cv09, cv11, ss03, ss07 — 15px nav/UI; Mona Sans weight 100 for ultra-light ethereal accents"
+      monospace: "Azeret Mono — also Open Runde as rounded micro-companion for tags/badges"
+    }
+    color: {
+      temperature: "cool"
+      palette: "void black #000000 absolute (not #0a0a0a), pure white #ffffff text, Framer Blue #0099ff sole accent, blue glow ring rgba(0,153,255,0.15) borders, muted silver #a6a6a6 secondary, elevated dark surface #090909, frosted glass rgba(255,255,255,0.1) buttons"
+      background: "#000000 pure void black — not warm charcoal, not near-black, void is sacred"
+    }
+    density: "cinematic spacious — 110px display with line-height 0.85 (sub-baseline stacking), section padding 80–120px vertical, max content ~1200px, 100px full-pill CTAs"
+    layout: "full-bleed dark canvas, product screenshots as hero art, feature sections with blue-ring-bordered cards, pill-only CTAs (40–100px radius throughout)"
+    imagery: "full-fidelity product screenshots dominate as hero art — Framer as proof-of-concept; no stock photography; the tool demonstrates itself"
+    motion: "kinetic — GT Walsheim's extreme tracking makes headlines feel spring-loaded even statically; animated product demos, elevated float shadow (rgba(255,255,255,0.1) top highlight + rgba(0,0,0,0.25) deep ambient), spring-config for interactive elements"
+  }
+
+  compatible: ["vercel-clean", "brutalist", "swiss-modernist"]
+  conflicts: ["warm-institutional", "notion-warm", "magazine-editorial", "stripe-fintech"]
+
+  example-brands: [
+    "Framer",
+  ]
+
+  notes: [
+    "GT Walsheim weight 500 only — medium is the brand voice. Using GT Walsheim Bold or Regular immediately breaks the persona. The weight is not a typographic choice, it is the brand.",
+    "Extreme display tracking: 110px / -5.5px is the most aggressive in any major design system. Headlines feel spring-loaded because the compressed tracking stores visual tension. At 85px use -4.25px, at 62px use -3.1px — proportional scaling, not fixed.",
+    "Void black #000000 is non-negotiable — not #0a0a0a, not warm charcoal. The absolute darkness is the philosophy: this is a product for people who care about craft at the pixel level.",
+    "Blue ring as border signature: rgba(0,153,255,0.15) 0px 0px 0px 1px wraps interactive and card elements — every bordered element is subtly branded with the accent color.",
+    "Inter OpenType maximalism: cv01, cv05, cv09, cv11, ss03, ss07 simultaneously on body text at 12–15px. This gives UI copy a subtly custom feel that generic Inter lacks.",
+    "Use for design tools, no-code builders, or creative software that must feel cinematic and craft-obsessed. Avoid for utility tools or content-heavy sites — extreme tracking and blue ring shadows are stylistic statements demanding the product warrant the theater.",
+    "Distinct from persona-vercel-clean: Framer is darker (void #000000), more kinetic (extreme tracking, spring motion), and tool-forward (product screenshots as hero); vercel-clean is more polished SaaS with card grids and a single neon accent.",
+  ]
+
+  composition: {
+    must-include: [
+      @impeccable/template-spring-config,
+      @impeccable/template-oklch-dark-mode-cascade,
+      @community/rule-opentype-features-on,
+    ]
+    must-avoid: [
+      @impeccable/persona-warm-institutional,
+      @impeccable/persona-magazine-editorial,
+    ]
+    typography-required: {
+      display: "GT Walsheim Medium (weight 500 only)"
+      tracking: "-5.5px at 110px, -4.25px at 85px, -3.1px at 62px"
+      body-opentype: "cv01, cv05, cv09, cv11, ss03, ss07"
+    }
+    color-required: {
+      background: "#000000 (void black — not #0a0a0a)"
+      accent: "#0099ff"
+      border-style: "rgba(0,153,255,0.15) 0px 0px 0px 1px"
+    }
+    motion-prescriptions: [
+      @impeccable/template-spring-config,
+      @impeccable/template-easing-curves,
+    ]
+  }
+
+  related: [
+    @impeccable/persona-vercel-clean,
+    @impeccable/template-spring-config,
+    @impeccable/template-easing-curves,
+    @community/principle-typography-hierarchy,
+    @community/check-line-length-optimal,
+    @community/rule-opentype-features-on,
+    @community/fact-variable-font-axes,
+    @community/rule-typography-letter-spacing,
+    @community/fact-monospace-purpose,
+    @impeccable/template-oklch-dark-mode-cascade,
+    @community/pattern-color-dark-mode-pairing,
+    @community/principle-color-system-foundation,
+    @community/check-color-oklch-required,
+    @community/check-color-dark-mode-cascade,
+    @community/check-contrast-aa,
+    @community/rule-single-accent-color,
+    @community/principle-intentional-gradient,
+    @community/anti-pattern-generic-saas-blue,
+    @community/check-color-blacklist-brand,
+  ]
+
+  contradicts: [
+    @impeccable/persona-warm-institutional,
+    @impeccable/persona-magazine-editorial,
+  ]
+}

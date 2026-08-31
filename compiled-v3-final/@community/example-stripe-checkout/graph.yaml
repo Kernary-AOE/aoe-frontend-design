@@ -1,8 +1,0 @@
-atom: "@community/example-stripe-checkout"
-relations:
-  - type: related
-    target: "@community/pattern-checkout-summary"
-  - type: related
-    target: "@community/pattern-multi-step-wizard"
-  - type: related
-    target: "@community/fact-error-prevention"

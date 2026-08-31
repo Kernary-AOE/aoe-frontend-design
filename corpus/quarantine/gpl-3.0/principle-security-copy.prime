@@ -1,0 +1,51 @@
+principle SecurityCopy {
+  id: "@community/principle-security-copy"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Security-related UI copy must be specific about the risk, actionable about what to do, and honest — neither alarming nor falsely reassuring."
+
+  statement: "Security messaging in UI must satisfy three criteria: (1) Specific — name exactly what is at risk ('your password' not 'your account'); (2) Actionable — tell the user exactly what to do right now ('Click the link in your email to reset your password'); (3) Honest — acknowledge uncertainty where it exists and avoid promises that cannot be kept ('We cannot guarantee recovery if you lose access to your email')."
+
+  rationale: "Vague security copy ('Your account may be compromised. Please take action.') fails users in two ways: it causes alarm without giving them a path to resolution, and overuse of vague warnings trains users to ignore security notices. Conversely, false reassurance ('Your account is 100% secure.') erodes credibility when incidents occur. Security copy must earn trust by being accurate — users can handle the truth if it comes with a clear next action."
+
+  implications: [
+    "Never use: 'An issue has been detected with your account.' → Too vague.",
+    "Use: 'Someone signed in to your account from a new device in Tokyo. Was this you?'",
+    "Never use: 'For your security, this session will expire.' → No actionable path.",
+    "Use: 'Your session expires in 5 minutes. Save your work or stay logged in.'",
+    "Never promise absolute security. Say 'encrypted' not 'unhackable'; 'we use industry-standard security' not 'completely secure'.",
+  ]
+
+  applies-to: [
+    "Breach / anomaly detection notifications",
+    "Session expiry warnings",
+    "Two-factor authentication prompts",
+    "Permission request explanations",
+    "Data deletion confirmation dialogs",
+    "Privacy setting descriptions",
+  ]
+
+  notes: [
+    "Source: github.com/spencergoldade/cursor-designer, .cursor/rules/binders/security-ux-patterns.mdc (GPL-3.0).",
+    "For security alerts: use a single, specific CTA — not three options. Users under security anxiety make worse decisions when given too many choices.",
+    "Test copy with a non-technical user: if they cannot explain back what the risk is and what to do, the copy is too vague.",
+  ]
+
+  related: [
+    @community/rule-screen-reader-friendly-copy,
+    @community/rule-actionable-error-messages,
+    @community/rule-active-voice-in-ui-copy,
+    @community/anti-pattern-generic-error-text,
+    @community/example-plaid-connect,
+    @community/rule-permissions-human-readable,
+    @community/rule-suspicious-activity-next-step,
+  ]
+}

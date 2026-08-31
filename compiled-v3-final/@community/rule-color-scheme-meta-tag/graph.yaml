@@ -1,8 +1,0 @@
-atom: "@community/rule-color-scheme-meta-tag"
-relations:
-  - type: related
-    target: "@community/rule-color-dark-mode-cascade"
-  - type: related
-    target: "@community/pattern-color-dark-mode-pairing"
-  - type: related
-    target: "@impeccable/template-oklch-dark-mode-cascade"

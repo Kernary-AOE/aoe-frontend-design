@@ -1,0 +1,55 @@
+rule CorrectInputType {
+  id: "@community/rule-correct-input-type"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Form inputs must use the HTML `type` attribute that matches the expected data (e.g. `type='email'` for email addresses, `type='tel'` for phone numbers) to trigger the correct on-screen keyboard on mobile and enable native browser validation."
+
+  claim: "Every `<input>` must declare the `type` that matches its data: use `email`, `tel`, `url`, `number`, `date`, `search`, or `password` rather than defaulting to `type='text'` — mismatched types force mobile users onto the wrong keyboard and forgo free browser validation."
+
+  severity: warning
+
+  mobile-impact: "type='email' on mobile (iOS/Android) shows @-symbol keyboard; type='tel' shows numeric dialpad; type='number' shows number keyboard. Using type='text' for any of these degrades mobile completion rates."
+
+  native-validation: [
+    "type='email' — validates format before submit",
+    "type='url' — validates protocol presence",
+    "type='number' — enforces numeric range (min/max/step)",
+    "type='date' — native date picker, locale-aware display",
+  ]
+
+  examples: {
+    correct: [
+      "<input type='email'  name='email' />",
+      "<input type='tel'    name='phone' />",
+      "<input type='url'    name='website' />",
+      "<input type='number' name='quantity' min='1' max='99' />",
+      "<input type='date'   name='birthday' />",
+      "<input type='search' name='q' />",
+    ]
+    incorrect: [
+      "<input type='text' name='email' />",
+      "<input type='text' name='phone' />",
+    ]
+  }
+
+  remediation: [
+    "Run `querySelectorAll('input[type=text]')` and audit each for its semantic purpose.",
+    "For numeric data that should not spin (e.g. credit card, zip code), prefer type='tel' over type='number' — tel gives numeric keyboard without the spin controls.",
+  ]
+
+  related: [
+    @community/rule-autocomplete-attributes,
+    @community/rule-form-label-associated,
+    @community/pattern-inline-validation,
+  ]
+}

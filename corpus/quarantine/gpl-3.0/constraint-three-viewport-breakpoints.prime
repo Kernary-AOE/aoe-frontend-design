@@ -1,0 +1,55 @@
+constraint ThreeViewportBreakpoints {
+  id: "@community/constraint-three-viewport-breakpoints"
+  version: "1.0.0"
+
+  label: "Minimum Three Responsive Viewport Ranges"
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+
+  description: "Responsive layouts must define distinct behavior for at least three viewport ranges — narrow (< 640px mobile), medium (640px–1023px tablet/small desktop), and wide (≥ 1024px desktop) — ensuring the mainstream device spectrum is fully covered."
+
+  threshold: "number of distinct viewport ranges with defined layout behavior"
+  unit: "count"
+  pass: ">= 3"
+  warn: "== 2"
+  block: "<= 1"
+
+  rationale: "Two breakpoints miss the tablet-class range (iPad, narrow laptop). Modern analytics consistently show 15–25% of traffic on medium-width viewports. Layouts with only mobile and desktop breakpoints often look broken or cramped on tablets and small laptops."
+
+  standard-ranges: """
+    /* Mobile-first three-range baseline */
+
+    /* Narrow: 0px – 639px (phones) */
+    .layout { grid-template-columns: 1fr; }
+
+    /* Medium: 640px – 1023px (tablets, small laptops) */
+    @media (min-width: 640px) {
+      .layout { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Wide: 1024px+ (desktop) */
+    @media (min-width: 1024px) {
+      .layout { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Optional fourth range for extra-wide (1280px+) */
+    @media (min-width: 1280px) {
+      .layout { grid-template-columns: repeat(4, 1fr); }
+    }
+  """
+
+  verify-by: "Count @media query breakpoints in the layout. If only one breakpoint exists (only mobile vs desktop), add a medium-range breakpoint."
+
+  severity: warning
+
+  related: [
+    @community/rule-mobile-first,
+    @community/rule-collapse-multi-column-mobile,
+    @community/rule-content-based-breakpoints,
+  ]
+}

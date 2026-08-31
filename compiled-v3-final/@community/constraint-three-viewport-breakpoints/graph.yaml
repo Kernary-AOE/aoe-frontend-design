@@ -1,8 +1,0 @@
-atom: "@community/constraint-three-viewport-breakpoints"
-relations:
-  - type: related
-    target: "@community/rule-mobile-first"
-  - type: related
-    target: "@community/rule-collapse-multi-column-mobile"
-  - type: related
-    target: "@community/rule-content-based-breakpoints"

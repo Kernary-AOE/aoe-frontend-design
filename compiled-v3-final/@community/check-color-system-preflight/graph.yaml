@@ -1,8 +1,0 @@
-atom: "@community/check-color-system-preflight"
-relations:
-  - type: related
-    target: "@community/principle-color-system-foundation"
-  - type: related
-    target: "@community/rule-color-hue-selection"
-  - type: related
-    target: "@community/constraint-oklch-only-color"

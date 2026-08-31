@@ -1,0 +1,42 @@
+anti-pattern RoundedBorderAccent {
+  id: "@anthropic-impeccable/anti-pattern-rounded-border-accent"
+  version: "1.0.0"
+
+  label: "Rounded Rectangles with Thick Colored Left/Top Border as Accent"
+  domain: frontend-design
+
+  _meta: {
+    license: "MIT AND Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Adding a thick colored border on a single side (left or top) of a rounded-corner card or callout box as a design accent treatment. Appears frequently in dashboards, alert boxes, and information cards as a lazy brand color injection that almost never looks intentional."
+
+  trap: "Designers reach for this pattern when they want to add 'a pop of color' to an otherwise achromatic component without committing to a full color treatment. The result is a visual compromise that satisfies neither: the component is not fully colored (so it lacks commitment) and the single-side border looks like an afterthought. The border creates an asymmetric tension with the rounded corners — a rounded rectangle signals soft, full-perimeter containment; a single thick border signals directional emphasis and looks better with squared corners."
+
+  detection: [
+    "border-left: 3-6px solid <brand-color> on a card with border-radius > 0",
+    "border-top: 3-6px solid <brand-color> on a panel with border-radius > 0",
+    "The element uses this treatment across all alert/callout variants regardless of semantic meaning",
+  ]
+
+  remediation: [
+    "Commit to a full treatment: fill the entire card background with a tint of the accent, or use no color at all.",
+    "If a directional accent is intentional (timeline indicator, category tag), use sharp/small border-radius (0-2px) to acknowledge the directional geometry.",
+    "Replace accent borders with semantic background tints (oklch(95% 0.04 250) for a subtle blue-info card).",
+    "Use icon + background-color treatment for semantic callouts (success, warning, error) — the icon communicates meaning more clearly than a side border color.",
+  ]
+
+  sources: [
+    "Anthropic Impeccable SKILL.md — Visual Details > DON'T: Use rounded elements with thick colored border on one side—a lazy accent that almost never looks intentional",
+  ]
+
+  related: [
+    @community/anti-pattern-ai-slop-aesthetics,
+    @community/rule-brand-color-primary-only,
+    @community/principle-border-radius-aesthetic,
+    @community/pattern-border-radius-decision,
+    @community/fact-border-radius-platform,
+  ]
+}

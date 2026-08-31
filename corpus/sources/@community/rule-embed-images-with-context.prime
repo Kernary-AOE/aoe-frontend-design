@@ -1,0 +1,31 @@
+rule EmbedImagesWithContext {
+  id: "@community/rule-embed-images-with-context"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+  severity: warning
+
+  statement: "Images embedded in documentation, blog posts, or content pages must always include contextual framing — at minimum an alt text describing what is shown AND a caption or surrounding copy explaining why the image is relevant. Images without contextual framing are invisible to screen readers and incomprehensible to users who cannot load them."
+
+  applies-when: "Inserting any non-decorative image into a documentation page, blog post, or instructional content."
+
+  verify-by: [
+    "Alt text is present and describes the content of the image (not just its filename).",
+    "A caption or adjacent paragraph explains the relevance or takeaway of the image.",
+    "Decorative images (visual separators, background patterns) have alt='' (empty, not absent).",
+  ]
+
+  rationale: "An image with no alt text is a content void for screen reader users. An image with no contextual caption is ambiguous — the user must infer why it is there. Together, alt + context ensure the image contributes meaning to all users."
+
+  related: [
+    @community/rule-image-optimization,
+    @community/check-image-optimization,
+    @community/rule-aria-label-required,
+  ]
+}

@@ -1,0 +1,47 @@
+anti-pattern FakeTrustSignals {
+  id: "@community/anti-pattern-fake-trust-signals"
+  version: "1.0.0"
+
+  label: "Fake or Abused Trust Signals"
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Using fabricated social proof numbers, stock photo testimonial avatars, badges on every section, logos without permission, linked compliance cert badges, or vague guarantee copy — all patterns that neutralize or reverse the trust effect they were meant to create."
+
+  why-bad: [
+    "Fabricated social proof numbers: destroys trust on verification; legal liability under consumer protection law",
+    "Stock photo testimonial avatars: immediately recognizable as fake — users have seen the same faces on other sites",
+    "Trust badges on every section: signal fatigue — badges lose meaning when repeated; communicates desperation not credibility",
+    "Logo strip without permission: brand compliance risk; unauthorized use of partner/customer logos can result in takedown demands",
+    "Linking compliance cert badges: breaks visual scannability; cert badges are decorative verification marks, not navigation",
+    "'100% satisfaction guaranteed' without terms: vague promise increases skepticism rather than reducing it",
+  ]
+
+  instead-do: [
+    "Only use auditable, real metrics — append '+' to indicate minimum floor",
+    "Use real photos or illustrated anonymous avatars with a transparent label",
+    "Map each trust component to one section that answers its specific objection (see rule-trust-signal-placement)",
+    "Confirm partner/customer written consent before displaying their logo",
+    "Add a nearby text link if cert verification is needed — leave the badge image unlinked",
+    "Be specific: '30-day full refund, no questions asked' instead of vague guarantees",
+  ]
+
+  notes: [
+    "Trust signals work by being believable. Any signal that a skeptical visitor can disprove creates negative trust — worse than no signal.",
+  ]
+
+  related: [
+    @community/pattern-trust-badge-row,
+    @community/pattern-trust-logo-strip,
+    @community/pattern-trust-social-proof-numbers,
+    @community/pattern-trust-testimonial-micro,
+    @community/pattern-trust-security-cert,
+    @community/rule-trust-signal-placement,
+    @community/rule-trust-signal-critical,
+  ]
+}

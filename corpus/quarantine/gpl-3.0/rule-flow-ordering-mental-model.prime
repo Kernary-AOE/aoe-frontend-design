@@ -1,0 +1,35 @@
+rule FlowOrderingMentalModel {
+  id: "@community/rule-flow-ordering-mental-model"
+  version: "1.0.0"
+
+  domain: frontend-design
+
+  _meta: {
+    license: "GPL-3.0"
+    license-provenance: "legacy-backfill"
+  }
+
+  severity: warning
+
+  statement: "Multi-step flows must sequence steps in the order users expect based on domain conventions. Never present a step before users have the context needed to complete it — and never ask for irreversible commitment before users have seen what they are committing to."
+
+  applies-when: "Designing any multi-step flow: checkout, onboarding, form wizard, setup flow."
+
+  verify-by: "Walk the flow as a first-time user and ask at each step: 'Do I have enough context to complete this step?' If the answer is no, the step is out of order."
+
+  anti-pattern: "Asking for payment before showing what will be purchased. Asking for account creation before showing the product's value. Asking for personal information before explaining why it is needed."
+
+  use-instead: [
+    "Checkout: cart → review → shipping → payment → confirmation",
+    "Onboarding: value proposition → account creation → setup → first value moment",
+    "Permission requests: explain why → request → confirm → use",
+  ]
+
+  rationale: "Unexpected step ordering breaks users' mental model, causing confusion and loss of trust in the flow. When users reach a step they are not ready for, they abandon rather than continue."
+
+  related: [
+    @community/principle-clear-user-mental-model,
+    @community/rule-auth-flow-reversibility,
+    @community/principle-nielsen-real-world-match,
+  ]
+}

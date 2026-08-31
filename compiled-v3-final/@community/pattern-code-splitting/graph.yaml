@@ -1,8 +1,0 @@
-atom: "@community/pattern-code-splitting"
-relations:
-  - type: related
-    target: "@community/pattern-skeleton-loader"
-  - type: related
-    target: "@community/check-image-optimization"
-  - type: related
-    target: "@community/check-focus-visible"

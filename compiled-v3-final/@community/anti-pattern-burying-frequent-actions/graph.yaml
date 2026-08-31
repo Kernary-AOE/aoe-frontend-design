@@ -1,8 +1,0 @@
-atom: "@community/anti-pattern-burying-frequent-actions"
-relations:
-  - type: related
-    target: "@community/anti-pattern-deep-branching-nav"
-  - type: related
-    target: "@community/rule-navigation-flat-when-shallow"
-  - type: related
-    target: "@community/pattern-progressive-disclosure"

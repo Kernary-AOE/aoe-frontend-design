@@ -1,8 +1,0 @@
-atom: "@community/fact-ios-background-hierarchy"
-relations:
-  - type: related
-    target: "@community/rule-ios-semantic-system-colors"
-  - type: related
-    target: "@community/rule-ios-custom-color-dark-variants"
-  - type: related
-    target: "@community/pattern-ios-inset-grouped-list"

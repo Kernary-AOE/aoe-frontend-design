@@ -1,4 +1,0 @@
-# ClsBudget [rule] v1.0.0
-Every page must enforce a Cumulative Layout Shift (CLS) budget of ≤ 0.1 (Google's 'Good' threshold). CI fails the build when synthetic measurement crosses the threshold; production RUM rolling-p75 above 0.1 triggers an alert.
-> Set a CLS budget of 0.1 (Lighthouse synthetic, mobile preset). Block PRs whose budget regression is >0.05 above main. Track field CLS via RUM (web-vitals.js + analytics endpoint) and alert on rolling-p75 ≥ 0.1 over a 24h window. Reserve dimensions for every image (`width`/`height` HTML attrs OR `aspect-ratio` CSS), every iframe, every ad slot, and every async-loaded section above the fold. Use `font-display: optional` or `swap` paired with `size-adjust`/`ascent-override` to eliminate FOUT-induced shifts. Animate only `transform` and `opacity` — never `top`/`left`/`width`/`height` for hover/focus/state transitions.
-domain: performance

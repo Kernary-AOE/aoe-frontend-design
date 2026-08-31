@@ -1,8 +1,0 @@
-atom: "@community/rule-ios-voiceover-labels"
-relations:
-  - type: related
-    target: "@community/rule-ios-voiceover-order"
-  - type: related
-    target: "@community/rule-ios-reduce-motion"
-  - type: related
-    target: "@community/check-ios-bold-text-support"

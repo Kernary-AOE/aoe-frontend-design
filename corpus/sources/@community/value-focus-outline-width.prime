@@ -1,0 +1,32 @@
+value FocusOutlineWidth {
+  id: "@community/value-focus-outline-width"
+  version: "1.0.0"
+
+  name: "focus-outline-width"
+  constant: "2px"
+  type: css-length
+
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  rationale: "WCAG 2.2 SC 2.4.11 specifies a minimum focus indicator area equivalent to a 2 CSS pixel perimeter. Using `outline-width: 2px` with `outline-offset: 2px` satisfies both the size and gap requirements while remaining visible on all background colors when combined with a 3:1 contrast ratio ring color."
+
+  usage: """
+    /* Canonical focus ring pattern */
+    :focus-visible {
+      outline: 2px solid currentColor;  /* or a specific focus-ring token */
+      outline-offset: 2px;
+    }
+  """
+
+  related: [
+    @w3c/fact-wcag-focus-contrast,
+    @community/term-focus-ring,
+    @community/check-focus-visible,
+  ]
+}

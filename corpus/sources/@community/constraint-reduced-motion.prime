@@ -1,0 +1,53 @@
+constraint ReducedMotion {
+  id: "@community/constraint-reduced-motion"
+  version: "1.0.0"
+
+  target: "CSS transitions and animations"
+  severity: block
+  domain: accessibility
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "All non-essential motion (transitions, CSS animations, JavaScript-driven animations) must be disabled or substantially reduced when the user has enabled `prefers-reduced-motion: reduce`. Essential motion (progress indicators, video content) is exempt."
+
+  rule: |
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+  rationale: "Users who set prefers-reduced-motion: reduce typically have vestibular disorders, epilepsy, or motion sensitivity. Decorative animations can trigger vertigo, nausea, or seizures. WCAG 2.1 SC 2.3.3 (AAA) covers this; WCAG 2.2 defers to the OS setting."
+
+  scope: [
+    "CSS transition on sidebar width (e.g., @community/example-vercel-sidebar) → must disable",
+    "Scroll-triggered reveal animations → must disable or convert to instant-reveal",
+    "Loading spinner rotations → may use opacity pulse instead of spin (opacity change is less vestibular-disruptive)",
+    "Page transition animations → must disable",
+    "Hero section parallax → must disable",
+  ]
+
+  exemptions: [
+    "Video content that is essential to understanding (pause/stop still required per SC 2.2.2)",
+    "Progress indicators (spinners) may use opacity animations at reduced amplitude",
+    "Map panning driven by user direct gesture (not auto-playing)",
+  ]
+
+  notes: [
+    "Test with: macOS → Accessibility → Display → Reduce Motion; Windows → Settings → Ease of Access → Display → Show animations",
+    "CSS `prefers-reduced-motion` is well-supported: all major browsers since 2019.",
+  ]
+
+  related: [
+    @community/example-vercel-sidebar,
+    @w3c/source-wcag-22,
+    @community/rule-keyboard-accessible,
+  ]
+}

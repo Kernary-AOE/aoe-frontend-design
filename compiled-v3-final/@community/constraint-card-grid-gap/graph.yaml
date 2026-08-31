@@ -1,8 +1,0 @@
-atom: "@community/constraint-card-grid-gap"
-relations:
-  - type: related
-    target: "@community/pattern-card-component"
-  - type: related
-    target: "@community/check-spacing-rhythm"
-  - type: related
-    target: "@community/fact-8pt-grid-system"

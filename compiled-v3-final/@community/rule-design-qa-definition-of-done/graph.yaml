@@ -1,8 +1,0 @@
-atom: "@community/rule-design-qa-definition-of-done"
-relations:
-  - type: related
-    target: "@community/method-design-qa-pre-ship"
-  - type: related
-    target: "@community/rule-design-decisions-cite-research"
-  - type: related
-    target: "@community/principle-error-prevention-and-recovery"

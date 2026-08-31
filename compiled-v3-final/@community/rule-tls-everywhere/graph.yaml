@@ -1,8 +1,0 @@
-atom: "@community/rule-tls-everywhere"
-relations:
-  - type: related
-    target: "@community/principle-owasp-cryptographic-failures"
-  - type: related
-    target: "@community/principle-owasp-security-misconfig"
-  - type: related
-    target: "@community/rule-csrf-token-state-changing"

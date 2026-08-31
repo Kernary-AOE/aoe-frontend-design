@@ -1,8 +1,0 @@
-atom: "@community/example-shadcn-settings"
-relations:
-  - type: related
-    target: "@community/pattern-settings-page"
-  - type: related
-    target: "@community/example-shadcn-dashboard"
-  - type: related
-    target: "@community/fact-error-prevention"

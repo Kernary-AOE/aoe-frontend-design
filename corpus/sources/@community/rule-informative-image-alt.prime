@@ -1,0 +1,67 @@
+rule InformativeImageAlt {
+  id: "@community/rule-informative-image-alt"
+  version: "1.0.0"
+
+  applies-to: @community/type-html-artifact
+
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "Images that convey meaning or information must have descriptive `alt` text explaining their content or function; decorative images must use `alt=''` to hide them from assistive technology."
+
+  claim: "Every `<img>` element MUST have an `alt` attribute: informative images require alt text describing what they convey; decorative images require `alt=''` — missing alt attributes are a WCAG 1.1.1 Level A violation."
+
+  severity: critical
+
+  categories: {
+    informative: {
+      definition: "Conveys information that is not available from surrounding text."
+      requirement: "alt describes the content or purpose."
+      examples: [
+        "<img src='chart.png' alt='Bar chart: Q3 revenue up 24% vs Q2'>",
+        "<img src='avatar.jpg' alt='Profile photo of Maria Chen'>",
+        "<img src='logo.svg' alt='Acme Corp'>",
+      ]
+    }
+    decorative: {
+      definition: "Pure visual decoration; removing it would not change understanding."
+      requirement: "alt='' (empty string, NOT omitted)."
+      examples: [
+        "<img src='divider.png' alt=''>",
+        "<img src='bg-texture.jpg' alt=''>",
+      ]
+    }
+    functional: {
+      definition: "An image inside a link or button; the alt describes the destination or action."
+      examples: [
+        "<a href='/home'><img src='logo.svg' alt='Acme Corp — Home'></a>",
+        "<button><img src='search-icon.svg' alt='Search'></button>",
+      ]
+    }
+    complex: {
+      definition: "Charts, diagrams, maps — require longer description."
+      requirement: "Short alt + longdesc or adjacent visible caption."
+      examples: [
+        "<figure><img src='org-chart.png' alt='Org chart — see table below'><figcaption>...</figcaption></figure>",
+      ]
+    }
+  }
+
+  common-failures: [
+    "alt='image' or alt='photo' — describes medium not content",
+    "alt='IMG_4872.jpg' — filename is not a description",
+    "Omitting alt entirely — different from alt=''",
+    "Redundant alt that duplicates adjacent caption text — doubles screen reader output",
+  ]
+
+  related: [
+    @community/rule-aria-label-required,
+    @community/check-aria-label-required,
+    @community/anti-pattern-text-in-image,
+  ]
+}

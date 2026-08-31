@@ -1,3 +1,0 @@
-# GoalGradientEffect [fact] v1.0.0
-Goal-Gradient Effect (Hull, 1932): motivation and effort accelerate as an individual approaches a goal — leverage this in onboarding progress bars, loyalty programs, and gamification.
-> Clark Hull first observed in rats that running speed increased as animals neared a food reward; subsequent human research confirmed the same pattern — effort, engagement, and speed all increase as people approach the completion of a goal. Kivetz, Urminsky & Zheng (2006) demonstrated this in loyalty card studies: coffee-shop customers with a 10-stamp card spent faster the closer they were to a free drink. In UX, this means a visible, advancing progress indicator does not merely inform — it actively accelerates completion.

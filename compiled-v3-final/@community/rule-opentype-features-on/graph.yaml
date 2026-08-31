@@ -1,8 +1,0 @@
-atom: "@community/rule-opentype-features-on"
-relations:
-  - type: related
-    target: "@community/rule-font-feature-settings"
-  - type: related
-    target: "@community/fact-optical-sizing"
-  - type: related
-    target: "@community/fact-monospace-purpose"

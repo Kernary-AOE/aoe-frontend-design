@@ -1,6 +1,0 @@
-atom: "@community/counter-example-hardcoded-pixel-padding"
-relations:
-  - type: related
-    target: "@community/type-design-token"
-  - type: related
-    target: "@community/value-focus-outline-width"

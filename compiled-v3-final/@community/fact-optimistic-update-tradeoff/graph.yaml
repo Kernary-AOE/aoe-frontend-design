@@ -1,8 +1,0 @@
-atom: "@community/fact-optimistic-update-tradeoff"
-relations:
-  - type: related
-    target: "@community/pattern-optimistic-update"
-  - type: related
-    target: "@community/fact-error-recovery-types"
-  - type: related
-    target: "@community/fact-loading-skeleton-vs-spinner"

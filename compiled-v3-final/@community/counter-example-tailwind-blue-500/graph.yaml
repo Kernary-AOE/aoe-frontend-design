@@ -1,8 +1,0 @@
-atom: "@community/counter-example-tailwind-blue-500"
-relations:
-  - type: related
-    target: "@impeccable/anti-pattern-ai-slop-palette"
-  - type: related
-    target: "@community/value-brand-hue"
-  - type: related
-    target: "@impeccable/template-oklch-palette"

@@ -1,0 +1,55 @@
+constraint TextColorThreeShades {
+  id: "@community/constraint-text-color-three-shades"
+  version: "1.0.0"
+
+  target: "text color system across UI"
+  severity: medium
+  domain: frontend-design
+
+  _meta: {
+    license: "Apache-2.0"
+    license-provenance: "package-authorship-claim"
+  }
+
+
+  description: "A complete UI text color system MUST use exactly three lightness tiers — primary (foreground, weight 500+, highest contrast), secondary (muted-foreground, ~60–70% lightness relative to primary), and tertiary (disabled/placeholder, ~40–50% relative to primary) — to create scannable hierarchy without requiring size or weight alone."
+
+  values: [
+    {
+      tier: "primary",
+      token: "--color-foreground / text-foreground",
+      typical-oklch: "oklch(15% 0 0) light / oklch(95% 0 0) dark",
+      contrast: "≥ 7:1 on background (AAA)",
+      use: "Headings, primary labels, body prose, key values",
+    }
+    {
+      tier: "secondary",
+      token: "--color-muted-foreground / text-muted",
+      typical-oklch: "oklch(45% 0 0) light / oklch(65% 0 0) dark",
+      contrast: "≥ 4.5:1 on background (AA)",
+      use: "Supporting labels, captions, metadata, secondary body text",
+    }
+    {
+      tier: "tertiary",
+      token: "--color-placeholder / text-placeholder",
+      typical-oklch: "oklch(65% 0 0) light / oklch(45% 0 0) dark",
+      contrast: "≥ 3:1 on background (AA large / decorative minimum)",
+      use: "Placeholder text, disabled state labels, legal fine print only",
+    }
+  ]
+
+  forbidden: [
+    "Using only one text color across the entire UI (flattens hierarchy)",
+    "Using four or more text colors without a design-token system to manage them (creates inconsistency)",
+    "Tertiary text below 3:1 contrast on its background (WCAG fail for non-decorative text)",
+    "Using color as the ONLY hierarchy signal — must combine with size and/or weight",
+  ]
+
+  rationale: "Three distinct text weights (foreground / muted / placeholder) give AI agents and designers a deterministic hierarchy model: primary content gets primary color, supporting context gets muted, empty/disabled states get placeholder. This matches Refactoring UI's hierarchy rules and Radix Colors' three functional text steps (steps 11, 12 for text; step 8 for placeholders)."
+
+  related: [
+    @community/rule-refactoring-ui-hierarchy,
+    @community/principle-typography-hierarchy,
+    @community/constraint-no-pure-black-text,
+  ]
+}

@@ -1,3 +1,0 @@
-# ErrorRecoveryTypes [fact] v1.0.0
-User-visible errors fall into three placement / severity tiers: inline (field-level, contextual), toast / notification (transient, action-level), and global / blocking (page-level, recovery required).
-> Error feedback should be placed at one of three levels matched to scope and severity: (1) inline next to the field / control that produced the error (form validation, individual save failure), (2) toast / banner for transient action-level failures that don't block the surrounding workflow (network blip, auto-save retry), and (3) global / blocking modal or page for irrecoverable / session-level failures (auth expired, payment hard-decline).

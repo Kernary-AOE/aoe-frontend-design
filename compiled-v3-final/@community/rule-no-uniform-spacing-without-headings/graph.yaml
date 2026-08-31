@@ -1,8 +1,0 @@
-atom: "@community/rule-no-uniform-spacing-without-headings"
-relations:
-  - type: related
-    target: "@community/rule-spacing-rhythm"
-  - type: related
-    target: "@community/rule-heading-hierarchy-logical"
-  - type: related
-    target: "@community/check-spacing-rhythm"
