@@ -1,5 +1,7 @@
 # Frontend Design for Kernary
 
+<img src="docs/assets/kernary-logo.svg" alt="Kernary" width="420">
+
 This repository is a complete Domain Package built on Kernary. It owns the
 Frontend Design model, curated corpus, retrieval profiles, validators, adapters,
 tools, and an optional Agent Skill.
