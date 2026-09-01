@@ -1,6 +1,6 @@
 ---
-name: prime-design
-description: Use the Kernary Frontend Design Domain Package tools to plan, implement, research, and validate HTML or frontend UI work. Apply when the user asks to design or revise a frontend artifact. The skill and prime_design tool prefix are compatibility names; do not use this skill to edit corpus sources.
+name: aoe-design
+description: Use the Kernary Frontend Design Domain Package tools to plan, implement, research, and validate HTML or frontend UI work. Apply when the user asks to design or revise a frontend artifact. The skill and aoe_design tool prefix are compatibility names; do not use this skill to edit corpus sources.
 ---
 
 # Kernary Frontend Design
@@ -11,15 +11,15 @@ corpus, and compiled snapshot remain read-only during this flow.
 
 ## Workflow
 
-1. Call `prime_design_plan` with the brief to make intent and ambiguity explicit.
-2. Call `prime_design_resolve` before implementation when concrete typography,
+1. Call `aoe_design_plan` with the brief to make intent and ambiguity explicit.
+2. Call `aoe_design_resolve` before implementation when concrete typography,
    colour, layout, motion or persona decisions are needed.
-3. Use `prime_design_mandate` and `prime_design_checklist` for non-negotiables and
-   task-specific checks. Use `prime_design_related` when exploring one known unit.
-4. Call `prime_design_scout` only when external visual references materially help;
+3. Use `aoe_design_mandate` and `aoe_design_checklist` for non-negotiables and
+   task-specific checks. Use `aoe_design_related` when exploring one known unit.
+4. Call `aoe_design_scout` only when external visual references materially help;
    preserve the returned provenance and licence information.
 5. Implement or revise the artifact in the user's project.
-6. For HTML output, call `prime_design_validate` with the artifact path and the
+6. For HTML output, call `aoe_design_validate` with the artifact path and the
    original brief. Repair supported failures and validate again with a bounded
    loop. Report skipped evaluation layers as skipped.
 
@@ -34,5 +34,5 @@ tools or interpreting a refusal.
   frontend work.
 - Treat plans and retrieved units as guidance; reconcile them with the user's
   explicit requirements and the existing application.
-- `prime_design_validate` validates HTML. For another artifact type, apply the
+- `aoe_design_validate` validates HTML. For another artifact type, apply the
   usable plan/checklist and state that the HTML validator was not applicable.

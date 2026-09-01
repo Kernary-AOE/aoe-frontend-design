@@ -143,7 +143,7 @@ export class DesignResolverError extends Error {
 }
 
 /** `mcp-server/index.ts` served a public, unlabelled principal; the same default is stated once here. */
-const PUBLIC_PRINCIPAL: Principal = { id: "prime-design", allowedVisibility: ["public"], grantedPolicyLabels: [] };
+const PUBLIC_PRINCIPAL: Principal = { id: "aoe-design", allowedVisibility: ["public"], grantedPolicyLabels: [] };
 /** `resolver.ts` had no budget at all. A positive integer is required by `runRetrieval`, so one is declared rather than smuggled in as 0. */
 const DEFAULT_MAX_TOKENS = 4000;
 

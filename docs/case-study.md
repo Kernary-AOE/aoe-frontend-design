@@ -11,10 +11,10 @@ semantics to the engine.
    validation, graph traversal, intent classification, and Scout references.
 4. `mcp/` projects seven domain tools from model declarations and composes the
    generic snapshot/query surface.
-5. `skills/prime-design` adds optional Agent workflow guidance without becoming
+5. `skills/aoe-design` adds optional Agent workflow guidance without becoming
    schema or authorization.
 
-The engine repository does not import `prime-design`, any design type, the six
+The engine repository does not import `aoe-design`, any design type, the six
 axes, the severity scale, or the tool names. The package depends inward on
 Kernary contracts; Kernary does not depend outward on this package.
 

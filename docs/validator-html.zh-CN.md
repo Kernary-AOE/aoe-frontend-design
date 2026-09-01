@@ -1,7 +1,7 @@
 # HTML Validation
 
 `adapters/html-validator/` 实现 Model 声明的 `validate` Action Provider。v0.2
-兼容期内，对应 MCP 工具是 `prime_design_validate`。
+兼容期内，对应 MCP 工具是 `aoe_design_validate`。
 
 Action 接受 HTML 的绝对路径和原始 Brief，Capability 是 `filesystem:read`，不会
 修改 Artifact。

@@ -5,20 +5,20 @@
  * The production stdio entry for the three domain tools. `mcp/src/index.ts` builds
  * the toolset; this file is the only thing that turns it into a process, and it is
  * separate for the same reason `mcp-server-core` keeps `runStdioServer` out of
- * `createPrimeMcpServer`: importing the toolset must stay side-effect free.
+ * `createAoeMcpServer`: importing the toolset must stay side-effect free.
  *
  * ── Why a SECOND `.mcp.json` server rather than six tools on one ─────────────
  *
  * §15.4 is one-way: the domain depends on the kernel, never the reverse. So
- * `mcp-server-core` cannot register `prime_design_*`, and the only way to serve
+ * `mcp-server-core` cannot register `aoe_design_*`, and the only way to serve
  * all six from one process is for a DOMAIN package to own the generic
- * `prime_query`/`prime_plan`/`prime_resource` surface — which inverts ownership of
+ * `aoe_query`/`aoe_plan`/`aoe_resource` surface — which inverts ownership of
  * the kernel's public API — or for a third composition-host package to exist,
  * which round 12 explicitly does not add. Two servers also fail independently
- * (`TOOL_HANDLER_MISMATCH` here would otherwise take `prime_query` down with it)
+ * (`TOOL_HANDLER_MISMATCH` here would otherwise take `aoe_query` down with it)
  * and compose linearly to N domains, where aggregation needs a new host per
  * combination. The tool names are already disjoint by construction
- * (`prime_` vs `prime_design_`), so aggregation would buy no namespacing either.
+ * (`aoe_` vs `aoe_design_`), so aggregation would buy no namespacing either.
  *
  * The cost of two servers is that the bundle is loaded twice. A sub-second local
  * boot over the 797-unit release does not justify a cross-domain aggregation layer.
@@ -55,20 +55,20 @@ import {
 import type { ProjectionReader } from "../../adapters/design-standards/src/index.ts";
 import { createDesignToolset, type DesignToolset } from "./index.ts";
 
-const SERVER_NAME = "prime-design";
+const SERVER_NAME = "aoe-design";
 const SERVER_VERSION = "0.2.0";
-const MAX_TOKENS_ENV = "PRIME_MAX_TOKENS";
+const MAX_TOKENS_ENV = "AOE_MAX_TOKENS";
 const DEFAULT_MAX_TOKENS = 8000;
 /**
- * Where scout payloads live. Separate from `PRIME_DIR` on purpose: the 18
+ * Where scout payloads live. Separate from `AOE_CORPUS_DIR` on purpose: the 18
  * catalogues are third-party data that git does not track and that are explicitly
  * not corpus units, and the legacy loader's habit of deriving the payload root by
  * walking one level up from the corpus root (`mcp-server/data.ts:445`) is exactly
  * the coupling `adapters/scout-catalog` was written to remove. Unset means the
  * `scout` tool answers with `SCOUT_DATA_ROOT_ABSENT` and a reason, not a crash.
  */
-const SCOUT_DATA_ROOT_ENV = "PRIME_SCOUT_DATA_ROOT";
-const SCOUT_VERIFY_DIGEST_ENV = "PRIME_SCOUT_VERIFY_DIGEST";
+const SCOUT_DATA_ROOT_ENV = "AOE_SCOUT_DATA_ROOT";
+const SCOUT_VERIFY_DIGEST_ENV = "AOE_SCOUT_VERIFY_DIGEST";
 
 /**
  * Read a unit's rendered projection off the bundle.
@@ -77,15 +77,15 @@ const SCOUT_VERIFY_DIGEST_ENV = "PRIME_SCOUT_VERIFY_DIGEST";
  * the rendered markdown: no `atom.yaml` carries
  * a severity key, so it is absent from `UnitIR.fields`, and `UnitIR.projections`
  * holds bundle-relative *paths* rather than content. `resolveProjection` is the
- * kernel's own resolver, so this host reads the same file `prime_query scope=show`
+ * kernel's own resolver, so this host reads the same file `aoe_query scope=show`
  * would serve. A missing or unreadable file becomes `undefined`, which the adapter
  * turns into a counted diagnostic — a throw here would take a whole-corpus sweep
  * down over one bad file.
  */
-function createProjectionReader(primeDir: string): ProjectionReader {
+function createProjectionReader(corpusDir: string): ProjectionReader {
   return (unitId, level) => {
     try {
-      return readFileSync(resolveProjection(primeDir, unitId, level as ProjectionLevel), "utf8");
+      return readFileSync(resolveProjection(corpusDir, unitId, level as ProjectionLevel), "utf8");
     } catch {
       return undefined;
     }
@@ -98,7 +98,7 @@ function createProjectionReader(primeDir: string): ProjectionReader {
  * It is NOT taken from `ServeModel.profiles`: the compiled bundle resolves to the
  * v1 compatibility model, whose single `default` profile is the kernel's generic
  * two-axis one. The six-axis profile is domain data and lives in this package;
- * loading it from anywhere else would serve `prime_design_resolve` a ranking the
+ * loading it from anywhere else would serve `aoe_design_resolve` a ranking the
  * domain never declared.
  */
 /**
@@ -117,7 +117,7 @@ function readPositiveInt(raw: string | undefined, fallback: number): number {
 }
 
 export interface DesignServerOptions {
-  readonly primeDir: string;
+  readonly corpusDir: string;
   readonly environment?: Record<string, string | undefined>;
   readonly stderr?: Pick<Console, "error">;
 }
@@ -133,7 +133,7 @@ export interface DesignServerInstance {
  *
  * The corpus binding is assembled from the kernel's own loaders, not re-derived:
  * `loadCorpusSnapshot`/`loadIndex`/`loadAtomMeta` for the artifact reads and
- * `buildCorpusGraph` for the `GraphIR`, so this host and `prime_query` see the
+ * `buildCorpusGraph` for the `GraphIR`, so this host and `aoe_query` see the
  * identical graph over the identical snapshot. The only thing the domain
  * contributes is its retrieval profile.
  */
@@ -141,15 +141,15 @@ export function createDesignServer(options: DesignServerOptions): DesignServerIn
   const stderr = options.stderr ?? console;
   const environment = options.environment ?? process.env;
 
-  const loaded = loadCorpusSnapshot(options.primeDir);
-  verifyCorpusSignature(options.primeDir);
+  const loaded = loadCorpusSnapshot(options.corpusDir);
+  verifyCorpusSignature(options.corpusDir);
   for (const diagnostic of loaded.diagnostics) {
-    stderr.error(`[prime-design] ${diagnostic.severity} ${diagnostic.code}: ${diagnostic.message}`);
+    stderr.error(`[aoe-design] ${diagnostic.severity} ${diagnostic.code}: ${diagnostic.message}`);
   }
-  const index = loadIndex(options.primeDir);
-  const model = loadServeModel(resolveModelRoot(options.primeDir, environment));
+  const index = loadIndex(options.corpusDir);
+  const model = loadServeModel(resolveModelRoot(options.corpusDir, environment));
   verifyModelLock({
-    bundleRoot: options.primeDir,
+    bundleRoot: options.corpusDir,
     model: model.model,
     manifestModels: loaded.manifest?.models,
     manifestSchemaDigest: loaded.manifest?.schemaDigest,
@@ -165,7 +165,7 @@ export function createDesignServer(options: DesignServerOptions): DesignServerIn
   };
   const corpusGraph = buildCorpusGraph({
     atoms: index.atoms,
-    loadMeta: (id: string) => loadAtomMeta(options.primeDir, id),
+    loadMeta: (id: string) => loadAtomMeta(options.corpusDir, id),
     snapshot: irSnapshot,
     corpus: loaded.snapshot.corpus,
   });
@@ -178,7 +178,7 @@ export function createDesignServer(options: DesignServerOptions): DesignServerIn
       relations: model.relations,
       principal: localPrincipal(),
       maxTokens: readPositiveInt(environment[MAX_TOKENS_ENV], DEFAULT_MAX_TOKENS),
-      readProjection: createProjectionReader(options.primeDir),
+      readProjection: createProjectionReader(options.corpusDir),
     },
     scout: createScoutSourceAdapter({
       dataRoot: resolveDataRoot(environment[SCOUT_DATA_ROOT_ENV]),
@@ -226,7 +226,7 @@ export function createDesignServer(options: DesignServerOptions): DesignServerIn
 
   const snapshotLabel = `${loaded.snapshot.corpus}@${loaded.snapshot.release}`;
   stderr.error(
-    `[prime-design] model ${model.model.manifest.name}@${model.model.manifest.version} · ` +
+    `[aoe-design] model ${model.model.manifest.name}@${model.model.manifest.version} · ` +
       `profile ${toolset.document.model.name}@${toolset.document.model.version} · ` +
       `${index.total} units · snapshot ${snapshotLabel}`,
   );
@@ -237,12 +237,12 @@ export function createDesignServer(options: DesignServerOptions): DesignServerIn
 export async function runDesignStdioServer(
   environment: Record<string, string | undefined> = process.env,
 ): Promise<void> {
-  const primeDir = environment.PRIME_DIR;
-  if (!primeDir) throw new Error("PRIME_DIR is required and must point to a compiled corpus.");
-  const instance = createDesignServer({ primeDir, environment });
+  const corpusDir = environment.AOE_CORPUS_DIR;
+  if (!corpusDir) throw new Error("AOE_CORPUS_DIR is required and must point to a compiled corpus.");
+  const instance = createDesignServer({ corpusDir, environment });
   await instance.server.connect(new StdioServerTransport());
   console.error(
-    `[prime-design] ready · tools: ${instance.toolset.tools.map((tool) => tool.schema.name).join(", ")} · ` +
+    `[aoe-design] ready · tools: ${instance.toolset.tools.map((tool) => tool.schema.name).join(", ")} · ` +
       `snapshot ${instance.snapshotLabel} · stdio active`,
   );
 }
@@ -255,7 +255,7 @@ if (isEntrypoint) {
       typeof error === "object" && error !== null && "code" in error
         ? String((error as { code: unknown }).code)
         : "BOOT_FAILED";
-    console.error(`[prime-design] error ${code}: ${error instanceof Error ? error.message : String(error)}`);
+    console.error(`[aoe-design] error ${code}: ${error instanceof Error ? error.message : String(error)}`);
     process.exitCode = 1;
   });
 }

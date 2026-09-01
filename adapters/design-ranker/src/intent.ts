@@ -22,8 +22,8 @@ export interface RegisterCandidate {
   readonly weight: number;
   /**
    * The one-sentence justification `packages/intent/src/types.ts:4` declares.
-   * Optional because no scorer reads it — it exists so `prime_design_plan` can
-   * reproduce the frozen `prime_intent` payload byte for byte (W9-A §1), and a
+   * Optional because no scorer reads it — it exists so `aoe_design_plan` can
+   * reproduce the frozen `aoe_intent` payload byte for byte (W9-A §1), and a
    * caller that builds an intent by hand has nothing to say here.
    */
   readonly rationale?: string;

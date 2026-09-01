@@ -1,5 +1,5 @@
 /**
- * Acceptance for the four legacy `prime_query` scopes restored in round 13
+ * Acceptance for the four legacy `aoe_query` scopes restored in round 13
  * (`related` with depth, `mandate`, `checklist`, `scout`) and for the two retired
  * ones staying retired.
  *
@@ -165,13 +165,13 @@ describe("the model projects seven tools, not three", () => {
   test("every restored scope appears as a projected tool name", () => {
     const names = emitDesignToolDocument().tools.map(tool => tool.name).sort();
     expect(names).toEqual([
-      "prime_design_checklist",
-      "prime_design_mandate",
-      "prime_design_plan",
-      "prime_design_related",
-      "prime_design_resolve",
-      "prime_design_scout",
-      "prime_design_validate",
+      "aoe_design_checklist",
+      "aoe_design_mandate",
+      "aoe_design_plan",
+      "aoe_design_related",
+      "aoe_design_resolve",
+      "aoe_design_scout",
+      "aoe_design_validate",
     ]);
   });
 
@@ -183,7 +183,7 @@ describe("the model projects seven tools, not three", () => {
   });
 
   test("related declares depth as an integer input, which is the whole regression", () => {
-    const tool = emitDesignToolDocument().tools.find(t => t.name === "prime_design_related");
+    const tool = emitDesignToolDocument().tools.find(t => t.name === "aoe_design_related");
     const properties = (tool!.inputSchema as { properties: Record<string, { type?: string }> }).properties;
     expect(properties["depth"]!.type).toBe("integer");
     expect((tool!.inputSchema as { required: string[] }).required).toEqual(["id"]);
@@ -361,7 +361,7 @@ describe("checklist is built from `check` units, non-negotiables first", () => {
 
 describe("scout is reachable through the toolset", () => {
   test("the tool exists and answers instead of throwing when no payload is deployed", async () => {
-    const result = (await toolset().invoke("prime_design_scout", { query: "dark minimal footer" })) as {
+    const result = (await toolset().invoke("aoe_design_scout", { query: "dark minimal footer" })) as {
       count: number;
       items: readonly unknown[];
       sources: readonly { id: string; license: string }[];
@@ -375,7 +375,7 @@ describe("scout is reachable through the toolset", () => {
   });
 
   test("provenance and licence come back with every answer", async () => {
-    const result = (await toolset().invoke("prime_design_scout", { query: "hero" })) as {
+    const result = (await toolset().invoke("aoe_design_scout", { query: "hero" })) as {
       sources: readonly { id: string; license: string; sourceUrl: string }[];
     };
     // 18 declared catalogues, each with a verbatim licence — a caller that got a
@@ -387,7 +387,7 @@ describe("scout is reachable through the toolset", () => {
 
   test("a toolset built with no scout refuses rather than returning nothing", async () => {
     const bare = createDesignToolset({});
-    await expect(bare.invoke("prime_design_scout", { query: "x" })).rejects.toThrow(/SCOUT_NOT_BOUND|scout catalogue/);
+    await expect(bare.invoke("aoe_design_scout", { query: "x" })).rejects.toThrow(/SCOUT_NOT_BOUND|scout catalogue/);
   });
 });
 
@@ -396,8 +396,8 @@ describe("scout is reachable through the toolset", () => {
 describe("the restored tools refuse rather than fabricate", () => {
   test("related/mandate/checklist need a corpus", async () => {
     const bare = createDesignToolset({});
-    await expect(bare.invoke("prime_design_related", { id: "@t/a" })).rejects.toThrow(/CORPUS_NOT_BOUND|corpus binding/);
-    await expect(bare.invoke("prime_design_mandate", {})).rejects.toThrow(/CORPUS_NOT_BOUND|corpus binding/);
+    await expect(bare.invoke("aoe_design_related", { id: "@t/a" })).rejects.toThrow(/CORPUS_NOT_BOUND|corpus binding/);
+    await expect(bare.invoke("aoe_design_mandate", {})).rejects.toThrow(/CORPUS_NOT_BOUND|corpus binding/);
   });
 
   test("mandate/checklist need a projection reader, and say so by name", async () => {
@@ -408,13 +408,13 @@ describe("the restored tools refuse rather than fabricate", () => {
         projections: {},
       },
     });
-    await expect(noReader.invoke("prime_design_checklist", { task: "x" })).rejects.toThrow(
+    await expect(noReader.invoke("aoe_design_checklist", { task: "x" })).rejects.toThrow(
       /PROJECTION_READER_NOT_BOUND|readProjection/,
     );
   });
 
   test("a non-integer depth is rejected, not coerced", async () => {
-    await expect(toolset().invoke("prime_design_related", { id: "@t/a", depth: "2" })).rejects.toThrow(
+    await expect(toolset().invoke("aoe_design_related", { id: "@t/a", depth: "2" })).rejects.toThrow(
       /TOOL_INPUT_INVALID|integer/,
     );
   });

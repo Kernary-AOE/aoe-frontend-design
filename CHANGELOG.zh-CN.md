@@ -35,8 +35,8 @@ Wave 10 是深度审计；Wave 11 完成了分块器重写 + 79/82 个损坏引�
 
 ## v1.7 — Wave 7 · 2026-05-05
 
-- 协议层已闭合：`prime_resolve`（字体/颜色/时长的类型化 JSON 规范）+ `prime_validate`（带反馈重试的输出验证循环）+ 跨领域安全原子（32 个原子，证明 28 种类型分类法具有领域无关性）。
-- `prime_resolve` 是核心：agent 获得的是类型化 JSON，而非 Markdown 文本——Markdown 是中间格式，类型化 JSON 是最终接口。
+- 协议层已闭合：`aoe_resolve`（字体/颜色/时长的类型化 JSON 规范）+ `aoe_validate`（带反馈重试的输出验证循环）+ 跨领域安全原子（32 个原子，证明 28 种类型分类法具有领域无关性）。
+- `aoe_resolve` 是核心：agent 获得的是类型化 JSON，而非 Markdown 文本——Markdown 是中间格式，类型化 JSON 是最终接口。
 
 ## v1.6 — Wave 6 · 2026-05-03
 

@@ -1,5 +1,5 @@
 protocol: prime/model/v2
-name: prime-design
+name: aoe-design
 version: 1.0.0
 files:
   - types.yaml

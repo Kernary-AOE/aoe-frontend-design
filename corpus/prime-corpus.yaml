@@ -47,7 +47,7 @@ description: >-
 # string; `resolveCorpusPackage` parses this range and picks the highest available
 # match, so a model that moves to 1.1.0 resolves here instead of silently mismatching.
 models:
-  - name: prime-design
+  - name: aoe-design
     versionRange: ^1.0.0
     required: true
 
@@ -324,7 +324,7 @@ license:
 # only from the Model Package, so before this field the model was the only party
 # that could name a default. A corpus may choose among the profiles the model
 # declares; it may not invent one, because retrieval semantics are §4.2 model
-# policy. `prime-design` declares the generic `default` and the domain-specific
+# policy. `aoe-design` declares the generic `default` and the domain-specific
 # `frontend-six-axis` profiles.
 retrieval:
   defaultProfile: default

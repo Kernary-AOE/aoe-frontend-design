@@ -1,7 +1,7 @@
 # HTML validation
 
 `adapters/html-validator/` implements the provider bound to the model-declared
-`validate` Action. The MCP projection is `prime_design_validate` during the v0.2
+`validate` Action. The MCP projection is `aoe_design_validate` during the v0.2
 compatibility window.
 
 The action accepts an absolute HTML path and the original brief. Its capability

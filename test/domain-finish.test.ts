@@ -468,29 +468,29 @@ describe("mcp tools are a projection of the Model Package", () => {
     // under test: these names are a projection of the Model Package, and this
     // file must not be where a tool gets invented.
     const document = emitDesignToolDocument();
-    expect(document.model.name).toBe("prime-design");
+    expect(document.model.name).toBe("aoe-design");
     expect(document.tools.map(tool => tool.name).sort()).toEqual([
-      "prime_design_checklist",
-      "prime_design_mandate",
-      "prime_design_plan",
-      "prime_design_related",
-      "prime_design_resolve",
-      "prime_design_scout",
-      "prime_design_validate",
+      "aoe_design_checklist",
+      "aoe_design_mandate",
+      "aoe_design_plan",
+      "aoe_design_related",
+      "aoe_design_resolve",
+      "aoe_design_scout",
+      "aoe_design_validate",
     ]);
-    expect(document.generator).toBe("prime-design/mcp@0.2.0");
+    expect(document.generator).toBe("aoe-design/mcp@0.2.0");
     expect(document.model.digest).toMatch(/^sha256:[0-9a-f]{64}$/);
   });
 
   test("input schemas are key-for-key the frozen v1 tool schemas", () => {
     const document = emitDesignToolDocument();
     const byName = new Map(document.tools.map(tool => [tool.name, tool] as const));
-    expect(byName.get("prime_design_plan")!.inputSchema.required).toEqual(["brief"]);
-    expect(byName.get("prime_design_resolve")!.inputSchema.required).toEqual(["brief"]);
-    expect(byName.get("prime_design_validate")!.inputSchema.required).toEqual(["html_path", "brief"]);
+    expect(byName.get("aoe_design_plan")!.inputSchema.required).toEqual(["brief"]);
+    expect(byName.get("aoe_design_resolve")!.inputSchema.required).toEqual(["brief"]);
+    expect(byName.get("aoe_design_validate")!.inputSchema.required).toEqual(["html_path", "brief"]);
     // A model-schema action rejects an undeclared input key, so the emitted schema
     // must be closed too (emit-mcp.ts:107-109).
-    expect(byName.get("prime_design_plan")!.inputSchema.additionalProperties).toBe(false);
+    expect(byName.get("aoe_design_plan")!.inputSchema.additionalProperties).toBe(false);
   });
 
   test("annotations are read from the model's declared traits", () => {
@@ -504,24 +504,24 @@ describe("mcp tools are a projection of the Model Package", () => {
 
   test("output schemas $ref the declared types", () => {
     const byName = new Map(emitDesignToolDocument().tools.map(tool => [tool.name, tool] as const));
-    expect(byName.get("prime_design_plan")!.outputSchema).toEqual({ $ref: "#/$defs/DesignIntent" });
-    expect(byName.get("prime_design_resolve")!.outputSchema).toEqual({ $ref: "#/$defs/ResolvedDesign" });
-    expect(byName.get("prime_design_validate")!.outputSchema).toEqual({ $ref: "#/$defs/ValidationReport" });
+    expect(byName.get("aoe_design_plan")!.outputSchema).toEqual({ $ref: "#/$defs/DesignIntent" });
+    expect(byName.get("aoe_design_resolve")!.outputSchema).toEqual({ $ref: "#/$defs/ResolvedDesign" });
+    expect(byName.get("aoe_design_validate")!.outputSchema).toEqual({ $ref: "#/$defs/ValidationReport" });
   });
 
   test("a model whose actions do not match the handlers fails at construction", () => {
     expect(() => createDesignToolset({ modelRoot: NON_ACTION_MODEL_ROOT })).toThrow(DesignToolsetError);
   });
 
-  test("prime_design_plan really runs and returns the intent payload", async () => {
+  test("aoe_design_plan really runs and returns the intent payload", async () => {
     const toolset = createDesignToolset();
-    const output = await toolset.invoke("prime_design_plan", { brief: "邮件订阅, 简单就行" });
+    const output = await toolset.invoke("aoe_design_plan", { brief: "邮件订阅, 简单就行" });
     expect(output).toEqual(classifyDesignBriefHeuristically("邮件订阅, 简单就行"));
   });
 
-  test("prime_design_resolve really runs against a bound corpus", async () => {
+  test("aoe_design_resolve really runs against a bound corpus", async () => {
     const toolset = createDesignToolset({ corpus: corpus() });
-    const output = (await toolset.invoke("prime_design_resolve", { brief: "B2B SaaS pricing page" })) as {
+    const output = (await toolset.invoke("aoe_design_resolve", { brief: "B2B SaaS pricing page" })) as {
       source_persona: string;
       typography: { display: string };
     };
@@ -529,9 +529,9 @@ describe("mcp tools are a projection of the Model Package", () => {
     expect(output.typography.display).toBe("Söhne | SF Pro");
   });
 
-  test("prime_design_validate really runs and reads the file through the injected reader", async () => {
+  test("aoe_design_validate really runs and reads the file through the injected reader", async () => {
     const toolset = createDesignToolset({ corpus: corpus(), readFile: () => GOOD_HTML });
-    const report = (await toolset.invoke("prime_design_validate", {
+    const report = (await toolset.invoke("aoe_design_validate", {
       html_path: "/tmp/index.html",
       brief: "B2B SaaS pricing page",
     })) as { pass: boolean; l3: { honored: readonly string[]; violated: readonly string[]; unverifiable?: readonly string[] } };
@@ -545,7 +545,7 @@ describe("mcp tools are a projection of the Model Package", () => {
     // (`l3-composition.ts:135-144`), so `weight-signature: 560` and
     // `line-height: 1.5` are reported as missing fonts. This is a real defect in
     // the donor's check, and fixing it inside a migration lane would change what
-    // `prime_design_validate` reports relative to the frozen `prime_validate`.
+    // `aoe_design_validate` reports relative to the frozen `aoe_validate`.
     expect(report.l3.violated).toEqual([
       'typography.line-height: expected "1.5", not found in HTML',
       'typography.weight-signature: expected "560", not found in HTML',
@@ -555,7 +555,7 @@ describe("mcp tools are a projection of the Model Package", () => {
 
   test("a corpus-backed tool refuses rather than returning an empty design when unbound", async () => {
     const toolset = createDesignToolset();
-    const error = await toolset.invoke("prime_design_resolve", { brief: "x" }).then(
+    const error = await toolset.invoke("aoe_design_resolve", { brief: "x" }).then(
       () => undefined,
       (caught: unknown) => caught,
     );
@@ -565,7 +565,7 @@ describe("mcp tools are a projection of the Model Package", () => {
 
   test("an unknown tool and a missing argument both refuse", async () => {
     const toolset = createDesignToolset();
-    await expect(toolset.invoke("prime_intent", { brief: "x" })).rejects.toThrow("No tool 'prime_intent'");
-    await expect(toolset.invoke("prime_design_plan", {})).rejects.toThrow("requires a non-empty string 'brief'");
+    await expect(toolset.invoke("aoe_intent", { brief: "x" })).rejects.toThrow("No tool 'aoe_intent'");
+    await expect(toolset.invoke("aoe_design_plan", {})).rejects.toThrow("requires a non-empty string 'brief'");
   });
 });

@@ -9,9 +9,9 @@ Frontend Design 覆盖主要外部边界，但没有把设计语义加入 Engine
 3. `adapters/` 实现 Candidate Generator、Resolution、Standards、HTML Validation、
    Graph traversal、Intent classification 与 Scout Reference。
 4. `mcp/` 从 Model declaration 投影 7 个领域工具，并组合通用 Snapshot/Query。
-5. `skills/prime-design` 提供可选 Agent workflow，但不成为 Schema 或 Authorization。
+5. `skills/aoe-design` 提供可选 Agent workflow，但不成为 Schema 或 Authorization。
 
-Engine 仓库不导入 `prime-design`、任何设计 Type、六轴、Severity scale 或 Tool
+Engine 仓库不导入 `aoe-design`、任何设计 Type、六轴、Severity scale 或 Tool
 name。依赖方向是 Domain Package 依赖 Kernary Contract，而不是 Kernary 依赖这个
 Package。
 

@@ -24,5 +24,5 @@ the generic engine before a candidate provider can leak a private Unit. The
 result is a normal Selection Plan with score contributions, constraint
 decisions, projection loads, and diagnostics.
 
-Use `prime_design_plan` for the composed domain workflow. Use the generic
+Use `aoe_design_plan` for the composed domain workflow. Use the generic
 compatibility `prime_plan` when inspecting exact selection arithmetic.

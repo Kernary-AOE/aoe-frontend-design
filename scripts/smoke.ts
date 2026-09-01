@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 import { resolve } from "node:path";
 import {
-  createPrimeMcpServer,
-  executePrimePlan,
+  createAoeMcpServer,
+  executeAoePlan,
 } from "../../kernary-engine/packages/mcp-server-core/src/index.ts";
 import { createDesignServer } from "../mcp/src/server.ts";
 
@@ -11,30 +11,30 @@ const bundle = resolve(root, "corpus", "dist");
 const model = resolve(root, "model");
 const silent = { error() {} };
 
-const generic = createPrimeMcpServer({
-  primeDir: bundle,
+const generic = createAoeMcpServer({
+  corpusDir: bundle,
   modelRoot: model,
   requireManifest: true,
   stderr: silent,
 });
-const plan = executePrimePlan({ query: "accessible checkout", limit: 3 }, generic.serve);
+const plan = executeAoePlan({ query: "accessible checkout", limit: 3 }, generic.serve);
 if (!("plan" in plan) || plan.plan.selected.length === 0) {
   throw new Error("Generic MCP returned no selection for the production smoke query");
 }
 
 const domain = createDesignServer({
-  primeDir: bundle,
+  corpusDir: bundle,
   environment: {
-    PRIME_MODEL_DIR: model,
-    PRIME_SCOUT_DATA_ROOT: resolve(root, "..", ".."),
+    AOE_MODEL_DIR: model,
+    AOE_SCOUT_DATA_ROOT: resolve(root, "..", ".."),
   },
   stderr: silent,
 });
 const names = domain.toolset.tools.map(tool => tool.schema.name);
-if (!names.includes("prime_design_plan") || !names.includes("prime_design_validate")) {
+if (!names.includes("aoe_design_plan") || !names.includes("aoe_design_validate")) {
   throw new Error(`Domain MCP projected an incomplete toolset: ${names.join(", ")}`);
 }
-await domain.toolset.invoke("prime_design_plan", { brief: "accessible checkout" });
+await domain.toolset.invoke("aoe_design_plan", { brief: "accessible checkout" });
 
 const genericSnapshot = `${generic.snapshot.corpus}@${generic.snapshot.release}`;
 if (domain.snapshotLabel !== genericSnapshot) {

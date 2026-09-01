@@ -27,13 +27,13 @@ function schemaOf(tool: string, input: string): Record<string, unknown> {
 
 describe("the list-valued inputs are declared as arrays", () => {
   test("mandate.severity is an array of strings, not a string", () => {
-    const schema = schemaOf("prime_design_mandate", "severity");
+    const schema = schemaOf("aoe_design_mandate", "severity");
     expect(schema.type).toBe("array");
     expect(schema.items).toEqual({ type: "string" });
   });
 
   test("scout.sources is an array of strings", () => {
-    const schema = schemaOf("prime_design_scout", "sources");
+    const schema = schemaOf("aoe_design_scout", "sources");
     expect(schema.type).toBe("array");
     expect(schema.items).toEqual({ type: "string" });
   });
@@ -45,8 +45,8 @@ describe("the list-valued inputs are declared as arrays", () => {
    * `string[]`.
    */
   test("neither declares a value set, and the model says why", () => {
-    expect(schemaOf("prime_design_mandate", "severity").enum).toBeUndefined();
-    expect(schemaOf("prime_design_scout", "sources").enum).toBeUndefined();
+    expect(schemaOf("aoe_design_mandate", "severity").enum).toBeUndefined();
+    expect(schemaOf("aoe_design_scout", "sources").enum).toBeUndefined();
   });
 
   test("the enums that ARE declared are the runtime-enforced ones", () => {
@@ -73,19 +73,19 @@ describe("the handler reads an array and refuses the old delimiter", () => {
   test("scout accepts a real array", async () => {
     // No payload root here, so the answer is zero hits plus a diagnostic; what is
     // under test is that the array argument was ACCEPTED rather than rejected.
-    const result = (await bound().invoke("prime_design_scout", { query: "hero", sources: ["godly"] })) as {
+    const result = (await bound().invoke("aoe_design_scout", { query: "hero", sources: ["godly"] })) as {
       diagnostics: readonly { code: string }[];
     };
     expect(result.diagnostics.map(d => d.code)).toContain("SCOUT_DATA_ROOT_ABSENT");
   });
 
   test("a comma-separated string is refused rather than split", async () => {
-    await expect(bound().invoke("prime_design_scout", { query: "hero", sources: "godly,awwwards" }))
+    await expect(bound().invoke("aoe_design_scout", { query: "hero", sources: "godly,awwwards" }))
       .rejects.toThrow(/TOOL_INPUT_INVALID|array of strings/);
   });
 
   test("an array holding a non-string is refused", async () => {
-    await expect(bound().invoke("prime_design_scout", { query: "hero", sources: ["godly", 7] }))
+    await expect(bound().invoke("aoe_design_scout", { query: "hero", sources: ["godly", 7] }))
       .rejects.toThrow(/TOOL_INPUT_INVALID|array of strings/);
   });
 
@@ -101,9 +101,9 @@ describe("the handler reads an array and refuses the old delimiter", () => {
         readProjection: () => undefined,
       },
     });
-    await expect(empty.invoke("prime_design_mandate", { severity: "block,critical" }))
+    await expect(empty.invoke("aoe_design_mandate", { severity: "block,critical" }))
       .rejects.toThrow(/TOOL_INPUT_INVALID|array of strings/);
     // …and the same call with an array gets past the reader.
-    await expect(empty.invoke("prime_design_mandate", { severity: ["block"] })).resolves.toBeDefined();
+    await expect(empty.invoke("aoe_design_mandate", { severity: ["block"] })).resolves.toBeDefined();
   });
 });

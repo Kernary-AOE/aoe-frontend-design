@@ -1,4 +1,4 @@
 interface:
   display_name: "Kernary Frontend Design"
   short_description: "Use the Kernary Frontend Design domain tools"
-  default_prompt: "Use $prime-design to plan and implement this frontend design request."
+  default_prompt: "Use $aoe-design to plan and implement this frontend design request."

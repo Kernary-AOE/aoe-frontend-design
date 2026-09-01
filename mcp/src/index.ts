@@ -7,7 +7,7 @@
  * §11.2: "这些只是 ActionDef/QueryProfile 的投影，不在 Core 手写". Concretely:
  *
  *   - every tool NAME comes from `emitMcpTools`
- *     (`snakeCase(model.name)_snakeCase(action.name)`), so `prime_design_plan`
+ *     (`snakeCase(model.name)_snakeCase(action.name)`), so `aoe_design_plan`
  *     appears nowhere as a literal in this package's source;
  *   - every inputSchema / outputSchema / annotation comes from the same emitter;
  *   - this module supplies only the three HANDLERS, and it refuses to start if the
@@ -64,7 +64,7 @@ import type {
 export const TOOL_MODEL_ROOT = resolvePath(join(dirname(new URL(import.meta.url).pathname), "..", "..", "model"));
 
 /** The generator id stamped into the emitted document, so an artifact says what produced it. */
-export const TOOL_GENERATOR_ID = "prime-design/mcp@0.2.0";
+export const TOOL_GENERATOR_ID = "aoe-design/mcp@0.2.0";
 
 export class DesignToolsetError extends Error {
   constructor(readonly code: string, message: string) {
@@ -76,8 +76,8 @@ export class DesignToolsetError extends Error {
 /**
  * What a tool call needs beyond its own arguments.
  *
- * The corpus is the host's: `prime_design_plan` runs without one, and
- * `prime_design_resolve` / the composition layer of `prime_design_validate` need
+ * The corpus is the host's: `aoe_design_plan` runs without one, and
+ * `aoe_design_resolve` / the composition layer of `aoe_design_validate` need
  * one. A toolset built without a corpus still serves all three tools and refuses
  * the corpus-backed paths with `CORPUS_NOT_BOUND` — which is the honest answer,
  * where returning an empty design would be a silent wrong one.
@@ -298,7 +298,7 @@ function buildHandlers(options: DesignToolsetOptions): Readonly<Record<string, D
   const readFile = options.readFile ?? ((path: string) => readFileSync(path, "utf8"));
   return {
     // Action `plan`. Output is the `DesignIntent` itself, which is byte-comparable
-    // with the frozen `prime_intent` payload (W9-A §1). Retrieval belongs to
+    // with the frozen `aoe_intent` payload (W9-A §1). Retrieval belongs to
     // `resolve`; a `plan` that also returned candidates would have no v1 baseline
     // to be compared against.
     plan: {

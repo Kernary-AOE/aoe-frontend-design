@@ -1,16 +1,17 @@
-# Frontend Design for Kernary
+# Frontend Design Domain Package for AOE
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/kernary-logo-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="docs/assets/kernary-logo.svg">
-  <img src="docs/assets/kernary-logo.svg" alt="Kernary" width="420">
+<source media="(prefers-color-scheme: dark)" srcset="docs/assets/aoe-logo-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/aoe-logo.svg">
+  <img src="docs/assets/aoe-logo.svg" alt="AOE" width="420">
 </picture>
 
-This repository is a complete Domain Package built on Kernary. It owns the
+This repository is a complete Domain Package built on AOE. The Kernary
+organization maintains the engine and owns the repository boundary. It owns the
 Frontend Design model, curated corpus, retrieval profiles, validators, adapters,
 tools, and an optional Agent Skill.
 
-Nothing here is built into the Kernary engine. This package is a worked example
+Nothing here is built into the AOE engine. This package is a worked example
 of how a domain defines its own types and relations, compiles a versioned
 snapshot, and exposes domain tools without changing Core.
 
@@ -25,7 +26,7 @@ benchmarks/  fixed domain evaluation tasks
 
 ## Verify the package
 
-Clone the Kernary engine at the current compatibility path
+Clone the AOE engine from the Kernary organization
 `../kernary-engine`, then run:
 
 ```bash
@@ -46,24 +47,24 @@ must not be edited by hand.
 
 ## Domain tools
 
-The Model Package projects seven compatibility-prefixed MCP tools:
+The Model Package projects seven AOE domain MCP tools:
 
-- `prime_design_plan`
-- `prime_design_resolve`
-- `prime_design_validate`
-- `prime_design_related`
-- `prime_design_mandate`
-- `prime_design_checklist`
-- `prime_design_scout`
+- `aoe_design_plan`
+- `aoe_design_resolve`
+- `aoe_design_validate`
+- `aoe_design_related`
+- `aoe_design_mandate`
+- `aoe_design_checklist`
+- `aoe_design_scout`
 
-The prefix remains during the Kernary v0.2 compatibility window. The generic
+The package exposes its domain tools under the `aoe_design_*` prefix. The generic
 query, plan, and resource tools belong to the engine. Both surfaces mount the
 same immutable snapshot and verify the same `model.lock`.
 
 ## Optional Skill
 
-`skills/prime-design` teaches an Agent how to combine the seven domain tools.
-The folder name is retained for compatibility. It is not required to use the
+`skills/aoe-design` teaches an Agent how to combine the seven domain tools.
+The folder is the package's skill entry point. It is not required to use the
 SDK, MCP, or HTTP contracts, and it cannot edit the model, corpus, or generated
 bundle during an ordinary design task.
 
@@ -74,7 +75,7 @@ bundle during an ordinary design task.
 - Add or revise knowledge in `corpus/sources/`.
 - Connect external systems in `adapters/`.
 - Change Agent workflow guidance in `skills/`.
-- Do not patch Kernary Core for Frontend Design semantics.
+- Keep Frontend Design semantics in this Domain Package; AOE Core remains domain-neutral.
 
 Start with [the domain overview](docs/overview.md), then read the
 [model](docs/model.md), [Corpus policy](docs/corpus.md),

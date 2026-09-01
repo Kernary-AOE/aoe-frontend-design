@@ -125,7 +125,7 @@ definitions:
           #      horizontal scrollbar", an automatable regression check, not a
           #      launch gate.
           #   4. Consequence asymmetry: `gate: blocking` feeds
-          #      `prime_design_mandate`, whose contract is "violating one = task
+          #      `aoe_design_mandate`, whose contract is "violating one = task
           #      failure". Mapping to `critical` would promote a unit into a GATE
           #      on the strength of one word nothing in the corpus orders (both
           #      attested order fragments are about `block` vs `warning`;

@@ -1,4 +1,4 @@
-# Disposition of the five orphaned legacy `prime_query` scopes
+# Disposition of the five orphaned legacy `aoe_query` scopes
 
 Lane L13-D. Input: `docs/analysis/shadow-mcp-2026-08-29.md` §3, which lists five
 legacy scopes with no production counterpart and asks for an explicit
@@ -7,12 +7,12 @@ modified: `mcp-server/index.ts` (deleted by L13-E) and `mcp-server/compiler.ts`.
 
 | legacy scope | verdict | where it lives now |
 |---|---|---|
-| `scout` | **replaced** | `prime_design_scout` -> `adapters/scout-catalog` |
-| `mandate` | **replaced** (re-derived) | `prime_design_mandate` -> `adapters/design-standards` |
-| `checklist` | **replaced** (re-derived) | `prime_design_checklist` -> `adapters/design-standards` |
-| `gallery` | **dropped**, capability absorbed by `scout` | `prime_design_scout(require_thumbnail: true)` |
-| `template` | **dropped**, fetch already covered | kernel `prime_query scope=show` |
-| `related` `depth` | **restored** | `prime_design_related` -> `adapters/corpus-graph` |
+| `scout` | **replaced** | `aoe_design_scout` -> `adapters/scout-catalog` |
+| `mandate` | **replaced** (re-derived) | `aoe_design_mandate` -> `adapters/design-standards` |
+| `checklist` | **replaced** (re-derived) | `aoe_design_checklist` -> `adapters/design-standards` |
+| `gallery` | **dropped**, capability absorbed by `scout` | `aoe_design_scout(require_thumbnail: true)` |
+| `template` | **dropped**, fetch already covered | kernel `aoe_query scope=show` |
+| `related` `depth` | **restored** | `aoe_design_related` -> `adapters/corpus-graph` |
 
 Every verdict below is a measurement over `compiled-v3-final/` at
 父仓 `53efd397`, not a reading of the legacy source's intent.
@@ -34,7 +34,7 @@ exact query returns 39000 matches, top 3 from `collectui` at score 0.325.
 
 `sources` (comma-separated ids) and `require_thumbnail` are new inputs, both
 closing documented contract breaks the adapter's own header names — the catalogue
-units document `prime_scout("3D scroll", "godly", 8)` and legacy `prime_query`
+units document `prime_scout("3D scroll", "godly", 8)` and legacy `aoe_query`
 accepted no source parameter.
 
 Every answer carries the 18 declared source licences. `sources.yaml` records them
@@ -107,7 +107,7 @@ visual anchor for a section — is exactly what the bundle's own replacement
 mechanism does: the 34 `## Screenshot Hint` sections hand a query to `scout`, and
 `scout` returns thumbnail-bearing references. Verified: 16069 of the 61590
 references carry a thumbnail, reachable with
-`prime_design_scout(query, require_thumbnail: true)`.
+`aoe_design_scout(query, require_thumbnail: true)`.
 
 Legacy's `section` enum (`hero|pricing|cta|features|footer|testimonial|
 full-landing|all`) becomes a term in that query rather than a parameter, because
@@ -119,9 +119,9 @@ nothing in the bundle declares a section facet to filter on.
 substitute `<KEY>` / `${KEY}` / `{{KEY}}` from a `variables` argument into
 `atom.code`.
 
-The fetch half is already served: production `prime_query scope=show` returns a
+The fetch half is already served: production `aoe_query scope=show` returns a
 template unit's projection (§3 says so, and 46 `kind: template` units are in the
-bundle). Adding `prime_design_template` would be a second way to read a unit.
+bundle). Adding `aoe_design_template` would be a second way to read a unit.
 
 The substitution half has **no substrate**. Bundle `atom.yaml` carries no `code`
 field — template bodies are projection markdown — and scanning all three chunk
@@ -130,7 +130,7 @@ across 46 units**: `${id}` inside the JavaScript sample in
 `@community/template-view-transitions-api`, which is source code and not a
 placeholder. There is nothing for `variables` to substitute into.
 
-So `variables` is not carried forward, and `prime_design_*` declares no `variables`
+So `variables` is not carried forward, and `aoe_design_*` declares no `variables`
 input. A test pins that, so re-adding it is a deliberate act rather than a drift.
 
 ## `related` — depth restored

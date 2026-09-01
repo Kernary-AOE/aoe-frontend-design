@@ -91,11 +91,11 @@ broken refs.
 
 ## v1.7 — Wave 7 · 2026-05-05
 
-- Protocol layer closed: `prime_resolve` (typed JSON
-  font/color/duration spec) + `prime_validate` (output validation
+- Protocol layer closed: `aoe_resolve` (typed JSON
+  font/color/duration spec) + `aoe_validate` (output validation
   loop with feedback retry) + cross-domain security atoms (32 atoms,
   proof that 28-kind taxonomy is domain-agnostic).
-- `prime_resolve` is the centerpiece: agent gets typed JSON, not
+- `aoe_resolve` is the centerpiece: agent gets typed JSON, not
   markdown text — markdown is the intermediate format, typed JSON is
   the final interface.
 

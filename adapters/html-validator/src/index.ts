@@ -22,7 +22,7 @@
  * (`l1-structure.ts:1`, `l2-semantic.ts:1`, `l3-composition.ts:1`), which made all
  * three untestable without a temp file and made the report non-deterministic if the
  * file changed between reads. Here the checks take the HTML *text* and the caller
- * reads the file once. `prime_design_validate` still accepts `html_path`, so the
+ * reads the file once. `aoe_design_validate` still accepts `html_path`, so the
  * frozen tool schema is unchanged (W9-A §1).
  */
 
