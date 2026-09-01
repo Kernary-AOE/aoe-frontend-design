@@ -7,7 +7,7 @@
  * forbids `engine/core → domain`, and "task type", "persona school", "vibe" and
  * "density" are domain vocabulary. Plan §16 Phase 3 action 1 lists an
  * `IntentEnvelope` as an engine concept, but `grep -rn IntentEnvelope
- * projects/prime-system/packages/` returns zero hits — it was never built, so
+ * kernary-engine packages returns zero hits — it was never built, so
  * there is nothing to depend on and nothing to extend. The shape below is
  * transcribed from `packages/intent/src/types.ts` in the parent repo, which is
  * what `classifyBrief` actually produces today.

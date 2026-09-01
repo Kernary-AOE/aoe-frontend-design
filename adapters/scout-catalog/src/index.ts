@@ -198,7 +198,7 @@ export interface ScoutRegistration {
 
 /**
  * Build, load and register the scout adapter. This is the entry point a host
- * (`projects/prime-frontend-design/mcp`) calls; `dataRoot` is threaded through so
+ * (`projects/kernary-frontend-design/mcp`) calls; `dataRoot` is threaded through so
  * the host, not this module, decides where payloads come from.
  */
 export async function registerScoutSourceAdapter(

@@ -18,7 +18,7 @@ benchmarks/  固定领域评估任务
 
 ## 验证 Package
 
-当前兼容布局要求 Kernary Engine 位于 `../prime-system`：
+当前布局要求 Kernary Engine 位于同级目录 `../kernary-engine`：
 
 ```bash
 bun install

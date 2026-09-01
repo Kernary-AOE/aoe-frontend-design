@@ -1,4 +1,4 @@
-# ROADMAP — prime-corpus-frontend-design
+# ROADMAP — Kernary Frontend Design Domain Package
 
 The corpus and the surrounding pipeline are **architecturally ~70%
 done** (per the source repo's Wave-12 honesty pass). The remaining 30%

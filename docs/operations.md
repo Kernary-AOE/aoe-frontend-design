@@ -21,6 +21,5 @@ Publishing to a Registry and activating a Runtime are separate mutations. Do
 not infer publication from a successful local build. Keep the previous immutable
 snapshot addressable for rollback.
 
-The current local dependency path is `../prime-system`. It changes to
-`../kernary-engine` only after the external repository rename is complete and
-clone/build CI has verified the new layout.
+The local dependency path is `../kernary-engine`. The package and CI workflow use
+the same path, so a fresh clone does not depend on the former repository name.

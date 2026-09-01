@@ -18,7 +18,7 @@
         "typescript": "^5.6.0",
       },
     },
-    "../prime-system/packages/action-runtime": {
+    "../kernary-engine/packages/action-runtime": {
       "name": "@skill-wiki/action-runtime",
       "version": "0.2.0",
       "dependencies": {
@@ -30,7 +30,7 @@
         "@skill-wiki/policy-engine": "workspace:*",
       },
     },
-    "../prime-system/packages/bundle": {
+    "../kernary-engine/packages/bundle": {
       "name": "@skill-wiki/bundle",
       "version": "0.2.0",
       "dependencies": {
@@ -42,10 +42,11 @@
         "@skill-wiki/model-schema": "workspace:*",
       },
     },
-    "../prime-system/packages/cli": {
+    "../kernary-engine/packages/cli": {
       "name": "@skill-wiki/cli",
       "version": "0.2.0",
       "bin": {
+        "kernary": "dist/index.js",
         "prime": "dist/index.js",
       },
       "dependencies": {
@@ -61,7 +62,7 @@
         "@skill-wiki/types": "workspace:*",
       },
     },
-    "../prime-system/packages/compiler": {
+    "../kernary-engine/packages/compiler": {
       "name": "@skill-wiki/compiler",
       "version": "0.2.0",
       "dependencies": {
@@ -71,14 +72,14 @@
         "@skill-wiki/types": "workspace:*",
       },
     },
-    "../prime-system/packages/constraint-solver": {
+    "../kernary-engine/packages/constraint-solver": {
       "name": "@skill-wiki/constraint-solver",
       "version": "0.2.0",
       "dependencies": {
         "@skill-wiki/ir": "workspace:*",
       },
     },
-    "../prime-system/packages/corpus-schema": {
+    "../kernary-engine/packages/corpus-schema": {
       "name": "@skill-wiki/corpus-schema",
       "version": "0.2.0",
       "dependencies": {
@@ -86,7 +87,7 @@
         "zod": "^4.0.0",
       },
     },
-    "../prime-system/packages/corpus-tools": {
+    "../kernary-engine/packages/corpus-tools": {
       "name": "@skill-wiki/corpus-tools",
       "version": "0.2.0",
       "bin": {
@@ -96,7 +97,7 @@
         "yaml": "^2.8.3",
       },
     },
-    "../prime-system/packages/evaluation-engine": {
+    "../kernary-engine/packages/evaluation-engine": {
       "name": "@skill-wiki/evaluation-engine",
       "version": "0.2.0",
       "dependencies": {
@@ -105,14 +106,15 @@
         "zod": "^4.0.0",
       },
     },
-    "../prime-system/packages/event-store": {
+    "../kernary-engine/packages/event-store": {
       "name": "@skill-wiki/event-store",
       "version": "0.2.0",
     },
-    "../prime-system/packages/http-server": {
+    "../kernary-engine/packages/http-server": {
       "name": "@skill-wiki/http-server",
       "version": "0.2.0",
       "bin": {
+        "kernary-http-server": "src/main.ts",
         "prime-http-server": "src/main.ts",
       },
       "dependencies": {
@@ -126,11 +128,11 @@
         "@skill-wiki/model-schema": "workspace:*",
       },
     },
-    "../prime-system/packages/ir": {
+    "../kernary-engine/packages/ir": {
       "name": "@skill-wiki/ir",
       "version": "0.2.0",
     },
-    "../prime-system/packages/language-server": {
+    "../kernary-engine/packages/language-server": {
       "name": "@skill-wiki/language-server",
       "version": "0.2.0",
       "dependencies": {
@@ -140,10 +142,11 @@
         "@skill-wiki/types": "workspace:*",
       },
     },
-    "../prime-system/packages/mcp-server-core": {
+    "../kernary-engine/packages/mcp-server-core": {
       "name": "@skill-wiki/mcp-server-core",
       "version": "0.2.0",
       "bin": {
+        "kernary-mcp": "dist/index.js",
         "prime-mcp-core": "dist/index.js",
       },
       "dependencies": {
@@ -156,7 +159,7 @@
         "zod": "^4.0.0",
       },
     },
-    "../prime-system/packages/model-schema": {
+    "../kernary-engine/packages/model-schema": {
       "name": "@skill-wiki/model-schema",
       "version": "0.2.0",
       "dependencies": {
@@ -164,18 +167,18 @@
         "zod": "^4.0.0",
       },
     },
-    "../prime-system/packages/observability": {
+    "../kernary-engine/packages/observability": {
       "name": "@skill-wiki/observability",
       "version": "0.2.0",
     },
-    "../prime-system/packages/parser": {
+    "../kernary-engine/packages/parser": {
       "name": "@skill-wiki/parser",
       "version": "0.2.0",
       "dependencies": {
         "@skill-wiki/types": "workspace:*",
       },
     },
-    "../prime-system/packages/plugin-host": {
+    "../kernary-engine/packages/plugin-host": {
       "name": "@skill-wiki/plugin-host",
       "version": "0.2.0",
       "dependencies": {
@@ -183,7 +186,7 @@
         "zod": "^4.0.0",
       },
     },
-    "../prime-system/packages/policy-engine": {
+    "../kernary-engine/packages/policy-engine": {
       "name": "@skill-wiki/policy-engine",
       "version": "0.2.0",
       "dependencies": {
@@ -192,7 +195,7 @@
         "zod": "^4.0.0",
       },
     },
-    "../prime-system/packages/projection-engine": {
+    "../kernary-engine/packages/projection-engine": {
       "name": "@skill-wiki/projection-engine",
       "version": "0.2.0",
       "dependencies": {
@@ -200,7 +203,7 @@
         "@skill-wiki/model-schema": "workspace:*",
       },
     },
-    "../prime-system/packages/query-engine": {
+    "../kernary-engine/packages/query-engine": {
       "name": "@skill-wiki/query-engine",
       "version": "0.2.0",
       "dependencies": {
@@ -213,7 +216,7 @@
         "@skill-wiki/testkit": "workspace:*",
       },
     },
-    "../prime-system/packages/registry": {
+    "../kernary-engine/packages/registry": {
       "name": "@skill-wiki/registry",
       "version": "0.2.0",
       "dependencies": {
@@ -222,7 +225,7 @@
         "hono": "^4.7.6",
       },
     },
-    "../prime-system/packages/runtime": {
+    "../kernary-engine/packages/runtime": {
       "name": "@skill-wiki/runtime",
       "version": "0.2.0",
       "dependencies": {
@@ -232,7 +235,7 @@
         "zod": "^4.0.0",
       },
     },
-    "../prime-system/packages/sdk": {
+    "../kernary-engine/packages/sdk": {
       "name": "@skill-wiki/sdk",
       "version": "0.2.0",
       "dependencies": {
@@ -243,7 +246,7 @@
         "@skill-wiki/query-engine": "workspace:*",
       },
     },
-    "../prime-system/packages/sdk-codegen": {
+    "../kernary-engine/packages/sdk-codegen": {
       "name": "@skill-wiki/sdk-codegen",
       "version": "0.2.0",
       "bin": {
@@ -255,7 +258,7 @@
         "@skill-wiki/sdk": "workspace:*",
       },
     },
-    "../prime-system/packages/testkit": {
+    "../kernary-engine/packages/testkit": {
       "name": "@skill-wiki/testkit",
       "version": "0.2.0",
       "bin": {
@@ -280,7 +283,7 @@
         "@skill-wiki/projection-engine": "workspace:*",
       },
     },
-    "../prime-system/packages/types": {
+    "../kernary-engine/packages/types": {
       "name": "@skill-wiki/types",
       "version": "0.2.0",
     },
@@ -290,57 +293,57 @@
 
     "@modelcontextprotocol/sdk": ["@modelcontextprotocol/sdk@1.30.0", "", { "dependencies": { "@hono/node-server": "^1.19.9 || ^2.0.5", "ajv": "^8.17.1", "ajv-formats": "^3.0.1", "content-type": "^1.0.5", "cors": "^2.8.5", "cross-spawn": "^7.0.5", "eventsource": "^3.0.2", "eventsource-parser": "^3.0.0", "express": "^5.2.1", "express-rate-limit": "^8.2.1", "hono": "^4.11.4", "jose": "^6.1.3", "json-schema-typed": "^8.0.2", "pkce-challenge": "^5.0.0", "raw-body": "^3.0.0", "zod": "^3.25 || ^4.0", "zod-to-json-schema": "^3.25.1" }, "peerDependencies": { "@cfworker/json-schema": "^4.1.1" }, "optionalPeers": ["@cfworker/json-schema"] }, "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA=="],
 
-    "@skill-wiki/action-runtime": ["@skill-wiki/action-runtime@workspace:../prime-system/packages/action-runtime"],
+    "@skill-wiki/action-runtime": ["@skill-wiki/action-runtime@workspace:../kernary-engine/packages/action-runtime"],
 
-    "@skill-wiki/bundle": ["@skill-wiki/bundle@workspace:../prime-system/packages/bundle"],
+    "@skill-wiki/bundle": ["@skill-wiki/bundle@workspace:../kernary-engine/packages/bundle"],
 
-    "@skill-wiki/cli": ["@skill-wiki/cli@workspace:../prime-system/packages/cli"],
+    "@skill-wiki/cli": ["@skill-wiki/cli@workspace:../kernary-engine/packages/cli"],
 
-    "@skill-wiki/compiler": ["@skill-wiki/compiler@workspace:../prime-system/packages/compiler"],
+    "@skill-wiki/compiler": ["@skill-wiki/compiler@workspace:../kernary-engine/packages/compiler"],
 
-    "@skill-wiki/constraint-solver": ["@skill-wiki/constraint-solver@workspace:../prime-system/packages/constraint-solver"],
+    "@skill-wiki/constraint-solver": ["@skill-wiki/constraint-solver@workspace:../kernary-engine/packages/constraint-solver"],
 
-    "@skill-wiki/corpus-schema": ["@skill-wiki/corpus-schema@workspace:../prime-system/packages/corpus-schema"],
+    "@skill-wiki/corpus-schema": ["@skill-wiki/corpus-schema@workspace:../kernary-engine/packages/corpus-schema"],
 
-    "@skill-wiki/corpus-tools": ["@skill-wiki/corpus-tools@workspace:../prime-system/packages/corpus-tools"],
+    "@skill-wiki/corpus-tools": ["@skill-wiki/corpus-tools@workspace:../kernary-engine/packages/corpus-tools"],
 
-    "@skill-wiki/evaluation-engine": ["@skill-wiki/evaluation-engine@workspace:../prime-system/packages/evaluation-engine"],
+    "@skill-wiki/evaluation-engine": ["@skill-wiki/evaluation-engine@workspace:../kernary-engine/packages/evaluation-engine"],
 
-    "@skill-wiki/event-store": ["@skill-wiki/event-store@workspace:../prime-system/packages/event-store"],
+    "@skill-wiki/event-store": ["@skill-wiki/event-store@workspace:../kernary-engine/packages/event-store"],
 
-    "@skill-wiki/http-server": ["@skill-wiki/http-server@workspace:../prime-system/packages/http-server"],
+    "@skill-wiki/http-server": ["@skill-wiki/http-server@workspace:../kernary-engine/packages/http-server"],
 
-    "@skill-wiki/ir": ["@skill-wiki/ir@workspace:../prime-system/packages/ir"],
+    "@skill-wiki/ir": ["@skill-wiki/ir@workspace:../kernary-engine/packages/ir"],
 
-    "@skill-wiki/language-server": ["@skill-wiki/language-server@workspace:../prime-system/packages/language-server"],
+    "@skill-wiki/language-server": ["@skill-wiki/language-server@workspace:../kernary-engine/packages/language-server"],
 
-    "@skill-wiki/mcp-server-core": ["@skill-wiki/mcp-server-core@workspace:../prime-system/packages/mcp-server-core"],
+    "@skill-wiki/mcp-server-core": ["@skill-wiki/mcp-server-core@workspace:../kernary-engine/packages/mcp-server-core"],
 
-    "@skill-wiki/model-schema": ["@skill-wiki/model-schema@workspace:../prime-system/packages/model-schema"],
+    "@skill-wiki/model-schema": ["@skill-wiki/model-schema@workspace:../kernary-engine/packages/model-schema"],
 
-    "@skill-wiki/observability": ["@skill-wiki/observability@workspace:../prime-system/packages/observability"],
+    "@skill-wiki/observability": ["@skill-wiki/observability@workspace:../kernary-engine/packages/observability"],
 
-    "@skill-wiki/parser": ["@skill-wiki/parser@workspace:../prime-system/packages/parser"],
+    "@skill-wiki/parser": ["@skill-wiki/parser@workspace:../kernary-engine/packages/parser"],
 
-    "@skill-wiki/plugin-host": ["@skill-wiki/plugin-host@workspace:../prime-system/packages/plugin-host"],
+    "@skill-wiki/plugin-host": ["@skill-wiki/plugin-host@workspace:../kernary-engine/packages/plugin-host"],
 
-    "@skill-wiki/policy-engine": ["@skill-wiki/policy-engine@workspace:../prime-system/packages/policy-engine"],
+    "@skill-wiki/policy-engine": ["@skill-wiki/policy-engine@workspace:../kernary-engine/packages/policy-engine"],
 
-    "@skill-wiki/projection-engine": ["@skill-wiki/projection-engine@workspace:../prime-system/packages/projection-engine"],
+    "@skill-wiki/projection-engine": ["@skill-wiki/projection-engine@workspace:../kernary-engine/packages/projection-engine"],
 
-    "@skill-wiki/query-engine": ["@skill-wiki/query-engine@workspace:../prime-system/packages/query-engine"],
+    "@skill-wiki/query-engine": ["@skill-wiki/query-engine@workspace:../kernary-engine/packages/query-engine"],
 
-    "@skill-wiki/registry": ["@skill-wiki/registry@workspace:../prime-system/packages/registry"],
+    "@skill-wiki/registry": ["@skill-wiki/registry@workspace:../kernary-engine/packages/registry"],
 
-    "@skill-wiki/runtime": ["@skill-wiki/runtime@workspace:../prime-system/packages/runtime"],
+    "@skill-wiki/runtime": ["@skill-wiki/runtime@workspace:../kernary-engine/packages/runtime"],
 
-    "@skill-wiki/sdk": ["@skill-wiki/sdk@workspace:../prime-system/packages/sdk"],
+    "@skill-wiki/sdk": ["@skill-wiki/sdk@workspace:../kernary-engine/packages/sdk"],
 
-    "@skill-wiki/sdk-codegen": ["@skill-wiki/sdk-codegen@workspace:../prime-system/packages/sdk-codegen"],
+    "@skill-wiki/sdk-codegen": ["@skill-wiki/sdk-codegen@workspace:../kernary-engine/packages/sdk-codegen"],
 
-    "@skill-wiki/testkit": ["@skill-wiki/testkit@workspace:../prime-system/packages/testkit"],
+    "@skill-wiki/testkit": ["@skill-wiki/testkit@workspace:../kernary-engine/packages/testkit"],
 
-    "@skill-wiki/types": ["@skill-wiki/types@workspace:../prime-system/packages/types"],
+    "@skill-wiki/types": ["@skill-wiki/types@workspace:../kernary-engine/packages/types"],
 
     "@types/node": ["@types/node@26.4.0", "", { "dependencies": { "undici-types": "~8.3.0" } }, "sha512-faiGnoIrLH/V8cibOMEAZ8pMw6oXqSukl29ra4mN8GdaB2ZewzeaLj+INpV5N+Z1eKWzY+IzaIZH2EIR6YZRNQ=="],
 

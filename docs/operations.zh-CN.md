@@ -19,5 +19,5 @@ MCP 组合挂载相同 `model.lock`，并执行真实 Selection Query。
 发布到 Registry 和激活 Runtime 是两个独立 Mutation。Local build 成功不代表已
 发布。应保留上一不可变 Snapshot 以便 Rollback。
 
-当前本地依赖路径是 `../prime-system`。只有外部仓库完成 Rename，并且 Clone/
-Build CI 验证新布局后，才改成 `../kernary-engine`。
+当前本地依赖路径是 `../kernary-engine`。Package 与 CI Workflow 使用同一路径，
+Fresh clone 不再依赖旧仓库名。

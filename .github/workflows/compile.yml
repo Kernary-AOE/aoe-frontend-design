@@ -15,15 +15,15 @@ jobs:
       - name: Checkout corpus repo
         uses: actions/checkout@v4
         with:
-          path: prime-corpus-frontend-design
+          path: kernary-frontend-design
 
       # The `compile` script in package.json invokes a build script
-      # from the sibling prime-system repo, so we vendor it next to us.
-      - name: Checkout sibling prime-system
+      # from the sibling Kernary Engine repo, so we vendor it next to us.
+      - name: Checkout sibling Kernary Engine
         uses: actions/checkout@v4
         with:
-          repository: skill-wiki/prime-system
-          path: prime-system
+          repository: skill-wiki/kernary-engine
+          path: kernary-engine
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
@@ -31,29 +31,29 @@ jobs:
           bun-version: latest
 
       - name: Install (corpus)
-        working-directory: prime-corpus-frontend-design
+        working-directory: kernary-frontend-design
         run: bun install
 
-      - name: Install (prime-system)
-        working-directory: prime-system
+      - name: Install (Kernary Engine)
+        working-directory: kernary-engine
         run: bun install --frozen-lockfile
 
       - name: Typecheck and test domain
-        working-directory: prime-corpus-frontend-design
+        working-directory: kernary-frontend-design
         run: bun run typecheck && bun run test
 
       - name: Validate external model
-        working-directory: prime-corpus-frontend-design
+        working-directory: kernary-frontend-design
         run: bun run model:check
 
       - name: Compile corpus
-        working-directory: prime-corpus-frontend-design
+        working-directory: kernary-frontend-design
         run: bun run corpus:build
 
       - name: Validate declaration and signed bundle
-        working-directory: prime-corpus-frontend-design
+        working-directory: kernary-frontend-design
         run: bun run corpus:check && bun run corpus:verify
 
       - name: Smoke both MCP compositions
-        working-directory: prime-corpus-frontend-design
+        working-directory: kernary-frontend-design
         run: bun run smoke

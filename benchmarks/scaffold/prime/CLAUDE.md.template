@@ -26,7 +26,7 @@ You have a knowledge wiki via the `prime-wiki` MCP server. **Treat it like Wikip
 
 3. **Read**: use the `Read` tool on the path returned by `prime_compile` — it will be
    `<CORPUS_ROOT>/compiled-v3-final/<atom-id>/chunks/<level>.md` where `CORPUS_ROOT`
-   is the absolute path to your cloned `prime-corpus-frontend-design` directory.
+   is the absolute path to your cloned `kernary-frontend-design` directory.
    The atom-id is in the index entry, e.g. `@impeccable/persona-magazine-editorial`.
 
 4. **Iterate**: if the index didn't contain what you need, use:

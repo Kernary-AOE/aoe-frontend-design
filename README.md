@@ -22,7 +22,7 @@ benchmarks/  fixed domain evaluation tasks
 ## Verify the package
 
 Clone the Kernary engine at the current compatibility path
-`../prime-system`, then run:
+`../kernary-engine`, then run:
 
 ```bash
 bun install

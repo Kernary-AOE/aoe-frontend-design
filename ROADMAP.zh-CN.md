@@ -1,4 +1,4 @@
-# ROADMAP — prime-corpus-frontend-design
+# ROADMAP — Kernary Frontend Design Domain Package
 
 语料库与配套 pipeline 目前**架构层完成度约 70%**（依据系统仓库 Wave 12
 的诚实复盘）。剩下 30% 集中在三个方向：**统计鲁棒性**、**关系图密度**、

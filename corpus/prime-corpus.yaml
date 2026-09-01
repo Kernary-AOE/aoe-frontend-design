@@ -298,7 +298,7 @@ license:
     # declaring no licence, so no GPL-3.0 string existed anywhere for this list
     # to match. The gate was not broken — it was never given the fact. Those 73
     # are now in `sources/quarantine/gpl-3.0/`, and
-    # `../prime-system/packages/corpus-schema/test/license-policy-gate.test.ts`
+    # `../kernary-engine/packages/corpus-schema/test/license-policy-gate.test.ts`
     # pins that re-admitting any one of them makes CD-PROVENANCE-LICENSE FAIL.
     #
     # GPL-3.0 §5 puts the whole conveyed work under GPL-3.0, so an Apache-2.0

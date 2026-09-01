@@ -1,4 +1,4 @@
-# 变更日志 — prime-corpus-frontend-design
+# 变更日志 — Kernary Frontend Design Domain Package
 
 > 按 Wave 汇总。本文中的数字数据原样引用自源仓库的 `STATUS-2026-05-07.md` 和 `RESULTS-FINAL.md`；工程级详情请查阅这些文件。
 

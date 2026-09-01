@@ -1,4 +1,4 @@
-# CHANGELOG — prime-corpus-frontend-design
+# CHANGELOG — Kernary Frontend Design Domain Package
 
 > Wave-by-wave summary. Numeric figures in this file are reproduced
 > verbatim from the source repo's `STATUS-2026-05-07.md` and

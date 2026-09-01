@@ -46,7 +46,7 @@ import {
   loadServeModel,
   resolveModelRoot,
   verifyModelLock,
-} from "../../../prime-system/packages/mcp-server-core/src/index.ts";
+} from "../../../kernary-engine/packages/mcp-server-core/src/index.ts";
 import {
   createScoutSourceAdapter,
   resolveDataRoot,

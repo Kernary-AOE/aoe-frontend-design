@@ -2,7 +2,7 @@
  * Tests for the three adapters this lane added and for the MCP projection.
  *
  * The fixtures are deliberately *real* where a real thing exists: the `core`
- * projection comes out of `projects/prime-system/compat/prime-v1-model` via
+ * projection comes out of `projects/kernary-engine/compat/prime-v1-model` via
  * `loadModelOrThrow`, and the retrieval profile comes out of the shipped
  * `model/retrieval/six-axis.yaml`. Only the corpus units are synthetic, because
  * the compiled snapshot is a 900-unit artifact and a test that depended on it
@@ -57,7 +57,7 @@ import { createDesignToolset, emitDesignToolDocument, DesignToolsetError } from 
 
 const ROOT = join(import.meta.dir, "..");
 const MODEL_ROOT = join(ROOT, "model");
-const NON_ACTION_MODEL_ROOT = join(ROOT, "..", "prime-system", "packages", "model-schema", "test", "fixtures", "ticket-model");
+const NON_ACTION_MODEL_ROOT = join(ROOT, "..", "kernary-engine", "packages", "model-schema", "test", "fixtures", "ticket-model");
 
 function loadProfile(): RetrievalProfile {
   const file = DefinitionFileSchema.parse(parse(readFileSync(join(ROOT, "model", "retrieval", "six-axis.yaml"), "utf8")));

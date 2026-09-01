@@ -6,7 +6,7 @@ Thank you for helping keep Skill Wiki users safe.
 
 Please report security issues privately. Do **not** open a public GitHub issue.
 
-- Open a [GitHub security advisory](https://github.com/skill-wiki/prime-corpus-frontend/security/advisories/new) — preferred channel.
+- Open a [GitHub security advisory](https://github.com/skill-wiki/kernary-frontend-design/security/advisories/new) — preferred channel.
 - Or email **security@skill-wiki** *(placeholder — to be replaced with the real address before v1.0)*.
 
 Please include:
@@ -35,5 +35,5 @@ In scope:
 
 Out of scope:
 - Third-party MCP clients connecting to the server
-- Issues in `prime-system` packages — please report those upstream
+- Issues in `kernary-engine` packages — please report those upstream
 - The substantive design content of atoms (that is content, not a security surface)

@@ -105,9 +105,9 @@ Out-of-process: `prime-plugin.yaml` is a §12.1 manifest, verified admissible by
 the real loader:
 
 ```
-cd projects/prime-system && bun -e '
+cd projects/kernary-engine && bun -e '
   import { loadManifest } from "./packages/plugin-host/src/manifest.ts";
-  const r = loadManifest("/Users/houxianchao/Desktop/prime/projects/prime-frontend-design/adapters/scout-catalog");
+  const r = loadManifest("/Users/houxianchao/Desktop/prime/projects/kernary-frontend-design/adapters/scout-catalog");
   console.log(r.ok ? "OK" : r.diagnostics);'
 ```
 
@@ -136,7 +136,7 @@ against the real payload and is **skipped, not passed**, when it is absent
 | the same query twice on two adapters | byte-identical JSON |
 | a query whose tokens are all shorter than `minTokenLength` | `SCOUT_QUERY_NO_TOKENS`, not an empty success |
 
-Run: `cd projects/prime-frontend-design && bun test`.
+Run: `cd projects/kernary-frontend-design && bun test`.
 
 ---
 
