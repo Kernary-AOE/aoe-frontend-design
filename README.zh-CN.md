@@ -1,6 +1,6 @@
 # AOE Frontend Design Domain Package
 
-这是一个构建在 AOE 上的完整 Frontend Design Domain Package，由 Kernary 组织维护。仓库自己
+这是一个构建在 AOE 上的完整 Frontend Design Domain Package，由 Kernary-AOE 组织维护。仓库自己
 拥有领域模型、筛选后的语料、检索 Profile、Validator、Adapter、工具和可选
 Agent Skill。
 

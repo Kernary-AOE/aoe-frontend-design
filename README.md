@@ -26,7 +26,7 @@ benchmarks/  fixed domain evaluation tasks
 
 ## Verify the package
 
-Clone the AOE engine from the Kernary organization
+Clone the AOE engine from the Kernary-AOE organization
 `../aoe-engine`, then run:
 
 ```bash
