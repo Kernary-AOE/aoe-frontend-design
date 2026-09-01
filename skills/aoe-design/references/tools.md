@@ -10,7 +10,7 @@
 | `aoe_design_scout` | Search external reference catalogues with provenance |
 | `aoe_design_validate` | Validate an HTML artifact and produce actionable feedback |
 
-The generic `prime_query`, `prime_plan` and `prime_resource` tools expose the
+The generic `aoe_query`, `aoe_plan` and `aoe_resource` tools expose the
 domain-neutral bundle surface. Prefer the domain tools for the composed design
 workflow and generic tools for inspecting exact units or selection arithmetic.
 

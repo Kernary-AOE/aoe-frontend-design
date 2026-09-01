@@ -8,7 +8,7 @@
 # `packages/retrieval/`. A value with no provenance comment does not belong here.
 #
 # Shape is validated against `RetrievalProfileSchema` in
-# `@skill-wiki/model-schema` (`packages/model-schema/src/index.ts`), which is
+# `@aoe/model-schema` (`packages/model-schema/src/index.ts`), which is
 # `.strict()`. Note it differs from the YAML sketch in plan §5.6:
 # `candidateGenerators` is `[{name, weight}]` (not a string list) and `reranker`
 # is a string (not `{provider}`). The implementation is authoritative.

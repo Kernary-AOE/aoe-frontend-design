@@ -4,8 +4,8 @@
 searchable with a feature breakdown. **Zero corpus units are added.**
 
 This is the frontend-design domain's re-implementation of the capability the old
-server exposed as `prime_query scope=scout` and as the `## References` block in
-`prime_compile`. The new kernel's `prime_query` has no `scout` scope
+server exposed as `aoe_query scope=scout` and as the `## References` block in
+`prime_compile`. The new kernel's `aoe_query` has no `scout` scope
 (`mcp-server-core/src/index.ts:94` — the enum is `["atoms","related","show"]`) and
 `compiled-v3-final/` contains 0 scout units, so the capability was lost at the
 cutover, not deprecated.
@@ -105,9 +105,9 @@ Out-of-process: `prime-plugin.yaml` is a §12.1 manifest, verified admissible by
 the real loader:
 
 ```
-cd projects/kernary-engine && bun -e '
+cd projects/aoe-engine && bun -e '
   import { loadManifest } from "./packages/plugin-host/src/manifest.ts";
-  const r = loadManifest("/Users/houxianchao/Desktop/prime/projects/kernary-frontend-design/adapters/scout-catalog");
+  const r = loadManifest("/Users/houxianchao/Desktop/prime/projects/aoe-frontend-design/adapters/scout-catalog");
   console.log(r.ok ? "OK" : r.diagnostics);'
 ```
 
@@ -136,7 +136,7 @@ against the real payload and is **skipped, not passed**, when it is absent
 | the same query twice on two adapters | byte-identical JSON |
 | a query whose tokens are all shorter than `minTokenLength` | `SCOUT_QUERY_NO_TOKENS`, not an empty success |
 
-Run: `cd projects/kernary-frontend-design && bun test`.
+Run: `cd projects/aoe-frontend-design && bun test`.
 
 ---
 
@@ -158,4 +158,4 @@ Three things changed, each because the original lost information:
 
 And one contract gap is closed rather than preserved: the catalogue atoms document
 `prime_scout(query, source, n)` throughout their prose, but
-`prime_query scope=scout` never accepted a source parameter. `sourceIds` does.
+`aoe_query scope=scout` never accepted a source parameter. `sourceIds` does.

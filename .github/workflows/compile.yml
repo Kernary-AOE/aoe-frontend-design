@@ -15,15 +15,15 @@ jobs:
       - name: Checkout corpus repo
         uses: actions/checkout@v4
         with:
-          path: kernary-frontend-design
+          path: aoe-frontend-design
 
       # The `compile` script in package.json invokes a build script
       # from the sibling Kernary Engine repo, so we vendor it next to us.
       - name: Checkout sibling Kernary Engine
         uses: actions/checkout@v4
         with:
-          repository: skill-wiki/kernary-engine
-          path: kernary-engine
+          repository: kernary-aoe/aoe-engine
+          path: aoe-engine
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
@@ -31,29 +31,29 @@ jobs:
           bun-version: latest
 
       - name: Install (corpus)
-        working-directory: kernary-frontend-design
+        working-directory: aoe-frontend-design
         run: bun install
 
       - name: Install (Kernary Engine)
-        working-directory: kernary-engine
+        working-directory: aoe-engine
         run: bun install --frozen-lockfile
 
       - name: Typecheck and test domain
-        working-directory: kernary-frontend-design
+        working-directory: aoe-frontend-design
         run: bun run typecheck && bun run test
 
       - name: Validate external model
-        working-directory: kernary-frontend-design
+        working-directory: aoe-frontend-design
         run: bun run model:check
 
       - name: Compile corpus
-        working-directory: kernary-frontend-design
+        working-directory: aoe-frontend-design
         run: bun run corpus:build
 
       - name: Validate declaration and signed bundle
-        working-directory: kernary-frontend-design
+        working-directory: aoe-frontend-design
         run: bun run corpus:check && bun run corpus:verify
 
       - name: Smoke both MCP compositions
-        working-directory: kernary-frontend-design
+        working-directory: aoe-frontend-design
         run: bun run smoke

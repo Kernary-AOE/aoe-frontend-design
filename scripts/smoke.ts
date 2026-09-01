@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import {
   createAoeMcpServer,
   executeAoePlan,
-} from "../../kernary-engine/packages/mcp-server-core/src/index.ts";
+} from "../../aoe-engine/packages/mcp-server-core/src/index.ts";
 import { createDesignServer } from "../mcp/src/server.ts";
 
 const root = resolve(import.meta.dir, "..");

@@ -66,16 +66,16 @@
  *    They used to be `continue`d in silence, which meant a check that cannot say
  *    whether it blocks was quietly dropped from the gate rather than reported.
  *
- * Dependency direction (§15.4): imports `@skill-wiki/ir`,
- * `@skill-wiki/query-engine` and `@skill-wiki/model-schema`; imports nothing from
+ * Dependency direction (§15.4): imports `@aoe/ir`,
+ * `@aoe/query-engine` and `@aoe/model-schema`; imports nothing from
  * the repository-root `packages/` tree. The *bundle* path is still a caller-supplied
  * seam (`ProjectionReader`) because only the host knows it; the severity model is
  * this package's own asset at a fixed package-relative path — see the note in
  * `./severity.ts` and the same pattern in `scout-catalog/src/manifest.ts`.
  */
 
-import type { DiagnosticIR, GraphIR, UnitIR } from "@skill-wiki/ir";
-import { quantize } from "@skill-wiki/query-engine";
+import type { DiagnosticIR, GraphIR, UnitIR } from "@aoe/ir";
+import { quantize } from "@aoe/query-engine";
 import { loadSeverityScale, type SeverityScale } from "./severity.ts";
 
 export {
@@ -122,7 +122,7 @@ export const CHECK_KIND = "check";
 
 export const CHECKLIST_LIMIT_DEFAULT = 20;
 export const MANDATE_LIMIT_DEFAULT = 20;
-/** Legacy `prime_query`'s `limit` ceiling: `z.number().min(1).max(50)`. */
+/** Legacy `aoe_query`'s `limit` ceiling: `z.number().min(1).max(50)`. */
 export const STANDARDS_LIMIT_MAX = 50;
 /** `mcp-server/index.ts:487` tokenisation floor, reused for the task query. */
 export const MIN_TOKEN_LENGTH = 3;

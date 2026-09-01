@@ -11,7 +11,7 @@
 - 语料库：**793 → 899 个原子（+13%）**，通过两条并行策划流程实现：
   - **跨领域扩展（4 个新领域 × 5 个原子）**：i18n（cjk-line-break、no-string-concat、icu-message-format、flag-as-language 反模式、bidi-direction）；性能（cls-budget、perceived-vs-actual、image-lcp-priority、blocking-third-party 反模式、rail-targets）；api-design（resource-not-action、pagination-first、cursor-pagination、rpc-as-rest 反模式、http-method-semantics）；测试（flaky-quarantine、test-pyramid、snapshot-restraint、test-the-mock 反模式、test-pyramid-ratios）。跨领域原子总计：**9 个非前端领域共 45 个**。
   - **稀疏类型补充（31 个原子）**：type ×4、transform ×2、tool ×2、value ×2、step ×1、metric ×1、taxonomy ×3、tradeoff ×4、scope ×3、feedback ×3、collection ×3、term ×3。**现在每种类型至少有 4 个原子。**
-- 注册中心：`prime publish --remote <url>` 和 `prime install --remote <url>` 通过最小化 Bun HTTP 注册中心服务器（`scripts/registry-server.ts`）端到端绿灯验证。
+- 注册中心：`prime publish --remote <url>` 和 `aoe install --remote <url>` 通过最小化 Bun HTTP 注册中心服务器（`scripts/registry-server.ts`）端到端绿灯验证。
 - L3 跨原子校验器：通过在名称索引旁建立完整 ID 索引，将 76 个死引用错误降至 **0**。
 - 文档：9 个未接入的运行时模块现有已文档化的未接入原因（PrimeLoader / PrimeExecutor / EvaluationEngine / IndexManager / CorpusGraph / CorpusIndex / ai-step-executor / method-loader / skill-bundler 构成一个与当前 MCP + atom-loader 架构不匹配的完整替代运行时模型）。
 
@@ -83,4 +83,4 @@ Wave 10 是深度审计；Wave 11 完成了分块器重写 + 79/82 个损坏引�
 - 决定是从 spec 中移除 14 种稀疏类型声明，还是将每种扩充至 ≥10 个原子。
 - 完整前瞻计划见 [`ROADMAP.md`](ROADMAP.md)。
 
-工程级别的逐提交历史，参见源仓库的 `git log --grep "feat(arch)"` 以及 [`STATUS-2026-05-07.md`](https://github.com/skill-wiki/prime/blob/main/STATUS-2026-05-07.md)。
+工程级别的逐提交历史，参见源仓库的 `git log --grep "feat(arch)"` 以及 [`STATUS-2026-05-07.md`](https://github.com/kernary-aoe/prime/blob/main/STATUS-2026-05-07.md)。

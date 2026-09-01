@@ -13,7 +13,7 @@ rule DesignMdFrontMatter {
 
   statement: "Every design.md file must begin with YAML front matter declaring at minimum: project name, persona archetype, and 3-5 aesthetic keywords. A design.md without front matter cannot be reliably indexed, queried, or referenced by an AI agent."
 
-  rationale: "Design documents without machine-readable front matter are browsable by humans but invisible to automated systems. The front matter is the hook that allows MCP tools (@prime-wiki/prime_query) to retrieve the right design context at generation time."
+  rationale: "Design documents without machine-readable front matter are browsable by humans but invisible to automated systems. The front matter is the hook that allows AOE query tools to retrieve the right design context at generation time."
 
   required-fields: [
     "name: (project or component name)",

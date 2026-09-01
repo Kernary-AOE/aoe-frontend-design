@@ -2,7 +2,7 @@
  * @module @prime-domain/frontend-design/corpus-graph
  *
  * Bounded-depth relation traversal — the `depth: 1-3` half of legacy
- * `prime_query scope=related` that the production path dropped.
+ * `aoe_query scope=related` that the production path dropped.
  *
  * ## What was measured before this was written
  *
@@ -34,15 +34,15 @@
  *    concurrent traversals corrupted each other's provenance. Provenance is a
  *    field of the result record here.
  *
- * Dependency direction (§15.4): imports `@skill-wiki/ir` and
- * `@skill-wiki/query-engine`; imports nothing from the repository-root `packages/`
+ * Dependency direction (§15.4): imports `@aoe/ir` and
+ * `@aoe/query-engine`; imports nothing from the repository-root `packages/`
  * tree.
  */
 
-import type { DiagnosticIR, GraphIR, UnitIR } from "@skill-wiki/ir";
-import { buildAdjacency, type Adjacency } from "@skill-wiki/query-engine";
+import type { DiagnosticIR, GraphIR, UnitIR } from "@aoe/ir";
+import { buildAdjacency, type Adjacency } from "@aoe/query-engine";
 
-/** Legacy `prime_query`'s declared bounds: `z.number().min(1).max(3)`. */
+/** Legacy `aoe_query`'s declared bounds: `z.number().min(1).max(3)`. */
 export const RELATED_DEPTH_MIN = 1;
 export const RELATED_DEPTH_MAX = 3;
 /** Legacy default when `depth` was omitted (`mcp-server/index.ts:850`). */

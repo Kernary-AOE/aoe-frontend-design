@@ -25,7 +25,7 @@
  *
  * ── Why the kernel is imported by source path ────────────────────────────────
  *
- * `@skill-wiki/mcp-server-core` is the one kernel package whose `exports` points
+ * `@aoe/mcp-server-core` is the one kernel package whose `exports` points
  * at `dist/index.js` instead of `src/index.ts`, and that `dist` is a stale build
  * artifact no repo gate rebuilds. Production already boots the source rather than
  * the bundle — `.mcp.json` runs `packages/mcp-server-core/src/index.ts` — so this
@@ -38,15 +38,15 @@ import { resolve as resolvePath } from "node:path";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
-import type { SnapshotRef as IrSnapshotRef } from "@skill-wiki/ir";
-import type { Principal } from "@skill-wiki/query-engine";
-import { loadAtomMeta, loadCorpusSnapshot, loadIndex, resolveProjection, verifyCorpusSignature, type ProjectionLevel } from "@skill-wiki/runtime";
+import type { SnapshotRef as IrSnapshotRef } from "@aoe/ir";
+import type { Principal } from "@aoe/query-engine";
+import { loadAtomMeta, loadCorpusSnapshot, loadIndex, resolveProjection, verifyCorpusSignature, type ProjectionLevel } from "@aoe/runtime";
 import {
   buildCorpusGraph,
   loadServeModel,
   resolveModelRoot,
   verifyModelLock,
-} from "../../../kernary-engine/packages/mcp-server-core/src/index.ts";
+} from "../../../aoe-engine/packages/mcp-server-core/src/index.ts";
 import {
   createScoutSourceAdapter,
   resolveDataRoot,

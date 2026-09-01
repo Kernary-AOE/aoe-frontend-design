@@ -46,7 +46,7 @@
  *    foreign records onto one shape is §4.4's definition of the family.
  *
  * 4. **Scout is not a unit-selection decision at all.** Its two legacy consumers
- *    were `prime_query scope=scout` (return references) and
+ *    were `aoe_query scope=scout` (return references) and
  *    `buildReferencesSection` (inject four thumbnails into a compile result,
  *    `mcp-server/index.ts:476-518`). Neither one budgets projections or expands
  *    relations, which is everything `planSelection` exists to do.
@@ -57,7 +57,7 @@
  * §9.3's discipline applies; its unit-keyed Candidate type does not.
  */
 
-import type { DiagnosticIR } from "@skill-wiki/ir";
+import type { DiagnosticIR } from "@aoe/ir";
 
 /** Which key of a foreign record supplies which normalised field. `null` = absent. */
 export interface FieldMapping {

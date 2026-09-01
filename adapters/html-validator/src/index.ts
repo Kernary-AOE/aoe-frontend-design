@@ -8,7 +8,7 @@
  * The donor is `packages/validator` (318 lines). Three of its four files import
  * something a domain adapter may not have:
  *
- *   - `index.ts:6-7`   `@prime-lang/intent`, `@prime-lang/composition` (root packages)
+ *   - `index.ts:6-7`   `@aoe/intent`, `@aoe/composition` (root packages)
  *   - `l2-semantic.ts:3` `../../compiler/src/ai-client.ts` (root package src reach)
  *   - `l1/l2/l3`       `readFileSync` on an `htmlPath` argument
  *
@@ -36,7 +36,7 @@ export interface AestheticJudgeModel {
 
 /**
  * The composition contract the donor imported as `MergedContract` from
- * `@prime-lang/composition`. Only the four members `checkL3Composition` actually
+ * `@aoe/composition`. Only the four members `checkL3Composition` actually
  * reads are declared: the donor's type also carried `source_atoms`,
  * `motion_prescriptions` and `conflicts`, and `l3-composition.ts` never touched
  * them. Declaring fields no check reads would promise enforcement that does not

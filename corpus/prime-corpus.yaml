@@ -27,12 +27,12 @@ protocol: prime/corpus/v2
 # Adopted, not merely declared: `mountCorpus` now defaults to
 # `namespaceSource: "declaration"`, and the compiler stamps this same value into
 # `corpus.manifest.json`, so served URIs read
-# `prime://local/com.github.skill-wiki%2Ffrontend-design@<release>/units/…`. The
+# `prime://local/com.github.kernary-aoe%2Ffrontend-design@<release>/units/…`. The
 # `/` is percent-encoded by `formatProjectionUri` before it is ever placed between
 # path separators; the round-trip through `parseProjectionUri` is pinned by test.
 # `MOUNT_NAMESPACE_MISMATCH` now means the two authorities genuinely disagree —
 # i.e. the bundle on disk was built from a different declaration than this one.
-namespace: com.github.skill-wiki/frontend-design
+namespace: com.kernary.aoe/frontend-design
 version: 0.2.0
 title: Prime Frontend Design Corpus
 description: >-
@@ -298,7 +298,7 @@ license:
     # declaring no licence, so no GPL-3.0 string existed anywhere for this list
     # to match. The gate was not broken — it was never given the fact. Those 73
     # are now in `sources/quarantine/gpl-3.0/`, and
-    # `../kernary-engine/packages/corpus-schema/test/license-policy-gate.test.ts`
+    # `../aoe-engine/packages/corpus-schema/test/license-policy-gate.test.ts`
     # pins that re-admitting any one of them makes CD-PROVENANCE-LICENSE FAIL.
     #
     # GPL-3.0 §5 puts the whole conveyed work under GPL-3.0, so an Apache-2.0

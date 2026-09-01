@@ -21,5 +21,5 @@ Publishing to a Registry and activating a Runtime are separate mutations. Do
 not infer publication from a successful local build. Keep the previous immutable
 snapshot addressable for rollback.
 
-The local dependency path is `../kernary-engine`. The package and CI workflow use
+The local dependency path is `../aoe-engine`. The package and CI workflow use
 the same path, so a fresh clone does not depend on the former repository name.

@@ -7,7 +7,7 @@
         "${ENGINE_ROOT}/packages/mcp-server-core/src/index.ts"
       ],
       "env": {
-        "PRIME_DIR": "${CORPUS_ROOT}/compiled-v3-final"
+        "AOE_CORPUS_DIR": "${CORPUS_ROOT}/compiled-v3-final"
       }
     },
     "prime-design": {
@@ -17,7 +17,7 @@
         "${DOMAIN_ROOT}/mcp/src/server.ts"
       ],
       "env": {
-        "PRIME_DIR": "${CORPUS_ROOT}/compiled-v3-final"
+        "AOE_CORPUS_DIR": "${CORPUS_ROOT}/compiled-v3-final"
       }
     }
   }

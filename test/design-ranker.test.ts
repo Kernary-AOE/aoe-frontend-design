@@ -2,9 +2,9 @@ import { describe, expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
-import type { GraphIR, TypedValueIR, UnitIR } from "@skill-wiki/ir";
-import { DefinitionFileSchema, type RetrievalProfile } from "@skill-wiki/model-schema";
-import { QueryEngineError, type QueryRequest } from "@skill-wiki/query-engine";
+import type { GraphIR, TypedValueIR, UnitIR } from "@aoe/ir";
+import { DefinitionFileSchema, type RetrievalProfile } from "@aoe/model-schema";
+import { QueryEngineError, type QueryRequest } from "@aoe/query-engine";
 import {
   AXIS_GENERATOR_PREFIX,
   ProfileAxesError,

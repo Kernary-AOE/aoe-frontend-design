@@ -9,13 +9,13 @@
  * `CandidateGenerator`, and `README.md` for the acceptance criteria and for how a
  * capability whose payload is not in git is expected to be deployed.
  *
- * Dependency direction (§15.4): this module imports `@skill-wiki/ir` and
- * `@skill-wiki/query-engine` and nothing imports it from there. It imports
+ * Dependency direction (§15.4): this module imports `@aoe/ir` and
+ * `@aoe/query-engine` and nothing imports it from there. It imports
  * nothing from the repository-root `packages/` tree.
  */
 
 import { existsSync } from "node:fs";
-import type { DiagnosticIR } from "@skill-wiki/ir";
+import type { DiagnosticIR } from "@aoe/ir";
 import { loadScoutReferences } from "./loader.ts";
 import { ADAPTER_ROOT, MANIFEST_PATH, SCOUT_FEATURE_AXES, loadScoutManifest, parseScoutManifest } from "./manifest.ts";
 import { renderReferences, searchReferences, tokenize, type ScoutSearchIndex } from "./search.ts";
@@ -46,7 +46,7 @@ export interface ScoutAdapterOptions {
   readonly manifest?: ScoutManifest;
   /**
    * Where payloads live. **Explicit on purpose**: §9.2 forbids a process-global
-   * `PRIME_DIR` standing in for a complete run context, and the legacy loader
+   * `AOE_CORPUS_DIR` standing in for a complete run context, and the legacy loader
    * derived the payload root by walking one level up from `primeRoot`
    * (`data.ts:445`), which silently tied the data location to the corpus location.
    */
@@ -198,7 +198,7 @@ export interface ScoutRegistration {
 
 /**
  * Build, load and register the scout adapter. This is the entry point a host
- * (`projects/kernary-frontend-design/mcp`) calls; `dataRoot` is threaded through so
+ * (`projects/aoe-frontend-design/mcp`) calls; `dataRoot` is threaded through so
  * the host, not this module, decides where payloads come from.
  */
 export async function registerScoutSourceAdapter(

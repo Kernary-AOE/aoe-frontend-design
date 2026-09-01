@@ -28,7 +28,7 @@ commit hashes are in the source repo.
     transform ×2, tool ×2, value ×2, step ×1, metric ×1, taxonomy ×3,
     tradeoff ×4, scope ×3, feedback ×3, collection ×3, term ×3.
     **Every kind now has ≥4 atoms.**
-- Registry: `prime publish --remote <url>` and `prime install --remote
+- Registry: `prime publish --remote <url>` and `aoe install --remote
   <url>` round-trip green end-to-end via a minimal Bun-based HTTP
   registry server (`scripts/registry-server.ts`).
 - L3 cross-atom checker: 76 dead-ref errors → **0** by adding a
@@ -164,4 +164,4 @@ broken refs.
 
 For the engineering-grade per-commit history, see the source repo's
 `git log --grep "feat(arch)"` plus
-[`STATUS-2026-05-07.md`](https://github.com/skill-wiki/prime/blob/main/STATUS-2026-05-07.md).
+[`STATUS-2026-05-07.md`](https://github.com/kernary-aoe/prime/blob/main/STATUS-2026-05-07.md).

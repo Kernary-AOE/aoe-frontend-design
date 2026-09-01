@@ -15,7 +15,7 @@
 import { describe, expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
 import { parse } from "yaml";
-import type { GraphIR, TypedValueIR, UnitIR } from "@skill-wiki/ir";
+import type { GraphIR, TypedValueIR, UnitIR } from "@aoe/ir";
 
 import {
   NON_NEGOTIABLE_SEVERITIES,

@@ -7,7 +7,7 @@
  *
  * The donor is `packages/retrieval/src/resolver.ts` (547 lines). Its pipeline was:
  *
- *   1. `classifyBrief` from `@prime-lang/intent`
+ *   1. `classifyBrief` from `@aoe/intent`
  *   2. `multiAxisRetrieve` from its own sibling
  *   3. `buildPersonaPath(id, primeRoot)` -> `<root>/primes-v3/sources/@scope/name.prime`
  *   4. `parse()` from `../../parser/src/index.ts`, then hand-walk the AST
@@ -36,15 +36,15 @@
  * in the domain package.
  */
 
-import type { GraphIR, SelectionCandidateIR, TypedValueIR, UnitIR } from "@skill-wiki/ir";
-import type { ProjectionDefinition, RelationDefinition, RetrievalProfile } from "@skill-wiki/model-schema";
+import type { GraphIR, SelectionCandidateIR, TypedValueIR, UnitIR } from "@aoe/ir";
+import type { ProjectionDefinition, RelationDefinition, RetrievalProfile } from "@aoe/model-schema";
 import {
   CandidateGeneratorRegistry,
   runRetrieval,
   resolvePath,
   type Principal,
   type QueryRequest,
-} from "@skill-wiki/query-engine";
+} from "@aoe/query-engine";
 import { registerSixAxisGenerators } from "../../design-ranker/src/index.ts";
 import type { DesignIntent, RetrievalScope } from "../../design-ranker/src/intent.ts";
 import type { DesignContract } from "../../html-validator/src/index.ts";

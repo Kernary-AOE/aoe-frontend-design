@@ -30,7 +30,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { parse } from "yaml";
-import { DefinitionFileSchema } from "@skill-wiki/model-schema";
+import { DefinitionFileSchema } from "@aoe/model-schema";
 
 /** This adapter's own directory, resolved from the module, never from `cwd`. */
 export const SEVERITY_ADAPTER_ROOT = resolve(join(dirname(new URL(import.meta.url).pathname), ".."));

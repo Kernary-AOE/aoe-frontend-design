@@ -28,7 +28,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import type { DiagnosticIR } from "@skill-wiki/ir";
+import type { DiagnosticIR } from "@aoe/ir";
 import {
   SCOUT_DATA_ROOT_ABSENT,
   SCOUT_ENTRY_COUNT_DRIFT,

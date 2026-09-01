@@ -134,7 +134,7 @@ Requires: registry of cheap models per layer; key-management UX;
 
 Today personas declare `example-brands: [...]` as a string list. The
 roadmap is to attach **`example` atoms** with screenshots /
-representative HTML / typography spec. Lets `prime_query
+representative HTML / typography spec. Lets `aoe_query
 scope='gallery' id='persona-stripe'` return concrete reference
 material, not just brand names.
 

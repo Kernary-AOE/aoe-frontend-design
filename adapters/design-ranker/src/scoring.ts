@@ -7,12 +7,12 @@
  *
  * The *weights* are gone from this file entirely — they are `profile.features`,
  * and the engine's own scorer applies them (`scoreCandidates` in
- * `@skill-wiki/query-engine`). What remains is the mechanism: how each feature
+ * `@aoe/query-engine`). What remains is the mechanism: how each feature
  * value in [0, 1] is computed. That split is the point of §5.6.
  */
 
-import type { UnitIR } from "@skill-wiki/ir";
-import { collectStrings, resolvePath } from "@skill-wiki/query-engine";
+import type { UnitIR } from "@aoe/ir";
+import { collectStrings, resolvePath } from "@aoe/query-engine";
 import type { AxisDescriptor, SixAxisConfig } from "./profile-axes.ts";
 import type { DesignIntent } from "./intent.ts";
 

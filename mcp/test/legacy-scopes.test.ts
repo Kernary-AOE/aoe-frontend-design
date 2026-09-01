@@ -20,7 +20,7 @@
  */
 
 import { describe, expect, test } from "bun:test";
-import type { GraphEdgeIR, GraphIR, TypedValueIR, UnitIR } from "@skill-wiki/ir";
+import type { GraphEdgeIR, GraphIR, TypedValueIR, UnitIR } from "@aoe/ir";
 
 import {
   RELATED_DEPTH_MAX,

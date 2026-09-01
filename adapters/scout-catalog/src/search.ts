@@ -22,11 +22,11 @@
  *
  * `sourceIds` closes a documented contract break rather than adding a feature:
  * the catalogue atoms document calls like `prime_scout("3D scroll", "godly", 8)`,
- * but `prime_query scope=scout` never accepted a source parameter.
+ * but `aoe_query scope=scout` never accepted a source parameter.
  */
 
-import type { DiagnosticIR } from "@skill-wiki/ir";
-import { quantize } from "@skill-wiki/query-engine";
+import type { DiagnosticIR } from "@aoe/ir";
+import { quantize } from "@aoe/query-engine";
 import {
   SCOUT_QUERY_NO_TOKENS,
   SCOUT_SOURCE_UNKNOWN,

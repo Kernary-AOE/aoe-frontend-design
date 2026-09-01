@@ -25,4 +25,4 @@ result is a normal Selection Plan with score contributions, constraint
 decisions, projection loads, and diagnostics.
 
 Use `aoe_design_plan` for the composed domain workflow. Use the generic
-compatibility `prime_plan` when inspecting exact selection arithmetic.
+compatibility `aoe_plan` when inspecting exact selection arithmetic.

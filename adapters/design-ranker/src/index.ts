@@ -2,7 +2,7 @@
  * @module design-ranker
  *
  * The six frontend-design retrieval axes, as `CandidateGenerator`s registered
- * against `@skill-wiki/query-engine`.
+ * against `@aoe/query-engine`.
  *
  * This is the shape plan §5.6 asks for: the engine holds the retrieval mechanism
  * and the profile holds the policy. `CandidateGeneratorRegistry` registers nothing
@@ -10,12 +10,12 @@
  * them and the `frontend-six-axis` profile asks for them by name. Nothing in the
  * engine mentions `register`, `motion`, `typography` or `color`.
  *
- * Dependency direction (§15.4): this file imports `@skill-wiki/*` and nothing
+ * Dependency direction (§15.4): this file imports `@aoe/*` and nothing
  * imports it from there.
  */
 
-import type { GraphIR, SelectionCandidateIR, UnitIR } from "@skill-wiki/ir";
-import type { RetrievalProfile } from "@skill-wiki/model-schema";
+import type { GraphIR, SelectionCandidateIR, UnitIR } from "@aoe/ir";
+import type { RetrievalProfile } from "@aoe/model-schema";
 import {
   CandidateGeneratorRegistry,
   compareStrings,
@@ -25,7 +25,7 @@ import {
   type CandidateGenerator,
   type GeneratorContext,
   type QueryRequest,
-} from "@skill-wiki/query-engine";
+} from "@aoe/query-engine";
 import type { DesignIntent, RetrievalScope } from "./intent.ts";
 import { readSixAxisConfig, type AxisDescriptor, type SixAxisConfig } from "./profile-axes.ts";
 import {
@@ -57,7 +57,7 @@ export const AXIS_GENERATOR_PREFIX = "frontend-axis-";
 /**
  * Determinism helpers come from the engine.
  *
- * `@skill-wiki/query-engine` exports `compareStrings` (byte-order tie-break, never
+ * `@aoe/query-engine` exports `compareStrings` (byte-order tie-break, never
  * `localeCompare`) and `orderedRecord` (sorted key insertion) alongside `quantize`.
  * This adapter used to carry private copies of both; they are gone, because a
  * generator whose idea of "stable" differs from the engine's produces a plan the

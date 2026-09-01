@@ -6,9 +6,9 @@
 # admit it as a confined plugin without a code change on the host side.
 #
 # Validated against the real schema with:
-#   cd projects/kernary-engine && bun -e '
+#   cd projects/aoe-engine && bun -e '
 #     import { loadManifest } from "./packages/plugin-host/src/manifest.ts";
-#     const r = loadManifest("/Users/houxianchao/Desktop/prime/projects/kernary-frontend-design/adapters/scout-catalog");
+#     const r = loadManifest("/Users/houxianchao/Desktop/prime/projects/aoe-frontend-design/adapters/scout-catalog");
 #     console.log(r.ok ? "OK" : r.diagnostics);'
 #
 # `plugin-host` is intentionally NOT a dependency of `@prime-domain/frontend-design`:

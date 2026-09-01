@@ -18,7 +18,7 @@ benchmarks/  固定领域评估任务
 
 ## 验证 Package
 
-当前布局要求 AOE Engine 位于同级目录 `../kernary-engine`：
+当前布局要求 AOE Engine 位于同级目录 `../aoe-engine`：
 
 ```bash
 bun install

@@ -11,7 +11,7 @@
 | `primes-v3/sources/` | `primes-v3/sources/` | 899 个 `.prime` 原子文件。形式相同；命名空间相同：`@community` / `@impeccable` / `@anthropic-impeccable` / `@nielsen` / `@w3c`。 |
 | `primes-v3/taxonomy/` | `primes-v3/taxonomy/` | 30 个任务类型 YAML 文件，覆盖 5 个任务族（`marketing-landing`、`product-ui`、`content`、`interaction`、`dev-tool`）。 |
 | `compiled-v3-final/` | `compiled-v3-final/` | 冻结的编译产物——带 `summary.md` / `core.md` / `full.md` 投影及各原子 `atom.yaml` 的原子目录。由 CI 重新生成。 |
-| `mcp-server/` | `mcp-server/` | 5 工具 MCP 服务器（`prime_compile`、`prime_query`、`aoe_intent`、`aoe_validate`、`aoe_resolve`）。 |
+| `mcp-server/` | `mcp-server/` | 5 工具 MCP 服务器（`prime_compile`、`aoe_query`、`aoe_intent`、`aoe_validate`、`aoe_resolve`）。 |
 | `packages/intent/` | `packages/intent/` | Layer 1——brief → IntentObject 分类器（DeepSeek + 启发式回退）。 |
 | `packages/retrieval/` | `packages/retrieval/` | Layer 2——6 轴检索 + 排序器。 |
 | `packages/composition/` | `packages/composition/` | Layer 3——组合约束提取器 + 合并器。 |

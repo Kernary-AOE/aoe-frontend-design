@@ -26,13 +26,13 @@ You have a knowledge wiki via the `prime-wiki` MCP server. **Treat it like Wikip
 
 3. **Read**: use the `Read` tool on the path returned by `prime_compile` — it will be
    `<CORPUS_ROOT>/compiled-v3-final/<atom-id>/chunks/<level>.md` where `CORPUS_ROOT`
-   is the absolute path to your cloned `kernary-frontend-design` directory.
+   is the absolute path to your cloned `aoe-frontend-design` directory.
    The atom-id is in the index entry, e.g. `@impeccable/persona-magazine-editorial`.
 
 4. **Iterate**: if the index didn't contain what you need, use:
-   - `mcp__prime-wiki__prime_query({ scope: "atoms", query: "<keyword>" })` — keyword search
-   - `mcp__prime-wiki__prime_query({ scope: "related", id: "<atom-id>" })` — graph traversal
-   - `mcp__prime-wiki__prime_query({ scope: "scout", query: "<topic>" })` — image references
+   - `mcp__aoe-core__aoe_query({ scope: "atoms", query: "<keyword>" })` — keyword search
+   - `mcp__aoe-core__aoe_query({ scope: "related", id: "<atom-id>" })` — graph traversal
+   - `mcp__aoe-core__aoe_query({ scope: "scout", query: "<topic>" })` — image references
 
 5. **Build**: synthesize what you read into the HTML. Don't load everything — load what you need
    for your current step.

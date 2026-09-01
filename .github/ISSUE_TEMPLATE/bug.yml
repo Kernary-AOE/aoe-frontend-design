@@ -29,7 +29,7 @@ body:
       render: shell
       placeholder: |
         $ bun run compile
-        $ PRIME_DIR=$(pwd)/compiled-v3-final ... mcp-server/index.ts
+        $ AOE_CORPUS_DIR=$(pwd)/compiled-v3-final ... mcp-server/index.ts
         # call prime_compile with brief: "..."
 
   - type: input

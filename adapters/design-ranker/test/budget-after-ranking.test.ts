@@ -28,9 +28,9 @@ import { describe, expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
-import type { GraphIR, SelectionCandidateIR, TypedValueIR, UnitIR } from "@skill-wiki/ir";
-import { DefinitionFileSchema, type RetrievalProfile } from "@skill-wiki/model-schema";
-import { CandidateGeneratorRegistry, runRetrieval, type Principal, type QueryRequest } from "@skill-wiki/query-engine";
+import type { GraphIR, SelectionCandidateIR, TypedValueIR, UnitIR } from "@aoe/ir";
+import { DefinitionFileSchema, type RetrievalProfile } from "@aoe/model-schema";
+import { CandidateGeneratorRegistry, runRetrieval, type Principal, type QueryRequest } from "@aoe/query-engine";
 import { AXIS_GENERATOR_PREFIX, readSixAxisConfig, registerSixAxisGenerators, type DesignIntent } from "../src/index.ts";
 
 const PROFILE_PATH = join(import.meta.dir, "..", "..", "..", "model", "retrieval", "six-axis.yaml");
@@ -206,7 +206,7 @@ describe("the engine's determinism helpers are reachable from a third-party gene
     // The adapter used to carry private copies because these two were implemented
     // in `deterministic.ts` but not re-exported, which made "deterministic" mean
     // two different things on either side of the generator boundary.
-    const engine = await import("@skill-wiki/query-engine");
+    const engine = await import("@aoe/query-engine");
     expect(typeof engine.compareStrings).toBe("function");
     expect(typeof engine.orderedRecord).toBe("function");
     expect(engine.compareStrings("a", "b")).toBe(-1);

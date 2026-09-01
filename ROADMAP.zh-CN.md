@@ -117,7 +117,7 @@ DeepSeek）做成**默认非可选**。每次校验一份 HTML 输出 ≈ $0.000
 
 今天 persona 声明 `example-brands: [...]` 作为字符串列表。路线是挂
 **`example` 原子**，带截图 / 代表性 HTML / 字体规格。让
-`prime_query scope='gallery' id='persona-stripe'` 返回具体引用素材，
+`aoe_query scope='gallery' id='persona-stripe'` 返回具体引用素材，
 不再只是品牌名字符串。
 
 ### 10. 浏览器渲染基准

@@ -4,7 +4,7 @@
  * Reads and validates `sources.yaml`.
  *
  * Validation is hand-written rather than zod-backed on purpose: the domain
- * package's dependency set is `@skill-wiki/{ir,model-schema,query-engine,sdk-codegen}`
+ * package's dependency set is `@aoe/{ir,model-schema,query-engine,sdk-codegen}`
  * plus `yaml`, and `zod` resolves only through the kernel packages' own
  * `node_modules`. Adding it would pull zod 4 (what `plugin-host` requires) beside
  * the root's zod 3.23.8, and a shim-free refactor is not the place to introduce a

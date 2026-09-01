@@ -21,10 +21,10 @@
 
 import { readFileSync } from "node:fs";
 import { dirname, join, resolve as resolvePath } from "node:path";
-import type { GraphIR } from "@skill-wiki/ir";
-import { loadModelOrThrow, type ProjectionDefinition, type RelationDefinition, type RetrievalProfile } from "@skill-wiki/model-schema";
-import { buildCodegenSchema, emitMcpTools, type McpToolDocument, type McpToolSchema } from "@skill-wiki/sdk-codegen";
-import type { Principal } from "@skill-wiki/query-engine";
+import type { GraphIR } from "@aoe/ir";
+import { loadModelOrThrow, type ProjectionDefinition, type RelationDefinition, type RetrievalProfile } from "@aoe/model-schema";
+import { buildCodegenSchema, emitMcpTools, type McpToolDocument, type McpToolSchema } from "@aoe/sdk-codegen";
+import type { Principal } from "@aoe/query-engine";
 import {
   classifyDesignBrief,
   type BriefCompletionModel,

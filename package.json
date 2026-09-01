@@ -1,11 +1,11 @@
 {
-  "name": "@kernary-domain/frontend-design",
+  "name": "@aoe-domain/frontend-design",
   "version": "0.2.0",
   "license": "Apache-2.0",
   "private": true,
   "type": "module",
-  "description": "Reference Frontend Design Domain Package for Kernary: model, corpus, adapters, tools, and Agent Skills.",
-  "workspaces": ["../kernary-engine/packages/*"],
+  "description": "Reference Frontend Design Domain Package for AOE: model, corpus, adapters, tools, and Agent Skills.",
+  "workspaces": ["../aoe-engine/packages/*"],
   "exports": {
     ".": "./adapters/design-ranker/src/index.ts",
     "./intent-classifier": "./adapters/intent-classifier/src/index.ts",
@@ -20,20 +20,20 @@
     "build": "bun run typecheck",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "bun test adapters mcp test",
-    "model:check": "bun ../kernary-engine/packages/testkit/src/cli.ts model model",
-    "corpus:check": "bun ../kernary-engine/packages/testkit/src/cli.ts corpus model corpus/prime-corpus.yaml",
-    "corpus:build": "bun ../kernary-engine/scripts/build-atom-dirs.ts --src corpus/sources --out corpus/dist --model model --corpus com.github.skill-wiki/frontend-design --release 2026-08-31",
-    "corpus:verify": "bun ../kernary-engine/packages/testkit/src/cli.ts bundle corpus/dist --require-signature",
+    "model:check": "bun ../aoe-engine/packages/testkit/src/cli.ts model model",
+    "corpus:check": "bun ../aoe-engine/packages/testkit/src/cli.ts corpus model corpus/prime-corpus.yaml",
+    "corpus:build": "bun ../aoe-engine/scripts/build-atom-dirs.ts --src corpus/sources --out corpus/dist --model model --corpus com.kernary.aoe/frontend-design --release 2026-08-31",
+    "corpus:verify": "bun ../aoe-engine/packages/testkit/src/cli.ts bundle corpus/dist --require-signature",
     "smoke": "bun scripts/smoke.ts",
     "compile": "bun run corpus:build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "@skill-wiki/ir": "workspace:*",
-    "@skill-wiki/model-schema": "workspace:*",
-    "@skill-wiki/query-engine": "workspace:*",
-    "@skill-wiki/runtime": "workspace:*",
-    "@skill-wiki/sdk-codegen": "workspace:*",
+    "@aoe/ir": "workspace:*",
+    "@aoe/model-schema": "workspace:*",
+    "@aoe/query-engine": "workspace:*",
+    "@aoe/runtime": "workspace:*",
+    "@aoe/sdk-codegen": "workspace:*",
     "yaml": "^2.8.3"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "typescript": "^5.6.0"
   },
   "notes": {
-    "system-repo-dependency": "This Domain Package resolves the Kernary engine from the sibling path ../kernary-engine.",
+    "system-repo-dependency": "This Domain Package resolves the Kernary engine from the sibling path ../aoe-engine.",
     "ownership": "This repository is the complete reference domain package: Model, Corpus, adapters, MCP and skills. It contains no engine implementation."
   }
 }
