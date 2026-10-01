@@ -13,14 +13,14 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout corpus repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: aoe-frontend-design
 
       # The `compile` script in package.json invokes a build script
       # from the sibling Kernary Engine repo, so we vendor it next to us.
       - name: Checkout sibling Kernary Engine
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: kernary-aoe/aoe-engine
           path: aoe-engine
